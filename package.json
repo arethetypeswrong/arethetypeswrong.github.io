@@ -1,0 +1,14 @@
+{
+  "name": "are-the-types-wrong",
+  "private": true,
+  "scripts": {
+    "tsc": "tsc -b",
+    "start": "npm start -w web"
+  },
+  "workspaces": [
+    "./packages/*"
+  ],
+  "devDependencies": {
+    "typescript": "^5.0.0-dev.20230126"
+  }
+}

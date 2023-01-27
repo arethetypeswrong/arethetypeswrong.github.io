@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "lib": ["webworker", "es2018"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "emitDeclarationOnly": true,
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true,
+    "outDir": "../dist",
+    "rootDir": "..",
+    "composite": true,
+    "types": []
+  },
+  "references": [
+    { "path": "../../core" }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "core",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "type": "module",
+  "exports": {
+    ".": {
+      "development": "./src/index.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Branch",
+  "license": "MIT",
+  "dependencies": {
+    "fetch-ponyfill": "^7.1.0",
+    "fflate": "^0.7.4",
+    "typescript": "^5.0.0-dev.20230123",
+    "untar.js": "^0.3.0"
+  },
+  "devDependencies": {
+    "@types/ts-expose-internals": "npm:ts-expose-internals@4.9.4",
+    "@types/untar.js": "^0.3.0"
+  }
+}

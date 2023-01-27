@@ -1,0 +1,25 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc -b",
+    "build": "vite build",
+    "start": "vite dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Branch",
+  "license": "MIT",
+  "dependencies": {
+    "are-the-types-wrong-core": "file:../core",
+    "validate-npm-package-name": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/validate-npm-package-name": "^4.0.0",
+    "esbuild": "^0.17.4",
+    "vite": "^4.0.4"
+  }
+}
