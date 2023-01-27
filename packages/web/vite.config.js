@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 
-export default defineConfig(({ mode }) => ({
+export default defineConfig(() => ({
   root: './src',
   build: {
     outDir: '../dist',
@@ -9,7 +9,8 @@ export default defineConfig(({ mode }) => ({
   worker: {
     format: 'es'
   },
-  define: mode === 'development' ? {
-    ByteStream: 'undefined', // https://github.com/antimatter15/untar.js/pull/5
-  } : undefined,
+  define: {
+    // https://github.com/antimatter15/untar.js/pull/5
+    ByteStream: 'globalThis.ByteStream',
+  }
 }));
