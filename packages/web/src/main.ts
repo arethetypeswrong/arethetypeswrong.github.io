@@ -12,7 +12,7 @@ worker.onmessage = (event: MessageEvent<ResultMessage>) => {
 };
 
 subscribeRenderer({
-  onPackageNameInput: debounce(onPackageNameInput, 500),
+  onPackageNameInput: debounce(onPackageNameInput, 300),
   onCheck,
 });
 

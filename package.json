@@ -1,6 +1,11 @@
 {
-  "name": "are-the-types-wrong",
+  "name": "arethetypeswrong",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arethetypeswrong/arethetypeswrong.github.io"
+  },
+  "license": "MIT",
   "scripts": {
     "tsc": "tsc -b",
     "start": "npm start -w web"

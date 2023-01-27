@@ -1,9 +1,14 @@
 // TODO: auto import did this wrong
-import type { Result } from "are-the-types-wrong-core";
+import type { Analysis, ProblemSummary } from "are-the-types-wrong-core";
+
+export interface Checks {
+  analysis: Analysis;
+  problems: ProblemSummary[];
+}
 
 export interface State {
   packageInfo: PackageInfoState;
-  checks?: AsyncFailable<Result>;
+  checks?: AsyncFailable<Checks>;
 }
 
 export interface ParsedPackageSpec {
@@ -102,7 +107,6 @@ function createAction<T extends unknown[]>(path: StatePath, updater: (...args: T
   };
 }
 
-
 export const actions = {
   setParsedPackageSpec: createAction('packageInfo.parsed', (parsed: SyncFailable<ParsedPackageSpec> | undefined) => {
     state.packageInfo.parsed = parsed;
@@ -110,7 +114,7 @@ export const actions = {
   setPackageInfo: createAction('packageInfo.info', (info: AsyncFailable<PackageInfo> | undefined) => {
     state.packageInfo.info = info;
   }),
-  setChecks: createAction('checks', (checks: AsyncFailable<Result>) => {
+  setChecks: createAction('checks', (checks: AsyncFailable<Checks>) => {
     state.checks = checks;
   }),
 };

@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es2018",
+    "target": "es2019",
     "composite": true,
     "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "verbatimModuleSyntax": true,
     "declaration": true,
     "sourceMap": true,

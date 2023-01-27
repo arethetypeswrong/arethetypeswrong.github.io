@@ -1,3 +1,43 @@
+:root {
+  --color-bg: #fff;
+  --color-text-primary: rgba(0, 0, 0, 1);
+  --color-text-secondary: rgba(0, 0, 0, 0.7);
+  --color-text-error: rgba(173, 42, 42, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #222;
+    --color-text-primary: rgba(255, 255, 255, 1);
+    --color-text-secondary: rgba(255, 255, 255, 0.7);
+    --color-text-error: rgb(247, 127, 127);
+  }
+}
+
+html, body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+}
+body {
+  padding: 1rem;
+}
+h1:first-child {
+  margin-top: 0;
+}
 .display-none {
   display: none;
+}
+#message {
+  font-size: small;
+  margin-top: 0.5em;
+  color: var(--color-text-secondary);
+}
+#message.error {
+  color: var(--color-text-error);
+}
+#message::after {
+  content: '';
+  display: inline-block;
 }

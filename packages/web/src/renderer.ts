@@ -10,25 +10,21 @@ export function subscribeRenderer(events: Events) {
     const packageNameInput = document.getElementById('package-name') as HTMLInputElement;
     const messageElement = document.getElementById('message') as HTMLDivElement;
     const checkButton = document.getElementById('check') as HTMLButtonElement;
-    const resultElement = document.getElementById('result') as HTMLDivElement;
+    const form = document.getElementById('form') as HTMLFormElement;
+    const problemsElement = document.getElementById('problems') as HTMLParagraphElement;
+    const detailsElement = document.getElementById('details') as HTMLDivElement;
+    const detailsPreElement = detailsElement.querySelector('pre') as HTMLPreElement;
 
     packageNameInput.addEventListener('input', () => {
       events.onPackageNameInput(packageNameInput.value);
     });
 
-    checkButton.addEventListener('click', () => {
+    form.addEventListener('submit', event => {
+      event.preventDefault();
       events.onCheck();
     });
 
     computed('packageInfo', ({ info, parsed }) => {
-      if (info?.status === 'success') {
-        return {
-          className: undefined,
-          text: info.data.size
-            ? `Checking will stream whatever ${info.data.size} bytes gzipped is`
-            : `Checking will stream the gzipped package`,
-        };
-      }
       if (parsed?.error) {
         return {
           className: 'error',
@@ -41,27 +37,65 @@ export function subscribeRenderer(events: Events) {
           text: info.error,
         };
       }
+      if (info?.status === 'success') {
+        return {
+          className: '',
+          // Unfortunately, the registry entry only contains the unpacked size, and only
+          // sometimes, and a HEAD request of the tarball doesn't send the length. Boo.
+          text: info.data.size
+            ? `Checking will stream whatever ${info.data.size} bytes gzipped is`
+            : `Checking will stream the gzipped package`,
+        };
+      }
     }, message => {
       messageElement.textContent = message?.text ?? null;
       messageElement.className = message?.className ?? '';
     });
+
+    subscribe('packageInfo.parsed', () => {
+      if (state.packageInfo.parsed) {
+        clearResult();
+      }
+    });
     
     subscribe('packageInfo.info.status', () => {
       if (state.packageInfo.info?.status === 'success') {
-        checkButton.className = '';
+        checkButton.disabled = false;
       }
       else {
-        checkButton.className = 'display-none';
+        checkButton.disabled = true;
       }
     });
 
     subscribe('checks', () => {
       if (state.checks?.status === 'success') {
-        resultElement.textContent = JSON.stringify(state.checks.data, null, 2);
+        clearMessage();
+        detailsElement.className = '';
+        const { analysis, problems } = state.checks.data;
+        detailsPreElement.textContent = JSON.stringify(analysis, null, 2);
+        if (problems.length) {
+          problemsElement.innerHTML = `<ul>${problems.map(problem => {
+            return `<li>${problem.messageHtml}</li>`;
+          }).join('')}</ul>`;
+        }
+        else {
+          problemsElement.textContent = 'No problems found 🌟';
+        }
       }
       else {
-        resultElement.textContent = null;
+        clearResult();
       }
     });
+
+    function clearResult() {
+      detailsElement.className = 'display-none';
+      detailsPreElement.textContent = null;
+      problemsElement.textContent = null;
+    }
+
+    function clearMessage() {
+      messageElement.textContent = null;
+      messageElement.className = '';
+    }
   });
 }

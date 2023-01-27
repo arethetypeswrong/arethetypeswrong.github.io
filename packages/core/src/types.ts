@@ -1,3 +1,6 @@
+// TODO: auto-imports didn't make this type-only
+import type ts from 'typescript';
+
 export interface Host {
   createPackageFS: (packageName: string, packageVersion?: string) => Promise<FS>;
 }
@@ -16,22 +19,29 @@ export interface TraceCollector {
 
 export type ResolutionKind = 'node10' | 'node16-cjs' | 'node16-esm' | 'bundler';
 
-export interface TypedResult {
+export type EntrypointResolutions = Record<string, Record<ResolutionKind, EntrypointResolutionAnalysis>>;
+
+export interface TypedAnalysis {
+  packageName: string;
   containsTypes: true;
-  entrypoints: Record<string, Record<ResolutionKind, EntrypointResult>>;
+  entrypointResolutions: EntrypointResolutions;
 }
 
-export interface UntypedResult {
+export interface UntypedAnalysis {
   containsTypes: false;
 }
 
-export type Result = TypedResult | UntypedResult;
+export type Analysis = TypedAnalysis | UntypedAnalysis;
 
-export interface EntrypointResult {
+export interface EntrypointResolutionAnalysis {
   name: string;
-  isTyped: boolean;
-  resolution?: string;
-  implementationResolution?: string;
-  isESMMismatch: boolean;
+  resolution?: Resolution;
+  implementationResolution?: Resolution;
   trace: string[];
+}
+
+export interface Resolution {
+  fileName: string;
+  isTypeScript: boolean;
+  moduleKind: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined;
 }

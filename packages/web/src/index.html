@@ -7,15 +7,22 @@
   <title>Are The Types Wrong</title>
   <script type="module" src="./main.ts"></script>
   <link rel="stylesheet" href="./main.css" />
+  <link rel="icon" href="/favicon.svg" />
 </head>
 <body>
   <h1>Are the types wrong?</h1>
-  <label>
-    package name
-    <input type="text" id="package-name" />
-  </label>
-  <button id="check" class="display-none">Check</button>
-  <div id="message"></div>
-  <pre id="result"></pre>
+  <form id="form">
+    <label>
+      npm package name
+      <input type="text" id="package-name" />
+    </label>
+    <button id="check" disabled>Check</button>
+    <div id="message"></div>
+  </form>
+  <p id="problems"></p>
+  <details id="details" class="display-none">
+    <summary>Details</summary>
+    <pre></pre>
+  </details>
 </body>
 </html>
