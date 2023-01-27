@@ -9,8 +9,4 @@ export default defineConfig(() => ({
   worker: {
     format: 'es'
   },
-  define: {
-    // https://github.com/antimatter15/untar.js/pull/5
-    ByteStream: 'globalThis.ByteStream',
-  }
 }));

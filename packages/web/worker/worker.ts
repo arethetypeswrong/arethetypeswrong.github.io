@@ -1,3 +1,4 @@
+import "./patchGlobal";
 import { checkPackage, getSummarizedProblems, type Analysis, type ProblemSummary } from "are-the-types-wrong-core";
 
 export interface CheckPackageEventData {
