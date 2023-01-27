@@ -1,4 +1,4 @@
-import createFetch from 'fetch-ponyfill';
+import createFetch from "fetch-ponyfill";
 import { gunzipSync } from "fflate";
 import ts from "typescript";
 import { untar, type TarLocalFile } from "untar.js";
@@ -9,18 +9,18 @@ export const fetchTarballHost: Host = {
   createPackageFS,
 };
 
-async function createPackageFS(packageName: string, packageVersion = 'latest'): Promise<FS> {
+async function createPackageFS(packageName: string, packageVersion = "latest"): Promise<FS> {
   const manifestUrl = `https://registry.npmjs.org/${packageName}/${packageVersion}`;
   const manifest = await fetch(manifestUrl).then((r) => r.json());
-  const tarballUrl = manifest.dist.tarball;;
-  const tarball = new Uint8Array(await fetch(tarballUrl).then((r) => r.arrayBuffer()) satisfies ArrayBuffer);
-  const data = gunzipSync(tarball)
-  return createFS(untar(data), '/node_modules/' + packageName);
+  const tarballUrl = manifest.dist.tarball;
+  const tarball = new Uint8Array((await fetch(tarballUrl).then((r) => r.arrayBuffer())) satisfies ArrayBuffer);
+  const data = gunzipSync(tarball);
+  return createFS(untar(data), "/node_modules/" + packageName);
 }
 
-function createFS(data: TarLocalFile[], basePath = ''): FS {
+function createFS(data: TarLocalFile[], basePath = ""): FS {
   const files = data.reduce((acc: Record<string, Uint8Array>, file) => {
-    acc[ts.combinePaths(basePath, file.filename.substring('package/'.length))] = file.fileData;
+    acc[ts.combinePaths(basePath, file.filename.substring("package/".length))] = file.fileData;
     return acc;
   }, {});
 

@@ -6,10 +6,8 @@
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "emitDeclarationOnly": true,
-    "outDir": "lib",
+    "outDir": "lib"
   },
   "include": ["src"],
-  "references": [
-    { "path": "./worker" }
-  ]
+  "references": [{ "path": "./worker" }]
 }

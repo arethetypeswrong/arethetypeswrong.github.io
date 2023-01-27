@@ -8,12 +8,14 @@
   "license": "MIT",
   "scripts": {
     "tsc": "tsc -b",
-    "start": "npm start -w web"
+    "start": "npm start -w web",
+    "format": "prettier --write \"**/*.{ts,json,css}\""
   },
   "workspaces": [
     "./packages/*"
   ],
   "devDependencies": {
+    "prettier": "^2.8.3",
     "typescript": "^5.0.0-dev.20230126"
   }
 }

@@ -12,7 +12,5 @@
     "composite": true,
     "types": []
   },
-  "references": [
-    { "path": "../../core" }
-  ]
+  "references": [{ "path": "../../core" }]
 }

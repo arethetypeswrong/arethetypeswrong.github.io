@@ -2,4 +2,3 @@ dist
 lib
 node_modules
 *.tsbuildinfo
-.vscode

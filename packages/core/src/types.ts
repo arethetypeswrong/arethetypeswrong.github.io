@@ -1,5 +1,5 @@
 // TODO: auto-imports didn't make this type-only
-import type ts from 'typescript';
+import type ts from "typescript";
 
 export interface Host {
   createPackageFS: (packageName: string, packageVersion?: string) => Promise<FS>;
@@ -17,7 +17,7 @@ export interface TraceCollector {
   read: () => string[];
 }
 
-export type ResolutionKind = 'node10' | 'node16-cjs' | 'node16-esm' | 'bundler';
+export type ResolutionKind = "node10" | "node16-cjs" | "node16-esm" | "bundler";
 
 export type EntrypointResolutions = Record<string, Record<ResolutionKind, EntrypointResolutionAnalysis>>;
 
