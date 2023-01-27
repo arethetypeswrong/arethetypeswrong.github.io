@@ -8,8 +8,7 @@
   "scripts": {
     "tsc": "tsc -b",
     "build": "vite build",
-    "start": "vite dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "vite dev"
   },
   "author": "Andrew Branch",
   "license": "MIT",

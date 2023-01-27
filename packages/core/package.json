@@ -11,8 +11,7 @@
     }
   },
   "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tsc": "tsc"
   },
   "author": "Andrew Branch",
   "license": "MIT",

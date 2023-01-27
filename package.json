@@ -9,6 +9,7 @@
   "scripts": {
     "tsc": "tsc -b",
     "start": "npm start -w web",
+    "build": "npm run tsc && npm run build --workspaces --if-present",
     "format": "prettier --write \"**/*.{ts,json,css}\""
   },
   "workspaces": [

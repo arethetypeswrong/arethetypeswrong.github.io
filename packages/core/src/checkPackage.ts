@@ -83,9 +83,9 @@ function checkEntrypointTyped(
   const moduleSpecifier = packageName + entrypoint.substring(1); // remove leading . before slash
   const fileName = resolutionKind === "node16-esm" ? "/index.mts" : "/index.ts";
   const moduleResolution =
-    // @ts-expect-error
     resolutionKind === "node10"
-      ? ts.ModuleResolutionKind.Node10
+      ? // @ts-expect-error
+        ts.ModuleResolutionKind.Node10
       : resolutionKind === "node16-cjs" || resolutionKind === "node16-esm"
       ? ts.ModuleResolutionKind.Node16
       : // @ts-expect-error
