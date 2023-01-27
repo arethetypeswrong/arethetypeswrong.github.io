@@ -61,7 +61,27 @@ async function getPackageInfo({ packageName, version }: ParsedPackageSpec): Prom
 }
 
 function parsePackageSpec(input: string): SyncFailable<ParsedPackageSpec> {
-  const [packageName, version] = input.split('@');
+  let packageName;
+  let version;
+  let i = 0;
+  if (input.startsWith('@')) {
+    i = input.indexOf('/');
+    if (i === -1) {
+      return {
+        status: 'error',
+        error: 'Invalid package name',
+      };
+    }
+    i++;
+  }
+  i = input.indexOf('@', i);
+  if (i === -1) {
+    packageName = input;
+  } else {
+    packageName = input.slice(0, i);
+    version = input.slice(i + 1);
+  }
+
   // check if packageName is a valid npm package name
   if (validatePackgeName(packageName).errors) {
     return {
