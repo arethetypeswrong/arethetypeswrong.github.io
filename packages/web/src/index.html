@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>Are The Types Wrong</title>
     <script type="module" src="./main.ts"></script>
     <link rel="stylesheet" href="./main.css" />
@@ -16,8 +16,8 @@
     </div>
     <form id="form">
       <label>
-        npm package name
-        <input type="text" id="package-name" autofocus />
+        npm package
+        <input type="text" id="package-name" autofocus autocapitalize="none" autocorrect="off" />
       </label>
       <button id="check" disabled>Check</button>
       <div id="message"></div>
