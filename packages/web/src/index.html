@@ -10,11 +10,14 @@
     <link rel="icon" href="/favicon.svg" />
   </head>
   <body>
-    <h1>Are the types wrong?</h1>
+    <div id="header">
+      <h1>Are the types wrong?</h1>
+      <a href="https://github.com/arethetypeswrong/arethetypeswrong.github.io"> GitHub / About </a>
+    </div>
     <form id="form">
       <label>
         npm package name
-        <input type="text" id="package-name" />
+        <input type="text" id="package-name" autofocus />
       </label>
       <button id="check" disabled>Check</button>
       <div id="message"></div>

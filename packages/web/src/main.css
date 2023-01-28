@@ -25,11 +25,17 @@ body {
 body {
   padding: 1rem;
 }
-h1:first-child {
-  margin-top: 0;
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
-.display-none {
-  display: none;
+h1 {
+  margin-top: 0;
+  margin-right: 1rem;
+}
+#package-name {
+  margin: 0 0.5em;
 }
 #message {
   font-size: small;
@@ -42,4 +48,8 @@ h1:first-child {
 #message::after {
   content: "";
   display: inline-block;
+}
+
+.display-none {
+  display: none;
 }

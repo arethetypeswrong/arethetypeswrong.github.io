@@ -73,10 +73,16 @@ function parsePackageSpec(input: string): SyncFailable<ParsedPackageSpec> {
   let i = 0;
   if (input.startsWith("@")) {
     i = input.indexOf("/");
-    if (i === -1) {
+    if (i === -1 || i === 1) {
       return {
         status: "error",
         error: "Invalid package name",
+      };
+    }
+    if (input.substring(0, i) === "@types") {
+      return {
+        status: "error",
+        error: "@types packages are not supported",
       };
     }
     i++;
