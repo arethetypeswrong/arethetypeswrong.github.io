@@ -23,7 +23,7 @@ const problemShortDescriptions: Record<ResolutionProblemKind, string> = {
   UntypedResolution: `${problemEmoji.UntypedResolution} No types`,
   FalseCJS: `${problemEmoji.FalseCJS} Masquerading as CJS`,
   FalseESM: `${problemEmoji.FalseESM} Masquerading as ESM`,
-  CJSResolvesToESM: `${problemEmoji.CJSResolvesToESM} ESM-only`,
+  CJSResolvesToESM: `${problemEmoji.CJSResolvesToESM} ESM (dynamic import only)`,
 };
 
 const resolutionKinds: Record<ResolutionKind, string> = {
