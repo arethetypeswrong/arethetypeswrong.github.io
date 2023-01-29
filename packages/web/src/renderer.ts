@@ -10,7 +10,7 @@ interface Events {
 
 const problemEmoji: Record<ProblemKind, string> = {
   NoTypes: "",
-  Wildcard: "❔",
+  Wildcard: "❓",
   NoResolution: "💀",
   UntypedResolution: "❌",
   FalseCJS: "🎭",
