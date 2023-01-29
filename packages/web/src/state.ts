@@ -1,9 +1,10 @@
 // TODO: auto import did this wrong
-import type { Analysis, ProblemSummary } from "are-the-types-wrong-core";
+import type { Analysis, ProblemSummary, ResolutionProblem } from "are-the-types-wrong-core";
 
 export interface Checks {
   analysis: Analysis;
-  problems: ProblemSummary[];
+  problemSummaries: ProblemSummary[];
+  resolutionProblems: ResolutionProblem[];
 }
 
 export interface State {

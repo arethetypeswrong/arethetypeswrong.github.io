@@ -28,7 +28,6 @@ function getSubpaths(exportsObject: any): string[] {
   if (!exportsObject || typeof exportsObject !== "object" || Array.isArray(exportsObject)) {
     return [];
   }
-  // return Object.keys(packageJsonContent.exports);
   const keys = Object.keys(exportsObject);
   if (keys[0].startsWith(".")) {
     return keys;

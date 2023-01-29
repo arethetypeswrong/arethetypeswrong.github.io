@@ -1,5 +1,6 @@
 import ts from "typescript";
 import type { ResolutionKind, Analysis, TypedAnalysis, UntypedAnalysis } from "./types.js";
+import { allResolutionKinds } from "./utils.js";
 
 export type ResolutionProblemKind = "NoResolution" | "UntypedResolution" | "FalseESM" | "FalseCJS" | "CJSResolvesToESM";
 
@@ -134,8 +135,6 @@ export function groupResolutionProblems(
   }
   return result;
 }
-
-const allResolutionKinds: ResolutionKind[] = ["node10", "node16-cjs", "node16-esm", "bundler"];
 
 export function isResolutionProblem(problem: Problem): problem is ResolutionProblem {
   return problem.kind !== "NoTypes";

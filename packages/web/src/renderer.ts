@@ -1,9 +1,26 @@
+import { type ResolutionKind, type ResolutionProblemKind } from "are-the-types-wrong-core";
+import { allResolutionKinds } from "are-the-types-wrong-core/utils";
 import { computed, state, subscribe } from "./state";
 
 interface Events {
   onPackageNameInput: (value: string) => void;
   onCheck: () => void;
 }
+
+const problemKinds: Record<ResolutionProblemKind, string> = {
+  NoResolution: "💀 Failed to resolve",
+  UntypedResolution: "❌ No types",
+  FalseCJS: "🎭 Masquerading as CJS",
+  FalseESM: "👺 Masquerading as ESM",
+  CJSResolvesToESM: "😵‍💫 ESM-only",
+};
+
+const resolutionKinds: Record<ResolutionKind, string> = {
+  node10: "<code>node10</code>",
+  "node16-cjs": "<code>node16</code> (from CJS)",
+  "node16-esm": "<code>node16</code> (from ESM)",
+  bundler: "<code>bundler</code>",
+};
 
 export function subscribeRenderer(events: Events) {
   document.addEventListener("DOMContentLoaded", () => {
@@ -12,6 +29,7 @@ export function subscribeRenderer(events: Events) {
     const checkButton = document.getElementById("check") as HTMLButtonElement;
     const form = document.getElementById("form") as HTMLFormElement;
     const problemsElement = document.getElementById("problems") as HTMLParagraphElement;
+    const resolutionsElement = document.getElementById("resolutions") as HTMLTableElement;
     const detailsElement = document.getElementById("details") as HTMLDivElement;
     const detailsPreElement = detailsElement.querySelector("pre") as HTMLPreElement;
 
@@ -74,16 +92,51 @@ export function subscribeRenderer(events: Events) {
       if (state.checks?.status === "success") {
         clearMessage();
         detailsElement.className = "";
-        const { analysis, problems } = state.checks.data;
+        const { analysis, problemSummaries, resolutionProblems } = state.checks.data;
         detailsPreElement.textContent = JSON.stringify(analysis, null, 2);
-        if (problems.length) {
-          problemsElement.innerHTML = `<ul>${problems
+        if (problemSummaries.length) {
+          problemsElement.innerHTML = `<ul>${problemSummaries
             .map((problem) => {
               return `<li>${problem.messageHtml}</li>`;
             })
             .join("")}</ul>`;
         } else {
           problemsElement.textContent = "No problems found 🌟";
+        }
+
+        if (analysis.containsTypes) {
+          const subpaths = Object.keys(analysis.entrypointResolutions);
+          const entrypoints = subpaths.map((s) =>
+            s === "." ? analysis.packageName : `${analysis.packageName}/${s.substring(2)}`
+          );
+          resolutionsElement.className = "";
+          resolutionsElement.innerHTML = `
+            <thead>
+              <tr>
+                <th></th>
+                ${entrypoints.map((entrypoint) => `<th><code>"${entrypoint}"</code></th>`).join("")}
+              </tr>
+            </thead>
+            <tbody>
+              ${allResolutionKinds
+                .map(
+                  (resolutionKind) => `
+                <tr>
+                  <td>${resolutionKinds[resolutionKind]}</td>
+                  ${subpaths
+                    .map((subpath) => {
+                      const problems = resolutionProblems.filter(
+                        (problem) => problem.entrypoint === subpath && problem.resolutionKind === resolutionKind
+                      );
+                      return `<td>${
+                        problems.length ? problems.map((problem) => problemKinds[problem.kind]).join("<br />") : "✅"
+                      }</td>`;
+                    })
+                    .join("")}
+                </tr>`
+                )
+                .join("")}
+              </tbody>`;
         }
       } else {
         clearResult();
@@ -94,6 +147,7 @@ export function subscribeRenderer(events: Events) {
       detailsElement.className = "display-none";
       detailsPreElement.textContent = null;
       problemsElement.textContent = null;
+      resolutionsElement.className = "display-none";
     }
 
     function clearMessage() {

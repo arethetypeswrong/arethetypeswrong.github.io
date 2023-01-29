@@ -49,6 +49,17 @@ h1 {
   content: "";
   display: inline-block;
 }
+#resolutions {
+  margin-bottom: 1rem;
+  font-size: small;
+}
+table,
+th,
+td {
+  border: 1px solid var(--color-text-secondary);
+  border-collapse: collapse;
+  padding: 0.5em;
+}
 
 .display-none {
   display: none;
