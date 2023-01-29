@@ -41,7 +41,7 @@ const moduleKinds = {
 
 export function subscribeRenderer(events: Events) {
   document.addEventListener("DOMContentLoaded", () => {
-    const packageNameInput = document.getElementById("package-name") as HTMLInputElement;
+    const packageNameInput = document.getElementById("package-spec") as HTMLInputElement;
     const messageElement = document.getElementById("message") as HTMLDivElement;
     const checkButton = document.getElementById("check") as HTMLButtonElement;
     const form = document.getElementById("form") as HTMLFormElement;
