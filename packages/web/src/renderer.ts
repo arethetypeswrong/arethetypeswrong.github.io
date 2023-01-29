@@ -33,6 +33,12 @@ const resolutionKinds: Record<ResolutionKind, string> = {
   bundler: "<code>bundler</code>",
 };
 
+const moduleKinds = {
+  1: "(CJS)",
+  99: "(ESM)",
+  "": "",
+};
+
 export function subscribeRenderer(events: Events) {
   document.addEventListener("DOMContentLoaded", () => {
     const packageNameInput = document.getElementById("package-name") as HTMLInputElement;
@@ -142,7 +148,10 @@ export function subscribeRenderer(events: Events) {
                       return `<td>${
                         problems.length
                           ? problems.map((problem) => problemShortDescriptions[problem.kind]).join("<br />")
-                          : "✅"
+                          : "✅ " +
+                            moduleKinds[
+                              analysis.entrypointResolutions[subpath][resolutionKind].resolution?.moduleKind || ""
+                            ]
                       }</td>`;
                     })
                     .join("")}
