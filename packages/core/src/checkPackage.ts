@@ -79,6 +79,9 @@ function checkEntrypointTyped(
   resolutionKind: ResolutionKind,
   entrypoint: string
 ): EntrypointResolutionAnalysis {
+  if (entrypoint.includes("*")) {
+    return { name: entrypoint, isWildcard: true, trace: [] };
+  }
   const moduleSpecifier = packageName + entrypoint.substring(1); // remove leading . before slash
   const fileName = resolutionKind === "node16-esm" ? "/index.mts" : "/index.ts";
   const moduleResolution =
@@ -110,6 +113,7 @@ function checkEntrypointTyped(
       moduleSpecifier,
       fileName,
       {
+        resolveJsonModule: true,
         moduleResolution,
         traceResolution: !noDtsResolution,
         noDtsResolution,

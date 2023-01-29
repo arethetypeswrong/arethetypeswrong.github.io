@@ -35,6 +35,7 @@ export type Analysis = TypedAnalysis | UntypedAnalysis;
 
 export interface EntrypointResolutionAnalysis {
   name: string;
+  isWildcard?: boolean;
   resolution?: Resolution;
   implementationResolution?: Resolution;
   trace: string[];

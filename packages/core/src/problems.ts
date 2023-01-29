@@ -2,7 +2,13 @@ import ts from "typescript";
 import type { ResolutionKind, Analysis, TypedAnalysis, UntypedAnalysis } from "./types.js";
 import { allResolutionKinds } from "./utils.js";
 
-export type ResolutionProblemKind = "NoResolution" | "UntypedResolution" | "FalseESM" | "FalseCJS" | "CJSResolvesToESM";
+export type ResolutionProblemKind =
+  | "NoResolution"
+  | "UntypedResolution"
+  | "FalseESM"
+  | "FalseCJS"
+  | "CJSResolvesToESM"
+  | "Wildcard";
 
 export type ProblemKind = ResolutionProblemKind | "NoTypes";
 
@@ -37,6 +43,7 @@ export interface ResolutionProblemSummary {
 }
 
 const problemTitles: Record<ProblemKind, string> = {
+  Wildcard: "Wildcards",
   NoTypes: "No types found",
   NoResolution: "Resolution failed",
   UntypedResolution: "Could not find types",
@@ -79,6 +86,14 @@ export function getProblems(result: Analysis): Problem[] {
     for (const kind in entrypoint) {
       const resolutionKind = kind as keyof typeof entrypoint;
       const result = entrypoint[resolutionKind];
+      if (result.isWildcard) {
+        problems.push({
+          kind: "Wildcard",
+          entrypoint: subpath,
+          resolutionKind,
+        });
+        continue;
+      }
       if (!result.resolution) {
         problems.push({
           kind: "NoResolution",
@@ -212,6 +227,8 @@ function getMessage(
     }
 
     switch (kind) {
+      case "Wildcard":
+        return `Wildcards cannot yet be analyzed by this tool.`;
       case "NoResolution":
         return `Imports of ${entrypoints}${resolutionSettings} failed to resolve.`;
       case "UntypedResolution":

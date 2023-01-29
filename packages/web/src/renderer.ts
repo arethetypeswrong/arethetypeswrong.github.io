@@ -8,6 +8,7 @@ interface Events {
 }
 
 const problemKinds: Record<ResolutionProblemKind, string> = {
+  Wildcard: "❔ Unable to check",
   NoResolution: "💀 Failed to resolve",
   UntypedResolution: "❌ No types",
   FalseCJS: "🎭 Masquerading as CJS",
