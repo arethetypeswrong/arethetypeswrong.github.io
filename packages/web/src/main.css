@@ -18,6 +18,12 @@
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+html {
+  display: flex;
+}
 html,
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
@@ -26,9 +32,23 @@ body {
   line-height: 1.5;
   color: var(--color-text-primary);
   background-color: var(--color-bg);
+  padding: 0;
 }
 body {
-  padding: 1rem;
+  padding: 1rem 0;
+  margin: 0;
+  min-width: 100vw;
+}
+body > * {
+  padding: 0 1rem;
+}
+#header,
+#form,
+#problems,
+#details summary {
+  position: sticky;
+  left: 0;
+  width: 100vw;
 }
 #header {
   display: flex;
@@ -61,9 +81,23 @@ h1 {
   content: "";
   display: inline-block;
 }
+p {
+  max-width: 800px;
+}
+dt {
+  float: left;
+}
+dd {
+  margin-inline-start: 30px;
+}
+dt,
+dd {
+  padding: 0.5em 0;
+}
 #resolutions {
   margin-bottom: 1rem;
   font-size: small;
+  white-space: nowrap;
 }
 table,
 th,

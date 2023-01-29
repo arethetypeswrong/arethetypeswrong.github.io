@@ -1,4 +1,4 @@
-import { type ResolutionKind, type ResolutionProblemKind } from "are-the-types-wrong-core";
+import { type ProblemKind, type ResolutionKind, type ResolutionProblemKind } from "are-the-types-wrong-core";
 import { allResolutionKinds } from "are-the-types-wrong-core/utils";
 import { computed, state, subscribe } from "./state";
 
@@ -7,13 +7,23 @@ interface Events {
   onCheck: () => void;
 }
 
-const problemKinds: Record<ResolutionProblemKind, string> = {
-  Wildcard: "❔ Unable to check",
-  NoResolution: "💀 Failed to resolve",
-  UntypedResolution: "❌ No types",
-  FalseCJS: "🎭 Masquerading as CJS",
-  FalseESM: "👺 Masquerading as ESM",
-  CJSResolvesToESM: "😵‍💫 ESM-only",
+const problemEmoji: Record<ProblemKind, string> = {
+  NoTypes: "",
+  Wildcard: "❔",
+  NoResolution: "💀",
+  UntypedResolution: "❌",
+  FalseCJS: "🎭",
+  FalseESM: "👺",
+  CJSResolvesToESM: "😵‍💫",
+};
+
+const problemShortDescriptions: Record<ResolutionProblemKind, string> = {
+  Wildcard: `${problemEmoji.Wildcard} Unable to check`,
+  NoResolution: `${problemEmoji.NoResolution} Failed to resolve`,
+  UntypedResolution: `${problemEmoji.UntypedResolution} No types`,
+  FalseCJS: `${problemEmoji.FalseCJS} Masquerading as CJS`,
+  FalseESM: `${problemEmoji.FalseESM} Masquerading as ESM`,
+  CJSResolvesToESM: `${problemEmoji.CJSResolvesToESM} ESM-only`,
 };
 
 const resolutionKinds: Record<ResolutionKind, string> = {
@@ -96,11 +106,11 @@ export function subscribeRenderer(events: Events) {
         const { analysis, problemSummaries, resolutionProblems } = state.checks.data;
         detailsPreElement.textContent = JSON.stringify(analysis, null, 2);
         if (problemSummaries.length) {
-          problemsElement.innerHTML = `<ul>${problemSummaries
+          problemsElement.innerHTML = `<dl>${problemSummaries
             .map((problem) => {
-              return `<li>${problem.messageHtml}</li>`;
+              return `<dt>${problemEmoji[problem.kind]}</dt><dd>${problem.messageHtml}</dd>`;
             })
-            .join("")}</ul>`;
+            .join("")}</dl>`;
         } else {
           problemsElement.textContent = "No problems found 🌟";
         }
@@ -130,7 +140,9 @@ export function subscribeRenderer(events: Events) {
                         (problem) => problem.entrypoint === subpath && problem.resolutionKind === resolutionKind
                       );
                       return `<td>${
-                        problems.length ? problems.map((problem) => problemKinds[problem.kind]).join("<br />") : "✅"
+                        problems.length
+                          ? problems.map((problem) => problemShortDescriptions[problem.kind]).join("<br />")
+                          : "✅"
                       }</td>`;
                     })
                     .join("")}
