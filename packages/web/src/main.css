@@ -37,15 +37,13 @@ body {
 body {
   padding: 1rem 0;
   margin: 0;
-  min-width: 100vw;
 }
 body > * {
   padding: 0 1rem;
 }
 #header,
 #form,
-#problems,
-#details summary {
+#problems {
   position: sticky;
   left: 0;
   width: 100vw;

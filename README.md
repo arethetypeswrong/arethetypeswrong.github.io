@@ -24,7 +24,6 @@ This project attempts to analyze npm package contents for issues with their Type
 The first things on my roadmap:
 
 - More thorough explanations of problems
-- List affected subpaths and module resolution modes
 - Detect `export default` issues
 - Analyze a local tarball from `npm pack`
 - Official TypeScript module documentation to link to
@@ -33,7 +32,7 @@ Some other ideas:
 
 - Use unpkg or something so it uses less data
 - Generate a downloadable reproduction of a problem
-- Suggest more solutions
+- Suggest solutions
 
 ## Contributing
 
