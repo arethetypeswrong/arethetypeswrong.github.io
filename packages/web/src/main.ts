@@ -10,6 +10,9 @@ import {
   actions,
 } from "./state.ts";
 
+// Good grief https://semver.org/#is-there-a-suggested-regular-expression-regex-to-check-a-semver-string
+const semverRegex =
+  /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/;
 const worker = new Worker(new URL("../worker/worker.ts", import.meta.url), { type: "module" });
 worker.onmessage = (event: MessageEvent<ResultMessage>) => {
   actions.setChecks({
@@ -102,7 +105,7 @@ function parsePackageSpec(input: string): SyncFailable<ParsedPackageSpec> {
       error: "Invalid package name",
     };
   }
-  if (version && version !== "latest" && !/^\d+\.\d+\.\d+$/.test(version)) {
+  if (version && version !== "latest" && !semverRegex.test(version)) {
     return {
       status: "error",
       error: "Invalid version",
