@@ -7,7 +7,16 @@ const { fetch } = createFetch();
 
 export const fetchTarballHost: Host = {
   createPackageFS,
+  createPackageFSFromTarball,
 };
+
+async function createPackageFSFromTarball(tarball: Uint8Array): Promise<FS> {
+  const data = gunzipSync(tarball);
+  const files = untar(data);
+  const packageJson = files.find((f) => f.filename === "package/package.json")?.fileData;
+  const packageName = JSON.parse(new TextDecoder().decode(packageJson)).name;
+  return createFS(files, "/node_modules/" + packageName);
+}
 
 async function createPackageFS(packageName: string, packageVersion = "latest"): Promise<FS> {
   const manifestUrl = `https://registry.npmjs.org/${packageName}/${packageVersion}`;

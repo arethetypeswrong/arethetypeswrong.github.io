@@ -24,6 +24,11 @@ worker.onmessage = (event: MessageEvent<ResultMessage>) => {
 subscribeRenderer({
   onPackageNameInput: debounce(onPackageNameInput, 300),
   onCheck,
+  onSelectFile: async (file) => {
+    const arrayBuffer = await file.arrayBuffer();
+    const data = new Uint8Array(arrayBuffer);
+    worker.postMessage({ kind: "check-file", file: data });
+  },
 });
 
 async function onPackageNameInput(value: string) {

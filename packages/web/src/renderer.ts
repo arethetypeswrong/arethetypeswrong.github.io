@@ -5,6 +5,7 @@ import { computed, state, subscribe } from "./state";
 interface Events {
   onPackageNameInput: (value: string) => void;
   onCheck: () => void;
+  onSelectFile: (blob: Blob) => void;
 }
 
 const problemEmoji: Record<ProblemKind, string> = {
@@ -44,6 +45,7 @@ export function subscribeRenderer(events: Events) {
     const packageNameInput = document.getElementById("package-spec") as HTMLInputElement;
     const messageElement = document.getElementById("message") as HTMLDivElement;
     const checkButton = document.getElementById("check") as HTMLButtonElement;
+    const fileInput = document.getElementById("file") as HTMLInputElement;
     const form = document.getElementById("form") as HTMLFormElement;
     const problemsElement = document.getElementById("problems") as HTMLParagraphElement;
     const resolutionsElement = document.getElementById("resolutions") as HTMLTableElement;
@@ -57,6 +59,12 @@ export function subscribeRenderer(events: Events) {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       events.onCheck();
+    });
+
+    fileInput.addEventListener("change", () => {
+      if (fileInput.files?.length) {
+        events.onSelectFile(fileInput.files[0]);
+      }
     });
 
     computed(
@@ -113,9 +121,13 @@ export function subscribeRenderer(events: Events) {
         detailsPreElement.textContent = JSON.stringify(analysis, null, 2);
         if (problemSummaries.length) {
           problemsElement.innerHTML = `<dl>${problemSummaries
-            .map((problem) => {
-              return `<dt>${problemEmoji[problem.kind]}</dt><dd>${problem.messageHtml}</dd>`;
-            })
+            .flatMap((problem) =>
+              problem.kind === "NoTypes"
+                ? []
+                : problem.messages.map((message) => {
+                    return `<dt>${problemEmoji[problem.kind]}</dt><dd>${message.messageHtml}</dd>`;
+                  })
+            )
             .join("")}</dl>`;
         } else {
           problemsElement.textContent = "No problems found 🌟";

@@ -21,6 +21,10 @@
   "scripts": {
     "tsc": "tsc"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "author": "Andrew Branch",
   "license": "MIT",
   "dependencies": {

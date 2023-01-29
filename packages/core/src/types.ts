@@ -3,6 +3,7 @@ import type ts from "typescript";
 
 export interface Host {
   createPackageFS: (packageName: string, packageVersion?: string) => Promise<FS>;
+  createPackageFSFromTarball: (tgz: Uint8Array) => Promise<FS>;
 }
 
 export interface FS {

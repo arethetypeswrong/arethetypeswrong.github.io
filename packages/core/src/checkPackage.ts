@@ -10,6 +10,22 @@ import type {
   Resolution,
 } from "./types.js";
 
+export async function checkTgz(tgz: Uint8Array, host: Host = fetchTarballHost): Promise<Analysis> {
+  const packageFS = await host.createPackageFSFromTarball(tgz);
+  const files = packageFS.listFiles();
+  const containsTypes = files.some(ts.hasTSFileExtension);
+  if (!containsTypes) {
+    return { containsTypes };
+  }
+  const parts = files[0].split("/");
+  let packageName = parts[2];
+  if (packageName.startsWith("@")) {
+    packageName = parts.slice(2, 4).join("/");
+  }
+  const entrypoints = checkEntrypoints(packageName, packageFS);
+  return { packageName, containsTypes, entrypointResolutions: entrypoints };
+}
+
 export async function checkPackage(
   packageName: string,
   packageVersion?: string,

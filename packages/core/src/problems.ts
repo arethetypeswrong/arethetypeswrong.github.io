@@ -36,10 +36,10 @@ export interface NoTypesProblemSummary {
 export interface ResolutionProblemSummary {
   kind: ResolutionProblemKind;
   title: string;
-  affectedEntrypoints: string[];
-  affectedResolutionKinds: ResolutionKind[];
-  messageText: string;
-  messageHtml: string;
+  messages: {
+    messageText: string;
+    messageHtml: string;
+  }[];
 }
 
 const problemTitles: Record<ProblemKind, string> = {
@@ -141,7 +141,7 @@ export function getProblems(result: Analysis): Problem[] {
   return problems;
 }
 
-export function groupResolutionProblems(
+export function groupResolutionProblemsByKind(
   problems: ResolutionProblem[]
 ): Partial<Record<ResolutionProblemKind, ResolutionProblem[]>> {
   const result: Partial<Record<ResolutionProblemKind, ResolutionProblem[]>> = {};
@@ -156,97 +156,137 @@ export function isResolutionProblem(problem: Problem): problem is ResolutionProb
 }
 
 export function summarizeResolutionProblems(problems: ResolutionProblem[], analysis: TypedAnalysis): ProblemSummary[] {
-  const grouped = groupResolutionProblems(problems);
+  const grouped = groupResolutionProblemsByKind(problems);
   const result: ResolutionProblemSummary[] = [];
   for (const kind in grouped) {
     const problems = grouped[kind as ResolutionProblemKind]!;
-    const affectedEntrypoints = new Set(problems.map((p) => p.entrypoint));
-    const affectedResolutionKinds = new Set(problems.map((p) => p.resolutionKind));
     const summary: ResolutionProblemSummary = {
       kind: problems[0].kind,
       title: problemTitles[problems[0].kind],
-      affectedEntrypoints: Array.from(affectedEntrypoints),
-      affectedResolutionKinds: Array.from(affectedResolutionKinds),
-      ...getMessage(problems[0].kind, Array.from(affectedEntrypoints), Array.from(affectedResolutionKinds), analysis),
+      messages: getMessages(problems[0].kind, analysis, problems),
     };
     result.push(summary);
   }
   return result;
 }
 
-function getMessage(
-  kind: ResolutionProblemKind,
-  affectedEntrypoints: string[],
-  affectedResolutionKinds: ResolutionKind[],
-  analysis: TypedAnalysis
-) {
-  affectedResolutionKinds = affectedResolutionKinds.slice().sort();
+function getMessages(kind: ResolutionProblemKind, analysis: TypedAnalysis, problems: ResolutionProblem[]) {
+  if (kind === "Wildcard") {
+    return [msg(() => `Wildcards cannot yet be analyzed by this tool.`)];
+  }
+
   const allEntrypoints = new Set(Object.keys(analysis.entrypointResolutions));
-  const affectsAllEntrypoints = affectedEntrypoints.length === allEntrypoints.size;
-  const affectsAllResolutionKinds = affectedResolutionKinds.length === allResolutionKinds.length;
-  const affectsAllNode16 =
-    affectsAllResolutionKinds ||
-    (affectedResolutionKinds.includes("node16-cjs") && affectedResolutionKinds.includes("node16-esm"));
-  const affectsSomeNode16 =
-    affectedResolutionKinds.includes("node16-cjs") || affectedResolutionKinds.includes("node16-esm");
-  return msg((f) => {
-    const entrypoints =
-      allEntrypoints.size === 1
-        ? "the package"
-        : affectsAllEntrypoints
-        ? f.strong("all entrypoints")
-        : affectedEntrypoints.length === 1
-        ? `the ${f.code(`"${formatEntrypoint(analysis.packageName, affectedEntrypoints[0])}"`)} entrypoint`
-        : f.strong(`${affectedEntrypoints.length} entrypoints`);
+  const groupedByEntrypoint = groupByEntrypoint(problems);
+  const groupedByResolutionKind = groupByResolutionKind(problems);
+  const fullRows = Object.keys(groupedByResolutionKind)
+    .map((resolutionKind) => {
+      const problems = groupedByResolutionKind[resolutionKind as ResolutionKind];
+      return problems?.length === allEntrypoints.size ? problems : undefined;
+    })
+    .filter((g): g is ResolutionProblem[] => !!g);
+  const fullColumns = Object.keys(groupedByEntrypoint)
+    .map((entrypoint) => {
+      const problems = groupedByEntrypoint[entrypoint];
+      return problems?.length === allResolutionKinds.length ? problems : undefined;
+    })
+    .filter((g): g is ResolutionProblem[] => !!g);
 
-    const affectsSingleResolutionSetting =
-      affectedResolutionKinds.length === 1 || (affectedResolutionKinds.length === 2 && affectsAllNode16);
+  const messages: { messageText: string; messageHtml: string }[] = [];
 
-    let resolutionSettings = "";
-    if (affectsSingleResolutionSetting) {
-      resolutionSettings = ` when compiled under ${formatResolutionKind(affectedResolutionKinds[0], f)}`;
-    } else if (!affectsAllResolutionKinds) {
-      if (affectsAllNode16 || !affectsSomeNode16) {
-        resolutionSettings =
-          " when compiled under the " +
-          affectedResolutionKinds.map((k) => f.code(moduleResolutionKinds[k])).join(" or ") +
-          " module resolution settings";
-      } else {
-        const needsComma = affectedResolutionKinds.length > 2;
-        resolutionSettings =
-          " when compiled under the " +
-          affectedResolutionKinds
-            .slice(0, -1)
-            .map((k) => f.code(moduleResolutionKinds[k]))
-            .join(", ") +
-          `${needsComma ? "," : ""} or ${formatResolutionKind(
-            affectedResolutionKinds[affectedResolutionKinds.length - 1],
-            f
-          )}`;
-      }
-    }
-
-    switch (kind) {
-      case "Wildcard":
-        return `Wildcards cannot yet be analyzed by this tool.`;
-      case "NoResolution":
-        return `Imports of ${entrypoints}${resolutionSettings} failed to resolve.`;
-      case "UntypedResolution":
-        return `Imports of ${entrypoints}${resolutionSettings} resolved to JavaScript files, but no types.`;
-      case "FalseESM":
-        return `Imports of ${entrypoints}${resolutionSettings} resolved to ESM types, but CJS implementations.`;
-      case "FalseCJS":
-        return `Imports of ${entrypoints}${resolutionSettings} resolved to CJS types, but ESM implementations.`;
-      case "CJSResolvesToESM":
-        return (
-          `Imports of ${entrypoints} only resolved to ${
-            affectedEntrypoints.length === 1 ? "an ES module" : "ES modules"
-          } ` +
-          `even when the importing module is CJS. CJS modules in Node will only be able to access this entrypoint with ` +
-          `a dynamic import.`
+  if (fullRows.length > 0) {
+    messages.push(
+      msg((f) => {
+        const resolutionKinds = formatResolutionKinds(
+          fullRows.map((r) => r[0].resolutionKind),
+          f
         );
+        return getMessageText(resolutionKinds, f.strong("all entrypoints"));
+      })
+    );
+  }
+
+  if (fullRows.length === allResolutionKinds.length) {
+    return messages;
+  }
+
+  if (fullColumns.length > 0) {
+    messages.push(
+      msg((f) => {
+        const entrypoints = formatEntrypoints(
+          analysis.packageName,
+          fullColumns.map((c) => c[0].entrypoint),
+          allEntrypoints.size,
+          f
+        );
+        return getMessageText(f.strong("all module resolution settings"), entrypoints);
+      })
+    );
+  }
+
+  const remainingProblems = problems.filter(
+    (p) =>
+      !fullRows.some((r) => r[0].resolutionKind === p.resolutionKind) &&
+      !fullColumns.some((c) => c[0].entrypoint === p.entrypoint)
+  );
+  if (remainingProblems.length > 0) {
+    const groupedByEntrypoint = groupByEntrypoint(remainingProblems);
+    const groupedByResolutionKind = groupByResolutionKind(remainingProblems);
+    // Report fewer, larger groups
+    const biggerGroups =
+      Object.keys(groupedByEntrypoint).length <= Object.keys(groupedByResolutionKind).length
+        ? groupedByEntrypoint
+        : groupedByResolutionKind;
+    for (const groupKey in biggerGroups) {
+      const entrypoints =
+        biggerGroups === groupedByEntrypoint
+          ? [groupKey]
+          : biggerGroups[groupKey as ResolutionKind]!.map((p) => p.entrypoint);
+      const resolutionKinds =
+        biggerGroups === groupedByResolutionKind
+          ? [groupKey as ResolutionKind]
+          : biggerGroups[groupKey]!.map((p) => p.resolutionKind);
+      messages.push(
+        msg((f) =>
+          getMessageText(
+            formatResolutionKinds(resolutionKinds, f),
+            formatEntrypoints(analysis.packageName, entrypoints, allEntrypoints.size, f)
+          )
+        )
+      );
     }
-  });
+  }
+  return messages;
+
+  function getMessageText(resolutionKinds: string, entrypoints: string) {
+    switch (kind) {
+      case "NoResolution":
+        return `Imports of ${entrypoints} under ${resolutionKinds} failed to resolve.`;
+      case "UntypedResolution":
+        return `Imports of ${entrypoints} under ${resolutionKinds} resolved to JavaScript files, but no types.`;
+      case "FalseESM":
+        return `Imports of ${entrypoints} under ${resolutionKinds} resolved to ESM types, but CJS implementations.`;
+      case "FalseCJS":
+        return `Imports of ${entrypoints} under ${resolutionKinds} resolved to CJS types, but ESM implementations.`;
+      case "CJSResolvesToESM":
+        return `Imports of ${entrypoints} resolved to ES modules from a CJS importing module. CJS modules in Node will only be able to access this entrypoint with a dynamic import.`;
+      case "Wildcard":
+        throw new Error("Wildcard should have been handled above.");
+    }
+  }
+}
+
+function groupByResolutionKind(problems: ResolutionProblem[]) {
+  return problems.reduce((result: Partial<Record<ResolutionKind, ResolutionProblem[]>>, problem) => {
+    (result[problem.resolutionKind] ??= []).push(problem);
+    return result;
+  }, {});
+}
+
+function groupByEntrypoint(problems: ResolutionProblem[]) {
+  return problems.reduce((result: Record<string, ResolutionProblem[]>, problem) => {
+    (result[problem.entrypoint] ??= []).push(problem);
+    return result;
+  }, {});
 }
 
 function formatResolutionKind(kind: ResolutionKind, f: Formatters) {
@@ -271,8 +311,34 @@ function formatResolutionKind(kind: ResolutionKind, f: Formatters) {
   }
 }
 
-function formatEntrypoint(packageName: string, subpath: string) {
-  return subpath === "." ? packageName : `${packageName}/${subpath.substring(2)}`;
+function formatResolutionKinds(kinds: ResolutionKind[], f: Formatters) {
+  if (kinds.length === 1) {
+    return formatResolutionKind(kinds[0], f);
+  } else if (kinds.length === 2 && kinds.includes("node16-cjs") && kinds.includes("node16-esm")) {
+    return `the ${f.code("node16")} module resolution setting`;
+  } else if (kinds.length === allResolutionKinds.length - 1 && !kinds.includes("node10")) {
+    return f.strong("all modern module resolution settings");
+  } else if (kinds.length === allResolutionKinds.length) {
+    return f.strong("all module resolution settings");
+  } else if (kinds.length === 2 && kinds.includes("node16-esm") && kinds.includes("bundler")) {
+    return `resolution modes that use the ${f.code("import")} condition in package.json ${f.code(`"exports"`)}`;
+  } else {
+    return f.strong("multiple module resolution settings");
+  }
+}
+
+function formatEntrypoints(packageName: string, entrypoints: string[], entrypointCount: number, f: Formatters) {
+  if (entrypoints.length === 1) {
+    return formatEntrypoint(packageName, entrypoints[0], f);
+  }
+  if (entrypoints.length === entrypointCount) {
+    return f.strong("all entrypoints");
+  }
+  return f.strong("multiple entrypoints");
+}
+
+function formatEntrypoint(packageName: string, subpath: string, f: Formatters) {
+  return f.code(`"${subpath === "." ? packageName : `${packageName}/${subpath.substring(2)}`}"`);
 }
 
 type Formatters = Record<"strong" | "em" | "code", (text: string) => string>;

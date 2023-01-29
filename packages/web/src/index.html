@@ -12,22 +12,28 @@
   <body>
     <div id="header">
       <h1>Are the types wrong?</h1>
-      <a href="https://github.com/arethetypeswrong/arethetypeswrong.github.io"> GitHub / About </a>
+      <a href="https://github.com/arethetypeswrong/arethetypeswrong.github.io">GitHub / About</a>
     </div>
     <form id="form">
-      <label>
-        npm package
-        <input
-          type="text"
-          id="package-spec"
-          autofocus
-          autocapitalize="none"
-          autocorrect="off"
-          autocomplete="off"
-          spellcheck="false"
-        />
-      </label>
-      <button id="check" disabled>Check</button>
+      <p>
+        <label>
+          npm package
+          <input
+            type="text"
+            id="package-spec"
+            autofocus
+            autocapitalize="none"
+            autocorrect="off"
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </label>
+        <button id="check" disabled>Check</button>
+      </p>
+      <p>
+        or <code>npm pack</code> output
+        <input type="file" id="file" accept=".tgz" />
+      </p>
       <div id="message"></div>
     </form>
     <p id="problems"></p>

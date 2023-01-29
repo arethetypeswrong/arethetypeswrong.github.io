@@ -25,14 +25,13 @@ The first things on my roadmap:
 
 - More thorough explanations of problems
 - Detect `export default` issues
-- Analyze a local tarball from `npm pack`
 - Official TypeScript module documentation to link to
 
 Some other ideas:
 
 - Use unpkg or something so it uses less data
 - Generate a downloadable reproduction of a problem
-- Suggest solutions
+- Analyze traces and failed lookup locations to suggest fixes
 
 ## Contributing
 
