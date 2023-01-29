@@ -3,6 +3,7 @@
   --color-text-primary: rgba(0, 0, 0, 1);
   --color-text-secondary: rgba(0, 0, 0, 0.7);
   --color-text-error: rgba(173, 42, 42, 1);
+  --color-link: rgb(0, 66, 181);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -10,6 +11,7 @@
     --color-text-primary: rgba(255, 255, 255, 1);
     --color-text-secondary: rgba(255, 255, 255, 0.7);
     --color-text-error: rgb(247, 127, 127);
+    --color-link: rgb(103, 141, 207);
   }
 }
 
@@ -29,6 +31,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+}
+a,
+a:visited {
+  color: var(--color-link);
 }
 h1 {
   margin-top: 0;
