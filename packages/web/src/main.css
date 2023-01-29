@@ -8,10 +8,13 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: #222;
+    --color-input-bg: #333;
     --color-text-primary: rgba(255, 255, 255, 1);
     --color-text-secondary: rgba(255, 255, 255, 0.7);
     --color-text-error: rgb(247, 127, 127);
     --color-link: rgb(103, 141, 207);
+    --font-monospace: "SF Mono", "Roboto Mono", "Fira Code", "Fira Mono", "Droid Sans Mono", "Source Code Pro",
+      monospace;
   }
 }
 
@@ -42,6 +45,9 @@ h1 {
 }
 #package-name {
   margin: 0 0.5em;
+  background-color: var(--color-input-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-monospace);
 }
 #message {
   font-size: small;
