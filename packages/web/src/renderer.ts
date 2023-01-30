@@ -123,7 +123,7 @@ export function subscribeRenderer(events: Events) {
           problemsElement.innerHTML = `<dl>${problemSummaries
             .flatMap((problem) =>
               problem.kind === "NoTypes"
-                ? []
+                ? [`<dt>${problemEmoji.NoTypes}</dt><dd>This packge does not contain types.</dd>`]
                 : problem.messages.map((message) => {
                     return `<dt>${problemEmoji[problem.kind]}</dt><dd>${message.messageHtml}</dd>`;
                   })
