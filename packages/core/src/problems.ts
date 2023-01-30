@@ -200,7 +200,7 @@ function getMessages(kind: ResolutionProblemKind, analysis: TypedAnalysis, probl
           fullRows.map((r) => r[0].resolutionKind),
           f
         );
-        return getMessageText(resolutionKinds, f.strong("all entrypoints"));
+        return getMessageText(resolutionKinds, allEntrypoints.size === 1 ? "the package" : f.strong("all entrypoints"));
       })
     );
   }
