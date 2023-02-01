@@ -100,7 +100,7 @@ export function getProblems(result: Analysis): Problem[] {
           entrypoint: subpath,
           resolutionKind,
         });
-      } else if (!result.resolution.isTypeScript) {
+      } else if (!result.resolution.isTypeScript && !result.resolution.isJson) {
         problems.push({
           kind: "UntypedResolution",
           entrypoint: subpath,

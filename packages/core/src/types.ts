@@ -45,5 +45,6 @@ export interface EntrypointResolutionAnalysis {
 export interface Resolution {
   fileName: string;
   isTypeScript: boolean;
+  isJson: boolean;
   moduleKind: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined;
 }

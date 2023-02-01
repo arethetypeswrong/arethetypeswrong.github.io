@@ -58,11 +58,13 @@ export function ChecksTable(props: { checks?: Checks }) {
               const problems = resolutionProblems.filter(
                 (problem) => problem.entrypoint === subpath && problem.resolutionKind === resolutionKind
               );
+              const resolution = analysis.entrypointResolutions[subpath][resolutionKind].resolution;
               return `<td>${
                 problems.length
                   ? problems.map((problem) => problemShortDescriptions[problem.kind]).join("<br />")
-                  : "✅ " +
-                    moduleKinds[analysis.entrypointResolutions[subpath][resolutionKind].resolution?.moduleKind || ""]
+                  : resolution?.isJson
+                  ? "✅ (JSON)"
+                  : "✅ " + moduleKinds[resolution?.moduleKind || ""]
               }</td>`;
             })
             .join("")}
