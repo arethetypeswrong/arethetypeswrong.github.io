@@ -1,23 +1,18 @@
-import type { ResultMessage } from "../worker/worker.ts";
 import validatePackgeName from "validate-npm-package-name";
+import type { ResultMessage } from "../worker/worker.ts";
 import { subscribeRenderer } from "./renderer.ts";
-import {
-  state,
-  type AsyncFailable,
-  type PackageInfo,
-  type ParsedPackageSpec,
-  type SyncFailable,
-  actions,
-} from "./state.ts";
+import { updateState, type PackageInfo, type ParsedPackageSpec, getState } from "./state.ts";
+import { shallowEqual } from "./utils/shallowEqual.ts";
 
 // Good grief https://semver.org/#is-there-a-suggested-regular-expression-regex-to-check-a-semver-string
 const semverRegex =
   /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/;
 const worker = new Worker(new URL("../worker/worker.ts", import.meta.url), { type: "module" });
 worker.onmessage = (event: MessageEvent<ResultMessage>) => {
-  actions.setChecks({
-    status: "success",
-    data: event.data.data,
+  updateState((state) => {
+    state.checks = event.data.data;
+    state.isLoading = false;
+    state.message = undefined;
   });
 };
 
@@ -34,48 +29,86 @@ subscribeRenderer({
 async function onPackageNameInput(value: string) {
   value = value.trim();
   if (!value) {
-    actions.setParsedPackageSpec(undefined);
-    actions.setPackageInfo(undefined);
+    updateState((state) => {
+      state.packageInfo.info = undefined;
+      state.packageInfo.parsed = undefined;
+      state.message = undefined;
+    });
     return;
   }
   const parsed = parsePackageSpec(value);
-  actions.setParsedPackageSpec(parsed);
-  if (parsed.status === "success") {
-    actions.setPackageInfo({ status: "loading" });
-    const info = await getPackageInfo(parsed.data);
-    actions.setPackageInfo(info);
+  if (parsed.status === "error") {
+    updateState((state) => {
+      state.packageInfo.info = undefined;
+      state.packageInfo.parsed = undefined;
+      state.checks = undefined;
+      state.message = {
+        isError: true,
+        text: parsed.error,
+      };
+    });
+    return;
+  }
+
+  if (!shallowEqual(getState().packageInfo.parsed, parsed.data)) {
+    updateState((state) => {
+      state.packageInfo.parsed = parsed.data;
+      state.checks = undefined;
+    });
+
+    try {
+      const info = await getPackageInfo(parsed.data);
+      updateState((state) => {
+        state.packageInfo.info = info;
+        state.message = {
+          isError: false,
+          text: info.size
+            ? `Checking will stream whatever ${info.size} gzipped is`
+            : "Checking will stream the tarball",
+        };
+      });
+    } catch (error) {
+      updateState((state) => {
+        state.packageInfo.info = undefined;
+        state.message = {
+          isError: true,
+          text: (error as Error).message,
+        };
+      });
+    }
   }
 }
 
 function onCheck() {
-  if (state.packageInfo.info?.status === "success" && state.packageInfo.parsed?.status === "success") {
-    actions.setChecks({ status: "loading" });
+  const { packageInfo } = getState();
+  if (packageInfo.info && packageInfo.parsed) {
+    updateState((state) => (state.isLoading = true));
     worker.postMessage({
       kind: "check-package",
-      packageName: state.packageInfo.parsed.data.packageName,
-      version: state.packageInfo.parsed.data.version,
+      packageName: packageInfo.parsed.packageName,
+      version: packageInfo.parsed.version,
     });
   }
 }
 
-async function getPackageInfo({ packageName, version }: ParsedPackageSpec): Promise<AsyncFailable<PackageInfo>> {
-  const response = await fetch(`https://registry.npmjs.org/${packageName}/${version || "latest"}`);
-  if (!response.ok) {
+async function getPackageInfo({ packageName, version }: ParsedPackageSpec): Promise<PackageInfo> {
+  try {
+    const response = await fetch(`https://registry.npmjs.org/${packageName}/${version || "latest"}`);
+    if (!response.ok) {
+      throw new Error("Failed to get package info");
+    }
+    const data = await response.json();
     return {
-      status: "error",
-      error: response.statusText,
-    };
-  }
-  const data = await response.json();
-  return {
-    status: "success",
-    data: {
       size: data.dist.unpackedSize,
-    },
-  };
+    };
+  } catch (error) {
+    throw new Error("Failed to get package info");
+  }
 }
 
-function parsePackageSpec(input: string): SyncFailable<ParsedPackageSpec> {
+type Failable<T> = { status: "error"; error: string } | { status: "success"; data: T };
+
+function parsePackageSpec(input: string): Failable<ParsedPackageSpec> {
   let packageName;
   let version;
   let i = 0;
