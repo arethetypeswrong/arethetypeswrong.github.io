@@ -166,6 +166,7 @@ function checkEntrypointTyped(
       resolution.resolvedModule && {
         fileName: resolution.resolvedModule.resolvedFileName,
         moduleKind,
+        isJson: resolution.resolvedModule.extension === ts.Extension.Json,
         isTypeScript: ts.hasTSFileExtension(resolution.resolvedModule.resolvedFileName),
       }
     );
