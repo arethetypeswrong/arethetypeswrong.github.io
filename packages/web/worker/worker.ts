@@ -13,6 +13,7 @@ import {
 export interface CheckPackageEventData {
   kind: "check-package";
   packageName: string;
+  version: string | undefined;
 }
 
 export interface CheckFileEventData {
@@ -31,7 +32,9 @@ export interface ResultMessage {
 
 onmessage = async (event: MessageEvent<CheckPackageEventData | CheckFileEventData>) => {
   const analysis =
-    event.data.kind === "check-file" ? await checkTgz(event.data.file) : await checkPackage(event.data.packageName);
+    event.data.kind === "check-file"
+      ? await checkTgz(event.data.file)
+      : await checkPackage(event.data.packageName, event.data.version);
   const problemSummaries = getSummarizedProblems(analysis);
   const resolutionProblems = analysis.containsTypes ? getProblems(analysis) : [];
   postMessage({
