@@ -8,7 +8,8 @@ export type ResolutionProblemKind =
   | "FalseESM"
   | "FalseCJS"
   | "CJSResolvesToESM"
-  | "Wildcard";
+  | "Wildcard"
+  | "FallbackCondition";
 
 export type ProblemKind = ResolutionProblemKind | "NoTypes";
 
@@ -50,6 +51,7 @@ const problemTitles: Record<ProblemKind, string> = {
   FalseESM: "Types are ESM, but implementation is CJS",
   FalseCJS: "Types are CJS, but implementation is ESM",
   CJSResolvesToESM: "Entrypoint is ESM-only",
+  FallbackCondition: "Resloved through fallback condition",
 };
 
 const moduleResolutionKinds: Record<ResolutionKind, string> = {
@@ -136,9 +138,49 @@ export function getProblems(result: Analysis): Problem[] {
           resolutionKind,
         });
       }
+
+      if (resolution && resolvedThroughFallback(result.trace)) {
+        problems.push({
+          kind: "FallbackCondition",
+          entrypoint: subpath,
+          resolutionKind,
+        });
+      }
     }
   }
   return problems;
+}
+
+export function resolvedThroughFallback(traces: string[]) {
+  let i = 0;
+  while (i < traces.length) {
+    i = traces.indexOf("Entering conditional exports.", i);
+    if (i === -1) {
+      return false;
+    }
+    if (conditionalExportsResolvedThroughFallback()) {
+      return true;
+    }
+  }
+
+  function conditionalExportsResolvedThroughFallback(): boolean {
+    i++;
+    let seenFailure = false;
+    for (; i < traces.length; i++) {
+      if (traces[i].startsWith("Failed to resolve under condition '")) {
+        seenFailure = true;
+      } else if (seenFailure && traces[i].startsWith("Resolved under condition '")) {
+        return true;
+      } else if (traces[i] === "Entering conditional exports.") {
+        if (conditionalExportsResolvedThroughFallback()) {
+          return true;
+        }
+      } else if (traces[i] === "Exiting conditional exports.") {
+        return false;
+      }
+    }
+    return false;
+  }
 }
 
 export function groupResolutionProblemsByKind(
@@ -200,7 +242,11 @@ function getMessages(kind: ResolutionProblemKind, analysis: TypedAnalysis, probl
           fullRows.map((r) => r[0].resolutionKind),
           f
         );
-        return getMessageText(resolutionKinds, allEntrypoints.size === 1 ? "the package" : f.strong("all entrypoints"));
+        return getMessageText(
+          resolutionKinds,
+          allEntrypoints.size === 1 ? "the package" : f.strong("all entrypoints"),
+          f
+        );
       })
     );
   }
@@ -218,7 +264,7 @@ function getMessages(kind: ResolutionProblemKind, analysis: TypedAnalysis, probl
           allEntrypoints.size,
           f
         );
-        return getMessageText(f.strong("all module resolution settings"), entrypoints);
+        return getMessageText(f.strong("all module resolution settings"), entrypoints, f);
       })
     );
   }
@@ -249,7 +295,8 @@ function getMessages(kind: ResolutionProblemKind, analysis: TypedAnalysis, probl
         msg((f) =>
           getMessageText(
             formatResolutionKinds(resolutionKinds, f),
-            formatEntrypoints(analysis.packageName, entrypoints, allEntrypoints.size, f)
+            formatEntrypoints(analysis.packageName, entrypoints, allEntrypoints.size, f),
+            f
           )
         )
       );
@@ -257,7 +304,7 @@ function getMessages(kind: ResolutionProblemKind, analysis: TypedAnalysis, probl
   }
   return messages;
 
-  function getMessageText(resolutionKinds: string, entrypoints: string) {
+  function getMessageText(resolutionKinds: string, entrypoints: string, f: Formatters) {
     switch (kind) {
       case "NoResolution":
         return `Imports of ${entrypoints} under ${resolutionKinds} failed to resolve.`;
@@ -271,6 +318,14 @@ function getMessages(kind: ResolutionProblemKind, analysis: TypedAnalysis, probl
         return `Imports of ${entrypoints} resolved to ES modules from a CJS importing module. CJS modules in Node will only be able to access this entrypoint with a dynamic import.`;
       case "Wildcard":
         throw new Error("Wildcard should have been handled above.");
+      case "FallbackCondition":
+        return (
+          `Imports of ${entrypoints} under ${resolutionKinds} resolved through a conditional package.json export, but ` +
+          `only after failing to resolve through an earlier condition. This behavior is a ${f.a(
+            "TypeScript bug",
+            "https://github.com/microsoft/TypeScript/issues/50762"
+          )} and should not be relied upon.`
+        );
     }
   }
 }
@@ -341,17 +396,21 @@ function formatEntrypoint(packageName: string, subpath: string, f: Formatters) {
   return f.code(`"${subpath === "." ? packageName : `${packageName}/${subpath.substring(2)}`}"`);
 }
 
-type Formatters = Record<"strong" | "em" | "code", (text: string) => string>;
+type Formatters = Record<"strong" | "em" | "code", (text: string) => string> & {
+  a: (text: string, href: string) => string;
+};
 const identity = <T>(x: T) => x;
 const textFormatters: Formatters = {
   strong: identity,
   em: identity,
   code: (text) => "`" + text + "`",
+  a: (text, href) => `${text} (${href})`,
 };
 const htmlFormatters: Formatters = {
   strong: (text) => `<strong>${text}</strong>`,
   em: (text) => `<em>${text}</em>`,
   code: (text) => `<code>${text}</code>`,
+  a: (text, href) => `<a href="${href}">${text}</a>`,
 };
 
 function msg(cb: (format: Formatters) => string): { messageText: string; messageHtml: string } {
