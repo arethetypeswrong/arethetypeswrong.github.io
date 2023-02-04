@@ -5,6 +5,7 @@ import { ChecksTable } from "./views/ChecksTable";
 import { Details } from "./views/Details";
 import { Message } from "./views/Message";
 import { ProblemList } from "./views/ProblemList";
+import packageJson from "../package.json";
 
 interface Events {
   onPackageNameInput: (value: string) => void;
@@ -22,6 +23,9 @@ export function subscribeRenderer(events: Events) {
     const problemsElement = document.getElementById("problems") as HTMLParagraphElement;
     const resolutionsElement = document.getElementById("resolutions") as HTMLTableElement;
     const detailsElement = document.getElementById("details") as HTMLDivElement;
+    const changelogElement = document.getElementById("changelog") as HTMLAnchorElement;
+
+    changelogElement.innerText = `v${packageJson.version}`;
 
     packageNameInput.addEventListener("input", () => {
       events.onPackageNameInput(packageNameInput.value);

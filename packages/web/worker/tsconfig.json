@@ -1,19 +1,16 @@
 {
+  "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
-    "target": "es2018",
     "lib": [
       "webworker",
-      "es2018"
+      "es2019"
     ],
     "module": "esnext",
     "moduleResolution": "bundler",
     "emitDeclarationOnly": true,
-    "verbatimModuleSyntax": true,
     "allowImportingTsExtensions": true,
     "outDir": "../lib",
-    "rootDir": "..",
-    "composite": true,
-    "types": []
+    "rootDir": ".."
   },
   "references": [
     {

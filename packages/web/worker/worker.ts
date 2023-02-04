@@ -1,13 +1,13 @@
 import "./patchGlobal";
+
 import {
   checkPackage,
+  checkTgz,
+  getProblems,
   getSummarizedProblems,
   type Analysis,
   type ProblemSummary,
-  type Problem,
-  getProblems,
   type ResolutionProblem,
-  checkTgz,
 } from "are-the-types-wrong-core";
 
 export interface CheckPackageEventData {
