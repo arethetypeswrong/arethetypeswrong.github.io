@@ -10,7 +10,7 @@
     "tsc": "tsc -b",
     "build": "npm run tsc && npm run build --workspaces --if-present",
     "format": "prettier --write \"**/*.{ts,json,css}\"",
-    "patch-web": "npm version patch -w web",
+    "patch-web": "pushd packages/web && npm run patch && popd && git push && git push --tags",
     "test": "npm test --workspaces --if-present",
     "start": "npm start -w web"
   },
