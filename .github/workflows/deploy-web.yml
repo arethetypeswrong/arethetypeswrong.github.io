@@ -13,6 +13,7 @@ jobs:
       - run: npm install
       - run: npm run tsc
       - run: npm run build
+      - run: npm test
       - uses: actions/upload-pages-artifact@v1
         with:
           path: ./packages/web/dist

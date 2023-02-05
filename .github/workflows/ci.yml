@@ -14,3 +14,4 @@ jobs:
       - run: npm install
       - run: npm run tsc
       - run: npm run build
+      - run: npm test
