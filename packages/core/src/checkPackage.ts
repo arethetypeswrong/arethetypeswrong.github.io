@@ -8,6 +8,8 @@ import type {
   EntrypointResolutionAnalysis,
   TraceCollector,
   Resolution,
+  SymbolTable,
+  TypedAnalysis,
 } from "./types.js";
 
 export async function checkTgz(tgz: Uint8Array, host: Host = fetchTarballHost): Promise<Analysis> {
@@ -23,7 +25,8 @@ export async function checkTgz(tgz: Uint8Array, host: Host = fetchTarballHost): 
     packageName = parts.slice(2, 4).join("/");
   }
   const entrypoints = checkEntrypoints(packageName, packageFS);
-  return { packageName, containsTypes, entrypointResolutions: entrypoints };
+  const fileExports = buildFileExports(packageFS, entrypoints);
+  return { packageName, containsTypes, entrypointResolutions: entrypoints, fileExports };
 }
 
 export async function checkPackage(
@@ -37,7 +40,8 @@ export async function checkPackage(
     return { containsTypes };
   }
   const entrypoints = checkEntrypoints(packageName, packageFS);
-  return { packageName, containsTypes, entrypointResolutions: entrypoints };
+  const fileExports = buildFileExports(packageFS, entrypoints);
+  return { packageName, containsTypes, entrypointResolutions: entrypoints, fileExports };
 }
 
 function getSubpaths(exportsObject: any): string[] {
@@ -171,4 +175,49 @@ function checkEntrypointTyped(
       }
     );
   }
+}
+
+function buildFileExports(
+  fs: FS,
+  entrypoints: TypedAnalysis["entrypointResolutions"]
+): Record<string, SymbolTable | false> {
+  const result: Record<string, SymbolTable | false> = {};
+  for (const entrypoint in entrypoints) {
+    for (const resolutionKind in entrypoints[entrypoint]) {
+      const entrypointResolution = entrypoints[entrypoint][resolutionKind as ResolutionKind];
+      if (
+        entrypointResolution.resolution &&
+        !entrypointResolution.resolution.isJson &&
+        result[entrypointResolution.resolution.fileName] === undefined
+      ) {
+        result[entrypointResolution.resolution.fileName] = getModuleSymbolTable(
+          fs,
+          entrypointResolution.resolution.fileName
+        );
+      }
+    }
+  }
+  return result;
+}
+
+function getModuleSymbolTable(fs: FS, fileName: string): SymbolTable | false {
+  const sourceText = fs.readFile(fileName);
+  const sourceFile = ts.createSourceFile(fileName, sourceText, ts.ScriptTarget.Latest, /*setParentNodes*/ false);
+  ts.bindSourceFile(sourceFile, { allowJs: true, checkJs: true, target: ts.ScriptTarget.Latest });
+  if (!sourceFile.symbol) {
+    return false;
+  }
+  const symbolTable: SymbolTable = {};
+  sourceFile.symbol.exports?.forEach((symbol, escapedName) => {
+    const name = ts.unescapeLeadingUnderscores(escapedName);
+    symbolTable[name] = {
+      name,
+      flags: symbol.flags,
+      valueDeclarationRange: symbol.valueDeclaration && [
+        symbol.valueDeclaration.getStart(sourceFile),
+        symbol.valueDeclaration.end,
+      ],
+    };
+  });
+  return symbolTable;
 }

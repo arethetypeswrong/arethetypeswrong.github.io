@@ -1,9 +1,9 @@
-import type { Analysis, ProblemSummary, ResolutionProblem } from "are-the-types-wrong-core";
+import type { Analysis, ProblemSummary, Problem } from "are-the-types-wrong-core";
 
 export interface Checks {
   analysis: Analysis;
-  problemSummaries: ProblemSummary[];
-  resolutionProblems: ResolutionProblem[];
+  problemSummaries?: ProblemSummary[];
+  problems?: Problem[];
 }
 
 export interface State {

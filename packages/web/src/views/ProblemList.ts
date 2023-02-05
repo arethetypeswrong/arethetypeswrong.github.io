@@ -1,7 +1,13 @@
 import type { ProblemSummary } from "are-the-types-wrong-core";
 import { problemEmoji } from "./problemEmoji";
 
-export function ProblemList(props: { problems?: ProblemSummary[] }) {
+export function ProblemList(props: { problems?: ProblemSummary[]; containsTypes?: boolean }) {
+  if (!props.containsTypes) {
+    return {
+      innerHTML: "This package does not contain types.",
+    };
+  }
+
   if (!props.problems) {
     return {
       innerHTML: "",
@@ -20,11 +26,9 @@ export function ProblemList(props: { problems?: ProblemSummary[] }) {
 }
 
 function problem(p: ProblemSummary) {
-  return p.kind === "NoTypes"
-    ? `<dt>${problemEmoji.NoTypes}</dt><dd>This packge does not contain types.</dd>`
-    : p.messages
-        .map((message) => {
-          return `<dt>${problemEmoji[p.kind]}</dt><dd>${message.messageHtml}</dd>`;
-        })
-        .join("");
+  return p.messages
+    .map((message) => {
+      return `<dt>${problemEmoji[p.kind]}</dt><dd>${message.messageHtml}</dd>`;
+    })
+    .join("");
 }

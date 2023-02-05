@@ -7,7 +7,7 @@ import {
   getSummarizedProblems,
   type Analysis,
   type ProblemSummary,
-  type ResolutionProblem,
+  type Problem,
 } from "are-the-types-wrong-core";
 
 export interface CheckPackageEventData {
@@ -25,8 +25,8 @@ export interface ResultMessage {
   kind: "result";
   data: {
     analysis: Analysis;
-    problemSummaries: ProblemSummary[];
-    resolutionProblems: ResolutionProblem[];
+    problemSummaries?: ProblemSummary[];
+    resolutionProblems?: Problem[];
   };
 }
 
@@ -35,8 +35,8 @@ onmessage = async (event: MessageEvent<CheckPackageEventData | CheckFileEventDat
     event.data.kind === "check-file"
       ? await checkTgz(event.data.file)
       : await checkPackage(event.data.packageName, event.data.version);
-  const problemSummaries = getSummarizedProblems(analysis);
-  const resolutionProblems = analysis.containsTypes ? getProblems(analysis) : [];
+  const problemSummaries = analysis.containsTypes ? getSummarizedProblems(analysis) : undefined;
+  const resolutionProblems = analysis.containsTypes ? getProblems(analysis) : undefined;
   postMessage({
     kind: "result",
     data: {

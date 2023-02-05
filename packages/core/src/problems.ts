@@ -1,8 +1,8 @@
 import ts from "typescript";
-import type { ResolutionKind, Analysis, TypedAnalysis, UntypedAnalysis } from "./types.js";
+import type { ResolutionKind, TypedAnalysis } from "./types.js";
 import { allResolutionKinds } from "./utils.js";
 
-export type ResolutionProblemKind =
+export type ProblemKind =
   | "NoResolution"
   | "UntypedResolution"
   | "FalseESM"
@@ -11,31 +11,14 @@ export type ResolutionProblemKind =
   | "Wildcard"
   | "FallbackCondition";
 
-export type ProblemKind = ResolutionProblemKind | "NoTypes";
-
-export type Problem = NoTypesProblem | ResolutionProblem;
-
-export interface NoTypesProblem {
-  kind: "NoTypes";
-}
-
-export interface ResolutionProblem {
-  kind: ResolutionProblemKind;
+export interface Problem {
+  kind: ProblemKind;
   entrypoint: string;
   resolutionKind: ResolutionKind;
 }
 
-export type ProblemSummary = NoTypesProblemSummary | ResolutionProblemSummary;
-
-export interface NoTypesProblemSummary {
-  kind: "NoTypes";
-  title: string;
-  messageText: string;
-  messageHtml: string;
-}
-
-export interface ResolutionProblemSummary {
-  kind: ResolutionProblemKind;
+export interface ProblemSummary {
+  kind: ProblemKind;
   title: string;
   messages: {
     messageText: string;
@@ -45,7 +28,6 @@ export interface ResolutionProblemSummary {
 
 const problemTitles: Record<ProblemKind, string> = {
   Wildcard: "Wildcards",
-  NoTypes: "No types found",
   NoResolution: "Resolution failed",
   UntypedResolution: "Could not find types",
   FalseESM: "Types are ESM, but implementation is CJS",
@@ -61,28 +43,12 @@ const moduleResolutionKinds: Record<ResolutionKind, string> = {
   bundler: "bundler",
 };
 
-export function getSummarizedProblems(analysis: Analysis): ProblemSummary[] {
-  return analysis.containsTypes
-    ? summarizeResolutionProblems(getProblems(analysis), analysis)
-    : getProblems(analysis).map((p) => ({
-        kind: p.kind,
-        title: problemTitles[p.kind],
-        messageText: "This package does not contain types.",
-        messageHtml: "This package does not contain types.",
-      }));
+export function getSummarizedProblems(analysis: TypedAnalysis): ProblemSummary[] {
+  return summarizeResolutionProblems(getProblems(analysis), analysis);
 }
 
-export function getProblems(result: UntypedAnalysis): NoTypesProblem[];
-export function getProblems(result: TypedAnalysis): ResolutionProblem[];
-export function getProblems(result: Analysis): Problem[] {
-  if (!result.containsTypes) {
-    return [
-      {
-        kind: "NoTypes",
-      },
-    ];
-  }
-  const problems: ResolutionProblem[] = [];
+export function getProblems(result: TypedAnalysis): Problem[] {
+  const problems: Problem[] = [];
   for (const subpath in result.entrypointResolutions) {
     const entrypoint = result.entrypointResolutions[subpath];
     for (const kind in entrypoint) {
@@ -183,26 +149,20 @@ export function resolvedThroughFallback(traces: string[]) {
   }
 }
 
-export function groupResolutionProblemsByKind(
-  problems: ResolutionProblem[]
-): Partial<Record<ResolutionProblemKind, ResolutionProblem[]>> {
-  const result: Partial<Record<ResolutionProblemKind, ResolutionProblem[]>> = {};
+export function groupResolutionProblemsByKind(problems: Problem[]): Partial<Record<ProblemKind, Problem[]>> {
+  const result: Partial<Record<ProblemKind, Problem[]>> = {};
   for (const problem of problems) {
     (result[problem.kind] ??= []).push(problem);
   }
   return result;
 }
 
-export function isResolutionProblem(problem: Problem): problem is ResolutionProblem {
-  return problem.kind !== "NoTypes";
-}
-
-export function summarizeResolutionProblems(problems: ResolutionProblem[], analysis: TypedAnalysis): ProblemSummary[] {
+export function summarizeResolutionProblems(problems: Problem[], analysis: TypedAnalysis): ProblemSummary[] {
   const grouped = groupResolutionProblemsByKind(problems);
-  const result: ResolutionProblemSummary[] = [];
+  const result: ProblemSummary[] = [];
   for (const kind in grouped) {
-    const problems = grouped[kind as ResolutionProblemKind]!;
-    const summary: ResolutionProblemSummary = {
+    const problems = grouped[kind as ProblemKind]!;
+    const summary: ProblemSummary = {
       kind: problems[0].kind,
       title: problemTitles[problems[0].kind],
       messages: getMessages(problems[0].kind, analysis, problems),
@@ -212,7 +172,7 @@ export function summarizeResolutionProblems(problems: ResolutionProblem[], analy
   return result;
 }
 
-function getMessages(kind: ResolutionProblemKind, analysis: TypedAnalysis, problems: ResolutionProblem[]) {
+function getMessages(kind: ProblemKind, analysis: TypedAnalysis, problems: Problem[]) {
   if (kind === "Wildcard") {
     return [msg(() => `Wildcards cannot yet be analyzed by this tool.`)];
   }
@@ -225,13 +185,13 @@ function getMessages(kind: ResolutionProblemKind, analysis: TypedAnalysis, probl
       const problems = groupedByResolutionKind[resolutionKind as ResolutionKind];
       return problems?.length === allEntrypoints.size ? problems : undefined;
     })
-    .filter((g): g is ResolutionProblem[] => !!g);
+    .filter((g): g is Problem[] => !!g);
   const fullColumns = Object.keys(groupedByEntrypoint)
     .map((entrypoint) => {
       const problems = groupedByEntrypoint[entrypoint];
       return problems?.length === allResolutionKinds.length ? problems : undefined;
     })
-    .filter((g): g is ResolutionProblem[] => !!g);
+    .filter((g): g is Problem[] => !!g);
 
   const messages: { messageText: string; messageHtml: string }[] = [];
 
@@ -330,15 +290,15 @@ function getMessages(kind: ResolutionProblemKind, analysis: TypedAnalysis, probl
   }
 }
 
-function groupByResolutionKind(problems: ResolutionProblem[]) {
-  return problems.reduce((result: Partial<Record<ResolutionKind, ResolutionProblem[]>>, problem) => {
+function groupByResolutionKind(problems: Problem[]) {
+  return problems.reduce((result: Partial<Record<ResolutionKind, Problem[]>>, problem) => {
     (result[problem.resolutionKind] ??= []).push(problem);
     return result;
   }, {});
 }
 
-function groupByEntrypoint(problems: ResolutionProblem[]) {
-  return problems.reduce((result: Record<string, ResolutionProblem[]>, problem) => {
+function groupByEntrypoint(problems: Problem[]) {
+  return problems.reduce((result: Record<string, Problem[]>, problem) => {
     (result[problem.entrypoint] ??= []).push(problem);
     return result;
   }, {});
