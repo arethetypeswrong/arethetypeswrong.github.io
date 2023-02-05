@@ -53,6 +53,10 @@ body > * {
   justify-content: space-between;
   align-items: baseline;
 }
+#header a:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
 a,
 a:visited {
   color: var(--color-link);

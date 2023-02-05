@@ -1,13 +1,13 @@
 import "./patchGlobal";
+
 import {
   checkPackage,
-  getSummarizedProblems,
-  type Analysis,
-  type ProblemSummary,
-  type Problem,
-  getProblems,
-  type ResolutionProblem,
   checkTgz,
+  getProblems,
+  summarizeProblems,
+  type Analysis,
+  type Problem,
+  type ProblemSummary,
 } from "are-the-types-wrong-core";
 
 export interface CheckPackageEventData {
@@ -25,8 +25,8 @@ export interface ResultMessage {
   kind: "result";
   data: {
     analysis: Analysis;
-    problemSummaries: ProblemSummary[];
-    resolutionProblems: ResolutionProblem[];
+    problemSummaries?: ProblemSummary[];
+    problems?: Problem[];
   };
 }
 
@@ -35,14 +35,14 @@ onmessage = async (event: MessageEvent<CheckPackageEventData | CheckFileEventDat
     event.data.kind === "check-file"
       ? await checkTgz(event.data.file)
       : await checkPackage(event.data.packageName, event.data.version);
-  const problemSummaries = getSummarizedProblems(analysis);
-  const resolutionProblems = analysis.containsTypes ? getProblems(analysis) : [];
+  const problems = analysis.containsTypes ? getProblems(analysis) : undefined;
+  const problemSummaries = problems && analysis.containsTypes ? summarizeProblems(problems, analysis) : undefined;
   postMessage({
     kind: "result",
     data: {
       analysis,
       problemSummaries,
-      resolutionProblems,
+      problems,
     },
   } satisfies ResultMessage);
 };

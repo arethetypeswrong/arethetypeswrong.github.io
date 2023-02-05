@@ -1,15 +1,18 @@
-import type { ResolutionKind, ResolutionProblemKind } from "are-the-types-wrong-core";
+import type { ProblemKind, ResolutionKind } from "are-the-types-wrong-core";
 import { allResolutionKinds } from "are-the-types-wrong-core/utils";
 import type { Checks } from "../state";
 import { problemEmoji } from "./problemEmoji";
 
-const problemShortDescriptions: Record<ResolutionProblemKind, string> = {
+const problemShortDescriptions: Record<ProblemKind, string> = {
   Wildcard: `${problemEmoji.Wildcard} Unable to check`,
   NoResolution: `${problemEmoji.NoResolution} Failed to resolve`,
   UntypedResolution: `${problemEmoji.UntypedResolution} No types`,
   FalseCJS: `${problemEmoji.FalseCJS} Masquerading as CJS`,
   FalseESM: `${problemEmoji.FalseESM} Masquerading as ESM`,
   CJSResolvesToESM: `${problemEmoji.CJSResolvesToESM} ESM (dynamic import only)`,
+  FallbackCondition: `${problemEmoji.FallbackCondition} Used fallback condition`,
+  CJSOnlyExportsDefault: `${problemEmoji.CJSOnlyExportsDefault} CJS default export`,
+  FalseExportDefault: `${problemEmoji.FalseExportDefault} Incorrect default export`,
 };
 
 const resolutionKinds: Record<ResolutionKind, string> = {
@@ -33,7 +36,7 @@ export function ChecksTable(props: { checks?: Checks }) {
     };
   }
 
-  const { analysis, resolutionProblems } = props.checks;
+  const { analysis, problems } = props.checks;
   const subpaths = Object.keys(analysis.entrypointResolutions);
   const entrypoints = subpaths.map((s) =>
     s === "." ? analysis.packageName : `${analysis.packageName}/${s.substring(2)}`
@@ -55,13 +58,13 @@ export function ChecksTable(props: { checks?: Checks }) {
           <td>${resolutionKinds[resolutionKind]}</td>
           ${subpaths
             .map((subpath) => {
-              const problems = resolutionProblems.filter(
+              const problemsForCell = problems?.filter(
                 (problem) => problem.entrypoint === subpath && problem.resolutionKind === resolutionKind
               );
               const resolution = analysis.entrypointResolutions[subpath][resolutionKind].resolution;
               return `<td>${
-                problems.length
-                  ? problems.map((problem) => problemShortDescriptions[problem.kind]).join("<br />")
+                problemsForCell?.length
+                  ? problemsForCell.map((problem) => problemShortDescriptions[problem.kind]).join("<br />")
                   : resolution?.isJson
                   ? "✅ (JSON)"
                   : "✅ " + moduleKinds[resolution?.moduleKind || ""]

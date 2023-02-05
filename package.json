@@ -8,14 +8,17 @@
   "license": "MIT",
   "scripts": {
     "tsc": "tsc -b",
-    "start": "npm start -w web",
     "build": "npm run tsc && npm run build --workspaces --if-present",
-    "format": "prettier --write \"**/*.{ts,json,css}\""
+    "format": "prettier --write \"**/*.{ts,json,css}\"",
+    "patch-web": "npm version patch -w web",
+    "test": "npm test --workspaces --if-present",
+    "start": "npm start -w web"
   },
   "workspaces": [
     "./packages/*"
   ],
   "devDependencies": {
+    "@types/node": "^18.11.18",
     "prettier": "^2.8.3",
     "typescript": "^5.0.0-dev.20230126"
   }

@@ -5,6 +5,7 @@ import { ChecksTable } from "./views/ChecksTable";
 import { Details } from "./views/Details";
 import { Message } from "./views/Message";
 import { ProblemList } from "./views/ProblemList";
+import packageJson from "../package.json";
 
 interface Events {
   onPackageNameInput: (value: string) => void;
@@ -22,6 +23,9 @@ export function subscribeRenderer(events: Events) {
     const problemsElement = document.getElementById("problems") as HTMLParagraphElement;
     const resolutionsElement = document.getElementById("resolutions") as HTMLTableElement;
     const detailsElement = document.getElementById("details") as HTMLDivElement;
+    const changelogElement = document.getElementById("changelog") as HTMLAnchorElement;
+
+    changelogElement.innerText = `v${packageJson.version}`;
 
     packageNameInput.addEventListener("input", () => {
       events.onPackageNameInput(packageNameInput.value);
@@ -42,7 +46,10 @@ export function subscribeRenderer(events: Events) {
 
     function render(state: State) {
       updateView(messageElement, Message, { isError: state.message?.isError, text: state.message?.text || "" });
-      updateView(problemsElement, ProblemList, { problems: state.checks?.problemSummaries });
+      updateView(problemsElement, ProblemList, {
+        problems: state.checks?.problemSummaries,
+        containsTypes: state.checks?.analysis.containsTypes,
+      });
       updateView(resolutionsElement, ChecksTable, { checks: state.checks });
       updateView(checkButton, CheckButton, { disabled: !state.packageInfo.info });
       updateView(detailsElement, Details, { analysis: state.checks?.analysis });

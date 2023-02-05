@@ -1,6 +1,6 @@
 {
   "name": "core",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "private": true,
   "description": "",
   "type": "module",
@@ -8,6 +8,10 @@
     ".": {
       "development": "./src/index.ts",
       "default": "./dist/index.js"
+    },
+    "./problems": {
+      "development": "./src/problems.ts",
+      "default": "./dist/problems.js"
     },
     "./types": {
       "development": "./src/types.ts",
@@ -19,7 +23,9 @@
     }
   },
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "pretest": "tsc -b test",
+    "test": "node --test test/dist"
   },
   "files": [
     "dist",

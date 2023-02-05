@@ -26,6 +26,15 @@ export interface TypedAnalysis {
   packageName: string;
   containsTypes: true;
   entrypointResolutions: EntrypointResolutions;
+  fileExports: Record<string, SymbolTable | false>;
+}
+
+export type SymbolTable = Record<string, Symbol>;
+
+export interface Symbol {
+  name: string;
+  flags: ts.SymbolFlags;
+  valueDeclarationRange: [number, number] | undefined;
 }
 
 export interface UntypedAnalysis {
