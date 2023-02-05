@@ -34,7 +34,6 @@ This project attempts to analyze npm package contents for issues with their Type
 The first things on my roadmap:
 
 - More thorough explanations of problems
-- Detect `export default` issues
 - Official TypeScript module documentation to link to
 
 Some other ideas:
