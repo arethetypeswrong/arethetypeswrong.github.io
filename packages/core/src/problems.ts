@@ -9,7 +9,9 @@ export type ProblemKind =
   | "FalseCJS"
   | "CJSResolvesToESM"
   | "Wildcard"
-  | "FallbackCondition";
+  | "FallbackCondition"
+  | "CJSOnlyExportsDefault"
+  | "FalseExportDefault";
 
 export interface Problem {
   kind: ProblemKind;
@@ -34,6 +36,8 @@ const problemTitles: Record<ProblemKind, string> = {
   FalseCJS: "Types are CJS, but implementation is ESM",
   CJSResolvesToESM: "Entrypoint is ESM-only",
   FallbackCondition: "Resloved through fallback condition",
+  CJSOnlyExportsDefault: "CJS module uses default export",
+  FalseExportDefault: "Types incorrectly use default export",
 };
 
 const moduleResolutionKinds: Record<ResolutionKind, string> = {
@@ -44,13 +48,13 @@ const moduleResolutionKinds: Record<ResolutionKind, string> = {
 };
 
 export function getSummarizedProblems(analysis: TypedAnalysis): ProblemSummary[] {
-  return summarizeResolutionProblems(getProblems(analysis), analysis);
+  return summarizeProblems(getProblems(analysis), analysis);
 }
 
-export function getProblems(result: TypedAnalysis): Problem[] {
+export function getProblems(analysis: TypedAnalysis): Problem[] {
   const problems: Problem[] = [];
-  for (const subpath in result.entrypointResolutions) {
-    const entrypoint = result.entrypointResolutions[subpath];
+  for (const subpath in analysis.entrypointResolutions) {
+    const entrypoint = analysis.entrypointResolutions[subpath];
     for (const kind in entrypoint) {
       const resolutionKind = kind as keyof typeof entrypoint;
       const result = entrypoint[resolutionKind];
@@ -112,6 +116,30 @@ export function getProblems(result: TypedAnalysis): Problem[] {
           resolutionKind,
         });
       }
+
+      const typesModule = resolution && analysis.fileExports[resolution.fileName];
+      const jsModule = implementationResolution && analysis.fileExports[implementationResolution.fileName];
+      if (resolutionKind === "node16-esm" && resolution && implementationResolution && typesModule && jsModule) {
+        if (typesModule.default && jsModule[ts.InternalSymbolName.ExportEquals]) {
+          problems.push({
+            kind: "FalseExportDefault",
+            entrypoint: subpath,
+            resolutionKind,
+          });
+        } else if (
+          typesModule.default &&
+          jsModule.default &&
+          jsModule.__esModule &&
+          !typesModule[ts.InternalSymbolName.ExportEquals] &&
+          !jsModule[ts.InternalSymbolName.ExportEquals]
+        ) {
+          problems.push({
+            kind: "CJSOnlyExportsDefault",
+            entrypoint: subpath,
+            resolutionKind,
+          });
+        }
+      }
     }
   }
   return problems;
@@ -149,7 +177,7 @@ export function resolvedThroughFallback(traces: string[]) {
   }
 }
 
-export function groupResolutionProblemsByKind(problems: Problem[]): Partial<Record<ProblemKind, Problem[]>> {
+export function groupByKind(problems: Problem[]): Partial<Record<ProblemKind, Problem[]>> {
   const result: Partial<Record<ProblemKind, Problem[]>> = {};
   for (const problem of problems) {
     (result[problem.kind] ??= []).push(problem);
@@ -157,8 +185,8 @@ export function groupResolutionProblemsByKind(problems: Problem[]): Partial<Reco
   return result;
 }
 
-export function summarizeResolutionProblems(problems: Problem[], analysis: TypedAnalysis): ProblemSummary[] {
-  const grouped = groupResolutionProblemsByKind(problems);
+export function summarizeProblems(problems: Problem[], analysis: TypedAnalysis): ProblemSummary[] {
+  const grouped = groupByKind(problems);
   const result: ProblemSummary[] = [];
   for (const kind in grouped) {
     const problems = grouped[kind as ProblemKind]!;
@@ -286,6 +314,24 @@ function getMessages(kind: ProblemKind, analysis: TypedAnalysis, problems: Probl
             "https://github.com/microsoft/TypeScript/issues/50762"
           )} and should not be relied upon.`
         );
+      case "CJSOnlyExportsDefault":
+        // Only issued in node16-esm
+        return (
+          `The CJS module resolved at ${entrypoints} under contains a simulated ` +
+          `${f.code("export default")} with an ${f.code("__esModule")} marker, but no top-level ` +
+          `${f.code("module.exports")}. Node does not respect the ${f.code("__esModule")} marker, ` +
+          `so accessing the intended default export will require a ${f.code(".default")} property ` +
+          `access in Node from an ES module.`
+        );
+      case "FalseExportDefault":
+        // Only issued in node16-esm
+        return (
+          `The types resolved at ${entrypoints} use ${f.code("export default")} where the implementation ` +
+          `appears to use ${f.code("module.exports =")}. Node treats a default import of these constructs from an ` +
+          `ES module differently, so these types will make TypeScript under the ${f.code("node16")} resolution mode ` +
+          `think an extra ${f.code(".default")} property access is required, but that will likely fail at runtime ` +
+          `in Node. These types should use ${f.code("export =")} instead of ${f.code("export default")}.`
+        );
     }
   }
 }
@@ -369,9 +415,13 @@ const textFormatters: Formatters = {
 const htmlFormatters: Formatters = {
   strong: (text) => `<strong>${text}</strong>`,
   em: (text) => `<em>${text}</em>`,
-  code: (text) => `<code>${text}</code>`,
+  code: (text) => `<code>${nonBreaking(text)}</code>`,
   a: (text, href) => `<a href="${href}">${text}</a>`,
 };
+
+function nonBreaking(text: string) {
+  return text.length < 20 ? text.replace(/ /g, "\u00a0") : text;
+}
 
 function msg(cb: (format: Formatters) => string): { messageText: string; messageHtml: string } {
   return {

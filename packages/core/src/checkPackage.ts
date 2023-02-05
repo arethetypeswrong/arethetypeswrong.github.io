@@ -195,6 +195,17 @@ function buildFileExports(
           entrypointResolution.resolution.fileName
         );
       }
+
+      if (
+        entrypointResolution.implementationResolution &&
+        !entrypointResolution.implementationResolution.isJson &&
+        result[entrypointResolution.implementationResolution.fileName] === undefined
+      ) {
+        result[entrypointResolution.implementationResolution.fileName] = getModuleSymbolTable(
+          fs,
+          entrypointResolution.implementationResolution.fileName
+        );
+      }
     }
   }
   return result;

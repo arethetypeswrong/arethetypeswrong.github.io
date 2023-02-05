@@ -1,7 +1,7 @@
 import type { ProblemSummary } from "are-the-types-wrong-core";
 import { problemEmoji } from "./problemEmoji";
 
-export function ProblemList(props: { problems?: ProblemSummary[]; containsTypes?: boolean }) {
+export function ProblemList(props: { problems?: ProblemSummary[]; containsTypes: boolean | undefined }) {
   if (!props.containsTypes) {
     return {
       innerHTML: "This package does not contain types.",

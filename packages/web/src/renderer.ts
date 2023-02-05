@@ -46,7 +46,10 @@ export function subscribeRenderer(events: Events) {
 
     function render(state: State) {
       updateView(messageElement, Message, { isError: state.message?.isError, text: state.message?.text || "" });
-      updateView(problemsElement, ProblemList, { problems: state.checks?.problemSummaries });
+      updateView(problemsElement, ProblemList, {
+        problems: state.checks?.problemSummaries,
+        containsTypes: state.checks?.analysis.containsTypes,
+      });
       updateView(resolutionsElement, ChecksTable, { checks: state.checks });
       updateView(checkButton, CheckButton, { disabled: !state.packageInfo.info });
       updateView(detailsElement, Details, { analysis: state.checks?.analysis });

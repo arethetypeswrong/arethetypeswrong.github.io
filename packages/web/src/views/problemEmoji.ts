@@ -8,4 +8,6 @@ export const problemEmoji: Record<ProblemKind, string> = {
   FalseESM: "👺",
   CJSResolvesToESM: "⚠️",
   FallbackCondition: "🐛",
+  CJSOnlyExportsDefault: "🤨",
+  FalseExportDefault: "❗️",
 };

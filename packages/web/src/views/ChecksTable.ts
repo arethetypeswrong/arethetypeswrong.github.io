@@ -11,6 +11,8 @@ const problemShortDescriptions: Record<ProblemKind, string> = {
   FalseESM: `${problemEmoji.FalseESM} Masquerading as ESM`,
   CJSResolvesToESM: `${problemEmoji.CJSResolvesToESM} ESM (dynamic import only)`,
   FallbackCondition: `${problemEmoji.FallbackCondition} Used fallback condition`,
+  CJSOnlyExportsDefault: `${problemEmoji.CJSOnlyExportsDefault} CJS default export`,
+  FalseExportDefault: `${problemEmoji.FalseExportDefault} Incorrect default export`,
 };
 
 const resolutionKinds: Record<ResolutionKind, string> = {
