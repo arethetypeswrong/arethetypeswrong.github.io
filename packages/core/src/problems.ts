@@ -121,6 +121,7 @@ export function getProblems(analysis: TypedAnalysis): Problem[] {
       const jsModule = implementationResolution && analysis.fileExports[implementationResolution.fileName];
       if (resolutionKind === "node16-esm" && resolution && implementationResolution && typesModule && jsModule) {
         if (typesModule.default && jsModule[ts.InternalSymbolName.ExportEquals]) {
+          // Also need to check for `default` property on `jsModule["export="]`?
           problems.push({
             kind: "FalseExportDefault",
             entrypoint: subpath,
