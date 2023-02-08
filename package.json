@@ -10,7 +10,7 @@
     "tsc": "tsc -b",
     "build": "npm run tsc && npm run build --workspaces --if-present",
     "format": "prettier --write \"**/*.{ts,json,css}\"",
-    "patch-web": "pushd packages/web && npm run patch && popd && git push && git push --tags",
+    "patch": "pushd packages/core && npm run patch && popd && git push && git push --tags",
     "test": "npm test --workspaces --if-present",
     "start": "npm start -w web"
   },
@@ -20,6 +20,6 @@
   "devDependencies": {
     "@types/node": "^18.11.18",
     "prettier": "^2.8.3",
-    "typescript": "^5.0.0-dev.20230126"
+    "typescript": "^5.0.0-dev.20230207"
   }
 }

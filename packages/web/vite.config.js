@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import { execSync } from 'child_process';
 
 export default defineConfig(() => ({
   root: './src',
@@ -9,4 +10,7 @@ export default defineConfig(() => ({
   worker: {
     format: 'es'
   },
+  define: {
+    COMMIT: JSON.stringify(execSync('git rev-parse HEAD').toString().trim().substring(0, 7)),
+  }
 }));

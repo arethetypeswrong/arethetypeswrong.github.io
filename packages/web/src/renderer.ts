@@ -5,7 +5,8 @@ import { ChecksTable } from "./views/ChecksTable";
 import { Details } from "./views/Details";
 import { Message } from "./views/Message";
 import { ProblemList } from "./views/ProblemList";
-import packageJson from "../package.json";
+import corePackageJson from "are-the-types-wrong-core/package.json";
+import tsPackageJson from "typescript/package.json";
 
 interface Events {
   onPackageNameInput: (value: string) => void;
@@ -23,9 +24,14 @@ export function subscribeRenderer(events: Events) {
     const problemsElement = document.getElementById("problems") as HTMLParagraphElement;
     const resolutionsElement = document.getElementById("resolutions") as HTMLTableElement;
     const detailsElement = document.getElementById("details") as HTMLDivElement;
-    const changelogElement = document.getElementById("changelog") as HTMLAnchorElement;
+    const webVersionElement = document.getElementById("web-version") as HTMLAnchorElement;
+    const coreVersionElement = document.getElementById("core-version") as HTMLElement;
+    const tsVersionElement = document.getElementById("ts-version") as HTMLElement;
 
-    changelogElement.innerText = `v${packageJson.version}`;
+    coreVersionElement.innerText = `v${corePackageJson.version}`;
+    tsVersionElement.innerText = `v${tsPackageJson.version}`;
+    webVersionElement.innerText = window.COMMIT;
+    webVersionElement.href = `https://github.com/arethetypeswrong/arethetypeswrong.github.io/commit/${window.COMMIT}`;
 
     packageNameInput.addEventListener("input", () => {
       events.onPackageNameInput(packageNameInput.value);

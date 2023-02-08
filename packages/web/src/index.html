@@ -10,39 +10,55 @@
     <link rel="icon" href="/favicon.svg" />
   </head>
   <body>
-    <div id="header">
-      <h1>Are the types wrong?</h1>
-      <div>
-        <a href="https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/CHANGELOG.md" id="changelog"
-          >Changelog</a
-        >
-        <a href="https://github.com/arethetypeswrong/arethetypeswrong.github.io">GitHub / About</a>
+    <main>
+      <div id="header">
+        <h1>Are the types wrong?</h1>
+        <div>
+          <a href="https://github.com/arethetypeswrong/arethetypeswrong.github.io">GitHub / About</a>
+        </div>
       </div>
-    </div>
-    <form id="form">
-      <p>
-        <label>
-          npm package
-          <input
-            type="text"
-            id="package-spec"
-            autofocus
-            autocapitalize="none"
-            autocorrect="off"
-            autocomplete="off"
-            spellcheck="false"
-          />
-        </label>
-        <button id="check" disabled>Check</button>
-      </p>
-      <p>
-        or <code>npm pack</code> output
-        <input type="file" id="file" accept=".tgz" />
-      </p>
-      <div id="message"></div>
-    </form>
-    <p id="problems"></p>
-    <div><table id="resolutions"></table></div>
-    <details id="details" class="display-none"></details>
+      <form id="form">
+        <p>
+          <label>
+            npm package
+            <input
+              type="text"
+              id="package-spec"
+              autofocus
+              autocapitalize="none"
+              autocorrect="off"
+              autocomplete="off"
+              spellcheck="false"
+            />
+          </label>
+          <button id="check" disabled>Check</button>
+        </p>
+        <p>
+          or <code>npm pack</code> output
+          <input type="file" id="file" accept=".tgz" />
+        </p>
+        <div id="message"></div>
+      </form>
+      <p id="problems"></p>
+      <div><table id="resolutions"></table></div>
+      <details id="details" class="display-none"></details>
+    </main>
+    <footer>
+      <span>
+        core:
+        <a
+          id="core-version"
+          href="https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/CHANGELOG.md"
+        ></a>
+      </span>
+      <span>
+        web:
+        <a id="web-version" href="https://github.com/arethetypeswrong/arethetypeswrong.github.io"></a>
+      </span>
+      <span>
+        typescript:
+        <span id="ts-version"></span>
+      </span>
+    </footer>
   </body>
 </html>

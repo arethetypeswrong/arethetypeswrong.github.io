@@ -20,12 +20,15 @@
     "./utils": {
       "development": "./src/utils.ts",
       "default": "./dist/utils.js"
-    }
+    },
+    "./package.json": "./package.json"
   },
   "scripts": {
     "tsc": "tsc",
     "pretest": "tsc -b test",
-    "test": "node --test test/dist"
+    "test": "node --test test/dist",
+    "patch": "npm version patch && npm run commit-patch",
+    "commit-patch": "git commit -am \"Bump core to v$npm_package_version\" && git tag \"v$npm_package_version\""
   },
   "files": [
     "dist",
@@ -36,7 +39,7 @@
   "dependencies": {
     "fetch-ponyfill": "^7.1.0",
     "fflate": "^0.7.4",
-    "typescript": "^5.0.0-dev.20230123",
+    "typescript": "^5.0.0-dev.20230207",
     "untar.js": "^0.3.0"
   },
   "devDependencies": {
