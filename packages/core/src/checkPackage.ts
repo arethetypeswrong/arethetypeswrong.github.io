@@ -129,42 +129,28 @@ function checkEntrypointTyped(
 
   function tryResolve(noDtsResolution?: boolean): Resolution | undefined {
     let moduleKind: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined;
+    const compilerOptions = {
+      resolveJsonModule: true,
+      moduleResolution,
+      traceResolution: !noDtsResolution,
+      noDtsResolution,
+    };
     const resolution = ts.resolveModuleName(
       moduleSpecifier,
       fileName,
-      {
-        resolveJsonModule: true,
-        moduleResolution,
-        traceResolution: !noDtsResolution,
-        noDtsResolution,
-      },
+      compilerOptions,
       resolutionHost,
       undefined,
       undefined,
       resolutionMode
     );
     if ((resolutionKind === "node16-cjs" || resolutionKind === "node16-esm") && resolution.resolvedModule) {
-      if (
-        resolution.resolvedModule.extension === ts.Extension.Mjs ||
-        resolution.resolvedModule.extension === ts.Extension.Mts
-      ) {
-        moduleKind = ts.ModuleKind.ESNext;
-      } else if (
-        resolution.resolvedModule.extension === ts.Extension.Cjs ||
-        resolution.resolvedModule.extension === ts.Extension.Cts
-      ) {
-        moduleKind = ts.ModuleKind.CommonJS;
-      } else {
-        const packageScope = ts.getPackageScopeForPath(
-          resolution.resolvedModule.resolvedFileName,
-          ts.getTemporaryModuleResolutionState(undefined, resolutionHost, { moduleResolution })
-        );
-        if (packageScope?.contents?.packageJsonContent.type === "module") {
-          moduleKind = ts.ModuleKind.ESNext;
-        } else {
-          moduleKind = ts.ModuleKind.CommonJS;
-        }
-      }
+      moduleKind = ts.getImpliedNodeFormatForFile(
+        resolution.resolvedModule.resolvedFileName as ts.Path,
+        /*packageJsonInfoCache*/ undefined,
+        fs,
+        compilerOptions
+      );
     }
     return (
       resolution.resolvedModule && {

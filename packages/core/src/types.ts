@@ -18,6 +18,8 @@ export interface TraceCollector {
   read: () => string[];
 }
 
+export type SourceFileCache = Record<string, ts.SourceFile>;
+
 export type ResolutionKind = "node10" | "node16-cjs" | "node16-esm" | "bundler";
 
 export type EntrypointResolutions = Record<string, Record<ResolutionKind, EntrypointResolutionAnalysis>>;

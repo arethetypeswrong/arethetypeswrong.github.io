@@ -1,7 +1,6 @@
 name: Deploy Site
 on:
   push:
-    tags: ["web-v*"]
     branches: [main]
 
 jobs:
