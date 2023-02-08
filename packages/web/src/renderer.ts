@@ -30,8 +30,8 @@ export function subscribeRenderer(events: Events) {
 
     coreVersionElement.innerText = `v${corePackageJson.version}`;
     tsVersionElement.innerText = `v${tsPackageJson.version}`;
-    webVersionElement.innerText = window.COMMIT;
-    webVersionElement.href = `https://github.com/arethetypeswrong/arethetypeswrong.github.io/commit/${window.COMMIT}`;
+    webVersionElement.innerText = COMMIT;
+    webVersionElement.href = `https://github.com/arethetypeswrong/arethetypeswrong.github.io/commit/${COMMIT}`;
 
     packageNameInput.addEventListener("input", () => {
       events.onPackageNameInput(packageNameInput.value);

@@ -1,7 +1,5 @@
 export {};
 
 declare global {
-  interface Window {
-    COMMIT: string;
-  }
+  const COMMIT: string;
 }
