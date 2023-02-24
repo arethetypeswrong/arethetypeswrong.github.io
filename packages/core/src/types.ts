@@ -1,4 +1,3 @@
-// TODO: auto-imports didn't make this type-only
 import type ts from "typescript";
 
 export interface Host {

@@ -1,7 +1,7 @@
 import createFetch from "fetch-ponyfill";
 import { gunzipSync } from "fflate";
 import ts from "typescript";
-import { untar, type TarLocalFile } from "untar.js";
+import { untar, type TarLocalFile } from "@andrewbranch/untar.js";
 import type { FS, Host } from "./types.js";
 const { fetch } = createFetch();
 

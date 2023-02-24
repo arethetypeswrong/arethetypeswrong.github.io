@@ -37,13 +37,12 @@
   "author": "Andrew Branch",
   "license": "MIT",
   "dependencies": {
+    "@andrewbranch/untar.js": "^1.0.0",
     "fetch-ponyfill": "^7.1.0",
     "fflate": "^0.7.4",
-    "typescript": "^5.0.0-dev.20230207",
-    "untar.js": "^0.3.0"
+    "typescript": "^5.0.0-dev.20230207"
   },
   "devDependencies": {
-    "@types/ts-expose-internals": "npm:ts-expose-internals@4.9.4",
-    "@types/untar.js": "^0.3.0"
+    "@types/ts-expose-internals": "npm:ts-expose-internals@4.9.4"
   }
 }
