@@ -1,3 +1,7 @@
+## v0.0.4
+
+- New problem kind: **Syntax is incompatible with detected module kind.**
+
 ## v0.0.3
 
 - Fixed a bug where 0-byte files in tarballs were interpreted as non-existent.
