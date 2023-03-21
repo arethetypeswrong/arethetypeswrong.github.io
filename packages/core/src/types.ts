@@ -27,7 +27,6 @@ export interface TypedAnalysis {
   packageName: string;
   containsTypes: true;
   entrypointResolutions: EntrypointResolutions;
-  fileExports: Record<string, SymbolTable | false>;
 }
 
 export type SymbolTable = Record<string, Symbol>;
@@ -52,9 +51,18 @@ export interface EntrypointResolutionAnalysis {
   trace: string[];
 }
 
+export type ModuleKindReason = "extension" | "type" | "no:type";
+export interface ModuleKind {
+  detectedKind: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS;
+  detectedReason: ModuleKindReason;
+  reasonFileName: string;
+  syntax: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined;
+}
+
 export interface Resolution {
   fileName: string;
   isTypeScript: boolean;
   isJson: boolean;
-  moduleKind: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined;
+  moduleKind: ModuleKind | undefined;
+  exports?: SymbolTable | false;
 }

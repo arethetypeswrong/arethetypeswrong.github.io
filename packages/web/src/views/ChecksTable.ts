@@ -13,6 +13,8 @@ const problemShortDescriptions: Record<ProblemKind, string> = {
   FallbackCondition: `${problemEmoji.FallbackCondition} Used fallback condition`,
   CJSOnlyExportsDefault: `${problemEmoji.CJSOnlyExportsDefault} CJS default export`,
   FalseExportDefault: `${problemEmoji.FalseExportDefault} Incorrect default export`,
+  UnexpectedESMSyntax: `${problemEmoji.UnexpectedESMSyntax} Unexpected ESM syntax`,
+  UnexpectedCJSSyntax: `${problemEmoji.UnexpectedCJSSyntax} Unexpected CJS syntax`,
 };
 
 const resolutionKinds: Record<ResolutionKind, string> = {
@@ -67,7 +69,7 @@ export function ChecksTable(props: { checks?: Checks }) {
                   ? problemsForCell.map((problem) => problemShortDescriptions[problem.kind]).join("<br />")
                   : resolution?.isJson
                   ? "✅ (JSON)"
-                  : "✅ " + moduleKinds[resolution?.moduleKind || ""]
+                  : "✅ " + moduleKinds[resolution?.moduleKind?.detectedKind || ""]
               }</td>`;
             })
             .join("")}

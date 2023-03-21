@@ -63,7 +63,7 @@ async function onPackageNameInput(value: string) {
         state.message = {
           isError: false,
           text: info.size
-            ? `Checking will stream whatever ${info.size} gzipped is`
+            ? `Checking will stream whatever ${info.size} bytes gzipped is`
             : "Checking will stream the tarball",
         };
       });
