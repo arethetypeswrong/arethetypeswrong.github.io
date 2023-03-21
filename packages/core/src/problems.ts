@@ -1,5 +1,5 @@
 import ts from "typescript";
-import type { ResolutionKind, TypedAnalysis } from "./types.js";
+import type { ModuleKindReason, ResolutionKind, TypedAnalysis } from "./types.js";
 import { allResolutionKinds } from "./utils.js";
 
 export type ProblemKind =
@@ -9,6 +9,8 @@ export type ProblemKind =
   | "FalseCJS"
   | "CJSResolvesToESM"
   | "Wildcard"
+  | "UnexpectedESMSyntax"
+  | "UnexpectedCJSSyntax"
   | "FallbackCondition"
   | "CJSOnlyExportsDefault"
   | "FalseExportDefault";
@@ -35,6 +37,8 @@ const problemTitles: Record<ProblemKind, string> = {
   FalseESM: "Types are ESM, but implementation is CJS",
   FalseCJS: "Types are CJS, but implementation is ESM",
   CJSResolvesToESM: "Entrypoint is ESM-only",
+  UnexpectedESMSyntax: "Syntax is incompatible with detected module kind",
+  UnexpectedCJSSyntax: "Syntax is incompatible with detected module kind",
   FallbackCondition: "Resloved through fallback condition",
   CJSOnlyExportsDefault: "CJS module uses default export",
   FalseExportDefault: "Types incorrectly use default export",
@@ -82,8 +86,8 @@ export function getProblems(analysis: TypedAnalysis): Problem[] {
 
       const { resolution, implementationResolution } = result;
       if (
-        resolution?.moduleKind === ts.ModuleKind.ESNext &&
-        implementationResolution?.moduleKind === ts.ModuleKind.CommonJS
+        resolution?.moduleKind?.detectedKind === ts.ModuleKind.ESNext &&
+        implementationResolution?.moduleKind?.detectedKind === ts.ModuleKind.CommonJS
       ) {
         problems.push({
           kind: "FalseESM",
@@ -91,8 +95,8 @@ export function getProblems(analysis: TypedAnalysis): Problem[] {
           resolutionKind,
         });
       } else if (
-        resolution?.moduleKind === ts.ModuleKind.CommonJS &&
-        implementationResolution?.moduleKind === ts.ModuleKind.ESNext
+        resolution?.moduleKind?.detectedKind === ts.ModuleKind.CommonJS &&
+        implementationResolution?.moduleKind?.detectedKind === ts.ModuleKind.ESNext
       ) {
         problems.push({
           kind: "FalseCJS",
@@ -101,7 +105,7 @@ export function getProblems(analysis: TypedAnalysis): Problem[] {
         });
       }
 
-      if (resolutionKind === "node16-cjs" && resolution?.moduleKind === ts.ModuleKind.ESNext) {
+      if (resolutionKind === "node16-cjs" && resolution?.moduleKind?.detectedKind === ts.ModuleKind.ESNext) {
         problems.push({
           kind: "CJSResolvesToESM",
           entrypoint: subpath,
@@ -117,8 +121,8 @@ export function getProblems(analysis: TypedAnalysis): Problem[] {
         });
       }
 
-      const typesModule = resolution && analysis.fileExports[resolution.fileName];
-      const jsModule = implementationResolution && analysis.fileExports[implementationResolution.fileName];
+      const typesModule = resolution?.exports;
+      const jsModule = implementationResolution?.exports;
       if (resolutionKind === "node16-esm" && resolution && implementationResolution && typesModule && jsModule) {
         if (typesModule.default && jsModule[ts.InternalSymbolName.ExportEquals]) {
           // Also need to check for `default` property on `jsModule["export="]`?
@@ -140,6 +144,20 @@ export function getProblems(analysis: TypedAnalysis): Problem[] {
             resolutionKind,
           });
         }
+      }
+
+      if (
+        implementationResolution?.moduleKind?.syntax &&
+        implementationResolution.moduleKind.syntax !== implementationResolution.moduleKind.detectedKind
+      ) {
+        problems.push({
+          kind:
+            implementationResolution.moduleKind.syntax === ts.ModuleKind.ESNext
+              ? "UnexpectedESMSyntax"
+              : "UnexpectedCJSSyntax",
+          entrypoint: subpath,
+          resolutionKind,
+        });
       }
     }
   }
@@ -234,6 +252,8 @@ function getMessages(kind: ProblemKind, analysis: TypedAnalysis, problems: Probl
         return getMessageText(
           resolutionKinds,
           allEntrypoints.size === 1 ? "the package" : f.strong("all entrypoints"),
+          analysis,
+          fullRows.flat(),
           f
         );
       })
@@ -253,7 +273,7 @@ function getMessages(kind: ProblemKind, analysis: TypedAnalysis, problems: Probl
           allEntrypoints.size,
           f
         );
-        return getMessageText(f.strong("all module resolution settings"), entrypoints, f);
+        return getMessageText(f.strong("all module resolution settings"), entrypoints, analysis, fullColumns.flat(), f);
       })
     );
   }
@@ -272,19 +292,20 @@ function getMessages(kind: ProblemKind, analysis: TypedAnalysis, problems: Probl
         ? groupedByEntrypoint
         : groupedByResolutionKind;
     for (const groupKey in biggerGroups) {
-      const entrypoints =
+      const problems =
         biggerGroups === groupedByEntrypoint
-          ? [groupKey]
-          : biggerGroups[groupKey as ResolutionKind]!.map((p) => p.entrypoint);
+          ? groupedByEntrypoint[groupKey]
+          : biggerGroups[groupKey as ResolutionKind]!;
+      const entrypoints = biggerGroups === groupedByEntrypoint ? [groupKey] : problems.map((p) => p.entrypoint);
       const resolutionKinds =
-        biggerGroups === groupedByResolutionKind
-          ? [groupKey as ResolutionKind]
-          : biggerGroups[groupKey]!.map((p) => p.resolutionKind);
+        biggerGroups === groupedByResolutionKind ? [groupKey as ResolutionKind] : problems.map((p) => p.resolutionKind);
       messages.push(
         msg((f) =>
           getMessageText(
             formatResolutionKinds(resolutionKinds, f),
             formatEntrypoints(analysis.packageName, entrypoints, allEntrypoints.size, f),
+            analysis,
+            problems,
             f
           )
         )
@@ -293,7 +314,13 @@ function getMessages(kind: ProblemKind, analysis: TypedAnalysis, problems: Probl
   }
   return messages;
 
-  function getMessageText(resolutionKinds: string, entrypoints: string, f: Formatters) {
+  function getMessageText(
+    resolutionKinds: string,
+    entrypoints: string,
+    analysis: TypedAnalysis,
+    problems: readonly Problem[],
+    f: Formatters
+  ): string {
     switch (kind) {
       case "NoResolution":
         return `Imports of ${entrypoints} under ${resolutionKinds} failed to resolve.`;
@@ -332,6 +359,32 @@ function getMessages(kind: ProblemKind, analysis: TypedAnalysis, problems: Probl
           `ES module differently, so these types will make TypeScript under the ${f.code("node16")} resolution mode ` +
           `think an extra ${f.code(".default")} property access is required, but that will likely fail at runtime ` +
           `in Node. These types should use ${f.code("export =")} instead of ${f.code("export default")}.`
+        );
+      case "UnexpectedESMSyntax":
+      case "UnexpectedCJSSyntax":
+        // Issued in node16-esm and node16-cjs
+        const reason = problems.reduce((prevReason: ModuleKindReason | undefined, p) => {
+          const reason =
+            analysis.entrypointResolutions[p.entrypoint]["node16-esm"].implementationResolution?.moduleKind
+              ?.detectedReason;
+          return !prevReason ? reason : prevReason === reason ? reason : undefined;
+        }, undefined);
+        const [syntax, moduleKind] =
+          kind === "UnexpectedCJSSyntax" ? (["CJS", "ESM"] as const) : (["ESM", "CJS"] as const);
+        return (
+          `The implemtation resolved at ${entrypoints} uses ${syntax} syntax, but the detected module kind is ${moduleKind}. ` +
+          `This will be an error in Node (and potentially other runtimes and bundlers).` +
+          (reason === "extension"
+            ? ` The module kind was decided based on the resolved file’s ${
+                moduleKind === "ESM" ? f.code(".mjs") : f.code(".cjs")
+              } extension.`
+            : reason === "type"
+            ? ` The module kind was decided based on the nearest package.json’s ${f.code(`"type"`)} field.`
+            : reason === "no:type"
+            ? ` The module kind was decided based on the nearest package.json’s lack of a ${f.code(
+                `"type": "module"`
+              )} field.`
+            : "")
         );
     }
   }
