@@ -1,6 +1,6 @@
 import assert from "node:assert";
 import { test } from "node:test";
-import { resolvedThroughFallback } from "core/problems";
+import { resolvedThroughFallback } from "@arethetypeswrong/core/problems";
 
 test("resolvedThroughFallback", () => {
   assert.ok(!resolvedThroughFallback([]));

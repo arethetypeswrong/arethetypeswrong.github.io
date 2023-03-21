@@ -1,4 +1,4 @@
-import type { ProblemSummary } from "are-the-types-wrong-core";
+import type { ProblemSummary } from "@arethetypeswrong/core";
 import { problemEmoji } from "./problemEmoji";
 
 export function ProblemList(props: { problems?: ProblemSummary[]; containsTypes: boolean | undefined }) {

@@ -1,5 +1,5 @@
-import type { ProblemKind, ResolutionKind } from "are-the-types-wrong-core";
-import { allResolutionKinds } from "are-the-types-wrong-core/utils";
+import type { ProblemKind, ResolutionKind } from "@arethetypeswrong/core";
+import { allResolutionKinds } from "@arethetypeswrong/core/utils";
 import type { Checks } from "../state";
 import { problemEmoji } from "./problemEmoji";
 

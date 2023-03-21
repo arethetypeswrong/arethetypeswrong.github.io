@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "@arethetypeswrong/web",
   "version": "0.0.1",
   "private": true,
   "description": "",
@@ -15,7 +15,7 @@
   "author": "Andrew Branch",
   "license": "MIT",
   "dependencies": {
-    "are-the-types-wrong-core": "file:../core",
+    "@arethetypeswrong/core": "file:../core",
     "validate-npm-package-name": "^5.0.0"
   },
   "devDependencies": {
