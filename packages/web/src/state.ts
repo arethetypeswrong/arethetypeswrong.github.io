@@ -1,4 +1,4 @@
-import type { Analysis, ProblemSummary, Problem } from "are-the-types-wrong-core";
+import type { Analysis, ProblemSummary, Problem } from "@arethetypeswrong/core";
 
 export interface Checks {
   analysis: Analysis;

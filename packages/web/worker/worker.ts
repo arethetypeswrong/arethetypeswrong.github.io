@@ -8,7 +8,7 @@ import {
   type Analysis,
   type Problem,
   type ProblemSummary,
-} from "are-the-types-wrong-core";
+} from "@arethetypeswrong/core";
 
 export interface CheckPackageEventData {
   kind: "check-package";

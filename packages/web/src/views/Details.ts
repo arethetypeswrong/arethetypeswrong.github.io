@@ -1,4 +1,4 @@
-import type { Analysis } from "are-the-types-wrong-core";
+import type { Analysis } from "@arethetypeswrong/core";
 
 export function Details(props: { analysis?: Analysis }) {
   if (!props.analysis) {

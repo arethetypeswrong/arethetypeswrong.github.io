@@ -5,7 +5,7 @@ import { ChecksTable } from "./views/ChecksTable";
 import { Details } from "./views/Details";
 import { Message } from "./views/Message";
 import { ProblemList } from "./views/ProblemList";
-import corePackageJson from "are-the-types-wrong-core/package.json";
+import corePackageJson from "@arethetypeswrong/core/package.json";
 import tsPackageJson from "typescript/package.json";
 
 interface Events {

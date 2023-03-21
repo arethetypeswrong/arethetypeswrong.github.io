@@ -1,4 +1,4 @@
-import type { ProblemKind } from "are-the-types-wrong-core";
+import type { ProblemKind } from "@arethetypeswrong/core";
 
 export const problemEmoji: Record<ProblemKind, string> = {
   Wildcard: "❓",

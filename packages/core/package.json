@@ -1,8 +1,29 @@
 {
-  "name": "core",
+  "name": "@arethetypeswrong/core",
   "version": "0.0.4",
-  "private": true,
-  "description": "",
+  "description": "The API behind arethetypeswrong.github.io",
+  "author": "Andrew Branch",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arethetypeswrong/arethetypeswrong.github.io.git",
+    "directory": "packages/core"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "pretest": "tsc -b test",
+    "test": "node --test test/dist",
+    "patch": "npm version patch && npm run commit-patch",
+    "commit-patch": "git commit -am \"Bump core to v$npm_package_version\" && git tag \"v$npm_package_version\"",
+    "prepublishOnly": "npm run tsc && npm run test"
+  },
   "type": "module",
   "exports": {
     ".": {
@@ -23,19 +44,6 @@
     },
     "./package.json": "./package.json"
   },
-  "scripts": {
-    "tsc": "tsc",
-    "pretest": "tsc -b test",
-    "test": "node --test test/dist",
-    "patch": "npm version patch && npm run commit-patch",
-    "commit-patch": "git commit -am \"Bump core to v$npm_package_version\" && git tag \"v$npm_package_version\""
-  },
-  "files": [
-    "dist",
-    "src"
-  ],
-  "author": "Andrew Branch",
-  "license": "MIT",
   "dependencies": {
     "@andrewbranch/untar.js": "^1.0.0",
     "fetch-ponyfill": "^7.1.0",
