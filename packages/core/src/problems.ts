@@ -372,7 +372,7 @@ function getMessages(kind: ProblemKind, analysis: TypedAnalysis, problems: Probl
         const [syntax, moduleKind] =
           kind === "UnexpectedCJSSyntax" ? (["CJS", "ESM"] as const) : (["ESM", "CJS"] as const);
         return (
-          `The implemtation resolved at ${entrypoints} uses ${syntax} syntax, but the detected module kind is ${moduleKind}. ` +
+          `The implementation resolved at ${entrypoints} uses ${syntax} syntax, but the detected module kind is ${moduleKind}. ` +
           `This will be an error in Node (and potentially other runtimes and bundlers).` +
           (reason === "extension"
             ? ` The module kind was decided based on the resolved file’s ${
