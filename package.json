@@ -12,7 +12,7 @@
     "format": "prettier --write \"**/*.{ts,json,css}\"",
     "patch": "pushd packages/core && npm run patch && popd && git push && git push --tags",
     "test": "npm test --workspaces --if-present",
-    "start": "npm start -w web"
+    "start": "npm start -w @arethetypeswrong/web"
   },
   "workspaces": [
     "./packages/*"
