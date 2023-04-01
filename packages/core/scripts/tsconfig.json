@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "strict": true,
+    "noEmit": true,
+    "target": "esnext",
+    "module": "nodenext",
+    "types": [
+      "node"
+    ]
+  }
+}
