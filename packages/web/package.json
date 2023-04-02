@@ -16,6 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "@arethetypeswrong/core": "file:../core",
+    "fflate": "^0.7.4",
     "immer": "^9.0.21",
     "validate-npm-package-name": "^5.0.0"
   },

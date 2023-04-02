@@ -1,4 +1,5 @@
 import type { Analysis, ProblemSummary, Problem } from "@arethetypeswrong/core";
+import { gunzip, gzip } from "fflate";
 import { produce } from "immer";
 
 export interface Checks {
@@ -29,6 +30,7 @@ export interface PackageInfoState {
 
 export interface PackageInfo {
   size: number | undefined;
+  version: string;
 }
 
 let state: State = {
@@ -57,4 +59,56 @@ export function updateState(updater: (draftState: State) => void): void {
 
 export function getState(): DeepReadonly<State> {
   return state;
+}
+
+export function setState(newState: State): void {
+  const prevState = state;
+  state = newState;
+  subscribers.forEach((callback) => callback(prevState));
+}
+
+export async function serializeState(state = getState()): Promise<string> {
+  const json = JSON.stringify([state.packageInfo, state.checks], (key, value) => {
+    if (key === "exports" || key === "trace") return undefined;
+    return value;
+  });
+
+  return new Promise((resolve, reject) => {
+    gzip(new TextEncoder().encode(json), (error, data) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(btoa(String.fromCharCode(...data)));
+      }
+    });
+  });
+}
+
+export async function deserializeState(serializedState: string): Promise<State> {
+  const json = new TextDecoder().decode(
+    await new Promise((resolve, reject) =>
+      gunzip(
+        Uint8Array.from(
+          atob(serializedState)
+            .split("")
+            .map((c) => c.charCodeAt(0))
+        ),
+        (error, data) => {
+          if (error) {
+            reject(error);
+          } else {
+            resolve(data);
+          }
+        }
+      )
+    )
+  );
+
+  const [packageInfo, checks] = JSON.parse(json) as [PackageInfoState, Checks];
+
+  return {
+    isLoading: false,
+    packageInfo,
+    checks,
+  };
 }

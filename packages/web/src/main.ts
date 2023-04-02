@@ -1,19 +1,35 @@
 import validatePackgeName from "validate-npm-package-name";
 import type { ResultMessage } from "../worker/worker.ts";
 import { subscribeRenderer } from "./renderer.ts";
-import { updateState, type PackageInfo, type ParsedPackageSpec, getState, subscribe, type State } from "./state.ts";
+import {
+  updateState,
+  type PackageInfo,
+  type ParsedPackageSpec,
+  getState,
+  subscribe,
+  type State,
+  deserializeState,
+  setState,
+  serializeState,
+} from "./state.ts";
 import { shallowEqual } from "./utils/shallowEqual.ts";
 
 // Good grief https://semver.org/#is-there-a-suggested-regular-expression-regex-to-check-a-semver-string
 const semverRegex =
   /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/;
 const worker = new Worker(new URL("../worker/worker.ts", import.meta.url), { type: "module" });
-worker.onmessage = (event: MessageEvent<ResultMessage>) => {
+worker.onmessage = async (event: MessageEvent<ResultMessage>) => {
   updateState((state) => {
     state.checks = event.data.data;
     state.isLoading = false;
     state.message = undefined;
   });
+
+  const state = getState();
+  const serializedState = await serializeState(state);
+  const params = new URLSearchParams(location.search);
+  params.set("s", serializedState);
+  history.replaceState(null, "", `?${params}`);
 };
 
 subscribeRenderer({
@@ -27,6 +43,22 @@ subscribeRenderer({
 });
 
 subscribe(debounce(getPackageInfo, 300));
+
+if (location.search) {
+  const params = new URLSearchParams(location.search);
+  const serializedState = params.get("s");
+  if (serializedState) {
+    deserializeState(serializedState).then((state) => {
+      const packageNameInput = document.getElementById("package-spec") as HTMLInputElement;
+      if (state.packageInfo.parsed) {
+        packageNameInput.value = `${state.packageInfo.parsed.packageName}${
+          state.packageInfo.info?.version ? `@${state.packageInfo.info.version}` : ""
+        }`;
+      }
+      setState(state);
+    });
+  }
+}
 
 async function onPackageNameInput(value: string) {
   value = value.trim();
@@ -113,6 +145,7 @@ async function fetchPackageInfo({ packageName, version }: ParsedPackageSpec): Pr
     const data = await response.json();
     return {
       size: data.dist.unpackedSize,
+      version: data.version,
     };
   } catch (error) {
     throw new Error("Failed to get package info");
