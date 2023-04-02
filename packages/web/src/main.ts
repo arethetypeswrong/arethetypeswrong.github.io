@@ -1,17 +1,7 @@
 import validatePackgeName from "validate-npm-package-name";
 import type { ResultMessage } from "../worker/worker.ts";
 import { subscribeRenderer } from "./renderer.ts";
-import {
-  updateState,
-  type PackageInfo,
-  type ParsedPackageSpec,
-  getState,
-  subscribe,
-  type State,
-  deserializeState,
-  setState,
-  serializeState,
-} from "./state.ts";
+import { updateState, type PackageInfo, type ParsedPackageSpec, getState, subscribe, type State } from "./state.ts";
 import { shallowEqual } from "./utils/shallowEqual.ts";
 
 // Good grief https://semver.org/#is-there-a-suggested-regular-expression-regex-to-check-a-semver-string
@@ -25,11 +15,17 @@ worker.onmessage = async (event: MessageEvent<ResultMessage>) => {
     state.message = undefined;
   });
 
-  const state = getState();
-  const serializedState = await serializeState(state);
   const params = new URLSearchParams(location.search);
-  params.set("s", serializedState);
-  history.replaceState(null, "", `?${params}`);
+  const state = getState();
+  if (state.packageInfo.parsed) {
+    params.set(
+      "p",
+      `${state.packageInfo.parsed.packageName}${
+        state.packageInfo.info?.version ? `@${state.packageInfo.info.version}` : ""
+      }`
+    );
+    history.replaceState(null, "", `?${params}`);
+  }
 };
 
 subscribeRenderer({
@@ -45,22 +41,23 @@ subscribeRenderer({
 subscribe(debounce(getPackageInfo, 300));
 
 if (location.search) {
+  const packageNameInput = document.getElementById("package-spec") as HTMLInputElement;
   const params = new URLSearchParams(location.search);
-  const serializedState = params.get("s");
-  if (serializedState) {
-    deserializeState(serializedState).then((state) => {
-      const packageNameInput = document.getElementById("package-spec") as HTMLInputElement;
-      if (state.packageInfo.parsed) {
-        packageNameInput.value = `${state.packageInfo.parsed.packageName}${
-          state.packageInfo.info?.version ? `@${state.packageInfo.info.version}` : ""
-        }`;
+  const packageSpec = params.get("p");
+  if (packageSpec) {
+    packageNameInput.value = packageSpec;
+    onPackageNameInput(packageSpec);
+    getPackageInfo().then(() => {
+      const info = getState().packageInfo.info;
+      console.log(info);
+      if (info && info.size && info.size < 1_000_000 && !navigator.connection?.saveData) {
+        onCheck();
       }
-      setState(state);
     });
   }
 }
 
-async function onPackageNameInput(value: string) {
+function onPackageNameInput(value: string) {
   value = value.trim();
   if (!value) {
     updateState((state) => {
