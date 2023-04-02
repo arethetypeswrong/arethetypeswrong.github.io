@@ -15,7 +15,9 @@ if (import.meta.url === "file://" + process.argv[1]) {
  * @param {string} packageSpec 
  */
 async function fetchManifest(packageSpec) {
-  const [packageName, version = "latest"] = packageSpec.split("@");
+  const versionIndex = packageSpec.indexOf("@", 1);
+  const packageName = packageSpec.substring(0, versionIndex < 0 ? undefined : versionIndex);
+  const version = versionIndex < 0 ? "latest" : packageSpec.substring(versionIndex + 1);
   const manifestUrl = `https://registry.npmjs.org/${packageName}/${version}`;
   return fetch(manifestUrl).then((r) => r.json());
 }
@@ -24,7 +26,7 @@ async function fetchManifest(packageSpec) {
  * @param {any} manifest
  */
 async function writePackage(manifest) {
-  const localUrl = new URL(`../test/fixtures/${manifest.name}@${manifest.version}.tgz`, import.meta.url);
+  const localUrl = new URL(`../test/fixtures/${manifest.name.replace("/", "__")}@${manifest.version}.tgz`, import.meta.url);
   const tarballUrl = manifest.dist.tarball;
   const packageBuffer = await fetch(tarballUrl).then((r) => r.arrayBuffer());
   await writeFile(localUrl, Buffer.from(packageBuffer));
