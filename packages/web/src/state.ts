@@ -1,4 +1,5 @@
 import type { Analysis, ProblemSummary, Problem } from "@arethetypeswrong/core";
+import { produce } from "immer";
 
 export interface Checks {
   analysis: Analysis;
@@ -30,7 +31,7 @@ export interface PackageInfo {
   size: number | undefined;
 }
 
-const state: State = {
+let state: State = {
   isLoading: false,
   packageInfo: {},
 };
@@ -41,16 +42,17 @@ type DeepReadonly<T extends object> = {
 
 const subscribers: Set<(state: DeepReadonly<State>) => void> = new Set();
 
-export function subscribe(callback: (state: DeepReadonly<State>) => void): () => void {
+export function subscribe(callback: (prevState: DeepReadonly<State>) => void): () => void {
   subscribers.add(callback);
   return () => {
     subscribers.delete(callback);
   };
 }
 
-export function updateState(updater: (state: State) => void): void {
-  updater(state);
-  subscribers.forEach((callback) => callback(state));
+export function updateState(updater: (draftState: State) => void): void {
+  const prevState = state;
+  state = produce(state, updater);
+  subscribers.forEach((callback) => callback(prevState));
 }
 
 export function getState(): DeepReadonly<State> {
