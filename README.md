@@ -35,7 +35,6 @@ This project attempts to analyze npm package contents for issues with their Type
 The first things on my roadmap:
 
 - More thorough explanations of problems
-- Direct links to results
 - Support for DefinitelyTyped analysis
 - Official TypeScript module documentation to link to
 

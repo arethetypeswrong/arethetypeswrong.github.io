@@ -1,23 +1,35 @@
 import validatePackgeName from "validate-npm-package-name";
 import type { ResultMessage } from "../worker/worker.ts";
 import { subscribeRenderer } from "./renderer.ts";
-import { updateState, type PackageInfo, type ParsedPackageSpec, getState } from "./state.ts";
+import { updateState, type PackageInfo, type ParsedPackageSpec, getState, subscribe, type State } from "./state.ts";
 import { shallowEqual } from "./utils/shallowEqual.ts";
 
 // Good grief https://semver.org/#is-there-a-suggested-regular-expression-regex-to-check-a-semver-string
 const semverRegex =
   /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/;
 const worker = new Worker(new URL("../worker/worker.ts", import.meta.url), { type: "module" });
-worker.onmessage = (event: MessageEvent<ResultMessage>) => {
+worker.onmessage = async (event: MessageEvent<ResultMessage>) => {
   updateState((state) => {
     state.checks = event.data.data;
     state.isLoading = false;
     state.message = undefined;
   });
+
+  const params = new URLSearchParams(location.search);
+  const state = getState();
+  if (state.packageInfo.parsed) {
+    params.set(
+      "p",
+      `${state.packageInfo.parsed.packageName}${
+        state.packageInfo.info?.version ? `@${state.packageInfo.info.version}` : ""
+      }`
+    );
+    history.replaceState(null, "", `?${params}`);
+  }
 };
 
 subscribeRenderer({
-  onPackageNameInput: debounce(onPackageNameInput, 300),
+  onPackageNameInput,
   onCheck,
   onSelectFile: async (file) => {
     const arrayBuffer = await file.arrayBuffer();
@@ -26,7 +38,26 @@ subscribeRenderer({
   },
 });
 
-async function onPackageNameInput(value: string) {
+subscribe(debounce(getPackageInfo, 300));
+
+if (location.search) {
+  const packageNameInput = document.getElementById("package-spec") as HTMLInputElement;
+  const params = new URLSearchParams(location.search);
+  const packageSpec = params.get("p");
+  if (packageSpec) {
+    packageNameInput.value = packageSpec;
+    onPackageNameInput(packageSpec);
+    getPackageInfo().then(() => {
+      const info = getState().packageInfo.info;
+      console.log(info);
+      if (info && info.size && info.size < 1_000_000 && !navigator.connection?.saveData) {
+        onCheck();
+      }
+    });
+  }
+}
+
+function onPackageNameInput(value: string) {
   value = value.trim();
   if (!value) {
     updateState((state) => {
@@ -49,15 +80,20 @@ async function onPackageNameInput(value: string) {
     });
     return;
   }
-
   if (!shallowEqual(getState().packageInfo.parsed, parsed.data)) {
     updateState((state) => {
       state.packageInfo.parsed = parsed.data;
       state.checks = undefined;
     });
+  }
+}
 
+async function getPackageInfo(prevState?: State) {
+  const state = getState();
+  const parsed = state.packageInfo.parsed;
+  if (parsed && (!prevState || !shallowEqual(prevState.packageInfo.parsed, parsed))) {
     try {
-      const info = await getPackageInfo(parsed.data);
+      const info = await fetchPackageInfo(parsed);
       updateState((state) => {
         state.packageInfo.info = info;
         state.message = {
@@ -79,10 +115,16 @@ async function onPackageNameInput(value: string) {
   }
 }
 
-function onCheck() {
+async function onCheck() {
+  if (!getState().packageInfo.parsed) {
+    return;
+  }
+  if (!getState().packageInfo.info) {
+    await getPackageInfo();
+  }
   const { packageInfo } = getState();
   if (packageInfo.info && packageInfo.parsed) {
-    updateState((state) => (state.isLoading = true));
+    updateState((state) => void (state.isLoading = true));
     worker.postMessage({
       kind: "check-package",
       packageName: packageInfo.parsed.packageName,
@@ -91,7 +133,7 @@ function onCheck() {
   }
 }
 
-async function getPackageInfo({ packageName, version }: ParsedPackageSpec): Promise<PackageInfo> {
+async function fetchPackageInfo({ packageName, version }: ParsedPackageSpec): Promise<PackageInfo> {
   try {
     const response = await fetch(`https://registry.npmjs.org/${packageName}/${version || "latest"}`);
     if (!response.ok) {
@@ -100,6 +142,7 @@ async function getPackageInfo({ packageName, version }: ParsedPackageSpec): Prom
     const data = await response.json();
     return {
       size: data.dist.unpackedSize,
+      version: data.version,
     };
   } catch (error) {
     throw new Error("Failed to get package info");

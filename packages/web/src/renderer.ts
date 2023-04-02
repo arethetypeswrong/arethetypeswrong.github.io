@@ -1,4 +1,4 @@
-import { subscribe, type State } from "./state";
+import { subscribe, getState } from "./state";
 import { updateView } from "./utils/updateView";
 import { CheckButton } from "./views/CheckButton";
 import { ChecksTable } from "./views/ChecksTable";
@@ -50,14 +50,15 @@ export function subscribeRenderer(events: Events) {
 
     subscribe(render);
 
-    function render(state: State) {
+    function render() {
+      const state = getState();
       updateView(messageElement, Message, { isError: state.message?.isError, text: state.message?.text || "" });
       updateView(problemsElement, ProblemList, {
         problems: state.checks?.problemSummaries,
         containsTypes: state.checks?.analysis.containsTypes,
       });
       updateView(resolutionsElement, ChecksTable, { checks: state.checks });
-      updateView(checkButton, CheckButton, { disabled: !state.packageInfo.info });
+      updateView(checkButton, CheckButton, { disabled: !state.packageInfo.parsed });
       updateView(detailsElement, Details, { analysis: state.checks?.analysis });
     }
   });

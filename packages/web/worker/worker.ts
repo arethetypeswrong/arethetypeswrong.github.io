@@ -1,5 +1,3 @@
-import "./patchGlobal";
-
 import {
   checkPackage,
   checkTgz,
