@@ -10,7 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-      - run: npm install -g npm@9.5.1
+        with:
+          node-version: 19
       - run: npm install
         working-directory: ./packages/core
       - run: npm publish
