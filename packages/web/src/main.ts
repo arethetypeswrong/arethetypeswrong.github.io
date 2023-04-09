@@ -3,6 +3,7 @@ import type { ResultMessage } from "../worker/worker.ts";
 import { subscribeRenderer } from "./renderer.ts";
 import { updateState, type PackageInfo, type ParsedPackageSpec, getState, subscribe, type State } from "./state.ts";
 import { shallowEqual } from "./utils/shallowEqual.ts";
+import NProgress from "nprogress";
 
 // Good grief https://semver.org/#is-there-a-suggested-regular-expression-regex-to-check-a-semver-string
 const semverRegex =
@@ -28,6 +29,8 @@ worker.onmessage = async (event: MessageEvent<ResultMessage>) => {
   }
 };
 
+NProgress.configure({ showSpinner: false });
+
 subscribeRenderer({
   onPackageNameInput,
   onCheck,
@@ -39,6 +42,15 @@ subscribeRenderer({
 });
 
 subscribe(debounce(getPackageInfo, 300));
+
+subscribe((prevState) => {
+  const state = getState();
+  if (state.isLoading && !prevState.isLoading) {
+    NProgress.start();
+  } else if (!state.isLoading && prevState.isLoading) {
+    NProgress.done();
+  }
+});
 
 if (location.search) {
   const packageNameInput = document.getElementById("package-spec") as HTMLInputElement;

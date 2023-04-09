@@ -1,3 +1,5 @@
+@import url("nprogress/nprogress.css");
+
 :root {
   --color-bg: #fff;
   --color-text-primary: rgba(0, 0, 0, 1);
@@ -129,4 +131,11 @@ td {
 
 .display-none {
   display: none;
+}
+
+#nprogress .peg {
+  box-shadow: none;
+}
+#nprogress .bar {
+  background: var(--color-link);
 }

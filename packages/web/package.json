@@ -17,9 +17,11 @@
   "dependencies": {
     "@arethetypeswrong/core": "file:../core",
     "immer": "^9.0.21",
+    "nprogress": "^0.2.0",
     "validate-npm-package-name": "^5.0.0"
   },
   "devDependencies": {
+    "@types/nprogress": "^0.2.0",
     "@types/validate-npm-package-name": "^4.0.0",
     "esbuild": "^0.17.4",
     "vite": "^4.0.4"
