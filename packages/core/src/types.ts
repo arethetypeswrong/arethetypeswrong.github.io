@@ -20,6 +20,7 @@ export interface TraceCollector {
 export type SourceFileCache = Record<string, ts.SourceFile>;
 
 export type ResolutionKind = "node10" | "node16-cjs" | "node16-esm" | "bundler";
+export type ResolutionOption = "node10" | "node16" | "bundler";
 
 export type EntrypointResolutions = Record<string, Record<ResolutionKind, EntrypointResolutionAnalysis>>;
 
@@ -27,6 +28,7 @@ export interface TypedAnalysis {
   packageName: string;
   containsTypes: true;
   entrypointResolutions: EntrypointResolutions;
+  internalResolutionErrors: Record<ResolutionOption, ts.Diagnostic[]>;
 }
 
 export type SymbolTable = Record<string, Symbol>;
@@ -64,5 +66,4 @@ export interface Resolution {
   isTypeScript: boolean;
   isJson: boolean;
   moduleKind: ModuleKind | undefined;
-  exports?: SymbolTable | false;
 }

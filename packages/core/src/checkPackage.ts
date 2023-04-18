@@ -40,8 +40,34 @@ export async function checkPackage(
   if (!containsTypes) {
     return { containsTypes };
   }
-  const entrypoints = checkEntrypoints(packageName, packageFS);
+  const compilerHost = createCompilerHost(packageFS);
+  const entrypoints = checkEntrypoints(packageName, packageFS, compilerHost);
   return { packageName, containsTypes, entrypointResolutions: entrypoints };
+}
+
+function createCompilerHost(fs: FS): ts.CompilerHost {
+  const sourceFileCache: SourceFileCache = new Map();
+  return {
+    ...fs,
+    getSourceFile: (fileName) => {
+      const cached = sourceFileCache.get(fileName);
+      if (cached) {
+        return cached.sourceFile;
+      }
+      const content = fileName.startsWith("/node_modules/typescript/lib") ? "" : fs.readFile(fileName);
+      const sourceFile = ts.createSourceFile(fileName, content, ts.ScriptTarget.Latest);
+      sourceFileCache.set(fileName, { sourceFile, symbolTable: false });
+      return sourceFile;
+    },
+    getDefaultLibFileName: () => "/node_modules/typescript/lib/lib.d.ts",
+    getCurrentDirectory: () => "/",
+    writeFile: () => {
+      throw new Error("Not implemented");
+    },
+    getCanonicalFileName: ts.createGetCanonicalFileName(false),
+    useCaseSensitiveFileNames: () => false,
+    getNewLine: () => "\n",
+  };
 }
 
 function getSubpaths(exportsObject: any): string[] {
@@ -57,13 +83,13 @@ function getSubpaths(exportsObject: any): string[] {
 
 function checkEntrypoints(
   packageName: string,
-  fs: FS
+  fs: FS,
+  compilerHost: ts.CompilerHost
 ): Record<string, Record<ResolutionKind, EntrypointResolutionAnalysis>> {
   const packageJson = JSON.parse(fs.readFile(`/node_modules/${packageName}/package.json`));
   const subpaths = getSubpaths(packageJson.exports);
   const entrypoints = subpaths.length ? subpaths : ["."];
   const result: Record<string, Record<ResolutionKind, EntrypointResolutionAnalysis>> = {};
-  const sourceFileCache: SourceFileCache = new Map();
   for (const entrypoint of entrypoints) {
     result[entrypoint] = {
       node10: checkEntrypointTyped(packageName, fs, "node10", entrypoint, sourceFileCache),
