@@ -16,18 +16,7 @@ type SourceFileCache = Map<string, { symbolTable: SymbolTable | false; sourceFil
 
 export async function checkTgz(tgz: Uint8Array, host: Host = fetchTarballHost): Promise<Analysis> {
   const packageFS = await host.createPackageFSFromTarball(tgz);
-  const files = packageFS.listFiles();
-  const containsTypes = files.some(ts.hasTSFileExtension);
-  if (!containsTypes) {
-    return { containsTypes };
-  }
-  const parts = files[0].split("/");
-  let packageName = parts[2];
-  if (packageName.startsWith("@")) {
-    packageName = parts.slice(2, 4).join("/");
-  }
-  const entrypoints = checkEntrypoints(packageName, packageFS);
-  return { packageName, containsTypes, entrypointResolutions: entrypoints };
+  return checkPackageWorker(packageFS);
 }
 
 export async function checkPackage(
@@ -36,12 +25,25 @@ export async function checkPackage(
   host: Host = fetchTarballHost
 ): Promise<Analysis> {
   const packageFS = await host.createPackageFS(packageName, packageVersion);
-  const containsTypes = packageFS.listFiles().some(ts.hasTSFileExtension);
-  if (!containsTypes) {
-    return { containsTypes };
+  return checkPackageWorker(packageFS);
+}
+
+async function checkPackageWorker(packageFS: FS): Promise<Analysis> {
+  const files = packageFS.listFiles();
+  const containsTypes = files.some(ts.hasTSFileExtension);
+  const parts = files[0].split("/");
+  let packageName = parts[2];
+  if (packageName.startsWith("@")) {
+    packageName = parts.slice(2, 4).join("/");
   }
+  const packageJsonContent = JSON.parse(packageFS.readFile(`/node_modules/${packageName}/package.json`));
+  const packageVersion = packageJsonContent.version;
+  if (!containsTypes) {
+    return { packageName, packageVersion, containsTypes };
+  }
+
   const entrypoints = checkEntrypoints(packageName, packageFS);
-  return { packageName, containsTypes, entrypointResolutions: entrypoints };
+  return { packageName, packageVersion, containsTypes, entrypointResolutions: entrypoints };
 }
 
 function getSubpaths(exportsObject: any): string[] {
