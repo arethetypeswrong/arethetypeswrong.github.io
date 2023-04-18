@@ -52,6 +52,7 @@
     "typescript": "^5.0.0-dev.20230207"
   },
   "devDependencies": {
+    "@types/node": "^18.15.11",
     "@types/ts-expose-internals": "npm:ts-expose-internals@4.9.4"
   },
   "volta": {
