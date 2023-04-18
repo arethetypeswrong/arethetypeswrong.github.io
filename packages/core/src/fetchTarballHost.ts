@@ -13,7 +13,8 @@ export const fetchTarballHost: Host = {
 async function createPackageFSFromTarball(tarball: Uint8Array): Promise<FS> {
   const data = gunzipSync(tarball);
   const files = untar(data);
-  const packageJson = files.find((f) => f.filename === "package/package.json")?.fileData;
+  const prefix = files[0].filename.substring(0, files[0].filename.indexOf("/") + 1);
+  const packageJson = files.find((f) => f.filename === `${prefix}package.json`)?.fileData;
   const packageName = JSON.parse(new TextDecoder().decode(packageJson)).name;
   return createFS(files, "/node_modules/" + packageName);
 }
@@ -28,8 +29,9 @@ async function createPackageFS(packageName: string, packageVersion = "latest"): 
 }
 
 function createFS(data: TarLocalFile[], basePath = ""): FS {
+  const prefix = data[0].filename.substring(0, data[0].filename.indexOf("/") + 1);
   const files = data.reduce((acc: Record<string, Uint8Array>, file) => {
-    acc[ts.combinePaths(basePath, file.filename.substring("package/".length))] = file.fileData;
+    acc[ts.combinePaths(basePath, file.filename.substring(prefix.length))] = file.fileData;
     return acc;
   }, {});
 

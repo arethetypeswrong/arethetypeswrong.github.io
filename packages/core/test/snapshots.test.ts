@@ -22,12 +22,14 @@ describe("snapshots", async () => {
   });
 
   for (const fixture of fs.readdirSync(new URL("../fixtures", import.meta.url))) {
+    if (fixture === ".DS_Store") {
+      continue;
+    }
     test(fixture, async () => {
       const tarball = await readFile(new URL(`../fixtures/${fixture}`, import.meta.url));
       const analysis = await checkTgz(tarball);
-      assert(analysis.containsTypes);
-      const problems = getProblems(analysis);
-      const summary = summarizeProblems(problems, analysis);
+      const problems = analysis.containsTypes ? getProblems(analysis) : undefined;
+      const summary = analysis.containsTypes ? summarizeProblems(problems!, analysis) : undefined;
       const snapshotURL = new URL(`../snapshots/${fixture}.md`, import.meta.url);
       const expectedSnapshot = [
         `# ${fixture}`,
