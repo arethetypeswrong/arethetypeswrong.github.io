@@ -26,6 +26,7 @@ export type EntrypointResolutions = Record<string, Record<ResolutionKind, Entryp
 
 export interface TypedAnalysis {
   packageName: string;
+  packageVersion: string;
   containsTypes: true;
   entrypointResolutions: EntrypointResolutions;
   internalResolutionErrors: Record<ResolutionOption, ts.Diagnostic[]>;
@@ -40,6 +41,8 @@ export interface Symbol {
 }
 
 export interface UntypedAnalysis {
+  packageName: string;
+  packageVersion: string;
   containsTypes: false;
 }
 

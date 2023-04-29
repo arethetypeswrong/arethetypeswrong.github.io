@@ -1,3 +1,11 @@
+## v0.0.6
+
+- Fixed an error processing some packages due to different tarball metadata
+
+## v0.0.5
+
+- API additions: added `packageVersion` property to `TypedAnalysis` and `UntypedAnalysis` and added `packageName` to `UntypedAnalysis`
+
 ## v0.0.4
 
 - New problem kind: **Syntax is incompatible with detected module kind.**
