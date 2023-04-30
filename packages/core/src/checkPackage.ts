@@ -6,13 +6,14 @@ import type {
   FS,
   ResolutionKind,
   EntrypointResolutionAnalysis,
-  TraceCollector,
   Resolution,
   SymbolTable,
   ModuleKind,
+  InternalResolutionError,
+  ResolutionOption,
+  SourceFileInfo,
 } from "./types.js";
-
-type SourceFileCache = Map<string, { symbolTable: SymbolTable | false; sourceFile: ts.SourceFile }>;
+import { createMultiCompilerHost, type MultiCompilerHost } from "./multiCompilerHost.js";
 
 export async function checkTgz(tgz: Uint8Array, host: Host = fetchTarballHost): Promise<Analysis> {
   const packageFS = await host.createPackageFSFromTarball(tgz);
@@ -42,34 +43,74 @@ async function checkPackageWorker(packageFS: FS): Promise<Analysis> {
     return { packageName, packageVersion, containsTypes };
   }
 
-  const compilerHost = createCompilerHost(packageFS);
-  const entrypoints = checkEntrypoints(packageName, packageFS, compilerHost);
-  return { packageName, packageVersion, containsTypes, entrypointResolutions: entrypoints };
+  const host = createMultiCompilerHost(packageFS);
+  const entrypoints = checkEntrypoints(packageName, packageFS, host);
+
+  return {
+    packageName,
+    packageVersion,
+    containsTypes,
+    entrypointResolutions: entrypoints,
+    internalResolutionErrors: getInternalResolutionErrors(packageName, packageFS, host),
+    sourceFileInfo: getSourceFileInfo(packageFS, host),
+  };
 }
 
-function createCompilerHost(fs: FS): ts.CompilerHost {
-  const sourceFileCache: SourceFileCache = new Map();
-  return {
-    ...fs,
-    getSourceFile: (fileName) => {
-      const cached = sourceFileCache.get(fileName);
-      if (cached) {
-        return cached.sourceFile;
-      }
-      const content = fileName.startsWith("/node_modules/typescript/lib") ? "" : fs.readFile(fileName);
-      const sourceFile = ts.createSourceFile(fileName, content, ts.ScriptTarget.Latest);
-      sourceFileCache.set(fileName, { sourceFile, symbolTable: false });
-      return sourceFile;
-    },
-    getDefaultLibFileName: () => "/node_modules/typescript/lib/lib.d.ts",
-    getCurrentDirectory: () => "/",
-    writeFile: () => {
-      throw new Error("Not implemented");
-    },
-    getCanonicalFileName: ts.createGetCanonicalFileName(false),
-    useCaseSensitiveFileNames: () => false,
-    getNewLine: () => "\n",
+function getInternalResolutionErrors(
+  packageName: string,
+  packageFS: FS,
+  host: MultiCompilerHost
+): Record<ResolutionOption, InternalResolutionError[]> {
+  const result: Record<ResolutionOption, InternalResolutionError[]> = {
+    node10: [],
+    node16: [],
+    bundler: [],
   };
+
+  const fileNames = packageFS.listFiles();
+  for (const resolutionOption of ["node10", "node16", "bundler"] as const) {
+    for (const fileName of fileNames) {
+      if (!ts.hasTSFileExtension(fileName)) {
+        continue;
+      }
+      const sourceFile = host.getSourceFile(fileName, resolutionOption)!;
+      const imports = sourceFile.statements.filter(ts.or(ts.isImportDeclaration, ts.isImportEqualsDeclaration));
+      for (const importDeclaration of imports) {
+        const moduleSpecifier = ts.tryGetModuleSpecifierFromDeclaration(importDeclaration);
+        if (!moduleSpecifier) {
+          continue;
+        }
+
+        const reference = moduleSpecifier.text;
+        if (
+          reference !== packageName &&
+          !reference.startsWith(`${packageName}/`) &&
+          reference[0] !== "#" &&
+          !ts.pathIsRelative(reference)
+        ) {
+          // Probably a reference to something we'd have to npm install.
+          // These can definitely be errors, but I'm not installing a whole
+          // graph for now.
+          continue;
+        }
+
+        const resolutionMode = ts.getModeForUsageLocation(sourceFile, moduleSpecifier);
+        const { resolution, trace } = host.resolveModuleName(reference, fileName, resolutionOption);
+
+        if (!resolution.resolvedModule) {
+          result[resolutionOption].push({
+            fileName,
+            moduleSpecifier: reference,
+            pos: moduleSpecifier.pos,
+            end: moduleSpecifier.end,
+            resolutionMode,
+            trace,
+          });
+        }
+      }
+    }
+  }
+  return result;
 }
 
 function getSubpaths(exportsObject: any): string[] {
@@ -86,7 +127,7 @@ function getSubpaths(exportsObject: any): string[] {
 function checkEntrypoints(
   packageName: string,
   fs: FS,
-  compilerHost: ts.CompilerHost
+  host: MultiCompilerHost
 ): Record<string, Record<ResolutionKind, EntrypointResolutionAnalysis>> {
   const packageJson = JSON.parse(fs.readFile(`/node_modules/${packageName}/package.json`));
   const subpaths = getSubpaths(packageJson.exports);
@@ -94,57 +135,28 @@ function checkEntrypoints(
   const result: Record<string, Record<ResolutionKind, EntrypointResolutionAnalysis>> = {};
   for (const entrypoint of entrypoints) {
     result[entrypoint] = {
-      node10: checkEntrypointTyped(packageName, fs, "node10", entrypoint, sourceFileCache),
-      "node16-cjs": checkEntrypointTyped(packageName, fs, "node16-cjs", entrypoint, sourceFileCache),
-      "node16-esm": checkEntrypointTyped(packageName, fs, "node16-esm", entrypoint, sourceFileCache),
-      bundler: checkEntrypointTyped(packageName, fs, "bundler", entrypoint, sourceFileCache),
+      node10: checkEntrypointTyped(packageName, "node10", entrypoint, host),
+      "node16-cjs": checkEntrypointTyped(packageName, "node16-cjs", entrypoint, host),
+      "node16-esm": checkEntrypointTyped(packageName, "node16-esm", entrypoint, host),
+      bundler: checkEntrypointTyped(packageName, "bundler", entrypoint, host),
     };
   }
   return result;
 }
 
-function createModuleResolutionHost(fs: FS, trace: (message: string) => void): ts.ModuleResolutionHost {
-  return {
-    ...fs,
-    trace,
-  };
-}
-
-function createTraceCollector(): TraceCollector {
-  const traces: string[] = [];
-  return {
-    trace: (message: string) => traces.push(message),
-    read: () => {
-      const result = traces.slice();
-      traces.length = 0;
-      return result;
-    },
-  };
-}
-
 function checkEntrypointTyped(
   packageName: string,
-  fs: FS,
   resolutionKind: ResolutionKind,
   entrypoint: string,
-  sourceFileCache: SourceFileCache
+  host: MultiCompilerHost
 ): EntrypointResolutionAnalysis {
   if (entrypoint.includes("*")) {
-    return { name: entrypoint, isWildcard: true, trace: [] };
+    return { name: entrypoint, isWildcard: true };
   }
   const moduleSpecifier = packageName + entrypoint.substring(1); // remove leading . before slash
   const importingFileName = resolutionKind === "node16-esm" ? "/index.mts" : "/index.ts";
-  const moduleResolution =
-    resolutionKind === "node10"
-      ? // @ts-expect-error
-        ts.ModuleResolutionKind.Node10
-      : resolutionKind === "node16-cjs" || resolutionKind === "node16-esm"
-      ? ts.ModuleResolutionKind.Node16
-      : // @ts-expect-error
-        ts.ModuleResolutionKind.Bundler;
+  const moduleResolution = resolutionKind === "node10" ? "node10" : resolutionKind === "bundler" ? "bundler" : "node16";
   const resolutionMode = resolutionKind === "node16-esm" ? ts.ModuleKind.ESNext : ts.ModuleKind.CommonJS;
-  const traceCollector = createTraceCollector();
-  const resolutionHost = createModuleResolutionHost(fs, traceCollector.trace);
 
   const resolution = tryResolve();
   const implementationResolution =
@@ -154,50 +166,24 @@ function checkEntrypointTyped(
     name: entrypoint,
     resolution,
     implementationResolution,
-    trace: traceCollector.read(),
   };
 
   function tryResolve(noDtsResolution?: boolean): Resolution | undefined {
     let moduleKind: ModuleKind | undefined;
-    const compilerOptions = {
-      resolveJsonModule: true,
-      moduleResolution,
-      traceResolution: !noDtsResolution,
-      noDtsResolution,
-    };
-    const resolution = ts.resolveModuleName(
+    const { resolution, trace } = host.resolveModuleName(
       moduleSpecifier,
       importingFileName,
-      compilerOptions,
-      resolutionHost,
-      undefined,
-      undefined,
-      resolutionMode
+      moduleResolution,
+      resolutionMode,
+      noDtsResolution
     );
     const fileName = resolution.resolvedModule?.resolvedFileName;
     if (!fileName) {
       return undefined;
     }
 
-    let sourceInfo = sourceFileCache.get(fileName);
-    if (!sourceInfo) {
-      const sourceText = fs.readFile(fileName);
-      const sourceFile = ts.createSourceFile(fileName, sourceText, ts.ScriptTarget.Latest, /*setParentNodes*/ false);
-      sourceFileCache.set(
-        fileName,
-        (sourceInfo = {
-          sourceFile,
-          symbolTable: getModuleSymbolTable(sourceFile),
-        })
-      );
-    }
     if (resolutionKind === "node16-cjs" || resolutionKind === "node16-esm") {
-      const kind = ts.getImpliedNodeFormatForFile(
-        resolution.resolvedModule.resolvedFileName as ts.Path,
-        /*packageJsonInfoCache*/ undefined,
-        fs,
-        compilerOptions
-      );
+      const kind = host.getImpliedNodeFormatForFile(fileName, moduleResolution);
       if (kind) {
         const isExtension =
           resolution.resolvedModule.extension === ts.Extension.Cjs ||
@@ -208,10 +194,7 @@ function checkEntrypointTyped(
           resolution.resolvedModule.extension === ts.Extension.Dmts;
         const reasonPackageJsonInfo = isExtension
           ? undefined
-          : ts.getPackageScopeForPath(
-              resolution.resolvedModule.resolvedFileName,
-              ts.getTemporaryModuleResolutionState(undefined, resolutionHost, compilerOptions)
-            );
+          : host.getPackageScopeForPath(resolution.resolvedModule.resolvedFileName);
         const reasonFileName = isExtension
           ? resolution.resolvedModule.resolvedFileName
           : reasonPackageJsonInfo
@@ -222,11 +205,6 @@ function checkEntrypointTyped(
           detectedKind: kind,
           detectedReason: isExtension ? "extension" : reasonPackageJsonType ? "type" : "no:type",
           reasonFileName,
-          syntax: sourceInfo?.sourceFile.externalModuleIndicator
-            ? ts.ModuleKind.ESNext
-            : sourceInfo?.sourceFile.commonJsModuleIndicator
-            ? ts.ModuleKind.CommonJS
-            : undefined,
         };
       }
     }
@@ -235,9 +213,23 @@ function checkEntrypointTyped(
       moduleKind,
       isJson: resolution.resolvedModule.extension === ts.Extension.Json,
       isTypeScript: ts.hasTSFileExtension(resolution.resolvedModule.resolvedFileName),
-      exports: sourceInfo?.symbolTable,
+      trace,
     };
   }
+}
+
+function getSourceFileInfo(fileName: string, host: MultiCompilerHost): SourceFileInfo {
+  const sourceFile = host.getSourceFile(fileName)!;
+  const symbolTable = getModuleSymbolTable(sourceFile);
+  const syntax = sourceFile.externalModuleIndicator
+    ? ts.ModuleKind.ESNext
+    : sourceFile.commonJsModuleIndicator
+    ? ts.ModuleKind.CommonJS
+    : undefined;
+  return {
+    syntax,
+    exports: symbolTable,
+  };
 }
 
 function getModuleSymbolTable(sourceFile: ts.SourceFile): SymbolTable | false {
