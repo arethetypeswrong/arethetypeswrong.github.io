@@ -1,4 +1,5 @@
 import type ts from "typescript";
+import type { Problem } from "./problems.js";
 
 export interface Host {
   createPackageFS: (packageName: string, packageVersion?: string) => Promise<FS>;
@@ -33,6 +34,7 @@ export interface TypedAnalysis {
   packageVersion: string;
   containsTypes: true;
   entrypointResolutions: EntrypointResolutions;
+  problems: Problem[];
   internalResolutionErrors: Record<ResolutionOption, InternalResolutionError[]>;
 }
 
