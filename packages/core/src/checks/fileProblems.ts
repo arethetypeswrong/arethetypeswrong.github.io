@@ -1,0 +1,60 @@
+import ts from "typescript";
+import type { MultiCompilerHost } from "../multiCompilerHost.js";
+import type { EntrypointResolutions, FileProblem } from "../types.js";
+import { isDefined } from "../utils.js";
+
+export function getFileProblems(entrypointResolutions: EntrypointResolutions, host: MultiCompilerHost): FileProblem[] {
+  const problems: FileProblem[] = [];
+  const visibleFiles = new Set(
+    Object.values(entrypointResolutions).flatMap((entrypointResolution) => {
+      return Object.values(entrypointResolution).flatMap((resolution) => {
+        return [resolution.resolution?.fileName, resolution.implementationResolution?.fileName].filter(isDefined);
+      });
+    })
+  );
+
+  for (const fileName of visibleFiles) {
+    if (ts.hasJSFileExtension(fileName)) {
+      const sourceFile = host.getSourceFile(fileName, "node16")!;
+      const expectedModuleKind = sourceFile.impliedNodeFormat!;
+      if (
+        (expectedModuleKind === ts.ModuleKind.CommonJS && sourceFile.externalModuleIndicator) ||
+        (expectedModuleKind === ts.ModuleKind.ESNext &&
+          !sourceFile.externalModuleIndicator &&
+          sourceFile.commonJsModuleIndicator)
+      ) {
+        const syntax = sourceFile.externalModuleIndicator ?? sourceFile.commonJsModuleIndicator;
+        problems.push({
+          kind: "UnexpectedModuleSyntax",
+          expectedModuleKind,
+          fileName,
+          range:
+            typeof syntax === "object"
+              ? {
+                  pos: syntax.getStart(sourceFile),
+                  end: syntax.end,
+                }
+              : undefined,
+          moduleKind: host.getModuleKindForFile(fileName, "node16"),
+        });
+      } else if (
+        expectedModuleKind === ts.ModuleKind.CommonJS &&
+        sourceFile.symbol?.exports?.has(ts.InternalSymbolName.Default) &&
+        sourceFile.symbol.exports.has(ts.escapeLeadingUnderscores("__esModule")) &&
+        !sourceFile.symbol.exports.has(ts.InternalSymbolName.ExportEquals)
+      ) {
+        const decl = sourceFile.symbol.exports.get(ts.InternalSymbolName.Default)!.declarations![0];
+        problems.push({
+          kind: "CJSOnlyExportsDefault",
+          fileName,
+          range: {
+            pos: decl.getStart(sourceFile),
+            end: decl.end,
+          },
+        });
+      }
+    }
+  }
+
+  return problems;
+}

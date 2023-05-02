@@ -1,5 +1,4 @@
 import type ts from "typescript";
-import type { Problem } from "./problems.js";
 
 export interface Host {
   createPackageFS: (packageName: string, packageVersion?: string) => Promise<FS>;
@@ -13,21 +12,9 @@ export interface FS {
   listFiles: () => string[];
 }
 
-export type SourceFileCache = Record<string, ts.SourceFile>;
-
 export type ResolutionKind = "node10" | "node16-cjs" | "node16-esm" | "bundler";
 export type ResolutionOption = "node10" | "node16" | "bundler";
-
 export type EntrypointResolutions = Record<string, Record<ResolutionKind, EntrypointResolutionAnalysis>>;
-
-export interface InternalResolutionError {
-  fileName: string;
-  pos: number;
-  end: number;
-  moduleSpecifier: string;
-  resolutionMode: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined;
-  trace: string[];
-}
 
 export interface TypedAnalysis {
   packageName: string;
@@ -35,24 +22,6 @@ export interface TypedAnalysis {
   containsTypes: true;
   entrypointResolutions: EntrypointResolutions;
   problems: Problem[];
-  internalResolutionErrors: Record<ResolutionOption, InternalResolutionError[]>;
-}
-
-/**
- * Must be `moduleResolution`-agnostic.
- */
-export interface SourceFileInfo {
-  syntax: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined;
-  /** `false` indicates the file is not a module. */
-  exports: SymbolTable | false | undefined;
-}
-
-export type SymbolTable = Record<string, Symbol>;
-
-export interface Symbol {
-  name: string;
-  flags: ts.SymbolFlags;
-  valueDeclarationRange: [number, number] | undefined;
 }
 
 export interface UntypedAnalysis {
@@ -83,4 +52,73 @@ export interface Resolution {
   isJson: boolean;
   moduleKind: ModuleKind | undefined;
   trace: string[];
+}
+
+export interface InternalResolutionError {
+  fileName: string;
+  pos: number;
+  end: number;
+  moduleSpecifier: string;
+  resolutionMode: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined;
+  trace: string[];
+}
+
+export type EntrypointResolutionProblemKind =
+  | "NoResolution"
+  | "UntypedResolution"
+  | "FalseESM"
+  | "FalseCJS"
+  | "CJSResolvesToESM"
+  | "Wildcard"
+  | "FallbackCondition"
+  | "FalseExportDefault";
+
+export interface BaseProblem {
+  kind: ProblemKind;
+}
+
+export interface EntrypointResolutionProblem {
+  kind: EntrypointResolutionProblemKind;
+  entrypoint: string;
+  resolutionKind: ResolutionKind;
+}
+
+export interface InternalResolutionProblem extends BaseProblem {
+  kind: "InternalResolutionError";
+  resolutionOption: ResolutionOption;
+  error: InternalResolutionError;
+}
+
+export interface UnexpectedModuleSyntaxProblem extends BaseProblem {
+  kind: "UnexpectedModuleSyntax";
+  expectedModuleKind: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS;
+  moduleKind: ModuleKind;
+  fileName: string;
+  range?: ts.TextRange;
+}
+
+export interface CJSOnlyExportsDefaultProblem extends BaseProblem {
+  kind: "CJSOnlyExportsDefault";
+  fileName: string;
+  range: ts.TextRange;
+}
+
+export type FileProblem = InternalResolutionProblem | UnexpectedModuleSyntaxProblem | CJSOnlyExportsDefaultProblem;
+export type FileProblemKind = FileProblem["kind"];
+export type Problem = EntrypointResolutionProblem | FileProblem;
+export type ProblemKind = Problem["kind"];
+
+export interface SummarizedProblems {
+  entrypointResolutionProblems: ProblemSummary<EntrypointResolutionProblem>[];
+  fileProblems: ProblemSummary<FileProblem>[];
+}
+
+export interface ProblemSummary<T extends Problem> {
+  kind: T["kind"];
+  title: string;
+  messages: {
+    messageText: string;
+    messageHtml: string;
+  }[];
+  problems: T[];
 }

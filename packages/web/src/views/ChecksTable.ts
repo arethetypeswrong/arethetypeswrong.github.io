@@ -1,9 +1,13 @@
-import type { ProblemKind, ResolutionKind } from "@arethetypeswrong/core";
-import { allResolutionKinds } from "@arethetypeswrong/core/utils";
+import type {
+  EntrypointResolutionProblem,
+  EntrypointResolutionProblemKind,
+  ResolutionKind,
+} from "@arethetypeswrong/core";
+import { allResolutionKinds, isEntrypointResolutionProblem } from "@arethetypeswrong/core/utils";
 import type { Checks } from "../state";
 import { problemEmoji } from "./problemEmoji";
 
-const problemShortDescriptions: Record<ProblemKind, string> = {
+const problemShortDescriptions: Record<EntrypointResolutionProblemKind, string> = {
   Wildcard: `${problemEmoji.Wildcard} Unable to check`,
   NoResolution: `${problemEmoji.NoResolution} Failed to resolve`,
   UntypedResolution: `${problemEmoji.UntypedResolution} No types`,
@@ -11,10 +15,7 @@ const problemShortDescriptions: Record<ProblemKind, string> = {
   FalseESM: `${problemEmoji.FalseESM} Masquerading as ESM`,
   CJSResolvesToESM: `${problemEmoji.CJSResolvesToESM} ESM (dynamic import only)`,
   FallbackCondition: `${problemEmoji.FallbackCondition} Used fallback condition`,
-  CJSOnlyExportsDefault: `${problemEmoji.CJSOnlyExportsDefault} CJS default export`,
   FalseExportDefault: `${problemEmoji.FalseExportDefault} Incorrect default export`,
-  UnexpectedESMSyntax: `${problemEmoji.UnexpectedESMSyntax} Unexpected ESM syntax`,
-  UnexpectedCJSSyntax: `${problemEmoji.UnexpectedCJSSyntax} Unexpected CJS syntax`,
 };
 
 const resolutionKinds: Record<ResolutionKind, string> = {
@@ -38,7 +39,7 @@ export function ChecksTable(props: { checks?: Checks }) {
     };
   }
 
-  const { analysis, problems } = props.checks;
+  const { analysis } = props.checks;
   const subpaths = Object.keys(analysis.entrypointResolutions);
   const entrypoints = subpaths.map((s) =>
     s === "." ? analysis.packageName : `${analysis.packageName}/${s.substring(2)}`
@@ -60,8 +61,11 @@ export function ChecksTable(props: { checks?: Checks }) {
           <td>${resolutionKinds[resolutionKind]}</td>
           ${subpaths
             .map((subpath) => {
-              const problemsForCell = problems?.filter(
-                (problem) => problem.entrypoint === subpath && problem.resolutionKind === resolutionKind
+              const problemsForCell = analysis.problems.filter(
+                (problem): problem is EntrypointResolutionProblem =>
+                  isEntrypointResolutionProblem(problem) &&
+                  problem.entrypoint === subpath &&
+                  problem.resolutionKind === resolutionKind
               );
               const resolution = analysis.entrypointResolutions[subpath][resolutionKind].resolution;
               return `<td>${

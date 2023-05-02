@@ -1,5 +1,5 @@
 import ts from "typescript";
-import type { FS, ResolutionOption } from "./types.js";
+import type { FS, ModuleKind, ResolutionOption } from "./types.js";
 
 export interface ResolveModuleNameResult {
   resolution: ts.ResolvedModuleWithFailedLookupLocations;
@@ -13,6 +13,8 @@ export interface MultiCompilerHost {
     moduleResolution: ResolutionOption
   ): ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined;
   getPackageScopeForPath(fileName: string): ts.PackageJsonInfo | undefined;
+  getModuleKindForFile(fileName: string, moduleResolution: "node16"): ModuleKind;
+  getModuleKindForFile(fileName: string, moduleResolution: ResolutionOption): ModuleKind | undefined;
   resolveModuleName(
     moduleName: string,
     containingFile: string,
@@ -33,6 +35,7 @@ export function createMultiCompilerHost(fs: FS): MultiCompilerHost {
     throw new Error("Not implemented");
   };
   const languageVersion = ts.ScriptTarget.Latest;
+  const traceCollector = createTraceCollector();
   const compilerOptions: Record<ResolutionOption, ts.CompilerOptions> = {
     node10: {
       moduleResolution: ts.ModuleResolutionKind.NodeJs,
@@ -67,12 +70,12 @@ export function createMultiCompilerHost(fs: FS): MultiCompilerHost {
     node16: createCompilerHost("node16"),
     bundler: createCompilerHost("bundler"),
   };
-  const traceCollector = createTraceCollector();
 
   return {
     getSourceFile,
     getImpliedNodeFormatForFile,
     getPackageScopeForPath,
+    getModuleKindForFile,
     resolveModuleName,
   };
 
@@ -103,6 +106,34 @@ export function createMultiCompilerHost(fs: FS): MultiCompilerHost {
         compilerOptions.node16
       )
     );
+  }
+
+  function getModuleKindForFile(fileName: string, moduleResolution: "node16"): ModuleKind;
+  function getModuleKindForFile(fileName: string, moduleResolution: ResolutionOption): ModuleKind | undefined;
+  function getModuleKindForFile(fileName: string, moduleResolution: ResolutionOption): ModuleKind | undefined {
+    const kind = getImpliedNodeFormatForFile(fileName, moduleResolution);
+    if (kind) {
+      const extension = ts.getAnyExtensionFromPath(fileName);
+      const isExtension =
+        extension === ts.Extension.Cjs ||
+        extension === ts.Extension.Cts ||
+        extension === ts.Extension.Dcts ||
+        extension === ts.Extension.Mjs ||
+        extension === ts.Extension.Mts ||
+        extension === ts.Extension.Dmts;
+      const reasonPackageJsonInfo = isExtension ? undefined : getPackageScopeForPath(fileName);
+      const reasonFileName = isExtension
+        ? fileName
+        : reasonPackageJsonInfo
+        ? reasonPackageJsonInfo.packageDirectory + "/package.json"
+        : fileName;
+      const reasonPackageJsonType = reasonPackageJsonInfo?.contents?.packageJsonContent.type;
+      return {
+        detectedKind: kind,
+        detectedReason: isExtension ? "extension" : reasonPackageJsonType ? "type" : "no:type",
+        reasonFileName,
+      };
+    }
   }
 
   function resolveModuleName(
@@ -140,10 +171,15 @@ export function createMultiCompilerHost(fs: FS): MultiCompilerHost {
           return cached;
         }
         const content = fileName.startsWith("/node_modules/typescript/lib") ? "" : fs.readFile(fileName);
-        const sourceFile = ts.createSourceFile(fileName, content, {
-          languageVersion,
-          impliedNodeFormat: getImpliedNodeFormatForFile(fileName, moduleResolution),
-        });
+        const sourceFile = ts.createSourceFile(
+          fileName,
+          content,
+          {
+            languageVersion,
+            impliedNodeFormat: getImpliedNodeFormatForFile(fileName, moduleResolution),
+          },
+          /*setParentNodes*/ true
+        );
         sourceFileCache.set(path, sourceFile);
         return sourceFile;
       },

@@ -1,10 +1,9 @@
-import type { Analysis, ProblemSummary, Problem } from "@arethetypeswrong/core";
+import type { Analysis, SummarizedProblems } from "@arethetypeswrong/core";
 import { produce } from "immer";
 
 export interface Checks {
   analysis: Analysis;
-  problemSummaries?: ProblemSummary[];
-  problems?: Problem[];
+  problemSummaries?: SummarizedProblems;
 }
 
 export interface State {

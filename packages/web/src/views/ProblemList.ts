@@ -1,7 +1,7 @@
-import type { ProblemSummary } from "@arethetypeswrong/core";
+import type { Problem, ProblemSummary } from "@arethetypeswrong/core";
 import { problemEmoji } from "./problemEmoji";
 
-export function ProblemList(props: { problems?: ProblemSummary[]; containsTypes: boolean | undefined }) {
+export function ProblemList(props: { problems?: ProblemSummary<Problem>[]; containsTypes: boolean | undefined }) {
   if (props.containsTypes === false) {
     return {
       innerHTML: "This package does not contain types.",
@@ -25,7 +25,7 @@ export function ProblemList(props: { problems?: ProblemSummary[]; containsTypes:
   };
 }
 
-function problem(p: ProblemSummary) {
+function problem(p: ProblemSummary<Problem>) {
   return p.messages
     .map((message) => {
       return `<dt>${problemEmoji[p.kind]}</dt><dd>${message.messageHtml}</dd>`;

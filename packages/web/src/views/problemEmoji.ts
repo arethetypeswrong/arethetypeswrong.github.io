@@ -10,6 +10,6 @@ export const problemEmoji: Record<ProblemKind, string> = {
   FallbackCondition: "🐛",
   CJSOnlyExportsDefault: "🤨",
   FalseExportDefault: "❗️",
-  UnexpectedESMSyntax: "🚭",
-  UnexpectedCJSSyntax: "🚱",
+  UnexpectedModuleSyntax: "🚭",
+  InternalResolutionError: "🥴",
 };

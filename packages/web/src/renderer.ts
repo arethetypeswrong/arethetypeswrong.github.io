@@ -54,7 +54,10 @@ export function subscribeRenderer(events: Events) {
       const state = getState();
       updateView(messageElement, Message, { isError: state.message?.isError, text: state.message?.text || "" });
       updateView(problemsElement, ProblemList, {
-        problems: state.checks?.problemSummaries,
+        problems: [
+          ...(state.checks?.problemSummaries?.entrypointResolutionProblems ?? []),
+          ...(state.checks?.problemSummaries?.fileProblems ?? []),
+        ],
         containsTypes: state.checks?.analysis.containsTypes,
       });
       updateView(resolutionsElement, ChecksTable, { checks: state.checks });

@@ -2,7 +2,7 @@ import fs from "fs";
 import { access, readFile, writeFile } from "fs/promises";
 import assert from "node:assert";
 import { after, describe, test } from "node:test";
-import { checkTgz, getProblems, summarizeProblems } from "@arethetypeswrong/core";
+import { checkTgz, summarizeProblems } from "@arethetypeswrong/core";
 
 const updateSnapshots = process.env.UPDATE_SNAPSHOTS;
 
@@ -28,8 +28,7 @@ describe("snapshots", async () => {
     test(fixture, async () => {
       const tarball = await readFile(new URL(`../fixtures/${fixture}`, import.meta.url));
       const analysis = await checkTgz(tarball);
-      const problems = analysis.containsTypes ? getProblems(analysis) : undefined;
-      const summary = analysis.containsTypes ? summarizeProblems(problems!, analysis) : undefined;
+      const summary = analysis.containsTypes ? summarizeProblems(analysis) : undefined;
       const snapshotURL = new URL(`../snapshots/${fixture}.md`, import.meta.url);
       const expectedSnapshot = [
         `# ${fixture}`,
@@ -43,7 +42,7 @@ describe("snapshots", async () => {
         "## Problems",
         "",
         "```json",
-        JSON.stringify(problems, null, 2),
+        JSON.stringify(analysis.containsTypes ? analysis.problems : [], null, 2),
         "```",
       ].join("\n");
 
