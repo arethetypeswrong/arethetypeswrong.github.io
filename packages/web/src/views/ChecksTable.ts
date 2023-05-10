@@ -40,7 +40,7 @@ export function ChecksTable(props: { checks?: Checks }) {
   }
 
   const { analysis } = props.checks;
-  const subpaths = Object.keys(analysis.entrypointResolutions);
+  const subpaths = Object.keys(analysis.entrypoints);
   const entrypoints = subpaths.map((s) =>
     s === "." ? analysis.packageName : `${analysis.packageName}/${s.substring(2)}`
   );
@@ -67,7 +67,7 @@ export function ChecksTable(props: { checks?: Checks }) {
                   problem.entrypoint === subpath &&
                   problem.resolutionKind === resolutionKind
               );
-              const resolution = analysis.entrypointResolutions[subpath][resolutionKind].resolution;
+              const resolution = analysis.entrypoints[subpath][resolutionKind].resolution;
               return `<td>${
                 problemsForCell?.length
                   ? problemsForCell.map((problem) => problemShortDescriptions[problem.kind]).join("<br />")

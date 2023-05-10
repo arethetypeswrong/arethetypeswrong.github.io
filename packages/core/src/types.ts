@@ -14,13 +14,17 @@ export interface FS {
 
 export type ResolutionKind = "node10" | "node16-cjs" | "node16-esm" | "bundler";
 export type ResolutionOption = "node10" | "node16" | "bundler";
-export type EntrypointResolutions = Record<string, Record<ResolutionKind, EntrypointResolutionAnalysis>>;
+export interface EntrypointInfo {
+  resolutions: Record<ResolutionKind, EntrypointResolutionAnalysis>;
+  hasTypes: boolean;
+  isWildcard: boolean;
+}
 
 export interface TypedAnalysis {
   packageName: string;
   packageVersion: string;
   containsTypes: true;
-  entrypointResolutions: EntrypointResolutions;
+  entrypoints: Record<string, EntrypointInfo>;
   problems: Problem[];
 }
 
@@ -109,16 +113,24 @@ export type Problem = EntrypointResolutionProblem | FileProblem;
 export type ProblemKind = Problem["kind"];
 
 export interface SummarizedProblems {
-  entrypointResolutionProblems: ProblemSummary<EntrypointResolutionProblem>[];
+  entrypointResolutionProblems: EntrypointResolutionProblemSummary<EntrypointResolutionProblem>[];
   fileProblems: ProblemSummary<FileProblem>[];
+}
+
+export interface Message {
+  text: string;
+  html: string;
 }
 
 export interface ProblemSummary<T extends Problem> {
   kind: T["kind"];
   title: string;
-  messages: {
-    messageText: string;
-    messageHtml: string;
-  }[];
+  message: Message;
   problems: T[];
+}
+
+export interface EntrypointResolutionProblemSummary<T extends EntrypointResolutionProblem> extends ProblemSummary<T> {
+  resolutionKindsAffected: ResolutionKind[];
+  resolutionKindsAffectedInAllEntrypoints: ResolutionKind[];
+  entrypointsAffected: string[];
 }

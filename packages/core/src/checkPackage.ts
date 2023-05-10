@@ -7,7 +7,7 @@ import type {
   ResolutionKind,
   EntrypointResolutionAnalysis,
   Resolution,
-  EntrypointResolutions,
+  EntrypointInfo,
 } from "./types.js";
 import { createMultiCompilerHost, type MultiCompilerHost } from "./multiCompilerHost.js";
 import { getEntrypointResolutionProblems } from "./checks/entrypointResolutions.js";
@@ -43,7 +43,7 @@ async function checkPackageWorker(packageFS: FS): Promise<Analysis> {
   }
 
   const host = createMultiCompilerHost(packageFS);
-  const entrypointResolutions = getEntrypointResolutions(packageName, packageFS, host);
+  const entrypointResolutions = getEntrypointInfo(packageName, packageFS, host);
   const entrypointResolutionProblems = getEntrypointResolutionProblems(entrypointResolutions, host);
   const internalResolutionProblems = getInternalResolutionProblems(packageName, packageFS, host);
   const fileProblems = getFileProblems(entrypointResolutions, host);
@@ -52,7 +52,7 @@ async function checkPackageWorker(packageFS: FS): Promise<Analysis> {
     packageName,
     packageVersion,
     containsTypes,
-    entrypointResolutions,
+    entrypoints: entrypointResolutions,
     problems: [...entrypointResolutionProblems, ...internalResolutionProblems, ...fileProblems],
   };
 }
@@ -68,17 +68,22 @@ function getSubpaths(exportsObject: any): string[] {
   return keys.flatMap((key) => getSubpaths(exportsObject[key]));
 }
 
-function getEntrypointResolutions(packageName: string, fs: FS, host: MultiCompilerHost): EntrypointResolutions {
+function getEntrypointInfo(packageName: string, fs: FS, host: MultiCompilerHost): Record<string, EntrypointInfo> {
   const packageJson = JSON.parse(fs.readFile(`/node_modules/${packageName}/package.json`));
   const subpaths = getSubpaths(packageJson.exports);
   const entrypoints = subpaths.length ? subpaths : ["."];
-  const result: Record<string, Record<ResolutionKind, EntrypointResolutionAnalysis>> = {};
+  const result: Record<string, EntrypointInfo> = {};
   for (const entrypoint of entrypoints) {
-    result[entrypoint] = {
+    const resolutions: Record<ResolutionKind, EntrypointResolutionAnalysis> = {
       node10: getEntrypointResolution(packageName, "node10", entrypoint, host),
       "node16-cjs": getEntrypointResolution(packageName, "node16-cjs", entrypoint, host),
       "node16-esm": getEntrypointResolution(packageName, "node16-esm", entrypoint, host),
       bundler: getEntrypointResolution(packageName, "bundler", entrypoint, host),
+    };
+    result[entrypoint] = {
+      resolutions,
+      hasTypes: Object.values(resolutions).some((r) => r.resolution?.isTypeScript),
+      isWildcard: !!resolutions.bundler.isWildcard,
     };
   }
   return result;
