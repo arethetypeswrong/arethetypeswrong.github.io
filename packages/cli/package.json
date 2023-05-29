@@ -22,6 +22,7 @@
   "type": "module",
   "devDependencies": {
     "@types/node": "^20.2.5",
+    "@types/node-fetch": "^2.6.4",
     "esbuild": "^0.17.19"
   },
   "dependencies": {

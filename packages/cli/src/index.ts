@@ -4,6 +4,7 @@ import * as core from "@arethetypeswrong/core";
 import { program } from "commander";
 import chalk from "chalk";
 import { readFile } from "fs/promises";
+import { FetchError } from "node-fetch";
 
 import * as tabular from "./render/index.js";
 
@@ -38,11 +39,27 @@ particularly ESM-related module resolution issues.`
       const data = new Uint8Array(file);
       analysis = await core.checkTgz(data);
     } else {
-      analysis = await core.checkPackage(packageName, packageVersion);
+      try {
+        analysis = await core.checkPackage(packageName, packageVersion);
+      } catch (error) {
+        if (error instanceof FetchError) {
+          program.error(error.message, { code: error.code });
+        }
+
+        if (error && typeof error === "object" && "message" in error) {
+          program.error(`error while checking package: ${error.message}`, { code: "UNKNOWN" });
+        }
+
+        program.error("unknown error while checking package", { code: "UNKNOWN" });
+      }
     }
 
     if (raw) {
-      const result = { analysis } as any;
+      const result = { analysis } as {
+        analysis: core.Analysis;
+        problems?: Partial<Record<core.ProblemKind, core.Problem[]>>;
+      };
+
       if (analysis.containsTypes) {
         result.problems = core.groupByKind(core.getProblems(analysis));
       }

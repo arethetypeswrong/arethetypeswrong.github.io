@@ -5,6 +5,7 @@ import * as core2 from "@arethetypeswrong/core";
 import { program } from "commander";
 import chalk2 from "chalk";
 import { readFile } from "fs/promises";
+import { FetchError } from "node-fetch";
 
 // src/render/typed.ts
 import * as core from "@arethetypeswrong/core";
@@ -116,7 +117,17 @@ particularly ESM-related module resolution issues.`
     const data = new Uint8Array(file);
     analysis = await core2.checkTgz(data);
   } else {
-    analysis = await core2.checkPackage(packageName, packageVersion);
+    try {
+      analysis = await core2.checkPackage(packageName, packageVersion);
+    } catch (error) {
+      if (error instanceof FetchError) {
+        program.error(error.message, { code: error.code });
+      }
+      if (error && typeof error === "object" && "message" in error) {
+        program.error(`error while checking package: ${error.message}`, { code: "UNKNOWN" });
+      }
+      program.error("unknown error while checking package", { code: "UNKNOWN" });
+    }
   }
   if (raw) {
     const result = { analysis };
