@@ -14,6 +14,8 @@ export interface Opts {
   fromFile?: boolean;
   summary?: boolean;
   emoji?: boolean;
+  vertical?: boolean;
+  color?: boolean;
 }
 
 program
@@ -30,10 +32,17 @@ particularly ESM-related module resolution issues.`
   .option("-v, --package-version <version>", "the version of the package to check")
   .option("-r, --raw", "output raw JSON; overrides any rendering options")
   .option("-f, --from-file", "read from a file instead of the npm registry")
-  .option("--no-summary", "don't print summary information about the different errors")
-  .option("--no-emoji", "don't use any emojis")
+  .option("-E, --vertical", "display in a vertical ASCII table (like MySQL's -E option)")
+  .option("--summary, --no-summary", "whether to print summary information about the different errors")
+  .option("--emoji, --no-emoji", "whether to use any emojis")
+  .option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)")
   .action(async (packageName: string) => {
-    const { raw, packageVersion, summary, emoji, fromFile } = program.opts<Opts>();
+    const opts = program.opts<Opts>();
+    const { raw, packageVersion, fromFile, color } = opts;
+
+    if (!color) {
+      process.env.FORCE_COLOR = "0";
+    }
 
     let analysis: core.Analysis;
     if (fromFile) {
@@ -75,7 +84,7 @@ particularly ESM-related module resolution issues.`
 
     console.log();
     if (analysis.containsTypes) {
-      await tabular.typed(analysis, !summary, !emoji);
+      await tabular.typed(analysis, opts);
     } else {
       tabular.untyped(analysis);
     }

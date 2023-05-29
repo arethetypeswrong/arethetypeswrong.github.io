@@ -28,7 +28,7 @@
   "dependencies": {
     "@arethetypeswrong/core": "^0.0.6",
     "chalk": "^4.1.2",
-    "cli-table": "^0.3.11",
+    "cli-table3": "^0.6.3",
     "commander": "^10.0.1"
   }
 }

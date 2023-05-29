@@ -3,14 +3,15 @@
 // src/index.ts
 import * as core2 from "@arethetypeswrong/core";
 import { program } from "commander";
-import chalk2 from "chalk";
+import chalk3 from "chalk";
 import { readFile } from "fs/promises";
 import { FetchError } from "node-fetch";
 
 // src/render/typed.ts
 import * as core from "@arethetypeswrong/core";
 import { allResolutionKinds } from "@arethetypeswrong/core/utils";
-import chalk from "chalk";
+import Table from "cli-table3";
+import chalk2 from "chalk";
 
 // src/problemUtils.ts
 var problemEmoji = {
@@ -68,30 +69,47 @@ var moduleKinds = {
   "": ""
 };
 
+// src/render/verticalTable.ts
+import chalk from "chalk";
+function verticalTable(table) {
+  return table.options.head.slice(1).map((entryPoint, i) => {
+    const keyValuePairs = table.reduce((acc, cur) => {
+      var _a, _b;
+      const key = (_a = cur[0]) == null ? void 0 : _a.toString();
+      const value = (_b = cur[i + 1]) == null ? void 0 : _b.toString();
+      return acc + `${key}: ${value}
+`;
+    }, "");
+    return `${chalk.bold.blue(entryPoint)}
+
+${keyValuePairs}
+***********************************`;
+  }).join("\n\n");
+}
+
 // src/render/typed.ts
-async function typed(analysis, disableSummary, disableEmojis) {
+async function typed(analysis, opts) {
   const problems = core.getProblems(analysis);
   const subpaths = Object.keys(analysis.entrypointResolutions);
-  if (!disableSummary) {
+  if (opts.summary) {
     const summaries = core.summarizeProblems(problems, analysis);
-    const defaultSummary = disableEmojis ? " No problems found." : " No problems found \u{1F31F}";
+    const defaultSummary = !opts.emoji ? " No problems found." : " No problems found \u{1F31F}";
     const summaryTexts = summaries.map((summary) => {
       return summary.messages.map((message) => {
-        if (disableEmojis)
+        if (!opts.emoji)
           return "    " + message.messageText.split(". ").join(".\n    ");
         return ` ${problemEmoji[summary.kind]} ${message.messageText.split(". ").join(".\n    ")}`;
       }).join("\n");
     });
     console.log((summaryTexts.join("\n\n") || defaultSummary) + "\n");
   }
-  const Table = await import("cli-table").then((mod) => mod.default);
   const entrypoints = subpaths.map((s) => {
     const hasProblems = problems.some((p) => p.entrypoint === s);
     const color = hasProblems ? "redBright" : "greenBright";
     if (s === ".")
-      return chalk.bold[color](`"${analysis.packageName}"`);
+      return chalk2.bold[color](`"${analysis.packageName}"`);
     else
-      return chalk.bold[color](`"${analysis.packageName}/${s.substring(2)}"`);
+      return chalk2.bold[color](`"${analysis.packageName}/${s.substring(2)}"`);
   });
   const table = new Table({
     head: ["", ...entrypoints],
@@ -106,18 +124,22 @@ async function typed(analysis, disableSummary, disableEmojis) {
           (problem) => problem.entrypoint === subpath && problem.resolutionKind === kind
         );
         const resolution = analysis.entrypointResolutions[subpath][kind].resolution;
-        const descriptions = problemShortDescriptions[disableEmojis ? "noEmoji" : "emoji"];
+        const descriptions = problemShortDescriptions[!opts.emoji ? "noEmoji" : "emoji"];
         if (problemsForCell.length) {
           return problemsForCell.map((problem) => descriptions[problem.kind]).join("\n");
         }
-        const jsonResult = disableEmojis ? "OK (JSON)" : "\u{1F7E2} (JSON)";
-        const moduleResult = (disableEmojis ? "OK " : "\u{1F7E2} ") + moduleKinds[((_a = resolution == null ? void 0 : resolution.moduleKind) == null ? void 0 : _a.detectedKind) || ""];
+        const jsonResult = !opts.emoji ? "OK (JSON)" : "\u{1F7E2} (JSON)";
+        const moduleResult = (!opts.emoji ? "OK " : "\u{1F7E2} ") + moduleKinds[((_a = resolution == null ? void 0 : resolution.moduleKind) == null ? void 0 : _a.detectedKind) || ""];
         return `${(resolution == null ? void 0 : resolution.isJson) ? jsonResult : moduleResult}`;
       })
     );
     table.push(row);
   });
-  console.log(table.toString());
+  if (opts.vertical) {
+    console.log(verticalTable(table));
+  } else {
+    console.log(table.toString());
+  }
 }
 
 // src/render/untyped.ts
@@ -127,12 +149,16 @@ function untyped(analysis) {
 
 // src/index.ts
 program.addHelpText("before", "ATTW CLI (v0.0.1)\n").version("0.0.1").name("attw").description(
-  `${chalk2.bold.blue(
+  `${chalk3.bold.blue(
     "Are the Types Wrong?"
   )} attempts to analyze npm package contents for issues with their TypeScript types,
 particularly ESM-related module resolution issues.`
-).argument("<package-name>", "the package to check").option("-v, --package-version <version>", "the version of the package to check").option("-r, --raw", "output raw JSON; overrides any rendering options").option("-f, --from-file", "read from a file instead of the npm registry").option("--no-summary", "don't print summary information about the different errors").option("--no-emoji", "don't use any emojis").action(async (packageName) => {
-  const { raw, packageVersion, summary, emoji, fromFile } = program.opts();
+).argument("<package-name>", "the package to check").option("-v, --package-version <version>", "the version of the package to check").option("-r, --raw", "output raw JSON; overrides any rendering options").option("-f, --from-file", "read from a file instead of the npm registry").option("-E, --vertical", "display in a vertical ASCII table (like MySQL's -E option)").option("--summary, --no-summary", "whether to print summary information about the different errors", true).option("--emoji, --no-emoji", "whether to use any emojis", true).option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)", true).action(async (packageName) => {
+  const opts = program.opts();
+  const { raw, packageVersion, fromFile, color } = opts;
+  if (!color) {
+    process.env.FORCE_COLOR = "0";
+  }
   let analysis;
   if (fromFile) {
     const file = await readFile(packageName);
@@ -164,7 +190,7 @@ ${error.message}`, {
   }
   console.log();
   if (analysis.containsTypes) {
-    await typed(analysis, !summary, !emoji);
+    await typed(analysis, opts);
   } else {
     untyped(analysis);
   }

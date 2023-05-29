@@ -1,21 +1,24 @@
 import * as core from "@arethetypeswrong/core";
 import { allResolutionKinds } from "@arethetypeswrong/core/utils";
+import Table, { type GenericTable, type HorizontalTableRow } from "cli-table3";
 import chalk from "chalk";
 
 import { moduleKinds, problemEmoji, resolutionKinds, problemShortDescriptions } from "../problemUtils.js";
+import type { Opts } from "../index.js";
+import { verticalTable } from "./verticalTable.js";
 
-export async function typed(analysis: core.TypedAnalysis, disableSummary?: boolean, disableEmojis?: boolean) {
+export async function typed(analysis: core.TypedAnalysis, opts: Opts) {
   const problems = core.getProblems(analysis);
 
   const subpaths = Object.keys(analysis.entrypointResolutions);
 
-  if (!disableSummary) {
+  if (opts.summary) {
     const summaries = core.summarizeProblems(problems, analysis);
-    const defaultSummary = disableEmojis ? " No problems found." : " No problems found 🌟";
+    const defaultSummary = !opts.emoji ? " No problems found." : " No problems found 🌟";
     const summaryTexts = summaries.map((summary) => {
       return summary.messages
         .map((message) => {
-          if (disableEmojis) return "    " + message.messageText.split(". ").join(".\n    ");
+          if (!opts.emoji) return "    " + message.messageText.split(". ").join(".\n    ");
           return ` ${problemEmoji[summary.kind]} ${message.messageText.split(". ").join(".\n    ")}`;
         })
         .join("\n");
@@ -23,8 +26,6 @@ export async function typed(analysis: core.TypedAnalysis, disableSummary?: boole
 
     console.log((summaryTexts.join("\n\n") || defaultSummary) + "\n");
   }
-
-  const Table = await import("cli-table").then((mod) => mod.default);
 
   const entrypoints = subpaths.map((s) => {
     const hasProblems = problems.some((p) => p.entrypoint === s);
@@ -37,7 +38,7 @@ export async function typed(analysis: core.TypedAnalysis, disableSummary?: boole
   const table = new Table({
     head: ["", ...entrypoints],
     colWidths: [20, ...entrypoints.map(() => 35)],
-  });
+  }) as GenericTable<HorizontalTableRow>;
 
   allResolutionKinds.forEach((kind) => {
     let row = [resolutionKinds[kind]];
@@ -50,15 +51,15 @@ export async function typed(analysis: core.TypedAnalysis, disableSummary?: boole
 
         const resolution = analysis.entrypointResolutions[subpath][kind].resolution;
 
-        const descriptions = problemShortDescriptions[disableEmojis ? "noEmoji" : "emoji"];
+        const descriptions = problemShortDescriptions[!opts.emoji ? "noEmoji" : "emoji"];
 
         if (problemsForCell.length) {
           return problemsForCell.map((problem) => descriptions[problem.kind]).join("\n");
         }
 
-        const jsonResult = disableEmojis ? "OK (JSON)" : "🟢 (JSON)";
+        const jsonResult = !opts.emoji ? "OK (JSON)" : "🟢 (JSON)";
 
-        const moduleResult = (disableEmojis ? "OK " : "🟢 ") + moduleKinds[resolution?.moduleKind?.detectedKind || ""];
+        const moduleResult = (!opts.emoji ? "OK " : "🟢 ") + moduleKinds[resolution?.moduleKind?.detectedKind || ""];
 
         return `${resolution?.isJson ? jsonResult : moduleResult}`;
       })
@@ -67,5 +68,9 @@ export async function typed(analysis: core.TypedAnalysis, disableSummary?: boole
     table.push(row);
   });
 
-  console.log(table.toString());
+  if (opts.vertical) {
+    console.log(verticalTable(table));
+  } else {
+    console.log(table.toString());
+  }
 }
