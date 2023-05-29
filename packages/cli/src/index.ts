@@ -7,6 +7,7 @@ import { readFile } from "fs/promises";
 import { FetchError } from "node-fetch";
 
 import * as tabular from "./render/index.js";
+import { readConfig } from "./readConfig.js";
 
 export interface Opts {
   raw?: boolean;
@@ -18,6 +19,7 @@ export interface Opts {
   color?: boolean;
   strict?: boolean;
   quiet?: boolean;
+  configPath?: string;
 }
 
 program
@@ -41,8 +43,10 @@ particularly ESM-related module resolution issues.`
   .option("--emoji, --no-emoji", "whether to use any emojis")
   .option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)")
   .option("-q, --quiet", "don't print anything to STDOUT (overrides all other options)")
+  .option("--config-path <path>", "path to config file (default: ./.attw.json)")
   .action(async (packageName: string) => {
     const opts = program.opts<Opts>();
+    await readConfig(program, opts.configPath);
 
     if (opts.quiet) {
       console.log = () => { };
