@@ -10,7 +10,7 @@
     "directory": "packages/cli"
   },
   "bin": {
-    "attw": "node ./attw.js"
+    "attw": "./attw.js"
   },
   "publishConfig": {
     "access": "public"
