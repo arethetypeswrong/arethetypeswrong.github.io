@@ -153,53 +153,60 @@ program.addHelpText("before", "ATTW CLI (v0.0.1)\n").addHelpText("after", "\ncor
     "Are the Types Wrong?"
   )} attempts to analyze npm package contents for issues with their TypeScript types,
 particularly ESM-related module resolution issues.`
-).argument("<package-name>", "the package to check").option("-v, --package-version <version>", "the version of the package to check").option("-r, --raw", "output raw JSON; overrides any rendering options").option("-f, --from-file", "read from a file instead of the npm registry").option("-E, --vertical", "display in a vertical ASCII table (like MySQL's -E option)").option("-s, --strict", "exit if any problems are found (useful for CI)").option("-q, --quiet", "don't print any information (if true, overrides all other options)").option("--summary, --no-summary", "whether to print summary information about the different errors").option("--emoji, --no-emoji", "whether to use any emojis").option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)").action(async (packageName) => {
+).argument("<package-name>", "the package to check").option("-v, --package-version <version>", "the version of the package to check").option("-r, --raw", "output raw JSON; overrides any rendering options").option("-f, --from-file", "read from a file instead of the npm registry").option("-E, --vertical", "display in a vertical ASCII table (like MySQL's -E option)").option("-s, --strict", "exit if any problems are found (useful for CI)").option("--summary, --no-summary", "whether to print summary information about the different errors").option("--emoji, --no-emoji", "whether to use any emojis").option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)").option("-q, --quiet", "don't print anything to STDOUT (overrides all other options)").action(async (packageName) => {
   const opts = program.opts();
-  const { raw, packageVersion, fromFile, color, strict, quiet } = opts;
-  if (quiet) {
+  if (opts.quiet) {
     console.log = () => {
     };
   }
-  if (!color) {
+  if (!opts.color) {
     process.env.FORCE_COLOR = "0";
   }
   let analysis;
-  if (fromFile) {
-    const file = await readFile(packageName);
-    const data = new Uint8Array(file);
-    analysis = await core2.checkTgz(data);
+  if (opts.fromFile) {
+    try {
+      const file = await readFile(packageName);
+      const data = new Uint8Array(file);
+      analysis = await core2.checkTgz(data);
+    } catch (error) {
+      handleError(error, "checking file");
+    }
   } else {
     try {
-      analysis = await core2.checkPackage(packageName, packageVersion);
+      analysis = await core2.checkPackage(packageName, opts.packageVersion);
     } catch (error) {
       if (error instanceof FetchError) {
-        program.error(error.message, { code: error.code });
+        program.error(`error while fetching package:
+${error.message}`, { code: error.code });
       }
-      if (error && typeof error === "object" && "message" in error) {
-        program.error(`error while checking package:
-${error.message}`, {
-          code: "code" in error && typeof error.code === "string" ? error.code : "UNKNOWN"
-        });
-      }
-      program.error("unknown error while checking package", { code: "UNKNOWN" });
+      handleError(error, "checking package");
     }
   }
-  if (raw) {
+  if (opts.raw) {
     const result = { analysis };
     if (analysis.containsTypes) {
       result.problems = core2.groupByKind(core2.getProblems(analysis));
     }
     console.log(JSON.stringify(result));
-    if (strict && analysis.containsTypes && !!core2.getProblems(analysis).length)
+    if (opts.strict && analysis.containsTypes && !!core2.getProblems(analysis).length)
       process.exit(1);
     return;
   }
   console.log();
   if (analysis.containsTypes) {
     await typed(analysis, opts);
-    if (strict && !!core2.getProblems(analysis).length)
+    if (opts.strict && !!core2.getProblems(analysis).length)
       process.exit(1);
   } else {
     untyped(analysis);
   }
 }).parse(process.argv);
+function handleError(error, title) {
+  if (error && typeof error === "object" && "message" in error) {
+    program.error(`error while ${title}:
+${error.message}`, {
+      code: "code" in error && typeof error.code === "string" ? error.code : "UNKNOWN"
+    });
+  }
+  program.error(`unknown error while ${title}`, { code: "UNKNOWN" });
+}

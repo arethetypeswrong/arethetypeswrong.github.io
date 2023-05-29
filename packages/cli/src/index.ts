@@ -54,24 +54,22 @@ particularly ESM-related module resolution issues.`
 
     let analysis: core.Analysis;
     if (opts.fromFile) {
-      const file = await readFile(packageName);
-      const data = new Uint8Array(file);
-      analysis = await core.checkTgz(data);
+      try {
+        const file = await readFile(packageName);
+        const data = new Uint8Array(file);
+        analysis = await core.checkTgz(data);
+      } catch (error) {
+        handleError(error, "checking file");
+      }
     } else {
       try {
         analysis = await core.checkPackage(packageName, opts.packageVersion);
       } catch (error) {
         if (error instanceof FetchError) {
-          program.error(error.message, { code: error.code });
+          program.error(`error while fetching package:\n${error.message}`, { code: error.code });
         }
 
-        if (error && typeof error === "object" && "message" in error) {
-          program.error(`error while checking package:\n${error.message}`, {
-            code: "code" in error && typeof error.code === "string" ? error.code : "UNKNOWN",
-          });
-        }
-
-        program.error("unknown error while checking package", { code: "UNKNOWN" });
+        handleError(error, "checking package");
       }
     }
 
@@ -101,3 +99,13 @@ particularly ESM-related module resolution issues.`
     }
   })
   .parse(process.argv);
+
+function handleError(error: unknown, title: string): never {
+  if (error && typeof error === "object" && "message" in error) {
+    program.error(`error while ${title}:\n${error.message}`, {
+      code: "code" in error && typeof error.code === "string" ? error.code : "UNKNOWN",
+    });
+  }
+
+  program.error(`unknown error while ${title}`, { code: "UNKNOWN" });
+}
