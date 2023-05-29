@@ -153,9 +153,13 @@ program.addHelpText("before", "ATTW CLI (v0.0.1)\n").addHelpText("after", "\ncor
     "Are the Types Wrong?"
   )} attempts to analyze npm package contents for issues with their TypeScript types,
 particularly ESM-related module resolution issues.`
-).argument("<package-name>", "the package to check").option("-v, --package-version <version>", "the version of the package to check").option("-r, --raw", "output raw JSON; overrides any rendering options").option("-f, --from-file", "read from a file instead of the npm registry").option("-E, --vertical", "display in a vertical ASCII table (like MySQL's -E option)").option("-s, --strict", "exit if any problems are found (useful for CI)").option("--summary, --no-summary", "whether to print summary information about the different errors").option("--emoji, --no-emoji", "whether to use any emojis").option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)").action(async (packageName) => {
+).argument("<package-name>", "the package to check").option("-v, --package-version <version>", "the version of the package to check").option("-r, --raw", "output raw JSON; overrides any rendering options").option("-f, --from-file", "read from a file instead of the npm registry").option("-E, --vertical", "display in a vertical ASCII table (like MySQL's -E option)").option("-s, --strict", "exit if any problems are found (useful for CI)").option("-q, --quiet", "don't print any information (if true, overrides all other options)").option("--summary, --no-summary", "whether to print summary information about the different errors").option("--emoji, --no-emoji", "whether to use any emojis").option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)").action(async (packageName) => {
   const opts = program.opts();
-  const { raw, packageVersion, fromFile, color, strict } = opts;
+  const { raw, packageVersion, fromFile, color, strict, quiet } = opts;
+  if (quiet) {
+    console.log = () => {
+    };
+  }
   if (!color) {
     process.env.FORCE_COLOR = "0";
   }

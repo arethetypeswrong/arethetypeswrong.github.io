@@ -17,6 +17,7 @@ export interface Opts {
   vertical?: boolean;
   color?: boolean;
   strict?: boolean;
+  quiet?: boolean;
 }
 
 program
@@ -39,22 +40,26 @@ particularly ESM-related module resolution issues.`
   .option("--summary, --no-summary", "whether to print summary information about the different errors")
   .option("--emoji, --no-emoji", "whether to use any emojis")
   .option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)")
+  .option("-q, --quiet", "don't print anything to STDOUT (overrides all other options)")
   .action(async (packageName: string) => {
     const opts = program.opts<Opts>();
-    const { raw, packageVersion, fromFile, color, strict } = opts;
 
-    if (!color) {
+    if (opts.quiet) {
+      console.log = () => { };
+    }
+
+    if (!opts.color) {
       process.env.FORCE_COLOR = "0";
     }
 
     let analysis: core.Analysis;
-    if (fromFile) {
+    if (opts.fromFile) {
       const file = await readFile(packageName);
       const data = new Uint8Array(file);
       analysis = await core.checkTgz(data);
     } else {
       try {
-        analysis = await core.checkPackage(packageName, packageVersion);
+        analysis = await core.checkPackage(packageName, opts.packageVersion);
       } catch (error) {
         if (error instanceof FetchError) {
           program.error(error.message, { code: error.code });
@@ -70,7 +75,7 @@ particularly ESM-related module resolution issues.`
       }
     }
 
-    if (raw) {
+    if (opts.raw) {
       const result = { analysis } as {
         analysis: core.Analysis;
         problems?: Partial<Record<core.ProblemKind, core.Problem[]>>;
@@ -82,7 +87,7 @@ particularly ESM-related module resolution issues.`
 
       console.log(JSON.stringify(result));
 
-      if (strict && analysis.containsTypes && !!core.getProblems(analysis).length) process.exit(1);
+      if (opts.strict && analysis.containsTypes && !!core.getProblems(analysis).length) process.exit(1);
 
       return;
     }
@@ -90,7 +95,7 @@ particularly ESM-related module resolution issues.`
     console.log();
     if (analysis.containsTypes) {
       await tabular.typed(analysis, opts);
-      if (strict && !!core.getProblems(analysis).length) process.exit(1);
+      if (opts.strict && !!core.getProblems(analysis).length) process.exit(1);
     } else {
       tabular.untyped(analysis);
     }
