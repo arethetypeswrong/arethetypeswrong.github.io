@@ -67,7 +67,7 @@ export function ChecksTable(props: { checks?: Checks }) {
                   problem.entrypoint === subpath &&
                   problem.resolutionKind === resolutionKind
               );
-              const resolution = analysis.entrypoints[subpath][resolutionKind].resolution;
+              const resolution = analysis.entrypoints[subpath].resolutions[resolutionKind].resolution;
               return `<td>${
                 problemsForCell?.length
                   ? problemsForCell.map((problem) => problemShortDescriptions[problem.kind]).join("<br />")

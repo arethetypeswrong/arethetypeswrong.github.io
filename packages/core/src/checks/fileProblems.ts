@@ -1,13 +1,16 @@
 import ts from "typescript";
 import type { MultiCompilerHost } from "../multiCompilerHost.js";
-import type { EntrypointResolutions, FileProblem } from "../types.js";
+import type { EntrypointInfo, FileProblem } from "../types.js";
 import { isDefined } from "../utils.js";
 
-export function getFileProblems(entrypointResolutions: EntrypointResolutions, host: MultiCompilerHost): FileProblem[] {
+export function getFileProblems(
+  entrypointResolutions: Record<string, EntrypointInfo>,
+  host: MultiCompilerHost
+): FileProblem[] {
   const problems: FileProblem[] = [];
   const visibleFiles = new Set(
     Object.values(entrypointResolutions).flatMap((entrypointResolution) => {
-      return Object.values(entrypointResolution).flatMap((resolution) => {
+      return Object.values(entrypointResolution.resolutions).flatMap((resolution) => {
         return [resolution.resolution?.fileName, resolution.implementationResolution?.fileName].filter(isDefined);
       });
     })

@@ -117,15 +117,10 @@ export interface SummarizedProblems {
   fileProblems: ProblemSummary<FileProblem>[];
 }
 
-export interface Message {
-  text: string;
-  html: string;
-}
-
 export interface ProblemSummary<T extends Problem> {
   kind: T["kind"];
   title: string;
-  message: Message;
+  description: string;
   problems: T[];
 }
 

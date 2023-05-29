@@ -1,15 +1,15 @@
 import ts from "typescript";
-import type { EntrypointResolutionProblem, EntrypointResolutions } from "../types.js";
+import type { EntrypointInfo, EntrypointResolutionProblem } from "../types.js";
 import type { MultiCompilerHost } from "../multiCompilerHost.js";
 import { resolvedThroughFallback } from "../utils.js";
 
 export function getEntrypointResolutionProblems(
-  entrypointResolutions: EntrypointResolutions,
+  entrypointResolutions: Record<string, EntrypointInfo>,
   host: MultiCompilerHost
 ): EntrypointResolutionProblem[] {
   const problems: EntrypointResolutionProblem[] = [];
   for (const subpath in entrypointResolutions) {
-    const entrypoint = entrypointResolutions[subpath];
+    const entrypoint = entrypointResolutions[subpath].resolutions;
     for (const kind in entrypoint) {
       const resolutionKind = kind as keyof typeof entrypoint;
       const result = entrypoint[resolutionKind];
