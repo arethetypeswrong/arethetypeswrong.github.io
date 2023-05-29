@@ -3,13 +3,15 @@
 // src/index.ts
 import * as core2 from "@arethetypeswrong/core";
 import { program } from "commander";
+import chalk2 from "chalk";
+import { readFile } from "fs/promises";
 
 // src/render/typed.ts
 import * as core from "@arethetypeswrong/core";
 import { allResolutionKinds } from "@arethetypeswrong/core/utils";
 import chalk from "chalk";
 
-// src/problemEmoji.ts
+// src/problemUtils.ts
 var problemEmoji = {
   Wildcard: "\u2753",
   NoResolution: "\u{1F480}",
@@ -49,61 +51,58 @@ var moduleKinds = {
 };
 
 // src/render/typed.ts
-function problem(p) {
-  return p.messages.map((message) => {
-    return ` ${problemEmoji[p.kind]} ${message.messageText.split(". ").join(".\n    ")}`;
-  }).join("\n");
-}
-async function typed(analysis, disableSummary) {
-  const subpaths = Object.keys(analysis.entrypointResolutions);
-  const entrypoints = subpaths.map(
-    (s) => s === "." ? analysis.packageName : `${analysis.packageName}/${s.substring(2)}`
-  );
+async function typed(analysis, disableSummary, disableEmojis) {
   const problems = core.getProblems(analysis);
-  const summaries = core.summarizeProblems(problems, analysis);
+  const subpaths = Object.keys(analysis.entrypointResolutions);
   if (!disableSummary) {
-    console.log(summaries.map(problem).join("\n\n") || " No problems found \u{1F31F}");
-    console.log();
+    const summaries = core.summarizeProblems(problems, analysis);
+    const defaultSummary = disableEmojis ? " No problems found." : " No problems found \u{1F31F}";
+    console.log((summaries.map(renderProblem).join("\n\n") || defaultSummary) + "\n");
   }
   const Table = await import("cli-table").then((mod) => mod.default);
+  const entrypoints = subpaths.map((s) => {
+    const hasProblems = problems.some((p) => p.entrypoint === s);
+    const color = hasProblems ? "redBright" : "greenBright";
+    if (s === ".")
+      return chalk.bold[color](`"${analysis.packageName}"`);
+    else
+      return chalk.bold[color](`"${analysis.packageName}/${s.substring(2)}"`);
+  });
   const table = new Table({
-    head: [
-      "",
-      ...entrypoints.map(
-        (ep, i) => chalk.bold[problems.some((problem2) => problem2.entrypoint === subpaths[i]) ? "redBright" : "greenBright"](
-          `"${ep}"`
-        )
-      )
-    ],
+    head: ["", ...entrypoints],
     colWidths: [20, ...entrypoints.map(() => 35)]
   });
   allResolutionKinds.forEach((kind) => {
-    const row = [];
-    row.push(resolutionKinds[kind]);
-    subpaths.map((subpath) => {
-      var _a;
-      const problemsForCell = problems == null ? void 0 : problems.filter(
-        (problem2) => problem2.entrypoint === subpath && problem2.resolutionKind === kind
-      );
-      const resolution = analysis.entrypointResolutions[subpath][kind].resolution;
-      return `${(problemsForCell == null ? void 0 : problemsForCell.length) ? problemsForCell.map((problem2) => problemShortDescriptions[problem2.kind]).join("\n") : (resolution == null ? void 0 : resolution.isJson) ? "\u{1F7E2} (JSON)" : "\u{1F7E2} " + moduleKinds[((_a = resolution == null ? void 0 : resolution.moduleKind) == null ? void 0 : _a.detectedKind) || ""]}`;
-    }).forEach((cell) => {
-      row.push(cell);
-    });
+    let row = [resolutionKinds[kind]];
+    row = row.concat(
+      subpaths.map((subpath) => {
+        var _a;
+        const problemsForCell = problems.filter(
+          (problem) => problem.entrypoint === subpath && problem.resolutionKind === kind
+        );
+        const resolution = analysis.entrypointResolutions[subpath][kind].resolution;
+        if (problemsForCell.length) {
+          return problemsForCell.map((problem) => problemShortDescriptions[problem.kind]).join("\n");
+        }
+        return `${(resolution == null ? void 0 : resolution.isJson) ? "\u{1F7E2} (JSON)" : "\u{1F7E2} " + moduleKinds[((_a = resolution == null ? void 0 : resolution.moduleKind) == null ? void 0 : _a.detectedKind) || ""]}`;
+      })
+    );
     table.push(row);
   });
   console.log(table.toString());
 }
+function renderProblem(p) {
+  return p.messages.map((message) => {
+    return ` ${problemEmoji[p.kind]} ${message.messageText.split(". ").join(".\n    ")}`;
+  }).join("\n");
+}
 
 // src/render/untyped.ts
 function untyped(analysis) {
-  console.log("This package does not contain types.\n");
-  console.log("Details: ", analysis);
+  console.log("This package does not contain types.\nDetails: ", analysis);
 }
 
 // src/index.ts
-import chalk2 from "chalk";
-import { readFile } from "fs/promises";
 program.addHelpText("before", "ATTW CLI (v0.0.1)\n").version("0.0.1").name("attw").description(
   `${chalk2.bold.blue(
     "Are the Types Wrong?"

@@ -2,9 +2,10 @@
 
 import * as core from "@arethetypeswrong/core";
 import { program } from "commander";
-import * as tabular from "./render/index.js";
 import chalk from "chalk";
 import { readFile } from "fs/promises";
+
+import * as tabular from "./render/index.js";
 
 export interface Opts {
   raw?: boolean;
