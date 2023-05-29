@@ -8,6 +8,7 @@ export async function readConfig(program: Command, alternate = ".attw.json") {
     for (let key in opts) {
       if (key === "configPath")
         program.error(`cannot set "configPath" within ${alternate}`, { code: "INVALID_OPTION" });
+      if (key === "help" || key === "version") continue;
       program.setOptionValueWithSource(key, opts[key], "config");
     }
   } catch (error) {

@@ -33,7 +33,7 @@ program
     )} attempts to analyze npm package contents for issues with their TypeScript types,
 particularly ESM-related module resolution issues.`
   )
-  .argument("<package-name>", "the package to check")
+  .argument("<package-name>", "the package to check; by default the name of an NPM package, unless --from-file is set")
   .option("-v, --package-version <version>", "the version of the package to check")
   .option("-r, --raw", "output raw JSON; overrides any rendering options")
   .option("-f, --from-file", "read from a file instead of the npm registry")
