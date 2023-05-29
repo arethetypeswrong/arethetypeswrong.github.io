@@ -26,7 +26,7 @@ var problemEmoji = {
   UnexpectedESMSyntax: "\u{1F6AD}",
   UnexpectedCJSSyntax: "\u{1F6B1}"
 };
-var problemShortDescriptions = {
+var withEmoji = {
   Wildcard: `${problemEmoji.Wildcard} Unable to check`,
   NoResolution: `${problemEmoji.NoResolution} Failed to resolve`,
   UntypedResolution: `${problemEmoji.UntypedResolution} No types`,
@@ -38,6 +38,23 @@ var problemShortDescriptions = {
   FalseExportDefault: `${problemEmoji.FalseExportDefault} Incorrect default export`,
   UnexpectedESMSyntax: `${problemEmoji.UnexpectedESMSyntax} Unexpected ESM syntax`,
   UnexpectedCJSSyntax: `${problemEmoji.UnexpectedCJSSyntax} Unexpected CJS syntax`
+};
+var noEmoji = {
+  Wildcard: `Unable to check`,
+  NoResolution: `Failed to resolve`,
+  UntypedResolution: `No types`,
+  FalseCJS: `Masquerading as CJS`,
+  FalseESM: `Masquerading as ESM`,
+  CJSResolvesToESM: `ESM (dynamic import only)`,
+  FallbackCondition: `Used fallback condition`,
+  CJSOnlyExportsDefault: `CJS default export`,
+  FalseExportDefault: `Incorrect default export`,
+  UnexpectedESMSyntax: `Unexpected ESM syntax`,
+  UnexpectedCJSSyntax: `Unexpected CJS syntax`
+};
+var problemShortDescriptions = {
+  emoji: withEmoji,
+  noEmoji
 };
 var resolutionKinds = {
   node10: "node10",
@@ -58,7 +75,14 @@ async function typed(analysis, disableSummary, disableEmojis) {
   if (!disableSummary) {
     const summaries = core.summarizeProblems(problems, analysis);
     const defaultSummary = disableEmojis ? " No problems found." : " No problems found \u{1F31F}";
-    console.log((summaries.map(renderProblem).join("\n\n") || defaultSummary) + "\n");
+    const summaryTexts = summaries.map((summary) => {
+      return summary.messages.map((message) => {
+        if (disableEmojis)
+          return "    " + message.messageText.split(". ").join(".\n    ");
+        return ` ${problemEmoji[summary.kind]} ${message.messageText.split(". ").join(".\n    ")}`;
+      }).join("\n");
+    });
+    console.log((summaryTexts.join("\n\n") || defaultSummary) + "\n");
   }
   const Table = await import("cli-table").then((mod) => mod.default);
   const entrypoints = subpaths.map((s) => {
@@ -82,20 +106,18 @@ async function typed(analysis, disableSummary, disableEmojis) {
           (problem) => problem.entrypoint === subpath && problem.resolutionKind === kind
         );
         const resolution = analysis.entrypointResolutions[subpath][kind].resolution;
+        const descriptions = problemShortDescriptions[disableEmojis ? "noEmoji" : "emoji"];
         if (problemsForCell.length) {
-          return problemsForCell.map((problem) => problemShortDescriptions[problem.kind]).join("\n");
+          return problemsForCell.map((problem) => descriptions[problem.kind]).join("\n");
         }
-        return `${(resolution == null ? void 0 : resolution.isJson) ? "\u{1F7E2} (JSON)" : "\u{1F7E2} " + moduleKinds[((_a = resolution == null ? void 0 : resolution.moduleKind) == null ? void 0 : _a.detectedKind) || ""]}`;
+        const jsonResult = disableEmojis ? "OK (JSON)" : "\u{1F7E2} (JSON)";
+        const moduleResult = (disableEmojis ? "OK " : "\u{1F7E2} ") + moduleKinds[((_a = resolution == null ? void 0 : resolution.moduleKind) == null ? void 0 : _a.detectedKind) || ""];
+        return `${(resolution == null ? void 0 : resolution.isJson) ? jsonResult : moduleResult}`;
       })
     );
     table.push(row);
   });
   console.log(table.toString());
-}
-function renderProblem(p) {
-  return p.messages.map((message) => {
-    return ` ${problemEmoji[p.kind]} ${message.messageText.split(". ").join(".\n    ")}`;
-  }).join("\n");
 }
 
 // src/render/untyped.ts
@@ -109,8 +131,8 @@ program.addHelpText("before", "ATTW CLI (v0.0.1)\n").version("0.0.1").name("attw
     "Are the Types Wrong?"
   )} attempts to analyze npm package contents for issues with their TypeScript types,
 particularly ESM-related module resolution issues.`
-).argument("<package-name>", "the package to check").option("-v, --package-version <version>", "the version of the package to check").option("--no-summary", "don't print summary information about the different errors").option("-r, --raw", "output raw JSON").option("-f, --from-file", "read from a file instead of the npm registry").action(async (packageName) => {
-  const { raw, packageVersion, noSummary, fromFile } = program.opts();
+).argument("<package-name>", "the package to check").option("-v, --package-version <version>", "the version of the package to check").option("-r, --raw", "output raw JSON; overrides any rendering options").option("-f, --from-file", "read from a file instead of the npm registry").option("--no-summary", "don't print summary information about the different errors").option("--no-emoji", "don't use any emojis").action(async (packageName) => {
+  const { raw, packageVersion, summary, emoji, fromFile } = program.opts();
   let analysis;
   if (fromFile) {
     const file = await readFile(packageName);
@@ -142,7 +164,7 @@ ${error.message}`, {
   }
   console.log();
   if (analysis.containsTypes) {
-    await typed(analysis, noSummary);
+    await typed(analysis, !summary, !emoji);
   } else {
     untyped(analysis);
   }

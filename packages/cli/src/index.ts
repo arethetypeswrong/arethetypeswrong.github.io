@@ -11,8 +11,9 @@ import * as tabular from "./render/index.js";
 export interface Opts {
   raw?: boolean;
   packageVersion?: string;
-  noSummary?: boolean;
   fromFile?: boolean;
+  summary?: boolean;
+  emoji?: boolean;
 }
 
 program
@@ -27,11 +28,12 @@ particularly ESM-related module resolution issues.`
   )
   .argument("<package-name>", "the package to check")
   .option("-v, --package-version <version>", "the version of the package to check")
-  .option("--no-summary", "don't print summary information about the different errors")
-  .option("-r, --raw", "output raw JSON")
+  .option("-r, --raw", "output raw JSON; overrides any rendering options")
   .option("-f, --from-file", "read from a file instead of the npm registry")
+  .option("--no-summary", "don't print summary information about the different errors")
+  .option("--no-emoji", "don't use any emojis")
   .action(async (packageName: string) => {
-    const { raw, packageVersion, noSummary, fromFile } = program.opts<Opts>();
+    const { raw, packageVersion, summary, emoji, fromFile } = program.opts<Opts>();
 
     let analysis: core.Analysis;
     if (fromFile) {
@@ -73,7 +75,7 @@ particularly ESM-related module resolution issues.`
 
     console.log();
     if (analysis.containsTypes) {
-      await tabular.typed(analysis, noSummary);
+      await tabular.typed(analysis, !summary, !emoji);
     } else {
       tabular.untyped(analysis);
     }

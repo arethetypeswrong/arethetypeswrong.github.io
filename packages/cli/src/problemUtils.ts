@@ -1,4 +1,4 @@
-import * as core from '@arethetypeswrong/core';
+import * as core from "@arethetypeswrong/core";
 import type { ProblemKind } from "@arethetypeswrong/core";
 
 export const problemEmoji: Record<ProblemKind, string> = {
@@ -15,7 +15,7 @@ export const problemEmoji: Record<ProblemKind, string> = {
   UnexpectedCJSSyntax: "🚱",
 };
 
-export const problemShortDescriptions: Record<ProblemKind, string> = {
+export const withEmoji: Record<ProblemKind, string> = {
   Wildcard: `${problemEmoji.Wildcard} Unable to check`,
   NoResolution: `${problemEmoji.NoResolution} Failed to resolve`,
   UntypedResolution: `${problemEmoji.UntypedResolution} No types`,
@@ -27,6 +27,25 @@ export const problemShortDescriptions: Record<ProblemKind, string> = {
   FalseExportDefault: `${problemEmoji.FalseExportDefault} Incorrect default export`,
   UnexpectedESMSyntax: `${problemEmoji.UnexpectedESMSyntax} Unexpected ESM syntax`,
   UnexpectedCJSSyntax: `${problemEmoji.UnexpectedCJSSyntax} Unexpected CJS syntax`,
+};
+
+export const noEmoji: Record<ProblemKind, string> = {
+  Wildcard: `Unable to check`,
+  NoResolution: `Failed to resolve`,
+  UntypedResolution: `No types`,
+  FalseCJS: `Masquerading as CJS`,
+  FalseESM: `Masquerading as ESM`,
+  CJSResolvesToESM: `ESM (dynamic import only)`,
+  FallbackCondition: `Used fallback condition`,
+  CJSOnlyExportsDefault: `CJS default export`,
+  FalseExportDefault: `Incorrect default export`,
+  UnexpectedESMSyntax: `Unexpected ESM syntax`,
+  UnexpectedCJSSyntax: `Unexpected CJS syntax`,
+};
+
+export const problemShortDescriptions = {
+  emoji: withEmoji,
+  noEmoji: noEmoji,
 };
 
 export const resolutionKinds: Record<core.ResolutionKind, string> = {
