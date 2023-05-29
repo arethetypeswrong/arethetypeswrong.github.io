@@ -1,0 +1,33 @@
+{
+  "name": "@arethetypeswrong/cli",
+  "version": "0.0.1",
+  "description": "A CLI tool for arethetypeswrong.github.io",
+  "author": "Andrew Branch & ej-shafran",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arethetypeswrong/arethetypeswrong.github.io.git",
+    "directory": "packages/cli"
+  },
+  "bin": {
+    "attw": "node ./attw.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "build": "npx esbuild ./src/index.ts --bundle --outfile=attw.js --packages=external --platform=node --format=esm"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^20.2.5",
+    "esbuild": "^0.17.19"
+  },
+  "dependencies": {
+    "@arethetypeswrong/core": "^0.0.6",
+    "chalk": "^4.1.2",
+    "cli-table": "^0.3.11",
+    "commander": "^10.0.1"
+  }
+}
