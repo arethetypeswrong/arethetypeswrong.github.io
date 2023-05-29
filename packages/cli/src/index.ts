@@ -47,7 +47,9 @@ particularly ESM-related module resolution issues.`
         }
 
         if (error && typeof error === "object" && "message" in error) {
-          program.error(`error while checking package: ${error.message}`, { code: "UNKNOWN" });
+          program.error(`error while checking package:\n${error.message}`, {
+            code: "code" in error && typeof error.code === "string" ? error.code : "UNKNOWN",
+          });
         }
 
         program.error("unknown error while checking package", { code: "UNKNOWN" });
