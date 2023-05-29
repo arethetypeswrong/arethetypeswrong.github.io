@@ -23,7 +23,7 @@ The `attw` command acts very similarly to [the arethetypeswrong website](https:/
 The usage is:
 
 ```shell
-$ attw [options] <package-name>
+attw [options] <package-name>
 ```
 
 Where `<package-name>` is a required positional argument - either the path to a local `.tar.gz` file, or the name of an NPM package.
@@ -139,7 +139,7 @@ The `FORCE_COLOR` env variable is also available for use (set is to `0` or `1`).
 In the CLI: `--color`/`--no-color`
 
 ```shell
-attw --color/--no-color
+attw --color/--no-color <package-name>
 ```
 
 In the config file, `color` can be a boolean value.
@@ -151,7 +151,7 @@ When set, nothing will be printed to STDOUT.
 In the CLI: `--quiet`, `-q`
 
 ```shell
-attw --quiet
+attw --quiet <package-name>
 ```
 
 In the config file, `quiet` can be a boolean value.
