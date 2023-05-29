@@ -16,11 +16,13 @@ export interface Opts {
   emoji?: boolean;
   vertical?: boolean;
   color?: boolean;
+  strict?: boolean;
 }
 
 program
   .addHelpText("before", "ATTW CLI (v0.0.1)\n")
-  .version("0.0.1")
+  .addHelpText("after", "\ncore: v0.0.6, typescript: v5.0.0-dev.20230207")
+  .version("v0.0.1")
   .name("attw")
   .description(
     `${chalk.bold.blue(
@@ -33,12 +35,13 @@ particularly ESM-related module resolution issues.`
   .option("-r, --raw", "output raw JSON; overrides any rendering options")
   .option("-f, --from-file", "read from a file instead of the npm registry")
   .option("-E, --vertical", "display in a vertical ASCII table (like MySQL's -E option)")
+  .option("-s, --strict", "exit if any problems are found (useful for CI)")
   .option("--summary, --no-summary", "whether to print summary information about the different errors")
   .option("--emoji, --no-emoji", "whether to use any emojis")
   .option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)")
   .action(async (packageName: string) => {
     const opts = program.opts<Opts>();
-    const { raw, packageVersion, fromFile, color } = opts;
+    const { raw, packageVersion, fromFile, color, strict } = opts;
 
     if (!color) {
       process.env.FORCE_COLOR = "0";
@@ -79,12 +82,15 @@ particularly ESM-related module resolution issues.`
 
       console.log(JSON.stringify(result));
 
+      if (strict && analysis.containsTypes && !!core.getProblems(analysis).length) process.exit(1);
+
       return;
     }
 
     console.log();
     if (analysis.containsTypes) {
       await tabular.typed(analysis, opts);
+      if (strict && !!core.getProblems(analysis).length) process.exit(1);
     } else {
       tabular.untyped(analysis);
     }

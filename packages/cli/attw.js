@@ -148,14 +148,14 @@ function untyped(analysis) {
 }
 
 // src/index.ts
-program.addHelpText("before", "ATTW CLI (v0.0.1)\n").version("0.0.1").name("attw").description(
+program.addHelpText("before", "ATTW CLI (v0.0.1)\n").addHelpText("after", "\ncore: v0.0.6, typescript: v5.0.0-dev.20230207").version("v0.0.1").name("attw").description(
   `${chalk3.bold.blue(
     "Are the Types Wrong?"
   )} attempts to analyze npm package contents for issues with their TypeScript types,
 particularly ESM-related module resolution issues.`
-).argument("<package-name>", "the package to check").option("-v, --package-version <version>", "the version of the package to check").option("-r, --raw", "output raw JSON; overrides any rendering options").option("-f, --from-file", "read from a file instead of the npm registry").option("-E, --vertical", "display in a vertical ASCII table (like MySQL's -E option)").option("--summary, --no-summary", "whether to print summary information about the different errors", true).option("--emoji, --no-emoji", "whether to use any emojis", true).option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)", true).action(async (packageName) => {
+).argument("<package-name>", "the package to check").option("-v, --package-version <version>", "the version of the package to check").option("-r, --raw", "output raw JSON; overrides any rendering options").option("-f, --from-file", "read from a file instead of the npm registry").option("-E, --vertical", "display in a vertical ASCII table (like MySQL's -E option)").option("-s, --strict", "exit if any problems are found (useful for CI)").option("--summary, --no-summary", "whether to print summary information about the different errors").option("--emoji, --no-emoji", "whether to use any emojis").option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)").action(async (packageName) => {
   const opts = program.opts();
-  const { raw, packageVersion, fromFile, color } = opts;
+  const { raw, packageVersion, fromFile, color, strict } = opts;
   if (!color) {
     process.env.FORCE_COLOR = "0";
   }
@@ -186,11 +186,15 @@ ${error.message}`, {
       result.problems = core2.groupByKind(core2.getProblems(analysis));
     }
     console.log(JSON.stringify(result));
+    if (strict && analysis.containsTypes && !!core2.getProblems(analysis).length)
+      process.exit(1);
     return;
   }
   console.log();
   if (analysis.containsTypes) {
     await typed(analysis, opts);
+    if (strict && !!core2.getProblems(analysis).length)
+      process.exit(1);
   } else {
     untyped(analysis);
   }
