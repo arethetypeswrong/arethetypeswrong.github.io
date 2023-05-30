@@ -3,14 +3,22 @@ import { allResolutionKinds } from "@arethetypeswrong/core/utils";
 import Table, { type GenericTable, type HorizontalTableRow } from "cli-table3";
 import chalk from "chalk";
 
-import { moduleKinds, problemEmoji, resolutionKinds, problemShortDescriptions } from "../problemUtils.js";
+import { moduleKinds, problemEmoji, resolutionKinds, problemShortDescriptions, problemFlags } from "../problemUtils.js";
 import type { Opts } from "../index.js";
 import { verticalTable } from "./verticalTable.js";
 
 export async function typed(analysis: core.TypedAnalysis, opts: Opts) {
-  const problems = core.getProblems(analysis);
+  const problems = core.getProblems(analysis).filter((problem) => !opts.ignore || !opts.ignore.includes(problem.kind));
 
   const subpaths = Object.keys(analysis.entrypointResolutions);
+
+  if (opts.ignore && opts.ignore.length) {
+    console.log(
+      chalk.gray(
+        ` (ignoring rules: ${opts.ignore.map((rule) => `'${problemFlags[rule as core.ProblemKind]}'`).join(", ")})\n`
+      )
+    );
+  }
 
   if (opts.summary) {
     const summaries = core.summarizeProblems(problems, analysis);

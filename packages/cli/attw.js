@@ -2,7 +2,7 @@
 
 // src/index.ts
 import * as core2 from "@arethetypeswrong/core";
-import { program } from "commander";
+import { Option, program } from "commander";
 import chalk3 from "chalk";
 import { readFile as readFile2 } from "fs/promises";
 import { FetchError } from "node-fetch";
@@ -14,6 +14,19 @@ import Table from "cli-table3";
 import chalk2 from "chalk";
 
 // src/problemUtils.ts
+var problemFlags = {
+  Wildcard: "wildcard",
+  NoResolution: "no-resolution",
+  UntypedResolution: "untyped-resolution",
+  FalseCJS: "false-cjs",
+  FalseESM: "false-esm",
+  CJSResolvesToESM: "cjs-resolves-to-esm",
+  FallbackCondition: "fallback-condition",
+  CJSOnlyExportsDefault: "cjs-only-exports-default",
+  FalseExportDefault: "false-export-default",
+  UnexpectedESMSyntax: "unexpected-esm-syntax",
+  UnexpectedCJSSyntax: "unexpected-cjs-syntax"
+};
 var problemEmoji = {
   Wildcard: "\u2753",
   NoResolution: "\u{1F480}",
@@ -89,8 +102,16 @@ ${keyValuePairs}
 
 // src/render/typed.ts
 async function typed(analysis, opts) {
-  const problems = core.getProblems(analysis);
+  const problems = core.getProblems(analysis).filter((problem) => !opts.ignore || !opts.ignore.includes(problem.kind));
   const subpaths = Object.keys(analysis.entrypointResolutions);
+  if (opts.ignore && opts.ignore.length) {
+    console.log(
+      chalk2.gray(
+        ` (ignoring rules: ${opts.ignore.map((rule) => `'${problemFlags[rule]}'`).join(", ")})
+`
+      )
+    );
+  }
   if (opts.summary) {
     const summaries = core.summarizeProblems(problems, analysis);
     const defaultSummary = !opts.emoji ? " No problems found." : " No problems found \u{1F31F}";
@@ -152,13 +173,33 @@ import { readFile } from "fs/promises";
 async function readConfig(program2, alternate = ".attw.json") {
   try {
     const results = await readFile(alternate, "utf8");
+    if (!results)
+      return;
     const opts = JSON.parse(results);
     for (let key in opts) {
       if (key === "configPath")
         program2.error(`cannot set "configPath" within ${alternate}`, { code: "INVALID_OPTION" });
-      if (key === "help" || key === "version")
-        continue;
-      program2.setOptionValueWithSource(key, opts[key], "config");
+      const value = opts[key];
+      if (key === "ignore") {
+        if (!Array.isArray(value))
+          program2.error(`error: config option 'ignore' should be an array.`);
+        const invalid = value.find((rule) => !Object.values(problemFlags).includes(rule));
+        if (invalid)
+          program2.error(
+            `error: config option 'ignore' argument '${invalid}' is invalid. Allowed choices are ${Object.values(
+              problemFlags
+            ).join(", ")}.`
+          );
+      }
+      if (Array.isArray(value)) {
+        const opt = program2.getOptionValue(key);
+        if (Array.isArray(opt)) {
+          program2.setOptionValueWithSource(key, [...opt, ...value], "config");
+          continue;
+        }
+      }
+      if (key !== "help" && key !== "version")
+        program2.setOptionValueWithSource(key, opts[key], "config");
     }
   } catch (error) {
     if (!error || typeof error !== "object" || !("code" in error) || !("message" in error)) {
@@ -176,9 +217,13 @@ program.addHelpText("before", "ATTW CLI (v0.0.1)\n").addHelpText("after", "\ncor
     "Are the Types Wrong?"
   )} attempts to analyze npm package contents for issues with their TypeScript types,
 particularly ESM-related module resolution issues.`
-).argument("<package-name>", "the package to check; by default the name of an NPM package, unless --from-file is set").option("-v, --package-version <version>", "the version of the package to check").option("-r, --raw", "output raw JSON; overrides any rendering options").option("-f, --from-file", "read from a file instead of the npm registry").option("-E, --vertical", "display in a vertical ASCII table (like MySQL's -E option)").option("-s, --strict", "exit if any problems are found (useful for CI)").option("--summary, --no-summary", "whether to print summary information about the different errors").option("--emoji, --no-emoji", "whether to use any emojis").option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)").option("-q, --quiet", "don't print anything to STDOUT (overrides all other options)").option("--config-path <path>", "path to config file (default: ./.attw.json)").action(async (packageName) => {
+).argument("<package-name>", "the package to check; by default the name of an NPM package, unless --from-file is set").option("-v, --package-version <version>", "the version of the package to check").option("-r, --raw", "output raw JSON; overrides any rendering options").option("-f, --from-file", "read from a file instead of the npm registry").option("-E, --vertical", "display in a vertical ASCII table (like MySQL's -E option)").option("-s, --strict", "exit if any problems are found (useful for CI)").option("--summary, --no-summary", "whether to print summary information about the different errors").option("--emoji, --no-emoji", "whether to use any emojis").option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)").option("-q, --quiet", "don't print anything to STDOUT (overrides all other options)").option("--config-path <path>", "path to config file (default: ./.attw.json)").addOption(new Option("--ignore <rules...>", "specify rules to ignore").choices(Object.values(problemFlags))).action(async (packageName) => {
+  var _a;
   const opts = program.opts();
   await readConfig(program, opts.configPath);
+  opts.ignore = (_a = opts.ignore) == null ? void 0 : _a.map(
+    (value) => Object.keys(problemFlags).find((key) => problemFlags[key] === value)
+  );
   if (opts.quiet) {
     console.log = () => {
     };
