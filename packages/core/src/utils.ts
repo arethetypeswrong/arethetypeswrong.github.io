@@ -1,12 +1,4 @@
-import type {
-  EntrypointResolutionProblem,
-  EntrypointResolutionProblemKind,
-  FileProblem,
-  Problem,
-  ProblemKind,
-  ResolutionKind,
-  ResolutionOption,
-} from "./types.js";
+import type { EntrypointInfo, EntrypointResolutionAnalysis, ResolutionKind, ResolutionOption } from "./types.js";
 
 export const allResolutionOptions: ResolutionOption[] = ["node10", "node16", "bundler"];
 export const allResolutionKinds: ResolutionKind[] = ["node10", "node16-cjs", "node16-esm", "bundler"];
@@ -25,32 +17,6 @@ export function getResolutionOption(resolutionKind: ResolutionKind): ResolutionO
 
 export function isDefined<T>(value: T | undefined): value is T {
   return value !== undefined;
-}
-
-type AssertNever<T extends never> = T;
-
-export function isEntrypointResolutionProblemKind(kind: ProblemKind): kind is EntrypointResolutionProblemKind {
-  switch (kind) {
-    case "NoResolution":
-    case "UntypedResolution":
-    case "FalseESM":
-    case "FalseCJS":
-    case "CJSResolvesToESM":
-    case "Wildcard":
-    case "FallbackCondition":
-    case "FalseExportDefault":
-      return true;
-    default:
-      return false as AssertNever<typeof kind & EntrypointResolutionProblemKind>;
-  }
-}
-
-export function isEntrypointResolutionProblem(problem: Problem): problem is EntrypointResolutionProblem {
-  return isEntrypointResolutionProblemKind(problem.kind);
-}
-
-export function isFileProblem(problem: Problem): problem is FileProblem {
-  return !isEntrypointResolutionProblem(problem);
 }
 
 export function resolvedThroughFallback(traces: string[]) {
@@ -82,5 +48,18 @@ export function resolvedThroughFallback(traces: string[]) {
       }
     }
     return false;
+  }
+}
+
+export function visitResolutions(
+  entrypoints: Record<string, EntrypointInfo>,
+  visitor: (analysis: EntrypointResolutionAnalysis, info: EntrypointInfo) => unknown
+) {
+  for (const entrypoint of Object.values(entrypoints)) {
+    for (const resolution of Object.values(entrypoint.resolutions)) {
+      if (visitor(resolution, entrypoint)) {
+        return;
+      }
+    }
   }
 }

@@ -45,7 +45,7 @@ async function checkPackageWorker(packageFS: FS): Promise<Analysis> {
   const host = createMultiCompilerHost(packageFS);
   const entrypointResolutions = getEntrypointInfo(packageName, packageFS, host);
   const entrypointResolutionProblems = getEntrypointResolutionProblems(entrypointResolutions, host);
-  const internalResolutionProblems = getInternalResolutionProblems(packageName, packageFS, host);
+  const internalResolutionProblems = getInternalResolutionProblems(packageName, packageFS, entrypointResolutions, host);
   const fileProblems = getFileProblems(entrypointResolutions, host);
 
   return {
@@ -81,6 +81,7 @@ function getEntrypointInfo(packageName: string, fs: FS, host: MultiCompilerHost)
       bundler: getEntrypointResolution(packageName, "bundler", entrypoint, host),
     };
     result[entrypoint] = {
+      subpath: entrypoint,
       resolutions,
       hasTypes: Object.values(resolutions).some((r) => r.resolution?.isTypeScript),
       isWildcard: !!resolutions.bundler.isWildcard,
@@ -96,7 +97,7 @@ function getEntrypointResolution(
   host: MultiCompilerHost
 ): EntrypointResolutionAnalysis {
   if (entrypoint.includes("*")) {
-    return { name: entrypoint, isWildcard: true };
+    return { name: entrypoint, resolutionKind, isWildcard: true };
   }
   const moduleSpecifier = packageName + entrypoint.substring(1); // remove leading . before slash
   const importingFileName = resolutionKind === "node16-esm" ? "/index.mts" : "/index.ts";
@@ -107,10 +108,19 @@ function getEntrypointResolution(
   const implementationResolution =
     !resolution || ts.isDeclarationFileName(resolution.fileName) ? tryResolve(/*noDtsResolution*/ true) : undefined;
 
+  const files = resolution
+    ? host
+        .createProgram(moduleResolution, [resolution.fileName])
+        .getSourceFiles()
+        .map((f) => f.fileName)
+    : undefined;
+
   return {
     name: entrypoint,
+    resolutionKind,
     resolution,
     implementationResolution,
+    files,
   };
 
   function tryResolve(noDtsResolution?: boolean): Resolution | undefined {

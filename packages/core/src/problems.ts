@@ -113,7 +113,7 @@ export function summarizeProblems(analysis: TypedAnalysis): SummarizedProblems {
     fileProblemSummaries.push(summary);
   }
   return {
-    entrypointResolutionProblems: entrypointResolutionProblemSummaries,
+    problems: entrypointResolutionProblemSummaries,
     fileProblems: fileProblemSummaries,
   };
 }

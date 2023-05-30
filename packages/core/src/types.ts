@@ -15,6 +15,7 @@ export interface FS {
 export type ResolutionKind = "node10" | "node16-cjs" | "node16-esm" | "bundler";
 export type ResolutionOption = "node10" | "node16" | "bundler";
 export interface EntrypointInfo {
+  subpath: string;
   resolutions: Record<ResolutionKind, EntrypointResolutionAnalysis>;
   hasTypes: boolean;
   isWildcard: boolean;
@@ -38,9 +39,11 @@ export type Analysis = TypedAnalysis | UntypedAnalysis;
 
 export interface EntrypointResolutionAnalysis {
   name: string;
+  resolutionKind: ResolutionKind;
   isWildcard?: boolean;
   resolution?: Resolution;
   implementationResolution?: Resolution;
+  files?: string[];
 }
 
 export type ModuleKindReason = "extension" | "type" | "no:type";
@@ -67,7 +70,7 @@ export interface InternalResolutionError {
   trace: string[];
 }
 
-export type EntrypointResolutionProblemKind =
+export type ProblemKind =
   | "NoResolution"
   | "UntypedResolution"
   | "FalseESM"
@@ -75,14 +78,17 @@ export type EntrypointResolutionProblemKind =
   | "CJSResolvesToESM"
   | "Wildcard"
   | "FallbackCondition"
-  | "FalseExportDefault";
+  | "FalseExportDefault"
+  | "InternalResolutionError"
+  | "UnexpectedModuleSyntax"
+  | "CJSOnlyExportsDefault";
 
 export interface BaseProblem {
   kind: ProblemKind;
 }
 
 export interface EntrypointResolutionProblem {
-  kind: EntrypointResolutionProblemKind;
+  kind: ProblemKind;
   entrypoint: string;
   resolutionKind: ResolutionKind;
 }
@@ -107,14 +113,10 @@ export interface CJSOnlyExportsDefaultProblem extends BaseProblem {
   range: ts.TextRange;
 }
 
-export type FileProblem = InternalResolutionProblem | UnexpectedModuleSyntaxProblem | CJSOnlyExportsDefaultProblem;
-export type FileProblemKind = FileProblem["kind"];
-export type Problem = EntrypointResolutionProblem | FileProblem;
-export type ProblemKind = Problem["kind"];
+export type Problem = EntrypointResolutionProblem;
 
 export interface SummarizedProblems {
-  entrypointResolutionProblems: EntrypointResolutionProblemSummary<EntrypointResolutionProblem>[];
-  fileProblems: ProblemSummary<FileProblem>[];
+  problems: EntrypointResolutionProblemSummary<EntrypointResolutionProblem>[];
 }
 
 export interface ProblemSummary<T extends Problem> {

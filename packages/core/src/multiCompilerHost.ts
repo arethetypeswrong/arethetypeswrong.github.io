@@ -22,6 +22,7 @@ export interface MultiCompilerHost {
     resolutionMode?: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS,
     noDtsResolution?: boolean
   ): ResolveModuleNameResult;
+  createProgram(moduleResolution: ResolutionOption, rootNames: string[]): ts.Program;
 }
 
 export function createMultiCompilerHost(fs: FS): MultiCompilerHost {
@@ -77,6 +78,7 @@ export function createMultiCompilerHost(fs: FS): MultiCompilerHost {
     getPackageScopeForPath,
     getModuleKindForFile,
     resolveModuleName,
+    createProgram,
   };
 
   function getSourceFile(fileName: string, moduleResolution: ResolutionOption = "bundler"): ts.SourceFile | undefined {
@@ -158,6 +160,14 @@ export function createMultiCompilerHost(fs: FS): MultiCompilerHost {
       resolution,
       trace: traceCollector.read(),
     };
+  }
+
+  function createProgram(moduleResolution: ResolutionOption, rootNames: string[]): ts.Program {
+    return ts.createProgram({
+      rootNames,
+      options: compilerOptions[moduleResolution],
+      host: compilerHosts[moduleResolution],
+    });
   }
 
   function createCompilerHost(moduleResolution: ResolutionOption): ts.CompilerHost {

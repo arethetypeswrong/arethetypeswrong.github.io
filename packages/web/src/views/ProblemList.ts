@@ -32,7 +32,7 @@ export function ProblemList(props: { checks?: Checks }) {
       ${props.checks.problemSummaries.fileProblems
         .map((p) => fileProblem(p, props.checks!.analysis.packageName))
         .join("")}
-      ${props.checks.problemSummaries.entrypointResolutionProblems.map(entrypointResolutionProblem).join("")}
+      ${props.checks.problemSummaries.problems.map(entrypointResolutionProblem).join("")}
       </dl>`,
   };
 }
