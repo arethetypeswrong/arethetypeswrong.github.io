@@ -43,6 +43,44 @@ export async function typed(analysis: core.TypedAnalysis, opts: Opts) {
     else return chalk.bold[color](`"${analysis.packageName}/${s.substring(2)}"`);
   });
 
+  if (opts.flipped) {
+    const table = new Table({
+      head: ["", ...allResolutionKinds.map((kind) => chalk.reset(resolutionKinds[kind]))],
+      colWidths: [20, ...allResolutionKinds.map(() => 25)],
+    });
+
+    subpaths.forEach((subpath, i) => {
+      const point = entrypoints[i];
+      let row = [point];
+
+      row = row.concat(
+        allResolutionKinds.map((kind) => {
+          const problemsForCell = problems.filter(
+            (problem) => problem.entrypoint === subpath && problem.resolutionKind === kind
+          );
+
+          const resolution = analysis.entrypointResolutions[subpath][kind].resolution;
+
+          const descriptions = problemShortDescriptions[!opts.emoji ? "noEmoji" : "emoji"];
+
+          if (problemsForCell.length) {
+            return problemsForCell.map((problem) => descriptions[problem.kind]).join("\n");
+          }
+
+          const jsonResult = !opts.emoji ? "OK (JSON)" : "🟢 (JSON)";
+
+          const moduleResult = (!opts.emoji ? "OK " : "🟢 ") + moduleKinds[resolution?.moduleKind?.detectedKind || ""];
+
+          return `${resolution?.isJson ? jsonResult : moduleResult}`;
+        })
+      );
+
+      table.push(row);
+    });
+    console.log(table.toString());
+    return;
+  }
+
   const table = new Table({
     head: ["", ...entrypoints],
     colWidths: [20, ...entrypoints.map(() => 35)],

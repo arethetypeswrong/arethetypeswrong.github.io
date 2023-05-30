@@ -131,6 +131,18 @@ attw --vertical <package-name>
 
 In the config file, `vertical` can be a boolean value.
 
+#### Flipped
+
+Flip the table (so that the resolution kinds are the table's head, and the entry points label the table's rows).
+
+In the CLI: `--flipped`, `-F`
+
+```shell
+attw --flipped <package-name>
+```
+
+In the config file, `flipeed` can be a boolean value.
+
 #### Summary/No Summary
 
 Whether to display a summary of what the different errors/problems mean. Defaults to showing the summary (`--summary`).

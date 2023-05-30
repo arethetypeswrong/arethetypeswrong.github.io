@@ -132,6 +132,35 @@ async function typed(analysis, opts) {
     else
       return chalk2.bold[color](`"${analysis.packageName}/${s.substring(2)}"`);
   });
+  if (opts.flipped) {
+    const table2 = new Table({
+      head: ["", ...allResolutionKinds.map((kind) => chalk2.reset(resolutionKinds[kind]))],
+      colWidths: [20, ...allResolutionKinds.map(() => 25)]
+    });
+    subpaths.forEach((subpath, i) => {
+      const point = entrypoints[i];
+      let row = [point];
+      row = row.concat(
+        allResolutionKinds.map((kind) => {
+          var _a;
+          const problemsForCell = problems.filter(
+            (problem) => problem.entrypoint === subpath && problem.resolutionKind === kind
+          );
+          const resolution = analysis.entrypointResolutions[subpath][kind].resolution;
+          const descriptions = problemShortDescriptions[!opts.emoji ? "noEmoji" : "emoji"];
+          if (problemsForCell.length) {
+            return problemsForCell.map((problem) => descriptions[problem.kind]).join("\n");
+          }
+          const jsonResult = !opts.emoji ? "OK (JSON)" : "\u{1F7E2} (JSON)";
+          const moduleResult = (!opts.emoji ? "OK " : "\u{1F7E2} ") + moduleKinds[((_a = resolution == null ? void 0 : resolution.moduleKind) == null ? void 0 : _a.detectedKind) || ""];
+          return `${(resolution == null ? void 0 : resolution.isJson) ? jsonResult : moduleResult}`;
+        })
+      );
+      table2.push(row);
+    });
+    console.log(table2.toString());
+    return;
+  }
   const table = new Table({
     head: ["", ...entrypoints],
     colWidths: [20, ...entrypoints.map(() => 35)]
@@ -217,7 +246,7 @@ program.addHelpText("before", "ATTW CLI (v0.0.1)\n").addHelpText("after", "\ncor
     "Are the Types Wrong?"
   )} attempts to analyze npm package contents for issues with their TypeScript types,
 particularly ESM-related module resolution issues.`
-).argument("<package-name>", "the package to check; by default the name of an NPM package, unless --from-file is set").option("-v, --package-version <version>", "the version of the package to check").option("-r, --raw", "output raw JSON; overrides any rendering options").option("-f, --from-file", "read from a file instead of the npm registry").option("-E, --vertical", "display in a vertical ASCII table (like MySQL's -E option)").option("-s, --strict", "exit if any problems are found (useful for CI)").option("--summary, --no-summary", "whether to print summary information about the different errors").option("--emoji, --no-emoji", "whether to use any emojis").option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)").option("-q, --quiet", "don't print anything to STDOUT (overrides all other options)").option("--config-path <path>", "path to config file (default: ./.attw.json)").addOption(new Option("-i, --ignore <rules...>", "specify rules to ignore").choices(Object.values(problemFlags))).action(async (packageName) => {
+).argument("<package-name>", "the package to check; by default the name of an NPM package, unless --from-file is set").option("-v, --package-version <version>", "the version of the package to check").option("-r, --raw", "output raw JSON; overrides any rendering options").option("-f, --from-file", "read from a file instead of the npm registry").option("-E, --vertical", "display in a vertical ASCII table (like MySQL's -E option)").option("-s, --strict", "exit if any problems are found (useful for CI)").option("-F, --flipped", "flip the table (so the resolution kinds are on top and the entry points are on the side)").option("--summary, --no-summary", "whether to print summary information about the different errors").option("--emoji, --no-emoji", "whether to use any emojis").option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)").option("-q, --quiet", "don't print anything to STDOUT (overrides all other options)").option("--config-path <path>", "path to config file (default: ./.attw.json)").addOption(new Option("-i, --ignore <rules...>", "specify rules to ignore").choices(Object.values(problemFlags))).action(async (packageName) => {
   var _a;
   const opts = program.opts();
   await readConfig(program, opts.configPath);

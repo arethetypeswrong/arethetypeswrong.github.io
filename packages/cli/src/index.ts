@@ -17,6 +17,7 @@ export interface Opts {
   summary?: boolean;
   emoji?: boolean;
   vertical?: boolean;
+  flipped?: boolean;
   color?: boolean;
   strict?: boolean;
   quiet?: boolean;
@@ -41,6 +42,7 @@ particularly ESM-related module resolution issues.`
   .option("-f, --from-file", "read from a file instead of the npm registry")
   .option("-E, --vertical", "display in a vertical ASCII table (like MySQL's -E option)")
   .option("-s, --strict", "exit if any problems are found (useful for CI)")
+  .option("-F, --flipped", "flip the table (so the resolution kinds are on top and the entry points are on the side)")
   .option("--summary, --no-summary", "whether to print summary information about the different errors")
   .option("--emoji, --no-emoji", "whether to use any emojis")
   .option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)")
