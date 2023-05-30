@@ -141,7 +141,7 @@ In the CLI: `--flipped`, `-F`
 attw --flipped <package-name>
 ```
 
-In the config file, `flipeed` can be a boolean value.
+In the config file, `flipped` can be a boolean value.
 
 #### Summary/No Summary
 
