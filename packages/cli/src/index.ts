@@ -46,7 +46,7 @@ particularly ESM-related module resolution issues.`
   .option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)")
   .option("-q, --quiet", "don't print anything to STDOUT (overrides all other options)")
   .option("--config-path <path>", "path to config file (default: ./.attw.json)")
-  .addOption(new Option("--ignore <rules...>", "specify rules to ignore").choices(Object.values(problemFlags)))
+  .addOption(new Option("-i, --ignore <rules...>", "specify rules to ignore").choices(Object.values(problemFlags)))
   .action(async (packageName: string) => {
     const opts = program.opts<Opts>();
     await readConfig(program, opts.configPath);

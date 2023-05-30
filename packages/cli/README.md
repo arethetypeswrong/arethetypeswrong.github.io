@@ -92,6 +92,31 @@ In the CLI: `--from-file`, `-f`
 attw --from-file <file-path>
 ```
 
+#### Ignore
+
+Specifies rules/problems to ignore (i.e. not raise an error for).
+
+The available values are:
+- `wildcard`
+- `no-resolution`
+- `untyped-resolution`
+- `false-cjs`
+- `false-esm`
+- `cjs-resolves-to-esm`
+- `fallback-condition`
+- `cjs-only-exports-default`
+- `false-export-default`
+- `unexpected-esm-syntax`
+- `unexpected-cjs-syntax`
+
+In the CLI: `--ignore`, `-i`
+
+```shell
+attw <package-name> --ignore <rules...>
+```
+
+In the config file, `ignore` can be an array of strings.
+
 In the config file, `fromFile` can be a boolean value.
 
 #### Vertical
