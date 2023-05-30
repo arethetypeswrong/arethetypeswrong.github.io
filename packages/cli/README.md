@@ -92,6 +92,8 @@ In the CLI: `--from-file`, `-f`
 attw --from-file <file-path>
 ```
 
+In the config file, `fromFile` can be a boolean value.
+
 #### Ignore
 
 Specifies rules/problems to ignore (i.e. not raise an error for).
@@ -116,8 +118,6 @@ attw <package-name> --ignore <rules...>
 ```
 
 In the config file, `ignore` can be an array of strings.
-
-In the config file, `fromFile` can be a boolean value.
 
 #### Vertical
 
