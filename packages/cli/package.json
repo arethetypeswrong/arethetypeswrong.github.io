@@ -9,21 +9,25 @@
     "url": "https://github.com/arethetypeswrong/arethetypeswrong.github.io.git",
     "directory": "packages/cli"
   },
+  "files": [
+    "dist"
+  ],
   "bin": {
-    "attw": "./attw.js"
+    "attw": "./dist/index.js"
   },
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "tsc": "tsc",
-    "build": "npx esbuild ./src/index.ts --bundle --outfile=attw.js --packages=external --platform=node --format=esm"
+    "local:install": "npm install -g .",
+    "local:uninstall": "npm uninstall -g @arethetypeswrong/cli"
   },
   "type": "module",
   "devDependencies": {
     "@types/node": "^20.2.5",
     "@types/node-fetch": "^2.6.4",
-    "esbuild": "^0.17.19"
+    "typescript": "^5.0.0-dev.20230207"
   },
   "dependencies": {
     "@arethetypeswrong/core": "^0.0.6",

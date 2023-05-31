@@ -49,7 +49,10 @@ particularly ESM-related module resolution issues.`
   .option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)")
   .option("--config-path <path>", "path to config file (default: ./.attw.json)")
   .addOption(new Option("-i, --ignore <rules...>", "specify rules to ignore").choices(Object.values(problemFlags)))
+  .showHelpAfterError(true)
   .action(async (packageName: string) => {
+    program.showHelpAfterError(false);
+
     const opts = program.opts<Opts>();
     await readConfig(program, opts.configPath);
     opts.ignore = opts.ignore?.map(
@@ -97,7 +100,12 @@ particularly ESM-related module resolution issues.`
 
       console.log(JSON.stringify(result));
 
-      if (opts.strict && analysis.containsTypes && !!core.getProblems(analysis).length) process.exit(1);
+      if (
+        opts.strict &&
+        analysis.containsTypes &&
+        !!core.getProblems(analysis).filter((problem) => !opts.ignore.includes(problem.kind)).length
+      )
+        process.exit(1);
 
       return;
     }
@@ -105,9 +113,15 @@ particularly ESM-related module resolution issues.`
     console.log();
     if (analysis.containsTypes) {
       await tabular.typed(analysis, opts);
-      if (opts.strict && !!core.getProblems(analysis).length) process.exit(1);
+
+      if (
+        opts.strict &&
+        analysis.containsTypes &&
+        !!core.getProblems(analysis).filter((problem) => !opts.ignore.includes(problem.kind)).length
+      )
+        process.exit(1);
     } else {
-      tabular.untyped(analysis);
+      tabular.untyped(analysis as core.UntypedAnalysis);
     }
   })
   .parse(process.argv);
