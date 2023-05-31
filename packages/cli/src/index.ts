@@ -49,10 +49,7 @@ particularly ESM-related module resolution issues.`
   .option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)")
   .option("--config-path <path>", "path to config file (default: ./.attw.json)")
   .addOption(new Option("-i, --ignore <rules...>", "specify rules to ignore").choices(Object.values(problemFlags)))
-  .showHelpAfterError(true)
   .action(async (packageName: string) => {
-    program.showHelpAfterError(false);
-
     const opts = program.opts<Opts>();
     await readConfig(program, opts.configPath);
     opts.ignore = opts.ignore?.map(
@@ -123,8 +120,14 @@ particularly ESM-related module resolution issues.`
     } else {
       tabular.untyped(analysis as core.UntypedAnalysis);
     }
-  })
-  .parse(process.argv);
+  });
+
+if (process.argv.length <= 2) {
+  program.outputHelp();
+  console.log();
+}
+
+program.parse(process.argv);
 
 function handleError(error: unknown, title: string): never {
   if (error && typeof error === "object" && "message" in error) {
