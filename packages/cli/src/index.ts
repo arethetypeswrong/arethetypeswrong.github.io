@@ -9,14 +9,14 @@ import { FetchError } from "node-fetch";
 import * as tabular from "./render/index.js";
 import { readConfig } from "./readConfig.js";
 import { problemFlags } from "./problemUtils.js";
+import { parsePackageSpec } from "./parsePackageSpec.js";
 
 const formats = ["table", "table-flipped", "ascii", "json"] as const;
 
 type Format = (typeof formats)[number];
 
 export interface Opts {
-  packageVersion?: string;
-  fromFile?: boolean;
+  fromNpm?: boolean;
   summary?: boolean;
   emoji?: boolean;
   color?: boolean;
@@ -37,9 +37,8 @@ program
     )} attempts to analyze npm package contents for issues with their TypeScript types,
 particularly ESM-related module resolution issues.`
   )
-  .argument("<package-name>", "the package to check; by default the name of an NPM package, unless --from-file is set")
-  .option("-f, --from-file", "read from a file instead of the npm registry")
-  .option("-v, --package-version <version>", "the version of the package to check")
+  .argument("<file-name>", "the file to check; by default a path to a .tar.gz file, unless --from-npm is set")
+  .option("-f, --from-npm", "read from the npm registry instead of a local file")
   .option("-q, --quiet", "don't print anything to STDOUT (overrides all other options)")
   .option("--summary, --no-summary", "whether to print summary information about the different errors")
   .option("--emoji, --no-emoji", "whether to use any emojis")
@@ -49,7 +48,7 @@ particularly ESM-related module resolution issues.`
     new Option("-i, --ignore <rules...>", "specify rules to ignore").choices(Object.values(problemFlags)).default([])
   )
   .addOption(new Option("-F, --format <format>", "specify the print format").choices(formats).default("table"))
-  .action(async (packageName: string) => {
+  .action(async (fileName: string) => {
     const opts = program.opts<Opts>();
     await readConfig(program, opts.configPath);
     opts.ignore = opts.ignore?.map(
@@ -65,23 +64,28 @@ particularly ESM-related module resolution issues.`
     }
 
     let analysis: core.Analysis;
-    if (opts.fromFile) {
+    if (opts.fromNpm) {
       try {
-        const file = await readFile(packageName);
-        const data = new Uint8Array(file);
-        analysis = await core.checkTgz(data);
-      } catch (error) {
-        handleError(error, "checking file");
-      }
-    } else {
-      try {
-        analysis = await core.checkPackage(packageName, opts.packageVersion);
+        const result = parsePackageSpec(fileName);
+        if (result.status === "error") {
+          program.error(result.error);
+        } else {
+          analysis = await core.checkPackage(result.data.packageName, result.data.version);
+        }
       } catch (error) {
         if (error instanceof FetchError) {
           program.error(`error while fetching package:\n${error.message}`, { code: error.code });
         }
 
         handleError(error, "checking package");
+      }
+    } else {
+      try {
+        const file = await readFile(fileName);
+        const data = new Uint8Array(file);
+        analysis = await core.checkTgz(data);
+      } catch (error) {
+        handleError(error, "checking file");
       }
     }
 
