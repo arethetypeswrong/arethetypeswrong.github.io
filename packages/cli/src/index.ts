@@ -10,19 +10,21 @@ import * as tabular from "./render/index.js";
 import { readConfig } from "./readConfig.js";
 import { problemFlags } from "./problemUtils.js";
 
+const formats = ["table", "table-flipped", "ascii", "json"] as const;
+
+type Format = (typeof formats)[number];
+
 export interface Opts {
-  raw?: boolean;
   packageVersion?: string;
   fromFile?: boolean;
   summary?: boolean;
   emoji?: boolean;
-  vertical?: boolean;
-  flipped?: boolean;
   color?: boolean;
   strict?: boolean;
   quiet?: boolean;
   configPath?: string;
   ignore?: string[];
+  format: Format;
 }
 
 program
@@ -41,14 +43,12 @@ particularly ESM-related module resolution issues.`
   .option("-s, --strict", "exit if any problems are found (useful for CI)")
   .option("-v, --package-version <version>", "the version of the package to check")
   .option("-q, --quiet", "don't print anything to STDOUT (overrides all other options)")
-  .option("-r, --raw", "output raw JSON; overrides any rendering options")
-  .option("-E, --vertical", "display in a vertical ASCII table (like MySQL's -E option)")
-  .option("-F, --flipped", "flip the table (so the resolution kinds are on top and the entry points are on the side)")
   .option("--summary, --no-summary", "whether to print summary information about the different errors")
   .option("--emoji, --no-emoji", "whether to use any emojis")
   .option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)")
   .option("--config-path <path>", "path to config file (default: ./.attw.json)")
   .addOption(new Option("-i, --ignore <rules...>", "specify rules to ignore").choices(Object.values(problemFlags)))
+  .addOption(new Option("-F, --format <format>", "specify the print format").choices(formats).default("table"))
   .action(async (packageName: string) => {
     const opts = program.opts<Opts>();
     await readConfig(program, opts.configPath);
@@ -85,7 +85,7 @@ particularly ESM-related module resolution issues.`
       }
     }
 
-    if (opts.raw) {
+    if (opts.format === "json") {
       const result = { analysis } as {
         analysis: core.Analysis;
         problems?: Partial<Record<core.ProblemKind, core.Problem[]>>;

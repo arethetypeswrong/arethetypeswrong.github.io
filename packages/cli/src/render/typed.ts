@@ -43,7 +43,7 @@ export async function typed(analysis: core.TypedAnalysis, opts: Opts) {
     else return chalk.bold[color](`"${analysis.packageName}/${s.substring(2)}"`);
   });
 
-  if (opts.flipped) {
+  if (opts.format === "table-flipped") {
     const table = new Table({
       head: ["", ...allResolutionKinds.map((kind) => chalk.reset(resolutionKinds[kind]))],
       colWidths: [20, ...allResolutionKinds.map(() => 25)],
@@ -114,7 +114,7 @@ export async function typed(analysis: core.TypedAnalysis, opts: Opts) {
     table.push(row);
   });
 
-  if (opts.vertical) {
+  if (opts.format === "ascii") {
     console.log(verticalTable(table));
   } else {
     console.log(table.toString());
