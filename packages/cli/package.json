@@ -21,7 +21,8 @@
   "scripts": {
     "tsc": "tsc",
     "local:install": "npm install -g .",
-    "local:uninstall": "npm uninstall -g @arethetypeswrong/cli"
+    "local:uninstall": "npm uninstall -g @arethetypeswrong/cli",
+    "build": "npm run local:uninstall && npm run tsc && npm run local:install"
   },
   "type": "module",
   "devDependencies": {
