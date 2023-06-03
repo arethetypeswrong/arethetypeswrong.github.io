@@ -20,7 +20,6 @@ export interface Opts {
   summary?: boolean;
   emoji?: boolean;
   color?: boolean;
-  strict?: boolean;
   quiet?: boolean;
   configPath?: string;
   ignore?: string[];
@@ -40,14 +39,15 @@ particularly ESM-related module resolution issues.`
   )
   .argument("<package-name>", "the package to check; by default the name of an NPM package, unless --from-file is set")
   .option("-f, --from-file", "read from a file instead of the npm registry")
-  .option("-s, --strict", "exit if any problems are found (useful for CI)")
   .option("-v, --package-version <version>", "the version of the package to check")
   .option("-q, --quiet", "don't print anything to STDOUT (overrides all other options)")
   .option("--summary, --no-summary", "whether to print summary information about the different errors")
   .option("--emoji, --no-emoji", "whether to use any emojis")
   .option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)")
   .option("--config-path <path>", "path to config file (default: ./.attw.json)")
-  .addOption(new Option("-i, --ignore <rules...>", "specify rules to ignore").choices(Object.values(problemFlags)))
+  .addOption(
+    new Option("-i, --ignore <rules...>", "specify rules to ignore").choices(Object.values(problemFlags)).default([])
+  )
   .addOption(new Option("-F, --format <format>", "specify the print format").choices(formats).default("table"))
   .action(async (packageName: string) => {
     const opts = program.opts<Opts>();
@@ -98,7 +98,6 @@ particularly ESM-related module resolution issues.`
       console.log(JSON.stringify(result));
 
       if (
-        opts.strict &&
         analysis.containsTypes &&
         !!core.getProblems(analysis).filter((problem) => !opts.ignore.includes(problem.kind)).length
       )
@@ -112,7 +111,6 @@ particularly ESM-related module resolution issues.`
       await tabular.typed(analysis, opts);
 
       if (
-        opts.strict &&
         analysis.containsTypes &&
         !!core.getProblems(analysis).filter((problem) => !opts.ignore.includes(problem.kind)).length
       )
