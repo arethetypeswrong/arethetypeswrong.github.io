@@ -3,6 +3,16 @@
   "version": "0.0.3",
   "description": "A CLI tool for arethetypeswrong.github.io",
   "author": "Andrew Branch & ej-shafran",
+  "contributors": [
+    {
+      "name": "Andrew Branch",
+      "url": "https://github.com/andrewbranch"
+    },
+    {
+      "name": "ej-shafran",
+      "url": "https://github.com/ej-shafran"
+    }
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
