@@ -42,7 +42,7 @@ describe("snapshots", async () => {
         `# ${fixture}`,
         "",
         "```",
-        `$ attw ${tarballPath}`,
+        `$ attw ${fixture}`,
         "",
         stdout,
         "",
