@@ -4,8 +4,6 @@ A CLI wrapper for [arethetypeswrong](https://arethetypeswrong.github.io/).
 
 ## Installation
 
-**NOTE:** The package has not yet been published to NPM.
-
 ```shell
 npm i -g @arethetypeswrong/cli
 ```
@@ -18,15 +16,16 @@ npm i -g @arethetypeswrong/cli
 
 ## Usage
 
-The `attw` command acts very similarly to [the arethetypeswrong website](https://arethetypeswrong.github.io/), with some additional features that are useful for command line usage.
+The `attw` command acts very similarly to [arethetypeswrong.github.io](https://arethetypeswrong.github.io/), with some additional features that are useful for command line usage.
 
 The usage is:
 
 ```shell
+npm pack
 attw [options] <file-name>
 ```
 
-Where `<file-name>` is a required positional argument - either the path to a local `.tar.gz` file, or the name of an NPM package.
+Where `<file-name>` is a required positional argument (the path to a local `.tar.gz` file from `npm pack`).
 
 ## Configuration
 
