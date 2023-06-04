@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import * as core from "@arethetypeswrong/core";
+import { versions } from "@arethetypeswrong/core/versions";
 import { Option, program } from "commander";
 import chalk from "chalk";
 import { readFile } from "fs/promises";
@@ -13,8 +14,6 @@ import { problemFlags } from "./problemUtils.js";
 
 const packageJson = createRequire(import.meta.url)("../package.json");
 const version = packageJson.version;
-const coreVersion = packageJson.dependencies["@arethetypeswrong/core"].substring(1);
-const tsVersion = packageJson.devDependencies.typescript.substring(1);
 
 const formats = ["table", "table-flipped", "ascii", "json"] as const;
 
@@ -33,8 +32,8 @@ export interface Opts {
 
 program
   .addHelpText("before", `ATTW CLI (v${version})\n`)
-  .addHelpText("after", `\ncore: v${coreVersion}, typescript: v${tsVersion}`)
-  .version(`v${version}`)
+  .addHelpText("after", `\ncore: v${versions.core}, typescript: v${versions.typescript}`)
+  .version(`cli: v${version}\ncore: v${versions.core}\ntypescript: v${versions.typescript}`)
   .name("attw")
   .description(
     `${chalk.bold.blue(
@@ -43,8 +42,8 @@ program
 particularly ESM-related module resolution issues.`
   )
   .argument("<file-name>", "the file to check; by default a path to a .tar.gz file, unless --from-npm is set")
-  .option("-f, --from-npm", "read from the npm registry instead of a local file")
-  .addOption(new Option("-F, --format <format>", "specify the print format").choices(formats).default("table"))
+  .option("-p, --from-npm", "read from the npm registry instead of a local file")
+  .addOption(new Option("-f, --format <format>", "specify the print format").choices(formats).default("table"))
   .option("-q, --quiet", "don't print anything to STDOUT (overrides all other options)")
   .addOption(
     new Option("--ignore-rules <rules...>", "specify rules to ignore").choices(Object.values(problemFlags)).default([])
@@ -61,7 +60,7 @@ particularly ESM-related module resolution issues.`
     );
 
     if (opts.quiet) {
-      console.log = () => { };
+      console.log = () => {};
     }
 
     if (!opts.color) {
@@ -108,7 +107,7 @@ particularly ESM-related module resolution issues.`
 
       if (
         analysis.containsTypes &&
-        core.getProblems(analysis).some((problem) => !opts.ignoreRules.includes(problem.kind))
+        core.getProblems(analysis).some((problem) => !opts.ignoreRules?.includes(problem.kind))
       )
         process.exit(1);
 
@@ -121,7 +120,7 @@ particularly ESM-related module resolution issues.`
 
       if (
         analysis.containsTypes &&
-        core.getProblems(analysis).some((problem) => !opts.ignoreRules.includes(problem.kind))
+        core.getProblems(analysis).some((problem) => !opts.ignoreRules?.includes(problem.kind))
       )
         process.exit(1);
     } else {

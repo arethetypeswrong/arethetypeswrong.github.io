@@ -66,7 +66,7 @@ The available values are:
 - `ascii`, for large tables where the output is clunky
 - `raw`, outputs the raw JSON data (overriding all other rendering options)
 
-In the CLI: `--format`, `-F`
+In the CLI: `--format`, `-f`
 
 ```shell
 attw --format <format> <file-name>
@@ -78,7 +78,7 @@ In the config file, `format` can be a string value.
 
 Treat `<file-name>` as the name (and, optionally, version) of a package from the NPM registry.
 
-In the CLI: `--from-npm`, `-f`
+In the CLI: `--from-npm`, `-p`
 
 ```shell
 attw --from-npm <package-name>
