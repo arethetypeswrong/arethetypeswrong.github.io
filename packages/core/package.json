@@ -52,11 +52,13 @@
     "@andrewbranch/untar.js": "^1.0.0",
     "fetch-ponyfill": "^7.1.0",
     "fflate": "^0.7.4",
-    "typescript": "^5.0.0-dev.20230207"
+    "typescript": "^5.0.0-dev.20230207",
+    "validate-npm-package-name": "^5.0.0"
   },
   "devDependencies": {
     "@types/node": "^18.15.11",
-    "@types/ts-expose-internals": "npm:ts-expose-internals@4.9.4"
+    "@types/ts-expose-internals": "npm:ts-expose-internals@4.9.4",
+    "@types/validate-npm-package-name": "^4.0.0"
   },
   "volta": {
     "node": "19.8.1"
