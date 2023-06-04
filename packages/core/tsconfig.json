@@ -6,11 +6,18 @@
     // include one of those, because if I declare them locally, that will
     // result in duplicate declaration errors when a consumer with actual
     // lib types imports this project.
-    "lib": ["es2019", "webworker"],
+    "lib": [
+      "es2019",
+      "webworker"
+    ],
     "module": "nodenext",
     "outDir": "dist",
     "rootDir": "src",
-    "types": ["ts-expose-internals"]
+    "types": [
+      "ts-expose-internals"
+    ]
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }

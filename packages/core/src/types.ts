@@ -77,3 +77,8 @@ export interface ParsedPackageSpec {
   version: string | undefined;
 }
 
+declare global {
+  interface ImportMeta {
+    env?: Record<string, {}>;
+  }
+}

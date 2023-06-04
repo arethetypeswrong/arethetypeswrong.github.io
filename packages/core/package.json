@@ -43,6 +43,9 @@
       "development": "./src/utils.ts",
       "default": "./dist/utils.js"
     },
+    "./versions": {
+      "node": "./dist/versions.js"
+    },
     "./package.json": "./package.json"
   },
   "dependencies": {

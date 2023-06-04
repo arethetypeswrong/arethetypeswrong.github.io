@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import * as core from "@arethetypeswrong/core";
+import { versions } from "@arethetypeswrong/core/versions";
 import { Option, program } from "commander";
 import chalk from "chalk";
 import { readFile } from "fs/promises";
@@ -13,8 +14,6 @@ import { problemFlags } from "./problemUtils.js";
 
 const packageJson = createRequire(import.meta.url)("../package.json");
 const version = packageJson.version;
-const coreVersion = packageJson.dependencies["@arethetypeswrong/core"].substring(1);
-const tsVersion = packageJson.devDependencies.typescript.substring(1);
 
 const formats = ["table", "table-flipped", "ascii", "json"] as const;
 
@@ -33,7 +32,7 @@ export interface Opts {
 
 program
   .addHelpText("before", `ATTW CLI (v${version})\n`)
-  .addHelpText("after", `\ncore: v${coreVersion}, typescript: v${tsVersion}`)
+  .addHelpText("after", `\ncore: v${versions.core}, typescript: v${versions.typescript}`)
   .version(`v${version}`)
   .name("attw")
   .description(
