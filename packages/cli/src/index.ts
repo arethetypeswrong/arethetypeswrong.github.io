@@ -5,11 +5,17 @@ import { Option, program } from "commander";
 import chalk from "chalk";
 import { readFile } from "fs/promises";
 import { FetchError } from "node-fetch";
+import { createRequire } from "module";
 
 import * as tabular from "./render/index.js";
 import { readConfig } from "./readConfig.js";
 import { problemFlags } from "./problemUtils.js";
 import { parsePackageSpec } from "./parsePackageSpec.js";
+
+const packageJson = createRequire(import.meta.url)("../package.json");
+const version = packageJson.version;
+const coreVersion = packageJson.dependencies["@arethetypeswrong/core"].substring(1);
+const tsVersion = packageJson.devDependencies.typescript.substring(1);
 
 const formats = ["table", "table-flipped", "ascii", "json"] as const;
 
@@ -27,9 +33,9 @@ export interface Opts {
 }
 
 program
-  .addHelpText("before", "ATTW CLI (v0.0.1)\n")
-  .addHelpText("after", "\ncore: v0.0.6, typescript: v5.0.0-dev.20230207")
-  .version("v0.0.1")
+  .addHelpText("before", `ATTW CLI (v${version})\n`)
+  .addHelpText("after", `\ncore: v${coreVersion}, typescript: v${tsVersion}`)
+  .version(`v${version}`)
   .name("attw")
   .description(
     `${chalk.bold.blue(
