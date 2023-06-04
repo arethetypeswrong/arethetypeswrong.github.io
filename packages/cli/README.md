@@ -69,7 +69,7 @@ The available values are:
 In the CLI: `--format`, `-F`
 
 ```shell
-attw --format <format>
+attw --format <format> <file-name>
 ```
 
 In the config file, `format` can be a string value.
@@ -106,7 +106,7 @@ The available values are:
 In the CLI: `--ignore-rules`
 
 ```shell
-attw <package-name> --ignore-rules <rules...>
+attw <file-name> --ignore-rules <rules...>
 ```
 
 In the config file, `ignoreRules` can be an array of strings.
@@ -118,7 +118,7 @@ Whether to display a summary of what the different errors/problems mean. Default
 In the CLI: `--summary`/`--no-summary`
 
 ```shell
-attw --summary/--no-summary <package-name>
+attw --summary/--no-summary <file-name>
 ```
 
 In the config file, `summary` can be a boolean value.
@@ -130,7 +130,7 @@ Whether to print the information with emojis. Defaults to printing with emojis (
 In the CLI: `--emoji`/`--no-emoji`
 
 ```shell
-attw --emoji/--no-emoji <package-name>
+attw --emoji/--no-emoji <file-name>
 ```
 
 In the config file, `emoji` can be a boolean value.
@@ -144,7 +144,7 @@ The `FORCE_COLOR` env variable is also available for use (set is to `0` or `1`).
 In the CLI: `--color`/`--no-color`
 
 ```shell
-attw --color/--no-color <package-name>
+attw --color/--no-color <file-name>
 ```
 
 In the config file, `color` can be a boolean value.
@@ -156,7 +156,7 @@ When set, nothing will be printed to STDOUT.
 In the CLI: `--quiet`, `-q`
 
 ```shell
-attw --quiet <package-name>
+attw --quiet <file-name>
 ```
 
 In the config file, `quiet` can be a boolean value.
@@ -168,7 +168,7 @@ The path to the config file. Defaults to `./.attw.json`.
 In the CLI: `--config-path <path>`
 
 ```shell
-attw --config-path <path> <package-name>
+attw --config-path <path> <file-name>
 ```
 
 Cannot be set from within the config file itself.
