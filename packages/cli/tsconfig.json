@@ -1,12 +1,17 @@
 {
-  // "extends": "../../tsconfig.base.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "lib": ["es2019", "webworker"],
     "module": "nodenext",
     "rootDir": "src",
-    "types": ["ts-expose-internals", "node"],
-    "declaration": false,
-    "outDir": "./dist"
+    "types": [
+      "ts-expose-internals",
+      "node"
+    ],
+    "outDir": "./dist",
+    "declarationDir": "./lib",
+    "sourceMap": false,
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }
