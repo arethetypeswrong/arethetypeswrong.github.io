@@ -109,7 +109,7 @@ particularly ESM-related module resolution issues.`
 
       if (
         analysis.containsTypes &&
-        !!core.getProblems(analysis).filter((problem) => !opts.ignoreRules.includes(problem.kind)).length
+        core.getProblems(analysis).some((problem) => !opts.ignoreRules.includes(problem.kind))
       )
         process.exit(1);
 
@@ -122,7 +122,7 @@ particularly ESM-related module resolution issues.`
 
       if (
         analysis.containsTypes &&
-        !!core.getProblems(analysis).filter((problem) => !opts.ignoreRules.includes(problem.kind)).length
+        core.getProblems(analysis).some((problem) => !opts.ignoreRules.includes(problem.kind))
       )
         process.exit(1);
     } else {
