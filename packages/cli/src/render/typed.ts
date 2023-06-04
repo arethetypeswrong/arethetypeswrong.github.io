@@ -8,14 +8,14 @@ import type { Opts } from "../index.js";
 import { verticalTable } from "./verticalTable.js";
 
 export async function typed(analysis: core.TypedAnalysis, opts: Opts) {
-  const problems = core.getProblems(analysis).filter((problem) => !opts.ignore || !opts.ignore.includes(problem.kind));
+  const problems = core.getProblems(analysis).filter((problem) => !opts.ignoreRules || !opts.ignoreRules.includes(problem.kind));
 
   const subpaths = Object.keys(analysis.entrypointResolutions);
 
-  if (opts.ignore && opts.ignore.length) {
+  if (opts.ignoreRules && opts.ignoreRules.length) {
     console.log(
       chalk.gray(
-        ` (ignoring rules: ${opts.ignore.map((rule) => `'${problemFlags[rule as core.ProblemKind]}'`).join(", ")})\n`
+        ` (ignoring rules: ${opts.ignoreRules.map((rule) => `'${problemFlags[rule as core.ProblemKind]}'`).join(", ")})\n`
       )
     );
   }

@@ -28,7 +28,7 @@ export interface Opts {
   color?: boolean;
   quiet?: boolean;
   configPath?: string;
-  ignore?: string[];
+  ignoreRules?: string[];
   format: Format;
 }
 
@@ -45,19 +45,19 @@ particularly ESM-related module resolution issues.`
   )
   .argument("<file-name>", "the file to check; by default a path to a .tar.gz file, unless --from-npm is set")
   .option("-f, --from-npm", "read from the npm registry instead of a local file")
+  .addOption(new Option("-F, --format <format>", "specify the print format").choices(formats).default("table"))
   .option("-q, --quiet", "don't print anything to STDOUT (overrides all other options)")
+  .addOption(
+    new Option("--ignore-rules <rules...>", "specify rules to ignore").choices(Object.values(problemFlags)).default([])
+  )
   .option("--summary, --no-summary", "whether to print summary information about the different errors")
   .option("--emoji, --no-emoji", "whether to use any emojis")
   .option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)")
   .option("--config-path <path>", "path to config file (default: ./.attw.json)")
-  .addOption(
-    new Option("-i, --ignore <rules...>", "specify rules to ignore").choices(Object.values(problemFlags)).default([])
-  )
-  .addOption(new Option("-F, --format <format>", "specify the print format").choices(formats).default("table"))
   .action(async (fileName: string) => {
     const opts = program.opts<Opts>();
     await readConfig(program, opts.configPath);
-    opts.ignore = opts.ignore?.map(
+    opts.ignoreRules = opts.ignoreRules?.map(
       (value) => Object.keys(problemFlags).find((key) => problemFlags[key as core.ProblemKind] === value) as string
     );
 
@@ -109,7 +109,7 @@ particularly ESM-related module resolution issues.`
 
       if (
         analysis.containsTypes &&
-        !!core.getProblems(analysis).filter((problem) => !opts.ignore.includes(problem.kind)).length
+        !!core.getProblems(analysis).filter((problem) => !opts.ignoreRules.includes(problem.kind)).length
       )
         process.exit(1);
 
@@ -122,18 +122,13 @@ particularly ESM-related module resolution issues.`
 
       if (
         analysis.containsTypes &&
-        !!core.getProblems(analysis).filter((problem) => !opts.ignore.includes(problem.kind)).length
+        !!core.getProblems(analysis).filter((problem) => !opts.ignoreRules.includes(problem.kind)).length
       )
         process.exit(1);
     } else {
       tabular.untyped(analysis as core.UntypedAnalysis);
     }
   });
-
-if (process.argv.length <= 2) {
-  program.outputHelp();
-  console.log();
-}
 
 program.parse(process.argv);
 
