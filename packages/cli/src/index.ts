@@ -42,8 +42,8 @@ program
 particularly ESM-related module resolution issues.`
   )
   .argument("<file-name>", "the file to check; by default a path to a .tar.gz file, unless --from-npm is set")
-  .option("-f, --from-npm", "read from the npm registry instead of a local file")
-  .addOption(new Option("-F, --format <format>", "specify the print format").choices(formats).default("table"))
+  .option("-p, --from-npm", "read from the npm registry instead of a local file")
+  .addOption(new Option("-f, --format <format>", "specify the print format").choices(formats).default("table"))
   .option("-q, --quiet", "don't print anything to STDOUT (overrides all other options)")
   .addOption(
     new Option("--ignore-rules <rules...>", "specify rules to ignore").choices(Object.values(problemFlags)).default([])
