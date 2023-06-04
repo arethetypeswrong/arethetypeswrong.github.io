@@ -69,3 +69,11 @@ export interface Resolution {
   moduleKind: ModuleKind | undefined;
   exports?: SymbolTable | false;
 }
+
+export type Failable<T> = { status: "error"; error: string } | { status: "success"; data: T };
+
+export interface ParsedPackageSpec {
+  packageName: string;
+  version: string | undefined;
+}
+

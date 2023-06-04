@@ -10,7 +10,6 @@ import { createRequire } from "module";
 import * as render from "./render/index.js";
 import { readConfig } from "./readConfig.js";
 import { problemFlags } from "./problemUtils.js";
-import { parsePackageSpec } from "./parsePackageSpec.js";
 
 const packageJson = createRequire(import.meta.url)("../package.json");
 const version = packageJson.version;
@@ -72,7 +71,7 @@ particularly ESM-related module resolution issues.`
     let analysis: core.Analysis;
     if (opts.fromNpm) {
       try {
-        const result = parsePackageSpec(fileName);
+        const result = core.parsePackageSpec(fileName);
         if (result.status === "error") {
           program.error(result.error);
         } else {
