@@ -33,7 +33,7 @@ export interface Opts {
 program
   .addHelpText("before", `ATTW CLI (v${version})\n`)
   .addHelpText("after", `\ncore: v${versions.core}, typescript: v${versions.typescript}`)
-  .version(`v${version}`)
+  .version(`cli: v${version}\ncore: v${versions.core}\ntypescript: v${versions.typescript}`)
   .name("attw")
   .description(
     `${chalk.bold.blue(
