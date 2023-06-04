@@ -22,7 +22,9 @@
     "tsc": "tsc -b",
     "local:install": "npm install -g .",
     "local:uninstall": "npm uninstall -g @arethetypeswrong/cli",
-    "build": "npm run local:uninstall && npm run tsc && npm run local:install"
+    "build": "npm run local:uninstall && npm run tsc && npm run local:install",
+    "pretest": "tsc -b test",
+    "test": "node --test test/dist"
   },
   "type": "module",
   "devDependencies": {
