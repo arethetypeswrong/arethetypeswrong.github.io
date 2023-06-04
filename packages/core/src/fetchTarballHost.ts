@@ -22,6 +22,7 @@ async function createPackageFSFromTarball(tarball: Uint8Array): Promise<FS> {
 async function createPackageFS(packageName: string, packageVersion = "latest"): Promise<FS> {
   const manifestUrl = `https://registry.npmjs.org/${packageName}/${packageVersion}`;
   const manifest = await fetch(manifestUrl).then((r) => r.json());
+  if (typeof manifest === "string") throw { message: manifest, code: "NO_VERSION" };
   const tarballUrl = manifest.dist.tarball;
   const tarball = new Uint8Array((await fetch(tarballUrl).then((r) => r.arrayBuffer())) satisfies ArrayBuffer);
   const data = gunzipSync(tarball);
