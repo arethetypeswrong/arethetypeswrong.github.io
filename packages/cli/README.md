@@ -23,10 +23,10 @@ The `attw` command acts very similarly to [the arethetypeswrong website](https:/
 The usage is:
 
 ```shell
-attw [options] <package-name>
+attw [options] <file-name>
 ```
 
-Where `<package-name>` is a required positional argument - either the path to a local `.tar.gz` file, or the name of an NPM package.
+Where `<file-name>` is a required positional argument - either the path to a local `.tar.gz` file, or the name of an NPM package.
 
 ## Configuration
 
@@ -56,45 +56,37 @@ In the CLI: `--version`, `-v`
 attw --version
 ```
 
-#### Strict
+#### Format
 
-Exit with an error code if any errors are found for the package (useful for CI).
+The format to print the output in. Defaults to `table`.
 
-In the CLI: `--strict`, `-s`
+The available values are:
+- `table`
+- `table-flipped`, where the resolution kinds are the table's head, and the entry points label the table's rows
+- `ascii`, for large tables where the output is clunky
+- `raw`, outputs the raw JSON data (overriding all other rendering options)
 
-```shell
-attw --strict <package-name>
-```
-
-In the config file, `strict` can be a boolean value.
-
-#### Raw
-
-Print the package information to STDOUT as a raw JSON string.
-
-This option overrides all other rendering options (expect `--quiet`) and prints out the JSON object used internally, which is created by `@arethetypeswrong/core`.
-
-In the CLI: `--raw`, `-r`
+In the CLI: `--format`, `-F`
 
 ```shell
-attw --raw <package-name>
+attw --format <format>
 ```
 
-In the config file, `raw` can be a boolean value.
+In the config file, `format` can be a string value.
 
-#### From File
+#### From NPM
 
-Treat `<package-name>` as the path to a local .tar.gz file and read information from there.
+Treat `<file-name>` as the name (and, optionally, version) of a package from the NPM registry.
 
-In the CLI: `--from-file`, `-f`
+In the CLI: `--from-npm`, `-f`
 
 ```shell
-attw --from-file <file-path>
+attw --from-npm <package-name>
 ```
 
-In the config file, `fromFile` can be a boolean value.
+In the config file, `fromNpm` can be a boolean value.
 
-#### Ignore
+#### Ignore Rules
 
 Specifies rules/problems to ignore (i.e. not raise an error for).
 
@@ -111,37 +103,13 @@ The available values are:
 - `unexpected-esm-syntax`
 - `unexpected-cjs-syntax`
 
-In the CLI: `--ignore`, `-i`
+In the CLI: `--ignore-rules`
 
 ```shell
-attw <package-name> --ignore <rules...>
+attw <package-name> --ignore-rules <rules...>
 ```
 
-In the config file, `ignore` can be an array of strings.
-
-#### Vertical
-
-Print a vertical ASCII table (similar to MySQL's `-E` flag or `\G`).
-
-In the CLI: `--vertical`, `-E`
-
-```shell
-attw --vertical <package-name>
-```
-
-In the config file, `vertical` can be a boolean value.
-
-#### Flipped
-
-Flip the table (so that the resolution kinds are the table's head, and the entry points label the table's rows).
-
-In the CLI: `--flipped`, `-F`
-
-```shell
-attw --flipped <package-name>
-```
-
-In the config file, `flipped` can be a boolean value.
+In the config file, `ignoreRules` can be an array of strings.
 
 #### Summary/No Summary
 

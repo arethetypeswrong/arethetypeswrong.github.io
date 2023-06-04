@@ -14,12 +14,12 @@ export async function readConfig(program: Command, alternate = ".attw.json") {
 
       const value = opts[key];
 
-      if (key === "ignore") {
+      if (key === "ignoreRules") {
         if (!Array.isArray(value)) program.error(`error: config option 'ignore' should be an array.`);
         const invalid = value.find((rule) => !Object.values(problemFlags).includes(rule));
         if (invalid)
           program.error(
-            `error: config option 'ignore' argument '${invalid}' is invalid. Allowed choices are ${Object.values(
+            `error: config option 'ignoreRules' argument '${invalid}' is invalid. Allowed choices are ${Object.values(
               problemFlags
             ).join(", ")}.`
           );
