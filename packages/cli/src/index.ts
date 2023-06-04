@@ -7,7 +7,7 @@ import { readFile } from "fs/promises";
 import { FetchError } from "node-fetch";
 import { createRequire } from "module";
 
-import * as tabular from "./render/index.js";
+import * as render from "./render/index.js";
 import { readConfig } from "./readConfig.js";
 import { problemFlags } from "./problemUtils.js";
 import { parsePackageSpec } from "./parsePackageSpec.js";
@@ -118,7 +118,7 @@ particularly ESM-related module resolution issues.`
 
     console.log();
     if (analysis.containsTypes) {
-      await tabular.typed(analysis, opts);
+      await render.typed(analysis, opts);
 
       if (
         analysis.containsTypes &&
@@ -126,7 +126,7 @@ particularly ESM-related module resolution issues.`
       )
         process.exit(1);
     } else {
-      tabular.untyped(analysis as core.UntypedAnalysis);
+      render.untyped(analysis as core.UntypedAnalysis);
     }
   });
 

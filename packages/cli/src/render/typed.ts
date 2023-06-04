@@ -5,29 +5,34 @@ import chalk from "chalk";
 
 import { moduleKinds, problemEmoji, resolutionKinds, problemShortDescriptions, problemFlags } from "../problemUtils.js";
 import type { Opts } from "../index.js";
-import { verticalTable } from "./verticalTable.js";
+import { tableFlipped } from "./tableFlipped.js";
 
 export async function typed(analysis: core.TypedAnalysis, opts: Opts) {
-  const problems = core.getProblems(analysis).filter((problem) => !opts.ignoreRules || !opts.ignoreRules.includes(problem.kind));
+  const problems = core
+    .getProblems(analysis)
+    .filter((problem) => !opts.ignoreRules || !opts.ignoreRules.includes(problem.kind));
 
   const subpaths = Object.keys(analysis.entrypointResolutions);
 
   if (opts.ignoreRules && opts.ignoreRules.length) {
     console.log(
       chalk.gray(
-        ` (ignoring rules: ${opts.ignoreRules.map((rule) => `'${problemFlags[rule as core.ProblemKind]}'`).join(", ")})\n`
+        ` (ignoring rules: ${opts.ignoreRules
+          .map((rule) => `'${problemFlags[rule as core.ProblemKind]}'`)
+          .join(", ")})\n`
       )
     );
   }
 
   if (opts.summary) {
     const summaries = core.summarizeProblems(problems, analysis);
-    const defaultSummary = !opts.emoji ? " No problems found." : " No problems found 🌟";
+    const defaultSummary = !opts.emoji ? " No problems found" : " No problems found 🌟";
     const summaryTexts = summaries.map((summary) => {
       return summary.messages
         .map((message) => {
-          if (!opts.emoji) return "    " + message.messageText.split(". ").join(".\n    ");
-          return ` ${problemEmoji[summary.kind]} ${message.messageText.split(". ").join(".\n    ")}`;
+          const messageText = message.messageText.split(". ").join(".\n   ");
+          if (!opts.emoji) return `    ${messageText}`;
+          return ` ${problemEmoji[summary.kind]} ${messageText}`;
         })
         .join("\n");
     });
@@ -71,7 +76,7 @@ export async function typed(analysis: core.TypedAnalysis, opts: Opts) {
 
           const moduleResult = (!opts.emoji ? "OK " : "🟢 ") + moduleKinds[resolution?.moduleKind?.detectedKind || ""];
 
-          return `${resolution?.isJson ? jsonResult : moduleResult}`;
+          return resolution?.isJson ? jsonResult : moduleResult;
         })
       );
 
@@ -107,7 +112,7 @@ export async function typed(analysis: core.TypedAnalysis, opts: Opts) {
 
         const moduleResult = (!opts.emoji ? "OK " : "🟢 ") + moduleKinds[resolution?.moduleKind?.detectedKind || ""];
 
-        return `${resolution?.isJson ? jsonResult : moduleResult}`;
+        return resolution?.isJson ? jsonResult : moduleResult;
       })
     );
 
@@ -115,7 +120,7 @@ export async function typed(analysis: core.TypedAnalysis, opts: Opts) {
   });
 
   if (opts.format === "ascii") {
-    console.log(verticalTable(table));
+    console.log(tableFlipped(table));
   } else {
     console.log(table.toString());
   }
