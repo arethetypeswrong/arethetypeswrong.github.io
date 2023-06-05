@@ -29,12 +29,10 @@ export function getInternalResolutionProblems(
         // graph for now.
         continue;
       }
-      ts.getResolvedModule(sourceFile, importDeclaration.text);
-
       const resolutionMode = ts.getModeForUsageLocation(sourceFile, moduleSpecifier);
-      const { resolution, trace } = host.resolveModuleName(reference, fileName, resolutionOption, resolutionMode);
+      const resolution = ts.getResolvedModule(sourceFile, moduleSpecifier.text, resolutionMode);
 
-      if (!resolution.resolvedModule) {
+      if (!resolution) {
         result.push({
           kind: "InternalResolutionError",
           resolutionOption,
@@ -44,7 +42,7 @@ export function getInternalResolutionProblems(
             pos: moduleSpecifier.pos,
             end: moduleSpecifier.end,
             resolutionMode,
-            trace,
+            trace: host.getTrace(resolutionOption, fileName, moduleSpecifier.text, resolutionMode)!,
           },
         });
       }

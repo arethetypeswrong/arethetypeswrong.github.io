@@ -22,6 +22,12 @@ export interface MultiCompilerHost {
     resolutionMode?: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS,
     noDtsResolution?: boolean
   ): ResolveModuleNameResult;
+  getTrace(
+    moduleResolution: ResolutionOption,
+    fromFileName: string,
+    moduleName: string,
+    resolutionMode: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined
+  ): string[] | undefined;
   createProgram(moduleResolution: ResolutionOption, rootNames: string[]): ts.Program;
 }
 
@@ -71,6 +77,11 @@ export function createMultiCompilerHost(fs: FS): MultiCompilerHost {
     node16: createCompilerHost("node16"),
     bundler: createCompilerHost("bundler"),
   };
+  const traceCache: Record<ResolutionOption, Record</*FromFileName*/ string, Record</*Key*/ string, string[]>>> = {
+    node10: {},
+    node16: {},
+    bundler: {},
+  };
 
   return {
     getSourceFile,
@@ -79,6 +90,7 @@ export function createMultiCompilerHost(fs: FS): MultiCompilerHost {
     getModuleKindForFile,
     resolveModuleName,
     createProgram,
+    getTrace,
   };
 
   function getSourceFile(fileName: string, moduleResolution: ResolutionOption = "bundler"): ts.SourceFile | undefined {
@@ -156,10 +168,17 @@ export function createMultiCompilerHost(fs: FS): MultiCompilerHost {
       /*redirectedReference*/ undefined,
       resolutionMode
     );
+    const trace = traceCollector.read();
+    const moduleKey = `${resolutionMode ?? 1}:${moduleName}`;
+    (traceCache[moduleResolution][containingFile] ??= {})[moduleKey] = trace;
     return {
       resolution,
-      trace: traceCollector.read(),
+      trace,
     };
+  }
+
+  function getTrace(moduleResolution: ResolutionOption, fromFileName: string, key: string): string[] | undefined {
+    return traceCache[moduleResolution][fromFileName]?.[key];
   }
 
   function createProgram(moduleResolution: ResolutionOption, rootNames: string[]): ts.Program {

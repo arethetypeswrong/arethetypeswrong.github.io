@@ -45,7 +45,7 @@ async function checkPackageWorker(packageFS: FS): Promise<Analysis> {
   const host = createMultiCompilerHost(packageFS);
   const entrypointResolutions = getEntrypointInfo(packageName, packageFS, host);
   const entrypointResolutionProblems = getEntrypointResolutionProblems(entrypointResolutions, host);
-  const internalResolutionProblems = getInternalResolutionProblems(packageName, packageFS, entrypointResolutions, host);
+  const internalResolutionProblems = getInternalResolutionProblems(packageName, entrypointResolutions, host);
   const fileProblems = getFileProblems(entrypointResolutions, host);
 
   return {
