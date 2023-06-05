@@ -1,17 +1,20 @@
 import type {
   EntrypointResolutionProblem,
   ProblemKind,
-  ProblemSummary,
   ResolutionKind,
   TypedAnalysis,
   Problem,
   SummarizedProblems,
+  EntrypointResolutionProblemSummary,
+  FileProblem,
   EntrypointResolutionProblemKind,
   FileProblemKind,
-  FileProblem,
-  EntrypointResolutionProblemSummary,
+  FileProblemSummary,
+  ResolutionBasedFileProblem,
+  ResolutionBasedFileProblemKind,
+  ResolutionBasedFileProblemSummary,
 } from "./types.js";
-import { isEntrypointResolutionProblem, isFileProblem } from "./utils.js";
+import { isEntrypointResolutionProblem, isFileProblem, isResolutionBasedFileProblem } from "./utils.js";
 
 export { resolvedThroughFallback } from "./utils.js";
 
@@ -50,13 +53,6 @@ const problemDescriptions: Record<ProblemKind, string> = {
   InternalResolutionError: "Import found in a type declaration file failed to resolve.",
 };
 
-const moduleResolutionKinds: Record<ResolutionKind, string> = {
-  node10: "node10",
-  "node16-cjs": "node16",
-  "node16-esm": "node16",
-  bundler: "bundler",
-};
-
 export function groupByKind<K extends ProblemKind>(
   problems: (Problem & { kind: K })[]
 ): Partial<Record<K, (Problem & { kind: K })[]>> {
@@ -69,12 +65,12 @@ export function groupByKind<K extends ProblemKind>(
 
 export function summarizeProblems(analysis: TypedAnalysis): SummarizedProblems {
   const { problems } = analysis;
-  const entrypointResolutionProblems = problems.filter(isEntrypointResolutionProblem);
-  const fileProblems = problems.filter(isFileProblem);
-  const groupedEntrypointResolutionProblems = groupByKind(entrypointResolutionProblems);
-  const groupedFileProblems = groupByKind(fileProblems);
+  const groupedEntrypointResolutionProblems = groupByKind(problems.filter(isEntrypointResolutionProblem));
+  const groupedFileProblems = groupByKind(problems.filter(isFileProblem));
+  const gropuedResolutionBasedFileProblems = groupByKind(problems.filter(isResolutionBasedFileProblem));
   const entrypointResolutionProblemSummaries: EntrypointResolutionProblemSummary<EntrypointResolutionProblem>[] = [];
-  const fileProblemSummaries: ProblemSummary<FileProblem>[] = [];
+  const fileProblemSummaries: FileProblemSummary<FileProblem>[] = [];
+  const resolutionBasedFileProblemSummaries: ResolutionBasedFileProblemSummary<ResolutionBasedFileProblem>[] = [];
   for (const kind in groupedEntrypointResolutionProblems) {
     const problems = groupedEntrypointResolutionProblems[kind as EntrypointResolutionProblemKind]!;
     const allTypedEntrypoints = new Set(
@@ -104,7 +100,7 @@ export function summarizeProblems(analysis: TypedAnalysis): SummarizedProblems {
   }
   for (const kind in groupedFileProblems) {
     const problems = groupedFileProblems[kind as FileProblemKind]!;
-    const summary: ProblemSummary<FileProblem> = {
+    const summary: FileProblemSummary<FileProblem> = {
       kind: problems[0].kind,
       title: problemTitles[problems[0].kind],
       description: problemDescriptions[problems[0].kind],
@@ -112,9 +108,21 @@ export function summarizeProblems(analysis: TypedAnalysis): SummarizedProblems {
     };
     fileProblemSummaries.push(summary);
   }
+  for (const kind in gropuedResolutionBasedFileProblems) {
+    const problems = gropuedResolutionBasedFileProblems[kind as ResolutionBasedFileProblemKind]!;
+    const summary: ResolutionBasedFileProblemSummary<ResolutionBasedFileProblem> = {
+      kind: problems[0].kind,
+      title: problemTitles[problems[0].kind],
+      description: problemDescriptions[problems[0].kind],
+      problems,
+      resolutionOptionsAffected: problems.map((p) => p.resolutionOption),
+    };
+    resolutionBasedFileProblemSummaries.push(summary);
+  }
   return {
-    problems: entrypointResolutionProblemSummaries,
+    entrypointResolutionProblems: entrypointResolutionProblemSummaries,
     fileProblems: fileProblemSummaries,
+    resolutionBasedFileProblems: resolutionBasedFileProblemSummaries,
   };
 }
 

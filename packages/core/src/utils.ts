@@ -1,4 +1,13 @@
-import type { EntrypointInfo, EntrypointResolutionAnalysis, ResolutionKind, ResolutionOption } from "./types.js";
+import type {
+  EntrypointInfo,
+  EntrypointResolutionAnalysis,
+  EntrypointResolutionProblem,
+  FileProblem,
+  Problem,
+  ResolutionBasedFileProblem,
+  ResolutionKind,
+  ResolutionOption,
+} from "./types.js";
 
 export const allResolutionOptions: ResolutionOption[] = ["node10", "node16", "bundler"];
 export const allResolutionKinds: ResolutionKind[] = ["node10", "node16-cjs", "node16-esm", "bundler"];
@@ -61,5 +70,42 @@ export function visitResolutions(
         return;
       }
     }
+  }
+}
+
+type AssertNever<T extends never> = T;
+
+export function isEntrypointResolutionProblem(problem: Problem): problem is EntrypointResolutionProblem {
+  switch (problem.kind) {
+    case "NoResolution":
+    case "UntypedResolution":
+    case "FalseESM":
+    case "FalseCJS":
+    case "CJSResolvesToESM":
+    case "Wildcard":
+    case "FallbackCondition":
+    case "FalseExportDefault":
+      return true;
+    default:
+      return false as AssertNever<typeof problem & EntrypointResolutionProblem>;
+  }
+}
+
+export function isFileProblem(problem: Problem): problem is FileProblem {
+  switch (problem.kind) {
+    case "CJSOnlyExportsDefault":
+      return true;
+    default:
+      return false as AssertNever<typeof problem & FileProblem>;
+  }
+}
+
+export function isResolutionBasedFileProblem(problem: Problem): problem is ResolutionBasedFileProblem {
+  switch (problem.kind) {
+    case "InternalResolutionError":
+    case "UnexpectedModuleSyntax":
+      return true;
+    default:
+      return false as AssertNever<typeof problem & ResolutionBasedFileProblem>;
   }
 }

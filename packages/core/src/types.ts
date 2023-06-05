@@ -70,7 +70,7 @@ export interface InternalResolutionError {
   trace: string[];
 }
 
-export type ProblemKind =
+export type EntrypointResolutionProblemKind =
   | "NoResolution"
   | "UntypedResolution"
   | "FalseESM"
@@ -78,45 +78,46 @@ export type ProblemKind =
   | "CJSResolvesToESM"
   | "Wildcard"
   | "FallbackCondition"
-  | "FalseExportDefault"
-  | "InternalResolutionError"
-  | "UnexpectedModuleSyntax"
-  | "CJSOnlyExportsDefault";
-
-export interface BaseProblem {
-  kind: ProblemKind;
-}
+  | "FalseExportDefault";
 
 export interface EntrypointResolutionProblem {
-  kind: ProblemKind;
+  kind: EntrypointResolutionProblemKind;
   entrypoint: string;
   resolutionKind: ResolutionKind;
 }
 
-export interface InternalResolutionProblem extends BaseProblem {
+export interface InternalResolutionProblem {
   kind: "InternalResolutionError";
   resolutionOption: ResolutionOption;
   error: InternalResolutionError;
 }
 
-export interface UnexpectedModuleSyntaxProblem extends BaseProblem {
+export interface UnexpectedModuleSyntaxProblem {
   kind: "UnexpectedModuleSyntax";
+  resolutionOption: ResolutionOption;
   expectedModuleKind: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS;
   moduleKind: ModuleKind;
   fileName: string;
   range?: ts.TextRange;
 }
 
-export interface CJSOnlyExportsDefaultProblem extends BaseProblem {
+export interface CJSOnlyExportsDefaultProblem {
   kind: "CJSOnlyExportsDefault";
   fileName: string;
   range: ts.TextRange;
 }
 
-export type Problem = EntrypointResolutionProblem;
+export type ResolutionBasedFileProblem = InternalResolutionProblem | UnexpectedModuleSyntaxProblem;
+export type FileProblem = CJSOnlyExportsDefaultProblem;
+export type Problem = EntrypointResolutionProblem | ResolutionBasedFileProblem | FileProblem;
+export type ProblemKind = Problem["kind"];
+export type FileProblemKind = FileProblem["kind"];
+export type ResolutionBasedFileProblemKind = ResolutionBasedFileProblem["kind"];
 
 export interface SummarizedProblems {
-  problems: EntrypointResolutionProblemSummary<EntrypointResolutionProblem>[];
+  entrypointResolutionProblems: EntrypointResolutionProblemSummary<EntrypointResolutionProblem>[];
+  resolutionBasedFileProblems: ResolutionBasedFileProblemSummary<ResolutionBasedFileProblem>[];
+  fileProblems: FileProblemSummary<FileProblem>[];
 }
 
 export interface ProblemSummary<T extends Problem> {
@@ -126,8 +127,14 @@ export interface ProblemSummary<T extends Problem> {
   problems: T[];
 }
 
+export interface ResolutionBasedFileProblemSummary<T extends ResolutionBasedFileProblem> extends ProblemSummary<T> {
+  resolutionOptionsAffected: ResolutionOption[];
+}
+
 export interface EntrypointResolutionProblemSummary<T extends EntrypointResolutionProblem> extends ProblemSummary<T> {
   resolutionKindsAffected: ResolutionKind[];
   resolutionKindsAffectedInAllEntrypoints: ResolutionKind[];
   entrypointsAffected: string[];
 }
+
+export interface FileProblemSummary<T extends FileProblem> extends ProblemSummary<T> {}
