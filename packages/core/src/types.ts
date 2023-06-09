@@ -61,8 +61,7 @@ export interface Resolution {
   trace: string[];
 }
 
-export interface InternalResolutionError {
-  fileName: string;
+export interface InternalResolutionErrorDetails {
   pos: number;
   end: number;
   moduleSpecifier: string;
@@ -89,13 +88,14 @@ export interface EntrypointResolutionProblem {
 export interface InternalResolutionProblem {
   kind: "InternalResolutionError";
   resolutionOption: ResolutionOption;
-  error: InternalResolutionError;
+  fileName: string;
+  error: InternalResolutionErrorDetails;
 }
 
 export interface UnexpectedModuleSyntaxProblem {
   kind: "UnexpectedModuleSyntax";
   resolutionOption: ResolutionOption;
-  expectedModuleKind: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS;
+  syntax: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS;
   moduleKind: ModuleKind;
   fileName: string;
   range?: ts.TextRange;
@@ -115,26 +115,28 @@ export type FileProblemKind = FileProblem["kind"];
 export type ResolutionBasedFileProblemKind = ResolutionBasedFileProblem["kind"];
 
 export interface SummarizedProblems {
-  entrypointResolutionProblems: EntrypointResolutionProblemSummary<EntrypointResolutionProblem>[];
+  entrypointResolutionProblems: EntrypointResolutionProblemSummary[];
   resolutionBasedFileProblems: ResolutionBasedFileProblemSummary<ResolutionBasedFileProblem>[];
-  fileProblems: FileProblemSummary<FileProblem>[];
+  fileProblems: FileProblemSummary[];
 }
 
-export interface ProblemSummary<T extends Problem> {
+export interface ProblemSummary<T extends Problem = Problem> {
   kind: T["kind"];
   title: string;
   description: string;
   problems: T[];
 }
 
-export interface ResolutionBasedFileProblemSummary<T extends ResolutionBasedFileProblem> extends ProblemSummary<T> {
+export interface ResolutionBasedFileProblemSummary<T extends ResolutionBasedFileProblem = ResolutionBasedFileProblem>
+  extends ProblemSummary<T> {
   resolutionOptionsAffected: ResolutionOption[];
 }
 
-export interface EntrypointResolutionProblemSummary<T extends EntrypointResolutionProblem> extends ProblemSummary<T> {
+export interface EntrypointResolutionProblemSummary<T extends EntrypointResolutionProblem = EntrypointResolutionProblem>
+  extends ProblemSummary<T> {
   resolutionKindsAffected: ResolutionKind[];
   resolutionKindsAffectedInAllEntrypoints: ResolutionKind[];
   entrypointsAffected: string[];
 }
 
-export interface FileProblemSummary<T extends FileProblem> extends ProblemSummary<T> {}
+export interface FileProblemSummary<T extends FileProblem = FileProblem> extends ProblemSummary<T> {}

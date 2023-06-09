@@ -1,13 +1,20 @@
-import type {
-  EntrypointResolutionProblem,
-  EntrypointResolutionProblemKind,
-  ResolutionKind,
+import {
+  groupByKind,
+  type EntrypointResolutionProblem,
+  type ProblemKind,
+  type ResolutionKind,
 } from "@arethetypeswrong/core";
-import { allResolutionKinds, isEntrypointResolutionProblem } from "@arethetypeswrong/core/utils";
+import {
+  allResolutionKinds,
+  getResolutionOption,
+  isEntrypointResolutionProblem,
+  isFileProblem,
+  isResolutionBasedFileProblem,
+} from "@arethetypeswrong/core/utils";
 import type { Checks } from "../state";
 import { problemEmoji } from "./problemEmoji";
 
-const problemShortDescriptions: Record<EntrypointResolutionProblemKind, string> = {
+const problemShortDescriptions: Record<ProblemKind, string> = {
   Wildcard: `${problemEmoji.Wildcard} Unable to check`,
   NoResolution: `${problemEmoji.NoResolution} Failed to resolve`,
   UntypedResolution: `${problemEmoji.UntypedResolution} No types`,
@@ -16,6 +23,9 @@ const problemShortDescriptions: Record<EntrypointResolutionProblemKind, string> 
   CJSResolvesToESM: `${problemEmoji.CJSResolvesToESM} ESM (dynamic import only)`,
   FallbackCondition: `${problemEmoji.FallbackCondition} Used fallback condition`,
   FalseExportDefault: `${problemEmoji.FalseExportDefault} Incorrect default export`,
+  CJSOnlyExportsDefault: `${problemEmoji.CJSOnlyExportsDefault} CJS default export`,
+  InternalResolutionError: `${problemEmoji.InternalResolutionError} Internal resolution error`,
+  UnexpectedModuleSyntax: `${problemEmoji.UnexpectedModuleSyntax} Unexpected module syntax`,
 };
 
 const resolutionKinds: Record<ResolutionKind, string> = {
@@ -61,19 +71,33 @@ export function ChecksTable(props: { checks?: Checks }) {
           <td>${resolutionKinds[resolutionKind]}</td>
           ${subpaths
             .map((subpath) => {
-              const problemsForCell = analysis.problems.filter(
-                (problem): problem is EntrypointResolutionProblem =>
-                  isEntrypointResolutionProblem(problem) &&
-                  problem.entrypoint === subpath &&
-                  problem.resolutionKind === resolutionKind
+              const resolutionInfo = analysis.entrypoints[subpath].resolutions[resolutionKind];
+              const problemsForCell = Object.entries(
+                groupByKind(
+                  analysis.problems.filter(
+                    (problem) =>
+                      (isEntrypointResolutionProblem(problem) &&
+                        problem.entrypoint === subpath &&
+                        problem.resolutionKind === resolutionKind) ||
+                      (isResolutionBasedFileProblem(problem) &&
+                        problem.resolutionOption === getResolutionOption(resolutionKind) &&
+                        resolutionInfo.files?.includes(problem.fileName)) ||
+                      (isFileProblem(problem) && resolutionInfo.files?.includes(problem.fileName))
+                  )
+                )
               );
-              const resolution = analysis.entrypoints[subpath].resolutions[resolutionKind].resolution;
               return `<td>${
-                problemsForCell?.length
-                  ? problemsForCell.map((problem) => problemShortDescriptions[problem.kind]).join("<br />")
-                  : resolution?.isJson
+                problemsForCell.length
+                  ? problemsForCell
+                      .map(
+                        ([kind, problem]) =>
+                          problemShortDescriptions[kind as ProblemKind] +
+                          (problem.length > 1 ? ` (${problem.length})` : "")
+                      )
+                      .join("<br />")
+                  : resolutionInfo.resolution?.isJson
                   ? "✅ (JSON)"
-                  : "✅ " + moduleKinds[resolution?.moduleKind?.detectedKind || ""]
+                  : "✅ " + moduleKinds[resolutionInfo.resolution?.moduleKind?.detectedKind || ""]
               }</td>`;
             })
             .join("")}

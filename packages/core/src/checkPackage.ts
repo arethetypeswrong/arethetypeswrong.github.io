@@ -10,8 +10,8 @@ import type {
   EntrypointInfo,
 } from "./types.js";
 import { createMultiCompilerHost, type MultiCompilerHost } from "./multiCompilerHost.js";
-import { getEntrypointResolutionProblems } from "./checks/entrypointResolutions.js";
-import { getInternalResolutionProblems } from "./checks/internalResolutions.js";
+import { getEntrypointResolutionProblems } from "./checks/entrypointResolutionProblems.js";
+import { getResolutionBasedFileProblems } from "./checks/resolutionBasedFileProblems.js";
 import { getFileProblems } from "./checks/fileProblems.js";
 
 export async function checkTgz(tgz: Uint8Array, host: Host = fetchTarballHost): Promise<Analysis> {
@@ -45,7 +45,7 @@ async function checkPackageWorker(packageFS: FS): Promise<Analysis> {
   const host = createMultiCompilerHost(packageFS);
   const entrypointResolutions = getEntrypointInfo(packageName, packageFS, host);
   const entrypointResolutionProblems = getEntrypointResolutionProblems(entrypointResolutions, host);
-  const internalResolutionProblems = getInternalResolutionProblems(packageName, entrypointResolutions, host);
+  const resolutionBasedFileProblems = getResolutionBasedFileProblems(packageName, entrypointResolutions, host);
   const fileProblems = getFileProblems(entrypointResolutions, host);
 
   return {
@@ -53,7 +53,7 @@ async function checkPackageWorker(packageFS: FS): Promise<Analysis> {
     packageVersion,
     containsTypes,
     entrypoints: entrypointResolutions,
-    problems: [...entrypointResolutionProblems, ...internalResolutionProblems, ...fileProblems],
+    problems: [...entrypointResolutionProblems, ...resolutionBasedFileProblems, ...fileProblems],
   };
 }
 

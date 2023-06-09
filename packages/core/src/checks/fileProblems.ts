@@ -19,29 +19,9 @@ export function getFileProblems(
   for (const fileName of visibleFiles) {
     if (ts.hasJSFileExtension(fileName)) {
       const sourceFile = host.getSourceFile(fileName, "node16")!;
-      const expectedModuleKind = sourceFile.impliedNodeFormat!;
       if (
-        (expectedModuleKind === ts.ModuleKind.CommonJS && sourceFile.externalModuleIndicator) ||
-        (expectedModuleKind === ts.ModuleKind.ESNext &&
-          !sourceFile.externalModuleIndicator &&
-          sourceFile.commonJsModuleIndicator)
-      ) {
-        const syntax = sourceFile.externalModuleIndicator ?? sourceFile.commonJsModuleIndicator;
-        problems.push({
-          kind: "UnexpectedModuleSyntax",
-          expectedModuleKind,
-          fileName,
-          range:
-            typeof syntax === "object"
-              ? {
-                  pos: syntax.getStart(sourceFile),
-                  end: syntax.end,
-                }
-              : undefined,
-          moduleKind: host.getModuleKindForFile(fileName, "node16"),
-        });
-      } else if (
-        expectedModuleKind === ts.ModuleKind.CommonJS &&
+        !sourceFile.externalModuleIndicator &&
+        sourceFile.commonJsModuleIndicator &&
         sourceFile.symbol?.exports?.has(ts.InternalSymbolName.Default) &&
         sourceFile.symbol.exports.has(ts.escapeLeadingUnderscores("__esModule")) &&
         !sourceFile.symbol.exports.has(ts.InternalSymbolName.ExportEquals)

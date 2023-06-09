@@ -1,0 +1,91 @@
+import ts from "typescript";
+import type { MultiCompilerHost } from "../multiCompilerHost.js";
+import type { EntrypointInfo, ResolutionBasedFileProblem } from "../types.js";
+import { allResolutionOptions } from "../utils.js";
+
+export function getResolutionBasedFileProblems(
+  packageName: string,
+  entrypointResolutions: Record<string, EntrypointInfo>,
+  host: MultiCompilerHost
+): ResolutionBasedFileProblem[] {
+  const result: ResolutionBasedFileProblem[] = [];
+  for (const resolutionOption of allResolutionOptions) {
+    const visibleFiles = Object.values(entrypointResolutions).flatMap((entrypoint) => {
+      if (resolutionOption === "node16") {
+        const files = new Set<string>();
+        entrypoint.resolutions["node16-cjs"].files?.forEach((file) => files.add(file));
+        entrypoint.resolutions["node16-esm"].files?.forEach((file) => files.add(file));
+        return Array.from(files);
+      }
+      return entrypoint.resolutions[resolutionOption].files ?? [];
+    });
+
+    for (const fileName of visibleFiles) {
+      const sourceFile = host.getSourceFile(fileName, resolutionOption)!;
+
+      for (const moduleSpecifier of sourceFile.imports) {
+        const reference = moduleSpecifier.text;
+        if (
+          reference !== packageName &&
+          !reference.startsWith(`${packageName}/`) &&
+          reference[0] !== "#" &&
+          !ts.pathIsRelative(reference)
+        ) {
+          // Probably a reference to something we'd have to npm install.
+          // These can definitely be errors, but I'm not installing a whole
+          // graph for now.
+          continue;
+        }
+        const resolutionMode = ts.getModeForUsageLocation(sourceFile, moduleSpecifier);
+        const resolution = ts.getResolvedModule(sourceFile, moduleSpecifier.text, resolutionMode);
+
+        if (!resolution) {
+          result.push({
+            kind: "InternalResolutionError",
+            resolutionOption,
+            fileName,
+            error: {
+              moduleSpecifier: reference,
+              pos: moduleSpecifier.pos,
+              end: moduleSpecifier.end,
+              resolutionMode,
+              trace: host.getTrace(resolutionOption, fileName, moduleSpecifier.text, resolutionMode)!,
+            },
+          });
+        }
+      }
+
+      if (ts.hasJSFileExtension(fileName)) {
+        const expectedModuleKind = host.getModuleKindForFile(fileName, resolutionOption);
+        const syntaxImpliedModuleKind = sourceFile.externalModuleIndicator
+          ? ts.ModuleKind.ESNext
+          : sourceFile.commonJsModuleIndicator
+          ? ts.ModuleKind.CommonJS
+          : undefined;
+        if (
+          expectedModuleKind !== undefined &&
+          syntaxImpliedModuleKind !== undefined &&
+          expectedModuleKind.detectedKind !== syntaxImpliedModuleKind
+        ) {
+          const syntax = sourceFile.externalModuleIndicator ?? sourceFile.commonJsModuleIndicator;
+          result.push({
+            kind: "UnexpectedModuleSyntax",
+            resolutionOption,
+            syntax: syntaxImpliedModuleKind,
+            fileName,
+            range:
+              typeof syntax === "object"
+                ? {
+                    pos: syntax.getStart(sourceFile),
+                    end: syntax.end,
+                  }
+                : undefined,
+            moduleKind: expectedModuleKind,
+          });
+        }
+      }
+    }
+  }
+
+  return result;
+}
