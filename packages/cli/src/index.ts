@@ -1,0 +1,141 @@
+#!/usr/bin/env node
+
+import * as core from "@arethetypeswrong/core";
+import { versions } from "@arethetypeswrong/core/versions";
+import { Option, program } from "commander";
+import chalk from "chalk";
+import { readFile } from "fs/promises";
+import { FetchError } from "node-fetch";
+import { createRequire } from "module";
+
+import * as render from "./render/index.js";
+import { readConfig } from "./readConfig.js";
+import { problemFlags } from "./problemUtils.js";
+
+const packageJson = createRequire(import.meta.url)("../package.json");
+const version = packageJson.version;
+
+const formats = ["table", "table-flipped", "ascii", "json"] as const;
+
+type Format = (typeof formats)[number];
+
+export interface Opts {
+  fromNpm?: boolean;
+  summary?: boolean;
+  emoji?: boolean;
+  color?: boolean;
+  quiet?: boolean;
+  configPath?: string;
+  ignoreRules?: string[];
+  format: Format;
+}
+
+program
+  .addHelpText("before", `ATTW CLI (v${version})\n`)
+  .addHelpText("after", `\ncore: v${versions.core}, typescript: v${versions.typescript}`)
+  .version(`cli: v${version}\ncore: v${versions.core}\ntypescript: v${versions.typescript}`)
+  .name("attw")
+  .description(
+    `${chalk.bold.blue(
+      "Are the Types Wrong?"
+    )} attempts to analyze npm package contents for issues with their TypeScript types,
+particularly ESM-related module resolution issues.`
+  )
+  .argument("<file-name>", "the file to check; by default a path to a .tar.gz file, unless --from-npm is set")
+  .option("-p, --from-npm", "read from the npm registry instead of a local file")
+  .addOption(new Option("-f, --format <format>", "specify the print format").choices(formats).default("table"))
+  .option("-q, --quiet", "don't print anything to STDOUT (overrides all other options)")
+  .addOption(
+    new Option("--ignore-rules <rules...>", "specify rules to ignore").choices(Object.values(problemFlags)).default([])
+  )
+  .option("--summary, --no-summary", "whether to print summary information about the different errors")
+  .option("--emoji, --no-emoji", "whether to use any emojis")
+  .option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)")
+  .option("--config-path <path>", "path to config file (default: ./.attw.json)")
+  .action(async (fileName: string) => {
+    const opts = program.opts<Opts>();
+    await readConfig(program, opts.configPath);
+    opts.ignoreRules = opts.ignoreRules?.map(
+      (value) => Object.keys(problemFlags).find((key) => problemFlags[key as core.ProblemKind] === value) as string
+    );
+
+    if (opts.quiet) {
+      console.log = () => {};
+    }
+
+    if (!opts.color) {
+      process.env.FORCE_COLOR = "0";
+    }
+
+    let analysis: core.Analysis;
+    if (opts.fromNpm) {
+      try {
+        const result = core.parsePackageSpec(fileName);
+        if (result.status === "error") {
+          program.error(result.error);
+        } else {
+          analysis = await core.checkPackage(result.data.packageName, result.data.version);
+        }
+      } catch (error) {
+        if (error instanceof FetchError) {
+          program.error(`error while fetching package:\n${error.message}`, { code: error.code });
+        }
+
+        handleError(error, "checking package");
+      }
+    } else {
+      try {
+        const file = await readFile(fileName);
+        const data = new Uint8Array(file);
+        analysis = await core.checkTgz(data);
+      } catch (error) {
+        handleError(error, "checking file");
+      }
+    }
+
+    if (opts.format === "json") {
+      const result = { analysis } as {
+        analysis: core.Analysis;
+        problems?: Partial<Record<core.ProblemKind, core.Problem[]>>;
+      };
+
+      if (analysis.containsTypes) {
+        result.problems = core.groupByKind(core.getProblems(analysis));
+      }
+
+      console.log(JSON.stringify(result));
+
+      if (
+        analysis.containsTypes &&
+        core.getProblems(analysis).some((problem) => !opts.ignoreRules?.includes(problem.kind))
+      )
+        process.exit(1);
+
+      return;
+    }
+
+    console.log();
+    if (analysis.containsTypes) {
+      await render.typed(analysis, opts);
+
+      if (
+        analysis.containsTypes &&
+        core.getProblems(analysis).some((problem) => !opts.ignoreRules?.includes(problem.kind))
+      )
+        process.exit(1);
+    } else {
+      render.untyped(analysis as core.UntypedAnalysis);
+    }
+  });
+
+program.parse(process.argv);
+
+function handleError(error: unknown, title: string): never {
+  if (error && typeof error === "object" && "message" in error) {
+    program.error(`error while ${title}:\n${error.message}`, {
+      code: "code" in error && typeof error.code === "string" ? error.code : "UNKNOWN",
+    });
+  }
+
+  program.error(`unknown error while ${title}`, { code: "UNKNOWN" });
+}

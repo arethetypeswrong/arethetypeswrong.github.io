@@ -114,29 +114,9 @@ export type ProblemKind = Problem["kind"];
 export type FileProblemKind = FileProblem["kind"];
 export type ResolutionBasedFileProblemKind = ResolutionBasedFileProblem["kind"];
 
-export interface SummarizedProblems {
-  entrypointResolutionProblems: EntrypointResolutionProblemSummary[];
-  resolutionBasedFileProblems: ResolutionBasedFileProblemSummary<ResolutionBasedFileProblem>[];
-  fileProblems: FileProblemSummary[];
-}
+export type Failable<T> = { status: "error"; error: string } | { status: "success"; data: T };
 
-export interface ProblemSummary<T extends Problem = Problem> {
-  kind: T["kind"];
-  title: string;
-  description: string;
-  problems: T[];
+export interface ParsedPackageSpec {
+  packageName: string;
+  version: string | undefined;
 }
-
-export interface ResolutionBasedFileProblemSummary<T extends ResolutionBasedFileProblem = ResolutionBasedFileProblem>
-  extends ProblemSummary<T> {
-  resolutionOptionsAffected: ResolutionOption[];
-}
-
-export interface EntrypointResolutionProblemSummary<T extends EntrypointResolutionProblem = EntrypointResolutionProblem>
-  extends ProblemSummary<T> {
-  resolutionKindsAffected: ResolutionKind[];
-  resolutionKindsAffectedInAllEntrypoints: ResolutionKind[];
-  entrypointsAffected: string[];
-}
-
-export interface FileProblemSummary<T extends FileProblem = FileProblem> extends ProblemSummary<T> {}

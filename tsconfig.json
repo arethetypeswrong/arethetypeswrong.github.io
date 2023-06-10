@@ -12,6 +12,12 @@
     },
     {
       "path": "./packages/web/worker"
+    },
+    {
+      "path": "./packages/cli"
+    },
+    {
+      "path": "./packages/cli/test"
     }
   ]
 }

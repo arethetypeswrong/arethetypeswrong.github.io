@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "nodenext",
+    "rootDir": "src",
+    "types": [
+      "ts-expose-internals",
+      "node"
+    ],
+    "outDir": "./dist",
+    "declarationDir": "./lib",
+    "sourceMap": false,
+  },
+  "include": [
+    "src"
+  ],
+  "references": [
+    {
+      "path": "../core"
+    }
+  ]
+}
