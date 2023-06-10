@@ -4,6 +4,7 @@ import type {
   EntrypointResolutionProblem,
   FileProblem,
   Problem,
+  ProblemKind,
   ResolutionBasedFileProblem,
   ResolutionKind,
   ResolutionOption,
@@ -75,8 +76,8 @@ export function visitResolutions(
 
 type AssertNever<T extends never> = T;
 
-export function isEntrypointResolutionProblem(problem: Problem): problem is EntrypointResolutionProblem {
-  switch (problem.kind) {
+export function isEntrypointResolutionProblemKind(kind: ProblemKind): kind is EntrypointResolutionProblem["kind"] {
+  switch (kind) {
     case "NoResolution":
     case "UntypedResolution":
     case "FalseESM":
@@ -87,25 +88,46 @@ export function isEntrypointResolutionProblem(problem: Problem): problem is Entr
     case "FalseExportDefault":
       return true;
     default:
-      return false as AssertNever<typeof problem & EntrypointResolutionProblem>;
+      return false as AssertNever<typeof kind & EntrypointResolutionProblem["kind"]>;
+  }
+}
+
+export function isEntrypointResolutionProblem(problem: Problem): problem is EntrypointResolutionProblem {
+  return isEntrypointResolutionProblemKind(problem.kind);
+}
+
+export function isFileProblemKind(kind: ProblemKind): kind is FileProblem["kind"] {
+  switch (kind) {
+    case "CJSOnlyExportsDefault":
+      return true;
+    default:
+      return false as AssertNever<typeof kind & FileProblem["kind"]>;
   }
 }
 
 export function isFileProblem(problem: Problem): problem is FileProblem {
-  switch (problem.kind) {
-    case "CJSOnlyExportsDefault":
-      return true;
-    default:
-      return false as AssertNever<typeof problem & FileProblem>;
-  }
+  return isFileProblemKind(problem.kind);
 }
 
-export function isResolutionBasedFileProblem(problem: Problem): problem is ResolutionBasedFileProblem {
-  switch (problem.kind) {
+export function isResolutionBasedFileProblemKind(kind: ProblemKind): kind is ResolutionBasedFileProblem["kind"] {
+  switch (kind) {
     case "InternalResolutionError":
     case "UnexpectedModuleSyntax":
       return true;
     default:
-      return false as AssertNever<typeof problem & ResolutionBasedFileProblem>;
+      return false as AssertNever<typeof kind & ResolutionBasedFileProblem["kind"]>;
   }
+}
+
+export function isResolutionBasedFileProblem(problem: Problem): problem is ResolutionBasedFileProblem {
+  return isResolutionBasedFileProblemKind(problem.kind);
+}
+export function groupProblemsByKind<K extends ProblemKind>(
+  problems: (Problem & { kind: K })[]
+): Partial<Record<K, (Problem & { kind: K })[]>> {
+  const result: Partial<Record<K, (Problem & { kind: K })[]>> = {};
+  for (const problem of problems) {
+    (result[problem.kind] ??= []).push(problem);
+  }
+  return result;
 }

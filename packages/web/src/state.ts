@@ -1,10 +1,5 @@
-import type { Analysis, SummarizedProblems } from "@arethetypeswrong/core";
+import type { Analysis } from "@arethetypeswrong/core";
 import { produce } from "immer";
-
-export interface Checks {
-  analysis: Analysis;
-  problemSummaries?: SummarizedProblems;
-}
 
 export interface State {
   isLoading: boolean;
@@ -13,7 +8,7 @@ export interface State {
     text: string;
   };
   packageInfo: PackageInfoState;
-  checks?: Checks;
+  analysis?: Analysis;
 }
 
 export interface ParsedPackageSpec {

@@ -1,17 +1,12 @@
-import {
-  groupByKind,
-  type EntrypointResolutionProblem,
-  type ProblemKind,
-  type ResolutionKind,
-} from "@arethetypeswrong/core";
+import type { Analysis, ProblemKind, ResolutionKind } from "@arethetypeswrong/core";
 import {
   allResolutionKinds,
   getResolutionOption,
+  groupProblemsByKind,
   isEntrypointResolutionProblem,
   isFileProblem,
   isResolutionBasedFileProblem,
 } from "@arethetypeswrong/core/utils";
-import type { Checks } from "../state";
 import { problemEmoji } from "./problemEmoji";
 
 const problemShortDescriptions: Record<ProblemKind, string> = {
@@ -41,15 +36,15 @@ const moduleKinds = {
   "": "",
 };
 
-export function ChecksTable(props: { checks?: Checks }) {
-  if (!props.checks || !props.checks.analysis.containsTypes) {
+export function ChecksTable(props: { analysis?: Analysis }) {
+  if (!props.analysis || !props.analysis.containsTypes) {
     return {
       className: "display-none",
       innerHTML: "",
     };
   }
 
-  const { analysis } = props.checks;
+  const { analysis } = props;
   const subpaths = Object.keys(analysis.entrypoints);
   const entrypoints = subpaths.map((s) =>
     s === "." ? analysis.packageName : `${analysis.packageName}/${s.substring(2)}`
@@ -73,7 +68,7 @@ export function ChecksTable(props: { checks?: Checks }) {
             .map((subpath) => {
               const resolutionInfo = analysis.entrypoints[subpath].resolutions[resolutionKind];
               const problemsForCell = Object.entries(
-                groupByKind(
+                groupProblemsByKind(
                   analysis.problems.filter(
                     (problem) =>
                       (isEntrypointResolutionProblem(problem) &&

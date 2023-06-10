@@ -11,7 +11,7 @@ const semverRegex =
 const worker = new Worker(new URL("../worker/worker.ts", import.meta.url), { type: "module" });
 worker.onmessage = async (event: MessageEvent<ResultMessage>) => {
   updateState((state) => {
-    state.checks = event.data.data;
+    state.analysis = event.data.data.analysis;
     state.isLoading = false;
     state.message = undefined;
   });
@@ -84,7 +84,7 @@ function onPackageNameInput(value: string) {
     updateState((state) => {
       state.packageInfo.info = undefined;
       state.packageInfo.parsed = undefined;
-      state.checks = undefined;
+      state.analysis = undefined;
       state.message = {
         isError: true,
         text: parsed.error,
@@ -95,7 +95,7 @@ function onPackageNameInput(value: string) {
   if (!shallowEqual(getState().packageInfo.parsed, parsed.data)) {
     updateState((state) => {
       state.packageInfo.parsed = parsed.data;
-      state.checks = undefined;
+      state.analysis = undefined;
     });
   }
 }
