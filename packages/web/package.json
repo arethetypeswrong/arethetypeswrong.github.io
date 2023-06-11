@@ -17,9 +17,11 @@
   "dependencies": {
     "@arethetypeswrong/core": "file:../core",
     "immer": "^9.0.21",
+    "marked": "^5.1.0",
     "nprogress": "^0.2.0"
   },
   "devDependencies": {
+    "@types/marked": "^5.0.0",
     "@types/nprogress": "^0.2.0",
     "esbuild": "^0.17.4",
     "vite": "^4.0.4"

@@ -25,6 +25,17 @@ export function getResolutionOption(resolutionKind: ResolutionKind): ResolutionO
   }
 }
 
+export function getResolutionKinds(resolutionOption: ResolutionOption): ResolutionKind[] {
+  switch (resolutionOption) {
+    case "node10":
+      return ["node10"];
+    case "node16":
+      return ["node16-cjs", "node16-esm"];
+    case "bundler":
+      return ["bundler"];
+  }
+}
+
 export function isDefined<T>(value: T | undefined): value is T {
   return value !== undefined;
 }

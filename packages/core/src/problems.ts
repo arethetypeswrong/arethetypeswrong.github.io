@@ -1,4 +1,12 @@
-import type { ProblemKind } from "./types.js";
+import type { Problem, ProblemKind, ResolutionKind, ResolutionOption, TypedAnalysis } from "./types.js";
+import {
+  allResolutionKinds,
+  getResolutionKinds,
+  getResolutionOption,
+  isEntrypointResolutionProblem,
+  isFileProblem,
+  isResolutionBasedFileProblem,
+} from "./utils.js";
 
 export interface ProblemKindInfo {
   title: string;
@@ -81,3 +89,86 @@ export const problemKindInfo: Record<ProblemKind, ProblemKindInfo> = {
       "Import found in a type declaration file failed to resolve. Either this indicates that runtime resolution errors will occur, or (more likely) the types misrepresent the contents of the JavaScript files.",
   },
 };
+
+export interface ProblemFilter {
+  kind?: ProblemKind;
+  entrypoint?: string;
+  resolutionKind?: ResolutionKind;
+  resolutionOption?: ResolutionOption;
+}
+
+export function filterProblems(analysis: TypedAnalysis, filter: ProblemFilter): Problem[];
+export function filterProblems(problems: readonly Problem[], analysis: TypedAnalysis, filter: ProblemFilter): Problem[];
+export function filterProblems(
+  ...args:
+    | [analysis: TypedAnalysis, filter: ProblemFilter]
+    | [problems: readonly Problem[], analysis: TypedAnalysis, filter: ProblemFilter]
+) {
+  const [problems, analysis, filter] = args.length === 2 ? [args[0].problems, ...args] : args;
+  return problems.filter((p) => {
+    if (filter.kind && p.kind !== filter.kind) {
+      return false;
+    }
+    if (filter.entrypoint && filter.resolutionKind) {
+      return problemAffectsEntrypointResolution(p, filter.entrypoint, filter.resolutionKind, analysis);
+    }
+    if (filter.entrypoint && filter.resolutionOption) {
+      return getResolutionKinds(filter.resolutionOption).every((resolutionKind) =>
+        problemAffectsEntrypointResolution(p, filter.entrypoint!, resolutionKind, analysis)
+      );
+    }
+    if (filter.entrypoint) {
+      return problemAffectsEntrypoint(p, filter.entrypoint, analysis);
+    }
+    if (filter.resolutionKind) {
+      return problemAffectsResolutionKind(p, filter.resolutionKind, analysis);
+    }
+    return true;
+  });
+}
+
+export function problemAffectsResolutionKind(
+  problem: Problem,
+  resolutionKind: ResolutionKind,
+  analysis: TypedAnalysis
+) {
+  if (isEntrypointResolutionProblem(problem)) {
+    return problem.resolutionKind === resolutionKind;
+  }
+  if (isResolutionBasedFileProblem(problem)) {
+    return problem.resolutionOption === getResolutionOption(resolutionKind);
+  }
+  return Object.values(analysis.entrypoints).some((entrypointInfo) =>
+    entrypointInfo.resolutions[resolutionKind].files?.includes(problem.fileName)
+  );
+}
+
+export function problemAffectsEntrypoint(problem: Problem, entrypoint: string, analysis: TypedAnalysis) {
+  if (isEntrypointResolutionProblem(problem)) {
+    return problem.entrypoint === entrypoint;
+  }
+  return allResolutionKinds.some((resolutionKind) =>
+    analysis.entrypoints[entrypoint].resolutions[resolutionKind].files?.includes(problem.fileName)
+  );
+}
+
+export function problemAffectsEntrypointResolution(
+  problem: Problem,
+  entrypoint: string,
+  resolutionKind: ResolutionKind,
+  analysis: TypedAnalysis
+) {
+  if (isEntrypointResolutionProblem(problem)) {
+    return problem.entrypoint === entrypoint && problem.resolutionKind === resolutionKind;
+  }
+  if (isResolutionBasedFileProblem(problem)) {
+    return (
+      getResolutionOption(resolutionKind) === problem.resolutionOption &&
+      analysis.entrypoints[entrypoint].resolutions[resolutionKind].files?.includes(problem.fileName)
+    );
+  }
+  if (isFileProblem(problem)) {
+    return analysis.entrypoints[entrypoint].resolutions[resolutionKind].files?.includes(problem.fileName);
+  }
+  throw new Error(`Unhandled problem type '${(problem satisfies never as Problem).kind}'`);
+}

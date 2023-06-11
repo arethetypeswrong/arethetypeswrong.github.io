@@ -11,6 +11,7 @@ import { createRequire } from "module";
 import * as render from "./render/index.js";
 import { readConfig } from "./readConfig.js";
 import { problemFlags } from "./problemUtils.js";
+import { groupProblemsByKind } from "@arethetypeswrong/core/utils";
 
 const packageJson = createRequire(import.meta.url)("../package.json");
 const version = packageJson.version;
@@ -100,15 +101,12 @@ particularly ESM-related module resolution issues.`
       };
 
       if (analysis.containsTypes) {
-        result.problems = core.groupByKind(core.getProblems(analysis));
+        result.problems = groupProblemsByKind(analysis.problems);
       }
 
       console.log(JSON.stringify(result));
 
-      if (
-        analysis.containsTypes &&
-        core.getProblems(analysis).some((problem) => !opts.ignoreRules?.includes(problem.kind))
-      )
+      if (analysis.containsTypes && analysis.problems.some((problem) => !opts.ignoreRules?.includes(problem.kind)))
         process.exit(1);
 
       return;
@@ -118,10 +116,7 @@ particularly ESM-related module resolution issues.`
     if (analysis.containsTypes) {
       await render.typed(analysis, opts);
 
-      if (
-        analysis.containsTypes &&
-        core.getProblems(analysis).some((problem) => !opts.ignoreRules?.includes(problem.kind))
-      )
+      if (analysis.containsTypes && analysis.problems.some((problem) => !opts.ignoreRules?.includes(problem.kind)))
         process.exit(1);
     } else {
       render.untyped(analysis as core.UntypedAnalysis);

@@ -1,12 +1,6 @@
 import type { Analysis, ProblemKind, ResolutionKind } from "@arethetypeswrong/core";
-import {
-  allResolutionKinds,
-  getResolutionOption,
-  groupProblemsByKind,
-  isEntrypointResolutionProblem,
-  isFileProblem,
-  isResolutionBasedFileProblem,
-} from "@arethetypeswrong/core/utils";
+import { filterProblems } from "@arethetypeswrong/core/problems";
+import { allResolutionKinds, groupProblemsByKind } from "@arethetypeswrong/core/utils";
 import { problemEmoji } from "./problemEmoji";
 
 const problemShortDescriptions: Record<ProblemKind, string> = {
@@ -68,18 +62,7 @@ export function ChecksTable(props: { analysis?: Analysis }) {
             .map((subpath) => {
               const resolutionInfo = analysis.entrypoints[subpath].resolutions[resolutionKind];
               const problemsForCell = Object.entries(
-                groupProblemsByKind(
-                  analysis.problems.filter(
-                    (problem) =>
-                      (isEntrypointResolutionProblem(problem) &&
-                        problem.entrypoint === subpath &&
-                        problem.resolutionKind === resolutionKind) ||
-                      (isResolutionBasedFileProblem(problem) &&
-                        problem.resolutionOption === getResolutionOption(resolutionKind) &&
-                        resolutionInfo.files?.includes(problem.fileName)) ||
-                      (isFileProblem(problem) && resolutionInfo.files?.includes(problem.fileName))
-                  )
-                )
+                groupProblemsByKind(filterProblems(analysis, { resolutionKind, entrypoint: subpath }))
               );
               return `<td>${
                 problemsForCell.length

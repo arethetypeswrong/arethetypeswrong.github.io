@@ -1,18 +1,25 @@
 import * as core from "@arethetypeswrong/core";
-import { allResolutionKinds } from "@arethetypeswrong/core/utils";
-import Table, { type GenericTable, type HorizontalTableRow } from "cli-table3";
+import { allResolutionKinds, groupProblemsByKind } from "@arethetypeswrong/core/utils";
 import chalk from "chalk";
+import Table, { type GenericTable, type HorizontalTableRow } from "cli-table3";
+import { marked } from "marked";
 
-import { moduleKinds, problemEmoji, resolutionKinds, problemShortDescriptions, problemFlags } from "../problemUtils.js";
+import { filterProblems, problemAffectsEntrypoint, problemKindInfo } from "@arethetypeswrong/core/problems";
 import type { Opts } from "../index.js";
+import { moduleKinds, problemFlags, resolutionKinds } from "../problemUtils.js";
 import { tableFlipped } from "./tableFlipped.js";
+import TerminalRenderer from "marked-terminal";
 
 export async function typed(analysis: core.TypedAnalysis, opts: Opts) {
-  const problems = core
-    .getProblems(analysis)
-    .filter((problem) => !opts.ignoreRules || !opts.ignoreRules.includes(problem.kind));
-
-  const subpaths = Object.keys(analysis.entrypointResolutions);
+  const problems = analysis.problems.filter((problem) => !opts.ignoreRules || !opts.ignoreRules.includes(problem.kind));
+  const grouped = groupProblemsByKind(problems);
+  const subpaths = Object.keys(analysis.entrypoints);
+  marked.setOptions({
+    // @ts-expect-error the types are wrong (haha)
+    renderer: new TerminalRenderer(),
+    mangle: false,
+    headerIds: false,
+  });
 
   if (opts.ignoreRules && opts.ignoreRules.length) {
     console.log(
@@ -25,23 +32,18 @@ export async function typed(analysis: core.TypedAnalysis, opts: Opts) {
   }
 
   if (opts.summary) {
-    const summaries = core.summarizeProblems(problems, analysis);
     const defaultSummary = !opts.emoji ? " No problems found" : " No problems found 🌟";
-    const summaryTexts = summaries.map((summary) => {
-      return summary.messages
-        .map((message) => {
-          const messageText = message.messageText.split(". ").join(".\n   ");
-          if (!opts.emoji) return `    ${messageText}`;
-          return ` ${problemEmoji[summary.kind]} ${messageText}`;
-        })
-        .join("\n");
+    const summaryTexts = Object.keys(grouped).map((kind) => {
+      const emoji = opts.emoji ? `${problemKindInfo[kind as core.ProblemKind].emoji} ` : "";
+      const description = marked(problemKindInfo[kind as core.ProblemKind].description);
+      return `${emoji}${description}`;
     });
 
     console.log((summaryTexts.join("\n\n") || defaultSummary) + "\n");
   }
 
   const entrypoints = subpaths.map((s) => {
-    const hasProblems = problems.some((p) => p.entrypoint === s);
+    const hasProblems = problems.some((p) => problemAffectsEntrypoint(p, s, analysis));
     const color = hasProblems ? "redBright" : "greenBright";
 
     if (s === ".") return chalk.bold[color](`"${analysis.packageName}"`);
@@ -60,22 +62,21 @@ export async function typed(analysis: core.TypedAnalysis, opts: Opts) {
 
       row = row.concat(
         allResolutionKinds.map((kind) => {
-          const problemsForCell = problems.filter(
-            (problem) => problem.entrypoint === subpath && problem.resolutionKind === kind
+          const problemsForCell = groupProblemsByKind(
+            filterProblems(problems, analysis, { entrypoint: subpath, resolutionKind: kind })
           );
-
-          const resolution = analysis.entrypointResolutions[subpath][kind].resolution;
-
-          const descriptions = problemShortDescriptions[!opts.emoji ? "noEmoji" : "emoji"];
-
-          if (problemsForCell.length) {
-            return problemsForCell.map((problem) => descriptions[problem.kind]).join("\n");
+          const resolution = analysis.entrypoints[subpath].resolutions[kind].resolution;
+          const kinds = Object.keys(problemsForCell) as core.ProblemKind[];
+          if (kinds.length) {
+            return kinds
+              .map(
+                (kind) => (opts.emoji ? `${problemKindInfo[kind].emoji} ` : "") + problemKindInfo[kind].shortDescription
+              )
+              .join("\n");
           }
 
           const jsonResult = !opts.emoji ? "OK (JSON)" : "🟢 (JSON)";
-
           const moduleResult = (!opts.emoji ? "OK " : "🟢 ") + moduleKinds[resolution?.moduleKind?.detectedKind || ""];
-
           return resolution?.isJson ? jsonResult : moduleResult;
         })
       );
@@ -96,22 +97,21 @@ export async function typed(analysis: core.TypedAnalysis, opts: Opts) {
 
     row = row.concat(
       subpaths.map((subpath) => {
-        const problemsForCell = problems.filter(
-          (problem) => problem.entrypoint === subpath && problem.resolutionKind === kind
+        const problemsForCell = groupProblemsByKind(
+          filterProblems(problems, analysis, { entrypoint: subpath, resolutionKind: kind })
         );
-
-        const resolution = analysis.entrypointResolutions[subpath][kind].resolution;
-
-        const descriptions = problemShortDescriptions[!opts.emoji ? "noEmoji" : "emoji"];
-
-        if (problemsForCell.length) {
-          return problemsForCell.map((problem) => descriptions[problem.kind]).join("\n");
+        const resolution = analysis.entrypoints[subpath].resolutions[kind].resolution;
+        const kinds = Object.keys(problemsForCell) as core.ProblemKind[];
+        if (kinds.length) {
+          return kinds
+            .map(
+              (kind) => (opts.emoji ? `${problemKindInfo[kind].emoji} ` : "") + problemKindInfo[kind].shortDescription
+            )
+            .join("\n");
         }
 
         const jsonResult = !opts.emoji ? "OK (JSON)" : "🟢 (JSON)";
-
         const moduleResult = (!opts.emoji ? "OK " : "🟢 ") + moduleKinds[resolution?.moduleKind?.detectedKind || ""];
-
         return resolution?.isJson ? jsonResult : moduleResult;
       })
     );
