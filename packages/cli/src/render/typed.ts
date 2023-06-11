@@ -32,14 +32,14 @@ export async function typed(analysis: core.TypedAnalysis, opts: Opts) {
   }
 
   if (opts.summary) {
-    const defaultSummary = !opts.emoji ? " No problems found" : " No problems found 🌟";
+    const defaultSummary = marked(!opts.emoji ? " No problems found" : " No problems found 🌟");
     const summaryTexts = Object.keys(grouped).map((kind) => {
       const emoji = opts.emoji ? `${problemKindInfo[kind as core.ProblemKind].emoji} ` : "";
       const description = marked(problemKindInfo[kind as core.ProblemKind].description);
       return `${emoji}${description}`;
     });
 
-    console.log((summaryTexts.join("\n\n") || defaultSummary) + "\n");
+    console.log(summaryTexts.join("") || defaultSummary);
   }
 
   const entrypoints = subpaths.map((s) => {

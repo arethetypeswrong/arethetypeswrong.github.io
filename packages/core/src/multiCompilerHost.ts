@@ -67,10 +67,22 @@ export function createMultiCompilerHost(fs: FS): MultiCompilerHost {
       traceResolution: true,
     },
   };
-  const moduleResolutionCaches: Record<ResolutionOption, ts.ModuleResolutionCache> = {
-    node10: ts.createModuleResolutionCache("/", getCanonicalFileName, compilerOptions.node10),
-    node16: ts.createModuleResolutionCache("/", getCanonicalFileName, compilerOptions.node16),
-    bundler: ts.createModuleResolutionCache("/", getCanonicalFileName, compilerOptions.bundler),
+  const moduleResolutionCaches: Record<
+    ResolutionOption,
+    [normal: ts.ModuleResolutionCache, noDtsResolution: ts.ModuleResolutionCache]
+  > = {
+    node10: [
+      ts.createModuleResolutionCache("/", getCanonicalFileName, compilerOptions.node10),
+      ts.createModuleResolutionCache("/", getCanonicalFileName, compilerOptions.node10),
+    ],
+    node16: [
+      ts.createModuleResolutionCache("/", getCanonicalFileName, compilerOptions.node16),
+      ts.createModuleResolutionCache("/", getCanonicalFileName, compilerOptions.node16),
+    ],
+    bundler: [
+      ts.createModuleResolutionCache("/", getCanonicalFileName, compilerOptions.bundler),
+      ts.createModuleResolutionCache("/", getCanonicalFileName, compilerOptions.bundler),
+    ],
   };
   const compilerHosts: Record<ResolutionOption, ts.CompilerHost> = {
     node10: createCompilerHost("node10"),
@@ -103,7 +115,7 @@ export function createMultiCompilerHost(fs: FS): MultiCompilerHost {
   ): ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined {
     return ts.getImpliedNodeFormatForFile(
       toPath(fileName),
-      moduleResolutionCaches[moduleResolution].getPackageJsonInfoCache(),
+      moduleResolutionCaches[moduleResolution][0].getPackageJsonInfoCache(),
       compilerHosts[moduleResolution],
       compilerOptions[moduleResolution]
     );
@@ -115,7 +127,7 @@ export function createMultiCompilerHost(fs: FS): MultiCompilerHost {
     return ts.getPackageScopeForPath(
       fileName,
       ts.getTemporaryModuleResolutionState(
-        moduleResolutionCaches.node16.getPackageJsonInfoCache(),
+        moduleResolutionCaches.node16[0].getPackageJsonInfoCache(),
         compilerHosts.node16,
         compilerOptions.node16
       )
@@ -164,7 +176,7 @@ export function createMultiCompilerHost(fs: FS): MultiCompilerHost {
       containingFile,
       noDtsResolution ? { ...options, noDtsResolution } : options,
       compilerHosts[moduleResolution],
-      moduleResolutionCaches[moduleResolution],
+      moduleResolutionCaches[moduleResolution][+!!noDtsResolution],
       /*redirectedReference*/ undefined,
       resolutionMode
     );
