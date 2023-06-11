@@ -15,6 +15,7 @@
   "author": "Andrew Branch",
   "license": "MIT",
   "dependencies": {
+    "@andrewbranch/json-view": "^1.0.1",
     "@arethetypeswrong/core": "file:../core",
     "immer": "^9.0.21",
     "marked": "^5.1.0",
