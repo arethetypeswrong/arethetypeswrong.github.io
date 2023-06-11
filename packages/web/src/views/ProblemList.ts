@@ -1,16 +1,16 @@
 import { marked } from "marked";
-import type { Analysis, ProblemKind } from "@arethetypeswrong/core";
+import type { CheckResult, ProblemKind } from "@arethetypeswrong/core";
 import { problemKindInfo } from "@arethetypeswrong/core/problems";
 import { groupProblemsByKind } from "@arethetypeswrong/core/utils";
 
-export function ProblemList(props: { analysis?: Analysis }) {
+export function ProblemList(props: { analysis?: CheckResult }) {
   if (!props.analysis) {
     return {
       innerHTML: "",
     };
   }
 
-  if (!props.analysis.containsTypes) {
+  if (!props.analysis.types) {
     return {
       innerHTML: "This package does not contain types.",
     };

@@ -1,4 +1,4 @@
-import type { Analysis, ProblemKind, ResolutionKind } from "@arethetypeswrong/core";
+import type { CheckResult, ProblemKind, ResolutionKind } from "@arethetypeswrong/core";
 import { filterProblems } from "@arethetypeswrong/core/problems";
 import { allResolutionKinds, groupProblemsByKind } from "@arethetypeswrong/core/utils";
 import { problemEmoji } from "./problemEmoji";
@@ -30,8 +30,8 @@ const moduleKinds = {
   "": "",
 };
 
-export function ChecksTable(props: { analysis?: Analysis }) {
-  if (!props.analysis || !props.analysis.containsTypes) {
+export function ChecksTable(props: { analysis?: CheckResult }) {
+  if (!props.analysis || !props.analysis.types) {
     return {
       className: "display-none",
       innerHTML: "",

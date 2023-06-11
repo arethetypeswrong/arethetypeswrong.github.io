@@ -68,7 +68,7 @@ particularly ESM-related module resolution issues.`
       process.env.FORCE_COLOR = "0";
     }
 
-    let analysis: core.Analysis;
+    let analysis: core.CheckResult;
     if (opts.fromNpm) {
       try {
         const result = core.parsePackageSpec(fileName);
@@ -96,30 +96,30 @@ particularly ESM-related module resolution issues.`
 
     if (opts.format === "json") {
       const result = { analysis } as {
-        analysis: core.Analysis;
+        analysis: core.CheckResult;
         problems?: Partial<Record<core.ProblemKind, core.Problem[]>>;
       };
 
-      if (analysis.containsTypes) {
+      if (analysis.types) {
         result.problems = groupProblemsByKind(analysis.problems);
       }
 
       console.log(JSON.stringify(result));
 
-      if (analysis.containsTypes && analysis.problems.some((problem) => !opts.ignoreRules?.includes(problem.kind)))
+      if (analysis.types && analysis.problems.some((problem) => !opts.ignoreRules?.includes(problem.kind)))
         process.exit(1);
 
       return;
     }
 
     console.log();
-    if (analysis.containsTypes) {
+    if (analysis.types) {
       await render.typed(analysis, opts);
 
-      if (analysis.containsTypes && analysis.problems.some((problem) => !opts.ignoreRules?.includes(problem.kind)))
+      if (analysis.types && analysis.problems.some((problem) => !opts.ignoreRules?.includes(problem.kind)))
         process.exit(1);
     } else {
-      render.untyped(analysis as core.UntypedAnalysis);
+      render.untyped(analysis as core.UntypedResult);
     }
   });
 

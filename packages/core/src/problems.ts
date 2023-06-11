@@ -1,4 +1,4 @@
-import type { Problem, ProblemKind, ResolutionKind, ResolutionOption, TypedAnalysis } from "./types.js";
+import type { Problem, ProblemKind, ResolutionKind, ResolutionOption, Analysis } from "./types.js";
 import {
   allResolutionKinds,
   getResolutionKinds,
@@ -97,12 +97,12 @@ export interface ProblemFilter {
   resolutionOption?: ResolutionOption;
 }
 
-export function filterProblems(analysis: TypedAnalysis, filter: ProblemFilter): Problem[];
-export function filterProblems(problems: readonly Problem[], analysis: TypedAnalysis, filter: ProblemFilter): Problem[];
+export function filterProblems(analysis: Analysis, filter: ProblemFilter): Problem[];
+export function filterProblems(problems: readonly Problem[], analysis: Analysis, filter: ProblemFilter): Problem[];
 export function filterProblems(
   ...args:
-    | [analysis: TypedAnalysis, filter: ProblemFilter]
-    | [problems: readonly Problem[], analysis: TypedAnalysis, filter: ProblemFilter]
+    | [analysis: Analysis, filter: ProblemFilter]
+    | [problems: readonly Problem[], analysis: Analysis, filter: ProblemFilter]
 ) {
   const [problems, analysis, filter] = args.length === 2 ? [args[0].problems, ...args] : args;
   return problems.filter((p) => {
@@ -127,11 +127,7 @@ export function filterProblems(
   });
 }
 
-export function problemAffectsResolutionKind(
-  problem: Problem,
-  resolutionKind: ResolutionKind,
-  analysis: TypedAnalysis
-) {
+export function problemAffectsResolutionKind(problem: Problem, resolutionKind: ResolutionKind, analysis: Analysis) {
   if (isEntrypointResolutionProblem(problem)) {
     return problem.resolutionKind === resolutionKind;
   }
@@ -143,7 +139,7 @@ export function problemAffectsResolutionKind(
   );
 }
 
-export function problemAffectsEntrypoint(problem: Problem, entrypoint: string, analysis: TypedAnalysis) {
+export function problemAffectsEntrypoint(problem: Problem, entrypoint: string, analysis: Analysis) {
   if (isEntrypointResolutionProblem(problem)) {
     return problem.entrypoint === entrypoint;
   }
@@ -156,7 +152,7 @@ export function problemAffectsEntrypointResolution(
   problem: Problem,
   entrypoint: string,
   resolutionKind: ResolutionKind,
-  analysis: TypedAnalysis
+  analysis: Analysis
 ) {
   if (isEntrypointResolutionProblem(problem)) {
     return problem.entrypoint === entrypoint && problem.resolutionKind === resolutionKind;

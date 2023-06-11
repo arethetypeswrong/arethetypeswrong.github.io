@@ -10,7 +10,7 @@ import { moduleKinds, problemFlags, resolutionKinds } from "../problemUtils.js";
 import { tableFlipped } from "./tableFlipped.js";
 import TerminalRenderer from "marked-terminal";
 
-export async function typed(analysis: core.TypedAnalysis, opts: Opts) {
+export async function typed(analysis: core.Analysis, opts: Opts) {
   const problems = analysis.problems.filter((problem) => !opts.ignoreRules || !opts.ignoreRules.includes(problem.kind));
   const grouped = groupProblemsByKind(problems);
   const subpaths = Object.keys(analysis.entrypoints);

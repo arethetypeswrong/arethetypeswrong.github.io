@@ -1,4 +1,4 @@
-import { checkPackage, checkTgz, type Analysis } from "@arethetypeswrong/core";
+import { checkPackage, checkTgz, type CheckResult } from "@arethetypeswrong/core";
 
 export interface CheckPackageEventData {
   kind: "check-package";
@@ -14,19 +14,19 @@ export interface CheckFileEventData {
 export interface ResultMessage {
   kind: "result";
   data: {
-    analysis: Analysis;
+    result: CheckResult;
   };
 }
 
 onmessage = async (event: MessageEvent<CheckPackageEventData | CheckFileEventData>) => {
-  const analysis =
+  const result =
     event.data.kind === "check-file"
       ? await checkTgz(event.data.file)
       : await checkPackage(event.data.packageName, event.data.version);
   postMessage({
     kind: "result",
     data: {
-      analysis,
+      result,
     },
   } satisfies ResultMessage);
 };

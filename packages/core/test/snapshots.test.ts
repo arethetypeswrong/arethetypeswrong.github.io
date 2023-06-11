@@ -35,7 +35,7 @@ describe("snapshots", async () => {
         "## Problems",
         "",
         "```json",
-        JSON.stringify(analysis.containsTypes ? analysis.problems : [], null, 2),
+        JSON.stringify(analysis.types ? analysis.problems : [], null, 2),
         "```",
       ].join("\n");
 

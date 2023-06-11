@@ -1,6 +1,6 @@
-import type { Analysis } from "@arethetypeswrong/core";
+import type { CheckResult } from "@arethetypeswrong/core";
 
-export function Details(props: { analysis?: Analysis }) {
+export function Details(props: { analysis?: CheckResult }) {
   if (!props.analysis) {
     return {
       className: "display-none",

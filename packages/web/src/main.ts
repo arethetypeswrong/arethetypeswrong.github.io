@@ -8,7 +8,7 @@ import { parsePackageSpec, type ParsedPackageSpec } from "@arethetypeswrong/core
 const worker = new Worker(new URL("../worker/worker.ts", import.meta.url), { type: "module" });
 worker.onmessage = async (event: MessageEvent<ResultMessage>) => {
   updateState((state) => {
-    state.analysis = event.data.data.analysis;
+    state.analysis = event.data.data.result;
     state.isLoading = false;
     state.message = undefined;
   });

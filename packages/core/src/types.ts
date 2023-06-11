@@ -21,21 +21,21 @@ export interface EntrypointInfo {
   isWildcard: boolean;
 }
 
-export interface TypedAnalysis {
+export interface Analysis {
   packageName: string;
   packageVersion: string;
-  containsTypes: true;
+  types: "included";
   entrypoints: Record<string, EntrypointInfo>;
   problems: Problem[];
 }
 
-export interface UntypedAnalysis {
+export interface UntypedResult {
   packageName: string;
   packageVersion: string;
-  containsTypes: false;
+  types: false;
 }
 
-export type Analysis = TypedAnalysis | UntypedAnalysis;
+export type CheckResult = Analysis | UntypedResult;
 
 export interface EntrypointResolutionAnalysis {
   name: string;

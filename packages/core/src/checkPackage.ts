@@ -2,7 +2,7 @@ import ts from "typescript";
 import { fetchTarballHost } from "./fetchTarballHost.js";
 import type {
   Host,
-  Analysis,
+  CheckResult,
   FS,
   ResolutionKind,
   EntrypointResolutionAnalysis,
@@ -14,7 +14,7 @@ import { getEntrypointResolutionProblems } from "./checks/entrypointResolutionPr
 import { getResolutionBasedFileProblems } from "./checks/resolutionBasedFileProblems.js";
 import { getFileProblems } from "./checks/fileProblems.js";
 
-export async function checkTgz(tgz: Uint8Array, host: Host = fetchTarballHost): Promise<Analysis> {
+export async function checkTgz(tgz: Uint8Array, host: Host = fetchTarballHost): Promise<CheckResult> {
   const packageFS = await host.createPackageFSFromTarball(tgz);
   return checkPackageWorker(packageFS);
 }
@@ -23,14 +23,14 @@ export async function checkPackage(
   packageName: string,
   packageVersion?: string,
   host: Host = fetchTarballHost
-): Promise<Analysis> {
+): Promise<CheckResult> {
   const packageFS = await host.createPackageFS(packageName, packageVersion);
   return checkPackageWorker(packageFS);
 }
 
-async function checkPackageWorker(packageFS: FS): Promise<Analysis> {
+async function checkPackageWorker(packageFS: FS): Promise<CheckResult> {
   const files = packageFS.listFiles();
-  const containsTypes = files.some(ts.hasTSFileExtension);
+  const types = files.some(ts.hasTSFileExtension) ? "included" : false;
   const parts = files[0].split("/");
   let packageName = parts[2];
   if (packageName.startsWith("@")) {
@@ -38,8 +38,8 @@ async function checkPackageWorker(packageFS: FS): Promise<Analysis> {
   }
   const packageJsonContent = JSON.parse(packageFS.readFile(`/node_modules/${packageName}/package.json`));
   const packageVersion = packageJsonContent.version;
-  if (!containsTypes) {
-    return { packageName, packageVersion, containsTypes };
+  if (!types) {
+    return { packageName, packageVersion, types };
   }
 
   const host = createMultiCompilerHost(packageFS);
@@ -51,7 +51,7 @@ async function checkPackageWorker(packageFS: FS): Promise<Analysis> {
   return {
     packageName,
     packageVersion,
-    containsTypes,
+    types,
     entrypoints: entrypointResolutions,
     problems: [...entrypointResolutionProblems, ...resolutionBasedFileProblems, ...fileProblems],
   };
