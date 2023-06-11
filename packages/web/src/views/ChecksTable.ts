@@ -1,21 +1,6 @@
 import type { CheckResult, ProblemKind, ResolutionKind } from "@arethetypeswrong/core";
-import { filterProblems } from "@arethetypeswrong/core/problems";
+import { filterProblems, problemKindInfo } from "@arethetypeswrong/core/problems";
 import { allResolutionKinds, groupProblemsByKind } from "@arethetypeswrong/core/utils";
-import { problemEmoji } from "./problemEmoji";
-
-const problemShortDescriptions: Record<ProblemKind, string> = {
-  Wildcard: `${problemEmoji.Wildcard} Unable to check`,
-  NoResolution: `${problemEmoji.NoResolution} Failed to resolve`,
-  UntypedResolution: `${problemEmoji.UntypedResolution} No types`,
-  FalseCJS: `${problemEmoji.FalseCJS} Masquerading as CJS`,
-  FalseESM: `${problemEmoji.FalseESM} Masquerading as ESM`,
-  CJSResolvesToESM: `${problemEmoji.CJSResolvesToESM} ESM (dynamic import only)`,
-  FallbackCondition: `${problemEmoji.FallbackCondition} Used fallback condition`,
-  FalseExportDefault: `${problemEmoji.FalseExportDefault} Incorrect default export`,
-  CJSOnlyExportsDefault: `${problemEmoji.CJSOnlyExportsDefault} CJS default export`,
-  InternalResolutionError: `${problemEmoji.InternalResolutionError} Internal resolution error`,
-  UnexpectedModuleSyntax: `${problemEmoji.UnexpectedModuleSyntax} Unexpected module syntax`,
-};
 
 const resolutionKinds: Record<ResolutionKind, string> = {
   node10: "<code>node10</code>",
@@ -69,7 +54,9 @@ export function ChecksTable(props: { analysis?: CheckResult }) {
                   ? problemsForCell
                       .map(
                         ([kind, problem]) =>
-                          problemShortDescriptions[kind as ProblemKind] +
+                          problemKindInfo[kind as ProblemKind].emoji +
+                          " " +
+                          problemKindInfo[kind as ProblemKind].shortDescription +
                           (problem.length > 1 ? ` (${problem.length})` : "")
                       )
                       .join("<br />")
