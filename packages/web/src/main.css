@@ -136,6 +136,14 @@ td {
   display: none;
 }
 
+#details {
+  margin-top: 1rem;
+}
+
+#details .jsonView {
+  font-size: small;
+}
+
 #nprogress .peg {
   box-shadow: none;
 }
