@@ -116,8 +116,9 @@ particularly ESM-related module resolution issues.`
     if (analysis.types) {
       await render.typed(analysis, opts);
 
-      if (analysis.types && analysis.problems.some((problem) => !opts.ignoreRules?.includes(problem.kind)))
-        process.exit(1);
+      if (analysis.types && analysis.problems.some((problem) => !opts.ignoreRules?.includes(problem.kind))) {
+        process.exitCode = 1;
+      }
     } else {
       render.untyped(analysis as core.UntypedResult);
     }
