@@ -31,10 +31,6 @@
       "development": "./src/index.ts",
       "default": "./dist/index.js"
     },
-    "./problems": {
-      "development": "./src/problems.ts",
-      "default": "./dist/problems.js"
-    },
     "./types": {
       "development": "./src/types.ts",
       "default": "./dist/types.js"
@@ -42,6 +38,10 @@
     "./utils": {
       "development": "./src/utils.ts",
       "default": "./dist/utils.js"
+    },
+    "./problems": {
+      "development": "./src/problems.ts",
+      "default": "./dist/problems.js"
     },
     "./versions": {
       "node": "./dist/versions.js"

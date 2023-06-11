@@ -1,21 +1,6 @@
-import type { ProblemKind, ResolutionKind } from "@arethetypeswrong/core";
-import { allResolutionKinds } from "@arethetypeswrong/core/utils";
-import type { Checks } from "../state";
-import { problemEmoji } from "./problemEmoji";
-
-const problemShortDescriptions: Record<ProblemKind, string> = {
-  Wildcard: `${problemEmoji.Wildcard} Unable to check`,
-  NoResolution: `${problemEmoji.NoResolution} Failed to resolve`,
-  UntypedResolution: `${problemEmoji.UntypedResolution} No types`,
-  FalseCJS: `${problemEmoji.FalseCJS} Masquerading as CJS`,
-  FalseESM: `${problemEmoji.FalseESM} Masquerading as ESM`,
-  CJSResolvesToESM: `${problemEmoji.CJSResolvesToESM} ESM (dynamic import only)`,
-  FallbackCondition: `${problemEmoji.FallbackCondition} Used fallback condition`,
-  CJSOnlyExportsDefault: `${problemEmoji.CJSOnlyExportsDefault} CJS default export`,
-  FalseExportDefault: `${problemEmoji.FalseExportDefault} Incorrect default export`,
-  UnexpectedESMSyntax: `${problemEmoji.UnexpectedESMSyntax} Unexpected ESM syntax`,
-  UnexpectedCJSSyntax: `${problemEmoji.UnexpectedCJSSyntax} Unexpected CJS syntax`,
-};
+import type { CheckResult, ProblemKind, ResolutionKind } from "@arethetypeswrong/core";
+import { filterProblems, problemKindInfo } from "@arethetypeswrong/core/problems";
+import { allResolutionKinds, groupProblemsByKind } from "@arethetypeswrong/core/utils";
 
 const resolutionKinds: Record<ResolutionKind, string> = {
   node10: "<code>node10</code>",
@@ -30,16 +15,16 @@ const moduleKinds = {
   "": "",
 };
 
-export function ChecksTable(props: { checks?: Checks }) {
-  if (!props.checks || !props.checks.analysis.containsTypes) {
+export function ChecksTable(props: { analysis?: CheckResult }) {
+  if (!props.analysis || !props.analysis.types) {
     return {
       className: "display-none",
       innerHTML: "",
     };
   }
 
-  const { analysis, problems } = props.checks;
-  const subpaths = Object.keys(analysis.entrypointResolutions);
+  const { analysis } = props;
+  const subpaths = Object.keys(analysis.entrypoints);
   const entrypoints = subpaths.map((s) =>
     s === "." ? analysis.packageName : `${analysis.packageName}/${s.substring(2)}`
   );
@@ -60,16 +45,24 @@ export function ChecksTable(props: { checks?: Checks }) {
           <td>${resolutionKinds[resolutionKind]}</td>
           ${subpaths
             .map((subpath) => {
-              const problemsForCell = problems?.filter(
-                (problem) => problem.entrypoint === subpath && problem.resolutionKind === resolutionKind
+              const resolutionInfo = analysis.entrypoints[subpath].resolutions[resolutionKind];
+              const problemsForCell = Object.entries(
+                groupProblemsByKind(filterProblems(analysis, { resolutionKind, entrypoint: subpath }))
               );
-              const resolution = analysis.entrypointResolutions[subpath][resolutionKind].resolution;
               return `<td>${
-                problemsForCell?.length
-                  ? problemsForCell.map((problem) => problemShortDescriptions[problem.kind]).join("<br />")
-                  : resolution?.isJson
+                problemsForCell.length
+                  ? problemsForCell
+                      .map(
+                        ([kind, problem]) =>
+                          problemKindInfo[kind as ProblemKind].emoji +
+                          " " +
+                          problemKindInfo[kind as ProblemKind].shortDescription +
+                          (problem.length > 1 ? ` (${problem.length})` : "")
+                      )
+                      .join("<br />")
+                  : resolutionInfo.resolution?.isJson
                   ? "✅ (JSON)"
-                  : "✅ " + moduleKinds[resolution?.moduleKind?.detectedKind || ""]
+                  : "✅ " + moduleKinds[resolutionInfo.resolution?.moduleKind?.detectedKind || ""]
               }</td>`;
             })
             .join("")}

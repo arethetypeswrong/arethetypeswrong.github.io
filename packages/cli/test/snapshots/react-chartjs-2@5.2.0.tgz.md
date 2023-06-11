@@ -4,10 +4,10 @@
 $ attw react-chartjs-2@5.2.0.tgz
 
 
- 👺 Imports of the package under the `node16` module resolution setting when the importing module is CJS (its extension is `.cts` or `.cjs`, or it has a `.ts` or `.js` extension and is in scope of a `package.json` that does not contain `"type": "module"`) resolved to ESM types, but CJS implementations.
+👺 Import resolved to an ESM type declaration file, but a CommonJS JavaScript file.
 
- ⚠️ Imports of the package resolved to ES modules from a CJS importing module.
-   CJS modules in Node will only be able to access this entrypoint with a dynamic import.
+⚠️ A require call resolved to an ESM JavaScript file, which is an error in Node and some bundlers. CommonJS consumers will need to use a dynamic import.
+
 
 ┌────────────────────┬───────────────────────────────────┐
 │                    │ "react-chartjs-2"                 │

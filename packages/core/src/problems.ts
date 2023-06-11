@@ -1,485 +1,173 @@
-import ts from "typescript";
-import type { ModuleKindReason, ResolutionKind, TypedAnalysis } from "./types.js";
-import { allResolutionKinds } from "./utils.js";
+import type { Problem, ProblemKind, ResolutionKind, ResolutionOption, Analysis } from "./types.js";
+import {
+  allResolutionKinds,
+  getResolutionKinds,
+  getResolutionOption,
+  isEntrypointResolutionProblem,
+  isFileProblem,
+  isResolutionBasedFileProblem,
+} from "./utils.js";
 
-export type ProblemKind =
-  | "NoResolution"
-  | "UntypedResolution"
-  | "FalseESM"
-  | "FalseCJS"
-  | "CJSResolvesToESM"
-  | "Wildcard"
-  | "UnexpectedESMSyntax"
-  | "UnexpectedCJSSyntax"
-  | "FallbackCondition"
-  | "CJSOnlyExportsDefault"
-  | "FalseExportDefault";
-
-export interface Problem {
-  kind: ProblemKind;
-  entrypoint: string;
-  resolutionKind: ResolutionKind;
-}
-
-export interface ProblemSummary {
-  kind: ProblemKind;
+export interface ProblemKindInfo {
   title: string;
-  messages: {
-    messageText: string;
-    messageHtml: string;
-  }[];
+  emoji: string;
+  shortDescription: string;
+  description: string;
 }
 
-const problemTitles: Record<ProblemKind, string> = {
-  Wildcard: "Wildcards",
-  NoResolution: "Resolution failed",
-  UntypedResolution: "Could not find types",
-  FalseESM: "Types are ESM, but implementation is CJS",
-  FalseCJS: "Types are CJS, but implementation is ESM",
-  CJSResolvesToESM: "Entrypoint is ESM-only",
-  UnexpectedESMSyntax: "Syntax is incompatible with detected module kind",
-  UnexpectedCJSSyntax: "Syntax is incompatible with detected module kind",
-  FallbackCondition: "Resloved through fallback condition",
-  CJSOnlyExportsDefault: "CJS module uses default export",
-  FalseExportDefault: "Types incorrectly use default export",
+export const problemKindInfo: Record<ProblemKind, ProblemKindInfo> = {
+  Wildcard: {
+    emoji: "❓",
+    title: "Wildcards",
+    shortDescription: "Unable to check",
+    description: "Wildcard subpaths cannot yet be analyzed by this tool.",
+  },
+  NoResolution: {
+    emoji: "💀",
+    title: "Resolution failed",
+    shortDescription: "Failed to resolve",
+    description: "Import failed to resolve to type declarations or JavaScript files.",
+  },
+  UntypedResolution: {
+    emoji: "❌",
+    title: "Could not find types",
+    shortDescription: "No types",
+    description: "Import resolved to JavaScript files, but no type declarations were found.",
+  },
+  FalseCJS: {
+    emoji: "🎭",
+    title: "Types are CJS, but implementation is ESM",
+    shortDescription: "Masquerading as CJS",
+    description: "Import resolved to a CommonJS type declaration file, but an ESM JavaScript file.",
+  },
+  FalseESM: {
+    emoji: "👺",
+    title: "Types are ESM, but implementation is CJS",
+    shortDescription: "Masquerading as ESM",
+    description: "Import resolved to an ESM type declaration file, but a CommonJS JavaScript file.",
+  },
+  CJSResolvesToESM: {
+    emoji: "⚠️",
+    title: "Entrypoint is ESM-only",
+    shortDescription: "ESM (dynamic import only)",
+    description:
+      "A `require` call resolved to an ESM JavaScript file, which is an error in Node and some bundlers. CommonJS consumers will need to use a dynamic import.",
+  },
+  FallbackCondition: {
+    emoji: "🐛",
+    title: "Resloved through fallback condition",
+    shortDescription: "Used fallback condition",
+    description:
+      "Import resolved to types through a conditional package.json export, but only after failing to resolve through an earlier condition. This behavior is a [TypeScript bug](https://github.com/microsoft/TypeScript/issues/50762). It may misrepresent the runtime behavior of this import and should not be relied upon.",
+  },
+  CJSOnlyExportsDefault: {
+    emoji: "🤨",
+    title: "CJS module uses default export",
+    shortDescription: "CJS default export",
+    description:
+      "CommonJS module simulates a default export with `exports.default` and `exports.__esModule`, but does not also set `module.exports` for compatibility with Node. Node, and [some bundlers under certain conditions](https://andrewbranch.github.io/interop-test/#synthesizing-default-exports-for-cjs-modules), do not respect the `__esModule` marker, so accessing the intended default export will require a `.default` property access on the default import.",
+  },
+  FalseExportDefault: {
+    emoji: "❗️",
+    title: "Types incorrectly use default export",
+    shortDescription: "Incorrect default export",
+    description:
+      "The resolved types use `export default` where the JavaScript file appears to use `module.exports =`. This will cause TypeScript under the `node16` module mode to think an extra `.default` property access is required, but that will likely fail at runtime. These types should use `export =` instead of `export default`.",
+  },
+  UnexpectedModuleSyntax: {
+    emoji: "🚭",
+    title: "Syntax is incompatible with detected module kind",
+    shortDescription: "Unexpected module syntax",
+    description:
+      "Syntax detected in the module is incompatible with the module kind according to the package.json or file extension. This is an error in Node and may cause problems in some bundlers.",
+  },
+  InternalResolutionError: {
+    emoji: "🥴",
+    title: "Internal resolution error",
+    shortDescription: "Internal resolution error",
+    description:
+      "Import found in a type declaration file failed to resolve. Either this indicates that runtime resolution errors will occur, or (more likely) the types misrepresent the contents of the JavaScript files.",
+  },
 };
 
-const moduleResolutionKinds: Record<ResolutionKind, string> = {
-  node10: "node10",
-  "node16-cjs": "node16",
-  "node16-esm": "node16",
-  bundler: "bundler",
-};
-
-export function getSummarizedProblems(analysis: TypedAnalysis): ProblemSummary[] {
-  return summarizeProblems(getProblems(analysis), analysis);
+export interface ProblemFilter {
+  kind?: ProblemKind;
+  entrypoint?: string;
+  resolutionKind?: ResolutionKind;
+  resolutionOption?: ResolutionOption;
 }
 
-export function getProblems(analysis: TypedAnalysis): Problem[] {
-  const problems: Problem[] = [];
-  for (const subpath in analysis.entrypointResolutions) {
-    const entrypoint = analysis.entrypointResolutions[subpath];
-    for (const kind in entrypoint) {
-      const resolutionKind = kind as keyof typeof entrypoint;
-      const result = entrypoint[resolutionKind];
-      if (result.isWildcard) {
-        problems.push({
-          kind: "Wildcard",
-          entrypoint: subpath,
-          resolutionKind,
-        });
-        continue;
-      }
-      if (!result.resolution) {
-        problems.push({
-          kind: "NoResolution",
-          entrypoint: subpath,
-          resolutionKind,
-        });
-      } else if (!result.resolution.isTypeScript && !result.resolution.isJson) {
-        problems.push({
-          kind: "UntypedResolution",
-          entrypoint: subpath,
-          resolutionKind,
-        });
-      }
-
-      const { resolution, implementationResolution } = result;
-      if (
-        resolution?.moduleKind?.detectedKind === ts.ModuleKind.ESNext &&
-        implementationResolution?.moduleKind?.detectedKind === ts.ModuleKind.CommonJS
-      ) {
-        problems.push({
-          kind: "FalseESM",
-          entrypoint: subpath,
-          resolutionKind,
-        });
-      } else if (
-        resolution?.moduleKind?.detectedKind === ts.ModuleKind.CommonJS &&
-        implementationResolution?.moduleKind?.detectedKind === ts.ModuleKind.ESNext
-      ) {
-        problems.push({
-          kind: "FalseCJS",
-          entrypoint: subpath,
-          resolutionKind,
-        });
-      }
-
-      if (resolutionKind === "node16-cjs" && resolution?.moduleKind?.detectedKind === ts.ModuleKind.ESNext) {
-        problems.push({
-          kind: "CJSResolvesToESM",
-          entrypoint: subpath,
-          resolutionKind,
-        });
-      }
-
-      if (resolution && resolvedThroughFallback(result.trace)) {
-        problems.push({
-          kind: "FallbackCondition",
-          entrypoint: subpath,
-          resolutionKind,
-        });
-      }
-
-      const typesModule = resolution?.exports;
-      const jsModule = implementationResolution?.exports;
-      if (resolutionKind === "node16-esm" && resolution && implementationResolution && typesModule && jsModule) {
-        if (typesModule.default && jsModule[ts.InternalSymbolName.ExportEquals]) {
-          // Also need to check for `default` property on `jsModule["export="]`?
-          problems.push({
-            kind: "FalseExportDefault",
-            entrypoint: subpath,
-            resolutionKind,
-          });
-        } else if (
-          typesModule.default &&
-          jsModule.default &&
-          jsModule.__esModule &&
-          !typesModule[ts.InternalSymbolName.ExportEquals] &&
-          !jsModule[ts.InternalSymbolName.ExportEquals]
-        ) {
-          problems.push({
-            kind: "CJSOnlyExportsDefault",
-            entrypoint: subpath,
-            resolutionKind,
-          });
-        }
-      }
-
-      if (
-        implementationResolution?.moduleKind?.syntax &&
-        implementationResolution.moduleKind.syntax !== implementationResolution.moduleKind.detectedKind
-      ) {
-        problems.push({
-          kind:
-            implementationResolution.moduleKind.syntax === ts.ModuleKind.ESNext
-              ? "UnexpectedESMSyntax"
-              : "UnexpectedCJSSyntax",
-          entrypoint: subpath,
-          resolutionKind,
-        });
-      }
-    }
-  }
-  return problems;
-}
-
-export function resolvedThroughFallback(traces: string[]) {
-  let i = 0;
-  while (i < traces.length) {
-    i = traces.indexOf("Entering conditional exports.", i);
-    if (i === -1) {
+export function filterProblems(analysis: Analysis, filter: ProblemFilter): Problem[];
+export function filterProblems(problems: readonly Problem[], analysis: Analysis, filter: ProblemFilter): Problem[];
+export function filterProblems(
+  ...args:
+    | [analysis: Analysis, filter: ProblemFilter]
+    | [problems: readonly Problem[], analysis: Analysis, filter: ProblemFilter]
+) {
+  const [problems, analysis, filter] = args.length === 2 ? [args[0].problems, ...args] : args;
+  return problems.filter((p) => {
+    if (filter.kind && p.kind !== filter.kind) {
       return false;
     }
-    if (conditionalExportsResolvedThroughFallback()) {
-      return true;
+    if (filter.entrypoint && filter.resolutionKind) {
+      return problemAffectsEntrypointResolution(p, filter.entrypoint, filter.resolutionKind, analysis);
     }
-  }
-
-  function conditionalExportsResolvedThroughFallback(): boolean {
-    i++;
-    let seenFailure = false;
-    for (; i < traces.length; i++) {
-      if (traces[i].startsWith("Failed to resolve under condition '")) {
-        seenFailure = true;
-      } else if (seenFailure && traces[i].startsWith("Resolved under condition '")) {
-        return true;
-      } else if (traces[i] === "Entering conditional exports.") {
-        if (conditionalExportsResolvedThroughFallback()) {
-          return true;
-        }
-      } else if (traces[i] === "Exiting conditional exports.") {
-        return false;
-      }
+    if (filter.entrypoint && filter.resolutionOption) {
+      return getResolutionKinds(filter.resolutionOption).every((resolutionKind) =>
+        problemAffectsEntrypointResolution(p, filter.entrypoint!, resolutionKind, analysis)
+      );
     }
-    return false;
-  }
+    if (filter.entrypoint) {
+      return problemAffectsEntrypoint(p, filter.entrypoint, analysis);
+    }
+    if (filter.resolutionKind) {
+      return problemAffectsResolutionKind(p, filter.resolutionKind, analysis);
+    }
+    return true;
+  });
 }
 
-export function groupByKind(problems: Problem[]): Partial<Record<ProblemKind, Problem[]>> {
-  const result: Partial<Record<ProblemKind, Problem[]>> = {};
-  for (const problem of problems) {
-    (result[problem.kind] ??= []).push(problem);
+export function problemAffectsResolutionKind(problem: Problem, resolutionKind: ResolutionKind, analysis: Analysis) {
+  if (isEntrypointResolutionProblem(problem)) {
+    return problem.resolutionKind === resolutionKind;
   }
-  return result;
-}
-
-export function summarizeProblems(problems: Problem[], analysis: TypedAnalysis): ProblemSummary[] {
-  const grouped = groupByKind(problems);
-  const result: ProblemSummary[] = [];
-  for (const kind in grouped) {
-    const problems = grouped[kind as ProblemKind]!;
-    const summary: ProblemSummary = {
-      kind: problems[0].kind,
-      title: problemTitles[problems[0].kind],
-      messages: getMessages(problems[0].kind, analysis, problems),
-    };
-    result.push(summary);
+  if (isResolutionBasedFileProblem(problem)) {
+    return problem.resolutionOption === getResolutionOption(resolutionKind);
   }
-  return result;
-}
-
-function getMessages(kind: ProblemKind, analysis: TypedAnalysis, problems: Problem[]) {
-  if (kind === "Wildcard") {
-    return [msg(() => `Wildcards cannot yet be analyzed by this tool.`)];
-  }
-
-  const allEntrypoints = new Set(Object.keys(analysis.entrypointResolutions));
-  const groupedByEntrypoint = groupByEntrypoint(problems);
-  const groupedByResolutionKind = groupByResolutionKind(problems);
-  const fullRows = Object.keys(groupedByResolutionKind)
-    .map((resolutionKind) => {
-      const problems = groupedByResolutionKind[resolutionKind as ResolutionKind];
-      return problems?.length === allEntrypoints.size ? problems : undefined;
-    })
-    .filter((g): g is Problem[] => !!g);
-  const fullColumns = Object.keys(groupedByEntrypoint)
-    .map((entrypoint) => {
-      const problems = groupedByEntrypoint[entrypoint];
-      return problems?.length === allResolutionKinds.length ? problems : undefined;
-    })
-    .filter((g): g is Problem[] => !!g);
-
-  const messages: { messageText: string; messageHtml: string }[] = [];
-
-  if (fullRows.length > 0) {
-    messages.push(
-      msg((f) => {
-        const resolutionKinds = formatResolutionKinds(
-          fullRows.map((r) => r[0].resolutionKind),
-          f
-        );
-        return getMessageText(
-          resolutionKinds,
-          allEntrypoints.size === 1 ? "the package" : f.strong("all entrypoints"),
-          analysis,
-          fullRows.flat(),
-          f
-        );
-      })
-    );
-  }
-
-  if (fullRows.length === allResolutionKinds.length) {
-    return messages;
-  }
-
-  if (fullColumns.length > 0) {
-    messages.push(
-      msg((f) => {
-        const entrypoints = formatEntrypoints(
-          analysis.packageName,
-          fullColumns.map((c) => c[0].entrypoint),
-          allEntrypoints.size,
-          f
-        );
-        return getMessageText(f.strong("all module resolution settings"), entrypoints, analysis, fullColumns.flat(), f);
-      })
-    );
-  }
-
-  const remainingProblems = problems.filter(
-    (p) =>
-      !fullRows.some((r) => r[0].resolutionKind === p.resolutionKind) &&
-      !fullColumns.some((c) => c[0].entrypoint === p.entrypoint)
+  return Object.values(analysis.entrypoints).some((entrypointInfo) =>
+    entrypointInfo.resolutions[resolutionKind].files?.includes(problem.fileName)
   );
-  if (remainingProblems.length > 0) {
-    const groupedByEntrypoint = groupByEntrypoint(remainingProblems);
-    const groupedByResolutionKind = groupByResolutionKind(remainingProblems);
-    // Report fewer, larger groups
-    const biggerGroups =
-      Object.keys(groupedByEntrypoint).length <= Object.keys(groupedByResolutionKind).length
-        ? groupedByEntrypoint
-        : groupedByResolutionKind;
-    for (const groupKey in biggerGroups) {
-      const problems =
-        biggerGroups === groupedByEntrypoint
-          ? groupedByEntrypoint[groupKey]
-          : biggerGroups[groupKey as ResolutionKind]!;
-      const entrypoints = biggerGroups === groupedByEntrypoint ? [groupKey] : problems.map((p) => p.entrypoint);
-      const resolutionKinds =
-        biggerGroups === groupedByResolutionKind ? [groupKey as ResolutionKind] : problems.map((p) => p.resolutionKind);
-      messages.push(
-        msg((f) =>
-          getMessageText(
-            formatResolutionKinds(resolutionKinds, f),
-            formatEntrypoints(analysis.packageName, entrypoints, allEntrypoints.size, f),
-            analysis,
-            problems,
-            f
-          )
-        )
-      );
-    }
+}
+
+export function problemAffectsEntrypoint(problem: Problem, entrypoint: string, analysis: Analysis) {
+  if (isEntrypointResolutionProblem(problem)) {
+    return problem.entrypoint === entrypoint;
   }
-  return messages;
+  return allResolutionKinds.some((resolutionKind) =>
+    analysis.entrypoints[entrypoint].resolutions[resolutionKind].files?.includes(problem.fileName)
+  );
+}
 
-  function getMessageText(
-    resolutionKinds: string,
-    entrypoints: string,
-    analysis: TypedAnalysis,
-    problems: readonly Problem[],
-    f: Formatters
-  ): string {
-    switch (kind) {
-      case "NoResolution":
-        return `Imports of ${entrypoints} under ${resolutionKinds} failed to resolve.`;
-      case "UntypedResolution":
-        return `Imports of ${entrypoints} under ${resolutionKinds} resolved to JavaScript files, but no types.`;
-      case "FalseESM":
-        return `Imports of ${entrypoints} under ${resolutionKinds} resolved to ESM types, but CJS implementations.`;
-      case "FalseCJS":
-        return `Imports of ${entrypoints} under ${resolutionKinds} resolved to CJS types, but ESM implementations.`;
-      case "CJSResolvesToESM":
-        return `Imports of ${entrypoints} resolved to ES modules from a CJS importing module. CJS modules in Node will only be able to access this entrypoint with a dynamic import.`;
-      case "Wildcard":
-        throw new Error("Wildcard should have been handled above.");
-      case "FallbackCondition":
-        return (
-          `Imports of ${entrypoints} under ${resolutionKinds} resolved through a conditional package.json export, but ` +
-          `only after failing to resolve through an earlier condition. This behavior is a ${f.a(
-            "TypeScript bug",
-            "https://github.com/microsoft/TypeScript/issues/50762"
-          )} and should not be relied upon.`
-        );
-      case "CJSOnlyExportsDefault":
-        // Only issued in node16-esm
-        return (
-          `The CJS module resolved at ${entrypoints} under contains a simulated ` +
-          `${f.code("export default")} with an ${f.code("__esModule")} marker, but no top-level ` +
-          `${f.code("module.exports")}. Node does not respect the ${f.code("__esModule")} marker, ` +
-          `so accessing the intended default export will require a ${f.code(".default")} property ` +
-          `access in Node from an ES module.`
-        );
-      case "FalseExportDefault":
-        // Only issued in node16-esm
-        return (
-          `The types resolved at ${entrypoints} use ${f.code("export default")} where the implementation ` +
-          `appears to use ${f.code("module.exports =")}. Node treats a default import of these constructs from an ` +
-          `ES module differently, so these types will make TypeScript under the ${f.code("node16")} resolution mode ` +
-          `think an extra ${f.code(".default")} property access is required, but that will likely fail at runtime ` +
-          `in Node. These types should use ${f.code("export =")} instead of ${f.code("export default")}.`
-        );
-      case "UnexpectedESMSyntax":
-      case "UnexpectedCJSSyntax":
-        // Issued in node16-esm and node16-cjs
-        const reason = problems.reduce((prevReason: ModuleKindReason | undefined, p) => {
-          const reason =
-            analysis.entrypointResolutions[p.entrypoint]["node16-esm"].implementationResolution?.moduleKind
-              ?.detectedReason;
-          return !prevReason ? reason : prevReason === reason ? reason : undefined;
-        }, undefined);
-        const [syntax, moduleKind] =
-          kind === "UnexpectedCJSSyntax" ? (["CJS", "ESM"] as const) : (["ESM", "CJS"] as const);
-        return (
-          `The implementation resolved at ${entrypoints} uses ${syntax} syntax, but the detected module kind is ${moduleKind}. ` +
-          `This will be an error in Node (and potentially other runtimes and bundlers).` +
-          (reason === "extension"
-            ? ` The module kind was decided based on the resolved file’s ${
-                moduleKind === "ESM" ? f.code(".mjs") : f.code(".cjs")
-              } extension.`
-            : reason === "type"
-            ? ` The module kind was decided based on the nearest package.json’s ${f.code(`"type"`)} field.`
-            : reason === "no:type"
-            ? ` The module kind was decided based on the nearest package.json’s lack of a ${f.code(
-                `"type": "module"`
-              )} field.`
-            : "")
-        );
-    }
+export function problemAffectsEntrypointResolution(
+  problem: Problem,
+  entrypoint: string,
+  resolutionKind: ResolutionKind,
+  analysis: Analysis
+) {
+  if (isEntrypointResolutionProblem(problem)) {
+    return problem.entrypoint === entrypoint && problem.resolutionKind === resolutionKind;
   }
-}
-
-function groupByResolutionKind(problems: Problem[]) {
-  return problems.reduce((result: Partial<Record<ResolutionKind, Problem[]>>, problem) => {
-    (result[problem.resolutionKind] ??= []).push(problem);
-    return result;
-  }, {});
-}
-
-function groupByEntrypoint(problems: Problem[]) {
-  return problems.reduce((result: Record<string, Problem[]>, problem) => {
-    (result[problem.entrypoint] ??= []).push(problem);
-    return result;
-  }, {});
-}
-
-function formatResolutionKind(kind: ResolutionKind, f: Formatters) {
-  switch (kind) {
-    case "node10":
-    case "bundler":
-      return `the ${f.code(moduleResolutionKinds[kind])} module resolution setting`;
-    case "node16-cjs":
-      return (
-        `the ${f.code("node16")} module resolution setting when the importing module is CJS ` +
-        `(its extension is ${f.code(".cts")} or ${f.code(".cjs")}, or it has a ` +
-        `${f.code(".ts")} or ${f.code(".js")} extension and is in scope of a ${f.code("package.json")} ` +
-        `that does not contain ${f.code('"type": "module"')})`
-      );
-    case "node16-esm":
-      return (
-        `the ${f.code("node16")} module resolution setting when the importing module is ESM ` +
-        `(its extension is ${f.code(".mts")} or ${f.code(".mjs")}, or it has a ` +
-        `${f.code(".ts")} or ${f.code(".js")} extension and is in scope of a ${f.code("package.json")} ` +
-        `that contains ${f.code('"type": "module"')})`
-      );
+  if (isResolutionBasedFileProblem(problem)) {
+    return (
+      getResolutionOption(resolutionKind) === problem.resolutionOption &&
+      analysis.entrypoints[entrypoint].resolutions[resolutionKind].files?.includes(problem.fileName)
+    );
   }
-}
-
-function formatResolutionKinds(kinds: ResolutionKind[], f: Formatters) {
-  if (kinds.length === 1) {
-    return formatResolutionKind(kinds[0], f);
-  } else if (kinds.length === 2 && kinds.includes("node16-cjs") && kinds.includes("node16-esm")) {
-    return `the ${f.code("node16")} module resolution setting`;
-  } else if (kinds.length === allResolutionKinds.length - 1 && !kinds.includes("node10")) {
-    return f.strong("all modern module resolution settings");
-  } else if (kinds.length === allResolutionKinds.length) {
-    return f.strong("all module resolution settings");
-  } else if (kinds.length === 2 && kinds.includes("node16-esm") && kinds.includes("bundler")) {
-    return `resolution modes that use the ${f.code("import")} condition in package.json ${f.code(`"exports"`)}`;
-  } else {
-    return f.strong("multiple module resolution settings");
+  if (isFileProblem(problem)) {
+    return (
+      analysis.entrypoints[entrypoint].resolutions[resolutionKind].files?.includes(problem.fileName) ||
+      analysis.entrypoints[entrypoint].resolutions[resolutionKind].files
+    );
   }
-}
-
-function formatEntrypoints(packageName: string, entrypoints: string[], entrypointCount: number, f: Formatters) {
-  if (entrypoints.length === 1) {
-    return formatEntrypoint(packageName, entrypoints[0], f);
-  }
-  if (entrypoints.length === entrypointCount) {
-    return f.strong("all entrypoints");
-  }
-  return f.strong("multiple entrypoints");
-}
-
-function formatEntrypoint(packageName: string, subpath: string, f: Formatters) {
-  return f.code(`"${subpath === "." ? packageName : `${packageName}/${subpath.substring(2)}`}"`);
-}
-
-type Formatters = Record<"strong" | "em" | "code", (text: string) => string> & {
-  a: (text: string, href: string) => string;
-};
-const identity = <T>(x: T) => x;
-const textFormatters: Formatters = {
-  strong: identity,
-  em: identity,
-  code: (text) => "`" + text + "`",
-  a: (text, href) => `${text} (${href})`,
-};
-const htmlFormatters: Formatters = {
-  strong: (text) => `<strong>${text}</strong>`,
-  em: (text) => `<em>${text}</em>`,
-  code: (text) => `<code>${nonBreaking(text)}</code>`,
-  a: (text, href) => `<a href="${href}">${text}</a>`,
-};
-
-function nonBreaking(text: string) {
-  return text.length < 20 ? text.replace(/ /g, "\u00a0") : text;
-}
-
-function msg(cb: (format: Formatters) => string): { messageText: string; messageHtml: string } {
-  return {
-    messageText: cb(textFormatters),
-    messageHtml: cb(htmlFormatters),
-  };
+  throw new Error(`Unhandled problem type '${(problem satisfies never as Problem).kind}'`);
 }

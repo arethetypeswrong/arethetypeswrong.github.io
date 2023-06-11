@@ -53,13 +53,10 @@ export function subscribeRenderer(events: Events) {
     function render() {
       const state = getState();
       updateView(messageElement, Message, { isError: state.message?.isError, text: state.message?.text || "" });
-      updateView(problemsElement, ProblemList, {
-        problems: state.checks?.problemSummaries,
-        containsTypes: state.checks?.analysis.containsTypes,
-      });
-      updateView(resolutionsElement, ChecksTable, { checks: state.checks });
+      updateView(problemsElement, ProblemList, { analysis: state.analysis });
+      updateView(resolutionsElement, ChecksTable, { analysis: state.analysis });
       updateView(checkButton, CheckButton, { disabled: !state.packageInfo.parsed });
-      updateView(detailsElement, Details, { analysis: state.checks?.analysis });
+      updateView(detailsElement, Details, { analysis: state.analysis });
     }
   });
 }

@@ -116,6 +116,9 @@ dt,
 dd {
   padding: 0.5em 0;
 }
+dd > p {
+  margin: 0;
+}
 #resolutions {
   margin-bottom: 1rem;
   font-size: small;

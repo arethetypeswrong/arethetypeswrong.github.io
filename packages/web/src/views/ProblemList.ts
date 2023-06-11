@@ -1,34 +1,38 @@
-import type { ProblemSummary } from "@arethetypeswrong/core";
-import { problemEmoji } from "./problemEmoji";
+import { marked } from "marked";
+import type { CheckResult, ProblemKind } from "@arethetypeswrong/core";
+import { problemKindInfo } from "@arethetypeswrong/core/problems";
+import { groupProblemsByKind } from "@arethetypeswrong/core/utils";
 
-export function ProblemList(props: { problems?: ProblemSummary[]; containsTypes: boolean | undefined }) {
-  if (props.containsTypes === false) {
-    return {
-      innerHTML: "This package does not contain types.",
-    };
-  }
-
-  if (!props.problems) {
+export function ProblemList(props: { analysis?: CheckResult }) {
+  if (!props.analysis) {
     return {
       innerHTML: "",
     };
   }
 
-  if (props.problems.length === 0) {
+  if (!props.analysis.types) {
+    return {
+      innerHTML: "This package does not contain types.",
+    };
+  }
+
+  if (!props.analysis.problems.length) {
     return {
       innerHTML: "No problems found 🌟",
     };
   }
 
+  const problems = groupProblemsByKind(props.analysis.problems);
   return {
-    innerHTML: `<dl>${props.problems.map(problem).join("")}</dl>`,
+    innerHTML: `<dl>
+      ${Object.entries(problems)
+        .map(([kind]) => {
+          return `
+          <dt>${problemKindInfo[kind as ProblemKind].emoji}</dt>
+          <dd>${marked.parse(problemKindInfo[kind as ProblemKind].description)}</dd>
+        `;
+        })
+        .join("")}
+    </dl>`,
   };
-}
-
-function problem(p: ProblemSummary) {
-  return p.messages
-    .map((message) => {
-      return `<dt>${problemEmoji[p.kind]}</dt><dd>${message.messageHtml}</dd>`;
-    })
-    .join("");
 }
