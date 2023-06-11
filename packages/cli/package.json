@@ -1,6 +1,6 @@
 {
   "name": "@arethetypeswrong/cli",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "A CLI tool for arethetypeswrong.github.io",
   "author": "Andrew Branch & ej-shafran",
   "contributors": [
@@ -45,7 +45,7 @@
     "typescript": "^5.0.0-dev.20230207"
   },
   "dependencies": {
-    "@arethetypeswrong/core": "0.0.8",
+    "@arethetypeswrong/core": "0.1.0",
     "chalk": "^4.1.2",
     "cli-table3": "^0.6.3",
     "commander": "^10.0.1",
