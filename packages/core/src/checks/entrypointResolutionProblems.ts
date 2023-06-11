@@ -70,18 +70,26 @@ export function getEntrypointResolutionProblems(
       });
     }
 
-    const typesExports = resolution && host.getSourceFile(resolution.fileName)?.symbol?.exports;
-    const jsExports =
-      implementationResolution && host.getSourceFile(implementationResolution.fileName)?.symbol?.exports;
-
-    if (resolutionKind === "node16-esm" && resolution && implementationResolution && typesExports && jsExports) {
-      if (typesExports.has(ts.InternalSymbolName.Default) && jsExports.has(ts.InternalSymbolName.ExportEquals)) {
-        // Also need to check for `default` property on `jsModule["export="]`?
-        problems.push({
-          kind: "FalseExportDefault",
-          entrypoint: subpath,
-          resolutionKind,
-        });
+    if (resolutionKind === "node16-esm" && resolution && implementationResolution) {
+      const typesSourceFile = host.getSourceFile(resolution.fileName, "node16");
+      if (typesSourceFile) {
+        ts.bindSourceFile(typesSourceFile, { target: ts.ScriptTarget.Latest, allowJs: true, checkJs: true });
+      }
+      const typesExports = typesSourceFile?.symbol?.exports;
+      const jsSourceFile = typesExports && host.getSourceFile(implementationResolution.fileName, "node16");
+      if (jsSourceFile) {
+        ts.bindSourceFile(jsSourceFile, { target: ts.ScriptTarget.Latest, allowJs: true, checkJs: true });
+      }
+      const jsExports = jsSourceFile?.symbol?.exports;
+      if (typesExports && jsExports) {
+        if (typesExports.has(ts.InternalSymbolName.Default) && jsExports.has(ts.InternalSymbolName.ExportEquals)) {
+          // Also need to check for `default` property on `jsModule["export="]`?
+          problems.push({
+            kind: "FalseExportDefault",
+            entrypoint: subpath,
+            resolutionKind,
+          });
+        }
       }
     }
   });

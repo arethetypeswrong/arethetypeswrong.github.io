@@ -164,7 +164,10 @@ export function problemAffectsEntrypointResolution(
     );
   }
   if (isFileProblem(problem)) {
-    return analysis.entrypoints[entrypoint].resolutions[resolutionKind].files?.includes(problem.fileName);
+    return (
+      analysis.entrypoints[entrypoint].resolutions[resolutionKind].files?.includes(problem.fileName) ||
+      analysis.entrypoints[entrypoint].resolutions[resolutionKind].files
+    );
   }
   throw new Error(`Unhandled problem type '${(problem satisfies never as Problem).kind}'`);
 }
