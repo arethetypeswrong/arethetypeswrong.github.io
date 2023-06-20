@@ -25,7 +25,7 @@ export const problemKindInfo: Record<ProblemKind, ProblemKindInfo> = {
   NoResolution: {
     emoji: "💀",
     title: "Resolution failed",
-    shortDescription: "Failed to resolve",
+    shortDescription: "Resolution failed",
     description: "Import failed to resolve to type declarations or JavaScript files.",
   },
   UntypedResolution: {

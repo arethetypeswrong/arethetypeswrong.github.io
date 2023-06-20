@@ -58,6 +58,11 @@ export function getResolutionBasedFileProblems(
         }
       }
 
+      // TODO: for each visible declaration file in the program, we could
+      // try to do a ts->js extension substitution and assume that's a
+      // visible JS file if it exists.
+      //
+      // TODO: this should maybe only be issued in node16
       if (ts.hasJSFileExtension(fileName)) {
         const expectedModuleKind = host.getModuleKindForFile(fileName, resolutionOption);
         const syntaxImpliedModuleKind = sourceFile.externalModuleIndicator
