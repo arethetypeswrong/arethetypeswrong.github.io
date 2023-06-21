@@ -4,9 +4,9 @@
 $ attw react-chartjs-2@5.2.0.tgz
 
 
-👺 Import resolved to an ESM type declaration file, but a CommonJS JavaScript file.
+👺 Import resolved to an ESM type declaration file, but a CommonJS JavaScript file. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseESM.md
 
-⚠️ A require call resolved to an ESM JavaScript file, which is an error in Node and some bundlers. CommonJS consumers will need to use a dynamic import.
+⚠️ A require call resolved to an ESM JavaScript file, which is an error in Node and some bundlers. CommonJS consumers will need to use a dynamic import. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/CJSResolvesToESM.md
 
 
 ┌────────────────────┬───────────────────────────────────┐

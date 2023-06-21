@@ -4,11 +4,11 @@
 $ attw commander@10.0.1.tgz
 
 
-🎭 Import resolved to a CommonJS type declaration file, but an ESM JavaScript file.
+🎭 Import resolved to a CommonJS type declaration file, but an ESM JavaScript file. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseCJS.md
 
-❌ Import resolved to JavaScript files, but no type declarations were found.
+❌ Import resolved to JavaScript files, but no type declarations were found. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/UntypedResolution.md
 
-⚠️ A require call resolved to an ESM JavaScript file, which is an error in Node and some bundlers. CommonJS consumers will need to use a dynamic import.
+⚠️ A require call resolved to an ESM JavaScript file, which is an error in Node and some bundlers. CommonJS consumers will need to use a dynamic import. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/CJSResolvesToESM.md
 
 
 ┌────────────────────┬───────────────────────────────────┬───────────────────────────────────┐

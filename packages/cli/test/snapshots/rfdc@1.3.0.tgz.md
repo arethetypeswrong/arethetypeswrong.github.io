@@ -4,7 +4,7 @@
 $ attw rfdc@1.3.0.tgz
 
 
-❌ Import resolved to JavaScript files, but no type declarations were found.
+❌ Import resolved to JavaScript files, but no type declarations were found. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/UntypedResolution.md
 
 
 ┌────────────────────┬───────────────────────────────────┬───────────────────────────────────┐

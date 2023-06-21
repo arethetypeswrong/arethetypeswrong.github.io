@@ -27,9 +27,13 @@ export function ProblemList(props: { analysis?: CheckResult }) {
     innerHTML: `<dl>
       ${Object.entries(problems)
         .map(([kind]) => {
+          const info = problemKindInfo[kind as ProblemKind];
           return `
-          <dt>${problemKindInfo[kind as ProblemKind].emoji}</dt>
-          <dd>${marked.parse(problemKindInfo[kind as ProblemKind].description)}</dd>
+          <dt>${info.emoji}</dt>
+          <dd>
+            <p><strong><a href="${info.docsUrl}">${info.shortDescription}</a></strong></p>
+            ${marked.parse(info.description)}
+          </dd>
         `;
         })
         .join("")}

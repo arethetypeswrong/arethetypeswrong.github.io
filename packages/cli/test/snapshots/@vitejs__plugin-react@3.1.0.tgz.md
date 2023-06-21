@@ -4,7 +4,7 @@
 $ attw @vitejs__plugin-react@3.1.0.tgz
 
 
-🎭 Import resolved to a CommonJS type declaration file, but an ESM JavaScript file.
+🎭 Import resolved to a CommonJS type declaration file, but an ESM JavaScript file. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseCJS.md
 
 
 ┌────────────────────┬───────────────────────────────────┐

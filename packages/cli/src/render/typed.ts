@@ -34,8 +34,9 @@ export async function typed(analysis: core.Analysis, opts: Opts) {
   if (opts.summary) {
     const defaultSummary = marked(!opts.emoji ? " No problems found" : " No problems found 🌟");
     const summaryTexts = Object.keys(grouped).map((kind) => {
-      const emoji = opts.emoji ? `${problemKindInfo[kind as core.ProblemKind].emoji} ` : "";
-      const description = marked(problemKindInfo[kind as core.ProblemKind].description);
+      const info = problemKindInfo[kind as core.ProblemKind];
+      const emoji = opts.emoji ? `${info.emoji} ` : "";
+      const description = marked(`${info.description} ${info.docsUrl}`);
       return `${emoji}${description}`;
     });
 
