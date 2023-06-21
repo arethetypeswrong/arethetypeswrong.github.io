@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.2.0
+
+### Minor Changes
+
+- 6fc935a: Added links to new documentation for each problem kind
+
 ## 0.1.0
 
 ### Minor Changes
