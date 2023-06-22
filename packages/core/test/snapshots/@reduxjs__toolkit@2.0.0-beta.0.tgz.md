@@ -32,7 +32,40 @@
       "moduleSpecifier": "@reduxjs/toolkit/dist/tsHelpers",
       "pos": 153,
       "end": 187,
-      "resolutionMode": 1
+      "resolutionMode": 1,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/tsHelpers' from '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/index.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Node16'.",
+        "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+        "File '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Export specifier './dist/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Loading module '@reduxjs/toolkit/dist/tsHelpers' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "======== Module name '@reduxjs/toolkit/dist/tsHelpers' was not resolved. ========"
+      ]
     }
   },
   {
@@ -43,7 +76,40 @@
       "moduleSpecifier": "@reduxjs/toolkit/dist/dynamicMiddleware/types",
       "pos": 379,
       "end": 427,
-      "resolutionMode": 1
+      "resolutionMode": 1,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/dynamicMiddleware/types' from '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/index.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Node16'.",
+        "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+        "File '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/dynamicMiddleware/types' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Export specifier './dist/dynamicMiddleware/types' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Loading module '@reduxjs/toolkit/dist/dynamicMiddleware/types' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/dynamicMiddleware/types' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/dynamicMiddleware/types' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "======== Module name '@reduxjs/toolkit/dist/dynamicMiddleware/types' was not resolved. ========"
+      ]
     }
   },
   {
@@ -54,7 +120,41 @@
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/core/apiState",
       "pos": 157,
       "end": 201,
-      "resolutionMode": 1
+      "resolutionMode": 1,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/core/apiState' from '/node_modules/@reduxjs/toolkit/dist/query/react/buildHooks.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Node16'.",
+        "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/react/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/apiState' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Export specifier './dist/query/core/apiState' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Loading module '@reduxjs/toolkit/dist/query/core/apiState' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/apiState'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/apiState'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/apiState'",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/apiState'",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/apiState'",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/apiState' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/apiState'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/apiState' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/core/apiState' was not resolved. ========"
+      ]
     }
   },
   {
@@ -65,7 +165,12 @@
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/endpointDefinitions",
       "pos": 311,
       "end": 361,
-      "resolutionMode": 1
+      "resolutionMode": 1,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/endpointDefinitions' from '/node_modules/@reduxjs/toolkit/dist/query/react/buildHooks.d.ts'. ========",
+        "Resolution for module '@reduxjs/toolkit/dist/query/endpointDefinitions' was found in cache from location '/node_modules/@reduxjs/toolkit/dist/query/react'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/endpointDefinitions' was not resolved. ========"
+      ]
     }
   },
   {
@@ -76,7 +181,41 @@
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/core/buildSelectors",
       "pos": 424,
       "end": 474,
-      "resolutionMode": 1
+      "resolutionMode": 1,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/core/buildSelectors' from '/node_modules/@reduxjs/toolkit/dist/query/react/buildHooks.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Node16'.",
+        "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/react/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/buildSelectors' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Export specifier './dist/query/core/buildSelectors' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Loading module '@reduxjs/toolkit/dist/query/core/buildSelectors' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildSelectors'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildSelectors'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildSelectors'",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildSelectors'",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildSelectors'",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/buildSelectors' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildSelectors'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/buildSelectors' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/core/buildSelectors' was not resolved. ========"
+      ]
     }
   },
   {
@@ -87,7 +226,41 @@
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/core/buildInitiate",
       "pos": 551,
       "end": 600,
-      "resolutionMode": 1
+      "resolutionMode": 1,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/core/buildInitiate' from '/node_modules/@reduxjs/toolkit/dist/query/react/buildHooks.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Node16'.",
+        "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/react/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/buildInitiate' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Export specifier './dist/query/core/buildInitiate' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Loading module '@reduxjs/toolkit/dist/query/core/buildInitiate' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildInitiate'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildInitiate'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildInitiate'",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildInitiate'",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildInitiate'",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/buildInitiate' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildInitiate'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/buildInitiate' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/core/buildInitiate' was not resolved. ========"
+      ]
     }
   },
   {
@@ -98,7 +271,41 @@
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/defaultSerializeQueryArgs",
       "pos": 642,
       "end": 698,
-      "resolutionMode": 1
+      "resolutionMode": 1,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/defaultSerializeQueryArgs' from '/node_modules/@reduxjs/toolkit/dist/query/react/buildHooks.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Node16'.",
+        "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/react/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/defaultSerializeQueryArgs' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Export specifier './dist/query/defaultSerializeQueryArgs' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Loading module '@reduxjs/toolkit/dist/query/defaultSerializeQueryArgs' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/defaultSerializeQueryArgs'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/defaultSerializeQueryArgs'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/defaultSerializeQueryArgs'",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/defaultSerializeQueryArgs'",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/defaultSerializeQueryArgs'",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/defaultSerializeQueryArgs' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/defaultSerializeQueryArgs'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/defaultSerializeQueryArgs' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/defaultSerializeQueryArgs' was not resolved. ========"
+      ]
     }
   },
   {
@@ -109,7 +316,12 @@
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/apiTypes",
       "pos": 737,
       "end": 776,
-      "resolutionMode": 1
+      "resolutionMode": 1,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/apiTypes' from '/node_modules/@reduxjs/toolkit/dist/query/react/buildHooks.d.ts'. ========",
+        "Resolution for module '@reduxjs/toolkit/dist/query/apiTypes' was found in cache from location '/node_modules/@reduxjs/toolkit/dist/query/react'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/apiTypes' was not resolved. ========"
+      ]
     }
   },
   {
@@ -120,7 +332,41 @@
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/tsHelpers",
       "pos": 821,
       "end": 861,
-      "resolutionMode": 1
+      "resolutionMode": 1,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/tsHelpers' from '/node_modules/@reduxjs/toolkit/dist/query/react/buildHooks.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Node16'.",
+        "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/react/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Export specifier './dist/query/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Loading module '@reduxjs/toolkit/dist/query/tsHelpers' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/tsHelpers'",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/tsHelpers' was not resolved. ========"
+      ]
     }
   },
   {
@@ -131,7 +377,12 @@
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/core/module",
       "pos": 912,
       "end": 954,
-      "resolutionMode": 1
+      "resolutionMode": 1,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/core/module' from '/node_modules/@reduxjs/toolkit/dist/query/react/buildHooks.d.ts'. ========",
+        "Resolution for module '@reduxjs/toolkit/dist/query/core/module' was found in cache from location '/node_modules/@reduxjs/toolkit/dist/query/react'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/core/module' was not resolved. ========"
+      ]
     }
   },
   {
@@ -142,7 +393,12 @@
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/endpointDefinitions",
       "pos": 167,
       "end": 217,
-      "resolutionMode": 1
+      "resolutionMode": 1,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/endpointDefinitions' from '/node_modules/@reduxjs/toolkit/dist/query/react/namedHooks.d.ts'. ========",
+        "Resolution for module '@reduxjs/toolkit/dist/query/endpointDefinitions' was found in cache from location '/node_modules/@reduxjs/toolkit/dist/query/react'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/endpointDefinitions' was not resolved. ========"
+      ]
     }
   },
   {
@@ -153,7 +409,41 @@
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/endpointDefinitions",
       "pos": 155,
       "end": 205,
-      "resolutionMode": 1
+      "resolutionMode": 1,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/endpointDefinitions' from '/node_modules/@reduxjs/toolkit/dist/query/react/module.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Node16'.",
+        "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/react/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/endpointDefinitions' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Export specifier './dist/query/endpointDefinitions' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Loading module '@reduxjs/toolkit/dist/query/endpointDefinitions' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/endpointDefinitions'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/endpointDefinitions'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/endpointDefinitions'",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/endpointDefinitions'",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/endpointDefinitions'",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/endpointDefinitions' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/endpointDefinitions'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/endpointDefinitions' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/endpointDefinitions' was not resolved. ========"
+      ]
     }
   },
   {
@@ -164,7 +454,41 @@
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/baseQueryTypes",
       "pos": 284,
       "end": 329,
-      "resolutionMode": 1
+      "resolutionMode": 1,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/baseQueryTypes' from '/node_modules/@reduxjs/toolkit/dist/query/react/module.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Node16'.",
+        "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/react/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/baseQueryTypes' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Export specifier './dist/query/baseQueryTypes' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Loading module '@reduxjs/toolkit/dist/query/baseQueryTypes' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/baseQueryTypes'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/baseQueryTypes'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/baseQueryTypes'",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/baseQueryTypes'",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/baseQueryTypes'",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/baseQueryTypes' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/baseQueryTypes'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/baseQueryTypes' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/baseQueryTypes' was not resolved. ========"
+      ]
     }
   },
   {
@@ -175,7 +499,12 @@
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/apiTypes",
       "pos": 181,
       "end": 220,
-      "resolutionMode": 1
+      "resolutionMode": 1,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/apiTypes' from '/node_modules/@reduxjs/toolkit/dist/query/react/ApiProvider.d.ts'. ========",
+        "Resolution for module '@reduxjs/toolkit/dist/query/apiTypes' was found in cache from location '/node_modules/@reduxjs/toolkit/dist/query/react'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/apiTypes' was not resolved. ========"
+      ]
     }
   },
   {
@@ -186,7 +515,41 @@
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/core/module",
       "pos": 257,
       "end": 298,
-      "resolutionMode": 1
+      "resolutionMode": 1,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/core/module' from '/node_modules/@reduxjs/toolkit/dist/query/react/index.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Node16'.",
+        "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/react/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/module' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Export specifier './dist/query/core/module' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Loading module '@reduxjs/toolkit/dist/query/core/module' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/module'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/module'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/module'",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/module'",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/module'",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/module' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/module'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/module' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/core/module' was not resolved. ========"
+      ]
     }
   },
   {
@@ -196,7 +559,41 @@
     "error": {
       "moduleSpecifier": "@reduxjs/toolkit/dist/tsHelpers",
       "pos": 153,
-      "end": 187
+      "end": 187,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/tsHelpers' from '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/index.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Bundler'.",
+        "Resolving in CJS mode with conditions 'import', 'types'.",
+        "File '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Export specifier './dist/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Loading module '@reduxjs/toolkit/dist/tsHelpers' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "======== Module name '@reduxjs/toolkit/dist/tsHelpers' was not resolved. ========"
+      ]
     }
   },
   {
@@ -206,7 +603,41 @@
     "error": {
       "moduleSpecifier": "@reduxjs/toolkit/dist/dynamicMiddleware/types",
       "pos": 379,
-      "end": 427
+      "end": 427,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/dynamicMiddleware/types' from '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/index.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Bundler'.",
+        "Resolving in CJS mode with conditions 'import', 'types'.",
+        "File '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/dynamicMiddleware/types' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Export specifier './dist/dynamicMiddleware/types' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Loading module '@reduxjs/toolkit/dist/dynamicMiddleware/types' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/dynamicMiddleware/types' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/dynamicMiddleware/types' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "======== Module name '@reduxjs/toolkit/dist/dynamicMiddleware/types' was not resolved. ========"
+      ]
     }
   },
   {
@@ -216,7 +647,41 @@
     "error": {
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/core/apiState",
       "pos": 157,
-      "end": 201
+      "end": 201,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/core/apiState' from '/node_modules/@reduxjs/toolkit/dist/query/react/buildHooks.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Bundler'.",
+        "Resolving in CJS mode with conditions 'import', 'types'.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/react/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/apiState' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Export specifier './dist/query/core/apiState' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Loading module '@reduxjs/toolkit/dist/query/core/apiState' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/apiState'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/apiState'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/apiState'",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/apiState'",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/apiState'",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/apiState' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/apiState'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/apiState' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/core/apiState' was not resolved. ========"
+      ]
     }
   },
   {
@@ -226,7 +691,12 @@
     "error": {
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/endpointDefinitions",
       "pos": 311,
-      "end": 361
+      "end": 361,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/endpointDefinitions' from '/node_modules/@reduxjs/toolkit/dist/query/react/buildHooks.d.ts'. ========",
+        "Resolution for module '@reduxjs/toolkit/dist/query/endpointDefinitions' was found in cache from location '/node_modules/@reduxjs/toolkit/dist/query/react'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/endpointDefinitions' was not resolved. ========"
+      ]
     }
   },
   {
@@ -236,7 +706,41 @@
     "error": {
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/core/buildSelectors",
       "pos": 424,
-      "end": 474
+      "end": 474,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/core/buildSelectors' from '/node_modules/@reduxjs/toolkit/dist/query/react/buildHooks.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Bundler'.",
+        "Resolving in CJS mode with conditions 'import', 'types'.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/react/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/buildSelectors' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Export specifier './dist/query/core/buildSelectors' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Loading module '@reduxjs/toolkit/dist/query/core/buildSelectors' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildSelectors'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildSelectors'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildSelectors'",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildSelectors'",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildSelectors'",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/buildSelectors' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildSelectors'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/buildSelectors' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/core/buildSelectors' was not resolved. ========"
+      ]
     }
   },
   {
@@ -246,7 +750,41 @@
     "error": {
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/core/buildInitiate",
       "pos": 551,
-      "end": 600
+      "end": 600,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/core/buildInitiate' from '/node_modules/@reduxjs/toolkit/dist/query/react/buildHooks.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Bundler'.",
+        "Resolving in CJS mode with conditions 'import', 'types'.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/react/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/buildInitiate' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Export specifier './dist/query/core/buildInitiate' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Loading module '@reduxjs/toolkit/dist/query/core/buildInitiate' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildInitiate'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildInitiate'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildInitiate'",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildInitiate'",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildInitiate'",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/buildInitiate' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/buildInitiate'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/buildInitiate' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/core/buildInitiate' was not resolved. ========"
+      ]
     }
   },
   {
@@ -256,7 +794,41 @@
     "error": {
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/defaultSerializeQueryArgs",
       "pos": 642,
-      "end": 698
+      "end": 698,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/defaultSerializeQueryArgs' from '/node_modules/@reduxjs/toolkit/dist/query/react/buildHooks.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Bundler'.",
+        "Resolving in CJS mode with conditions 'import', 'types'.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/react/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/defaultSerializeQueryArgs' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Export specifier './dist/query/defaultSerializeQueryArgs' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Loading module '@reduxjs/toolkit/dist/query/defaultSerializeQueryArgs' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/defaultSerializeQueryArgs'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/defaultSerializeQueryArgs'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/defaultSerializeQueryArgs'",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/defaultSerializeQueryArgs'",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/defaultSerializeQueryArgs'",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/defaultSerializeQueryArgs' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/defaultSerializeQueryArgs'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/defaultSerializeQueryArgs' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/defaultSerializeQueryArgs' was not resolved. ========"
+      ]
     }
   },
   {
@@ -266,7 +838,12 @@
     "error": {
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/apiTypes",
       "pos": 737,
-      "end": 776
+      "end": 776,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/apiTypes' from '/node_modules/@reduxjs/toolkit/dist/query/react/buildHooks.d.ts'. ========",
+        "Resolution for module '@reduxjs/toolkit/dist/query/apiTypes' was found in cache from location '/node_modules/@reduxjs/toolkit/dist/query/react'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/apiTypes' was not resolved. ========"
+      ]
     }
   },
   {
@@ -276,7 +853,41 @@
     "error": {
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/tsHelpers",
       "pos": 821,
-      "end": 861
+      "end": 861,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/tsHelpers' from '/node_modules/@reduxjs/toolkit/dist/query/react/buildHooks.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Bundler'.",
+        "Resolving in CJS mode with conditions 'import', 'types'.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/react/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Export specifier './dist/query/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Loading module '@reduxjs/toolkit/dist/query/tsHelpers' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/tsHelpers'",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/tsHelpers' was not resolved. ========"
+      ]
     }
   },
   {
@@ -286,7 +897,12 @@
     "error": {
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/core/module",
       "pos": 912,
-      "end": 954
+      "end": 954,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/core/module' from '/node_modules/@reduxjs/toolkit/dist/query/react/buildHooks.d.ts'. ========",
+        "Resolution for module '@reduxjs/toolkit/dist/query/core/module' was found in cache from location '/node_modules/@reduxjs/toolkit/dist/query/react'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/core/module' was not resolved. ========"
+      ]
     }
   },
   {
@@ -296,7 +912,12 @@
     "error": {
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/endpointDefinitions",
       "pos": 167,
-      "end": 217
+      "end": 217,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/endpointDefinitions' from '/node_modules/@reduxjs/toolkit/dist/query/react/namedHooks.d.ts'. ========",
+        "Resolution for module '@reduxjs/toolkit/dist/query/endpointDefinitions' was found in cache from location '/node_modules/@reduxjs/toolkit/dist/query/react'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/endpointDefinitions' was not resolved. ========"
+      ]
     }
   },
   {
@@ -306,7 +927,41 @@
     "error": {
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/endpointDefinitions",
       "pos": 155,
-      "end": 205
+      "end": 205,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/endpointDefinitions' from '/node_modules/@reduxjs/toolkit/dist/query/react/module.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Bundler'.",
+        "Resolving in CJS mode with conditions 'import', 'types'.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/react/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/endpointDefinitions' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Export specifier './dist/query/endpointDefinitions' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Loading module '@reduxjs/toolkit/dist/query/endpointDefinitions' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/endpointDefinitions'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/endpointDefinitions'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/endpointDefinitions'",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/endpointDefinitions'",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/endpointDefinitions'",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/endpointDefinitions' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/endpointDefinitions'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/endpointDefinitions' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/endpointDefinitions' was not resolved. ========"
+      ]
     }
   },
   {
@@ -316,7 +971,41 @@
     "error": {
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/baseQueryTypes",
       "pos": 284,
-      "end": 329
+      "end": 329,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/baseQueryTypes' from '/node_modules/@reduxjs/toolkit/dist/query/react/module.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Bundler'.",
+        "Resolving in CJS mode with conditions 'import', 'types'.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/react/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/baseQueryTypes' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Export specifier './dist/query/baseQueryTypes' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Loading module '@reduxjs/toolkit/dist/query/baseQueryTypes' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/baseQueryTypes'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/baseQueryTypes'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/baseQueryTypes'",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/baseQueryTypes'",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/baseQueryTypes'",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/baseQueryTypes' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/baseQueryTypes'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/baseQueryTypes' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/baseQueryTypes' was not resolved. ========"
+      ]
     }
   },
   {
@@ -326,7 +1015,12 @@
     "error": {
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/apiTypes",
       "pos": 181,
-      "end": 220
+      "end": 220,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/apiTypes' from '/node_modules/@reduxjs/toolkit/dist/query/react/ApiProvider.d.ts'. ========",
+        "Resolution for module '@reduxjs/toolkit/dist/query/apiTypes' was found in cache from location '/node_modules/@reduxjs/toolkit/dist/query/react'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/apiTypes' was not resolved. ========"
+      ]
     }
   },
   {
@@ -336,7 +1030,41 @@
     "error": {
       "moduleSpecifier": "@reduxjs/toolkit/dist/query/core/module",
       "pos": 257,
-      "end": 298
+      "end": 298,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/query/core/module' from '/node_modules/@reduxjs/toolkit/dist/query/react/index.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Bundler'.",
+        "Resolving in CJS mode with conditions 'import', 'types'.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/react/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/query/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/module' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Export specifier './dist/query/core/module' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Loading module '@reduxjs/toolkit/dist/query/core/module' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/module'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/module'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/module'",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/module'",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/module'",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/module' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/query/core/module'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/react/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/query/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/query/core/module' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "======== Module name '@reduxjs/toolkit/dist/query/core/module' was not resolved. ========"
+      ]
     }
   }
 ]

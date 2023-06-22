@@ -59,7 +59,6 @@ export function createMultiCompilerHost(fs: FS): MultiCompilerHost {
       traceResolution: true,
     },
     bundler: {
-      // @ts-expect-error
       moduleResolution: ts.ModuleResolutionKind.Bundler,
       module: ts.ModuleKind.ESNext,
       target: ts.ScriptTarget.Latest,
@@ -182,15 +181,22 @@ export function createMultiCompilerHost(fs: FS): MultiCompilerHost {
     );
     const trace = traceCollector.read();
     const moduleKey = `${resolutionMode ?? 1}:${moduleName}`;
-    (traceCache[moduleResolution][containingFile] ??= {})[moduleKey] = trace;
+    if (!traceCache[moduleResolution][containingFile]?.[moduleKey]) {
+      (traceCache[moduleResolution][containingFile] ??= {})[moduleKey] = trace;
+    }
     return {
       resolution,
       trace,
     };
   }
 
-  function getTrace(moduleResolution: ResolutionOption, fromFileName: string, key: string): string[] | undefined {
-    return traceCache[moduleResolution][fromFileName]?.[key];
+  function getTrace(
+    moduleResolution: ResolutionOption,
+    fromFileName: string,
+    moduleSpecifier: string,
+    resolutionMode: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS
+  ): string[] | undefined {
+    return traceCache[moduleResolution][fromFileName]?.[`${resolutionMode ?? 1}:${moduleSpecifier}`];
   }
 
   function createProgram(moduleResolution: ResolutionOption, rootNames: string[]): ts.Program {
@@ -231,6 +237,18 @@ export function createMultiCompilerHost(fs: FS): MultiCompilerHost {
       useCaseSensitiveFileNames,
       getNewLine,
       trace: traceCollector.trace,
+      resolveModuleNameLiterals(moduleLiterals, containingFile, _redirectedReference, options, containingSourceFile) {
+        return moduleLiterals.map(
+          (literal) =>
+            resolveModuleName(
+              literal.text,
+              containingFile,
+              moduleResolution,
+              ts.getModeForUsageLocation(containingSourceFile, literal),
+              options.noDtsResolution
+            ).resolution
+        );
+      },
     };
   }
 
