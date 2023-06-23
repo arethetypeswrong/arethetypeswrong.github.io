@@ -61,14 +61,6 @@ export interface Resolution {
   trace: string[];
 }
 
-export interface InternalResolutionErrorDetails {
-  pos: number;
-  end: number;
-  moduleSpecifier: string;
-  resolutionMode: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined;
-  trace: string[];
-}
-
 export type EntrypointResolutionProblemKind =
   | "NoResolution"
   | "UntypedResolution"
@@ -85,11 +77,15 @@ export interface EntrypointResolutionProblem {
   resolutionKind: ResolutionKind;
 }
 
-export interface InternalResolutionProblem {
+export interface InternalResolutionErrorProblem {
   kind: "InternalResolutionError";
   resolutionOption: ResolutionOption;
   fileName: string;
-  error: InternalResolutionErrorDetails;
+  pos: number;
+  end: number;
+  moduleSpecifier: string;
+  resolutionMode: ts.ResolutionMode;
+  trace: string[];
 }
 
 export interface UnexpectedModuleSyntaxProblem {
@@ -107,7 +103,7 @@ export interface CJSOnlyExportsDefaultProblem {
   range: ts.TextRange;
 }
 
-export type ResolutionBasedFileProblem = InternalResolutionProblem | UnexpectedModuleSyntaxProblem;
+export type ResolutionBasedFileProblem = InternalResolutionErrorProblem | UnexpectedModuleSyntaxProblem;
 export type FileProblem = CJSOnlyExportsDefaultProblem;
 export type Problem = EntrypointResolutionProblem | ResolutionBasedFileProblem | FileProblem;
 export type ProblemKind = Problem["kind"];
