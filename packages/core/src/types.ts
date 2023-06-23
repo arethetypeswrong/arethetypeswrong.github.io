@@ -77,7 +77,7 @@ export interface EntrypointResolutionProblem {
   resolutionKind: ResolutionKind;
 }
 
-export interface InternalResolutionProblem {
+export interface InternalResolutionErrorProblem {
   kind: "InternalResolutionError";
   resolutionOption: ResolutionOption;
   fileName: string;
@@ -103,7 +103,7 @@ export interface CJSOnlyExportsDefaultProblem {
   range: ts.TextRange;
 }
 
-export type ResolutionBasedFileProblem = InternalResolutionProblem | UnexpectedModuleSyntaxProblem;
+export type ResolutionBasedFileProblem = InternalResolutionErrorProblem | UnexpectedModuleSyntaxProblem;
 export type FileProblem = CJSOnlyExportsDefaultProblem;
 export type Problem = EntrypointResolutionProblem | ResolutionBasedFileProblem | FileProblem;
 export type ProblemKind = Problem["kind"];
