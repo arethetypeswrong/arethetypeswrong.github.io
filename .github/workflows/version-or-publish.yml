@@ -1,4 +1,8 @@
-name: Publish Packages
+# - changesets will open a PR to bump versions when new changesets are added
+# - changesets will publish packages when that PR is merged
+# (it's confusing because the same action does two super different things)
+
+name: Version or Publish Packages
 
 on:
   push:
