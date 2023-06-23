@@ -61,14 +61,6 @@ export interface Resolution {
   trace: string[];
 }
 
-export interface InternalResolutionErrorDetails {
-  pos: number;
-  end: number;
-  moduleSpecifier: string;
-  resolutionMode: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined;
-  trace: string[];
-}
-
 export type EntrypointResolutionProblemKind =
   | "NoResolution"
   | "UntypedResolution"
@@ -89,7 +81,11 @@ export interface InternalResolutionProblem {
   kind: "InternalResolutionError";
   resolutionOption: ResolutionOption;
   fileName: string;
-  error: InternalResolutionErrorDetails;
+  pos: number;
+  end: number;
+  moduleSpecifier: string;
+  resolutionMode: ts.ResolutionMode;
+  trace: string[];
 }
 
 export interface UnexpectedModuleSyntaxProblem {

@@ -10,16 +10,18 @@ export function getResolutionBasedFileProblems(
 ): ResolutionBasedFileProblem[] {
   const result: ResolutionBasedFileProblem[] = [];
   for (const resolutionOption of allResolutionOptions) {
-    const visibleFiles = Object.values(entrypointResolutions).flatMap((entrypoint) => {
-      const files = new Set<string>();
-      getResolutionKinds(resolutionOption).forEach((resolutionKind) => {
-        entrypoint.resolutions[resolutionKind].files?.forEach((file) => files.add(file));
-        if (entrypoint.resolutions[resolutionKind].implementationResolution) {
-          files.add(entrypoint.resolutions[resolutionKind].implementationResolution!.fileName);
-        }
-      });
-      return Array.from(files);
-    });
+    const visibleFiles = new Set(
+      Object.values(entrypointResolutions).flatMap((entrypoint) => {
+        const files = new Set<string>();
+        getResolutionKinds(resolutionOption).forEach((resolutionKind) => {
+          entrypoint.resolutions[resolutionKind].files?.forEach((file) => files.add(file));
+          if (entrypoint.resolutions[resolutionKind].implementationResolution) {
+            files.add(entrypoint.resolutions[resolutionKind].implementationResolution!.fileName);
+          }
+        });
+        return Array.from(files);
+      })
+    );
 
     for (const fileName of visibleFiles) {
       const sourceFile = host.getSourceFile(fileName, resolutionOption)!;
@@ -46,13 +48,11 @@ export function getResolutionBasedFileProblems(
               kind: "InternalResolutionError",
               resolutionOption,
               fileName,
-              error: {
-                moduleSpecifier: reference,
-                pos: moduleSpecifier.pos,
-                end: moduleSpecifier.end,
-                resolutionMode,
-                trace: host.getTrace(resolutionOption, fileName, moduleSpecifier.text, resolutionMode)!,
-              },
+              moduleSpecifier: reference,
+              pos: moduleSpecifier.pos,
+              end: moduleSpecifier.end,
+              resolutionMode,
+              trace: host.getTrace(resolutionOption, fileName, moduleSpecifier.text, resolutionMode)!,
             });
           }
         }
