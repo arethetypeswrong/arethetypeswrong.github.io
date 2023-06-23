@@ -1,5 +1,17 @@
 # @arethetypeswrong/core
 
+## 0.3.0
+
+### Minor Changes
+
+- 7c3a377: If a packages has no `exports` field, look for additional entry points marked by extra `package.json` files with a `"main"` field in subdirectories.
+- 53e031b: Inlined `InternalResolutionErrorDetails` into `InternalResolutionError` and renamed the interface to `InternalResolutionErrorProblem` to match other problem interfaces
+
+### Patch Changes
+
+- 53e031b: Fixed an issue where InternalResolutionError and UnexpectedModuleSyntax could be duplicated
+- 53e031b: Fixed an issue where InternalResolutionError was missing traces
+
 ## 0.2.0
 
 ### Minor Changes
