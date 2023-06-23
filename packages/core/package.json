@@ -21,8 +21,6 @@
     "pretest": "tsc -b test",
     "test": "node --test test/dist",
     "snapshot": "node scripts/createSnapshotFixture.js",
-    "patch": "npm version patch && npm run commit-patch",
-    "commit-patch": "git commit -am \"Bump core to v$npm_package_version\" && git tag \"v$npm_package_version\"",
     "prepublishOnly": "npm run tsc && npm run test"
   },
   "type": "module",

@@ -11,7 +11,7 @@ import { createRequire } from "module";
 import * as render from "./render/index.js";
 import { readConfig } from "./readConfig.js";
 import { problemFlags } from "./problemUtils.js";
-import { groupProblemsByKind } from "@arethetypeswrong/core/utils";
+import { groupProblemsByKind, parsePackageSpec } from "@arethetypeswrong/core/utils";
 
 const packageJson = createRequire(import.meta.url)("../package.json");
 const version = packageJson.version;
@@ -71,7 +71,7 @@ particularly ESM-related module resolution issues.`
     let analysis: core.CheckResult;
     if (opts.fromNpm) {
       try {
-        const result = core.parsePackageSpec(fileName);
+        const result = parsePackageSpec(fileName);
         if (result.status === "error") {
           program.error(result.error);
         } else {

@@ -3,7 +3,7 @@ import { subscribeRenderer } from "./renderer.ts";
 import { updateState, type PackageInfo, getState, subscribe, type State } from "./state.ts";
 import { shallowEqual } from "./utils/shallowEqual.ts";
 import NProgress from "nprogress";
-import { parsePackageSpec, type ParsedPackageSpec } from "@arethetypeswrong/core";
+import { parsePackageSpec, type ParsedPackageSpec } from "@arethetypeswrong/core/utils";
 
 const worker = new Worker(new URL("../worker/worker.ts", import.meta.url), { type: "module" });
 worker.onmessage = async (event: MessageEvent<ResultMessage>) => {

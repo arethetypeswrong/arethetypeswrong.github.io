@@ -14,5 +14,5 @@ export default defineConfig(() => ({
     COMMIT: JSON.stringify(execSync('git rev-parse HEAD').toString().trim().substring(0, 7)),
   },
   optimizeDeps: {
-  }
+  },
 }));
