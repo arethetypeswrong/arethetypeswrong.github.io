@@ -68,10 +68,21 @@ function getSubpaths(exportsObject: any): string[] {
   return keys.flatMap((key) => getSubpaths(exportsObject[key]));
 }
 
+function getProxyDirectories(rootDir: string, fs: FS) {
+  return fs
+    .listFiles()
+    .filter((f) => f.startsWith(rootDir) && f.endsWith("package.json"))
+    .map((f) => "." + f.slice(rootDir.length).slice(0, -`/package.json`.length))
+    .filter((f) => f !== "./");
+}
+
 function getEntrypointInfo(packageName: string, fs: FS, host: MultiCompilerHost): Record<string, EntrypointInfo> {
   const packageJson = JSON.parse(fs.readFile(`/node_modules/${packageName}/package.json`));
   const subpaths = getSubpaths(packageJson.exports);
   const entrypoints = subpaths.length ? subpaths : ["."];
+  if (!packageJson.exports) {
+    entrypoints.push(...getProxyDirectories(`/node_modules/${packageName}`, fs));
+  }
   const result: Record<string, EntrypointInfo> = {};
   for (const entrypoint of entrypoints) {
     const resolutions: Record<ResolutionKind, EntrypointResolutionAnalysis> = {
