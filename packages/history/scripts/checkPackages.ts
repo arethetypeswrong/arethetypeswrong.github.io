@@ -76,15 +76,14 @@ export default function checkPackages(
           console.error(`[${workerIndex}] ${blob.packageName}@${blob.packageVersion}: ${blob.message}`);
           if (blob.prevMessage === blob.message) {
             console.error(`Package ${blob.packageName}@${blob.packageVersion} failed repeatedly; skipping.`);
-            return;
+          } else {
+            workQueue.push({
+              packageName: blob.packageName,
+              packageVersion: blob.packageVersion,
+              tarballUrl: blob.tarballUrl,
+              prevMessage: blob.message,
+            });
           }
-
-          workQueue.push({
-            packageName: blob.packageName,
-            packageVersion: blob.packageVersion,
-            tarballUrl: blob.tarballUrl,
-            prevMessage: blob.message,
-          });
         } else {
           console.log(
             `[${workerIndex}] ${packages.length - workQueue.length}/${packages.length} ${blob.data.packageName}@${
@@ -99,6 +98,7 @@ export default function checkPackages(
           worker.postMessage(next);
         } else {
           await worker.terminate();
+          console.log(`[${workerIndex}] done`);
           finishedWorkers++;
 
           if (finishedWorkers === workers.length) {
@@ -116,6 +116,14 @@ export default function checkPackages(
       const nextPackage = workQueue.shift();
       if (nextPackage) {
         worker.postMessage({ ...nextPackage, index: packages.indexOf(nextPackage) });
+      } else {
+        await worker.terminate();
+        console.log(`[${workers.indexOf(worker)}] done`);
+        finishedWorkers++;
+
+        if (finishedWorkers === workers.length) {
+          resolve();
+        }
       }
     }
 

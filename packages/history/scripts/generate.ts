@@ -10,10 +10,15 @@ import reduceBlobs from "./reduceBlobs.ts";
 import type { DatesJson, FullJson } from "./types.ts";
 import { createRequire } from "module";
 
-const existingData: FullJson = JSON.parse(await readFile(new URL("../data/full.json", import.meta.url), "utf8"));
+const excludePackages = [
+  "grunt-ts", // File not found: /node_modules/grunt-ts/defs/tsd.d.ts
+  "Babel", // Expected double-quoted property name in JSON at position 450
+  "aws-cdk-lib", // Takes forever
+];
+
 // Array of dates from 2023-01-01 until the first of this month
 const startYear = 2023;
-const dates = Array.from({ length: new Date().getMonth() * (new Date().getFullYear() - startYear + 1) }, (_, i) => {
+const dates = Array.from({ length: new Date().getMonth() * (new Date().getFullYear() - startYear + 1) + 1 }, (_, i) => {
   const month = String((i % 12) + 1).padStart(2, "0");
   const year = String(Math.floor(i / 12) + startYear);
   return `${year}-${month}-01`;
@@ -22,6 +27,7 @@ const dates = Array.from({ length: new Date().getMonth() * (new Date().getFullYe
 const npmHighImpactVersion = createRequire(import.meta.url)("npm-high-impact/package.json").version;
 
 for (const date of dates) {
+  const existingData: FullJson = JSON.parse(await readFile(new URL("../data/full.json", import.meta.url), "utf8"));
   const work = [];
   const packages = [];
   const errors = [];
@@ -63,6 +69,9 @@ for (const date of dates) {
   }
 
   for (const pkg of packages) {
+    if (excludePackages.includes(pkg.packageName)) {
+      continue;
+    }
     const existing = existingData[`${pkg.packageName}@${pkg.packageVersion}`];
     if (
       !existing ||
