@@ -1,7 +1,9 @@
-import { open, appendFile } from "fs/promises";
-import { Worker, isMainThread, parentPort, workerData } from "node:worker_threads";
 import { checkPackage } from "@arethetypeswrong/core";
+import { appendFileSync } from "fs";
+import { Worker, isMainThread, parentPort, workerData } from "node:worker_threads";
 import type { Blob } from "./types.ts";
+
+const delay = 10;
 
 function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -16,37 +18,38 @@ function postBlob(blob: Blob) {
 }
 
 if (!isMainThread && parentPort) {
-  parentPort.on("message", async ({ packageName, packageVersion, index }) => {
+  parentPort.on("message", async ({ packageName, packageVersion, tarballUrl, prevMessage }) => {
     let tries = 0;
     while (true) {
       try {
-        const analysis = await checkPackage(packageName, packageVersion);
+        const analysis = await checkPackage(packageName, packageVersion, /*host*/ undefined, tarballUrl);
         postBlob({
           kind: "analysis",
           workerId: workerData.workerId,
-          index,
           data: analysis,
         });
+        return;
       } catch (error) {
-        await sleep(1000 * tries ** 2);
+        await sleep(delay * 100 * tries);
         if (tries++ > 3) {
           postBlob({
             kind: "error",
             workerId: workerData.workerId,
-            index,
             packageName,
             packageVersion,
+            tarballUrl,
             message: "" + (error as Error)?.message,
+            prevMessage,
           });
-          break;
+          return;
         }
       }
     }
   });
 }
 
-export function checkPackages(
-  packages: { packageName: string; packageVersion: string }[],
+export default function checkPackages(
+  packages: { packageName: string; packageVersion: string; tarballUrl: string }[],
   outFile: URL,
   workerCount: number
 ) {
@@ -59,21 +62,28 @@ export function checkPackages(
   });
 
   return new Promise<void>(async (resolve, reject) => {
-    const fh = await open(outFile, "w");
     const packagesDonePerWorker = new Array(workerCount).fill(0);
-    const workQueue: { packageName: string; packageVersion: string; index?: number }[] = [...packages];
+    const workQueue: { packageName: string; packageVersion: string; tarballUrl: string; prevMessage?: string }[] = [
+      ...packages,
+    ];
     let finishedWorkers = 0;
     for (const worker of workers) {
       worker.on("message", async (blob: Blob) => {
         const workerIndex = workers.indexOf(worker);
         packagesDonePerWorker[workerIndex]++;
-        await appendFile(fh, JSON.stringify(blob) + "\n");
+        appendFileSync(outFile, JSON.stringify(blob) + "\n");
         if (blob.kind === "error") {
           console.error(`[${workerIndex}] ${blob.packageName}@${blob.packageVersion}: ${blob.message}`);
+          if (blob.prevMessage === blob.message) {
+            console.error(`Package ${blob.packageName}@${blob.packageVersion} failed repeatedly; skipping.`);
+            return;
+          }
+
           workQueue.push({
             packageName: blob.packageName,
             packageVersion: blob.packageVersion,
-            index: blob.index,
+            tarballUrl: blob.tarballUrl,
+            prevMessage: blob.message,
           });
         } else {
           console.log(
@@ -83,12 +93,12 @@ export function checkPackages(
           );
         }
 
+        await sleep(delay);
         if (workQueue.length > 0) {
           const next = workQueue.shift()!;
-          const index = next.index ?? packages.indexOf(next);
-          worker.postMessage({ ...next, index });
+          worker.postMessage(next);
         } else {
-          worker.terminate();
+          await worker.terminate();
           finishedWorkers++;
 
           if (finishedWorkers === workers.length) {
@@ -97,19 +107,20 @@ export function checkPackages(
         }
       });
 
-      worker.once("error", (error) => {
-        workers.forEach((worker) => worker.terminate());
+      worker.once("error", async (error) => {
+        await Promise.all(workers.map((worker) => worker.terminate()));
         reject(error);
       });
 
+      await sleep(delay);
       const nextPackage = workQueue.shift();
       if (nextPackage) {
         worker.postMessage({ ...nextPackage, index: packages.indexOf(nextPackage) });
       }
     }
 
-    process.on("SIGINT", () => {
-      workers.forEach((worker) => worker.terminate());
+    process.on("SIGINT", async () => {
+      await Promise.all(workers.map((worker) => worker.terminate()));
       reject(new Error("SIGINT"));
     });
   });

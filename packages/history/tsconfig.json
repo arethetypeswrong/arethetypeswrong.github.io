@@ -5,8 +5,14 @@
     "noEmit": true,
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
+    "resolveJsonModule": true,
     "types": [
       "node"
-    ]
-  }
+    ],
+  },
+  "references": [
+    {
+      "path": "../core"
+    }
+  ]
 }

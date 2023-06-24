@@ -3,13 +3,19 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "build": "tsc -b",
+    "pregenerate": "npm run build",
     "generate": "tsx scripts/generate.ts"
   },
   "devDependencies": {
     "@arethetypeswrong/core": "0.3.0",
+    "@types/cli-progress": "^3.11.0",
     "@types/node": "^20.3.1",
+    "@types/pacote": "^11.1.5",
     "@types/semver": "^7.5.0",
+    "cli-progress": "^3.12.0",
     "npm-high-impact": "^1.3.0",
+    "pacote": "^15.2.0",
     "semver": "^7.5.3",
     "tsx": "^3.12.7"
   }
