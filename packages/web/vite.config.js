@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import { execSync } from 'child_process';
+import react from '@vitejs/plugin-react'
 
 export default defineConfig(() => ({
   root: './src',
@@ -13,6 +14,7 @@ export default defineConfig(() => ({
   define: {
     COMMIT: JSON.stringify(execSync('git rev-parse HEAD').toString().trim().substring(0, 7)),
   },
+  plugin: [react()],
   optimizeDeps: {
   },
 }));

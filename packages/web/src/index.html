@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="light dark" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>Are The Types Wrong? - Tool for analyzing TypeScript types of npm packages</title>
-    <script type="module" src="./main.ts"></script>
+    <script type="module" src="./render.tsx"></script>
     <link rel="stylesheet" href="./main.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
@@ -14,55 +14,6 @@
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3178C6" />
   </head>
   <body>
-    <main>
-      <div id="header">
-        <h1>Are the types wrong?</h1>
-        <div>
-          <a href="https://github.com/arethetypeswrong/arethetypeswrong.github.io">GitHub / About</a>
-        </div>
-      </div>
-      <form id="form">
-        <p>
-          <label>
-            npm package
-            <input
-              type="text"
-              id="package-spec"
-              autofocus
-              autocapitalize="none"
-              autocorrect="off"
-              autocomplete="off"
-              spellcheck="false"
-            />
-          </label>
-          <button id="check" disabled>Check</button>
-        </p>
-        <p>
-          or <code>npm pack</code> output
-          <input type="file" id="file" accept=".tgz" />
-        </p>
-        <div id="message"></div>
-      </form>
-      <p id="problems"></p>
-      <div><table id="resolutions"></table></div>
-      <div id="details" class="display-none"></div>
-    </main>
-    <footer>
-      <span>
-        core:
-        <a
-          id="core-version"
-          href="https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/packages/core/CHANGELOG.md"
-        ></a>
-      </span>
-      <span>
-        web:
-        <a id="web-version" href="https://github.com/arethetypeswrong/arethetypeswrong.github.io"></a>
-      </span>
-      <span>
-        typescript:
-        <span id="ts-version"></span>
-      </span>
-    </footer>
+    <div id="app"></div>
   </body>
 </html>
