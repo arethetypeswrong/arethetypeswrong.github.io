@@ -1,14 +1,13 @@
 import { versions } from "@arethetypeswrong/core/versions";
-import { mkdir, readFile, writeFile } from "fs/promises";
+import cliProgress from "cli-progress";
+import { mkdir, open, readFile, writeFile } from "fs/promises";
+import { createRequire } from "module";
 import { npmHighImpact } from "npm-high-impact";
 import os from "os";
-import cliProgress from "cli-progress";
 import pacote from "pacote";
 import { major, minor } from "semver";
 import checkPackages from "./checkPackages.ts";
-import reduceBlobs from "./reduceBlobs.ts";
-import type { DatesJson, FullJson } from "./types.ts";
-import { createRequire } from "module";
+import type { Blob, DatesJson, FullJson } from "./types.ts";
 
 const excludePackages = [
   "grunt-ts", // File not found: /node_modules/grunt-ts/defs/tsd.d.ts
@@ -16,18 +15,21 @@ const excludePackages = [
   "aws-cdk-lib", // Takes forever
 ];
 
-// Array of dates from 2023-01-01 until the first of this month
-const startYear = 2023;
-const dates = Array.from({ length: new Date().getMonth() * (new Date().getFullYear() - startYear + 1) + 1 }, (_, i) => {
-  const month = String((i % 12) + 1).padStart(2, "0");
-  const year = String(Math.floor(i / 12) + startYear);
-  return `${year}-${month}-01`;
-});
+// Array of month starts from 2022-01-01 until the first of this month
+const startYear = 2022;
+const dates = Array.from(
+  { length: 12 * (new Date().getFullYear() - startYear) + new Date().getMonth() + 1 },
+  (_, i) => {
+    const month = String((i % 12) + 1).padStart(2, "0");
+    const year = String(Math.floor(i / 12) + startYear);
+    return `${year}-${month}-01`;
+  }
+);
 
 const npmHighImpactVersion = createRequire(import.meta.url)("npm-high-impact/package.json").version;
-
+const fullJsonFileName = new URL("../data/full.json", import.meta.url);
 for (const date of dates) {
-  const existingData: FullJson = JSON.parse(await readFile(new URL("../data/full.json", import.meta.url), "utf8"));
+  const existingData: FullJson = JSON.parse(await readFile(fullJsonFileName, "utf8"));
   const work = [];
   const packages = [];
   const errors = [];
@@ -87,9 +89,6 @@ for (const date of dates) {
       .map(({ packageName, message }) => `  - ${packageName}: ${message}`)
       .join(`\n`)}`
   );
-  if (errors.length / packages.length > 0.01) {
-    throw new Error(`Too many errors for ${date}. Abandon ship.`);
-  }
 
   const tmpFileName = new URL(`../tmp/${date.replace(/-/g, "")}.json`, import.meta.url);
   const workerCount = Math.min(os.cpus().length - 1 || 1, 6);
@@ -98,5 +97,34 @@ for (const date of dates) {
   await checkPackages(work, tmpFileName, workerCount);
 
   console.log(`Reducing ${tmpFileName} to full.json\n\n`);
-  await reduceBlobs(tmpFileName);
+  await reduceBlobs(tmpFileName, existingData);
+}
+
+async function reduceBlobs(inFile: URL, existingData: FullJson) {
+  const fh = await open(inFile, "r");
+  for await (const line of fh.readLines()) {
+    if (!line) continue;
+    try {
+      const blob: Blob = JSON.parse(line);
+      if (blob.kind === "analysis") {
+        existingData[`${blob.data.packageName}@${blob.data.packageVersion}`] = {
+          coreVersion: versions.core,
+          rank: npmHighImpact.indexOf(blob.data.packageName),
+          analysis: blob.data,
+        };
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }
+  await fh.close();
+  await writeFile(
+    fullJsonFileName,
+    JSON.stringify(existingData, (key, value) => {
+      if (key === "trace") {
+        return [];
+      }
+      return value;
+    })
+  );
 }

@@ -109,6 +109,8 @@ export const problemKindInfo: Record<ProblemKind, ProblemKindInfo> = {
   },
 };
 
+export const allProblemKinds = Object.keys(problemKindInfo) as ProblemKind[];
+
 export interface ProblemFilter {
   kind?: ProblemKind;
   entrypoint?: string;

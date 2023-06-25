@@ -5,7 +5,8 @@
   "scripts": {
     "build": "tsc -b",
     "pregenerate": "npm run build",
-    "generate": "tsx scripts/generate.ts"
+    "generate": "tsx scripts/generateFull.ts",
+    "reduce": "tsx scripts/reduceFull.ts"
   },
   "devDependencies": {
     "@arethetypeswrong/core": "0.3.0",
