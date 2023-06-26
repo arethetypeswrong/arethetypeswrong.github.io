@@ -46,8 +46,8 @@ program
 particularly ESM-related module resolution issues.`
   )
   .argument(
-    "<file-or-directory>",
-    "the packed .tgz or directory containing package.json; required unless --from-npm is set"
+    "[file-directory-or-package-spec]",
+    "the packed .tgz, or directory containing package.json with --pack, or package spec with --from-npm"
   )
   .option("-P, --pack", "run `npm pack` in the specified directory and delete the resulting .tgz file afterwards")
   .option("-p, --from-npm", "read from the npm registry instead of a local file")
@@ -60,7 +60,7 @@ particularly ESM-related module resolution issues.`
   .option("--emoji, --no-emoji", "whether to use any emojis")
   .option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)")
   .option("--config-path <path>", "path to config file (default: ./.attw.json)")
-  .action(async (fileOrDirectory: string) => {
+  .action(async (fileOrDirectory = ".") => {
     const opts = program.opts<Opts>();
     await readConfig(program, opts.configPath);
     opts.ignoreRules = opts.ignoreRules?.map(
