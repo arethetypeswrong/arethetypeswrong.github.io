@@ -1,5 +1,11 @@
 # @arethetypeswrong/cli
 
+## 0.4.0
+
+### Minor Changes
+
+- 12014d8: Add --pack flag to support running `npm pack` in a directory and deleting the file afterwards
+
 ## 0.3.0
 
 ### Patch Changes
