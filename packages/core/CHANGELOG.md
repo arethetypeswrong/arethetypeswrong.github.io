@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.4.1
+
+### Patch Changes
+
+- 27ad5a7: Expose parsePackageSpec in @arethetypeswrong/core/utils
+
 ## 0.3.0
 
 ### Minor Changes
