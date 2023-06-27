@@ -10,7 +10,7 @@ import { readFile, stat, unlink } from "fs/promises";
 import { createRequire } from "module";
 import { FetchError } from "node-fetch";
 import path from "path";
-import readline from "readline/promises";
+import readline from "readline";
 import { problemFlags } from "./problemUtils.js";
 import { readConfig } from "./readConfig.js";
 import * as render from "./render/index.js";
@@ -118,7 +118,9 @@ particularly ESM-related module resolution issues.`
               );
             }
             const rl = readline.createInterface(process.stdin, process.stdout);
-            const answer = await rl.question(`Run \`npm pack\`? (Pass -P/--pack to skip) (Y/n) `);
+            const answer = await new Promise<string>((resolve) => {
+              rl.question(`Run \`npm pack\`? (Pass -P/--pack to skip) (Y/n) `, resolve);
+            });
             rl.close();
             if (answer.trim() && !answer.trim().toLowerCase().startsWith("y")) {
               process.exit(1);
