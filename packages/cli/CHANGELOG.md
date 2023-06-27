@@ -1,5 +1,11 @@
 # @arethetypeswrong/cli
 
+## 0.4.2
+
+### Patch Changes
+
+- f35407a: Fix crash on Node <v17
+
 ## 0.4.1
 
 ### Patch Changes
