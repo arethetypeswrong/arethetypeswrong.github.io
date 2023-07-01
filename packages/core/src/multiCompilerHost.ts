@@ -33,15 +33,8 @@ export interface MultiCompilerHost {
 }
 
 export function createMultiCompilerHost(fs: Package): MultiCompilerHost {
-  const useCaseSensitiveFileNames = () => false;
   const getCanonicalFileName = ts.createGetCanonicalFileName(false);
-  const getCurrentDirectory = () => "/";
-  const getNewLine = () => "\n";
-  const getDefaultLibFileName = () => "/node_modules/typescript/lib/lib.d.ts";
   const toPath = (fileName: string) => ts.toPath(fileName, "/", getCanonicalFileName);
-  const writeFile = () => {
-    throw new Error("Not implemented");
-  };
   const languageVersion = ts.ScriptTarget.Latest;
   const traceCollector = createTraceCollector();
   const compilerOptions: Record<ResolutionOption, ts.CompilerOptions> = {
@@ -231,12 +224,14 @@ export function createMultiCompilerHost(fs: Package): MultiCompilerHost {
         sourceFileCache.set(path, sourceFile);
         return sourceFile;
       },
-      getDefaultLibFileName,
-      getCurrentDirectory,
-      writeFile,
+      getDefaultLibFileName: () => "/node_modules/typescript/lib/lib.d.ts",
+      getCurrentDirectory: () => "/",
+      writeFile: () => {
+        throw new Error("Not implemented");
+      },
       getCanonicalFileName,
-      useCaseSensitiveFileNames,
-      getNewLine,
+      useCaseSensitiveFileNames: () => false,
+      getNewLine: () => "\n",
       trace: traceCollector.trace,
       resolveModuleNameLiterals(moduleLiterals, containingFile, _redirectedReference, options, containingSourceFile) {
         return moduleLiterals.map(
