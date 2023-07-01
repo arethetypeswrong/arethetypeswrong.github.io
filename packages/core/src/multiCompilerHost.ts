@@ -9,11 +9,6 @@ export interface ResolveModuleNameResult {
 
 export interface MultiCompilerHost {
   getSourceFile(fileName: string, moduleResolution?: ResolutionOption): ts.SourceFile | undefined;
-  getImpliedNodeFormatForFile(
-    fileName: string,
-    moduleResolution: ResolutionOption
-  ): ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined;
-  getPackageScopeForPath(fileName: string): ts.PackageJsonInfo | undefined;
   getModuleKindForFile(fileName: string, moduleResolution: "node16"): ModuleKind;
   getModuleKindForFile(fileName: string, moduleResolution: ResolutionOption): ModuleKind | undefined;
   resolveModuleName(
@@ -90,8 +85,6 @@ export function createMultiCompilerHost(fs: Package): MultiCompilerHost {
 
   return {
     getSourceFile,
-    getImpliedNodeFormatForFile,
-    getPackageScopeForPath,
     getModuleKindForFile,
     resolveModuleName,
     createProgram,
