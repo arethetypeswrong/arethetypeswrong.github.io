@@ -1,11 +1,11 @@
 import ts from "typescript";
-import type { MultiCompilerHost } from "../multiCompilerHost.js";
+import type { CompilerHosts } from "../multiCompilerHost.js";
 import type { EntrypointInfo, FileProblem } from "../types.js";
 import { isDefined } from "../utils.js";
 
 export function getFileProblems(
   entrypointResolutions: Record<string, EntrypointInfo>,
-  host: MultiCompilerHost
+  hosts: CompilerHosts
 ): FileProblem[] {
   const problems: FileProblem[] = [];
   const visibleFiles = new Set(
@@ -18,7 +18,7 @@ export function getFileProblems(
 
   for (const fileName of visibleFiles) {
     if (ts.hasJSFileExtension(fileName)) {
-      const sourceFile = host.getSourceFile(fileName, "node16")!;
+      const sourceFile = hosts.node16.getSourceFile(fileName)!;
       if (
         !sourceFile.externalModuleIndicator &&
         sourceFile.commonJsModuleIndicator &&
