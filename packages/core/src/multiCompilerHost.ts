@@ -95,31 +95,6 @@ export function createMultiCompilerHost(fs: Package): MultiCompilerHost {
     return compilerHosts[moduleResolution].getSourceFile(fileName, languageVersion);
   }
 
-  function getImpliedNodeFormatForFile(
-    fileName: string,
-    moduleResolution: ResolutionOption
-  ): ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined {
-    return ts.getImpliedNodeFormatForFile(
-      toPath(fileName),
-      moduleResolutionCaches[moduleResolution][0].getPackageJsonInfoCache(),
-      compilerHosts[moduleResolution],
-      compilerOptions[moduleResolution]
-    );
-  }
-
-  function getPackageScopeForPath(fileName: string): ts.PackageJsonInfo | undefined {
-    // Which compiler options get used here is irrelevant.
-    // Use the node16 cache because package.json it should be a hit.
-    return ts.getPackageScopeForPath(
-      fileName,
-      ts.getTemporaryModuleResolutionState(
-        moduleResolutionCaches.node16[0].getPackageJsonInfoCache(),
-        compilerHosts.node16,
-        compilerOptions.node16
-      )
-    );
-  }
-
   function getModuleKindForFile(fileName: string, moduleResolution: "node16"): ModuleKind;
   function getModuleKindForFile(fileName: string, moduleResolution: ResolutionOption): ModuleKind | undefined;
   function getModuleKindForFile(fileName: string, moduleResolution: ResolutionOption): ModuleKind | undefined {
@@ -239,6 +214,31 @@ export function createMultiCompilerHost(fs: Package): MultiCompilerHost {
         );
       },
     };
+  }
+
+  function getImpliedNodeFormatForFile(
+    fileName: string,
+    moduleResolution: ResolutionOption
+  ): ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined {
+    return ts.getImpliedNodeFormatForFile(
+      toPath(fileName),
+      moduleResolutionCaches[moduleResolution][0].getPackageJsonInfoCache(),
+      compilerHosts[moduleResolution],
+      compilerOptions[moduleResolution]
+    );
+  }
+
+  function getPackageScopeForPath(fileName: string): ts.PackageJsonInfo | undefined {
+    // Which compiler options get used here is irrelevant.
+    // Use the node16 cache because package.json it should be a hit.
+    return ts.getPackageScopeForPath(
+      fileName,
+      ts.getTemporaryModuleResolutionState(
+        moduleResolutionCaches.node16[0].getPackageJsonInfoCache(),
+        compilerHosts.node16,
+        compilerOptions.node16
+      )
+    );
   }
 
   function createTraceCollector() {
