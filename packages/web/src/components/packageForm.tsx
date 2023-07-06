@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import type { ResultMessage } from "../../worker/worker";
 
+const workerURL = new URL("../../worker/worker.ts", import.meta.url);
+
 export default function PackageForm() {
   const [packageName, setPackageName] = useState("");
   const [worker, setWorker] = useState<Worker | null>(null);
 
   useEffect(() => {
     // Create the worker once the component mounts
-    const worker = new Worker(new URL("../worker/worker.ts", import.meta.url), { type: "module" });
+    const worker = new Worker(workerURL, { type: "module" });
 
     // setup the processing callback
     worker.onmessage = async (event: MessageEvent<ResultMessage>) => {
@@ -19,13 +21,13 @@ export default function PackageForm() {
       console.error(event);
     };
 
-    console.log("worker created", worker);
-
     // store the worker instance
     setWorker(worker);
 
     // terminate the worker once the component unmounts
-    return worker.terminate();
+    return () => {
+      worker.terminate();
+    };
   }, [setWorker]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
