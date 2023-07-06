@@ -1,11 +1,13 @@
 import { render } from "react-dom";
+import PackageForm from "./components/packageForm";
 
 const app = document.getElementById("app");
 
 function App() {
   return (
     <div>
-      <h1>Hello, world!</h1>
+      <h1>Are the types wrong?</h1>
+      <PackageForm />
     </div>
   );
 }
