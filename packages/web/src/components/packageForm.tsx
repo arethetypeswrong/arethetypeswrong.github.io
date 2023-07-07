@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import type { ResultMessage } from "../../worker/worker";
+import { parsePackageSpec, type ParsedPackageSpec } from "@arethetypeswrong/core/utils";
+import type { Failable } from "@arethetypeswrong/core";
 
 const workerURL = new URL("../../worker/worker.ts", import.meta.url);
 
 export default function PackageForm() {
   const [packageName, setPackageName] = useState("");
+  const [parsedPackage, setParsedPackage] = useState<Failable<ParsedPackageSpec>>(parsePackageSpec(""));
   const [worker, setWorker] = useState<Worker | null>(null);
 
   useEffect(() => {
@@ -30,18 +33,27 @@ export default function PackageForm() {
     };
   }, [setWorker]);
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPackageName(e.target.value);
+    setParsedPackage(parsePackageSpec(e.target.value));
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    if (!worker) {
-      // component mounted but worker not ready yet
-      console.error("worker not ready yet");
+    if (worker == null) {
+      // Unlikely the user will submit before the worker is ready, but just in case...
       return;
     }
+
+    if (parsedPackage.status == "error") {
+      // user needs to fix the package name before we can check it
+      return;
+    }
+
     worker.postMessage({
       kind: "check-package",
-      packageName: "lucid",
-      version: "2.21.0",
+      packageName: parsedPackage.data.packageName,
+      version: parsedPackage.data.version,
     });
   };
 
@@ -49,10 +61,22 @@ export default function PackageForm() {
     <div>
       <h1>Package Form</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name</label>
-        <input value={packageName} onChange={(e) => setPackageName(e.target.value)} type="text" id="name" />
-        <button type="submit">Check Package</button>
+        <label htmlFor="name">
+          Package Name
+          <input value={packageName} onChange={handleChange} type="text" id="name" />
+        </label>
+        <ErrorMessage {...parsedPackage} />
+        <button type="submit" disabled={worker === null || parsedPackage.status === "error"}>
+          Check Package
+        </button>
       </form>
     </div>
   );
+}
+
+function ErrorMessage(parsedPackage: Failable<ParsedPackageSpec>) {
+  if (parsedPackage.status == "error") {
+    return <p style={{ color: "red" }}>{parsedPackage.error}</p>;
+  }
+  return null;
 }
