@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.5.0
+
+### Minor Changes
+
+- 8b098c0: Changed `checkPackage` signature to accept a package FS as created by new `createPackageFromNpm`, `createPackageFromTarballUrl`, or `createPackageFromTarballData` functions. `createPackageFromNpm` resolves version ranges.
+
 ## 0.4.1
 
 ### Patch Changes
