@@ -19,13 +19,6 @@ worker.onmessage = async (event: MessageEvent<ResultMessage>) => {
     const packageSpec = `${state.packageInfo.parsed.name}${
       state.packageInfo.info?.version ? `@${state.packageInfo.info.version}` : ""
     }`;
-    updateState((state) => {
-      state.packageInfo.parsed = {
-        name: event.data.data.result.packageName,
-        version: event.data.data.result.packageVersion,
-        versionKind: "exact",
-      };
-    });
     params.set("p", packageSpec);
     history.replaceState(null, "", `?${params}`);
   }
