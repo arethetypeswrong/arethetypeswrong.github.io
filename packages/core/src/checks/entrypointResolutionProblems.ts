@@ -1,11 +1,11 @@
 import ts from "typescript";
 import type { EntrypointInfo, EntrypointResolutionProblem } from "../types.js";
-import type { MultiCompilerHost } from "../multiCompilerHost.js";
+import type { CompilerHosts } from "../multiCompilerHost.js";
 import { resolvedThroughFallback, visitResolutions } from "../utils.js";
 
 export function getEntrypointResolutionProblems(
   entrypointResolutions: Record<string, EntrypointInfo>,
-  host: MultiCompilerHost
+  hosts: CompilerHosts
 ): EntrypointResolutionProblem[] {
   const problems: EntrypointResolutionProblem[] = [];
   visitResolutions(entrypointResolutions, (result, entrypoint) => {
@@ -71,12 +71,12 @@ export function getEntrypointResolutionProblems(
     }
 
     if (resolutionKind === "node16-esm" && resolution && implementationResolution) {
-      const typesSourceFile = host.getSourceFile(resolution.fileName, "node16");
+      const typesSourceFile = hosts.node16.getSourceFile(resolution.fileName);
       if (typesSourceFile) {
         ts.bindSourceFile(typesSourceFile, { target: ts.ScriptTarget.Latest, allowJs: true, checkJs: true });
       }
       const typesExports = typesSourceFile?.symbol?.exports;
-      const jsSourceFile = typesExports && host.getSourceFile(implementationResolution.fileName, "node16");
+      const jsSourceFile = typesExports && hosts.node16.getSourceFile(implementationResolution.fileName);
       if (jsSourceFile) {
         ts.bindSourceFile(jsSourceFile, { target: ts.ScriptTarget.Latest, allowJs: true, checkJs: true });
       }

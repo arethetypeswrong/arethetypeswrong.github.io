@@ -3,7 +3,7 @@ import { getEntrypointResolutionProblems } from "./checks/entrypointResolutionPr
 import { getFileProblems } from "./checks/fileProblems.js";
 import { getResolutionBasedFileProblems } from "./checks/resolutionBasedFileProblems.js";
 import type { Package } from "./createPackage.js";
-import { createMultiCompilerHost, type MultiCompilerHost } from "./multiCompilerHost.js";
+import { createCompilerHosts, type CompilerHosts, CompilerHostWrapper } from "./multiCompilerHost.js";
 import type { CheckResult, EntrypointInfo, EntrypointResolutionAnalysis, Resolution, ResolutionKind } from "./types.js";
 
 export async function checkPackage(pkg: Package): Promise<CheckResult> {
@@ -20,11 +20,11 @@ export async function checkPackage(pkg: Package): Promise<CheckResult> {
     return { packageName, packageVersion, types };
   }
 
-  const host = createMultiCompilerHost(pkg);
-  const entrypointResolutions = getEntrypointInfo(packageName, pkg, host);
-  const entrypointResolutionProblems = getEntrypointResolutionProblems(entrypointResolutions, host);
-  const resolutionBasedFileProblems = getResolutionBasedFileProblems(packageName, entrypointResolutions, host);
-  const fileProblems = getFileProblems(entrypointResolutions, host);
+  const hosts = createCompilerHosts(pkg);
+  const entrypointResolutions = getEntrypointInfo(packageName, pkg, hosts);
+  const entrypointResolutionProblems = getEntrypointResolutionProblems(entrypointResolutions, hosts);
+  const resolutionBasedFileProblems = getResolutionBasedFileProblems(packageName, entrypointResolutions, hosts);
+  const fileProblems = getFileProblems(entrypointResolutions, hosts);
 
   return {
     packageName,
@@ -62,7 +62,7 @@ function getProxyDirectories(rootDir: string, fs: Package) {
     .filter((f) => f !== "./");
 }
 
-function getEntrypointInfo(packageName: string, fs: Package, host: MultiCompilerHost): Record<string, EntrypointInfo> {
+function getEntrypointInfo(packageName: string, fs: Package, hosts: CompilerHosts): Record<string, EntrypointInfo> {
   const packageJson = JSON.parse(fs.readFile(`/node_modules/${packageName}/package.json`));
   const subpaths = getSubpaths(packageJson.exports);
   const entrypoints = subpaths.length ? subpaths : ["."];
@@ -72,10 +72,10 @@ function getEntrypointInfo(packageName: string, fs: Package, host: MultiCompiler
   const result: Record<string, EntrypointInfo> = {};
   for (const entrypoint of entrypoints) {
     const resolutions: Record<ResolutionKind, EntrypointResolutionAnalysis> = {
-      node10: getEntrypointResolution(packageName, "node10", entrypoint, host),
-      "node16-cjs": getEntrypointResolution(packageName, "node16-cjs", entrypoint, host),
-      "node16-esm": getEntrypointResolution(packageName, "node16-esm", entrypoint, host),
-      bundler: getEntrypointResolution(packageName, "bundler", entrypoint, host),
+      node10: getEntrypointResolution(packageName, hosts.node10, "node10", entrypoint),
+      "node16-cjs": getEntrypointResolution(packageName, hosts.node16, "node16-cjs", entrypoint),
+      "node16-esm": getEntrypointResolution(packageName, hosts.node16, "node16-esm", entrypoint),
+      bundler: getEntrypointResolution(packageName, hosts.bundler, "bundler", entrypoint),
     };
     result[entrypoint] = {
       subpath: entrypoint,
@@ -89,16 +89,15 @@ function getEntrypointInfo(packageName: string, fs: Package, host: MultiCompiler
 
 function getEntrypointResolution(
   packageName: string,
+  host: CompilerHostWrapper,
   resolutionKind: ResolutionKind,
-  entrypoint: string,
-  host: MultiCompilerHost
+  entrypoint: string
 ): EntrypointResolutionAnalysis {
   if (entrypoint.includes("*")) {
     return { name: entrypoint, resolutionKind, isWildcard: true };
   }
   const moduleSpecifier = packageName + entrypoint.substring(1); // remove leading . before slash
   const importingFileName = resolutionKind === "node16-esm" ? "/index.mts" : "/index.ts";
-  const moduleResolution = resolutionKind === "node10" ? "node10" : resolutionKind === "bundler" ? "bundler" : "node16";
   const resolutionMode = resolutionKind === "node16-esm" ? ts.ModuleKind.ESNext : ts.ModuleKind.CommonJS;
 
   const resolution = tryResolve();
@@ -107,7 +106,7 @@ function getEntrypointResolution(
 
   const files = resolution
     ? host
-        .createProgram(moduleResolution, [resolution.fileName])
+        .createProgram([resolution.fileName])
         .getSourceFiles()
         .map((f) => f.fileName)
     : undefined;
@@ -124,7 +123,6 @@ function getEntrypointResolution(
     const { resolution, trace } = host.resolveModuleName(
       moduleSpecifier,
       importingFileName,
-      moduleResolution,
       resolutionMode,
       noDtsResolution
     );
@@ -135,7 +133,7 @@ function getEntrypointResolution(
 
     return {
       fileName,
-      moduleKind: host.getModuleKindForFile(fileName, moduleResolution),
+      moduleKind: host.getModuleKindForFile(fileName),
       isJson: resolution.resolvedModule.extension === ts.Extension.Json,
       isTypeScript: ts.hasTSFileExtension(resolution.resolvedModule.resolvedFileName),
       trace,

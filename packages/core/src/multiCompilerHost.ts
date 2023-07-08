@@ -1,5 +1,5 @@
 import ts from "typescript";
-import type { ModuleKind, ResolutionOption } from "./types.js";
+import type { ModuleKind } from "./types.js";
 import type { Package } from "./createPackage.js";
 
 export interface ResolveModuleNameResult {
@@ -7,137 +7,57 @@ export interface ResolveModuleNameResult {
   trace: string[];
 }
 
-export interface MultiCompilerHost {
-  getSourceFile(fileName: string, moduleResolution?: ResolutionOption): ts.SourceFile | undefined;
-  getImpliedNodeFormatForFile(
-    fileName: string,
-    moduleResolution: ResolutionOption
-  ): ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined;
-  getPackageScopeForPath(fileName: string): ts.PackageJsonInfo | undefined;
-  getModuleKindForFile(fileName: string, moduleResolution: "node16"): ModuleKind;
-  getModuleKindForFile(fileName: string, moduleResolution: ResolutionOption): ModuleKind | undefined;
-  resolveModuleName(
-    moduleName: string,
-    containingFile: string,
-    moduleResolution: ResolutionOption,
-    resolutionMode?: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS,
-    noDtsResolution?: boolean
-  ): ResolveModuleNameResult;
-  getTrace(
-    moduleResolution: ResolutionOption,
-    fromFileName: string,
-    moduleName: string,
-    resolutionMode: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined
-  ): string[] | undefined;
-  createProgram(moduleResolution: ResolutionOption, rootNames: string[]): ts.Program;
+export interface CompilerHosts {
+  node10: CompilerHostWrapper;
+  node16: CompilerHostWrapper;
+  bundler: CompilerHostWrapper;
 }
 
-export function createMultiCompilerHost(fs: Package): MultiCompilerHost {
-  const useCaseSensitiveFileNames = () => false;
-  const getCanonicalFileName = ts.createGetCanonicalFileName(false);
-  const getCurrentDirectory = () => "/";
-  const getNewLine = () => "\n";
-  const getDefaultLibFileName = () => "/node_modules/typescript/lib/lib.d.ts";
-  const toPath = (fileName: string) => ts.toPath(fileName, "/", getCanonicalFileName);
-  const writeFile = () => {
-    throw new Error("Not implemented");
-  };
-  const languageVersion = ts.ScriptTarget.Latest;
-  const traceCollector = createTraceCollector();
-  const compilerOptions: Record<ResolutionOption, ts.CompilerOptions> = {
-    node10: {
-      moduleResolution: ts.ModuleResolutionKind.NodeJs,
-      module: ts.ModuleKind.CommonJS,
-      target: ts.ScriptTarget.Latest,
-      resolveJsonModule: true,
-      traceResolution: true,
-    },
-    node16: {
-      moduleResolution: ts.ModuleResolutionKind.Node16,
-      module: ts.ModuleKind.Node16,
-      target: ts.ScriptTarget.Latest,
-      resolveJsonModule: true,
-      traceResolution: true,
-    },
-    bundler: {
-      moduleResolution: ts.ModuleResolutionKind.Bundler,
-      module: ts.ModuleKind.ESNext,
-      target: ts.ScriptTarget.Latest,
-      resolveJsonModule: true,
-      traceResolution: true,
-    },
-  };
-  const moduleResolutionCaches: Record<
-    ResolutionOption,
-    [normal: ts.ModuleResolutionCache, noDtsResolution: ts.ModuleResolutionCache]
-  > = {
-    node10: [
-      ts.createModuleResolutionCache("/", getCanonicalFileName, compilerOptions.node10),
-      ts.createModuleResolutionCache("/", getCanonicalFileName, compilerOptions.node10),
-    ],
-    node16: [
-      ts.createModuleResolutionCache("/", getCanonicalFileName, compilerOptions.node16),
-      ts.createModuleResolutionCache("/", getCanonicalFileName, compilerOptions.node16),
-    ],
-    bundler: [
-      ts.createModuleResolutionCache("/", getCanonicalFileName, compilerOptions.bundler),
-      ts.createModuleResolutionCache("/", getCanonicalFileName, compilerOptions.bundler),
-    ],
-  };
-  const compilerHosts: Record<ResolutionOption, ts.CompilerHost> = {
-    node10: createCompilerHost("node10"),
-    node16: createCompilerHost("node16"),
-    bundler: createCompilerHost("bundler"),
-  };
-  const traceCache: Record<ResolutionOption, Record</*FromFileName*/ string, Record</*Key*/ string, string[]>>> = {
-    node10: {},
-    node16: {},
-    bundler: {},
-  };
-
+export function createCompilerHosts(fs: Package): CompilerHosts {
   return {
-    getSourceFile,
-    getImpliedNodeFormatForFile,
-    getPackageScopeForPath,
-    getModuleKindForFile,
-    resolveModuleName,
-    createProgram,
-    getTrace,
+    node10: new CompilerHostWrapper(fs, ts.ModuleResolutionKind.Node10, ts.ModuleKind.CommonJS),
+    node16: new CompilerHostWrapper(fs, ts.ModuleResolutionKind.Node16, ts.ModuleKind.Node16),
+    bundler: new CompilerHostWrapper(fs, ts.ModuleResolutionKind.Bundler, ts.ModuleKind.ESNext),
   };
+}
 
-  function getSourceFile(fileName: string, moduleResolution: ResolutionOption = "bundler"): ts.SourceFile | undefined {
-    return compilerHosts[moduleResolution].getSourceFile(fileName, languageVersion);
-  }
+const getCanonicalFileName = ts.createGetCanonicalFileName(false);
+const toPath = (fileName: string) => ts.toPath(fileName, "/", getCanonicalFileName);
 
-  function getImpliedNodeFormatForFile(
-    fileName: string,
-    moduleResolution: ResolutionOption
-  ): ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined {
-    return ts.getImpliedNodeFormatForFile(
-      toPath(fileName),
-      moduleResolutionCaches[moduleResolution][0].getPackageJsonInfoCache(),
-      compilerHosts[moduleResolution],
-      compilerOptions[moduleResolution]
+export class CompilerHostWrapper {
+  private compilerHost: ts.CompilerHost;
+  private compilerOptions: ts.CompilerOptions;
+  private normalModuleResolutionCache: ts.ModuleResolutionCache;
+  private noDtsResolutionModuleResolutionCache: ts.ModuleResolutionCache;
+
+  private traceCache: Record</*FromFileName*/ string, Record</*Key*/ string, string[]>> = {};
+  private traceCollector: TraceCollector = new TraceCollector();
+
+  private languageVersion = ts.ScriptTarget.Latest;
+
+  constructor(fs: Package, moduleResolution: ts.ModuleResolutionKind, moduleKind: ts.ModuleKind) {
+    this.compilerOptions = {
+      moduleResolution,
+      module: moduleKind,
+      target: ts.ScriptTarget.Latest,
+      resolveJsonModule: true,
+      traceResolution: true,
+    };
+    this.normalModuleResolutionCache = ts.createModuleResolutionCache("/", getCanonicalFileName, this.compilerOptions);
+    this.noDtsResolutionModuleResolutionCache = ts.createModuleResolutionCache(
+      "/",
+      getCanonicalFileName,
+      this.compilerOptions
     );
+    this.compilerHost = this.createCompilerHost(fs);
   }
 
-  function getPackageScopeForPath(fileName: string): ts.PackageJsonInfo | undefined {
-    // Which compiler options get used here is irrelevant.
-    // Use the node16 cache because package.json it should be a hit.
-    return ts.getPackageScopeForPath(
-      fileName,
-      ts.getTemporaryModuleResolutionState(
-        moduleResolutionCaches.node16[0].getPackageJsonInfoCache(),
-        compilerHosts.node16,
-        compilerOptions.node16
-      )
-    );
+  getSourceFile(fileName: string): ts.SourceFile | undefined {
+    return this.compilerHost.getSourceFile(fileName, this.languageVersion);
   }
 
-  function getModuleKindForFile(fileName: string, moduleResolution: "node16"): ModuleKind;
-  function getModuleKindForFile(fileName: string, moduleResolution: ResolutionOption): ModuleKind | undefined;
-  function getModuleKindForFile(fileName: string, moduleResolution: ResolutionOption): ModuleKind | undefined {
-    const kind = getImpliedNodeFormatForFile(fileName, moduleResolution);
+  getModuleKindForFile(fileName: string): ModuleKind | undefined {
+    const kind = this.getImpliedNodeFormatForFile(fileName);
     if (kind) {
       const extension = ts.getAnyExtensionFromPath(fileName);
       const isExtension =
@@ -147,7 +67,7 @@ export function createMultiCompilerHost(fs: Package): MultiCompilerHost {
         extension === ts.Extension.Mjs ||
         extension === ts.Extension.Mts ||
         extension === ts.Extension.Dmts;
-      const reasonPackageJsonInfo = isExtension ? undefined : getPackageScopeForPath(fileName);
+      const reasonPackageJsonInfo = isExtension ? undefined : this.getPackageScopeForPath(fileName);
       const reasonFileName = isExtension
         ? fileName
         : reasonPackageJsonInfo
@@ -162,28 +82,26 @@ export function createMultiCompilerHost(fs: Package): MultiCompilerHost {
     }
   }
 
-  function resolveModuleName(
+  resolveModuleName(
     moduleName: string,
     containingFile: string,
-    moduleResolution: ResolutionOption,
     resolutionMode?: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS,
     noDtsResolution?: boolean
   ): ResolveModuleNameResult {
-    traceCollector.clear();
-    const options = compilerOptions[moduleResolution];
+    this.traceCollector.clear();
     const resolution = ts.resolveModuleName(
       moduleName,
       containingFile,
-      noDtsResolution ? { ...options, noDtsResolution } : options,
-      compilerHosts[moduleResolution],
-      moduleResolutionCaches[moduleResolution][+!!noDtsResolution],
+      noDtsResolution ? { ...this.compilerOptions, noDtsResolution } : this.compilerOptions,
+      this.compilerHost,
+      noDtsResolution ? this.noDtsResolutionModuleResolutionCache : this.normalModuleResolutionCache,
       /*redirectedReference*/ undefined,
       resolutionMode
     );
-    const trace = traceCollector.read();
+    const trace = this.traceCollector.read();
     const moduleKey = `${resolutionMode ?? 1}:${moduleName}`;
-    if (!traceCache[moduleResolution][containingFile]?.[moduleKey]) {
-      (traceCache[moduleResolution][containingFile] ??= {})[moduleKey] = trace;
+    if (!this.traceCache[containingFile]?.[moduleKey]) {
+      (this.traceCache[containingFile] ??= {})[moduleKey] = trace;
     }
     return {
       resolution,
@@ -191,24 +109,23 @@ export function createMultiCompilerHost(fs: Package): MultiCompilerHost {
     };
   }
 
-  function getTrace(
-    moduleResolution: ResolutionOption,
+  getTrace(
     fromFileName: string,
     moduleSpecifier: string,
-    resolutionMode: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS
+    resolutionMode: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined
   ): string[] | undefined {
-    return traceCache[moduleResolution][fromFileName]?.[`${resolutionMode ?? 1}:${moduleSpecifier}`];
+    return this.traceCache[fromFileName]?.[`${resolutionMode ?? 1}:${moduleSpecifier}`];
   }
 
-  function createProgram(moduleResolution: ResolutionOption, rootNames: string[]): ts.Program {
+  createProgram(rootNames: string[]): ts.Program {
     return ts.createProgram({
       rootNames,
-      options: compilerOptions[moduleResolution],
-      host: compilerHosts[moduleResolution],
+      options: this.compilerOptions,
+      host: this.compilerHost,
     });
   }
 
-  function createCompilerHost(moduleResolution: ResolutionOption): ts.CompilerHost {
+  private createCompilerHost(fs: Package): ts.CompilerHost {
     const sourceFileCache = new Map<ts.Path, ts.SourceFile>();
     return {
       ...fs,
@@ -223,28 +140,35 @@ export function createMultiCompilerHost(fs: Package): MultiCompilerHost {
           fileName,
           content,
           {
-            languageVersion,
-            impliedNodeFormat: getImpliedNodeFormatForFile(fileName, moduleResolution),
+            languageVersion: this.languageVersion,
+            impliedNodeFormat: this.getImpliedNodeFormatForFile(fileName),
           },
           /*setParentNodes*/ true
         );
         sourceFileCache.set(path, sourceFile);
         return sourceFile;
       },
-      getDefaultLibFileName,
-      getCurrentDirectory,
-      writeFile,
+      getDefaultLibFileName: () => "/node_modules/typescript/lib/lib.d.ts",
+      getCurrentDirectory: () => "/",
+      writeFile: () => {
+        throw new Error("Not implemented");
+      },
       getCanonicalFileName,
-      useCaseSensitiveFileNames,
-      getNewLine,
-      trace: traceCollector.trace,
-      resolveModuleNameLiterals(moduleLiterals, containingFile, _redirectedReference, options, containingSourceFile) {
+      useCaseSensitiveFileNames: () => false,
+      getNewLine: () => "\n",
+      trace: this.traceCollector.trace,
+      resolveModuleNameLiterals: (
+        moduleLiterals,
+        containingFile,
+        _redirectedReference,
+        options,
+        containingSourceFile
+      ) => {
         return moduleLiterals.map(
           (literal) =>
-            resolveModuleName(
+            this.resolveModuleName(
               literal.text,
               containingFile,
-              moduleResolution,
               ts.getModeForUsageLocation(containingSourceFile, literal),
               options.noDtsResolution
             ).resolution
@@ -253,19 +177,40 @@ export function createMultiCompilerHost(fs: Package): MultiCompilerHost {
     };
   }
 
-  function createTraceCollector() {
-    const traces: string[] = [];
-    return {
-      trace: (message: string) => traces.push(message),
-      read: () => {
-        const result = traces.slice();
-        clear();
-        return result;
-      },
-      clear,
-    };
-    function clear() {
-      traces.length = 0;
-    }
+  private getImpliedNodeFormatForFile(fileName: string): ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined {
+    return ts.getImpliedNodeFormatForFile(
+      toPath(fileName),
+      this.normalModuleResolutionCache.getPackageJsonInfoCache(),
+      this.compilerHost,
+      this.compilerOptions
+    );
+  }
+
+  private getPackageScopeForPath(fileName: string): ts.PackageJsonInfo | undefined {
+    return ts.getPackageScopeForPath(
+      fileName,
+      ts.getTemporaryModuleResolutionState(
+        // TODO: consider always using the node16 cache because package.json should be a hit
+        this.normalModuleResolutionCache.getPackageJsonInfoCache(),
+        this.compilerHost,
+        this.compilerOptions
+      )
+    );
+  }
+}
+
+class TraceCollector {
+  private traces: string[] = [];
+
+  trace = (message: string) => {
+    this.traces.push(message);
+  };
+  read() {
+    const result = this.traces.slice();
+    this.clear();
+    return result;
+  }
+  clear() {
+    this.traces.length = 0;
   }
 }

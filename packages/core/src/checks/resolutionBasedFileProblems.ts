@@ -1,12 +1,12 @@
 import ts from "typescript";
-import type { MultiCompilerHost } from "../multiCompilerHost.js";
+import type { CompilerHosts } from "../multiCompilerHost.js";
 import type { EntrypointInfo, ResolutionBasedFileProblem } from "../types.js";
 import { allResolutionOptions, getResolutionKinds } from "../utils.js";
 
 export function getResolutionBasedFileProblems(
   packageName: string,
   entrypointResolutions: Record<string, EntrypointInfo>,
-  host: MultiCompilerHost
+  hosts: CompilerHosts
 ): ResolutionBasedFileProblem[] {
   const result: ResolutionBasedFileProblem[] = [];
   for (const resolutionOption of allResolutionOptions) {
@@ -24,7 +24,8 @@ export function getResolutionBasedFileProblems(
     );
 
     for (const fileName of visibleFiles) {
-      const sourceFile = host.getSourceFile(fileName, resolutionOption)!;
+      const host = hosts[resolutionOption];
+      const sourceFile = host.getSourceFile(fileName)!;
 
       if (sourceFile.imports) {
         for (const moduleSpecifier of sourceFile.imports) {
@@ -52,7 +53,7 @@ export function getResolutionBasedFileProblems(
               pos: moduleSpecifier.pos,
               end: moduleSpecifier.end,
               resolutionMode,
-              trace: host.getTrace(resolutionOption, fileName, moduleSpecifier.text, resolutionMode)!,
+              trace: host.getTrace(fileName, moduleSpecifier.text, resolutionMode)!,
             });
           }
         }
@@ -67,7 +68,7 @@ export function getResolutionBasedFileProblems(
       // for looking for a JS file.
       if (resolutionOption === "node16") {
         if (ts.hasJSFileExtension(fileName)) {
-          const expectedModuleKind = host.getModuleKindForFile(fileName, resolutionOption);
+          const expectedModuleKind = host.getModuleKindForFile(fileName);
           const syntaxImpliedModuleKind = sourceFile.externalModuleIndicator
             ? ts.ModuleKind.ESNext
             : sourceFile.commonJsModuleIndicator
