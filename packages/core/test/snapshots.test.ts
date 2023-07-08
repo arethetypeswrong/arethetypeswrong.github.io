@@ -2,7 +2,7 @@ import fs from "fs";
 import { access, readFile, writeFile } from "fs/promises";
 import assert from "node:assert";
 import { after, describe, test } from "node:test";
-import { checkTgz } from "@arethetypeswrong/core";
+import { checkPackage, createPackageFromTarballData } from "@arethetypeswrong/core";
 
 const updateSnapshots = process.env.UPDATE_SNAPSHOTS;
 
@@ -27,7 +27,7 @@ describe("snapshots", async () => {
     }
     test(fixture, async () => {
       const tarball = await readFile(new URL(`../fixtures/${fixture}`, import.meta.url));
-      const analysis = await checkTgz(tarball);
+      const analysis = await checkPackage(await createPackageFromTarballData(tarball));
       const snapshotURL = new URL(`../snapshots/${fixture}.md`, import.meta.url);
       const expectedSnapshot = [
         `# ${fixture}`,

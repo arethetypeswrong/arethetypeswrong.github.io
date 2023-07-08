@@ -16,12 +16,17 @@ worker.onmessage = async (event: MessageEvent<ResultMessage>) => {
   const params = new URLSearchParams(location.search);
   const state = getState();
   if (state.packageInfo.parsed) {
-    params.set(
-      "p",
-      `${state.packageInfo.parsed.packageName}${
-        state.packageInfo.info?.version ? `@${state.packageInfo.info.version}` : ""
-      }`
-    );
+    const packageSpec = `${state.packageInfo.parsed.name}${
+      state.packageInfo.info?.version ? `@${state.packageInfo.info.version}` : ""
+    }`;
+    updateState((state) => {
+      state.packageInfo.parsed = {
+        name: event.data.data.result.packageName,
+        version: event.data.data.result.packageVersion,
+        versionKind: "exact",
+      };
+    });
+    params.set("p", packageSpec);
     history.replaceState(null, "", `?${params}`);
   }
 };
@@ -136,22 +141,22 @@ async function onCheck() {
     updateState((state) => void (state.isLoading = true));
     worker.postMessage({
       kind: "check-package",
-      packageName: packageInfo.parsed.packageName,
-      version: packageInfo.parsed.version,
+      packageSpec: `${packageInfo.parsed.name}@${packageInfo.info.version}`,
     });
   }
 }
 
-async function fetchPackageInfo({ packageName, version }: ParsedPackageSpec): Promise<PackageInfo> {
+async function fetchPackageInfo({ name, version, versionKind }: ParsedPackageSpec): Promise<PackageInfo> {
   try {
-    const response = await fetch(`https://registry.npmjs.org/${packageName}/${version || "latest"}`);
+    const fetchVersion = versionKind === "exact" ? version : "latest";
+    const response = await fetch(`https://registry.npmjs.org/${name}/${fetchVersion}`);
     if (!response.ok) {
       throw new Error("Failed to get package info");
     }
     const data = await response.json();
     return {
-      size: data.dist.unpackedSize,
-      version: data.version,
+      size: versionKind === "range" ? undefined : data.dist.unpackedSize,
+      version: versionKind === "range" ? version : data.version,
     };
   } catch (error) {
     throw new Error("Failed to get package info");

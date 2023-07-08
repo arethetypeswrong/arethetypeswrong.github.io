@@ -1,5 +1,6 @@
 import ts from "typescript";
-import type { FS, ModuleKind, ResolutionOption } from "./types.js";
+import type { ModuleKind, ResolutionOption } from "./types.js";
+import type { Package } from "./createPackage.js";
 
 export interface ResolveModuleNameResult {
   resolution: ts.ResolvedModuleWithFailedLookupLocations;
@@ -31,7 +32,7 @@ export interface MultiCompilerHost {
   createProgram(moduleResolution: ResolutionOption, rootNames: string[]): ts.Program;
 }
 
-export function createMultiCompilerHost(fs: FS): MultiCompilerHost {
+export function createMultiCompilerHost(fs: Package): MultiCompilerHost {
   const useCaseSensitiveFileNames = () => false;
   const getCanonicalFileName = ts.createGetCanonicalFileName(false);
   const getCurrentDirectory = () => "/";

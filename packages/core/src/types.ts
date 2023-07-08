@@ -1,17 +1,5 @@
 import type ts from "typescript";
 
-export interface Host {
-  createPackageFS: (packageName: string, packageVersion?: string) => Promise<FS>;
-  createPackageFSFromTarball: (tgz: Uint8Array) => Promise<FS>;
-}
-
-export interface FS {
-  readFile: (path: string) => string;
-  fileExists: (path: string) => boolean;
-  directoryExists: (path: string) => boolean;
-  listFiles: () => string[];
-}
-
 export type ResolutionKind = "node10" | "node16-cjs" | "node16-esm" | "bundler";
 export type ResolutionOption = "node10" | "node16" | "bundler";
 export interface EntrypointInfo {
@@ -113,6 +101,7 @@ export type ResolutionBasedFileProblemKind = ResolutionBasedFileProblem["kind"];
 export type Failable<T> = { status: "error"; error: string } | { status: "success"; data: T };
 
 export interface ParsedPackageSpec {
-  packageName: string;
-  version: string | undefined;
+  name: string;
+  versionKind: "none" | "exact" | "range";
+  version: string;
 }

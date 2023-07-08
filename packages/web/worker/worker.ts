@@ -1,9 +1,13 @@
-import { checkPackage, checkTgz, type CheckResult } from "@arethetypeswrong/core";
+import {
+  checkPackage,
+  createPackageFromNpm,
+  createPackageFromTarballData,
+  type CheckResult,
+} from "@arethetypeswrong/core";
 
 export interface CheckPackageEventData {
   kind: "check-package";
-  packageName: string;
-  version: string | undefined;
+  packageSpec: string;
 }
 
 export interface CheckFileEventData {
@@ -19,10 +23,11 @@ export interface ResultMessage {
 }
 
 onmessage = async (event: MessageEvent<CheckPackageEventData | CheckFileEventData>) => {
-  const result =
+  const result = await checkPackage(
     event.data.kind === "check-file"
-      ? await checkTgz(event.data.file)
-      : await checkPackage(event.data.packageName, event.data.version);
+      ? await createPackageFromTarballData(event.data.file)
+      : await createPackageFromNpm(event.data.packageSpec)
+  );
   postMessage({
     kind: "result",
     data: {

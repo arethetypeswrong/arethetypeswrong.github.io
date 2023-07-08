@@ -9,6 +9,7 @@ import { ProblemList } from "./views/ProblemList";
 import corePackageJson from "@arethetypeswrong/core/package.json";
 import tsPackageJson from "typescript/package.json";
 import { Details } from "./views/Details";
+import { PackageInfo } from "./views/PackageInfo";
 
 interface Events {
   onPackageNameInput: (value: string) => void;
@@ -23,6 +24,7 @@ export function subscribeRenderer(events: Events) {
     const checkButton = document.getElementById("check") as HTMLButtonElement;
     const fileInput = document.getElementById("file") as HTMLInputElement;
     const form = document.getElementById("form") as HTMLFormElement;
+    const packageInfoElement = document.getElementById("package-info") as HTMLDivElement;
     const problemsElement = document.getElementById("problems") as HTMLParagraphElement;
     const resolutionsElement = document.getElementById("resolutions") as HTMLTableElement;
     const detailsElement = document.getElementById("details") as HTMLDivElement;
@@ -57,6 +59,10 @@ export function subscribeRenderer(events: Events) {
     function render(prevState: State) {
       const state = getState();
       updateView(messageElement, Message, { isError: state.message?.isError, text: state.message?.text || "" });
+      updateView(packageInfoElement, PackageInfo, {
+        name: state.analysis?.packageName,
+        version: state.analysis?.packageVersion,
+      });
       updateView(problemsElement, ProblemList, { analysis: state.analysis });
       updateView(resolutionsElement, ChecksTable, { analysis: state.analysis });
       updateView(checkButton, CheckButton, { disabled: !state.packageInfo.parsed });

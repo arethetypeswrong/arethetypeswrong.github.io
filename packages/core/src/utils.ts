@@ -1,4 +1,5 @@
 import validatePackgeName from "validate-npm-package-name";
+import { valid, validRange } from "semver";
 import type {
   EntrypointInfo,
   EntrypointResolutionAnalysis,
@@ -146,13 +147,9 @@ export function groupProblemsByKind<K extends ProblemKind>(
   return result;
 }
 
-// Good grief https://semver.org/#is-there-a-suggested-regular-expression-regex-to-check-a-semver-string
-const semverRegex =
-  /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/;
-
 export type { ParsedPackageSpec };
 export function parsePackageSpec(input: string): Failable<ParsedPackageSpec> {
-  let packageName;
+  let name;
   let version;
   let i = 0;
   if (input.startsWith("@")) {
@@ -173,27 +170,38 @@ export function parsePackageSpec(input: string): Failable<ParsedPackageSpec> {
   }
   i = input.indexOf("@", i);
   if (i === -1) {
-    packageName = input;
+    name = input;
   } else {
-    packageName = input.slice(0, i);
+    name = input.slice(0, i);
     version = input.slice(i + 1);
   }
 
-  // check if packageName is a valid npm package name
-  if (validatePackgeName(packageName).errors) {
+  if (validatePackgeName(name).errors) {
     return {
       status: "error",
       error: "Invalid package name",
     };
   }
-  if (version && version !== "latest" && !semverRegex.test(version)) {
+  if (!version) {
     return {
-      status: "error",
-      error: "Invalid version",
+      status: "success",
+      data: { versionKind: "none", name, version: "" },
+    };
+  }
+  if (valid(version)) {
+    return {
+      status: "success",
+      data: { versionKind: "exact", name, version },
+    };
+  }
+  if (validRange(version)) {
+    return {
+      status: "success",
+      data: { versionKind: "range", name, version },
     };
   }
   return {
-    status: "success",
-    data: { packageName, version },
+    status: "error",
+    error: "Invalid version",
   };
 }
