@@ -1,49 +1,27 @@
 import ts from "typescript";
-import { fetchTarballHost } from "./fetchTarballHost.js";
-import type {
-  Host,
-  CheckResult,
-  FS,
-  ResolutionKind,
-  EntrypointResolutionAnalysis,
-  Resolution,
-  EntrypointInfo,
-} from "./types.js";
-import { createMultiCompilerHost, type MultiCompilerHost } from "./multiCompilerHost.js";
 import { getEntrypointResolutionProblems } from "./checks/entrypointResolutionProblems.js";
-import { getResolutionBasedFileProblems } from "./checks/resolutionBasedFileProblems.js";
 import { getFileProblems } from "./checks/fileProblems.js";
+import { getResolutionBasedFileProblems } from "./checks/resolutionBasedFileProblems.js";
+import type { Package } from "./createPackage.js";
+import { createMultiCompilerHost, type MultiCompilerHost } from "./multiCompilerHost.js";
+import type { CheckResult, EntrypointInfo, EntrypointResolutionAnalysis, Resolution, ResolutionKind } from "./types.js";
 
-export async function checkTgz(tgz: Uint8Array, host: Host = fetchTarballHost): Promise<CheckResult> {
-  const packageFS = await host.createPackageFSFromTarball(tgz);
-  return checkPackageWorker(packageFS);
-}
-
-export async function checkPackage(
-  packageName: string,
-  packageVersion?: string,
-  host: Host = fetchTarballHost
-): Promise<CheckResult> {
-  const packageFS = await host.createPackageFS(packageName, packageVersion);
-  return checkPackageWorker(packageFS);
-}
-
-async function checkPackageWorker(packageFS: FS): Promise<CheckResult> {
-  const files = packageFS.listFiles();
+export async function checkPackage(pkg: Package): Promise<CheckResult> {
+  const files = pkg.listFiles();
   const types = files.some(ts.hasTSFileExtension) ? "included" : false;
   const parts = files[0].split("/");
   let packageName = parts[2];
   if (packageName.startsWith("@")) {
     packageName = parts.slice(2, 4).join("/");
   }
-  const packageJsonContent = JSON.parse(packageFS.readFile(`/node_modules/${packageName}/package.json`));
+  const packageJsonContent = JSON.parse(pkg.readFile(`/node_modules/${packageName}/package.json`));
   const packageVersion = packageJsonContent.version;
   if (!types) {
     return { packageName, packageVersion, types };
   }
 
-  const host = createMultiCompilerHost(packageFS);
-  const entrypointResolutions = getEntrypointInfo(packageName, packageFS, host);
+  const host = createMultiCompilerHost(pkg);
+  const entrypointResolutions = getEntrypointInfo(packageName, pkg, host);
   const entrypointResolutionProblems = getEntrypointResolutionProblems(entrypointResolutions, host);
   const resolutionBasedFileProblems = getResolutionBasedFileProblems(packageName, entrypointResolutions, host);
   const fileProblems = getFileProblems(entrypointResolutions, host);
@@ -68,7 +46,7 @@ function getSubpaths(exportsObject: any): string[] {
   return keys.flatMap((key) => getSubpaths(exportsObject[key]));
 }
 
-function getProxyDirectories(rootDir: string, fs: FS) {
+function getProxyDirectories(rootDir: string, fs: Package) {
   return fs
     .listFiles()
     .filter((f) => f.startsWith(rootDir) && f.endsWith("package.json"))
@@ -84,7 +62,7 @@ function getProxyDirectories(rootDir: string, fs: FS) {
     .filter((f) => f !== "./");
 }
 
-function getEntrypointInfo(packageName: string, fs: FS, host: MultiCompilerHost): Record<string, EntrypointInfo> {
+function getEntrypointInfo(packageName: string, fs: Package, host: MultiCompilerHost): Record<string, EntrypointInfo> {
   const packageJson = JSON.parse(fs.readFile(`/node_modules/${packageName}/package.json`));
   const subpaths = getSubpaths(packageJson.exports);
   const entrypoints = subpaths.length ? subpaths : ["."];

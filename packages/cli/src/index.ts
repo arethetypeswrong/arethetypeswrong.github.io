@@ -86,7 +86,9 @@ particularly ESM-related module resolution issues.`
         if (result.status === "error") {
           program.error(result.error);
         } else {
-          analysis = await core.checkPackage(result.data.packageName, result.data.version);
+          analysis = await core.checkPackage(
+            await core.createPackageFromNpm(`${result.data.name}@${result.data.version}`)
+          );
         }
       } catch (error) {
         if (error instanceof FetchError) {
@@ -134,7 +136,7 @@ particularly ESM-related module resolution issues.`
         }
         const file = await readFile(fileName);
         const data = new Uint8Array(file);
-        analysis = await core.checkTgz(data);
+        analysis = await core.checkPackage(await core.createPackageFromTarballData(data));
       } catch (error) {
         handleError(error, "checking file");
       }
