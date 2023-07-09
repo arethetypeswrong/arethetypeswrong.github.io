@@ -1,4 +1,3 @@
-import fs from "fs";
 import { access, readFile, writeFile } from "fs/promises";
 import { execSync, type SpawnSyncReturns } from "child_process";
 import assert from "node:assert";
@@ -6,6 +5,27 @@ import { after, describe, test } from "node:test";
 
 const attw = `node ${new URL("../../dist/index.js", import.meta.url).pathname}`;
 const updateSnapshots = process.env.UPDATE_SNAPSHOTS;
+
+const tests = [
+  ["@apollo__client-3.7.16.tgz"],
+  ["@ice__app@3.2.6.tgz"],
+  ["@reduxjs__toolkit@2.0.0-beta.0.tgz"],
+  ["@vitejs__plugin-react@3.1.0.tgz"],
+  ["ajv@8.12.0.tgz"],
+  ["astring@1.8.6.tgz"],
+  ["axios@1.4.0.tgz"],
+  ["commander@10.0.1.tgz", "-f table"],
+  ["ejs@3.1.9.tgz"],
+  ["hexoid@1.0.0.tgz"],
+  ["klona@2.0.6.tgz", "-f ascii"],
+  ["node-html-parser@6.1.5.tgz"],
+  ["postcss@8.4.21.tgz"],
+  ["react-chartjs-2@5.2.0.tgz"],
+  ["rfdc@1.3.0.tgz"],
+  ["vue@3.3.4.tgz"],
+];
+
+const defaultOpts = "-f table-flipped";
 
 describe("snapshots", async () => {
   const snapshotsWritten: URL[] = [];
@@ -22,16 +42,17 @@ describe("snapshots", async () => {
     }
   });
 
-  for (const fixture of fs.readdirSync(new URL("../../../core/test/fixtures", import.meta.url))) {
-    if (fixture === ".DS_Store") {
-      continue;
-    }
+  for (const [tarball, options] of tests) {
+    const fixture = tarball + (options ? ` ${options}` : "");
     test(fixture, async () => {
-      const tarballPath = new URL(`../../../core/test/fixtures/${fixture}`, import.meta.url).pathname;
+      const tarballPath = new URL(`../../../core/test/fixtures/${tarball}`, import.meta.url).pathname;
       let stdout;
       let exitCode = 0;
       try {
-        stdout = execSync(`${attw} ${tarballPath}`, { encoding: "utf8", env: { ...process.env, FORCE_COLOR: "0" } });
+        stdout = execSync(`${attw} ${tarballPath} ${options ?? defaultOpts}`, {
+          encoding: "utf8",
+          env: { ...process.env, FORCE_COLOR: "0" },
+        });
       } catch (error) {
         stdout = (error as SpawnSyncReturns<string>).stdout;
         exitCode = (error as SpawnSyncReturns<string>).status ?? 1;
@@ -42,7 +63,7 @@ describe("snapshots", async () => {
         `# ${fixture}`,
         "",
         "```",
-        `$ attw ${fixture}`,
+        `$ attw ${tarball} ${options ?? defaultOpts}`,
         "",
         stdout,
         "",
