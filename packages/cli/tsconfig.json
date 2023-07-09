@@ -9,7 +9,7 @@
     ],
     "outDir": "./dist",
     "declarationDir": "./lib",
-    "sourceMap": false,
+    "sourceMap": true,
   },
   "include": [
     "src"

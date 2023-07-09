@@ -1,27 +1,24 @@
-# commander@10.0.1.tgz
+# vue@3.3.4.tgz --entrypoints . jsx-runtime
 
 ```
-$ attw commander@10.0.1.tgz
+$ attw vue@3.3.4.tgz --entrypoints . jsx-runtime
 
 
 🎭 Import resolved to a CommonJS type declaration file, but an ESM JavaScript file. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseCJS.md
 
-❌ Import resolved to JavaScript files, but no type declarations were found. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/UntypedResolution.md
-
-⚠️ A require call resolved to an ESM JavaScript file, which is an error in Node and some bundlers. CommonJS consumers will need to use a dynamic import. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/CJSResolvesToESM.md
+🥴 Import found in a type declaration file failed to resolve. Either this indicates that runtime resolution errors will occur, or (more likely) the types misrepresent the contents of the JavaScript files. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/InternalResolutionError.md
 
 
 ┌────────────────────┬───────────────────────────────────┬───────────────────────────────────┐
-│                    │ "commander"                       │ "commander/esm.mjs"               │
+│                    │ "vue"                             │ "vue/jsx-runtime"                 │
 ├────────────────────┼───────────────────────────────────┼───────────────────────────────────┤
-│ node10             │ 🟢                                │ ❌ No types                       │
+│ node10             │ 🟢                                │ 🟢                                │
 ├────────────────────┼───────────────────────────────────┼───────────────────────────────────┤
-│ node16 (from CJS)  │ 🟢 (CJS)                          │ ❌ No types                       │
-│                    │                                   │ ⚠️ ESM (dynamic import only)      │
+│ node16 (from CJS)  │ 🟢 (CJS)                          │ 🟢 (CJS)                          │
 ├────────────────────┼───────────────────────────────────┼───────────────────────────────────┤
-│ node16 (from ESM)  │ 🎭 Masquerading as CJS            │ ❌ No types                       │
+│ node16 (from ESM)  │ 🥴 Internal resolution error      │ 🎭 Masquerading as CJS            │
 ├────────────────────┼───────────────────────────────────┼───────────────────────────────────┤
-│ bundler            │ 🟢                                │ ❌ No types                       │
+│ bundler            │ 🟢                                │ 🟢                                │
 └────────────────────┴───────────────────────────────────┴───────────────────────────────────┘
 
 

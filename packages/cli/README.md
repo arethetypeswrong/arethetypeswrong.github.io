@@ -18,20 +18,30 @@ npm i -g @arethetypeswrong/cli
 
 The `attw` command acts very similarly to [arethetypeswrong.github.io](https://arethetypeswrong.github.io/), with some additional features that are useful for command line usage.
 
-The usage is:
+The CLI can check an `npm pack`ed tarball:
 
 ```shell
 npm pack
-attw [options] <file-name>
+attw cool-package-1.0.0.tgz
+# or
+attw $(npm pack)
 ```
 
-Where `<file-name>` is a required positional argument (the path to a local `.tar.gz` file from `npm pack`).
+or pack one in-place by specifying `--pack` and a directory:
+
+```shell
+attw --pack .
+```
+
+or check a package from npm:
+
+```shell
+attw --from-npm @arethetypeswrong/cli
+```
 
 ## Configuration
 
 `attw` supports a JSON config file (by default named `.attw.json`) which allows you to pre-set the command line arguments. The options are a one-to-one mapping of the command line flags, changed to camelCase, and are all documented in their relevant `Options` section below.
-
-Note that the `--config-path` option cannot be set from the config file :upside_down_face:
 
 ### Options
 
@@ -55,11 +65,32 @@ In the CLI: `--version`, `-v`
 attw --version
 ```
 
+### Pack
+
+Specify a directory to run `npm pack` in (instead of specifying a tarball filename), analyze the resulting tarball, and delete it afterwards.
+
+```shell
+attw --pack .
+```
+
+#### From NPM
+
+Specify the name (and, optionally, version range) of a package from the NPM registry instead of a local tarball filename.
+
+In the CLI: `--from-npm`, `-p`
+
+```shell
+attw --from-npm <package-name>
+```
+
+In the config file, `fromNpm` can be a boolean value.
+
 #### Format
 
 The format to print the output in. Defaults to `table`.
 
 The available values are:
+
 - `table`
 - `table-flipped`, where the resolution kinds are the table's head, and the entry points label the table's rows
 - `ascii`, for large tables where the output is clunky
@@ -73,23 +104,22 @@ attw --format <format> <file-name>
 
 In the config file, `format` can be a string value.
 
-#### From NPM
+#### Entrypoints
 
-Treat `<file-name>` as the name (and, optionally, version) of a package from the NPM registry.
-
-In the CLI: `--from-npm`, `-p`
+`attw` automatically discovers package entrypoints by looking at package.json `exports` and subdirectories with additional package.json files. This automatic discovery process can be overridden with the `--entrypoints` option, or altered with the `--include-entrypoints` and `--exclude-entrypoints` options:
 
 ```shell
-attw --from-npm <package-name>
+attw --pack . --entrypoints . one two three    # Just ".", "./one", "./two", "./three"
+attw --pack . --include-entrypoints added      # Auto-discovered entyrpoints plus "./added"
+attw --pack . --exclude-entrypoints styles.css # Auto-discovered entrypoints except "./styles.css"
 ```
-
-In the config file, `fromNpm` can be a boolean value.
 
 #### Ignore Rules
 
 Specifies rules/problems to ignore (i.e. not raise an error for).
 
 The available values are:
+
 - `wildcard`
 - `no-resolution`
 - `untyped-resolution`
@@ -171,4 +201,3 @@ attw --config-path <path> <file-name>
 ```
 
 Cannot be set from within the config file itself.
-

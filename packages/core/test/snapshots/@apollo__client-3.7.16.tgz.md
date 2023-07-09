@@ -66,32 +66,32 @@
   },
   {
     "kind": "FalseESM",
-    "entrypoint": "./link/batch-http",
+    "entrypoint": "./link/batch",
     "resolutionKind": "node16-cjs"
   },
   {
     "kind": "CJSResolvesToESM",
-    "entrypoint": "./link/batch-http",
+    "entrypoint": "./link/batch",
     "resolutionKind": "node16-cjs"
   },
   {
     "kind": "FalseESM",
-    "entrypoint": "./link/batch-http",
+    "entrypoint": "./link/batch",
     "resolutionKind": "node16-esm"
   },
   {
     "kind": "FalseESM",
-    "entrypoint": "./link/batch",
+    "entrypoint": "./link/batch-http",
     "resolutionKind": "node16-cjs"
   },
   {
     "kind": "CJSResolvesToESM",
-    "entrypoint": "./link/batch",
+    "entrypoint": "./link/batch-http",
     "resolutionKind": "node16-cjs"
   },
   {
     "kind": "FalseESM",
-    "entrypoint": "./link/batch",
+    "entrypoint": "./link/batch-http",
     "resolutionKind": "node16-esm"
   },
   {
@@ -246,6 +246,21 @@
   },
   {
     "kind": "FalseESM",
+    "entrypoint": "./react",
+    "resolutionKind": "node16-cjs"
+  },
+  {
+    "kind": "CJSResolvesToESM",
+    "entrypoint": "./react",
+    "resolutionKind": "node16-cjs"
+  },
+  {
+    "kind": "FalseESM",
+    "entrypoint": "./react",
+    "resolutionKind": "node16-esm"
+  },
+  {
+    "kind": "FalseESM",
     "entrypoint": "./react/components",
     "resolutionKind": "node16-cjs"
   },
@@ -306,21 +321,6 @@
   },
   {
     "kind": "FalseESM",
-    "entrypoint": "./react",
-    "resolutionKind": "node16-cjs"
-  },
-  {
-    "kind": "CJSResolvesToESM",
-    "entrypoint": "./react",
-    "resolutionKind": "node16-cjs"
-  },
-  {
-    "kind": "FalseESM",
-    "entrypoint": "./react",
-    "resolutionKind": "node16-esm"
-  },
-  {
-    "kind": "FalseESM",
     "entrypoint": "./react/parser",
     "resolutionKind": "node16-cjs"
   },
@@ -351,21 +351,6 @@
   },
   {
     "kind": "FalseESM",
-    "entrypoint": "./testing/core",
-    "resolutionKind": "node16-cjs"
-  },
-  {
-    "kind": "CJSResolvesToESM",
-    "entrypoint": "./testing/core",
-    "resolutionKind": "node16-cjs"
-  },
-  {
-    "kind": "FalseESM",
-    "entrypoint": "./testing/core",
-    "resolutionKind": "node16-esm"
-  },
-  {
-    "kind": "FalseESM",
     "entrypoint": "./testing",
     "resolutionKind": "node16-cjs"
   },
@@ -381,17 +366,17 @@
   },
   {
     "kind": "FalseESM",
-    "entrypoint": "./utilities/globals",
+    "entrypoint": "./testing/core",
     "resolutionKind": "node16-cjs"
   },
   {
     "kind": "CJSResolvesToESM",
-    "entrypoint": "./utilities/globals",
+    "entrypoint": "./testing/core",
     "resolutionKind": "node16-cjs"
   },
   {
     "kind": "FalseESM",
-    "entrypoint": "./utilities/globals",
+    "entrypoint": "./testing/core",
     "resolutionKind": "node16-esm"
   },
   {
@@ -407,6 +392,21 @@
   {
     "kind": "FalseESM",
     "entrypoint": "./utilities",
+    "resolutionKind": "node16-esm"
+  },
+  {
+    "kind": "FalseESM",
+    "entrypoint": "./utilities/globals",
+    "resolutionKind": "node16-cjs"
+  },
+  {
+    "kind": "CJSResolvesToESM",
+    "entrypoint": "./utilities/globals",
+    "resolutionKind": "node16-cjs"
+  },
+  {
+    "kind": "FalseESM",
+    "entrypoint": "./utilities/globals",
     "resolutionKind": "node16-esm"
   },
   {
@@ -959,23 +959,6 @@
   {
     "kind": "InternalResolutionError",
     "resolutionOption": "node16",
-    "fileName": "/node_modules/@apollo/client/link/batch-http/index.d.ts",
-    "moduleSpecifier": "./batchHttpLink",
-    "pos": 13,
-    "end": 31,
-    "resolutionMode": 99,
-    "trace": [
-      "======== Resolving module './batchHttpLink' from '/node_modules/@apollo/client/link/batch-http/index.d.ts'. ========",
-      "Explicitly specified module resolution kind: 'Node16'.",
-      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
-      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/link/batch-http/batchHttpLink', target file types: TypeScript, JavaScript, Declaration, JSON.",
-      "Directory '/node_modules/@apollo/client/link/batch-http/batchHttpLink' does not exist, skipping all lookups in it.",
-      "======== Module name './batchHttpLink' was not resolved. ========"
-    ]
-  },
-  {
-    "kind": "InternalResolutionError",
-    "resolutionOption": "node16",
     "fileName": "/node_modules/@apollo/client/link/batch/index.d.ts",
     "moduleSpecifier": "./batchLink",
     "pos": 13,
@@ -988,6 +971,23 @@
       "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/link/batch/batchLink', target file types: TypeScript, JavaScript, Declaration, JSON.",
       "Directory '/node_modules/@apollo/client/link/batch/batchLink' does not exist, skipping all lookups in it.",
       "======== Module name './batchLink' was not resolved. ========"
+    ]
+  },
+  {
+    "kind": "InternalResolutionError",
+    "resolutionOption": "node16",
+    "fileName": "/node_modules/@apollo/client/link/batch-http/index.d.ts",
+    "moduleSpecifier": "./batchHttpLink",
+    "pos": 13,
+    "end": 31,
+    "resolutionMode": 99,
+    "trace": [
+      "======== Resolving module './batchHttpLink' from '/node_modules/@apollo/client/link/batch-http/index.d.ts'. ========",
+      "Explicitly specified module resolution kind: 'Node16'.",
+      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/link/batch-http/batchHttpLink', target file types: TypeScript, JavaScript, Declaration, JSON.",
+      "Directory '/node_modules/@apollo/client/link/batch-http/batchHttpLink' does not exist, skipping all lookups in it.",
+      "======== Module name './batchHttpLink' was not resolved. ========"
     ]
   },
   {
@@ -1657,6 +1657,87 @@
   {
     "kind": "InternalResolutionError",
     "resolutionOption": "node16",
+    "fileName": "/node_modules/@apollo/client/react/index.d.ts",
+    "moduleSpecifier": "../utilities/globals",
+    "pos": 6,
+    "end": 29,
+    "resolutionMode": 99,
+    "trace": [
+      "======== Resolving module '../utilities/globals' from '/node_modules/@apollo/client/react/index.d.ts'. ========",
+      "Explicitly specified module resolution kind: 'Node16'.",
+      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/utilities/globals', target file types: TypeScript, JavaScript, Declaration, JSON.",
+      "======== Module name '../utilities/globals' was not resolved. ========"
+    ]
+  },
+  {
+    "kind": "InternalResolutionError",
+    "resolutionOption": "node16",
+    "fileName": "/node_modules/@apollo/client/react/index.d.ts",
+    "moduleSpecifier": "./context",
+    "pos": 135,
+    "end": 147,
+    "resolutionMode": 99,
+    "trace": [
+      "======== Resolving module './context' from '/node_modules/@apollo/client/react/index.d.ts'. ========",
+      "Explicitly specified module resolution kind: 'Node16'.",
+      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/react/context', target file types: TypeScript, JavaScript, Declaration, JSON.",
+      "======== Module name './context' was not resolved. ========"
+    ]
+  },
+  {
+    "kind": "InternalResolutionError",
+    "resolutionOption": "node16",
+    "fileName": "/node_modules/@apollo/client/react/index.d.ts",
+    "moduleSpecifier": "./hooks",
+    "pos": 162,
+    "end": 172,
+    "resolutionMode": 99,
+    "trace": [
+      "======== Resolving module './hooks' from '/node_modules/@apollo/client/react/index.d.ts'. ========",
+      "Explicitly specified module resolution kind: 'Node16'.",
+      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/react/hooks', target file types: TypeScript, JavaScript, Declaration, JSON.",
+      "======== Module name './hooks' was not resolved. ========"
+    ]
+  },
+  {
+    "kind": "InternalResolutionError",
+    "resolutionOption": "node16",
+    "fileName": "/node_modules/@apollo/client/react/index.d.ts",
+    "moduleSpecifier": "./parser",
+    "pos": 246,
+    "end": 257,
+    "resolutionMode": 99,
+    "trace": [
+      "======== Resolving module './parser' from '/node_modules/@apollo/client/react/index.d.ts'. ========",
+      "Explicitly specified module resolution kind: 'Node16'.",
+      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/react/parser', target file types: TypeScript, JavaScript, Declaration, JSON.",
+      "======== Module name './parser' was not resolved. ========"
+    ]
+  },
+  {
+    "kind": "InternalResolutionError",
+    "resolutionOption": "node16",
+    "fileName": "/node_modules/@apollo/client/react/index.d.ts",
+    "moduleSpecifier": "./types/types",
+    "pos": 272,
+    "end": 288,
+    "resolutionMode": 99,
+    "trace": [
+      "======== Resolving module './types/types' from '/node_modules/@apollo/client/react/index.d.ts'. ========",
+      "Explicitly specified module resolution kind: 'Node16'.",
+      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/react/types/types', target file types: TypeScript, JavaScript, Declaration, JSON.",
+      "Directory '/node_modules/@apollo/client/react/types/types' does not exist, skipping all lookups in it.",
+      "======== Module name './types/types' was not resolved. ========"
+    ]
+  },
+  {
+    "kind": "InternalResolutionError",
+    "resolutionOption": "node16",
     "fileName": "/node_modules/@apollo/client/react/components/index.d.ts",
     "moduleSpecifier": "./Query",
     "pos": 21,
@@ -2045,87 +2126,6 @@
   {
     "kind": "InternalResolutionError",
     "resolutionOption": "node16",
-    "fileName": "/node_modules/@apollo/client/react/index.d.ts",
-    "moduleSpecifier": "../utilities/globals",
-    "pos": 6,
-    "end": 29,
-    "resolutionMode": 99,
-    "trace": [
-      "======== Resolving module '../utilities/globals' from '/node_modules/@apollo/client/react/index.d.ts'. ========",
-      "Explicitly specified module resolution kind: 'Node16'.",
-      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
-      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/utilities/globals', target file types: TypeScript, JavaScript, Declaration, JSON.",
-      "======== Module name '../utilities/globals' was not resolved. ========"
-    ]
-  },
-  {
-    "kind": "InternalResolutionError",
-    "resolutionOption": "node16",
-    "fileName": "/node_modules/@apollo/client/react/index.d.ts",
-    "moduleSpecifier": "./context",
-    "pos": 135,
-    "end": 147,
-    "resolutionMode": 99,
-    "trace": [
-      "======== Resolving module './context' from '/node_modules/@apollo/client/react/index.d.ts'. ========",
-      "Explicitly specified module resolution kind: 'Node16'.",
-      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
-      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/react/context', target file types: TypeScript, JavaScript, Declaration, JSON.",
-      "======== Module name './context' was not resolved. ========"
-    ]
-  },
-  {
-    "kind": "InternalResolutionError",
-    "resolutionOption": "node16",
-    "fileName": "/node_modules/@apollo/client/react/index.d.ts",
-    "moduleSpecifier": "./hooks",
-    "pos": 162,
-    "end": 172,
-    "resolutionMode": 99,
-    "trace": [
-      "======== Resolving module './hooks' from '/node_modules/@apollo/client/react/index.d.ts'. ========",
-      "Explicitly specified module resolution kind: 'Node16'.",
-      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
-      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/react/hooks', target file types: TypeScript, JavaScript, Declaration, JSON.",
-      "======== Module name './hooks' was not resolved. ========"
-    ]
-  },
-  {
-    "kind": "InternalResolutionError",
-    "resolutionOption": "node16",
-    "fileName": "/node_modules/@apollo/client/react/index.d.ts",
-    "moduleSpecifier": "./parser",
-    "pos": 246,
-    "end": 257,
-    "resolutionMode": 99,
-    "trace": [
-      "======== Resolving module './parser' from '/node_modules/@apollo/client/react/index.d.ts'. ========",
-      "Explicitly specified module resolution kind: 'Node16'.",
-      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
-      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/react/parser', target file types: TypeScript, JavaScript, Declaration, JSON.",
-      "======== Module name './parser' was not resolved. ========"
-    ]
-  },
-  {
-    "kind": "InternalResolutionError",
-    "resolutionOption": "node16",
-    "fileName": "/node_modules/@apollo/client/react/index.d.ts",
-    "moduleSpecifier": "./types/types",
-    "pos": 272,
-    "end": 288,
-    "resolutionMode": 99,
-    "trace": [
-      "======== Resolving module './types/types' from '/node_modules/@apollo/client/react/index.d.ts'. ========",
-      "Explicitly specified module resolution kind: 'Node16'.",
-      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
-      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/react/types/types', target file types: TypeScript, JavaScript, Declaration, JSON.",
-      "Directory '/node_modules/@apollo/client/react/types/types' does not exist, skipping all lookups in it.",
-      "======== Module name './types/types' was not resolved. ========"
-    ]
-  },
-  {
-    "kind": "InternalResolutionError",
-    "resolutionOption": "node16",
     "fileName": "/node_modules/@apollo/client/react/ssr/index.d.ts",
     "moduleSpecifier": "./getDataFromTree",
     "pos": 50,
@@ -2172,6 +2172,55 @@
       "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/react/ssr/RenderPromises', target file types: TypeScript, JavaScript, Declaration, JSON.",
       "Directory '/node_modules/@apollo/client/react/ssr/RenderPromises' does not exist, skipping all lookups in it.",
       "======== Module name './RenderPromises' was not resolved. ========"
+    ]
+  },
+  {
+    "kind": "InternalResolutionError",
+    "resolutionOption": "node16",
+    "fileName": "/node_modules/@apollo/client/testing/index.d.ts",
+    "moduleSpecifier": "../utilities/globals",
+    "pos": 6,
+    "end": 29,
+    "resolutionMode": 99,
+    "trace": [
+      "======== Resolving module '../utilities/globals' from '/node_modules/@apollo/client/testing/index.d.ts'. ========",
+      "Explicitly specified module resolution kind: 'Node16'.",
+      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/utilities/globals', target file types: TypeScript, JavaScript, Declaration, JSON.",
+      "======== Module name '../utilities/globals' was not resolved. ========"
+    ]
+  },
+  {
+    "kind": "InternalResolutionError",
+    "resolutionOption": "node16",
+    "fileName": "/node_modules/@apollo/client/testing/index.d.ts",
+    "moduleSpecifier": "./react/MockedProvider",
+    "pos": 82,
+    "end": 107,
+    "resolutionMode": 99,
+    "trace": [
+      "======== Resolving module './react/MockedProvider' from '/node_modules/@apollo/client/testing/index.d.ts'. ========",
+      "Explicitly specified module resolution kind: 'Node16'.",
+      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/testing/react/MockedProvider', target file types: TypeScript, JavaScript, Declaration, JSON.",
+      "Directory '/node_modules/@apollo/client/testing/react/MockedProvider' does not exist, skipping all lookups in it.",
+      "======== Module name './react/MockedProvider' was not resolved. ========"
+    ]
+  },
+  {
+    "kind": "InternalResolutionError",
+    "resolutionOption": "node16",
+    "fileName": "/node_modules/@apollo/client/testing/index.d.ts",
+    "moduleSpecifier": "./core",
+    "pos": 122,
+    "end": 131,
+    "resolutionMode": 99,
+    "trace": [
+      "======== Resolving module './core' from '/node_modules/@apollo/client/testing/index.d.ts'. ========",
+      "Explicitly specified module resolution kind: 'Node16'.",
+      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/testing/core', target file types: TypeScript, JavaScript, Declaration, JSON.",
+      "======== Module name './core' was not resolved. ========"
     ]
   },
   {
@@ -2291,106 +2340,6 @@
       "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/testing/core/withConsoleSpy', target file types: TypeScript, JavaScript, Declaration, JSON.",
       "Directory '/node_modules/@apollo/client/testing/core/withConsoleSpy' does not exist, skipping all lookups in it.",
       "======== Module name './withConsoleSpy' was not resolved. ========"
-    ]
-  },
-  {
-    "kind": "InternalResolutionError",
-    "resolutionOption": "node16",
-    "fileName": "/node_modules/@apollo/client/testing/index.d.ts",
-    "moduleSpecifier": "../utilities/globals",
-    "pos": 6,
-    "end": 29,
-    "resolutionMode": 99,
-    "trace": [
-      "======== Resolving module '../utilities/globals' from '/node_modules/@apollo/client/testing/index.d.ts'. ========",
-      "Explicitly specified module resolution kind: 'Node16'.",
-      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
-      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/utilities/globals', target file types: TypeScript, JavaScript, Declaration, JSON.",
-      "======== Module name '../utilities/globals' was not resolved. ========"
-    ]
-  },
-  {
-    "kind": "InternalResolutionError",
-    "resolutionOption": "node16",
-    "fileName": "/node_modules/@apollo/client/testing/index.d.ts",
-    "moduleSpecifier": "./react/MockedProvider",
-    "pos": 82,
-    "end": 107,
-    "resolutionMode": 99,
-    "trace": [
-      "======== Resolving module './react/MockedProvider' from '/node_modules/@apollo/client/testing/index.d.ts'. ========",
-      "Explicitly specified module resolution kind: 'Node16'.",
-      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
-      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/testing/react/MockedProvider', target file types: TypeScript, JavaScript, Declaration, JSON.",
-      "Directory '/node_modules/@apollo/client/testing/react/MockedProvider' does not exist, skipping all lookups in it.",
-      "======== Module name './react/MockedProvider' was not resolved. ========"
-    ]
-  },
-  {
-    "kind": "InternalResolutionError",
-    "resolutionOption": "node16",
-    "fileName": "/node_modules/@apollo/client/testing/index.d.ts",
-    "moduleSpecifier": "./core",
-    "pos": 122,
-    "end": 131,
-    "resolutionMode": 99,
-    "trace": [
-      "======== Resolving module './core' from '/node_modules/@apollo/client/testing/index.d.ts'. ========",
-      "Explicitly specified module resolution kind: 'Node16'.",
-      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
-      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/testing/core', target file types: TypeScript, JavaScript, Declaration, JSON.",
-      "======== Module name './core' was not resolved. ========"
-    ]
-  },
-  {
-    "kind": "InternalResolutionError",
-    "resolutionOption": "node16",
-    "fileName": "/node_modules/@apollo/client/utilities/globals/index.d.ts",
-    "moduleSpecifier": "./DEV",
-    "pos": 73,
-    "end": 81,
-    "resolutionMode": 99,
-    "trace": [
-      "======== Resolving module './DEV' from '/node_modules/@apollo/client/utilities/globals/index.d.ts'. ========",
-      "Explicitly specified module resolution kind: 'Node16'.",
-      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
-      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/utilities/globals/DEV', target file types: TypeScript, JavaScript, Declaration, JSON.",
-      "Directory '/node_modules/@apollo/client/utilities/globals/DEV' does not exist, skipping all lookups in it.",
-      "======== Module name './DEV' was not resolved. ========"
-    ]
-  },
-  {
-    "kind": "InternalResolutionError",
-    "resolutionOption": "node16",
-    "fileName": "/node_modules/@apollo/client/utilities/globals/index.d.ts",
-    "moduleSpecifier": "./maybe",
-    "pos": 162,
-    "end": 172,
-    "resolutionMode": 99,
-    "trace": [
-      "======== Resolving module './maybe' from '/node_modules/@apollo/client/utilities/globals/index.d.ts'. ========",
-      "Explicitly specified module resolution kind: 'Node16'.",
-      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
-      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/utilities/globals/maybe', target file types: TypeScript, JavaScript, Declaration, JSON.",
-      "Directory '/node_modules/@apollo/client/utilities/globals/maybe' does not exist, skipping all lookups in it.",
-      "======== Module name './maybe' was not resolved. ========"
-    ]
-  },
-  {
-    "kind": "InternalResolutionError",
-    "resolutionOption": "node16",
-    "fileName": "/node_modules/@apollo/client/utilities/globals/index.d.ts",
-    "moduleSpecifier": "./global",
-    "pos": 207,
-    "end": 218,
-    "resolutionMode": 99,
-    "trace": [
-      "======== Resolving module './global' from '/node_modules/@apollo/client/utilities/globals/index.d.ts'. ========",
-      "Explicitly specified module resolution kind: 'Node16'.",
-      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
-      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/utilities/globals/global', target file types: TypeScript, JavaScript, Declaration, JSON.",
-      "Directory '/node_modules/@apollo/client/utilities/globals/global' does not exist, skipping all lookups in it.",
-      "======== Module name './global' was not resolved. ========"
     ]
   },
   {
@@ -2798,6 +2747,57 @@
       "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/utilities/types/IsStrictlyAny', target file types: TypeScript, JavaScript, Declaration, JSON.",
       "Directory '/node_modules/@apollo/client/utilities/types/IsStrictlyAny' does not exist, skipping all lookups in it.",
       "======== Module name './types/IsStrictlyAny' was not resolved. ========"
+    ]
+  },
+  {
+    "kind": "InternalResolutionError",
+    "resolutionOption": "node16",
+    "fileName": "/node_modules/@apollo/client/utilities/globals/index.d.ts",
+    "moduleSpecifier": "./DEV",
+    "pos": 73,
+    "end": 81,
+    "resolutionMode": 99,
+    "trace": [
+      "======== Resolving module './DEV' from '/node_modules/@apollo/client/utilities/globals/index.d.ts'. ========",
+      "Explicitly specified module resolution kind: 'Node16'.",
+      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/utilities/globals/DEV', target file types: TypeScript, JavaScript, Declaration, JSON.",
+      "Directory '/node_modules/@apollo/client/utilities/globals/DEV' does not exist, skipping all lookups in it.",
+      "======== Module name './DEV' was not resolved. ========"
+    ]
+  },
+  {
+    "kind": "InternalResolutionError",
+    "resolutionOption": "node16",
+    "fileName": "/node_modules/@apollo/client/utilities/globals/index.d.ts",
+    "moduleSpecifier": "./maybe",
+    "pos": 162,
+    "end": 172,
+    "resolutionMode": 99,
+    "trace": [
+      "======== Resolving module './maybe' from '/node_modules/@apollo/client/utilities/globals/index.d.ts'. ========",
+      "Explicitly specified module resolution kind: 'Node16'.",
+      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/utilities/globals/maybe', target file types: TypeScript, JavaScript, Declaration, JSON.",
+      "Directory '/node_modules/@apollo/client/utilities/globals/maybe' does not exist, skipping all lookups in it.",
+      "======== Module name './maybe' was not resolved. ========"
+    ]
+  },
+  {
+    "kind": "InternalResolutionError",
+    "resolutionOption": "node16",
+    "fileName": "/node_modules/@apollo/client/utilities/globals/index.d.ts",
+    "moduleSpecifier": "./global",
+    "pos": 207,
+    "end": 218,
+    "resolutionMode": 99,
+    "trace": [
+      "======== Resolving module './global' from '/node_modules/@apollo/client/utilities/globals/index.d.ts'. ========",
+      "Explicitly specified module resolution kind: 'Node16'.",
+      "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+      "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/utilities/globals/global', target file types: TypeScript, JavaScript, Declaration, JSON.",
+      "Directory '/node_modules/@apollo/client/utilities/globals/global' does not exist, skipping all lookups in it.",
+      "======== Module name './global' was not resolved. ========"
     ]
   }
 ]
