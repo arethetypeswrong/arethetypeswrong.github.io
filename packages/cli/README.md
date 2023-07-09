@@ -87,14 +87,15 @@ In the config file, `fromNpm` can be a boolean value.
 
 #### Format
 
-The format to print the output in. Defaults to `table`.
+The format to print the output in. Defaults to `auto`.
 
 The available values are:
 
-- `table`
-- `table-flipped`, where the resolution kinds are the table's head, and the entry points label the table's rows
+- `table`, where columns are entrypoints and rows are resolution kinds
+- `table-flipped`, where columns are resolution kinds and rows are entrypoints
 - `ascii`, for large tables where the output is clunky
-- `raw`, outputs the raw JSON data (overriding all other rendering options)
+- `auto`, which picks whichever of the above best fits the terminal width
+- `json` outputs the raw JSON data (overriding all other rendering options)
 
 In the CLI: `--format`, `-f`
 

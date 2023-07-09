@@ -1,7 +1,7 @@
 import chalk from "chalk";
 import type { GenericTable, HorizontalTableRow } from "cli-table3";
 
-export function tableFlipped(table: GenericTable<HorizontalTableRow>) {
+export function asciiTable(table: GenericTable<HorizontalTableRow>) {
   return table.options.head
     .slice(1)
     .map((entryPoint, i) => {

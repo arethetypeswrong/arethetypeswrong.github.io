@@ -18,7 +18,7 @@ import * as render from "./render/index.js";
 const packageJson = createRequire(import.meta.url)("../package.json");
 const version = packageJson.version;
 
-const formats = ["table", "table-flipped", "ascii", "json"] as const;
+const formats = ["auto", "table", "table-flipped", "ascii", "json"] as const;
 
 type Format = (typeof formats)[number];
 
@@ -55,7 +55,7 @@ particularly ESM-related module resolution issues.`
   )
   .option("-P, --pack", "Run `npm pack` in the specified directory and delete the resulting .tgz file afterwards")
   .option("-p, --from-npm", "Read from the npm registry instead of a local file")
-  .addOption(new Option("-f, --format <format>", "Specify the print format").choices(formats).default("table"))
+  .addOption(new Option("-f, --format <format>", "Specify the print format").choices(formats).default("auto"))
   .option("-q, --quiet", "Don't print anything to STDOUT (overrides all other options)")
   .option(
     "--entrypoints <entrypoints...>",
