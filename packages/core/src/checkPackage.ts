@@ -86,6 +86,8 @@ function formatEntrypointString(path: string, packageName: string) {
   return (
     path === "." || path.startsWith("./")
       ? path
+      : path === packageName
+      ? "."
       : path.startsWith(`${packageName}/`)
       ? `.${path.slice(packageName.length)}`
       : `./${path}`

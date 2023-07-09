@@ -1,7 +1,7 @@
 # astring@1.8.6.tgz
 
 ```
-$ attw astring@1.8.6.tgz
+$ attw astring@1.8.6.tgz -f table-flipped
 
 
 🎭 Import resolved to a CommonJS type declaration file, but an ESM JavaScript file. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseCJS.md

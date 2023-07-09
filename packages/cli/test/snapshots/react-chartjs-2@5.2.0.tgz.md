@@ -1,7 +1,7 @@
 # react-chartjs-2@5.2.0.tgz
 
 ```
-$ attw react-chartjs-2@5.2.0.tgz
+$ attw react-chartjs-2@5.2.0.tgz -f table-flipped
 
 
 👺 Import resolved to an ESM type declaration file, but a CommonJS JavaScript file. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseESM.md

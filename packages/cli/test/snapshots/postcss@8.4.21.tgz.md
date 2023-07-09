@@ -1,7 +1,7 @@
 # postcss@8.4.21.tgz
 
 ```
-$ attw postcss@8.4.21.tgz
+$ attw postcss@8.4.21.tgz -f table-flipped
 
 
 🎭 Import resolved to a CommonJS type declaration file, but an ESM JavaScript file. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseCJS.md

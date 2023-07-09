@@ -1,7 +1,7 @@
 # @ice__app@3.2.6.tgz
 
 ```
-$ attw @ice__app@3.2.6.tgz
+$ attw @ice__app@3.2.6.tgz -f table-flipped
 
 
 ⚠️ A require call resolved to an ESM JavaScript file, which is an error in Node and some bundlers. CommonJS consumers will need to use a dynamic import. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/CJSResolvesToESM.md

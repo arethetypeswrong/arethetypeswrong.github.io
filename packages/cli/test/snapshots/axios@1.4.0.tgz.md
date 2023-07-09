@@ -1,7 +1,7 @@
 # axios@1.4.0.tgz
 
 ```
-$ attw axios@1.4.0.tgz
+$ attw axios@1.4.0.tgz -f table-flipped
 
 
 ❓ Wildcard subpaths cannot yet be analyzed by this tool. https://github.com/arethetypeswrong/arethetypeswrong.github.io/issues/40

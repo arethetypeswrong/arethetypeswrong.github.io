@@ -1,7 +1,7 @@
 # @apollo__client-3.7.16.tgz
 
 ```
-$ attw @apollo__client-3.7.16.tgz
+$ attw @apollo__client-3.7.16.tgz -f table-flipped
 
 
 👺 Import resolved to an ESM type declaration file, but a CommonJS JavaScript file. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseESM.md

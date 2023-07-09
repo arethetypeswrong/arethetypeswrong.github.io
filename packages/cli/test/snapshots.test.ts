@@ -23,6 +23,11 @@ const tests = [
   ["react-chartjs-2@5.2.0.tgz"],
   ["rfdc@1.3.0.tgz"],
   ["vue@3.3.4.tgz"],
+
+  ["vue@3.3.4.tgz", "--entrypoints vue"],
+  ["vue@3.3.4.tgz", "--entrypoints . jsx-runtime"],
+  ["vue@3.3.4.tgz", "--exclude-entrypoints macros -f ascii"],
+  ["vue@3.3.4.tgz", "--include-entrypoints ./foo -f ascii"],
 ];
 
 const defaultOpts = "-f table-flipped";
@@ -57,7 +62,7 @@ describe("snapshots", async () => {
         stdout = (error as SpawnSyncReturns<string>).stdout;
         exitCode = (error as SpawnSyncReturns<string>).status ?? 1;
       }
-      const snapshotURL = new URL(`../snapshots/${fixture}.md`, import.meta.url);
+      const snapshotURL = new URL(`../snapshots/${fixture.replace(/\//g, "")}.md`, import.meta.url);
       // prettier-ignore
       const expectedSnapshot = [
         `# ${fixture}`,
