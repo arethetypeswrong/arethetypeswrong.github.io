@@ -1,5 +1,17 @@
 # @arethetypeswrong/cli
 
+## 0.6.0
+
+### Minor Changes
+
+- 938a2a8: Automatically pick an output format that fits the terminal width (`--format auto`, the new default)
+- eae544d: Add `--entrypoints`, `--include-entrypoints`, and `--exclude-entrypoints` options to customize which entrypoints get analyzed.
+
+### Patch Changes
+
+- Updated dependencies [eae544d]
+  - @arethetypeswrong/core@0.6.0
+
 ## 0.5.0
 
 ### Patch Changes

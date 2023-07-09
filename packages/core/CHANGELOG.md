@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.6.0
+
+### Minor Changes
+
+- eae544d: Add `options` parameter to `checkPackage` with support for customizing which entrypoints get analyzed.
+
 ## 0.5.0
 
 ### Minor Changes
