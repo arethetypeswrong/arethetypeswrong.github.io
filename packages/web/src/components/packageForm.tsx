@@ -2,12 +2,15 @@ import { useState, useEffect } from "react";
 import type { ResultMessage } from "../../worker/worker";
 import { parsePackageSpec, type ParsedPackageSpec } from "@arethetypeswrong/core/utils";
 import type { Failable } from "@arethetypeswrong/core";
+import { fetchPackageInfo } from "../utils/fetchPackageInfo";
+import type { PackageInfo } from "../state";
 
 const workerURL = new URL("../../worker/worker.ts", import.meta.url);
 
 export default function PackageForm() {
   const [packageName, setPackageName] = useState("");
   const [parsedPackage, setParsedPackage] = useState<Failable<ParsedPackageSpec>>(parsePackageSpec(""));
+  const [packageInfo, setPackageInfo] = useState<PackageInfo | null>(null);
   const [worker, setWorker] = useState<Worker | null>(null);
 
   useEffect(() => {
@@ -33,11 +36,26 @@ export default function PackageForm() {
     };
   }, [setWorker]);
 
+  // Save the package string and parse it into a package spec
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPackageName(e.target.value);
-    setParsedPackage(parsePackageSpec(e.target.value));
+    const input = e.target.value;
+    const parsedPackage = parsePackageSpec(input);
+
+    setPackageName(input);
+    setParsedPackage(parsedPackage);
+
+    if (parsedPackage.status == "success") {
+      fetchPackageInfo(parsedPackage.data)
+        .then((info) => {
+          setPackageInfo(info);
+        })
+        .catch(() => {
+          setPackageInfo(null);
+        });
+    }
   };
 
+  // On click send the package spec to the worker
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (worker == null) {
@@ -65,7 +83,7 @@ export default function PackageForm() {
           Package Name
           <input value={packageName} onChange={handleChange} type="text" id="name" />
         </label>
-        <ErrorMessage {...parsedPackage} />
+        {packageName !== "" && <PreFetchInfo spec={parsedPackage} info={packageInfo} />}
         <button type="submit" disabled={worker === null || parsedPackage.status === "error"}>
           Check Package
         </button>
@@ -74,9 +92,21 @@ export default function PackageForm() {
   );
 }
 
-function ErrorMessage(parsedPackage: Failable<ParsedPackageSpec>) {
-  if (parsedPackage.status == "error") {
-    return <p style={{ color: "red" }}>{parsedPackage.error}</p>;
+type PreFetchInfoProps = {
+  spec: Failable<ParsedPackageSpec>;
+  info: PackageInfo | null;
+};
+
+function PreFetchInfo({ spec, info }: PreFetchInfoProps) {
+  // package is not a valid format
+  if (spec.status == "error") {
+    return <p style={{ color: "red" }}>{spec.error}</p>;
   }
-  return null;
+
+  // npm package found, may or may not have a size
+  if (info) {
+    return info.size ? <p>Checking will stream {info.size} bytes</p> : <p>Checking will stream the tarball</p>;
+  }
+
+  return <p>Package not found</p>;
 }

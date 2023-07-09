@@ -1,9 +1,10 @@
 import type { ResultMessage } from "../worker/worker.ts";
 import { subscribeRenderer } from "./renderer.ts";
-import { updateState, type PackageInfo, getState, subscribe, type State } from "./state.ts";
+import { updateState, getState, subscribe, type State } from "./state.ts";
 import { shallowEqual } from "./utils/shallowEqual.ts";
 import NProgress from "nprogress";
-import { parsePackageSpec, type ParsedPackageSpec } from "@arethetypeswrong/core/utils";
+import { parsePackageSpec } from "@arethetypeswrong/core/utils";
+import { fetchPackageInfo } from "./utils/fetchPackageInfo.ts";
 
 const worker = new Worker(new URL("../worker/worker.ts", import.meta.url), { type: "module" });
 worker.onmessage = async (event: MessageEvent<ResultMessage>) => {
@@ -139,22 +140,6 @@ async function onCheck() {
       packageName: packageInfo.parsed.packageName,
       version: packageInfo.parsed.version,
     });
-  }
-}
-
-async function fetchPackageInfo({ packageName, version }: ParsedPackageSpec): Promise<PackageInfo> {
-  try {
-    const response = await fetch(`https://registry.npmjs.org/${packageName}/${version || "latest"}`);
-    if (!response.ok) {
-      throw new Error("Failed to get package info");
-    }
-    const data = await response.json();
-    return {
-      size: data.dist.unpackedSize,
-      version: data.version,
-    };
-  } catch (error) {
-    throw new Error("Failed to get package info");
   }
 }
 
