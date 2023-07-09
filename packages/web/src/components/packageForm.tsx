@@ -1,3 +1,10 @@
+/**
+ * This component is responsible for:
+ * 1. Setting up the web worker
+ * 2. Taking user input and parsing it into a package spec
+ * 3. Fetching the package info from npm
+ * 4. Lifting package analysis to the parent component
+ */
 import { useState, useEffect } from "react";
 import type { ResultMessage } from "../../worker/worker";
 import { parsePackageSpec, type ParsedPackageSpec } from "@arethetypeswrong/core/utils";
@@ -41,9 +48,11 @@ export default function PackageForm() {
     const input = e.target.value;
     const parsedPackage = parsePackageSpec(input);
 
+    // update component state
     setPackageName(input);
     setParsedPackage(parsedPackage);
 
+    // fetch the package info from npm if the package spec is valid
     if (parsedPackage.status == "success") {
       fetchPackageInfo(parsedPackage.data)
         .then((info) => {
