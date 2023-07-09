@@ -57,18 +57,20 @@ function getEntrypoints(fs: Package, exportsObject: any, options: CheckPackageOp
     return options.entrypoints.map((e) => formatEntrypointString(e, fs.packageName));
   }
   if (exportsObject === undefined && fs) {
-    return getProxyDirectories(`/node_modules/${fs.packageName}`, fs);
+    const proxies = getProxyDirectories(`/node_modules/${fs.packageName}`, fs);
+    if (proxies.length === 0) {
+      return ["."];
+    }
+    return proxies;
   }
   const detectedSubpaths = getSubpaths(exportsObject);
   if (detectedSubpaths.length === 0) {
     detectedSubpaths.push(".");
   }
-  const included = Array.from(
-    new Set([
-      ...detectedSubpaths,
-      ...(options?.includeEntrypoints?.map((e) => formatEntrypointString(e, fs.packageName)) ?? []),
-    ])
-  );
+  const included = unique([
+    ...detectedSubpaths,
+    ...(options?.includeEntrypoints?.map((e) => formatEntrypointString(e, fs.packageName)) ?? []),
+  ]);
   if (!options?.excludeEntrypoints) {
     return included;
   }
@@ -118,7 +120,8 @@ function getProxyDirectories(rootDir: string, fs: Package) {
       }
     })
     .map((f) => "." + f.slice(rootDir.length).slice(0, -`/package.json`.length))
-    .filter((f) => f !== "./");
+    .filter((f) => f !== "./")
+    .sort();
 }
 
 function getEntrypointInfo(
@@ -199,4 +202,8 @@ function getEntrypointResolution(
       trace,
     };
   }
+}
+
+function unique<T>(array: readonly T[]): T[] {
+  return array.filter((value, index) => array.indexOf(value) === index);
 }
