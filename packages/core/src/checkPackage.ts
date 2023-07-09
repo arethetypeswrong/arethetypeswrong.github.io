@@ -6,7 +6,24 @@ import type { Package } from "./createPackage.js";
 import { createCompilerHosts, type CompilerHosts, CompilerHostWrapper } from "./multiCompilerHost.js";
 import type { CheckResult, EntrypointInfo, EntrypointResolutionAnalysis, Resolution, ResolutionKind } from "./types.js";
 
-export async function checkPackage(pkg: Package): Promise<CheckResult> {
+export interface CheckPackageOptions {
+  /**
+   * Exhaustive list of entrypoints to check. The package root is `"."`.
+   * Specifying this option disables automatic entrypoint discovery,
+   * and overrides the `includeEntrypoints` and `excludeEntrypoints` options.
+   */
+  entrypoints?: string[];
+  /**
+   * Entrypoints to check in addition to automatically discovered ones.
+   */
+  includeEntrypoints?: string[];
+  /**
+   * Entrypoints to exclude from checking.
+   */
+  excludeEntrypoints?: (string | RegExp)[];
+}
+
+export async function checkPackage(pkg: Package, options?: CheckPackageOptions): Promise<CheckResult> {
   const files = pkg.listFiles();
   const types = files.some(ts.hasTSFileExtension) ? "included" : false;
   const parts = files[0].split("/");
@@ -21,7 +38,7 @@ export async function checkPackage(pkg: Package): Promise<CheckResult> {
   }
 
   const hosts = createCompilerHosts(pkg);
-  const entrypointResolutions = getEntrypointInfo(packageName, pkg, hosts);
+  const entrypointResolutions = getEntrypointInfo(packageName, pkg, hosts, options);
   const entrypointResolutionProblems = getEntrypointResolutionProblems(entrypointResolutions, hosts);
   const resolutionBasedFileProblems = getResolutionBasedFileProblems(packageName, entrypointResolutions, hosts);
   const fileProblems = getFileProblems(entrypointResolutions, hosts);
@@ -33,6 +50,46 @@ export async function checkPackage(pkg: Package): Promise<CheckResult> {
     entrypoints: entrypointResolutions,
     problems: [...entrypointResolutionProblems, ...resolutionBasedFileProblems, ...fileProblems],
   };
+}
+
+function getEntrypoints(fs: Package, exportsObject: any, options: CheckPackageOptions | undefined): string[] {
+  if (options?.entrypoints) {
+    return options.entrypoints.map((e) => formatEntrypointString(e, fs.packageName));
+  }
+  if (exportsObject === undefined && fs) {
+    return getProxyDirectories(`/node_modules/${fs.packageName}`, fs);
+  }
+  const detectedSubpaths = getSubpaths(exportsObject);
+  if (detectedSubpaths.length === 0) {
+    detectedSubpaths.push(".");
+  }
+  const included = Array.from(
+    new Set([
+      ...detectedSubpaths,
+      ...(options?.includeEntrypoints?.map((e) => formatEntrypointString(e, fs.packageName)) ?? []),
+    ])
+  );
+  if (!options?.excludeEntrypoints) {
+    return included;
+  }
+  return included.filter((entrypoint) => {
+    return !options.excludeEntrypoints!.some((exclusion) => {
+      if (typeof exclusion === "string") {
+        return formatEntrypointString(exclusion, fs.packageName) === entrypoint;
+      }
+      return exclusion.test(entrypoint);
+    });
+  });
+}
+
+function formatEntrypointString(path: string, packageName: string) {
+  return (
+    path === "." || path.startsWith("./")
+      ? path
+      : path.startsWith(`${packageName}/`)
+      ? `.${path.slice(packageName.length)}`
+      : `./${path}`
+  ).trim();
 }
 
 function getSubpaths(exportsObject: any): string[] {
@@ -62,13 +119,14 @@ function getProxyDirectories(rootDir: string, fs: Package) {
     .filter((f) => f !== "./");
 }
 
-function getEntrypointInfo(packageName: string, fs: Package, hosts: CompilerHosts): Record<string, EntrypointInfo> {
+function getEntrypointInfo(
+  packageName: string,
+  fs: Package,
+  hosts: CompilerHosts,
+  options: CheckPackageOptions | undefined
+): Record<string, EntrypointInfo> {
   const packageJson = JSON.parse(fs.readFile(`/node_modules/${packageName}/package.json`));
-  const subpaths = getSubpaths(packageJson.exports);
-  const entrypoints = subpaths.length ? subpaths : ["."];
-  if (!packageJson.exports) {
-    entrypoints.push(...getProxyDirectories(`/node_modules/${packageName}`, fs));
-  }
+  const entrypoints = getEntrypoints(fs, packageJson.exports, options);
   const result: Record<string, EntrypointInfo> = {};
   for (const entrypoint of entrypoints) {
     const resolutions: Record<ResolutionKind, EntrypointResolutionAnalysis> = {

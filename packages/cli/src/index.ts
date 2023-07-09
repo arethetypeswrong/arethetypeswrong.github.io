@@ -32,6 +32,10 @@ export interface Opts {
   configPath?: string;
   ignoreRules?: string[];
   format: Format;
+
+  entrypoints?: string[];
+  includeEntrypoints?: string[];
+  excludeEntrypoints?: string[];
 }
 
 program
@@ -49,17 +53,28 @@ particularly ESM-related module resolution issues.`
     "[file-directory-or-package-spec]",
     "the packed .tgz, or directory containing package.json with --pack, or package spec with --from-npm"
   )
-  .option("-P, --pack", "run `npm pack` in the specified directory and delete the resulting .tgz file afterwards")
-  .option("-p, --from-npm", "read from the npm registry instead of a local file")
-  .addOption(new Option("-f, --format <format>", "specify the print format").choices(formats).default("table"))
-  .option("-q, --quiet", "don't print anything to STDOUT (overrides all other options)")
-  .addOption(
-    new Option("--ignore-rules <rules...>", "specify rules to ignore").choices(Object.values(problemFlags)).default([])
+  .option("-P, --pack", "Run `npm pack` in the specified directory and delete the resulting .tgz file afterwards")
+  .option("-p, --from-npm", "Read from the npm registry instead of a local file")
+  .addOption(new Option("-f, --format <format>", "Specify the print format").choices(formats).default("table"))
+  .option("-q, --quiet", "Don't print anything to STDOUT (overrides all other options)")
+  .option(
+    "--entrypoints <entrypoints...>",
+    "Specify an exhaustive list of entrypoints to check. " +
+      'The package root is `"." Specifying this option disables automatic entrypoint discovery, ' +
+      "and overrides the `--include-entrypoints` and `--exclude-entrypoints` options."
   )
-  .option("--summary, --no-summary", "whether to print summary information about the different errors")
-  .option("--emoji, --no-emoji", "whether to use any emojis")
-  .option("--color, --no-color", "whether to use any colors (the FORCE_COLOR env variable is also available)")
-  .option("--config-path <path>", "path to config file (default: ./.attw.json)")
+  .option(
+    "--include-entrypoints <entrypoints...>",
+    "Specify entrypoints to check in addition to automatically discovered ones."
+  )
+  .option("--exclude-entrypoints <entrypoints...>", "Specify entrypoints to exclude from checking.")
+  .addOption(
+    new Option("--ignore-rules <rules...>", "Specify rules to ignore").choices(Object.values(problemFlags)).default([])
+  )
+  .option("--summary, --no-summary", "Whether to print summary information about the different errors")
+  .option("--emoji, --no-emoji", "Whether to use any emojis")
+  .option("--color, --no-color", "Whether to use any colors (the FORCE_COLOR env variable is also available)")
+  .option("--config-path <path>", "Path to config file (default: ./.attw.json)")
   .action(async (fileOrDirectory = ".") => {
     const opts = program.opts<Opts>();
     await readConfig(program, opts.configPath);
@@ -87,7 +102,12 @@ particularly ESM-related module resolution issues.`
           program.error(result.error);
         } else {
           analysis = await core.checkPackage(
-            await core.createPackageFromNpm(`${result.data.name}@${result.data.version}`)
+            await core.createPackageFromNpm(`${result.data.name}@${result.data.version}`),
+            {
+              entrypoints: opts.entrypoints,
+              includeEntrypoints: opts.includeEntrypoints,
+              excludeEntrypoints: opts.excludeEntrypoints,
+            }
           );
         }
       } catch (error) {
@@ -136,7 +156,11 @@ particularly ESM-related module resolution issues.`
         }
         const file = await readFile(fileName);
         const data = new Uint8Array(file);
-        analysis = await core.checkPackage(await core.createPackageFromTarballData(data));
+        analysis = await core.checkPackage(await core.createPackageFromTarballData(data), {
+          entrypoints: opts.entrypoints,
+          includeEntrypoints: opts.includeEntrypoints,
+          excludeEntrypoints: opts.excludeEntrypoints,
+        });
       } catch (error) {
         handleError(error, "checking file");
       }
