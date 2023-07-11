@@ -1,4 +1,4 @@
-import { checkPackage } from "@arethetypeswrong/core";
+import { checkPackage, createPackageFromTarballUrl } from "@arethetypeswrong/core";
 import { appendFileSync } from "fs";
 import { Worker, isMainThread, parentPort, workerData } from "node:worker_threads";
 import type { Blob } from "./types.ts";
@@ -22,7 +22,7 @@ if (!isMainThread && parentPort) {
     let tries = 0;
     while (true) {
       try {
-        const analysis = await checkPackage(packageName, packageVersion, /*host*/ undefined, tarballUrl);
+        const analysis = await checkPackage(await createPackageFromTarballUrl(tarballUrl));
         postBlob({
           kind: "analysis",
           workerId: workerData.workerId,

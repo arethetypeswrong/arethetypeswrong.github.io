@@ -9,7 +9,7 @@
     "reduce": "tsx scripts/reduceFull.ts"
   },
   "devDependencies": {
-    "@arethetypeswrong/core": "0.3.0",
+    "@arethetypeswrong/core": "file:../core",
     "@types/cli-progress": "^3.11.0",
     "@types/node": "^20.3.1",
     "@types/pacote": "^11.1.5",
