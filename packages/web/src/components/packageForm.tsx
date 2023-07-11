@@ -14,7 +14,11 @@ import type { PackageInfo } from "../state";
 
 const workerURL = new URL("../../worker/worker.ts", import.meta.url);
 
-export default function PackageForm() {
+type PackageFormProps = {
+  setPackageAnalysis: (analysis: ResultMessage) => void;
+};
+
+export default function PackageForm({ setPackageAnalysis }: PackageFormProps) {
   const [packageName, setPackageName] = useState("");
   const [parsedPackage, setParsedPackage] = useState<Failable<ParsedPackageSpec>>(parsePackageSpec(""));
   const [packageInfo, setPackageInfo] = useState<PackageInfo | null>(null);
@@ -27,6 +31,7 @@ export default function PackageForm() {
     // setup the processing callback
     worker.onmessage = async (event: MessageEvent<ResultMessage>) => {
       console.log(event.data);
+      setPackageAnalysis(event.data);
     };
 
     // setup the error callback
