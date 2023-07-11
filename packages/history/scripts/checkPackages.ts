@@ -1,7 +1,9 @@
 import { checkPackage, createPackageFromTarballUrl } from "@arethetypeswrong/core";
 import { appendFileSync } from "fs";
 import { Worker, isMainThread, parentPort, workerData } from "node:worker_threads";
-import type { Blob } from "./types.ts";
+import type { Blob, FullJsonLine } from "./types.ts";
+import { versions } from "@arethetypeswrong/core/versions";
+import { npmHighImpact } from "npm-high-impact";
 
 const delay = 10;
 
@@ -53,6 +55,10 @@ export default function checkPackages(
   outFile: URL,
   workerCount: number
 ) {
+  if (!packages.length) {
+    return Promise.resolve();
+  }
+
   if (!isMainThread) {
     throw new Error("This function must be called from the main thread.");
   }
@@ -71,7 +77,6 @@ export default function checkPackages(
       worker.on("message", async (blob: Blob) => {
         const workerIndex = workers.indexOf(worker);
         packagesDonePerWorker[workerIndex]++;
-        appendFileSync(outFile, JSON.stringify(blob) + "\n");
         if (blob.kind === "error") {
           console.error(`[${workerIndex}] ${blob.packageName}@${blob.packageVersion}: ${blob.message}`);
           if (blob.prevMessage === blob.message) {
@@ -85,11 +90,20 @@ export default function checkPackages(
             });
           }
         } else {
-          console.log(
-            `[${workerIndex}] ${packages.length - workQueue.length}/${packages.length} ${blob.data.packageName}@${
-              blob.data.packageVersion
-            }`
+          // Sometimes the package version in the npm manifest is different from the package.json,
+          // so we need to use the version we were asked for so we don't repeat this work.
+          const originalPackage = packages.find((p) => p.packageName === blob.data.packageName)!;
+          const packageSpec = `${blob.data.packageName}@${originalPackage.packageVersion}`;
+          appendFileSync(
+            outFile,
+            JSON.stringify({
+              analysis: blob.data,
+              coreVersion: versions.core,
+              packageSpec,
+              rank: npmHighImpact.indexOf(blob.data.packageName),
+            } satisfies FullJsonLine) + "\n"
           );
+          console.log(`[${workerIndex}] ${packages.length - workQueue.length}/${packages.length} ${packageSpec}`);
         }
 
         await sleep(delay);

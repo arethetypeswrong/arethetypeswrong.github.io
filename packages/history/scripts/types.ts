@@ -16,12 +16,11 @@ export interface ErrorBlob {
 }
 export type Blob = CheckResultBlob | ErrorBlob;
 
-export interface FullJson {
-  [packageSpec: string]: {
-    coreVersion: string;
-    rank: number;
-    analysis: CheckResult;
-  };
+export interface FullJsonLine {
+  packageSpec: string;
+  coreVersion: string;
+  rank: number;
+  analysis: CheckResult;
 }
 
 export interface DatesJson {
