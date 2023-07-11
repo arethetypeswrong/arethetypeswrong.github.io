@@ -2,7 +2,9 @@ import { render } from "react-dom";
 import PackageForm from "./components/packageForm";
 import type { ResultMessage } from "../worker/worker";
 import { useState } from "react";
-import type { Analysis, UntypedResult } from "@arethetypeswrong/core";
+import type { UntypedResult } from "@arethetypeswrong/core";
+import PackageAnalysis from "./components/packageAnalysis";
+import UntypedPackage from "./components/untypedPackage";
 
 const app = document.getElementById("app");
 
@@ -26,34 +28,6 @@ function CheckResult({ resultMessage }: { resultMessage: ResultMessage }) {
   }
 
   return <UntypedPackage result={result} />;
-}
-
-function PackageAnalysis({ analysis }: { analysis: Analysis }) {
-  const entrypoints = analysis.entrypoints;
-
-  for (const k of Object.keys(entrypoints)) {
-    console.log(k, entrypoints[k]);
-  }
-
-  return (
-    <div>
-      <h2>Package Analysis</h2>
-      <p>{analysis.packageName}</p>
-      <p>{analysis.packageVersion}</p>
-      <p>{analysis.types}</p>
-    </div>
-  );
-}
-
-function UntypedPackage({ result }: { result: UntypedResult }) {
-  return (
-    <div>
-      <h2>Untyped Package</h2>
-      <p>{result.packageName}</p>
-      <p>{result.packageVersion}</p>
-      <p>{result.types}</p>
-    </div>
-  );
 }
 
 render(<App />, app);
