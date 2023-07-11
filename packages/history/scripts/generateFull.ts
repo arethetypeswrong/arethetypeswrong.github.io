@@ -1,6 +1,6 @@
 import { versions } from "@arethetypeswrong/core/versions";
 import cliProgress from "cli-progress";
-import { mkdir, open, readFile, writeFile } from "fs/promises";
+import { mkdir, open, readFile, stat, writeFile } from "fs/promises";
 import { createRequire } from "module";
 import { npmHighImpact } from "npm-high-impact";
 import os from "os";
@@ -8,6 +8,8 @@ import pacote from "pacote";
 import { major, minor } from "semver";
 import checkPackages from "./checkPackages.ts";
 import type { Blob, DatesJson, FullJson } from "./types.ts";
+import { BlobServiceClient } from "@azure/storage-blob";
+import { DefaultAzureCredential } from "@azure/identity";
 
 const excludePackages = [
   "grunt-ts", // File not found: /node_modules/grunt-ts/defs/tsd.d.ts
@@ -26,78 +28,102 @@ const dates = Array.from(
   }
 );
 
+const blobServiceClient = new BlobServiceClient(
+  "https://arethetypeswrong.blob.core.windows.net",
+  new DefaultAzureCredential()
+);
+const dataContainerClient = blobServiceClient.getContainerClient("data");
+const datesBlobClient = dataContainerClient.getBlobClient("dates.json");
+
 const npmHighImpactVersion = createRequire(import.meta.url)("npm-high-impact/package.json").version;
 const fullJsonFileName = new URL("../data/full.json", import.meta.url);
-for (const date of dates) {
-  const existingData: FullJson = JSON.parse(await readFile(fullJsonFileName, "utf8"));
-  const work = [];
-  const packages = [];
-  const errors = [];
-  const datesFileName = new URL("../data/dates.json", import.meta.url);
-  const existingDates: DatesJson = JSON.parse(await readFile(datesFileName, "utf8"));
-  if (!existingDates.dates?.[date] || existingDates.npmHighImpactVersion !== npmHighImpactVersion) {
-    console.log(`*** Fetching versions for ${date} ***`);
-    const bar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
-    bar.start(npmHighImpact.length, 0);
-    for (const packageName of npmHighImpact) {
-      try {
-        const manifest = await pacote.manifest(`${packageName}@latest`, {
-          before: new Date(date),
-        });
+const datesFileName = new URL("../data/dates.json", import.meta.url);
+if (
+  (await datesBlobClient.getProperties()).lastModified! > (await stat(datesFileName).catch(() => ({ mtime: 0 }))).mtime
+) {
+  console.log("Downloading dates.json");
+  datesBlobClient.downloadToFile(datesFileName.pathname);
+}
+const existingDates: DatesJson = JSON.parse(await readFile(datesFileName, "utf8"));
 
-        bar.increment();
-        const packageVersion = manifest.version;
-        const tarballUrl = manifest.dist.tarball;
-        packages.push({ packageName, packageVersion, tarballUrl });
-      } catch (e) {
-        errors.push({ packageName, message: (e as any).message });
+try {
+  for (const date of dates) {
+    const existingData: FullJson = JSON.parse(await readFile(fullJsonFileName, "utf8"));
+    const work = [];
+    const packages = [];
+    const errors = [];
+    if (!existingDates.dates?.[date] || existingDates.npmHighImpactVersion !== npmHighImpactVersion) {
+      console.log(`*** Fetching versions for ${date} ***`);
+      const bar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
+      bar.start(npmHighImpact.length, 0);
+      for (const packageName of npmHighImpact) {
+        try {
+          const manifest = await pacote.manifest(`${packageName}@latest`, {
+            before: new Date(date),
+          });
+
+          bar.increment();
+          const packageVersion = manifest.version;
+          const tarballUrl = manifest.dist.tarball;
+          packages.push({ packageName, packageVersion, tarballUrl });
+        } catch (e) {
+          errors.push({ packageName, message: (e as any).message });
+        }
+      }
+      bar.stop();
+
+      await writeFile(
+        datesFileName,
+        JSON.stringify({
+          npmHighImpactVersion,
+          dates: {
+            ...existingDates.dates,
+            [date]: packages,
+          },
+        } satisfies DatesJson)
+      );
+    } else {
+      console.log(`*** Using cached versions for ${date} ***`);
+      packages.push(...existingDates.dates[date]);
+    }
+
+    for (const pkg of packages) {
+      if (excludePackages.includes(pkg.packageName)) {
+        continue;
+      }
+      const existing = existingData[`${pkg.packageName}@${pkg.packageVersion}`];
+      if (
+        !existing ||
+        major(existing.coreVersion) !== major(versions.core) ||
+        minor(existing.coreVersion) !== minor(versions.core)
+      ) {
+        work.push(pkg);
       }
     }
-    bar.stop();
 
-    await writeFile(
-      datesFileName,
-      JSON.stringify({
-        npmHighImpactVersion,
-        dates: {
-          ...existingDates.dates,
-          [date]: packages,
-        },
-      } satisfies DatesJson)
+    console.log(
+      `\nDate: ${date}\n  Packages: ${packages.length}\n  To check: ${work.length}\n  Errors: ${errors.length}\n${errors
+        .map(({ packageName, message }) => `  - ${packageName}: ${message}`)
+        .join(`\n`)}`
     );
-  } else {
-    console.log(`*** Using cached versions for ${date} ***`);
-    packages.push(...existingDates.dates[date]);
+
+    const tmpFileName = new URL(`../tmp/${date.replace(/-/g, "")}.json`, import.meta.url);
+    const workerCount = Math.min(os.cpus().length - 1 || 1, 6);
+    await mkdir(new URL("../tmp", import.meta.url), { recursive: true });
+    await writeFile(tmpFileName, "");
+    await checkPackages(work, tmpFileName, workerCount);
+
+    console.log(`Reducing ${tmpFileName} to full.json\n\n`);
+    await reduceBlobs(tmpFileName, existingData);
   }
+} finally {
+  console.log("Uploading dates.json");
+  const datesBuffer = await readFile(datesFileName);
+  await dataContainerClient.uploadBlockBlob("dates.json", datesBuffer, datesBuffer.byteLength);
 
-  for (const pkg of packages) {
-    if (excludePackages.includes(pkg.packageName)) {
-      continue;
-    }
-    const existing = existingData[`${pkg.packageName}@${pkg.packageVersion}`];
-    if (
-      !existing ||
-      major(existing.coreVersion) !== major(versions.core) ||
-      minor(existing.coreVersion) !== minor(versions.core)
-    ) {
-      work.push(pkg);
-    }
-  }
-
-  console.log(
-    `\nDate: ${date}\n  Packages: ${packages.length}\n  To check: ${work.length}\n  Errors: ${errors.length}\n${errors
-      .map(({ packageName, message }) => `  - ${packageName}: ${message}`)
-      .join(`\n`)}`
-  );
-
-  const tmpFileName = new URL(`../tmp/${date.replace(/-/g, "")}.json`, import.meta.url);
-  const workerCount = Math.min(os.cpus().length - 1 || 1, 6);
-  await mkdir(new URL("../tmp", import.meta.url), { recursive: true });
-  await writeFile(tmpFileName, "");
-  await checkPackages(work, tmpFileName, workerCount);
-
-  console.log(`Reducing ${tmpFileName} to full.json\n\n`);
-  await reduceBlobs(tmpFileName, existingData);
+  console.log("Uploading full.json");
+  const fullBuffer = await readFile(fullJsonFileName);
+  await dataContainerClient.uploadBlockBlob("full.json", fullBuffer, fullBuffer.byteLength);
 }
 
 async function reduceBlobs(inFile: URL, existingData: FullJson) {
