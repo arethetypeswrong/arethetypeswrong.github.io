@@ -30,7 +30,6 @@ export default function PackageForm({ setPackageAnalysis }: PackageFormProps) {
 
     // setup the processing callback
     worker.onmessage = async (event: MessageEvent<ResultMessage>) => {
-      console.log(event.data);
       setPackageAnalysis(event.data);
     };
 

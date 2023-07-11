@@ -2,7 +2,6 @@ import { render } from "react-dom";
 import PackageForm from "./components/packageForm";
 import type { ResultMessage } from "../worker/worker";
 import { useState } from "react";
-import type { UntypedResult } from "@arethetypeswrong/core";
 import PackageAnalysis from "./components/packageAnalysis";
 import UntypedPackage from "./components/untypedPackage";
 
