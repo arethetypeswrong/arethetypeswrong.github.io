@@ -39,7 +39,7 @@ async function checkPackageWorker(packageFS: FS): Promise<CheckResult> {
   const packageJsonContent = JSON.parse(packageFS.readFile(`/node_modules/${packageName}/package.json`));
   const packageVersion = packageJsonContent.version;
   if (!types) {
-    return { packageName, packageVersion, types };
+    return { type: "untyped", packageName, packageVersion, types };
   }
 
   const host = createMultiCompilerHost(packageFS);
@@ -49,6 +49,7 @@ async function checkPackageWorker(packageFS: FS): Promise<CheckResult> {
   const fileProblems = getFileProblems(entrypointResolutions, host);
 
   return {
+    type: "analysis",
     packageName,
     packageVersion,
     types,
