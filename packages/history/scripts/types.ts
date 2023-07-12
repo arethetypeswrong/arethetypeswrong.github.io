@@ -1,4 +1,4 @@
-import type { Analysis, CheckResult, ProblemKind } from "@arethetypeswrong/core";
+import type { CheckResult } from "@arethetypeswrong/core";
 
 export interface CheckResultBlob {
   kind: "analysis";
@@ -31,23 +31,5 @@ export interface DatesJson {
       packageVersion: string;
       tarballUrl: string;
     }[];
-  };
-}
-
-export interface FullTypedRootJson {
-  [packageSpec: string]: {
-    coreVersion: string;
-    rank: number;
-    analysis: Analysis;
-  };
-}
-
-export interface RootProblemCountsByDateJson {
-  problemKinds: ProblemKind[];
-  dates: {
-    [date: string]: {
-      typedPackages: number;
-      problems: number[];
-    };
   };
 }
