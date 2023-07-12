@@ -1,0 +1,23 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "module": "nodenext",
+    "checkJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true
+  },
+  "include": [
+    "main.js"
+  ],
+  "exclude": [
+    "scripts"
+  ],
+  "references": [
+    {
+      "path": "../core"
+    },
+    {
+      "path": "./scripts"
+    }
+  ]
+}

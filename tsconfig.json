@@ -18,6 +18,12 @@
     },
     {
       "path": "./packages/cli/test"
+    },
+    {
+      "path": "./packages/history"
+    },
+    {
+      "path": "./packages/history/scripts"
     }
   ]
 }
