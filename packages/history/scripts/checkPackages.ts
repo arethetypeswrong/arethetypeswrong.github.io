@@ -54,9 +54,9 @@ export default function checkPackages(
   packages: { packageName: string; packageVersion: string; tarballUrl: string }[],
   outFile: URL,
   workerCount: number
-) {
+): Promise<boolean> {
   if (!packages.length) {
-    return Promise.resolve();
+    return Promise.resolve(false);
   }
 
   if (!isMainThread) {
@@ -67,7 +67,8 @@ export default function checkPackages(
     return new Worker(new URL(import.meta.url), { workerData: { workerId: i } });
   });
 
-  return new Promise<void>(async (resolve, reject) => {
+  return new Promise<boolean>(async (resolve, reject) => {
+    let wroteChanges = false;
     const packagesDonePerWorker = new Array(workerCount).fill(0);
     const workQueue: { packageName: string; packageVersion: string; tarballUrl: string; prevMessage?: string }[] = [
       ...packages,
@@ -96,14 +97,23 @@ export default function checkPackages(
           const packageSpec = `${blob.data.packageName}@${originalPackage.packageVersion}`;
           appendFileSync(
             outFile,
-            JSON.stringify({
-              analysis: blob.data,
-              coreVersion: versions.core,
-              packageSpec,
-              rank: npmHighImpact.indexOf(blob.data.packageName),
-            } satisfies FullJsonLine) + "\n"
+            JSON.stringify(
+              {
+                analysis: blob.data,
+                coreVersion: versions.core,
+                packageSpec,
+                rank: npmHighImpact.indexOf(blob.data.packageName),
+              } satisfies FullJsonLine,
+              (key, value) => {
+                if (key === "trace") {
+                  return [];
+                }
+                return value;
+              }
+            ) + "\n"
           );
           console.log(`[${workerIndex}] ${packages.length - workQueue.length}/${packages.length} ${packageSpec}`);
+          wroteChanges = true;
         }
 
         await sleep(delay);
@@ -116,7 +126,7 @@ export default function checkPackages(
           finishedWorkers++;
 
           if (finishedWorkers === workers.length) {
-            resolve();
+            resolve(wroteChanges);
           }
         }
       });
@@ -136,7 +146,7 @@ export default function checkPackages(
         finishedWorkers++;
 
         if (finishedWorkers === workers.length) {
-          resolve();
+          resolve(wroteChanges);
         }
       }
     }

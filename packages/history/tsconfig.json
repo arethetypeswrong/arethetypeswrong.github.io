@@ -1,21 +1,23 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "lib": [
-      "esnext"
-    ],
     "module": "nodenext",
-    "noEmit": true,
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "resolveJsonModule": true,
-    "types": [
-      "node"
-    ],
+    "checkJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true
   },
+  "include": [
+    "main.js"
+  ],
+  "exclude": [
+    "scripts"
+  ],
   "references": [
     {
       "path": "../core"
+    },
+    {
+      "path": "./scripts"
     }
   ]
 }

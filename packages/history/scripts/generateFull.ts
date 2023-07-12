@@ -2,7 +2,7 @@ import { versions } from "@arethetypeswrong/core/versions";
 import { BlobServiceClient, StorageSharedKeyCredential } from "@azure/storage-blob";
 import cliProgress from "cli-progress";
 import "dotenv/config";
-import { open, readFile, stat, writeFile } from "fs/promises";
+import { open, readFile, stat, writeFile, rename, unlink } from "fs/promises";
 import { createRequire } from "module";
 import { npmHighImpact } from "npm-high-impact";
 import os from "os";
@@ -10,6 +10,8 @@ import pacote from "pacote";
 import { major, minor } from "semver";
 import checkPackages from "./checkPackages.ts";
 import type { DatesJson, FullJsonLine } from "./types.ts";
+import { appendFileSync, createReadStream, createWriteStream } from "fs";
+import { createGunzip, createGzip } from "zlib";
 
 process.on("SIGINT", () => {
   process.exit(1);
@@ -19,6 +21,10 @@ const excludePackages = [
   "grunt-ts", // File not found: /node_modules/grunt-ts/defs/tsd.d.ts
   "Babel", // Expected double-quoted property name in JSON at position 450
   "aws-cdk-lib", // Takes forever
+];
+
+const excludedSpecs = [
+  "next@12.2.0", // File not found: /node_modules/next/dist/styled-jsx-types/global.ts
 ];
 
 // Array of month starts from 2022-01-01 until the first of this month
@@ -38,12 +44,15 @@ const blobServiceClient = new BlobServiceClient(
 );
 const dataContainerClient = blobServiceClient.getContainerClient("data");
 const datesBlobClient = dataContainerClient.getBlockBlobClient("dates.json");
-const fullBlobClient = dataContainerClient.getBlockBlobClient("full.json");
+const fullBlobClient = dataContainerClient.getBlockBlobClient("full.json.gz");
 
+let datesModified = false;
+let fullModified = false;
 const npmHighImpactVersion = createRequire(import.meta.url)("npm-high-impact/package.json").version;
 const fullJsonFileName = new URL("../data/full.json", import.meta.url);
 const datesFileName = new URL("../data/dates.json", import.meta.url);
 if (
+  (await datesBlobClient.exists()) &&
   (await datesBlobClient.getProperties()).lastModified! > (await stat(datesFileName).catch(() => ({ mtime: 0 }))).mtime
 ) {
   console.log("Downloading dates.json");
@@ -51,11 +60,20 @@ if (
 }
 const existingDates: DatesJson = JSON.parse(await readFile(datesFileName, "utf8"));
 if (
+  (await fullBlobClient.exists()) &&
   (await fullBlobClient.getProperties()).lastModified! >
-  (await stat(fullJsonFileName).catch(() => ({ mtime: 0 }))).mtime
+    (await stat(fullJsonFileName).catch(() => ({ mtime: 0 }))).mtime
 ) {
-  console.log("Downloading full.json");
+  console.log("Downloading full.json.gz");
   await fullBlobClient.downloadToFile(fullJsonFileName.pathname);
+  console.log("Unzipping full.json.gz");
+  await new Promise((resolve, reject) => {
+    createReadStream(`${fullJsonFileName.pathname}.gz`)
+      .pipe(createGunzip())
+      .pipe(createWriteStream(fullJsonFileName.pathname))
+      .on("error", reject)
+      .on("finish", resolve);
+  });
 }
 
 let bytesRead = 0;
@@ -95,13 +113,14 @@ for (const date of dates) {
 
     existingDates.dates[date] = packages;
     await writeFile(datesFileName, JSON.stringify(existingDates));
+    datesModified = true;
   } else {
     console.log(`*** Using cached versions for ${date} ***`);
     packages.push(...existingDates.dates[date]);
   }
 
   for (const pkg of packages) {
-    if (excludePackages.includes(pkg.packageName)) {
+    if (isIgnoredPackage(pkg.packageName, pkg.packageVersion)) {
       continue;
     }
     const existing = seenResults.get(`${pkg.packageName}@${pkg.packageVersion}`);
@@ -117,14 +136,47 @@ for (const date of dates) {
   );
 
   const workerCount = Math.min(os.cpus().length - 1 || 1, 6);
-  await checkPackages(work, fullJsonFileName, workerCount);
+  fullModified = await checkPackages(work, fullJsonFileName, workerCount);
 }
 
-console.log("Uploading dates.json");
-await datesBlobClient.uploadFile(datesFileName.pathname);
+console.log("Cleaning full.json");
+const cleanedFileName = new URL("../data/cleaned.json", import.meta.url);
+const allSpecs = new Set<string>();
+for (const date of Object.keys(existingDates.dates)) {
+  for (const { packageName, packageVersion } of existingDates.dates[date]) {
+    if (!isIgnoredPackage(packageName, packageVersion)) {
+      allSpecs.add(`${packageName}@${packageVersion}`);
+    }
+  }
+}
+const fh = await open(fullJsonFileName, "r");
+for await (const line of fh.readLines()) {
+  const result: FullJsonLine = JSON.parse(line);
+  if (allSpecs.has(result.packageSpec)) {
+    appendFileSync(cleanedFileName, `${JSON.stringify(result, (key, value) => (key === "trace" ? [] : value))}\n`);
+  } else {
+    fullModified = true;
+  }
+}
+await fh.close();
+await unlink(fullJsonFileName);
+await rename(cleanedFileName, fullJsonFileName);
+await new Promise((resolve, reject) => {
+  createReadStream(fullJsonFileName)
+    .pipe(createGzip({ level: 9 }))
+    .pipe(createWriteStream(`${fullJsonFileName.pathname}.gz`))
+    .on("error", reject)
+    .on("close", resolve);
+});
 
-console.log("Uploading full.json");
-await fullBlobClient.uploadFile(fullJsonFileName.pathname);
+if (datesModified) {
+  console.log("Uploading dates.json");
+  await datesBlobClient.uploadFile(datesFileName.pathname);
+}
+if (fullModified) {
+  console.log("Uploading full.json.gz");
+  await fullBlobClient.uploadFile(`${fullJsonFileName.pathname}.gz`);
+}
 
 function nAtATime<T>(n: number, items: T[], fn: (item: T) => Promise<void>) {
   return new Promise<void>((resolve, reject) => {
@@ -151,4 +203,12 @@ function nAtATime<T>(n: number, items: T[], fn: (item: T) => Promise<void>) {
       }
     }
   });
+}
+
+function isIgnoredPackage(packageName: string, packageVersion: string) {
+  return (
+    excludePackages.includes(packageName) ||
+    packageName.startsWith("@types/") ||
+    excludedSpecs.includes(`${packageName}@${packageVersion}`)
+  );
 }

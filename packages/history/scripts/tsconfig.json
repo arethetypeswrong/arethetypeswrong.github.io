@@ -1,0 +1,23 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": [
+      "esnext"
+    ],
+    "module": "nodenext",
+    "composite": true,
+    "emitDeclarationOnly": true,
+    "outDir": "lib",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "resolveJsonModule": true,
+    "types": [
+      "node"
+    ],
+  },
+  "references": [
+    {
+      "path": "../../core"
+    }
+  ]
+}

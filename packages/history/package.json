@@ -2,9 +2,18 @@
   "name": "@arethetypeswrong/history",
   "version": "0.0.0",
   "type": "module",
+  "files": [
+    "*.js",
+    "*.d.ts",
+    "./data/full.json.gz",
+    "./data/dates.json"
+  ],
+  "main": "./main.js",
+  "types": "./main.d.ts",
   "scripts": {
     "build": "tsc -b",
-    "pregenerate": "npm run build",
+    "build:scripts": "tsc -b scripts",
+    "pregenerate": "npm run build:scripts",
     "generate": "tsx scripts/generateFull.ts",
     "reduce": "tsx scripts/reduceFull.ts"
   },

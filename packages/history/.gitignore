@@ -1,3 +1,5 @@
 tmp
 data
 .env
+*.d.ts
+scripts/lib
