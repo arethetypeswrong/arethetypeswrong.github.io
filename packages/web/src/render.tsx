@@ -1,35 +1,21 @@
-import { render } from "react-dom";
-import PackageForm from "./components/packageForm";
-import type { ResultMessage } from "../worker/worker";
-import { useState } from "react";
-import PackageAnalysis from "./components/packageAnalysis";
-import UntypedPackage from "./components/untypedPackage";
+import { createRoot } from "react-dom/client";
+import Main from "./components/main";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import React from "react";
 
 const app = document.getElementById("app");
+if (!app) {
+  throw new Error("No app element, can not render the app. Add an element with id='app' to the body.");
+}
 
 function App() {
-  const [checkResult, setCheckResult] = useState<ResultMessage | null>(null);
+  const router = createBrowserRouter([{ path: "/", action: () => <Main />, Component: Main }]);
 
   return (
-    <main>
-      <div id="header">
-        <h1>Are the types wrong?</h1>
-        <a href="https://github.com/arethetypeswrong/arethetypeswrong.github.io">GitHub / About</a>
-      </div>
-      <PackageForm setPackageAnalysis={setCheckResult} />
-      {checkResult && <CheckResult resultMessage={checkResult} />}
-    </main>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
   );
 }
 
-function CheckResult({ resultMessage }: { resultMessage: ResultMessage }) {
-  const result = resultMessage.data.result;
-
-  if (result.type == "analysis") {
-    return <PackageAnalysis analysis={result} />;
-  }
-
-  return <UntypedPackage result={result} />;
-}
-
-render(<App />, app);
+createRoot(app).render(<App />);
