@@ -5,47 +5,23 @@
  * 3. Fetching the package info from npm
  * 4. Lifting package analysis to the parent component
  */
-import { useState, useEffect } from "react";
-import type { ResultMessage } from "../../worker/worker";
+import { useState } from "react";
+import type { CheckFileEventData, CheckPackageEventData } from "../../worker/worker";
 import { parsePackageSpec, type ParsedPackageSpec } from "@arethetypeswrong/core/utils";
 import type { Failable } from "@arethetypeswrong/core";
 import { fetchPackageInfo } from "../utils/fetchPackageInfo";
 import type { PackageInfo } from "../state";
-
-const workerURL = new URL("../../worker/worker.ts", import.meta.url);
+import { useSearchParams } from "react-router-dom";
 
 type PackageFormProps = {
-  setPackageAnalysis: (analysis: ResultMessage) => void;
+  sendMessage: (message: CheckFileEventData | CheckPackageEventData) => void;
 };
 
-export default function PackageForm({ setPackageAnalysis }: PackageFormProps) {
+export default function PackageForm({ sendMessage }: PackageFormProps) {
   const [packageName, setPackageName] = useState("");
   const [parsedPackage, setParsedPackage] = useState<Failable<ParsedPackageSpec>>(parsePackageSpec(""));
   const [packageInfo, setPackageInfo] = useState<PackageInfo | null>(null);
-  const [worker, setWorker] = useState<Worker | null>(null);
-
-  useEffect(() => {
-    // Create the worker once the component mounts
-    const worker = new Worker(workerURL, { type: "module" });
-
-    // setup the processing callback
-    worker.onmessage = async (event: MessageEvent<ResultMessage>) => {
-      setPackageAnalysis(event.data);
-    };
-
-    // setup the error callback
-    worker.onerror = (event) => {
-      console.error(event);
-    };
-
-    // store the worker instance
-    setWorker(worker);
-
-    // terminate the worker once the component unmounts
-    return () => {
-      worker.terminate();
-    };
-  }, [setWorker]);
+  const [_, setSearchParams] = useSearchParams();
 
   // Save the package string and parse it into a package spec
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -71,34 +47,26 @@ export default function PackageForm({ setPackageAnalysis }: PackageFormProps) {
   // On click send the package spec to the worker
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (worker == null) {
-      // Unlikely the user will submit before the worker is ready, but just in case...
-      return;
-    }
 
     if (parsedPackage.status == "error") {
       // user needs to fix the package name before we can check it
       return;
     }
 
-    worker.postMessage({
-      kind: "check-package",
-      packageName: parsedPackage.data.packageName,
-      version: parsedPackage.data.version,
-    });
+    // use the version from npm, or the user provided version, or default to latest
+    const version = packageInfo?.version ?? parsedPackage.data.version ?? "latest";
+
+    setSearchParams({ p: `${parsedPackage.data.packageName}@${version}` });
   };
 
   // On file upload, read the file and send it to the worker
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (worker == null) {
-      return;
-    }
     const file = e.target.files?.[0];
 
     if (file) {
       const arrayBuffer = await file.arrayBuffer();
       const data = new Uint8Array(arrayBuffer);
-      worker.postMessage({
+      sendMessage({
         kind: "check-file",
         file: data,
       });
@@ -110,7 +78,7 @@ export default function PackageForm({ setPackageAnalysis }: PackageFormProps) {
       <label htmlFor="name">
         npm package <input value={packageName} onChange={handleChange} type="text" id="name" />
       </label>
-      <button id="check" type="submit" disabled={worker === null || parsedPackage.status === "error"}>
+      <button id="check" type="submit" disabled={parsedPackage.status === "error"}>
         Check
       </button>
       <p>

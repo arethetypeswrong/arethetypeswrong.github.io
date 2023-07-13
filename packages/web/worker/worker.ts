@@ -18,6 +18,13 @@ export interface ResultMessage {
   };
 }
 
+export interface ReadyMessage {
+  kind: "ready";
+}
+
+// Send a ready message to the main thread once the worker is fully set up
+postMessage({ kind: "ready" } satisfies ReadyMessage);
+
 onmessage = async (event: MessageEvent<CheckPackageEventData | CheckFileEventData>) => {
   const result =
     event.data.kind === "check-file"
