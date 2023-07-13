@@ -51,7 +51,7 @@ function ProblemTable({ analysis, packageName }: { analysis: Analysis; packageNa
           <tr key={kind}>
             <td>{kind}</td>
             {entrypoints.map((entrypoint) => (
-              <TableData kind={kind} entrypoint={entrypoint} analysis={analysis} />
+              <TableData key={kind + entrypoint} kind={kind} entrypoint={entrypoint} analysis={analysis} />
             ))}
           </tr>
         ))}
