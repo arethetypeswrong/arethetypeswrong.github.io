@@ -7,10 +7,21 @@ type UntypedPackageProps = {
 export default function UntypedPackage({ result }: UntypedPackageProps) {
   return (
     <div>
-      <h2>Untyped Package</h2>
-      <p>{result.packageName}</p>
-      <p>{result.packageVersion}</p>
-      <p>{result.types}</p>
+      <h2>
+        {result.packageName} v{result.packageVersion}{" "}
+        <small>
+          (
+          <a href={`https://npmjs.com/${result.packageName}`} target="_blank">
+            npm
+          </a>
+          ,
+          <a href={`https://unpkg.com/browse/${result.packageName}@${result.packageVersion}/`} target="_blank">
+            unpkg
+          </a>
+          )
+        </small>
+      </h2>
+      <p>This package does not contain types</p>
     </div>
   );
 }

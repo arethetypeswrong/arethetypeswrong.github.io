@@ -13,7 +13,18 @@ export default function PackageAnalysis({ analysis }: PackageAnalysisProps) {
   return (
     <div>
       <h2>
-        {analysis.packageName} v{analysis.packageVersion}
+        {analysis.packageName} v{analysis.packageVersion}{" "}
+        <small>
+          (
+          <a href={`https://npmjs.com/${analysis.packageName}`} target="_blank">
+            npm
+          </a>
+          ,
+          <a href={`https://unpkg.com/browse/${analysis.packageName}@${analysis.packageVersion}/`} target="_blank">
+            unpkg
+          </a>
+          )
+        </small>
       </h2>
       <p>Package {analysis.types ? "includes" : "does not include"} types</p>
       <EntryPointTable analysis={analysis} />
