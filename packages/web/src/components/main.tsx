@@ -6,6 +6,7 @@ import { useSearchParams } from "react-router-dom";
 import { usePackageAnalysisWorker } from "../hooks/packageAnalysisWorker";
 import { parsePackageSpec } from "@arethetypeswrong/core/utils";
 import { useEffect } from "react";
+import Footer from "./footer";
 
 const workerURL = new URL("../../worker/worker.ts", import.meta.url);
 
@@ -32,14 +33,17 @@ export default function Main() {
   }, [packageName, ready]);
 
   return (
-    <main>
-      <div id="header">
-        <h1>Are the types wrong?</h1>
-        <a href="https://github.com/arethetypeswrong/arethetypeswrong.github.io">GitHub / About</a>
-      </div>
-      <PackageForm sendMessage={sendMessage} />
-      {analysis && <CheckResult resultMessage={analysis} />}
-    </main>
+    <>
+      <main>
+        <div id="header">
+          <h1>Are the types wrong?</h1>
+          <a href="https://github.com/arethetypeswrong/arethetypeswrong.github.io">GitHub / About</a>
+        </div>
+        <PackageForm sendMessage={sendMessage} />
+        {analysis && <CheckResult resultMessage={analysis} />}
+      </main>
+      <Footer />
+    </>
   );
 }
 
