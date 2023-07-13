@@ -3,6 +3,7 @@
 import type { Analysis, Problem, ProblemKind, ResolutionKind } from "@arethetypeswrong/core";
 import { filterProblems, problemKindInfo, problemsByKind } from "@arethetypeswrong/core/problems";
 import { allResolutionKinds, groupProblemsByKind } from "@arethetypeswrong/core/utils";
+import Details from "./details";
 
 type PackageAnalysisProps = {
   analysis: Analysis;
@@ -16,6 +17,7 @@ export default function PackageAnalysis({ analysis }: PackageAnalysisProps) {
       </h2>
       <p>Package {analysis.types ? "includes" : "does not include"} types</p>
       <EntryPointTable analysis={analysis} />
+      <Details analysis={analysis} />
     </div>
   );
 }
