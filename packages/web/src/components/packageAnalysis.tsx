@@ -88,19 +88,27 @@ function UniqueProblemTypes({ problems }: { problems: Problem[] }) {
   const byKind = problemsByKind(problems);
 
   return (
-    <ul>
-      {Object.keys(byKind).map((kind) => {
-        const info = problemKindInfo[kind as keyof typeof problemKindInfo];
+    <p id="problems">
+      <dl>
+        {Object.keys(byKind).map((kind) => {
+          const info = problemKindInfo[kind as keyof typeof problemKindInfo];
 
-        return (
-          <li>
-            <p>{info.emoji} </p>
-            <a href={info.docsUrl}>{info.title}</a>
-            <p>{info.description}</p>
-          </li>
-        );
-      })}
-    </ul>
+          return (
+            <>
+              <dt>{info.emoji}</dt>
+              <dd>
+                <p>
+                  <strong>
+                    <a href={info.docsUrl}>{info.title}</a>
+                  </strong>
+                </p>
+                <p>{info.description}</p>
+              </dd>
+            </>
+          );
+        })}
+      </dl>
+    </p>
   );
 }
 
