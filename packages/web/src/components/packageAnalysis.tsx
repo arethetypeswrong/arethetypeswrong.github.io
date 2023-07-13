@@ -95,9 +95,9 @@ function UniqueProblemTypes({ problems }: { problems: Problem[] }) {
           const info = problemKindInfo[kind as keyof typeof problemKindInfo];
 
           return (
-            <>
-              <dt key={`dt-${i}`}>{info.emoji}</dt>
-              <dd key={`dd-${i}`}>
+            <div key={i}>
+              <dt>{info.emoji}</dt>
+              <dd>
                 <p>
                   <strong>
                     <a target="_blank" href={info.docsUrl}>
@@ -107,7 +107,7 @@ function UniqueProblemTypes({ problems }: { problems: Problem[] }) {
                 </p>
                 <p>{info.description}</p>
               </dd>
-            </>
+            </div>
           );
         })}
       </dl>
