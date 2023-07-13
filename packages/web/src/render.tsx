@@ -11,11 +11,14 @@ function App() {
   const [checkResult, setCheckResult] = useState<ResultMessage | null>(null);
 
   return (
-    <div>
-      <h1>Are the types</h1>
+    <main>
+      <div id="header">
+        <h1>Are the types wrong?</h1>
+        <a href="https://github.com/arethetypeswrong/arethetypeswrong.github.io">GitHub / About</a>
+      </div>
       <PackageForm setPackageAnalysis={setCheckResult} />
       {checkResult && <CheckResult resultMessage={checkResult} />}
-    </div>
+    </main>
   );
 }
 

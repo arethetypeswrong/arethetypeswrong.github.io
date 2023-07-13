@@ -35,7 +35,7 @@ function ProblemTable({ analysis, packageName }: { analysis: Analysis; packageNa
   const entrypoints = Object.keys(analysis.entrypoints);
 
   return (
-    <table>
+    <table id="resolutions">
       <thead>
         <tr>
           <th></th>
@@ -64,7 +64,6 @@ function TableData({ kind, entrypoint, analysis }: { kind: ResolutionKind; entry
     groupProblemsByKind(filterProblems(analysis, { resolutionKind: kind, entrypoint }))
   );
 
-  console.log(problemsForCell);
   return (
     <td>
       {problemsForCell.length
@@ -99,7 +98,9 @@ function UniqueProblemTypes({ problems }: { problems: Problem[] }) {
               <dd>
                 <p>
                   <strong>
-                    <a href={info.docsUrl}>{info.title}</a>
+                    <a target="_blank" href={info.docsUrl}>
+                      {info.title}
+                    </a>
                   </strong>
                 </p>
                 <p>{info.description}</p>

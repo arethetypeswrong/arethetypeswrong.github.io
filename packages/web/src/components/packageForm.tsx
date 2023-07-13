@@ -89,19 +89,18 @@ export default function PackageForm({ setPackageAnalysis }: PackageFormProps) {
   };
 
   return (
-    <div>
-      <h1>Package Form</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">
-          Package Name
-          <input value={packageName} onChange={handleChange} type="text" id="name" />
-        </label>
-        {packageName !== "" && <PreFetchInfo spec={parsedPackage} info={packageInfo} />}
-        <button type="submit" disabled={worker === null || parsedPackage.status === "error"}>
-          Check Package
-        </button>
-      </form>
-    </div>
+    <form id="form" onSubmit={handleSubmit}>
+      <label htmlFor="name">
+        Package Name <input value={packageName} onChange={handleChange} type="text" id="name" />
+      </label>
+      <button id="check" type="submit" disabled={worker === null || parsedPackage.status === "error"}>
+        Check
+      </button>
+      <p>
+        or <code>npm pack</code> output <input type="file" id="file" accept=".tgz"></input>
+      </p>
+      {packageName !== "" && <PreFetchInfo spec={parsedPackage} info={packageInfo} />}
+    </form>
   );
 }
 
