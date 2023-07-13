@@ -42,7 +42,7 @@ export const usePackageAnalysisWorker = (workerURL: URL) => {
     if (worker) {
       worker.postMessage(message);
     } else {
-      console.error("Worker not ready");
+      console.info("Worker not ready");
     }
   };
 
