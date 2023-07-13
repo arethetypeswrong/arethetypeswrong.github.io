@@ -88,6 +88,23 @@ export default function PackageForm({ setPackageAnalysis }: PackageFormProps) {
     });
   };
 
+  // On file upload, read the file and send it to the worker
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (worker == null) {
+      return;
+    }
+    const file = e.target.files?.[0];
+
+    if (file) {
+      const arrayBuffer = await file.arrayBuffer();
+      const data = new Uint8Array(arrayBuffer);
+      worker.postMessage({
+        kind: "check-file",
+        file: data,
+      });
+    }
+  };
+
   return (
     <form id="form" onSubmit={handleSubmit}>
       <label htmlFor="name">
@@ -97,7 +114,8 @@ export default function PackageForm({ setPackageAnalysis }: PackageFormProps) {
         Check
       </button>
       <p>
-        or <code>npm pack</code> output <input type="file" id="file" accept=".tgz"></input>
+        or <code>npm pack</code> output{" "}
+        <input onChange={handleFileUpload} name="file" type="file" id="file" accept=".tgz"></input>
       </p>
       {packageName !== "" && <PreFetchInfo spec={parsedPackage} info={packageInfo} />}
     </form>

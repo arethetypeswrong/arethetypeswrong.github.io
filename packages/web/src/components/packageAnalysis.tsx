@@ -46,7 +46,7 @@ function ProblemTable({ analysis, packageName }: { analysis: Analysis; packageNa
       </thead>
       <tbody>
         {allResolutionKinds.map((kind) => (
-          <tr>
+          <tr key={kind}>
             <td>{kind}</td>
             {entrypoints.map((entrypoint) => (
               <TableData kind={kind} entrypoint={entrypoint} analysis={analysis} />
@@ -87,15 +87,15 @@ function UniqueProblemTypes({ problems }: { problems: Problem[] }) {
   const byKind = problemsByKind(problems);
 
   return (
-    <p id="problems">
+    <div id="problems">
       <dl>
-        {Object.keys(byKind).map((kind) => {
+        {Object.keys(byKind).map((kind, i) => {
           const info = problemKindInfo[kind as keyof typeof problemKindInfo];
 
           return (
             <>
-              <dt>{info.emoji}</dt>
-              <dd>
+              <dt key={`dt-${i}`}>{info.emoji}</dt>
+              <dd key={`dd-${i}`}>
                 <p>
                   <strong>
                     <a target="_blank" href={info.docsUrl}>
@@ -109,7 +109,7 @@ function UniqueProblemTypes({ problems }: { problems: Problem[] }) {
           );
         })}
       </dl>
-    </p>
+    </div>
   );
 }
 
