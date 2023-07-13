@@ -91,7 +91,7 @@ export default function PackageForm({ setPackageAnalysis }: PackageFormProps) {
   return (
     <form id="form" onSubmit={handleSubmit}>
       <label htmlFor="name">
-        Package Name <input value={packageName} onChange={handleChange} type="text" id="name" />
+        npm package <input value={packageName} onChange={handleChange} type="text" id="name" />
       </label>
       <button id="check" type="submit" disabled={worker === null || parsedPackage.status === "error"}>
         Check
