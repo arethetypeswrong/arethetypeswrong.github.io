@@ -148,24 +148,33 @@ export function filterProblems(
   });
 }
 
-export function problemAffectsResolutionKind(problem: Problem, resolutionKind: ResolutionKind, analysis: Analysis) {
+export function problemAffectsResolutionKind(
+  problem: Problem,
+  resolutionKind: ResolutionKind,
+  analysis: Analysis
+): boolean {
   if (isEntrypointResolutionProblem(problem)) {
     return problem.resolutionKind === resolutionKind;
   }
   if (isResolutionBasedFileProblem(problem)) {
     return problem.resolutionOption === getResolutionOption(resolutionKind);
   }
-  return Object.values(analysis.entrypoints).some((entrypointInfo) =>
-    entrypointInfo.resolutions[resolutionKind].files?.includes(problem.fileName)
+  return Object.values(analysis.entrypoints).some(
+    (entrypointInfo) =>
+      entrypointInfo.resolutions[resolutionKind].files?.includes(problem.fileName) ||
+      entrypointInfo.resolutions[resolutionKind].implementationResolution?.fileName === problem.fileName
   );
 }
 
-export function problemAffectsEntrypoint(problem: Problem, entrypoint: string, analysis: Analysis) {
+export function problemAffectsEntrypoint(problem: Problem, entrypoint: string, analysis: Analysis): boolean {
   if (isEntrypointResolutionProblem(problem)) {
     return problem.entrypoint === entrypoint;
   }
-  return allResolutionKinds.some((resolutionKind) =>
-    analysis.entrypoints[entrypoint].resolutions[resolutionKind].files?.includes(problem.fileName)
+  return allResolutionKinds.some(
+    (resolutionKind) =>
+      analysis.entrypoints[entrypoint]?.resolutions[resolutionKind].files?.includes(problem.fileName) ||
+      analysis.entrypoints[entrypoint]?.resolutions[resolutionKind].implementationResolution?.fileName ===
+        problem.fileName
   );
 }
 
@@ -174,20 +183,21 @@ export function problemAffectsEntrypointResolution(
   entrypoint: string,
   resolutionKind: ResolutionKind,
   analysis: Analysis
-) {
+): boolean {
   if (isEntrypointResolutionProblem(problem)) {
     return problem.entrypoint === entrypoint && problem.resolutionKind === resolutionKind;
   }
   if (isResolutionBasedFileProblem(problem)) {
     return (
       getResolutionOption(resolutionKind) === problem.resolutionOption &&
-      analysis.entrypoints[entrypoint].resolutions[resolutionKind].files?.includes(problem.fileName)
+      !!analysis.entrypoints[entrypoint]?.resolutions[resolutionKind].files?.includes(problem.fileName)
     );
   }
   if (isFileProblem(problem)) {
     return (
-      analysis.entrypoints[entrypoint].resolutions[resolutionKind].files?.includes(problem.fileName) ||
-      analysis.entrypoints[entrypoint].resolutions[resolutionKind].files
+      analysis.entrypoints[entrypoint]?.resolutions[resolutionKind].files?.includes(problem.fileName) ||
+      analysis.entrypoints[entrypoint]?.resolutions[resolutionKind].implementationResolution?.fileName ===
+        problem.fileName
     );
   }
   throw new Error(`Unhandled problem type '${(problem satisfies never as Problem).kind}'`);

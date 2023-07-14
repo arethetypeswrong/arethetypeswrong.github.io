@@ -3,3 +3,4 @@ data
 .env
 *.d.ts
 scripts/lib
+src/scratch.js
