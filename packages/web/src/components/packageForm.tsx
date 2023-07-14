@@ -76,7 +76,18 @@ export default function PackageForm({ sendMessage }: PackageFormProps) {
   return (
     <form id="form" onSubmit={handleSubmit}>
       <label htmlFor="name">
-        npm package <input value={packageName} onChange={handleChange} type="text" id="name" />
+        npm package{" "}
+        <input
+          type="text"
+          id="package-spec"
+          autoFocus
+          autoCapitalize="none"
+          autoCorrect="off"
+          autoComplete="off"
+          spellCheck="false"
+          value={packageName}
+          onChange={handleChange}
+        />
       </label>
       <button id="check" type="submit" disabled={parsedPackage.status === "error"}>
         Check
