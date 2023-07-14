@@ -26,7 +26,6 @@ export default function PackageAnalysis({ analysis }: PackageAnalysisProps) {
           )
         </small>
       </h2>
-      <p>Package {analysis.types ? "includes" : "does not include"} types</p>
       <EntryPointTable analysis={analysis} />
       <Details analysis={analysis} />
     </div>
