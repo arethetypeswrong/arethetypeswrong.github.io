@@ -82,7 +82,12 @@ export function getEntrypointResolutionProblems(
       }
       const jsExports = jsSourceFile?.symbol?.exports;
       if (typesExports && jsExports) {
-        if (typesExports.has(ts.InternalSymbolName.Default) && jsExports.has(ts.InternalSymbolName.ExportEquals)) {
+        if (
+          typesExports.has(ts.InternalSymbolName.Default) &&
+          !typesExports.has(ts.InternalSymbolName.ExportEquals) &&
+          jsExports.has(ts.InternalSymbolName.ExportEquals) &&
+          !jsExports.has(ts.InternalSymbolName.Default)
+        ) {
           // Also need to check for `default` property on `jsModule["export="]`?
           problems.push({
             kind: "FalseExportDefault",

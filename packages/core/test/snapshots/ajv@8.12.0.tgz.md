@@ -3,11 +3,5 @@
 ## Problems
 
 ```json
-[
-  {
-    "kind": "FalseExportDefault",
-    "entrypoint": ".",
-    "resolutionKind": "node16-esm"
-  }
-]
+[]
 ```
