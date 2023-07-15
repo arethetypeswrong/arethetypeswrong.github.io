@@ -112,7 +112,7 @@ export const problemKindInfo: Record<ProblemKind, ProblemKindInfo> = {
 export const allProblemKinds = Object.keys(problemKindInfo) as ProblemKind[];
 
 export interface ProblemFilter {
-  kind?: ProblemKind;
+  kind?: readonly ProblemKind[];
   entrypoint?: string;
   resolutionKind?: ResolutionKind;
   resolutionOption?: ResolutionOption;
@@ -127,7 +127,7 @@ export function filterProblems(
 ) {
   const [problems, analysis, filter] = args.length === 2 ? [args[0].problems, ...args] : args;
   return problems.filter((p) => {
-    if (filter.kind && p.kind !== filter.kind) {
+    if (filter.kind && !filter.kind.includes(p.kind)) {
       return false;
     }
     if (filter.entrypoint && filter.resolutionKind) {
