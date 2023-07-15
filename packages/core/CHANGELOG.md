@@ -1,5 +1,16 @@
 # @arethetypeswrong/core
 
+## 0.7.0
+
+### Minor Changes
+
+- 2c03c4a: - Fix a bug in `filterProblems` that caused CJSOnlyExportsDefault not to be identified
+  - Change the `kind` property in `filterProblems` to take an array of problem kinds
+
+### Patch Changes
+
+- c8993b9: Fix a false positive of FalseExportDefault on packages that assign both to module.exports and module.exports.default
+
 ## 0.6.0
 
 ### Minor Changes
