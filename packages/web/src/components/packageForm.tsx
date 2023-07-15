@@ -1,9 +1,9 @@
 /**
  * This component is responsible for:
- * 1. Setting up the web worker
- * 2. Taking user input and parsing it into a package spec
- * 3. Fetching the package info from npm
- * 4. Lifting package analysis to the parent component
+ * 1. Taking user input and parsing it into a package spec
+ * 2. Fetching the package info from npm
+ * 3. Updating the url query params with the package spec
+ * 4. Sending uploaded files to the worker
  */
 import { useState } from "react";
 import type { CheckFileEventData, CheckPackageEventData } from "../../worker/worker";
