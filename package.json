@@ -27,5 +27,8 @@
   },
   "volta": {
     "node": "19.8.1"
+  },
+  "dependencies": {
+    "react-router-dom": "^6.14.1"
   }
 }

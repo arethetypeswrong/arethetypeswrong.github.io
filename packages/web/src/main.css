@@ -53,6 +53,7 @@ main > * {
 #header,
 #form,
 #problems,
+h2,
 footer {
   position: sticky;
   left: 0;

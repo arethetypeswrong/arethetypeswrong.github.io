@@ -190,3 +190,11 @@ export function problemAffectsEntrypointResolution(
   }
   throw new Error(`Unhandled problem type '${(problem satisfies never as Problem).kind}'`);
 }
+
+export function problemsByKind(problems: readonly Problem[]) {
+  return problems.reduce((byKind, problem) => {
+    byKind[problem.kind] ??= [];
+    byKind[problem.kind].push(problem);
+    return byKind;
+  }, {} as Record<ProblemKind, Problem[]>);
+}

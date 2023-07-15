@@ -22,6 +22,7 @@ export interface EntrypointInfo {
 }
 
 export interface Analysis {
+  type: "analysis";
   packageName: string;
   packageVersion: string;
   types: "included";
@@ -30,6 +31,7 @@ export interface Analysis {
 }
 
 export interface UntypedResult {
+  type: "untyped";
   packageName: string;
   packageVersion: string;
   types: false;
