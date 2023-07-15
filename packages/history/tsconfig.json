@@ -4,13 +4,11 @@
     "module": "nodenext",
     "checkJs": true,
     "declaration": true,
-    "emitDeclarationOnly": true
+    "emitDeclarationOnly": true,
+    "outDir": "lib"
   },
   "include": [
-    "main.js"
-  ],
-  "exclude": [
-    "scripts"
+    "src/**/*.js"
   ],
   "references": [
     {

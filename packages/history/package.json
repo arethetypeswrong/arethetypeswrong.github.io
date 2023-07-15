@@ -3,13 +3,20 @@
   "version": "0.0.1",
   "type": "module",
   "files": [
-    "*.js",
-    "*.d.ts",
+    "src",
     "./data/full.json.gz",
     "./data/dates.json"
   ],
-  "main": "./main.js",
-  "types": "./main.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/main.d.ts",
+      "default": "./src/main.js"
+    },
+    "./utils": {
+      "types": "./lib/utils.d.ts",
+      "default": "./src/utils.js"
+    }
+  },
   "scripts": {
     "build": "tsc -b",
     "build:scripts": "tsc -b scripts",

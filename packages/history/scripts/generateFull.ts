@@ -1,17 +1,16 @@
 import { versions } from "@arethetypeswrong/core/versions";
-import { BlobServiceClient, StorageSharedKeyCredential } from "@azure/storage-blob";
 import cliProgress from "cli-progress";
-import "dotenv/config";
-import { open, readFile, stat, writeFile, rename, unlink } from "fs/promises";
+import { appendFileSync, createReadStream, createWriteStream } from "fs";
+import { open, readFile, rename, unlink, writeFile } from "fs/promises";
 import { createRequire } from "module";
 import { npmHighImpact } from "npm-high-impact";
 import os from "os";
 import pacote from "pacote";
 import { major, minor } from "semver";
+import { createGzip } from "zlib";
 import checkPackages from "./checkPackages.ts";
+import { downloadData, uploadData } from "./storage.ts";
 import type { DatesJson, FullJsonLine } from "./types.ts";
-import { appendFileSync, createReadStream, createWriteStream } from "fs";
-import { createGunzip, createGzip } from "zlib";
 
 process.on("SIGINT", () => {
   process.exit(1);
@@ -38,44 +37,13 @@ const dates = Array.from(
   }
 );
 
-const blobServiceClient = new BlobServiceClient(
-  "https://arethetypeswrong.blob.core.windows.net",
-  new StorageSharedKeyCredential("arethetypeswrong", process.env.AZURE_STORAGE_KEY!)
-);
-const dataContainerClient = blobServiceClient.getContainerClient("data");
-const datesBlobClient = dataContainerClient.getBlockBlobClient("dates.json");
-const fullBlobClient = dataContainerClient.getBlockBlobClient("full.json.gz");
-
 let datesModified = false;
 let fullModified = false;
 const npmHighImpactVersion = createRequire(import.meta.url)("npm-high-impact/package.json").version;
 const fullJsonFileName = new URL("../data/full.json", import.meta.url);
 const datesFileName = new URL("../data/dates.json", import.meta.url);
-if (
-  (await datesBlobClient.exists()) &&
-  (await datesBlobClient.getProperties()).lastModified! > (await stat(datesFileName).catch(() => ({ mtime: 0 }))).mtime
-) {
-  console.log("Downloading dates.json");
-  await datesBlobClient.downloadToFile(datesFileName.pathname);
-}
+await downloadData();
 const existingDates: DatesJson = JSON.parse(await readFile(datesFileName, "utf8"));
-if (
-  (await fullBlobClient.exists()) &&
-  (await fullBlobClient.getProperties()).lastModified! >
-    (await stat(fullJsonFileName).catch(() => ({ mtime: 0 }))).mtime
-) {
-  console.log("Downloading full.json.gz");
-  await fullBlobClient.downloadToFile(fullJsonFileName.pathname);
-  console.log("Unzipping full.json.gz");
-  await new Promise((resolve, reject) => {
-    createReadStream(`${fullJsonFileName.pathname}.gz`)
-      .pipe(createGunzip())
-      .pipe(createWriteStream(fullJsonFileName.pathname))
-      .on("error", reject)
-      .on("finish", resolve);
-  });
-}
-
 let bytesRead = 0;
 const seenResults = new Map<string, string>();
 for (const date of dates) {
@@ -169,13 +137,8 @@ await new Promise((resolve, reject) => {
     .on("close", resolve);
 });
 
-if (datesModified) {
-  console.log("Uploading dates.json");
-  await datesBlobClient.uploadFile(datesFileName.pathname);
-}
-if (fullModified) {
-  console.log("Uploading full.json.gz");
-  await fullBlobClient.uploadFile(`${fullJsonFileName.pathname}.gz`);
+if (datesModified || fullModified) {
+  await uploadData();
 }
 
 function nAtATime<T>(n: number, items: T[], fn: (item: T) => Promise<void>) {
