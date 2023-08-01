@@ -45,14 +45,14 @@ const datesFileName = new URL("../data/dates.json", import.meta.url);
 await downloadData();
 const existingDates: DatesJson = JSON.parse(await readFile(datesFileName, "utf8"));
 let bytesRead = 0;
-const seenResults = new Map<string, string>();
+const seenResults = new Map<string, [coreVersion: string, hasTypes: boolean]>();
 for (const date of dates) {
   const fh = await open(fullJsonFileName, "r");
   const start = bytesRead;
   bytesRead = (await fh.stat()).size;
   for await (const line of fh.readLines({ start })) {
     const result: FullJsonLine = JSON.parse(line);
-    seenResults.set(result.packageSpec, result.coreVersion);
+    seenResults.set(result.packageSpec, [result.coreVersion, !!result.analysis.types]);
   }
   await fh.close();
 
@@ -92,7 +92,10 @@ for (const date of dates) {
       continue;
     }
     const existing = seenResults.get(`${pkg.packageName}@${pkg.packageVersion}`);
-    if (!existing || major(existing) !== major(versions.core) || minor(existing) !== minor(versions.core)) {
+    if (
+      !existing ||
+      (existing[1] && (major(existing[0]) !== major(versions.core) || minor(existing[0]) !== minor(versions.core)))
+    ) {
       work.push(pkg);
     }
   }
