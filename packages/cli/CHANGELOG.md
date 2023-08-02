@@ -1,5 +1,11 @@
 # @arethetypeswrong/cli
 
+## 0.7.1
+
+### Patch Changes
+
+- fe3a6f3: Fix node-fetch dependency missing from @arethetypeswrong/cli
+
 ## 0.7.0
 
 ### Patch Changes
