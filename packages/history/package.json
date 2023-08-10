@@ -23,7 +23,7 @@
     "build:scripts": "tsc -b scripts",
     "pregenerate": "npm run build:scripts",
     "generate": "tsx scripts/generateFull.ts",
-    "reduce": "tsx scripts/reduceFull.ts"
+    "prepublishOnly": "npm run build && npm run generate"
   },
   "devDependencies": {
     "@arethetypeswrong/core": "file:../core",
