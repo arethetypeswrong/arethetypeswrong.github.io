@@ -1,5 +1,3 @@
-import { getAllDataAsObject, getVersionsByDate } from "./main.js";
-
 /**
  * @param {import("./main.js").VersionsByDate} versionsByDate
  */
