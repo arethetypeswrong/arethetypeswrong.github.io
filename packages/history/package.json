@@ -4,6 +4,7 @@
   "type": "module",
   "files": [
     "src",
+    "lib",
     "./data/full.json.gz",
     "./data/dates.json"
   ],
