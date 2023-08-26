@@ -4,6 +4,8 @@
 $ attw ajv@8.12.0.tgz -f table-flipped
 
 
+ajv v8.12.0
+
  No problems found 🌟
 
 

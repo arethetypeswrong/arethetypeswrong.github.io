@@ -95,6 +95,13 @@ particularly ESM-related module resolution issues.`
 
     let analysis: core.CheckResult;
     let deleteTgz;
+    const dtIsPath =
+      typeof opts.definitelyTyped === "string" &&
+      (opts.definitelyTyped.includes("/") ||
+        opts.definitelyTyped.includes("\\") ||
+        opts.definitelyTyped.endsWith(".tgz") ||
+        opts.definitelyTyped.endsWith(".tar.gz"));
+
     if (opts.fromNpm) {
       if (opts.pack) {
         program.error("--pack and --from-npm cannot be used together");
@@ -104,16 +111,18 @@ particularly ESM-related module resolution issues.`
         if (result.status === "error") {
           program.error(result.error);
         } else {
-          analysis = await core.checkPackage(
-            await core.createPackageFromNpm(`${result.data.name}@${result.data.version}`, {
-              definitelyTyped: opts.definitelyTyped,
-            }),
-            {
-              entrypoints: opts.entrypoints,
-              includeEntrypoints: opts.includeEntrypoints,
-              excludeEntrypoints: opts.excludeEntrypoints,
-            }
-          );
+          const pkg = dtIsPath
+            ? (await core.createPackageFromNpm(`${result.data.name}@${result.data.version}`)).mergedWithTypes(
+                core.createPackageFromTarballData(new Uint8Array(await readFile(opts.definitelyTyped as string)))
+              )
+            : await core.createPackageFromNpm(`${result.data.name}@${result.data.version}`, {
+                definitelyTyped: opts.definitelyTyped,
+              });
+          analysis = await core.checkPackage(pkg, {
+            entrypoints: opts.entrypoints,
+            includeEntrypoints: opts.includeEntrypoints,
+            excludeEntrypoints: opts.excludeEntrypoints,
+          });
         }
       } catch (error) {
         if (error instanceof FetchError) {
@@ -161,7 +170,14 @@ particularly ESM-related module resolution issues.`
         }
         const file = await readFile(fileName);
         const data = new Uint8Array(file);
-        analysis = await core.checkPackage(await core.createPackageFromTarballData(data), {
+        const pkg = dtIsPath
+          ? core
+              .createPackageFromTarballData(data)
+              .mergedWithTypes(
+                core.createPackageFromTarballData(new Uint8Array(await readFile(opts.definitelyTyped as string)))
+              )
+          : core.createPackageFromTarballData(data);
+        analysis = await core.checkPackage(pkg, {
           entrypoints: opts.entrypoints,
           includeEntrypoints: opts.includeEntrypoints,
           excludeEntrypoints: opts.excludeEntrypoints,

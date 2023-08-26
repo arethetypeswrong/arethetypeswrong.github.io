@@ -4,6 +4,8 @@
 $ attw klona@2.0.6.tgz -f ascii
 
 
+klona v2.0.6
+
 🎭 Import resolved to a CommonJS type declaration file, but an ESM JavaScript file. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseCJS.md
 
 
