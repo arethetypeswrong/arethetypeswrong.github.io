@@ -59,10 +59,7 @@ export function subscribeRenderer(events: Events) {
     function render(prevState: State) {
       const state = getState();
       updateView(messageElement, Message, { isError: state.message?.isError, text: state.message?.text || "" });
-      updateView(packageInfoElement, PackageInfo, {
-        name: state.analysis?.packageName,
-        version: state.analysis?.packageVersion,
-      });
+      updateView(packageInfoElement, PackageInfo, { analysis: state.analysis?.types ? state.analysis : undefined });
       updateView(problemsElement, ProblemList, { analysis: state.analysis });
       updateView(resolutionsElement, ChecksTable, { analysis: state.analysis });
       updateView(checkButton, CheckButton, { disabled: !state.packageInfo.parsed });

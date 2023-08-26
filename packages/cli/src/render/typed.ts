@@ -31,6 +31,12 @@ export async function typed(analysis: core.Analysis, opts: Opts) {
     );
   }
 
+  console.log(`${analysis.packageName} v${analysis.packageVersion}`);
+  if (analysis.types.kind === "@types") {
+    console.log(`${analysis.types.packageName} v${analysis.types.packageVersion}`);
+  }
+  console.log();
+
   if (opts.summary) {
     const defaultSummary = marked(!opts.emoji ? " No problems found" : " No problems found 🌟");
     const summaryTexts = Object.keys(grouped).map((kind) => {

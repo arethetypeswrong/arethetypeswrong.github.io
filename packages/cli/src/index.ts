@@ -25,6 +25,7 @@ type Format = (typeof formats)[number];
 export interface Opts {
   pack?: boolean;
   fromNpm?: boolean;
+  definitelyTyped?: boolean | string;
   summary?: boolean;
   emoji?: boolean;
   color?: boolean;
@@ -55,6 +56,8 @@ particularly ESM-related module resolution issues.`
   )
   .option("-P, --pack", "Run `npm pack` in the specified directory and delete the resulting .tgz file afterwards")
   .option("-p, --from-npm", "Read from the npm registry instead of a local file")
+  .addOption(new Option("--definitely-typed [version]", "Specify the version range of @types to use").default(true))
+  .option("--no-definitely-typed", "Don't include @types")
   .addOption(new Option("-f, --format <format>", "Specify the print format").choices(formats).default("auto"))
   .option("-q, --quiet", "Don't print anything to STDOUT (overrides all other options)")
   .option(
@@ -102,7 +105,9 @@ particularly ESM-related module resolution issues.`
           program.error(result.error);
         } else {
           analysis = await core.checkPackage(
-            await core.createPackageFromNpm(`${result.data.name}@${result.data.version}`),
+            await core.createPackageFromNpm(`${result.data.name}@${result.data.version}`, {
+              definitelyTyped: opts.definitelyTyped,
+            }),
             {
               entrypoints: opts.entrypoints,
               includeEntrypoints: opts.includeEntrypoints,

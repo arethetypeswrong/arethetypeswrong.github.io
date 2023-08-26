@@ -160,12 +160,6 @@ export function parsePackageSpec(input: string): Failable<ParsedPackageSpec> {
         error: "Invalid package name",
       };
     }
-    if (input.substring(0, i) === "@types") {
-      return {
-        status: "error",
-        error: "@types packages are not supported",
-      };
-    }
     i++;
   }
   i = input.indexOf("@", i);
@@ -201,7 +195,7 @@ export function parsePackageSpec(input: string): Failable<ParsedPackageSpec> {
     };
   }
   return {
-    status: "error",
-    error: "Invalid version",
+    status: "success",
+    data: { versionKind: "tag", name, version },
   };
 }

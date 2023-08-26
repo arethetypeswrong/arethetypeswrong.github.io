@@ -4,6 +4,7 @@ import {
   createPackageFromTarballData,
   type CheckResult,
 } from "@arethetypeswrong/core";
+import { parsePackageSpec } from "@arethetypeswrong/core/utils";
 
 export interface CheckPackageEventData {
   kind: "check-package";
@@ -25,7 +26,11 @@ export interface ResultMessage {
 onmessage = async (event: MessageEvent<CheckPackageEventData | CheckFileEventData>) => {
   const result = await checkPackage(
     event.data.kind === "check-file"
-      ? await createPackageFromTarballData(event.data.file)
+      ? createPackageFromTarballData(event.data.file)
+      : event.data.packageSpec.startsWith("@types/")
+      ? await createPackageFromNpm(unmangleScopedPackageName(event.data.packageSpec), {
+          definitelyTyped: parsePackageSpec(event.data.packageSpec).data?.version,
+        })
       : await createPackageFromNpm(event.data.packageSpec)
   );
   postMessage({
@@ -35,3 +40,7 @@ onmessage = async (event: MessageEvent<CheckPackageEventData | CheckFileEventDat
     },
   } satisfies ResultMessage);
 };
+
+function unmangleScopedPackageName(packageName: string): string {
+  return packageName.startsWith("@types/") ? packageName.slice(7).replace("__", "/") : packageName;
+}

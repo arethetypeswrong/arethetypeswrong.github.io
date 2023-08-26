@@ -75,7 +75,7 @@ attw --pack .
 
 #### From NPM
 
-Specify the name (and, optionally, version range) of a package from the NPM registry instead of a local tarball filename.
+Specify the name (and, optionally, version or SemVer range) of a package from the NPM registry instead of a local tarball filename.
 
 In the CLI: `--from-npm`, `-p`
 
@@ -84,6 +84,17 @@ attw --from-npm <package-name>
 ```
 
 In the config file, `fromNpm` can be a boolean value.
+
+#### DefinitelyTyped
+
+When a package does not contain types, specifies the version or SemVer range of the DefinitelyTyped `@types` package to use. Defaults to inferring the best version match from the implementation package version.
+
+In the CLI: `--definitely-typed`, `--no-definitely-typed`
+
+```shell
+attw -p <package-name> --definitely-typed <version>
+attw -p <package-name> --no-definitely-typed
+```
 
 #### Format
 
