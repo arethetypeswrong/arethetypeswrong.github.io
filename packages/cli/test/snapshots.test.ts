@@ -28,6 +28,15 @@ const tests = [
   ["vue@3.3.4.tgz", "--entrypoints . jsx-runtime"],
   ["vue@3.3.4.tgz", "--exclude-entrypoints macros -f ascii"],
   ["vue@3.3.4.tgz", "--include-entrypoints ./foo -f ascii"],
+
+  [
+    "big.js@6.2.1.tgz",
+    `--definitely-typed ${new URL("../../../core/test/fixtures/@types__big.js@6.2.0.tgz", import.meta.url).pathname}`,
+  ],
+  [
+    "react@18.2.0.tgz",
+    `--definitely-typed ${new URL("../../../core/test/fixtures/@types__react@18.2.21.tgz", import.meta.url).pathname}`,
+  ],
 ];
 
 const defaultOpts = "-f table-flipped";

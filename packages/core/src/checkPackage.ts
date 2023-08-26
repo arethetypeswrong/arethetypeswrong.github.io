@@ -4,7 +4,14 @@ import { getFileProblems } from "./checks/fileProblems.js";
 import { getResolutionBasedFileProblems } from "./checks/resolutionBasedFileProblems.js";
 import type { Package } from "./createPackage.js";
 import { createCompilerHosts, type CompilerHosts, CompilerHostWrapper } from "./multiCompilerHost.js";
-import type { CheckResult, EntrypointInfo, EntrypointResolutionAnalysis, Resolution, ResolutionKind } from "./types.js";
+import type {
+  AnalysisTypes,
+  CheckResult,
+  EntrypointInfo,
+  EntrypointResolutionAnalysis,
+  Resolution,
+  ResolutionKind,
+} from "./types.js";
 
 export interface CheckPackageOptions {
   /**
@@ -24,15 +31,17 @@ export interface CheckPackageOptions {
 }
 
 export async function checkPackage(pkg: Package, options?: CheckPackageOptions): Promise<CheckResult> {
-  const files = pkg.listFiles();
-  const types = files.some(ts.hasTSFileExtension) ? "included" : false;
-  const parts = files[0].split("/");
-  let packageName = parts[2];
-  if (packageName.startsWith("@")) {
-    packageName = parts.slice(2, 4).join("/");
-  }
-  const packageJsonContent = JSON.parse(pkg.readFile(`/node_modules/${packageName}/package.json`));
-  const packageVersion = packageJsonContent.version;
+  const types: AnalysisTypes | false = pkg.typesPackage
+    ? {
+        kind: "@types",
+        ...pkg.typesPackage,
+        definitelyTypedUrl: JSON.parse(pkg.readFile(`/node_modules/${pkg.typesPackage.packageName}/package.json`))
+          .homepage,
+      }
+    : pkg.containsTypes()
+    ? { kind: "included" }
+    : false;
+  const { packageName, packageVersion } = pkg;
   if (!types) {
     return { packageName, packageVersion, types };
   }
@@ -131,7 +140,12 @@ function getEntrypointInfo(
   options: CheckPackageOptions | undefined
 ): Record<string, EntrypointInfo> {
   const packageJson = JSON.parse(fs.readFile(`/node_modules/${packageName}/package.json`));
-  const entrypoints = getEntrypoints(fs, packageJson.exports, options);
+  let entrypoints = getEntrypoints(fs, packageJson.exports, options);
+  if (fs.typesPackage) {
+    const typesPackageJson = JSON.parse(fs.readFile(`/node_modules/${fs.typesPackage.packageName}/package.json`));
+    const typesEntrypoints = getEntrypoints(fs, typesPackageJson.exports, options);
+    entrypoints = unique([...entrypoints, ...typesEntrypoints]);
+  }
   const result: Record<string, EntrypointInfo> = {};
   for (const entrypoint of entrypoints) {
     const resolutions: Record<ResolutionKind, EntrypointResolutionAnalysis> = {

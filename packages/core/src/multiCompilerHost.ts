@@ -128,7 +128,9 @@ export class CompilerHostWrapper {
   private createCompilerHost(fs: Package): ts.CompilerHost {
     const sourceFileCache = new Map<ts.Path, ts.SourceFile>();
     return {
-      ...fs,
+      fileExists: fs.fileExists.bind(fs),
+      readFile: fs.readFile.bind(fs),
+      directoryExists: fs.directoryExists.bind(fs),
       getSourceFile: (fileName) => {
         const path = toPath(fileName);
         const cached = sourceFileCache.get(path);

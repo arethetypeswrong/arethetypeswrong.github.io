@@ -21,13 +21,24 @@ describe("snapshots", async () => {
     }
   });
 
+  const typesPackages: Record<string, string> = {
+    "big.js@6.2.1.tgz": "@types__big.js@6.2.0.tgz",
+    "react@18.2.0.tgz": "@types__react@18.2.21.tgz",
+  };
+
   for (const fixture of fs.readdirSync(new URL("../fixtures", import.meta.url))) {
-    if (fixture === ".DS_Store") {
+    if (fixture === ".DS_Store" || fixture.startsWith("@types__")) {
       continue;
     }
     test(fixture, async () => {
       const tarball = await readFile(new URL(`../fixtures/${fixture}`, import.meta.url));
-      const analysis = await checkPackage(await createPackageFromTarballData(tarball));
+      const typesTarball = typesPackages[fixture]
+        ? await readFile(new URL(`../fixtures/${typesPackages[fixture]}`, import.meta.url))
+        : undefined;
+      const pkg = createPackageFromTarballData(tarball);
+      const analysis = await checkPackage(
+        typesTarball ? pkg.mergedWithTypes(createPackageFromTarballData(typesTarball)) : pkg
+      );
       const snapshotURL = new URL(`../snapshots/${fixture}.md`, import.meta.url);
       const expectedSnapshot = [
         `# ${fixture}`,

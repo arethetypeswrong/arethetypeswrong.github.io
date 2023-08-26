@@ -4,6 +4,8 @@
 $ attw axios@1.4.0.tgz -f table-flipped
 
 
+axios v1.4.0
+
 ❓ Wildcard subpaths cannot yet be analyzed by this tool. https://github.com/arethetypeswrong/arethetypeswrong.github.io/issues/40
 
 💀 Import failed to resolve to type declarations or JavaScript files. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/NoResolution.md

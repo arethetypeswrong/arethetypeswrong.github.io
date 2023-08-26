@@ -9,10 +9,21 @@ export interface EntrypointInfo {
   isWildcard: boolean;
 }
 
+export interface IncludedTypes {
+  kind: "included";
+}
+export interface TypesPackage {
+  kind: "@types";
+  packageName: string;
+  packageVersion: string;
+  definitelyTypedUrl?: string;
+}
+export type AnalysisTypes = IncludedTypes | TypesPackage;
+
 export interface Analysis {
   packageName: string;
   packageVersion: string;
-  types: "included";
+  types: AnalysisTypes;
   entrypoints: Record<string, EntrypointInfo>;
   problems: Problem[];
 }
@@ -98,10 +109,10 @@ export type ProblemKind = Problem["kind"];
 export type FileProblemKind = FileProblem["kind"];
 export type ResolutionBasedFileProblemKind = ResolutionBasedFileProblem["kind"];
 
-export type Failable<T> = { status: "error"; error: string } | { status: "success"; data: T };
+export type Failable<T> = { status: "error"; error: string; data?: never } | { status: "success"; data: T };
 
 export interface ParsedPackageSpec {
   name: string;
-  versionKind: "none" | "exact" | "range";
+  versionKind: "none" | "exact" | "range" | "tag";
   version: string;
 }
