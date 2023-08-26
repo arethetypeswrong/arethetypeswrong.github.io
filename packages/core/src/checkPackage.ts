@@ -140,7 +140,12 @@ function getEntrypointInfo(
   options: CheckPackageOptions | undefined
 ): Record<string, EntrypointInfo> {
   const packageJson = JSON.parse(fs.readFile(`/node_modules/${packageName}/package.json`));
-  const entrypoints = getEntrypoints(fs, packageJson.exports, options);
+  let entrypoints = getEntrypoints(fs, packageJson.exports, options);
+  if (fs.typesPackage) {
+    const typesPackageJson = JSON.parse(fs.readFile(`/node_modules/${fs.typesPackage.packageName}/package.json`));
+    const typesEntrypoints = getEntrypoints(fs, typesPackageJson.exports, options);
+    entrypoints = unique([...entrypoints, ...typesEntrypoints]);
+  }
   const result: Record<string, EntrypointInfo> = {};
   for (const entrypoint of entrypoints) {
     const resolutions: Record<ResolutionKind, EntrypointResolutionAnalysis> = {
