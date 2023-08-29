@@ -117,10 +117,10 @@ export class CompilerHostWrapper {
     return this.traceCache[fromFileName]?.[`${resolutionMode ?? 1}:${moduleSpecifier}`];
   }
 
-  createProgram(rootNames: string[]): ts.Program {
+  createProgram(rootNames: string[], options = this.compilerOptions): ts.Program {
     return ts.createProgram({
       rootNames,
-      options: this.compilerOptions,
+      options,
       host: this.compilerHost,
     });
   }

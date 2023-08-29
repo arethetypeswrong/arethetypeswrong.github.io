@@ -1,7 +1,7 @@
 import ts from "typescript";
 import type { EntrypointInfo, EntrypointResolutionProblem } from "../types.js";
 import type { CompilerHosts } from "../multiCompilerHost.js";
-import { resolvedThroughFallback, visitResolutions } from "../utils.js";
+import { getResolutionOption, resolvedThroughFallback, visitResolutions } from "../utils.js";
 
 export function getEntrypointResolutionProblems(
   entrypointResolutions: Record<string, EntrypointInfo>,
@@ -11,6 +11,7 @@ export function getEntrypointResolutionProblems(
   visitResolutions(entrypointResolutions, (result, entrypoint) => {
     const { subpath } = entrypoint;
     const { resolutionKind } = result;
+    const resolutionOption = getResolutionOption(resolutionKind);
     if (result.isWildcard) {
       problems.push({
         kind: "Wildcard",
@@ -70,13 +71,14 @@ export function getEntrypointResolutionProblems(
       });
     }
 
-    if (resolutionKind === "node16-esm" && resolution && implementationResolution) {
-      const typesSourceFile = hosts.node16.getSourceFile(resolution.fileName);
+    if (resolution && implementationResolution) {
+      const host = hosts[resolutionOption];
+      const typesSourceFile = host.getSourceFile(resolution.fileName);
       if (typesSourceFile) {
         ts.bindSourceFile(typesSourceFile, { target: ts.ScriptTarget.Latest, allowJs: true, checkJs: true });
       }
       const typesExports = typesSourceFile?.symbol?.exports;
-      const jsSourceFile = typesExports && hosts.node16.getSourceFile(implementationResolution.fileName);
+      const jsSourceFile = typesExports && host.getSourceFile(implementationResolution.fileName);
       if (jsSourceFile) {
         ts.bindSourceFile(jsSourceFile, { target: ts.ScriptTarget.Latest, allowJs: true, checkJs: true });
       }
@@ -88,12 +90,26 @@ export function getEntrypointResolutionProblems(
           jsExports.has(ts.InternalSymbolName.ExportEquals) &&
           !jsExports.has(ts.InternalSymbolName.Default)
         ) {
-          // Also need to check for `default` property on `jsModule["export="]`?
-          problems.push({
-            kind: "FalseExportDefault",
-            entrypoint: subpath,
-            resolutionKind,
-          });
+          const jsChecker = host
+            .createProgram([implementationResolution.fileName], {
+              allowJs: true,
+              checkJs: true,
+              noResolve: true,
+              target: ts.ScriptTarget.Latest,
+            })
+            .getTypeChecker();
+          // Check for `default` property on `jsModule["export="]`
+          if (
+            !jsChecker
+              .getExportsAndPropertiesOfModule(jsChecker.resolveExternalModuleSymbol(jsSourceFile.symbol))
+              .some((s) => s.name === "default")
+          ) {
+            problems.push({
+              kind: "FalseExportDefault",
+              entrypoint: subpath,
+              resolutionKind,
+            });
+          }
         }
       }
     }
