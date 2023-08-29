@@ -1,4 +1,4 @@
-import { checkPackage, createPackageFromTarballUrl } from "@arethetypeswrong/core";
+import { checkPackage, createPackageFromTarballUrl, getTypesPackageForPackage } from "@arethetypeswrong/core";
 import { appendFileSync } from "fs";
 import { Worker, isMainThread, parentPort, workerData } from "node:worker_threads";
 import type { Blob, FullJsonLine } from "./types.ts";
@@ -20,40 +20,59 @@ function postBlob(blob: Blob) {
 }
 
 if (!isMainThread && parentPort) {
-  parentPort.on("message", async ({ packageName, packageVersion, tarballUrl, prevMessage }) => {
-    let tries = 0;
-    while (true) {
-      try {
-        const analysis = await checkPackage(await createPackageFromTarballUrl(tarballUrl));
-        postBlob({
-          kind: "analysis",
-          workerId: workerData.workerId,
-          data: analysis,
-        });
-        return;
-      } catch (error) {
-        await sleep(delay * 100 * tries);
-        if (tries++ > 3) {
+  parentPort.on(
+    "message",
+    async ({ packageName, packageVersion, tarballUrl, prevMessage, typesPackageUrl, before }) => {
+      let tries = 0;
+      while (true) {
+        try {
+          let pkg = await createPackageFromTarballUrl(tarballUrl);
+          if (typesPackageUrl) {
+            pkg = pkg.mergedWithTypes(await createPackageFromTarballUrl(typesPackageUrl));
+          } else if (typesPackageUrl !== false) {
+            const typesPackageData = await getTypesPackageForPackage(packageName, packageVersion, new Date(before));
+            if (typesPackageData) {
+              pkg = pkg.mergedWithTypes(await createPackageFromTarballUrl(typesPackageData.tarballUrl));
+            }
+          }
+          const analysis = await checkPackage(pkg);
           postBlob({
-            kind: "error",
+            kind: "analysis",
             workerId: workerData.workerId,
-            packageName,
-            packageVersion,
-            tarballUrl,
-            message: "" + (error as Error)?.message,
-            prevMessage,
+            data: analysis,
           });
           return;
+        } catch (error) {
+          await sleep(delay * 100 * tries);
+          if (tries++ > 3) {
+            postBlob({
+              kind: "error",
+              workerId: workerData.workerId,
+              packageName,
+              packageVersion,
+              tarballUrl,
+              message: "" + (error as Error)?.message,
+              typesPackageUrl,
+              prevMessage,
+            });
+            return;
+          }
         }
       }
     }
-  });
+  );
 }
 
 export default function checkPackages(
-  packages: { packageName: string; packageVersion: string; tarballUrl: string }[],
+  packages: {
+    packageName: string;
+    packageVersion: string;
+    tarballUrl: string;
+    typesPackageUrl?: string | false;
+  }[],
   outFile: URL,
-  workerCount: number
+  workerCount: number,
+  before: string
 ): Promise<boolean> {
   if (!packages.length) {
     return Promise.resolve(false);
@@ -70,9 +89,14 @@ export default function checkPackages(
   return new Promise<boolean>(async (resolve, reject) => {
     let wroteChanges = false;
     const packagesDonePerWorker = new Array(workerCount).fill(0);
-    const workQueue: { packageName: string; packageVersion: string; tarballUrl: string; prevMessage?: string }[] = [
-      ...packages,
-    ];
+    const workQueue: {
+      packageName: string;
+      packageVersion: string;
+      tarballUrl: string;
+      typesPackageUrl?: string | false;
+      before: string;
+      prevMessage?: string;
+    }[] = [...packages.map((p) => ({ ...p, before }))];
     let finishedWorkers = 0;
     for (const worker of workers) {
       worker.on("message", async (blob: Blob) => {
@@ -87,6 +111,8 @@ export default function checkPackages(
               packageName: blob.packageName,
               packageVersion: blob.packageVersion,
               tarballUrl: blob.tarballUrl,
+              typesPackageUrl: blob.typesPackageUrl,
+              before,
               prevMessage: blob.message,
             });
           }

@@ -11,6 +11,7 @@ export interface ErrorBlob {
   message: string;
   packageName: string;
   packageVersion: string;
+  typesPackageUrl: string | false | undefined;
   tarballUrl: string;
   prevMessage?: string;
 }

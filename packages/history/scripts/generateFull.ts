@@ -52,12 +52,12 @@ for (const date of dates) {
   bytesRead = (await fh.stat()).size;
   for await (const line of fh.readLines({ start })) {
     const result: FullJsonLine = JSON.parse(line);
-    seenResults.set(result.packageSpec, [result.coreVersion, !!result.analysis.types]);
+    seenResults.set(result.packageSpec, [result.coreVersion, /*temporary*/ true]);
   }
   await fh.close();
 
   const work = [];
-  const packages: DatesJson["dates"][string] = [];
+  const packages: (DatesJson["dates"][string][number] & { typesPackageUrl?: string | false | undefined })[] = [];
   const errors: { packageName: string; message: string }[] = [];
   if (!existingDates.dates?.[date] || existingDates.npmHighImpactVersion !== npmHighImpactVersion) {
     console.log(`*** Fetching versions for ${date} ***`);
@@ -72,7 +72,7 @@ for (const date of dates) {
         bar.increment();
         const packageVersion = manifest.version;
         const tarballUrl = manifest.dist.tarball;
-        packages.push({ packageName, packageVersion, tarballUrl });
+        packages.push({ packageName, packageVersion, tarballUrl, typesPackageUrl: undefined });
       } catch (e) {
         errors.push({ packageName, message: (e as any).message });
       }
@@ -96,7 +96,7 @@ for (const date of dates) {
       !existing ||
       (existing[1] && (major(existing[0]) !== major(versions.core) || minor(existing[0]) !== minor(versions.core)))
     ) {
-      work.push(pkg);
+      work.push({ ...pkg });
     }
   }
 
@@ -107,7 +107,7 @@ for (const date of dates) {
   );
 
   const workerCount = Math.min(os.cpus().length - 1 || 1, 6);
-  fullModified = await checkPackages(work, fullJsonFileName, workerCount);
+  fullModified = await checkPackages(work, fullJsonFileName, workerCount, date);
 }
 
 console.log("Cleaning full.json");
