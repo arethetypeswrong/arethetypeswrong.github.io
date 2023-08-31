@@ -8,29 +8,30 @@ export class Package {
   #files: Record<string, string | Uint8Array> = {};
   readonly packageName: string;
   readonly packageVersion: string;
+  readonly resolvedUrl?: string;
   readonly typesPackage?: {
     packageName: string;
     packageVersion: string;
+    resolvedUrl?: string;
   };
 
   constructor(
     files: Record<string, string | Uint8Array>,
     packageName: string,
     packageVersion: string,
-    typesPackage?: {
-      packageName: string;
-      packageVersion: string;
-    }
+    resolvedUrl?: string,
+    typesPackage?: Package["typesPackage"]
   ) {
     this.#files = files;
     this.packageName = packageName;
     this.packageVersion = packageVersion;
+    this.resolvedUrl = resolvedUrl;
     this.typesPackage = typesPackage;
   }
 
   readFile(path: string): string {
     const file = this.#files[path];
-    if (!file) {
+    if (file === undefined) {
       throw new Error(`File not found: ${path}`);
     }
     if (typeof file === "string") {
@@ -68,9 +69,10 @@ export class Package {
 
   mergedWithTypes(typesPackage: Package): Package {
     const files = { ...this.#files, ...typesPackage.#files };
-    return new Package(files, this.packageName, this.packageVersion, {
+    return new Package(files, this.packageName, this.packageVersion, this.resolvedUrl, {
       packageName: typesPackage.packageName,
       packageVersion: typesPackage.packageVersion,
+      resolvedUrl: typesPackage.resolvedUrl,
     });
   }
 }
@@ -84,11 +86,12 @@ export interface CreatePackageFromNpmOptions {
    * @default true
    */
   definitelyTyped?: string | boolean;
+  before?: Date;
 }
 
 export async function createPackageFromNpm(
   packageSpec: string,
-  { definitelyTyped = true }: CreatePackageFromNpmOptions = {}
+  { definitelyTyped = true, before }: CreatePackageFromNpmOptions = {}
 ): Promise<Package> {
   const parsed = parsePackageSpec(packageSpec);
   if (parsed.status === "error") {
@@ -99,7 +102,7 @@ export async function createPackageFromNpm(
     parsed.data.versionKind === "none" && typeof definitelyTyped === "string"
       ? parsePackageSpec(`${packageName}@${definitelyTyped}`)
       : parsed;
-  const { tarballUrl, version } = await getNpmTarballUrl(spec.data || parsed.data);
+  const { tarballUrl, packageVersion } = await getNpmTarballUrl([spec.data || parsed.data], before);
   const pkg = await createPackageFromTarballUrl(tarballUrl);
   if (!definitelyTyped || pkg.containsTypes()) {
     return pkg;
@@ -108,37 +111,18 @@ export async function createPackageFromNpm(
   const typesPackageName = ts.getTypesPackageName(packageName);
   let typesPackageData;
   if (definitelyTyped === true) {
-    try {
-      typesPackageData = await getNpmTarballUrl({
-        name: typesPackageName,
-        versionKind: "range",
-        version: `${major(version)}.${minor(version)}`,
-      });
-    } catch {
-      try {
-        typesPackageData = await getNpmTarballUrl({
-          name: typesPackageName,
-          versionKind: "range",
-          version: `${major(version)}`,
-        });
-      } catch {
-        try {
-          typesPackageData = await getNpmTarballUrl({
-            name: typesPackageName,
-            versionKind: "tag",
-            version: "latest",
-          });
-        } catch {
-          typesPackageData = undefined;
-        }
-      }
-    }
+    typesPackageData = await resolveTypesPackageForPackage(packageName, packageVersion, before);
   } else {
-    typesPackageData = await getNpmTarballUrl({
-      name: typesPackageName,
-      versionKind: valid(definitelyTyped) ? "exact" : validRange(definitelyTyped) ? "range" : "tag",
-      version: definitelyTyped,
-    });
+    typesPackageData = await getNpmTarballUrl(
+      [
+        {
+          name: typesPackageName,
+          versionKind: valid(definitelyTyped) ? "exact" : validRange(definitelyTyped) ? "range" : "tag",
+          version: definitelyTyped,
+        },
+      ],
+      before
+    );
   }
 
   if (typesPackageData) {
@@ -147,39 +131,93 @@ export async function createPackageFromNpm(
   return pkg;
 }
 
-async function getNpmTarballUrl(packageSpec: ParsedPackageSpec): Promise<{ tarballUrl: string; version: string }> {
-  const registryUrl =
-    packageSpec.versionKind === "range" || (packageSpec.versionKind === "tag" && packageSpec.version !== "latest")
-      ? `https://registry.npmjs.org/${packageSpec.name}`
-      : `https://registry.npmjs.org/${packageSpec.name}/${packageSpec.version || "latest"}`;
-  const Accept =
-    packageSpec.versionKind === "range" || (packageSpec.versionKind === "tag" && packageSpec.version !== "latest")
-      ? "application/vnd.npm.install-v1+json"
-      : "application/json";
-  const doc = await fetch(registryUrl, { headers: { Accept } }).then((r) => r.json());
-  let tarballUrl, version;
-  if (packageSpec.versionKind === "range") {
-    version = maxSatisfying(Object.keys(doc.versions), packageSpec.version);
-    if (!version) {
-      throw new Error(`No version found matching '${packageSpec.version}'`);
+export async function resolveTypesPackageForPackage(
+  packageName: string,
+  packageVersion: string,
+  before?: Date
+): Promise<{ packageName: string; packageVersion: string; tarballUrl: string } | undefined> {
+  const typesPackageName = ts.getTypesPackageName(packageName);
+  try {
+    return {
+      packageName: typesPackageName,
+      ...(await getNpmTarballUrl(
+        [
+          {
+            name: typesPackageName,
+            versionKind: "range",
+            version: `${major(packageVersion)}.${minor(packageVersion)}`,
+          },
+          {
+            name: typesPackageName,
+            versionKind: "range",
+            version: `${major(packageVersion)}`,
+          },
+          {
+            name: typesPackageName,
+            versionKind: "tag",
+            version: "latest",
+          },
+        ],
+        before
+      )),
+    };
+  } catch {}
+}
+
+async function getNpmTarballUrl(
+  packageSpecs: readonly ParsedPackageSpec[],
+  before?: Date
+): Promise<{ tarballUrl: string; packageVersion: string }> {
+  const fetchPackument = packageSpecs.some(
+    (spec) => spec.versionKind === "range" || (spec.versionKind === "tag" && spec.version !== "latest")
+  );
+  const packumentUrl = `https://registry.npmjs.org/${packageSpecs[0].name}`;
+  const includeTimes = before !== undefined && packageSpecs.some((spec) => spec.versionKind !== "exact");
+  const Accept = includeTimes ? "application/json" : "application/vnd.npm.install-v1+json";
+  const packument = fetchPackument
+    ? await fetch(packumentUrl, { headers: { Accept } }).then((r) => r.json())
+    : undefined;
+
+  for (const packageSpec of packageSpecs) {
+    const manifestUrl = `https://registry.npmjs.org/${packageSpec.name}/${packageSpec.version || "latest"}`;
+    const doc = packument || (await fetch(manifestUrl).then((r) => r.json()));
+    let tarballUrl, packageVersion;
+    if (packageSpec.versionKind === "range") {
+      packageVersion = maxSatisfying(
+        Object.keys(doc.versions).filter(
+          (v) => !doc.versions[v].deprecated && (!before || !doc.time || new Date(doc.time[v]) <= before)
+        ),
+        packageSpec.version
+      );
+      if (!packageVersion) {
+        continue;
+      }
+      tarballUrl = doc.versions[packageVersion].dist.tarball;
+    } else if (packageSpec.versionKind === "tag" && packageSpec.version !== "latest") {
+      packageVersion = doc["dist-tags"][packageSpec.version];
+      if (!packageVersion) {
+        continue;
+      }
+      if (before && doc.time && new Date(doc.time[packageVersion]) > before) {
+        continue;
+      }
+      tarballUrl = doc.versions[packageVersion].dist.tarball;
+    } else {
+      packageVersion = doc.version;
+      tarballUrl = doc.dist.tarball;
     }
-    tarballUrl = doc.versions[version].dist.tarball;
-  } else if (packageSpec.versionKind === "tag" && packageSpec.version !== "latest") {
-    version = doc["dist-tags"][packageSpec.version];
-    if (!version) {
-      throw new Error(`No version found matching '${packageSpec.version}'`);
+
+    if (packageVersion && tarballUrl) {
+      return { packageVersion, tarballUrl };
     }
-    tarballUrl = doc.versions[version].dist.tarball;
-  } else {
-    version = doc.version;
-    tarballUrl = doc.dist.tarball;
   }
-  return { version, tarballUrl };
+  throw new Error(`Failed to find a matching version for ${packageSpecs[0].name}`);
 }
 
 export async function createPackageFromTarballUrl(tarballUrl: string): Promise<Package> {
   const tarball = await fetchTarball(tarballUrl);
-  return createPackageFromTarballData(tarball);
+  const { files, packageName, packageVersion } = extractTarball(tarball);
+  return new Package(files, packageName, packageVersion, tarballUrl);
 }
 
 async function fetchTarball(tarballUrl: string) {

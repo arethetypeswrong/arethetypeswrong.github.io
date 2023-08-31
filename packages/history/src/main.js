@@ -54,7 +54,7 @@ export async function getAllDataAsObject() {
   return result;
 }
 
-/** @typedef {Record<string, { packageName: string, packageVersion: string, tarballUrl: string }[]>} VersionsByDate */
+/** @typedef {Record<string, { packageName: string, packageVersion: string, tarballUrl: string, typesPackageUrl?: string | boolean }[]>} VersionsByDate */
 
 /**
  * Gets the list of top packages processed for each sampled date.

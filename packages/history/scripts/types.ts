@@ -11,10 +11,16 @@ export interface ErrorBlob {
   message: string;
   packageName: string;
   packageVersion: string;
+  typesPackageUrl: string | boolean;
   tarballUrl: string;
   prevMessage?: string;
 }
-export type Blob = CheckResultBlob | ErrorBlob;
+export interface ResolvedTypesPackageUrlBlob {
+  kind: "resolvedTypesPackageUrl";
+  packageName: string;
+  typesPackageUrl: string;
+}
+export type Blob = CheckResultBlob | ErrorBlob | ResolvedTypesPackageUrlBlob;
 
 export interface FullJsonLine {
   packageSpec: string;
@@ -30,6 +36,7 @@ export interface DatesJson {
       packageName: string;
       packageVersion: string;
       tarballUrl: string;
+      typesPackageUrl?: string | boolean;
     }[];
   };
 }
