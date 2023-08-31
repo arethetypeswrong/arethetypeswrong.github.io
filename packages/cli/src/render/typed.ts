@@ -21,6 +21,23 @@ export async function typed(analysis: core.Analysis, opts: Opts) {
     headerIds: false,
   });
 
+  console.log(`${analysis.packageName} v${analysis.packageVersion}`);
+  if (analysis.types.kind === "@types") {
+    console.log(`${analysis.types.packageName} v${analysis.types.packageVersion}`);
+  }
+  console.log();
+  if (Object.keys(analysis.buildTools).length) {
+    console.log("Build tools:");
+    console.log(
+      Object.entries(analysis.buildTools)
+        .map(([tool, version]) => {
+          return `- ${tool}@${version}`;
+        })
+        .join("\n")
+    );
+    console.log();
+  }
+
   if (opts.ignoreRules && opts.ignoreRules.length) {
     console.log(
       chalk.gray(
@@ -30,12 +47,6 @@ export async function typed(analysis: core.Analysis, opts: Opts) {
       )
     );
   }
-
-  console.log(`${analysis.packageName} v${analysis.packageVersion}`);
-  if (analysis.types.kind === "@types") {
-    console.log(`${analysis.types.packageName} v${analysis.types.packageVersion}`);
-  }
-  console.log();
 
   if (opts.summary) {
     const defaultSummary = marked(!opts.emoji ? " No problems found" : " No problems found 🌟");
