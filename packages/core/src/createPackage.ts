@@ -111,7 +111,7 @@ export async function createPackageFromNpm(
   const typesPackageName = ts.getTypesPackageName(packageName);
   let typesPackageData;
   if (definitelyTyped === true) {
-    typesPackageData = await getTypesPackageForPackage(packageName, packageVersion, before);
+    typesPackageData = await resolveTypesPackageForPackage(packageName, packageVersion, before);
   } else {
     typesPackageData = await getNpmTarballUrl(
       [
@@ -131,7 +131,7 @@ export async function createPackageFromNpm(
   return pkg;
 }
 
-export async function getTypesPackageForPackage(
+export async function resolveTypesPackageForPackage(
   packageName: string,
   packageVersion: string,
   before?: Date

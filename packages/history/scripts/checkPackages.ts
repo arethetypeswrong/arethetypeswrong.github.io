@@ -1,4 +1,4 @@
-import { checkPackage, createPackageFromTarballUrl, getTypesPackageForPackage } from "@arethetypeswrong/core";
+import { checkPackage, createPackageFromTarballUrl, resolveTypesPackageForPackage } from "@arethetypeswrong/core";
 import { appendFileSync } from "fs";
 import { Worker, isMainThread, parentPort, workerData } from "node:worker_threads";
 import type { Blob, FullJsonLine } from "./types.ts";
@@ -30,7 +30,7 @@ if (!isMainThread && parentPort) {
           if (typeof typesPackageUrl === "string") {
             pkg = pkg.mergedWithTypes(await createPackageFromTarballUrl(typesPackageUrl));
           } else if (typesPackageUrl === true) {
-            const typesPackageData = await getTypesPackageForPackage(packageName, packageVersion, new Date(before));
+            const typesPackageData = await resolveTypesPackageForPackage(packageName, packageVersion, new Date(before));
             if (typesPackageData) {
               pkg = pkg.mergedWithTypes(await createPackageFromTarballUrl(typesPackageData.tarballUrl));
               if (pkg.typesPackage?.resolvedUrl) {
