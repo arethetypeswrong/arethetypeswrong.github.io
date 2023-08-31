@@ -1,5 +1,17 @@
 # @arethetypeswrong/cli
 
+## 0.9.0
+
+### Minor Changes
+
+- b2a3251: Report relevant build tools detected in package.json `devDependencies`
+
+### Patch Changes
+
+- Updated dependencies [c3a69f7]
+- Updated dependencies [2c67f2d]
+  - @arethetypeswrong/core@0.9.0
+
 ## 0.8.0
 
 ### Minor Changes

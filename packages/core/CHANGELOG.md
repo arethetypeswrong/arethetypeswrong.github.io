@@ -1,5 +1,12 @@
 # @arethetypeswrong/core
 
+## 0.9.0
+
+### Minor Changes
+
+- c3a69f7: Package creation API changes to support @arethetypeswrong/history better. `createPackageFromNpm` options now take a `before` property similar to `npm install --before date`.
+- 2c67f2d: Add `buildTools` property to `Analysis` (a pick of `devDependencies`)
+
 ## 0.8.0
 
 ### Minor Changes
