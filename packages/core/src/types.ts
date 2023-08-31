@@ -20,9 +20,25 @@ export interface TypesPackage {
 }
 export type AnalysisTypes = IncludedTypes | TypesPackage;
 
+export type BuildTool =
+  | "@arethetypeswrong/cli"
+  | "typescript"
+  | "rollup"
+  | "@rollup/plugin-typescript"
+  | "@rollup/plugin-typescript2"
+  | "webpack"
+  | "esbuild"
+  | "parcel-bundler"
+  | "@preconstruct/cli"
+  | "vite"
+  | "snowpack"
+  | "microbundle"
+  | "@microsoft/api-extractor";
+
 export interface Analysis {
   packageName: string;
   packageVersion: string;
+  buildTools: Partial<Record<BuildTool, string>>;
   types: AnalysisTypes;
   entrypoints: Record<string, EntrypointInfo>;
   problems: Problem[];

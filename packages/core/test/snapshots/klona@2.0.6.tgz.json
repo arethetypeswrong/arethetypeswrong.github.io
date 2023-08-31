@@ -1,0 +1,1459 @@
+{
+  "packageName": "klona",
+  "packageVersion": "2.0.6",
+  "types": {
+    "kind": "included"
+  },
+  "buildTools": {},
+  "entrypoints": {
+    ".": {
+      "subpath": ".",
+      "resolutions": {
+        "node10": {
+          "name": ".",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/klona/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'klona' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'klona' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/klona/package.json'.",
+              "File '/node_modules/klona.ts' does not exist.",
+              "File '/node_modules/klona.tsx' does not exist.",
+              "File '/node_modules/klona.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'index.d.ts' that references '/node_modules/klona/index.d.ts'.",
+              "File '/node_modules/klona/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'klona' was successfully resolved to '/node_modules/klona/index.d.ts' with Package ID 'klona/index.d.ts@2.0.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/klona/dist/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'klona' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/klona/package.json'.",
+              "File '/node_modules/klona.ts' does not exist.",
+              "File '/node_modules/klona.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/klona/dist/index.js'.",
+              "File '/node_modules/klona/dist/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/klona/dist/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/klona/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/klona/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/klona/dist/index.ts' does not exist.",
+              "File '/node_modules/klona/dist/index.tsx' does not exist.",
+              "File '/node_modules/klona/dist/index.js.ts' does not exist.",
+              "File '/node_modules/klona/dist/index.js.tsx' does not exist.",
+              "Directory '/node_modules/klona/dist/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/klona/index.ts' does not exist.",
+              "File '/node_modules/klona/index.tsx' does not exist.",
+              "Loading module 'klona' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/klona.js' does not exist.",
+              "File '/node_modules/klona.jsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/klona/dist/index.js'.",
+              "File '/node_modules/klona/dist/index.js' exists - use it as a name resolution result.",
+              "======== Module name 'klona' was successfully resolved to '/node_modules/klona/dist/index.js' with Package ID 'klona/dist/index.js@2.0.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/klona/index.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": ".",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/klona/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/klona/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'klona' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'klona' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/klona/package.json'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath '.' with target './index.d.ts'.",
+              "File '/node_modules/klona/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'klona' was successfully resolved to '/node_modules/klona/index.d.ts' with Package ID 'klona/index.d.ts@2.0.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/klona/dist/index.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/klona/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'klona' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/klona/package.json'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Using 'exports' subpath '.' with target './dist/index.js'.",
+              "File name '/node_modules/klona/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/klona/dist/index.ts' does not exist.",
+              "File '/node_modules/klona/dist/index.tsx' does not exist.",
+              "Failed to resolve under condition 'require'.",
+              "Exiting conditional exports.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Using 'exports' subpath '.' with target './dist/index.js'.",
+              "File name '/node_modules/klona/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/klona/dist/index.js' exists - use it as a name resolution result.",
+              "Resolved under condition 'require'.",
+              "Exiting conditional exports.",
+              "======== Module name 'klona' was successfully resolved to '/node_modules/klona/dist/index.js' with Package ID 'klona/dist/index.js@2.0.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/klona/index.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": ".",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/klona/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/klona/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'klona' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath '.' with target './index.d.ts'.",
+              "File '/node_modules/klona/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'klona' was successfully resolved to '/node_modules/klona/index.d.ts' with Package ID 'klona/index.d.ts@2.0.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/klona/dist/index.mjs",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "extension",
+              "reasonFileName": "/node_modules/klona/dist/index.mjs"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath '.' with target './dist/index.mjs'.",
+              "File name '/node_modules/klona/dist/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/klona/dist/index.mts' does not exist.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Exiting conditional exports.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath '.' with target './dist/index.mjs'.",
+              "File name '/node_modules/klona/dist/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/klona/dist/index.mjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/klona/dist/index.js'.",
+              "File '/node_modules/klona/dist/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/klona/dist/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/klona/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/klona/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/klona/dist/index.ts' does not exist.",
+              "File '/node_modules/klona/dist/index.tsx' does not exist.",
+              "File '/node_modules/klona/dist/index.js.ts' does not exist.",
+              "File '/node_modules/klona/dist/index.js.tsx' does not exist.",
+              "Directory '/node_modules/klona/dist/index.js' does not exist, skipping all lookups in it.",
+              "======== Module name 'klona' was successfully resolved to '/node_modules/klona/dist/index.mjs' with Package ID 'klona/dist/index.mjs@2.0.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/klona/index.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": ".",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/klona/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'klona' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'klona' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/klona/package.json'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath '.' with target './index.d.ts'.",
+              "File '/node_modules/klona/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'klona' was successfully resolved to '/node_modules/klona/index.d.ts' with Package ID 'klona/index.d.ts@2.0.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/klona/dist/index.mjs",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'klona' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/klona/package.json'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath '.' with target './dist/index.mjs'.",
+              "File name '/node_modules/klona/dist/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/klona/dist/index.mts' does not exist.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Exiting conditional exports.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath '.' with target './dist/index.mjs'.",
+              "File name '/node_modules/klona/dist/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/klona/dist/index.mjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/klona.ts' does not exist.",
+              "File '/node_modules/klona.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/klona/dist/index.js'.",
+              "File '/node_modules/klona/dist/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/klona/dist/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/klona/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/klona/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/klona/dist/index.ts' does not exist.",
+              "File '/node_modules/klona/dist/index.tsx' does not exist.",
+              "File '/node_modules/klona/dist/index.js.ts' does not exist.",
+              "File '/node_modules/klona/dist/index.js.tsx' does not exist.",
+              "Directory '/node_modules/klona/dist/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/klona/index.ts' does not exist.",
+              "File '/node_modules/klona/index.tsx' does not exist.",
+              "======== Module name 'klona' was successfully resolved to '/node_modules/klona/dist/index.mjs' with Package ID 'klona/dist/index.mjs@2.0.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/klona/index.d.ts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    },
+    "./json": {
+      "subpath": "./json",
+      "resolutions": {
+        "node10": {
+          "name": "./json",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/klona/json/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'klona/json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'klona/json' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/klona/json/package.json' does not exist.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/klona/json.ts' does not exist.",
+              "File '/node_modules/klona/json.tsx' does not exist.",
+              "File '/node_modules/klona/json.d.ts' does not exist.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'index.d.ts' that references '/node_modules/klona/json/index.d.ts'.",
+              "File '/node_modules/klona/json/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'klona/json' was successfully resolved to '/node_modules/klona/json/index.d.ts' with Package ID 'klona/json/index.d.ts@2.0.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/klona/json/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona/json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'klona/json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/json/package.json' does not exist.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/klona/json.ts' does not exist.",
+              "File '/node_modules/klona/json.tsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/klona/json/dist/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/klona/json/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/klona/json/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/klona/json/index.ts' does not exist.",
+              "File '/node_modules/klona/json/index.tsx' does not exist.",
+              "Loading module 'klona/json' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/json/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/klona/json.js' does not exist.",
+              "File '/node_modules/klona/json.jsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/klona/json/dist/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/klona/json/dist/index.js', target file types: JavaScript, JSON.",
+              "File name '/node_modules/klona/json/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/klona/json/index.js' exists - use it as a name resolution result.",
+              "======== Module name 'klona/json' was successfully resolved to '/node_modules/klona/json/index.js' with Package ID 'klona/json/index.js@2.0.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/klona/json/index.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": "./json",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/klona/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/klona/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'klona/json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/json' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/klona/json/package.json' does not exist.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath './json' with target './index.d.ts'.",
+              "File '/node_modules/klona/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'klona/json' was successfully resolved to '/node_modules/klona/index.d.ts' with Package ID 'klona/index.d.ts@2.0.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/klona/json/index.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/klona/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona/json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/json/package.json' does not exist.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Using 'exports' subpath './json' with target './json/index.js'.",
+              "File name '/node_modules/klona/json/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/klona/json/index.ts' does not exist.",
+              "File '/node_modules/klona/json/index.tsx' does not exist.",
+              "Failed to resolve under condition 'require'.",
+              "Exiting conditional exports.",
+              "Export specifier './json' does not exist in package.json scope at path '/node_modules/klona'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/json/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Using 'exports' subpath './json' with target './json/index.js'.",
+              "File name '/node_modules/klona/json/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/klona/json/index.js' exists - use it as a name resolution result.",
+              "Resolved under condition 'require'.",
+              "Exiting conditional exports.",
+              "======== Module name 'klona/json' was successfully resolved to '/node_modules/klona/json/index.js' with Package ID 'klona/json/index.js@2.0.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/klona/index.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": "./json",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/klona/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/klona/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'klona/json' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/json' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/klona/json/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath './json' with target './index.d.ts'.",
+              "File '/node_modules/klona/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'klona/json' was successfully resolved to '/node_modules/klona/index.d.ts' with Package ID 'klona/index.d.ts@2.0.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/klona/json/index.mjs",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "extension",
+              "reasonFileName": "/node_modules/klona/json/index.mjs"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona/json' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/json/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath './json' with target './json/index.mjs'.",
+              "File name '/node_modules/klona/json/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/klona/json/index.mts' does not exist.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Exiting conditional exports.",
+              "Export specifier './json' does not exist in package.json scope at path '/node_modules/klona'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/json/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath './json' with target './json/index.mjs'.",
+              "File name '/node_modules/klona/json/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/klona/json/index.mjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/json/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/klona/json/dist/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/klona/json/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/klona/json/dist/index.js' has a '.js' extension - stripping it.",
+              "======== Module name 'klona/json' was successfully resolved to '/node_modules/klona/json/index.mjs' with Package ID 'klona/json/index.mjs@2.0.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/klona/index.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": "./json",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/klona/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'klona/json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/json' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/klona/json/package.json' does not exist.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath './json' with target './index.d.ts'.",
+              "File '/node_modules/klona/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'klona/json' was successfully resolved to '/node_modules/klona/index.d.ts' with Package ID 'klona/index.d.ts@2.0.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/klona/json/index.mjs",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona/json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/json/package.json' does not exist.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath './json' with target './json/index.mjs'.",
+              "File name '/node_modules/klona/json/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/klona/json/index.mts' does not exist.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Exiting conditional exports.",
+              "Export specifier './json' does not exist in package.json scope at path '/node_modules/klona'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/json/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath './json' with target './json/index.mjs'.",
+              "File name '/node_modules/klona/json/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/klona/json/index.mjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/json/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/klona/json.ts' does not exist.",
+              "File '/node_modules/klona/json.tsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/klona/json/dist/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/klona/json/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/klona/json/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/klona/json/index.ts' does not exist.",
+              "File '/node_modules/klona/json/index.tsx' does not exist.",
+              "======== Module name 'klona/json' was successfully resolved to '/node_modules/klona/json/index.mjs' with Package ID 'klona/json/index.mjs@2.0.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/klona/index.d.ts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    },
+    "./lite": {
+      "subpath": "./lite",
+      "resolutions": {
+        "node10": {
+          "name": "./lite",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/klona/lite/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'klona/lite' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'klona/lite' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/klona/lite/package.json' does not exist.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/klona/lite.ts' does not exist.",
+              "File '/node_modules/klona/lite.tsx' does not exist.",
+              "File '/node_modules/klona/lite.d.ts' does not exist.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'index.d.ts' that references '/node_modules/klona/lite/index.d.ts'.",
+              "File '/node_modules/klona/lite/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'klona/lite' was successfully resolved to '/node_modules/klona/lite/index.d.ts' with Package ID 'klona/lite/index.d.ts@2.0.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/klona/lite/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona/lite' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'klona/lite' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/lite/package.json' does not exist.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/klona/lite.ts' does not exist.",
+              "File '/node_modules/klona/lite.tsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/klona/lite/dist/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/klona/lite/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/klona/lite/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/klona/lite/index.ts' does not exist.",
+              "File '/node_modules/klona/lite/index.tsx' does not exist.",
+              "Loading module 'klona/lite' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/lite/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/klona/lite.js' does not exist.",
+              "File '/node_modules/klona/lite.jsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/klona/lite/dist/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/klona/lite/dist/index.js', target file types: JavaScript, JSON.",
+              "File name '/node_modules/klona/lite/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/klona/lite/index.js' exists - use it as a name resolution result.",
+              "======== Module name 'klona/lite' was successfully resolved to '/node_modules/klona/lite/index.js' with Package ID 'klona/lite/index.js@2.0.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/klona/lite/index.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": "./lite",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/klona/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/klona/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'klona/lite' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/lite' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/klona/lite/package.json' does not exist.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath './lite' with target './index.d.ts'.",
+              "File '/node_modules/klona/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'klona/lite' was successfully resolved to '/node_modules/klona/index.d.ts' with Package ID 'klona/index.d.ts@2.0.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/klona/lite/index.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/klona/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona/lite' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/lite' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/lite/package.json' does not exist.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Using 'exports' subpath './lite' with target './lite/index.js'.",
+              "File name '/node_modules/klona/lite/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/klona/lite/index.ts' does not exist.",
+              "File '/node_modules/klona/lite/index.tsx' does not exist.",
+              "Failed to resolve under condition 'require'.",
+              "Exiting conditional exports.",
+              "Export specifier './lite' does not exist in package.json scope at path '/node_modules/klona'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/lite/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Using 'exports' subpath './lite' with target './lite/index.js'.",
+              "File name '/node_modules/klona/lite/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/klona/lite/index.js' exists - use it as a name resolution result.",
+              "Resolved under condition 'require'.",
+              "Exiting conditional exports.",
+              "======== Module name 'klona/lite' was successfully resolved to '/node_modules/klona/lite/index.js' with Package ID 'klona/lite/index.js@2.0.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/klona/index.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": "./lite",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/klona/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/klona/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'klona/lite' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/lite' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/klona/lite/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath './lite' with target './index.d.ts'.",
+              "File '/node_modules/klona/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'klona/lite' was successfully resolved to '/node_modules/klona/index.d.ts' with Package ID 'klona/index.d.ts@2.0.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/klona/lite/index.mjs",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "extension",
+              "reasonFileName": "/node_modules/klona/lite/index.mjs"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona/lite' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/lite' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/lite/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath './lite' with target './lite/index.mjs'.",
+              "File name '/node_modules/klona/lite/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/klona/lite/index.mts' does not exist.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Exiting conditional exports.",
+              "Export specifier './lite' does not exist in package.json scope at path '/node_modules/klona'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/lite/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath './lite' with target './lite/index.mjs'.",
+              "File name '/node_modules/klona/lite/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/klona/lite/index.mjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/lite' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/lite/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/klona/lite/dist/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/klona/lite/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/klona/lite/dist/index.js' has a '.js' extension - stripping it.",
+              "======== Module name 'klona/lite' was successfully resolved to '/node_modules/klona/lite/index.mjs' with Package ID 'klona/lite/index.mjs@2.0.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/klona/index.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": "./lite",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/klona/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'klona/lite' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/lite' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/klona/lite/package.json' does not exist.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath './lite' with target './index.d.ts'.",
+              "File '/node_modules/klona/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'klona/lite' was successfully resolved to '/node_modules/klona/index.d.ts' with Package ID 'klona/index.d.ts@2.0.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/klona/lite/index.mjs",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona/lite' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/lite' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/lite/package.json' does not exist.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath './lite' with target './lite/index.mjs'.",
+              "File name '/node_modules/klona/lite/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/klona/lite/index.mts' does not exist.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Exiting conditional exports.",
+              "Export specifier './lite' does not exist in package.json scope at path '/node_modules/klona'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/lite/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath './lite' with target './lite/index.mjs'.",
+              "File name '/node_modules/klona/lite/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/klona/lite/index.mjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/lite' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/lite/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/klona/lite.ts' does not exist.",
+              "File '/node_modules/klona/lite.tsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/klona/lite/dist/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/klona/lite/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/klona/lite/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/klona/lite/index.ts' does not exist.",
+              "File '/node_modules/klona/lite/index.tsx' does not exist.",
+              "======== Module name 'klona/lite' was successfully resolved to '/node_modules/klona/lite/index.mjs' with Package ID 'klona/lite/index.mjs@2.0.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/klona/index.d.ts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    },
+    "./full": {
+      "subpath": "./full",
+      "resolutions": {
+        "node10": {
+          "name": "./full",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/klona/full/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'klona/full' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'klona/full' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/klona/full/package.json' does not exist.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/klona/full.ts' does not exist.",
+              "File '/node_modules/klona/full.tsx' does not exist.",
+              "File '/node_modules/klona/full.d.ts' does not exist.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'index.d.ts' that references '/node_modules/klona/full/index.d.ts'.",
+              "File '/node_modules/klona/full/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'klona/full' was successfully resolved to '/node_modules/klona/full/index.d.ts' with Package ID 'klona/full/index.d.ts@2.0.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/klona/full/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona/full' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'klona/full' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/full/package.json' does not exist.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/klona/full.ts' does not exist.",
+              "File '/node_modules/klona/full.tsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/klona/full/dist/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/klona/full/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/klona/full/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/klona/full/index.ts' does not exist.",
+              "File '/node_modules/klona/full/index.tsx' does not exist.",
+              "Loading module 'klona/full' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/full/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/klona/full.js' does not exist.",
+              "File '/node_modules/klona/full.jsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/klona/full/dist/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/klona/full/dist/index.js', target file types: JavaScript, JSON.",
+              "File name '/node_modules/klona/full/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/klona/full/index.js' exists - use it as a name resolution result.",
+              "======== Module name 'klona/full' was successfully resolved to '/node_modules/klona/full/index.js' with Package ID 'klona/full/index.js@2.0.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/klona/full/index.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": "./full",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/klona/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/klona/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'klona/full' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/full' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/klona/full/package.json' does not exist.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath './full' with target './index.d.ts'.",
+              "File '/node_modules/klona/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'klona/full' was successfully resolved to '/node_modules/klona/index.d.ts' with Package ID 'klona/index.d.ts@2.0.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/klona/full/index.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/klona/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona/full' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/full' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/full/package.json' does not exist.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Using 'exports' subpath './full' with target './full/index.js'.",
+              "File name '/node_modules/klona/full/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/klona/full/index.ts' does not exist.",
+              "File '/node_modules/klona/full/index.tsx' does not exist.",
+              "Failed to resolve under condition 'require'.",
+              "Exiting conditional exports.",
+              "Export specifier './full' does not exist in package.json scope at path '/node_modules/klona'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/full/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Using 'exports' subpath './full' with target './full/index.js'.",
+              "File name '/node_modules/klona/full/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/klona/full/index.js' exists - use it as a name resolution result.",
+              "Resolved under condition 'require'.",
+              "Exiting conditional exports.",
+              "======== Module name 'klona/full' was successfully resolved to '/node_modules/klona/full/index.js' with Package ID 'klona/full/index.js@2.0.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/klona/index.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": "./full",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/klona/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/klona/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'klona/full' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/full' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/klona/full/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath './full' with target './index.d.ts'.",
+              "File '/node_modules/klona/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'klona/full' was successfully resolved to '/node_modules/klona/index.d.ts' with Package ID 'klona/index.d.ts@2.0.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/klona/full/index.mjs",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "extension",
+              "reasonFileName": "/node_modules/klona/full/index.mjs"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona/full' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/full' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/full/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath './full' with target './full/index.mjs'.",
+              "File name '/node_modules/klona/full/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/klona/full/index.mts' does not exist.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Exiting conditional exports.",
+              "Export specifier './full' does not exist in package.json scope at path '/node_modules/klona'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/full/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath './full' with target './full/index.mjs'.",
+              "File name '/node_modules/klona/full/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/klona/full/index.mjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/full' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/full/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/klona/full/dist/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/klona/full/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/klona/full/dist/index.js' has a '.js' extension - stripping it.",
+              "======== Module name 'klona/full' was successfully resolved to '/node_modules/klona/full/index.mjs' with Package ID 'klona/full/index.mjs@2.0.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/klona/index.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": "./full",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/klona/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'klona/full' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/full' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/klona/full/package.json' does not exist.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath './full' with target './index.d.ts'.",
+              "File '/node_modules/klona/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'klona/full' was successfully resolved to '/node_modules/klona/index.d.ts' with Package ID 'klona/index.d.ts@2.0.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/klona/full/index.mjs",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona/full' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/full' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/full/package.json' does not exist.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath './full' with target './full/index.mjs'.",
+              "File name '/node_modules/klona/full/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/klona/full/index.mts' does not exist.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Exiting conditional exports.",
+              "Export specifier './full' does not exist in package.json scope at path '/node_modules/klona'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/full/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath './full' with target './full/index.mjs'.",
+              "File name '/node_modules/klona/full/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/klona/full/index.mjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/full' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/full/package.json' does not exist according to earlier cached lookups.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/klona/full.ts' does not exist.",
+              "File '/node_modules/klona/full.tsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/klona/full/dist/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/klona/full/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/klona/full/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/klona/full/index.ts' does not exist.",
+              "File '/node_modules/klona/full/index.tsx' does not exist.",
+              "======== Module name 'klona/full' was successfully resolved to '/node_modules/klona/full/index.mjs' with Package ID 'klona/full/index.mjs@2.0.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/klona/index.d.ts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    },
+    "./package.json": {
+      "subpath": "./package.json",
+      "resolutions": {
+        "node10": {
+          "name": "./package.json",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/klona/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'klona/package.json' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/klona/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/klona/package.d.json.ts' does not exist.",
+              "File '/node_modules/klona/package.json.ts' does not exist.",
+              "File '/node_modules/klona/package.json.tsx' does not exist.",
+              "File '/node_modules/klona/package.json.d.ts' does not exist.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'index.d.ts' that references '/node_modules/klona/package.json/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/klona/package.json/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/klona/package.json/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/klona/package.json' has a '.json' extension - stripping it.",
+              "Loading module 'klona/package.json' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/klona/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/klona/package.json' exists - use it as a name resolution result.",
+              "======== Module name 'klona/package.json' was successfully resolved to '/node_modules/klona/package.json' with Package ID 'klona/package.json@2.0.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/klona/package.json"
+          ]
+        },
+        "node16-cjs": {
+          "name": "./package.json",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/klona/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/klona/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/klona/package.d.json.ts' does not exist.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/klona'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/klona/package.json' has a '.json' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/klona/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/klona/package.json' exists - use it as a name resolution result.",
+              "======== Module name 'klona/package.json' was successfully resolved to '/node_modules/klona/package.json' with Package ID 'klona/package.json@2.0.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/klona/package.json"
+          ]
+        },
+        "node16-esm": {
+          "name": "./package.json",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/klona/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona/package.json' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/klona/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/klona/package.d.json.ts' does not exist.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/klona'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/klona/package.json' has a '.json' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/klona/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/klona/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/package.json' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "File name '/node_modules/klona/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/klona/package.d.json.ts' does not exist.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'index.d.ts' that references '/node_modules/klona/package.json/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/klona/package.json/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/klona/package.json/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/klona/package.json' has a '.json' extension - stripping it.",
+              "======== Module name 'klona/package.json' was successfully resolved to '/node_modules/klona/package.json' with Package ID 'klona/package.json@2.0.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/klona/package.json"
+          ]
+        },
+        "bundler": {
+          "name": "./package.json",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/klona/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/klona/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/klona/package.d.json.ts' does not exist.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/klona'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/klona/package.json' has a '.json' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/klona/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/klona/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/package.json' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "File name '/node_modules/klona/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/klona/package.d.json.ts' does not exist.",
+              "File '/node_modules/klona/package.json.ts' does not exist.",
+              "File '/node_modules/klona/package.json.tsx' does not exist.",
+              "File '/node_modules/klona/package.json.d.ts' does not exist.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'index.d.ts' that references '/node_modules/klona/package.json/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/klona/package.json/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/klona/package.json/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/klona/package.json' has a '.json' extension - stripping it.",
+              "======== Module name 'klona/package.json' was successfully resolved to '/node_modules/klona/package.json' with Package ID 'klona/package.json@2.0.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/klona/package.json"
+          ]
+        }
+      },
+      "hasTypes": false,
+      "isWildcard": false
+    }
+  },
+  "problems": [
+    {
+      "kind": "FalseCJS",
+      "entrypoint": ".",
+      "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "FalseCJS",
+      "entrypoint": "./json",
+      "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "FalseCJS",
+      "entrypoint": "./lite",
+      "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "FalseCJS",
+      "entrypoint": "./full",
+      "resolutionKind": "node16-esm"
+    }
+  ]
+}

@@ -1,0 +1,847 @@
+{
+  "packageName": "@ice/app",
+  "packageVersion": "3.2.6",
+  "types": {
+    "kind": "included"
+  },
+  "buildTools": {
+    "webpack": "^5.86.0",
+    "esbuild": "^0.17.16"
+  },
+  "entrypoints": {
+    ".": {
+      "subpath": ".",
+      "resolutions": {
+        "node10": {
+          "name": ".",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/@ice/app/esm/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@ice/app' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module '@ice/app' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/@ice/app/package.json'.",
+              "File '/node_modules/@ice/app.ts' does not exist.",
+              "File '/node_modules/@ice/app.tsx' does not exist.",
+              "File '/node_modules/@ice/app.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' does not have a 'types' field.",
+              "'package.json' has 'main' field './esm/index.js' that references '/node_modules/@ice/app/esm/index.js'.",
+              "File '/node_modules/@ice/app/esm/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/@ice/app/esm/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/@ice/app/esm/index.js', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/@ice/app/esm/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/index.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/index.tsx' does not exist.",
+              "File '/node_modules/@ice/app/esm/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name '@ice/app' was successfully resolved to '/node_modules/@ice/app/esm/index.d.ts' with Package ID '@ice/app/esm/index.d.ts@3.2.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@ice/app/esm/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@ice/app' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module '@ice/app' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/@ice/app/package.json'.",
+              "File '/node_modules/@ice/app.ts' does not exist.",
+              "File '/node_modules/@ice/app.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field './esm/index.js' that references '/node_modules/@ice/app/esm/index.js'.",
+              "File '/node_modules/@ice/app/esm/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/@ice/app/esm/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/@ice/app/esm/index.js', target file types: TypeScript.",
+              "File name '/node_modules/@ice/app/esm/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/index.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/index.tsx' does not exist.",
+              "File '/node_modules/@ice/app/esm/index.js.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/index.js.tsx' does not exist.",
+              "Directory '/node_modules/@ice/app/esm/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/@ice/app/index.ts' does not exist.",
+              "File '/node_modules/@ice/app/index.tsx' does not exist.",
+              "Loading module '@ice/app' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/@ice/app.js' does not exist.",
+              "File '/node_modules/@ice/app.jsx' does not exist.",
+              "'package.json' has 'main' field './esm/index.js' that references '/node_modules/@ice/app/esm/index.js'.",
+              "File '/node_modules/@ice/app/esm/index.js' exists - use it as a name resolution result.",
+              "======== Module name '@ice/app' was successfully resolved to '/node_modules/@ice/app/esm/index.js' with Package ID '@ice/app/esm/index.js@3.2.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@ice/app/esm/types/generator.d.ts",
+            "/node_modules/@ice/app/esm/utils/ServerCompileTask.d.ts",
+            "/node_modules/@ice/app/esm/utils/logger.d.ts",
+            "/node_modules/@ice/app/esm/types/plugin.d.ts",
+            "/node_modules/@ice/app/esm/types/userConfig.d.ts",
+            "/node_modules/@ice/app/esm/types/index.d.ts",
+            "/node_modules/@ice/app/esm/config.d.ts",
+            "/node_modules/@ice/app/esm/test/defineJestConfig.d.ts",
+            "/node_modules/@ice/app/esm/test/defineVitestConfig.d.ts",
+            "/node_modules/@ice/app/esm/test/index.d.ts",
+            "/node_modules/@ice/app/esm/index.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": ".",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/@ice/app/esm/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/@ice/app/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@ice/app' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@ice/app' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/@ice/app/package.json'.",
+              "Using 'exports' subpath '.' with target './esm/index.js'.",
+              "File name '/node_modules/@ice/app/esm/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/index.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/index.tsx' does not exist.",
+              "File '/node_modules/@ice/app/esm/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name '@ice/app' was successfully resolved to '/node_modules/@ice/app/esm/index.d.ts' with Package ID '@ice/app/esm/index.d.ts@3.2.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@ice/app/esm/index.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/@ice/app/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@ice/app' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@ice/app' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/@ice/app/package.json'.",
+              "Using 'exports' subpath '.' with target './esm/index.js'.",
+              "File name '/node_modules/@ice/app/esm/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/index.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath '.' with target './esm/index.js'.",
+              "File name '/node_modules/@ice/app/esm/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/index.js' exists - use it as a name resolution result.",
+              "======== Module name '@ice/app' was successfully resolved to '/node_modules/@ice/app/esm/index.js' with Package ID '@ice/app/esm/index.js@3.2.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@ice/app/esm/types/userConfig.d.ts",
+            "/node_modules/@ice/app/esm/config.d.ts",
+            "/node_modules/@ice/app/esm/test/defineJestConfig.d.ts",
+            "/node_modules/@ice/app/esm/test/defineVitestConfig.d.ts",
+            "/node_modules/@ice/app/esm/test/index.d.ts",
+            "/node_modules/@ice/app/esm/utils/logger.d.ts",
+            "/node_modules/@ice/app/esm/index.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": ".",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/@ice/app/esm/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/@ice/app/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@ice/app' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@ice/app' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath '.' with target './esm/index.js'.",
+              "File name '/node_modules/@ice/app/esm/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/index.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/index.tsx' does not exist.",
+              "File '/node_modules/@ice/app/esm/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name '@ice/app' was successfully resolved to '/node_modules/@ice/app/esm/index.d.ts' with Package ID '@ice/app/esm/index.d.ts@3.2.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@ice/app/esm/index.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/@ice/app/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@ice/app' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@ice/app' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath '.' with target './esm/index.js'.",
+              "File name '/node_modules/@ice/app/esm/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/index.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath '.' with target './esm/index.js'.",
+              "File name '/node_modules/@ice/app/esm/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/index.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@ice/app' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field './esm/index.js' that references '/node_modules/@ice/app/esm/index.js'.",
+              "File '/node_modules/@ice/app/esm/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/@ice/app/esm/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/@ice/app/esm/index.js', target file types: TypeScript.",
+              "File name '/node_modules/@ice/app/esm/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/index.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/index.tsx' does not exist.",
+              "Directory '/node_modules/@ice/app/esm/index.js' does not exist, skipping all lookups in it.",
+              "======== Module name '@ice/app' was successfully resolved to '/node_modules/@ice/app/esm/index.js' with Package ID '@ice/app/esm/index.js@3.2.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@ice/app/esm/types/userConfig.d.ts",
+            "/node_modules/@ice/app/esm/config.d.ts",
+            "/node_modules/@ice/app/esm/test/defineJestConfig.d.ts",
+            "/node_modules/@ice/app/esm/test/defineVitestConfig.d.ts",
+            "/node_modules/@ice/app/esm/test/index.d.ts",
+            "/node_modules/@ice/app/esm/utils/logger.d.ts",
+            "/node_modules/@ice/app/esm/index.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": ".",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/@ice/app/esm/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@ice/app' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@ice/app' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/@ice/app/package.json'.",
+              "Using 'exports' subpath '.' with target './esm/index.js'.",
+              "File name '/node_modules/@ice/app/esm/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/index.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/index.tsx' does not exist.",
+              "File '/node_modules/@ice/app/esm/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name '@ice/app' was successfully resolved to '/node_modules/@ice/app/esm/index.d.ts' with Package ID '@ice/app/esm/index.d.ts@3.2.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@ice/app/esm/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@ice/app' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@ice/app' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/@ice/app/package.json'.",
+              "Using 'exports' subpath '.' with target './esm/index.js'.",
+              "File name '/node_modules/@ice/app/esm/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/index.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath '.' with target './esm/index.js'.",
+              "File name '/node_modules/@ice/app/esm/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/index.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@ice/app' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/@ice/app.ts' does not exist.",
+              "File '/node_modules/@ice/app.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field './esm/index.js' that references '/node_modules/@ice/app/esm/index.js'.",
+              "File '/node_modules/@ice/app/esm/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/@ice/app/esm/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/@ice/app/esm/index.js', target file types: TypeScript.",
+              "File name '/node_modules/@ice/app/esm/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/index.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/index.tsx' does not exist.",
+              "File '/node_modules/@ice/app/esm/index.js.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/index.js.tsx' does not exist.",
+              "Directory '/node_modules/@ice/app/esm/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/@ice/app/index.ts' does not exist.",
+              "File '/node_modules/@ice/app/index.tsx' does not exist.",
+              "======== Module name '@ice/app' was successfully resolved to '/node_modules/@ice/app/esm/index.js' with Package ID '@ice/app/esm/index.js@3.2.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@ice/app/esm/types/generator.d.ts",
+            "/node_modules/@ice/app/esm/utils/ServerCompileTask.d.ts",
+            "/node_modules/@ice/app/esm/utils/logger.d.ts",
+            "/node_modules/@ice/app/esm/types/plugin.d.ts",
+            "/node_modules/@ice/app/esm/types/userConfig.d.ts",
+            "/node_modules/@ice/app/esm/types/index.d.ts",
+            "/node_modules/@ice/app/esm/config.d.ts",
+            "/node_modules/@ice/app/esm/test/defineJestConfig.d.ts",
+            "/node_modules/@ice/app/esm/test/defineVitestConfig.d.ts",
+            "/node_modules/@ice/app/esm/test/index.d.ts",
+            "/node_modules/@ice/app/esm/index.d.ts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    },
+    "./types": {
+      "subpath": "./types",
+      "resolutions": {
+        "node10": {
+          "name": "./types",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/@ice/app/types.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@ice/app/types' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module '@ice/app/types' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/@ice/app/types.ts' does not exist.",
+              "File '/node_modules/@ice/app/types.tsx' does not exist.",
+              "File '/node_modules/@ice/app/types.d.ts' exists - use it as a name resolution result.",
+              "======== Module name '@ice/app/types' was successfully resolved to '/node_modules/@ice/app/types.d.ts' with Package ID '@ice/app/types.d.ts@3.2.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@ice/app/esm/types/generator.d.ts",
+            "/node_modules/@ice/app/esm/utils/ServerCompileTask.d.ts",
+            "/node_modules/@ice/app/esm/utils/logger.d.ts",
+            "/node_modules/@ice/app/esm/types/plugin.d.ts",
+            "/node_modules/@ice/app/esm/types/userConfig.d.ts",
+            "/node_modules/@ice/app/esm/types/index.d.ts",
+            "/node_modules/@ice/app/types.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": "./types",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/@ice/app/esm/types/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/@ice/app/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@ice/app/types' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@ice/app/types' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './types' with target './esm/types/index.js'.",
+              "File name '/node_modules/@ice/app/esm/types/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/types/index.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/types/index.tsx' does not exist.",
+              "File '/node_modules/@ice/app/esm/types/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name '@ice/app/types' was successfully resolved to '/node_modules/@ice/app/esm/types/index.d.ts' with Package ID '@ice/app/esm/types/index.d.ts@3.2.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@ice/app/esm/types/index.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/@ice/app/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@ice/app/types' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@ice/app/types' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './types' with target './esm/types/index.js'.",
+              "File name '/node_modules/@ice/app/esm/types/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/types/index.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/types/index.tsx' does not exist.",
+              "Export specifier './types' does not exist in package.json scope at path '/node_modules/@ice/app'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './types' with target './esm/types/index.js'.",
+              "File name '/node_modules/@ice/app/esm/types/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/types/index.js' exists - use it as a name resolution result.",
+              "======== Module name '@ice/app/types' was successfully resolved to '/node_modules/@ice/app/esm/types/index.js' with Package ID '@ice/app/esm/types/index.js@3.2.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@ice/app/esm/types/generator.d.ts",
+            "/node_modules/@ice/app/esm/utils/ServerCompileTask.d.ts",
+            "/node_modules/@ice/app/esm/utils/logger.d.ts",
+            "/node_modules/@ice/app/esm/types/plugin.d.ts",
+            "/node_modules/@ice/app/esm/types/userConfig.d.ts",
+            "/node_modules/@ice/app/esm/types/index.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": "./types",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/@ice/app/esm/types/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/@ice/app/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@ice/app/types' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@ice/app/types' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './types' with target './esm/types/index.js'.",
+              "File name '/node_modules/@ice/app/esm/types/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/types/index.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/types/index.tsx' does not exist.",
+              "File '/node_modules/@ice/app/esm/types/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name '@ice/app/types' was successfully resolved to '/node_modules/@ice/app/esm/types/index.d.ts' with Package ID '@ice/app/esm/types/index.d.ts@3.2.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@ice/app/esm/types/index.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/@ice/app/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@ice/app/types' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@ice/app/types' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './types' with target './esm/types/index.js'.",
+              "File name '/node_modules/@ice/app/esm/types/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/types/index.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/types/index.tsx' does not exist.",
+              "Export specifier './types' does not exist in package.json scope at path '/node_modules/@ice/app'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './types' with target './esm/types/index.js'.",
+              "File name '/node_modules/@ice/app/esm/types/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/types/index.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@ice/app/types' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field './esm/index.js' that references '/node_modules/@ice/app/types/esm/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/@ice/app/types/esm/index.js', target file types: TypeScript.",
+              "File name '/node_modules/@ice/app/types/esm/index.js' has a '.js' extension - stripping it.",
+              "======== Module name '@ice/app/types' was successfully resolved to '/node_modules/@ice/app/esm/types/index.js' with Package ID '@ice/app/esm/types/index.js@3.2.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@ice/app/esm/types/generator.d.ts",
+            "/node_modules/@ice/app/esm/utils/ServerCompileTask.d.ts",
+            "/node_modules/@ice/app/esm/utils/logger.d.ts",
+            "/node_modules/@ice/app/esm/types/plugin.d.ts",
+            "/node_modules/@ice/app/esm/types/userConfig.d.ts",
+            "/node_modules/@ice/app/esm/types/index.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": "./types",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/@ice/app/esm/types/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@ice/app/types' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@ice/app/types' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './types' with target './esm/types/index.js'.",
+              "File name '/node_modules/@ice/app/esm/types/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/types/index.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/types/index.tsx' does not exist.",
+              "File '/node_modules/@ice/app/esm/types/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name '@ice/app/types' was successfully resolved to '/node_modules/@ice/app/esm/types/index.d.ts' with Package ID '@ice/app/esm/types/index.d.ts@3.2.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@ice/app/esm/types/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@ice/app/types' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@ice/app/types' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './types' with target './esm/types/index.js'.",
+              "File name '/node_modules/@ice/app/esm/types/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/types/index.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/types/index.tsx' does not exist.",
+              "Export specifier './types' does not exist in package.json scope at path '/node_modules/@ice/app'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './types' with target './esm/types/index.js'.",
+              "File name '/node_modules/@ice/app/esm/types/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/types/index.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@ice/app/types' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/@ice/app/types.ts' does not exist.",
+              "File '/node_modules/@ice/app/types.tsx' does not exist.",
+              "'package.json' has 'main' field './esm/index.js' that references '/node_modules/@ice/app/types/esm/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/@ice/app/types/esm/index.js', target file types: TypeScript.",
+              "File name '/node_modules/@ice/app/types/esm/index.js' has a '.js' extension - stripping it.",
+              "======== Module name '@ice/app/types' was successfully resolved to '/node_modules/@ice/app/esm/types/index.js' with Package ID '@ice/app/esm/types/index.js@3.2.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@ice/app/esm/types/generator.d.ts",
+            "/node_modules/@ice/app/esm/utils/ServerCompileTask.d.ts",
+            "/node_modules/@ice/app/esm/utils/logger.d.ts",
+            "/node_modules/@ice/app/esm/types/plugin.d.ts",
+            "/node_modules/@ice/app/esm/types/userConfig.d.ts",
+            "/node_modules/@ice/app/esm/types/index.d.ts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    },
+    "./analyze": {
+      "subpath": "./analyze",
+      "resolutions": {
+        "node10": {
+          "name": "./analyze",
+          "resolutionKind": "node10"
+        },
+        "node16-cjs": {
+          "name": "./analyze",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/@ice/app/esm/service/analyze.d.ts",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/@ice/app/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@ice/app/analyze' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@ice/app/analyze' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './analyze' with target './esm/service/analyze.js'.",
+              "File name '/node_modules/@ice/app/esm/service/analyze.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/service/analyze.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/service/analyze.tsx' does not exist.",
+              "File '/node_modules/@ice/app/esm/service/analyze.d.ts' exists - use it as a name resolution result.",
+              "======== Module name '@ice/app/analyze' was successfully resolved to '/node_modules/@ice/app/esm/service/analyze.d.ts' with Package ID '@ice/app/esm/service/analyze.d.ts@3.2.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@ice/app/esm/service/analyze.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/@ice/app/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@ice/app/analyze' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@ice/app/analyze' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './analyze' with target './esm/service/analyze.js'.",
+              "File name '/node_modules/@ice/app/esm/service/analyze.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/service/analyze.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/service/analyze.tsx' does not exist.",
+              "Export specifier './analyze' does not exist in package.json scope at path '/node_modules/@ice/app'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './analyze' with target './esm/service/analyze.js'.",
+              "File name '/node_modules/@ice/app/esm/service/analyze.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/service/analyze.js' exists - use it as a name resolution result.",
+              "======== Module name '@ice/app/analyze' was successfully resolved to '/node_modules/@ice/app/esm/service/analyze.js' with Package ID '@ice/app/esm/service/analyze.js@3.2.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@ice/app/esm/esbuild/scan.d.ts",
+            "/node_modules/@ice/app/esm/service/analyze.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": "./analyze",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/@ice/app/esm/service/analyze.d.ts",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/@ice/app/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@ice/app/analyze' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@ice/app/analyze' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './analyze' with target './esm/service/analyze.js'.",
+              "File name '/node_modules/@ice/app/esm/service/analyze.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/service/analyze.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/service/analyze.tsx' does not exist.",
+              "File '/node_modules/@ice/app/esm/service/analyze.d.ts' exists - use it as a name resolution result.",
+              "======== Module name '@ice/app/analyze' was successfully resolved to '/node_modules/@ice/app/esm/service/analyze.d.ts' with Package ID '@ice/app/esm/service/analyze.d.ts@3.2.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@ice/app/esm/service/analyze.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/@ice/app/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@ice/app/analyze' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@ice/app/analyze' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './analyze' with target './esm/service/analyze.js'.",
+              "File name '/node_modules/@ice/app/esm/service/analyze.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/service/analyze.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/service/analyze.tsx' does not exist.",
+              "Export specifier './analyze' does not exist in package.json scope at path '/node_modules/@ice/app'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './analyze' with target './esm/service/analyze.js'.",
+              "File name '/node_modules/@ice/app/esm/service/analyze.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/service/analyze.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@ice/app/analyze' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field './esm/index.js' that references '/node_modules/@ice/app/analyze/esm/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/@ice/app/analyze/esm/index.js', target file types: TypeScript.",
+              "File name '/node_modules/@ice/app/analyze/esm/index.js' has a '.js' extension - stripping it.",
+              "======== Module name '@ice/app/analyze' was successfully resolved to '/node_modules/@ice/app/esm/service/analyze.js' with Package ID '@ice/app/esm/service/analyze.js@3.2.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@ice/app/esm/esbuild/scan.d.ts",
+            "/node_modules/@ice/app/esm/service/analyze.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": "./analyze",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/@ice/app/esm/service/analyze.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@ice/app/analyze' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@ice/app/analyze' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './analyze' with target './esm/service/analyze.js'.",
+              "File name '/node_modules/@ice/app/esm/service/analyze.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/service/analyze.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/service/analyze.tsx' does not exist.",
+              "File '/node_modules/@ice/app/esm/service/analyze.d.ts' exists - use it as a name resolution result.",
+              "======== Module name '@ice/app/analyze' was successfully resolved to '/node_modules/@ice/app/esm/service/analyze.d.ts' with Package ID '@ice/app/esm/service/analyze.d.ts@3.2.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@ice/app/esm/service/analyze.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@ice/app/analyze' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@ice/app/analyze' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './analyze' with target './esm/service/analyze.js'.",
+              "File name '/node_modules/@ice/app/esm/service/analyze.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/service/analyze.ts' does not exist.",
+              "File '/node_modules/@ice/app/esm/service/analyze.tsx' does not exist.",
+              "Export specifier './analyze' does not exist in package.json scope at path '/node_modules/@ice/app'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './analyze' with target './esm/service/analyze.js'.",
+              "File name '/node_modules/@ice/app/esm/service/analyze.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@ice/app/esm/service/analyze.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@ice/app/analyze' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@ice/app/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/@ice/app/analyze.ts' does not exist.",
+              "File '/node_modules/@ice/app/analyze.tsx' does not exist.",
+              "'package.json' has 'main' field './esm/index.js' that references '/node_modules/@ice/app/analyze/esm/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/@ice/app/analyze/esm/index.js', target file types: TypeScript.",
+              "File name '/node_modules/@ice/app/analyze/esm/index.js' has a '.js' extension - stripping it.",
+              "======== Module name '@ice/app/analyze' was successfully resolved to '/node_modules/@ice/app/esm/service/analyze.js' with Package ID '@ice/app/esm/service/analyze.js@3.2.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@ice/app/esm/esbuild/scan.d.ts",
+            "/node_modules/@ice/app/esm/service/analyze.d.ts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    }
+  },
+  "problems": [
+    {
+      "kind": "CJSResolvesToESM",
+      "entrypoint": ".",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "CJSResolvesToESM",
+      "entrypoint": "./types",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "NoResolution",
+      "entrypoint": "./analyze",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "CJSResolvesToESM",
+      "entrypoint": "./analyze",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "InternalResolutionError",
+      "resolutionOption": "node16",
+      "fileName": "/node_modules/@ice/app/esm/types/userConfig.d.ts",
+      "moduleSpecifier": "./plugin",
+      "pos": 391,
+      "end": 402,
+      "resolutionMode": 99,
+      "trace": [
+        "======== Resolving module './plugin' from '/node_modules/@ice/app/esm/types/userConfig.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Node16'.",
+        "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+        "Loading module as file / folder, candidate module location '/node_modules/@ice/app/esm/types/plugin', target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Directory '/node_modules/@ice/app/esm/types/plugin' does not exist, skipping all lookups in it.",
+        "======== Module name './plugin' was not resolved. ========"
+      ]
+    },
+    {
+      "kind": "InternalResolutionError",
+      "resolutionOption": "node16",
+      "fileName": "/node_modules/@ice/app/esm/index.d.ts",
+      "moduleSpecifier": "./types",
+      "pos": 81,
+      "end": 91,
+      "resolutionMode": 99,
+      "trace": [
+        "======== Resolving module './types' from '/node_modules/@ice/app/esm/index.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Node16'.",
+        "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+        "Loading module as file / folder, candidate module location '/node_modules/@ice/app/esm/types', target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "======== Module name './types' was not resolved. ========"
+      ]
+    }
+  ]
+}

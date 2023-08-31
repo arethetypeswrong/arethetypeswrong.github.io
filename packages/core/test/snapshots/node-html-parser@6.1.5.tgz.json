@@ -1,0 +1,371 @@
+{
+  "packageName": "node-html-parser",
+  "packageVersion": "6.1.5",
+  "types": {
+    "kind": "included"
+  },
+  "buildTools": {
+    "typescript": "latest"
+  },
+  "entrypoints": {
+    ".": {
+      "subpath": ".",
+      "resolutions": {
+        "node10": {
+          "name": ".",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/node-html-parser/dist/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'node-html-parser' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'node-html-parser' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/node-html-parser/package.json'.",
+              "File '/node_modules/node-html-parser.ts' does not exist.",
+              "File '/node_modules/node-html-parser.tsx' does not exist.",
+              "File '/node_modules/node-html-parser.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'dist/index.d.ts' that references '/node_modules/node-html-parser/dist/index.d.ts'.",
+              "File '/node_modules/node-html-parser/dist/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'node-html-parser' was successfully resolved to '/node_modules/node-html-parser/dist/index.d.ts' with Package ID 'node-html-parser/dist/index.d.ts@6.1.5'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/node-html-parser/dist/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'node-html-parser' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'node-html-parser' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/node-html-parser/package.json'.",
+              "File '/node_modules/node-html-parser.ts' does not exist.",
+              "File '/node_modules/node-html-parser.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/node-html-parser/dist/index.js'.",
+              "File '/node_modules/node-html-parser/dist/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/node-html-parser/dist/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/node-html-parser/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/node-html-parser/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/node-html-parser/dist/index.ts' does not exist.",
+              "File '/node_modules/node-html-parser/dist/index.tsx' does not exist.",
+              "File '/node_modules/node-html-parser/dist/index.js.ts' does not exist.",
+              "File '/node_modules/node-html-parser/dist/index.js.tsx' does not exist.",
+              "Directory '/node_modules/node-html-parser/dist/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/node-html-parser/index.ts' does not exist.",
+              "File '/node_modules/node-html-parser/index.tsx' does not exist.",
+              "Loading module 'node-html-parser' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/node-html-parser/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/node-html-parser.js' does not exist.",
+              "File '/node_modules/node-html-parser.jsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/node-html-parser/dist/index.js'.",
+              "File '/node_modules/node-html-parser/dist/index.js' exists - use it as a name resolution result.",
+              "======== Module name 'node-html-parser' was successfully resolved to '/node_modules/node-html-parser/dist/index.js' with Package ID 'node-html-parser/dist/index.js@6.1.5'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/node-html-parser/dist/void-tag.d.ts",
+            "/node_modules/node-html-parser/dist/nodes/type.d.ts",
+            "/node_modules/node-html-parser/dist/nodes/node.d.ts",
+            "/node_modules/node-html-parser/dist/nodes/html.d.ts",
+            "/node_modules/node-html-parser/dist/nodes/comment.d.ts",
+            "/node_modules/node-html-parser/dist/nodes/text.d.ts",
+            "/node_modules/node-html-parser/dist/parse.d.ts",
+            "/node_modules/node-html-parser/dist/valid.d.ts",
+            "/node_modules/node-html-parser/dist/index.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": ".",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/node-html-parser/dist/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/node-html-parser/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'node-html-parser' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'node-html-parser' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/node-html-parser/package.json'.",
+              "File '/node_modules/node-html-parser.ts' does not exist.",
+              "File '/node_modules/node-html-parser.tsx' does not exist.",
+              "File '/node_modules/node-html-parser.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'dist/index.d.ts' that references '/node_modules/node-html-parser/dist/index.d.ts'.",
+              "File '/node_modules/node-html-parser/dist/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'node-html-parser' was successfully resolved to '/node_modules/node-html-parser/dist/index.d.ts' with Package ID 'node-html-parser/dist/index.d.ts@6.1.5'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/node-html-parser/dist/index.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/node-html-parser/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'node-html-parser' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'node-html-parser' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/node-html-parser/package.json'.",
+              "File '/node_modules/node-html-parser.ts' does not exist.",
+              "File '/node_modules/node-html-parser.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/node-html-parser/dist/index.js'.",
+              "File '/node_modules/node-html-parser/dist/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/node-html-parser/dist/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/node-html-parser/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/node-html-parser/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/node-html-parser/dist/index.ts' does not exist.",
+              "File '/node_modules/node-html-parser/dist/index.tsx' does not exist.",
+              "File '/node_modules/node-html-parser/dist/index.js.ts' does not exist.",
+              "File '/node_modules/node-html-parser/dist/index.js.tsx' does not exist.",
+              "Directory '/node_modules/node-html-parser/dist/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/node-html-parser/index.ts' does not exist.",
+              "File '/node_modules/node-html-parser/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/node-html-parser/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/node-html-parser.js' does not exist.",
+              "File '/node_modules/node-html-parser.jsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/node-html-parser/dist/index.js'.",
+              "File '/node_modules/node-html-parser/dist/index.js' exists - use it as a name resolution result.",
+              "======== Module name 'node-html-parser' was successfully resolved to '/node_modules/node-html-parser/dist/index.js' with Package ID 'node-html-parser/dist/index.js@6.1.5'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/node-html-parser/dist/void-tag.d.ts",
+            "/node_modules/node-html-parser/dist/nodes/type.d.ts",
+            "/node_modules/node-html-parser/dist/nodes/node.d.ts",
+            "/node_modules/node-html-parser/dist/nodes/html.d.ts",
+            "/node_modules/node-html-parser/dist/nodes/comment.d.ts",
+            "/node_modules/node-html-parser/dist/nodes/text.d.ts",
+            "/node_modules/node-html-parser/dist/parse.d.ts",
+            "/node_modules/node-html-parser/dist/valid.d.ts",
+            "/node_modules/node-html-parser/dist/index.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": ".",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/node-html-parser/dist/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/node-html-parser/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'node-html-parser' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'node-html-parser' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/node-html-parser/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'dist/index.d.ts' that references '/node_modules/node-html-parser/dist/index.d.ts'.",
+              "File '/node_modules/node-html-parser/dist/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'node-html-parser' was successfully resolved to '/node_modules/node-html-parser/dist/index.d.ts' with Package ID 'node-html-parser/dist/index.d.ts@6.1.5'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/node-html-parser/dist/index.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/node-html-parser/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'node-html-parser' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'node-html-parser' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/node-html-parser/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/node-html-parser/dist/index.js'.",
+              "File '/node_modules/node-html-parser/dist/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/node-html-parser/dist/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/node-html-parser/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/node-html-parser/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/node-html-parser/dist/index.ts' does not exist.",
+              "File '/node_modules/node-html-parser/dist/index.tsx' does not exist.",
+              "File '/node_modules/node-html-parser/dist/index.js.ts' does not exist.",
+              "File '/node_modules/node-html-parser/dist/index.js.tsx' does not exist.",
+              "Directory '/node_modules/node-html-parser/dist/index.js' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/node-html-parser/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/node-html-parser/index.ts' does not exist.",
+              "File '/node_modules/node-html-parser/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/node-html-parser/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/node-html-parser/dist/index.js'.",
+              "File '/node_modules/node-html-parser/dist/index.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'node-html-parser' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/node-html-parser/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/node-html-parser/dist/index.js'.",
+              "File '/node_modules/node-html-parser/dist/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/node-html-parser/dist/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/node-html-parser/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/node-html-parser/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/node-html-parser/dist/index.ts' does not exist.",
+              "File '/node_modules/node-html-parser/dist/index.tsx' does not exist.",
+              "File '/node_modules/node-html-parser/dist/index.js.ts' does not exist.",
+              "File '/node_modules/node-html-parser/dist/index.js.tsx' does not exist.",
+              "Directory '/node_modules/node-html-parser/dist/index.js' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/node-html-parser/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/node-html-parser/index.ts' does not exist.",
+              "File '/node_modules/node-html-parser/index.tsx' does not exist.",
+              "======== Module name 'node-html-parser' was successfully resolved to '/node_modules/node-html-parser/dist/index.js' with Package ID 'node-html-parser/dist/index.js@6.1.5'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/node-html-parser/dist/void-tag.d.ts",
+            "/node_modules/node-html-parser/dist/nodes/type.d.ts",
+            "/node_modules/node-html-parser/dist/nodes/node.d.ts",
+            "/node_modules/node-html-parser/dist/nodes/html.d.ts",
+            "/node_modules/node-html-parser/dist/nodes/comment.d.ts",
+            "/node_modules/node-html-parser/dist/nodes/text.d.ts",
+            "/node_modules/node-html-parser/dist/parse.d.ts",
+            "/node_modules/node-html-parser/dist/valid.d.ts",
+            "/node_modules/node-html-parser/dist/index.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": ".",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/node-html-parser/dist/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'node-html-parser' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'node-html-parser' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/node-html-parser/package.json'.",
+              "File '/node_modules/node-html-parser.ts' does not exist.",
+              "File '/node_modules/node-html-parser.tsx' does not exist.",
+              "File '/node_modules/node-html-parser.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'dist/index.d.ts' that references '/node_modules/node-html-parser/dist/index.d.ts'.",
+              "File '/node_modules/node-html-parser/dist/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'node-html-parser' was successfully resolved to '/node_modules/node-html-parser/dist/index.d.ts' with Package ID 'node-html-parser/dist/index.d.ts@6.1.5'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/node-html-parser/dist/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'node-html-parser' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'node-html-parser' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/node-html-parser/package.json'.",
+              "File '/node_modules/node-html-parser.ts' does not exist.",
+              "File '/node_modules/node-html-parser.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/node-html-parser/dist/index.js'.",
+              "File '/node_modules/node-html-parser/dist/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/node-html-parser/dist/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/node-html-parser/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/node-html-parser/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/node-html-parser/dist/index.ts' does not exist.",
+              "File '/node_modules/node-html-parser/dist/index.tsx' does not exist.",
+              "File '/node_modules/node-html-parser/dist/index.js.ts' does not exist.",
+              "File '/node_modules/node-html-parser/dist/index.js.tsx' does not exist.",
+              "Directory '/node_modules/node-html-parser/dist/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/node-html-parser/index.ts' does not exist.",
+              "File '/node_modules/node-html-parser/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/node-html-parser/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/node-html-parser.js' does not exist.",
+              "File '/node_modules/node-html-parser.jsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/node-html-parser/dist/index.js'.",
+              "File '/node_modules/node-html-parser/dist/index.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'node-html-parser' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/node-html-parser/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/node-html-parser.ts' does not exist.",
+              "File '/node_modules/node-html-parser.tsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/node-html-parser/dist/index.js'.",
+              "File '/node_modules/node-html-parser/dist/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/node-html-parser/dist/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/node-html-parser/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/node-html-parser/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/node-html-parser/dist/index.ts' does not exist.",
+              "File '/node_modules/node-html-parser/dist/index.tsx' does not exist.",
+              "File '/node_modules/node-html-parser/dist/index.js.ts' does not exist.",
+              "File '/node_modules/node-html-parser/dist/index.js.tsx' does not exist.",
+              "Directory '/node_modules/node-html-parser/dist/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/node-html-parser/index.ts' does not exist.",
+              "File '/node_modules/node-html-parser/index.tsx' does not exist.",
+              "======== Module name 'node-html-parser' was successfully resolved to '/node_modules/node-html-parser/dist/index.js' with Package ID 'node-html-parser/dist/index.js@6.1.5'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/node-html-parser/dist/void-tag.d.ts",
+            "/node_modules/node-html-parser/dist/nodes/type.d.ts",
+            "/node_modules/node-html-parser/dist/nodes/node.d.ts",
+            "/node_modules/node-html-parser/dist/nodes/html.d.ts",
+            "/node_modules/node-html-parser/dist/nodes/comment.d.ts",
+            "/node_modules/node-html-parser/dist/nodes/text.d.ts",
+            "/node_modules/node-html-parser/dist/parse.d.ts",
+            "/node_modules/node-html-parser/dist/valid.d.ts",
+            "/node_modules/node-html-parser/dist/index.d.ts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    }
+  },
+  "problems": [
+    {
+      "kind": "CJSOnlyExportsDefault",
+      "fileName": "/node_modules/node-html-parser/dist/index.js",
+      "range": {
+        "pos": 1077,
+        "end": 1092
+      }
+    }
+  ]
+}

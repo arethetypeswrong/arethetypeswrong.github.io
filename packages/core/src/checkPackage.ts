@@ -6,12 +6,14 @@ import type { Package } from "./createPackage.js";
 import { createCompilerHosts, type CompilerHosts, CompilerHostWrapper } from "./multiCompilerHost.js";
 import type {
   AnalysisTypes,
+  BuildTool,
   CheckResult,
   EntrypointInfo,
   EntrypointResolutionAnalysis,
   Resolution,
   ResolutionKind,
 } from "./types.js";
+import { allBuildTools } from "./utils.js";
 
 export interface CheckPackageOptions {
   /**
@@ -56,6 +58,7 @@ export async function checkPackage(pkg: Package, options?: CheckPackageOptions):
     packageName,
     packageVersion,
     types,
+    buildTools: getBuildTools(JSON.parse(pkg.readFile(`/node_modules/${packageName}/package.json`))),
     entrypoints: entrypointResolutions,
     problems: [...entrypointResolutionProblems, ...resolutionBasedFileProblems, ...fileProblems],
   };
@@ -220,4 +223,17 @@ function getEntrypointResolution(
 
 function unique<T>(array: readonly T[]): T[] {
   return array.filter((value, index) => array.indexOf(value) === index);
+}
+
+function getBuildTools(packageJson: any): Partial<Record<BuildTool, string>> {
+  if (!packageJson.devDependencies) {
+    return {};
+  }
+  const result: Partial<Record<BuildTool, string>> = {};
+  for (const buildTool of allBuildTools) {
+    if (buildTool in packageJson.devDependencies) {
+      result[buildTool] = packageJson.devDependencies[buildTool];
+    }
+  }
+  return result;
 }

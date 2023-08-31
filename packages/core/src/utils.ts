@@ -1,6 +1,7 @@
 import validatePackgeName from "validate-npm-package-name";
 import { valid, validRange } from "semver";
 import type {
+  BuildTool,
   EntrypointInfo,
   EntrypointResolutionAnalysis,
   EntrypointResolutionProblem,
@@ -199,3 +200,19 @@ export function parsePackageSpec(input: string): Failable<ParsedPackageSpec> {
     data: { versionKind: "tag", name, version },
   };
 }
+
+export const allBuildTools = Object.keys({
+  "@arethetypeswrong/cli": true,
+  typescript: true,
+  rollup: true,
+  "@rollup/plugin-typescript": true,
+  "@rollup/plugin-typescript2": true,
+  webpack: true,
+  esbuild: true,
+  "parcel-bundler": true,
+  "@preconstruct/cli": true,
+  vite: true,
+  snowpack: true,
+  microbundle: true,
+  "@microsoft/api-extractor": true,
+} satisfies Record<BuildTool, any>) as BuildTool[];

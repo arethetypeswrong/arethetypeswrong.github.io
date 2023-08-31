@@ -1,0 +1,500 @@
+{
+  "packageName": "rfdc",
+  "packageVersion": "1.3.0",
+  "types": {
+    "kind": "included"
+  },
+  "buildTools": {},
+  "entrypoints": {
+    ".": {
+      "subpath": ".",
+      "resolutions": {
+        "node10": {
+          "name": ".",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/rfdc/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'rfdc' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'rfdc' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/rfdc/package.json'.",
+              "File '/node_modules/rfdc.ts' does not exist.",
+              "File '/node_modules/rfdc.tsx' does not exist.",
+              "File '/node_modules/rfdc.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' does not have a 'types' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/rfdc/index.js'.",
+              "File '/node_modules/rfdc/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/rfdc/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/rfdc/index.js', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/rfdc/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/rfdc/index.ts' does not exist.",
+              "File '/node_modules/rfdc/index.tsx' does not exist.",
+              "File '/node_modules/rfdc/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'rfdc' was successfully resolved to '/node_modules/rfdc/index.d.ts' with Package ID 'rfdc/index.d.ts@1.3.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/rfdc/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'rfdc' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'rfdc' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/rfdc/package.json'.",
+              "File '/node_modules/rfdc.ts' does not exist.",
+              "File '/node_modules/rfdc.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/rfdc/index.js'.",
+              "File '/node_modules/rfdc/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/rfdc/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/rfdc/index.js', target file types: TypeScript.",
+              "File name '/node_modules/rfdc/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/rfdc/index.ts' does not exist.",
+              "File '/node_modules/rfdc/index.tsx' does not exist.",
+              "File '/node_modules/rfdc/index.js.ts' does not exist.",
+              "File '/node_modules/rfdc/index.js.tsx' does not exist.",
+              "Directory '/node_modules/rfdc/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/rfdc/index.ts' does not exist.",
+              "File '/node_modules/rfdc/index.tsx' does not exist.",
+              "Loading module 'rfdc' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/rfdc/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/rfdc.js' does not exist.",
+              "File '/node_modules/rfdc.jsx' does not exist.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/rfdc/index.js'.",
+              "File '/node_modules/rfdc/index.js' exists - use it as a name resolution result.",
+              "======== Module name 'rfdc' was successfully resolved to '/node_modules/rfdc/index.js' with Package ID 'rfdc/index.js@1.3.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/rfdc/index.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": ".",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/rfdc/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/rfdc/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'rfdc' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'rfdc' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/rfdc/package.json'.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/rfdc/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/rfdc/index.ts' does not exist.",
+              "File '/node_modules/rfdc/index.tsx' does not exist.",
+              "File '/node_modules/rfdc/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'rfdc' was successfully resolved to '/node_modules/rfdc/index.d.ts' with Package ID 'rfdc/index.d.ts@1.3.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/rfdc/index.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/rfdc/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'rfdc' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'rfdc' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/rfdc/package.json'.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/rfdc/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/rfdc/index.ts' does not exist.",
+              "File '/node_modules/rfdc/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/rfdc/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/rfdc/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/rfdc/index.js' exists - use it as a name resolution result.",
+              "======== Module name 'rfdc' was successfully resolved to '/node_modules/rfdc/index.js' with Package ID 'rfdc/index.js@1.3.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/rfdc/index.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": ".",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/rfdc/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/rfdc/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'rfdc' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'rfdc' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/rfdc/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/rfdc/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/rfdc/index.ts' does not exist.",
+              "File '/node_modules/rfdc/index.tsx' does not exist.",
+              "File '/node_modules/rfdc/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'rfdc' was successfully resolved to '/node_modules/rfdc/index.d.ts' with Package ID 'rfdc/index.d.ts@1.3.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/rfdc/index.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/rfdc/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'rfdc' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'rfdc' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/rfdc/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/rfdc/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/rfdc/index.ts' does not exist.",
+              "File '/node_modules/rfdc/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/rfdc/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/rfdc/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/rfdc/index.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'rfdc' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/rfdc/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/rfdc/index.js'.",
+              "File '/node_modules/rfdc/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/rfdc/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/rfdc/index.js', target file types: TypeScript.",
+              "File name '/node_modules/rfdc/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/rfdc/index.ts' does not exist.",
+              "File '/node_modules/rfdc/index.tsx' does not exist.",
+              "File '/node_modules/rfdc/index.js.ts' does not exist.",
+              "File '/node_modules/rfdc/index.js.tsx' does not exist.",
+              "Directory '/node_modules/rfdc/index.js' does not exist, skipping all lookups in it.",
+              "======== Module name 'rfdc' was successfully resolved to '/node_modules/rfdc/index.js' with Package ID 'rfdc/index.js@1.3.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/rfdc/index.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": ".",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/rfdc/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'rfdc' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'rfdc' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/rfdc/package.json'.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/rfdc/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/rfdc/index.ts' does not exist.",
+              "File '/node_modules/rfdc/index.tsx' does not exist.",
+              "File '/node_modules/rfdc/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'rfdc' was successfully resolved to '/node_modules/rfdc/index.d.ts' with Package ID 'rfdc/index.d.ts@1.3.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/rfdc/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'rfdc' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'rfdc' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/rfdc/package.json'.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/rfdc/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/rfdc/index.ts' does not exist.",
+              "File '/node_modules/rfdc/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/rfdc/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/rfdc/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/rfdc/index.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'rfdc' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/rfdc/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/rfdc.ts' does not exist.",
+              "File '/node_modules/rfdc.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/rfdc/index.js'.",
+              "File '/node_modules/rfdc/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/rfdc/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/rfdc/index.js', target file types: TypeScript.",
+              "File name '/node_modules/rfdc/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/rfdc/index.ts' does not exist.",
+              "File '/node_modules/rfdc/index.tsx' does not exist.",
+              "File '/node_modules/rfdc/index.js.ts' does not exist.",
+              "File '/node_modules/rfdc/index.js.tsx' does not exist.",
+              "Directory '/node_modules/rfdc/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/rfdc/index.ts' does not exist.",
+              "File '/node_modules/rfdc/index.tsx' does not exist.",
+              "======== Module name 'rfdc' was successfully resolved to '/node_modules/rfdc/index.js' with Package ID 'rfdc/index.js@1.3.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/rfdc/index.d.ts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    },
+    "./default": {
+      "subpath": "./default",
+      "resolutions": {
+        "node10": {
+          "name": "./default",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/rfdc/default.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'rfdc/default' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'rfdc/default' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/rfdc/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/rfdc/default.ts' does not exist.",
+              "File '/node_modules/rfdc/default.tsx' does not exist.",
+              "File '/node_modules/rfdc/default.d.ts' does not exist.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' does not have a 'types' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/rfdc/default/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/rfdc/default/index.js', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/rfdc/default/index.js' has a '.js' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "Loading module 'rfdc/default' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/rfdc/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/rfdc/default.js' exists - use it as a name resolution result.",
+              "======== Module name 'rfdc/default' was successfully resolved to '/node_modules/rfdc/default.js' with Package ID 'rfdc/default.js@1.3.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": "./default",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/rfdc/default.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/rfdc/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'rfdc/default' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'rfdc/default' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/rfdc/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './default' with target './default.js'.",
+              "File name '/node_modules/rfdc/default.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/rfdc/default.ts' does not exist.",
+              "File '/node_modules/rfdc/default.tsx' does not exist.",
+              "File '/node_modules/rfdc/default.d.ts' does not exist.",
+              "Export specifier './default' does not exist in package.json scope at path '/node_modules/rfdc'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/rfdc/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './default' with target './default.js'.",
+              "File name '/node_modules/rfdc/default.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/rfdc/default.js' exists - use it as a name resolution result.",
+              "======== Module name 'rfdc/default' was successfully resolved to '/node_modules/rfdc/default.js' with Package ID 'rfdc/default.js@1.3.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": "./default",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/rfdc/default.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/rfdc/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'rfdc/default' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'rfdc/default' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/rfdc/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './default' with target './default.js'.",
+              "File name '/node_modules/rfdc/default.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/rfdc/default.ts' does not exist.",
+              "File '/node_modules/rfdc/default.tsx' does not exist.",
+              "File '/node_modules/rfdc/default.d.ts' does not exist.",
+              "Export specifier './default' does not exist in package.json scope at path '/node_modules/rfdc'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/rfdc/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './default' with target './default.js'.",
+              "File name '/node_modules/rfdc/default.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/rfdc/default.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'rfdc/default' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/rfdc/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' does not have a 'types' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/rfdc/default/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/rfdc/default/index.js', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/rfdc/default/index.js' has a '.js' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "======== Module name 'rfdc/default' was successfully resolved to '/node_modules/rfdc/default.js' with Package ID 'rfdc/default.js@1.3.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": "./default",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/rfdc/default.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'rfdc/default' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'rfdc/default' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/rfdc/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './default' with target './default.js'.",
+              "File name '/node_modules/rfdc/default.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/rfdc/default.ts' does not exist.",
+              "File '/node_modules/rfdc/default.tsx' does not exist.",
+              "File '/node_modules/rfdc/default.d.ts' does not exist.",
+              "Export specifier './default' does not exist in package.json scope at path '/node_modules/rfdc'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/rfdc/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './default' with target './default.js'.",
+              "File name '/node_modules/rfdc/default.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/rfdc/default.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'rfdc/default' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/rfdc/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "File '/node_modules/rfdc/default.ts' does not exist.",
+              "File '/node_modules/rfdc/default.tsx' does not exist.",
+              "File '/node_modules/rfdc/default.d.ts' does not exist.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' does not have a 'types' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/rfdc/default/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/rfdc/default/index.js', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/rfdc/default/index.js' has a '.js' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "======== Module name 'rfdc/default' was successfully resolved to '/node_modules/rfdc/default.js' with Package ID 'rfdc/default.js@1.3.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        }
+      },
+      "hasTypes": false,
+      "isWildcard": false
+    }
+  },
+  "problems": [
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./default",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./default",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./default",
+      "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./default",
+      "resolutionKind": "bundler"
+    }
+  ]
+}

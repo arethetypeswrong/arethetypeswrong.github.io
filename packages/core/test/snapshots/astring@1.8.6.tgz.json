@@ -1,0 +1,337 @@
+{
+  "packageName": "astring",
+  "packageVersion": "1.8.6",
+  "types": {
+    "kind": "included"
+  },
+  "buildTools": {},
+  "entrypoints": {
+    ".": {
+      "subpath": ".",
+      "resolutions": {
+        "node10": {
+          "name": ".",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/astring/astring.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'astring' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'astring' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/astring/package.json'.",
+              "File '/node_modules/astring.ts' does not exist.",
+              "File '/node_modules/astring.tsx' does not exist.",
+              "File '/node_modules/astring.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field './astring.d.ts' that references '/node_modules/astring/astring.d.ts'.",
+              "File '/node_modules/astring/astring.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'astring' was successfully resolved to '/node_modules/astring/astring.d.ts' with Package ID 'astring/astring.d.ts@1.8.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/astring/dist/astring.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'astring' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'astring' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/astring/package.json'.",
+              "File '/node_modules/astring.ts' does not exist.",
+              "File '/node_modules/astring.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field './dist/astring.js' that references '/node_modules/astring/dist/astring.js'.",
+              "File '/node_modules/astring/dist/astring.js' exists - use it as a name resolution result.",
+              "File '/node_modules/astring/dist/astring.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/astring/dist/astring.js', target file types: TypeScript.",
+              "File name '/node_modules/astring/dist/astring.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/astring/dist/astring.ts' does not exist.",
+              "File '/node_modules/astring/dist/astring.tsx' does not exist.",
+              "File '/node_modules/astring/dist/astring.js.ts' does not exist.",
+              "File '/node_modules/astring/dist/astring.js.tsx' does not exist.",
+              "Directory '/node_modules/astring/dist/astring.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/astring/index.ts' does not exist.",
+              "File '/node_modules/astring/index.tsx' does not exist.",
+              "Loading module 'astring' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/astring/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/astring.js' does not exist.",
+              "File '/node_modules/astring.jsx' does not exist.",
+              "'package.json' has 'main' field './dist/astring.js' that references '/node_modules/astring/dist/astring.js'.",
+              "File '/node_modules/astring/dist/astring.js' exists - use it as a name resolution result.",
+              "======== Module name 'astring' was successfully resolved to '/node_modules/astring/dist/astring.js' with Package ID 'astring/dist/astring.js@1.8.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/astring/astring.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": ".",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/astring/astring.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/astring/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'astring' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'astring' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/astring/package.json'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath '.' with target './astring.d.ts'.",
+              "File '/node_modules/astring/astring.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'astring' was successfully resolved to '/node_modules/astring/astring.d.ts' with Package ID 'astring/astring.d.ts@1.8.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/astring/dist/astring.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/astring/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'astring' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'astring' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/astring/package.json'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Using 'exports' subpath '.' with target './dist/astring.js'.",
+              "File name '/node_modules/astring/dist/astring.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/astring/dist/astring.ts' does not exist.",
+              "File '/node_modules/astring/dist/astring.tsx' does not exist.",
+              "Failed to resolve under condition 'require'.",
+              "Saw non-matching condition 'browser'.",
+              "Exiting conditional exports.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/astring/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Using 'exports' subpath '.' with target './dist/astring.js'.",
+              "File name '/node_modules/astring/dist/astring.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/astring/dist/astring.js' exists - use it as a name resolution result.",
+              "Resolved under condition 'require'.",
+              "Exiting conditional exports.",
+              "======== Module name 'astring' was successfully resolved to '/node_modules/astring/dist/astring.js' with Package ID 'astring/dist/astring.js@1.8.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/astring/astring.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": ".",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/astring/astring.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/astring/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'astring' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'astring' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/astring/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath '.' with target './astring.d.ts'.",
+              "File '/node_modules/astring/astring.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'astring' was successfully resolved to '/node_modules/astring/astring.d.ts' with Package ID 'astring/astring.d.ts@1.8.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/astring/dist/astring.mjs",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "extension",
+              "reasonFileName": "/node_modules/astring/dist/astring.mjs"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'astring' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'astring' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/astring/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath '.' with target './dist/astring.mjs'.",
+              "File name '/node_modules/astring/dist/astring.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/astring/dist/astring.mts' does not exist.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Saw non-matching condition 'browser'.",
+              "Exiting conditional exports.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/astring/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath '.' with target './dist/astring.mjs'.",
+              "File name '/node_modules/astring/dist/astring.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/astring/dist/astring.mjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'astring' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/astring/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field './dist/astring.js' that references '/node_modules/astring/dist/astring.js'.",
+              "File '/node_modules/astring/dist/astring.js' exists - use it as a name resolution result.",
+              "File '/node_modules/astring/dist/astring.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/astring/dist/astring.js', target file types: TypeScript.",
+              "File name '/node_modules/astring/dist/astring.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/astring/dist/astring.ts' does not exist.",
+              "File '/node_modules/astring/dist/astring.tsx' does not exist.",
+              "File '/node_modules/astring/dist/astring.js.ts' does not exist.",
+              "File '/node_modules/astring/dist/astring.js.tsx' does not exist.",
+              "Directory '/node_modules/astring/dist/astring.js' does not exist, skipping all lookups in it.",
+              "======== Module name 'astring' was successfully resolved to '/node_modules/astring/dist/astring.mjs' with Package ID 'astring/dist/astring.mjs@1.8.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/astring/astring.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": ".",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/astring/astring.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'astring' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'astring' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/astring/package.json'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath '.' with target './astring.d.ts'.",
+              "File '/node_modules/astring/astring.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'astring' was successfully resolved to '/node_modules/astring/astring.d.ts' with Package ID 'astring/astring.d.ts@1.8.6'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/astring/dist/astring.mjs",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'astring' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'astring' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/astring/package.json'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath '.' with target './dist/astring.mjs'.",
+              "File name '/node_modules/astring/dist/astring.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/astring/dist/astring.mts' does not exist.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Saw non-matching condition 'browser'.",
+              "Exiting conditional exports.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/astring/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath '.' with target './dist/astring.mjs'.",
+              "File name '/node_modules/astring/dist/astring.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/astring/dist/astring.mjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'astring' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/astring/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/astring.ts' does not exist.",
+              "File '/node_modules/astring.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field './dist/astring.js' that references '/node_modules/astring/dist/astring.js'.",
+              "File '/node_modules/astring/dist/astring.js' exists - use it as a name resolution result.",
+              "File '/node_modules/astring/dist/astring.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/astring/dist/astring.js', target file types: TypeScript.",
+              "File name '/node_modules/astring/dist/astring.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/astring/dist/astring.ts' does not exist.",
+              "File '/node_modules/astring/dist/astring.tsx' does not exist.",
+              "File '/node_modules/astring/dist/astring.js.ts' does not exist.",
+              "File '/node_modules/astring/dist/astring.js.tsx' does not exist.",
+              "Directory '/node_modules/astring/dist/astring.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/astring/index.ts' does not exist.",
+              "File '/node_modules/astring/index.tsx' does not exist.",
+              "======== Module name 'astring' was successfully resolved to '/node_modules/astring/dist/astring.mjs' with Package ID 'astring/dist/astring.mjs@1.8.6'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/astring/astring.d.ts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    }
+  },
+  "problems": [
+    {
+      "kind": "FalseCJS",
+      "entrypoint": ".",
+      "resolutionKind": "node16-esm"
+    }
+  ]
+}
