@@ -27,12 +27,19 @@ if (!isMainThread && parentPort) {
       while (true) {
         try {
           let pkg = await createPackageFromTarballUrl(tarballUrl);
-          if (typesPackageUrl) {
+          if (typeof typesPackageUrl === "string") {
             pkg = pkg.mergedWithTypes(await createPackageFromTarballUrl(typesPackageUrl));
-          } else if (typesPackageUrl !== false) {
+          } else if (typesPackageUrl === true) {
             const typesPackageData = await getTypesPackageForPackage(packageName, packageVersion, new Date(before));
             if (typesPackageData) {
               pkg = pkg.mergedWithTypes(await createPackageFromTarballUrl(typesPackageData.tarballUrl));
+              if (pkg.typesPackage?.resolvedUrl) {
+                postBlob({
+                  kind: "resolvedTypesPackageUrl",
+                  packageName,
+                  typesPackageUrl: pkg.typesPackage.resolvedUrl,
+                });
+              }
             }
           }
           const analysis = await checkPackage(pkg);
@@ -68,11 +75,12 @@ export default function checkPackages(
     packageName: string;
     packageVersion: string;
     tarballUrl: string;
-    typesPackageUrl?: string | false;
+    typesPackageUrl: string | boolean;
   }[],
   outFile: URL,
   workerCount: number,
-  before: string
+  before: string,
+  onResolveTypesPackageUrl: (packageName: string, typesPackageUrl: string) => void
 ): Promise<boolean> {
   if (!packages.length) {
     return Promise.resolve(false);
@@ -93,13 +101,18 @@ export default function checkPackages(
       packageName: string;
       packageVersion: string;
       tarballUrl: string;
-      typesPackageUrl?: string | false;
+      typesPackageUrl: string | boolean;
       before: string;
       prevMessage?: string;
     }[] = [...packages.map((p) => ({ ...p, before }))];
     let finishedWorkers = 0;
     for (const worker of workers) {
       worker.on("message", async (blob: Blob) => {
+        if (blob.kind === "resolvedTypesPackageUrl") {
+          onResolveTypesPackageUrl(blob.packageName, blob.typesPackageUrl);
+          return;
+        }
+
         const workerIndex = workers.indexOf(worker);
         packagesDonePerWorker[workerIndex]++;
         if (blob.kind === "error") {

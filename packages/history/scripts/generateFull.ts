@@ -3,10 +3,12 @@ import cliProgress from "cli-progress";
 import { appendFileSync, createReadStream, createWriteStream } from "fs";
 import { open, readFile, rename, unlink, writeFile } from "fs/promises";
 import { createRequire } from "module";
+import fetch from "node-fetch";
 import { npmHighImpact } from "npm-high-impact";
 import os from "os";
 import pacote from "pacote";
 import { major, minor } from "semver";
+import ts from "typescript";
 import { createGzip } from "zlib";
 import checkPackages from "./checkPackages.ts";
 import { downloadData, uploadData } from "./storage.ts";
@@ -40,24 +42,43 @@ const dates = Array.from(
 let datesModified = false;
 let fullModified = false;
 const npmHighImpactVersion = createRequire(import.meta.url)("npm-high-impact/package.json").version;
+const outJsonFileName = new URL("../data/out.json", import.meta.url);
+try {
+  await unlink(outJsonFileName);
+} catch {}
+
 const fullJsonFileName = new URL("../data/full.json", import.meta.url);
 const datesFileName = new URL("../data/dates.json", import.meta.url);
 await downloadData();
 const existingDates: DatesJson = JSON.parse(await readFile(datesFileName, "utf8"));
+
+const typesRegistry: { entries: Record<string, Record<string, string>> } = createRequire(import.meta.url)(
+  "types-registry/index.json"
+);
+const notNeededPackages: { packages: Record<string, { asOfVersion: string }> } = (await fetch(
+  "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/notNeededPackages.json"
+).then((r) => r.json())) as any;
+const typesPackages = new Set([...Object.keys(typesRegistry.entries), ...Object.keys(notNeededPackages.packages)]);
+
 let bytesRead = 0;
-const seenResults = new Map<string, [coreVersion: string, hasTypes: boolean]>();
+const seenResults = new Map<string, { coreVersion: string; containsTypes: boolean }>();
 for (const date of dates) {
   const fh = await open(fullJsonFileName, "r");
   const start = bytesRead;
   bytesRead = (await fh.stat()).size;
   for await (const line of fh.readLines({ start })) {
     const result: FullJsonLine = JSON.parse(line);
-    seenResults.set(result.packageSpec, [result.coreVersion, /*temporary*/ true]);
+    seenResults.set(result.packageSpec, {
+      coreVersion: result.coreVersion,
+      containsTypes:
+        result.analysis.types &&
+        ((result.analysis.types as any) === "included" || result.analysis.types.kind === "included"),
+    });
   }
   await fh.close();
 
   const work = [];
-  const packages: (DatesJson["dates"][string][number] & { typesPackageUrl?: string | false | undefined })[] = [];
+  const packages: (DatesJson["dates"][string][number] & { typesPackageUrl: string | boolean })[] = [];
   const errors: { packageName: string; message: string }[] = [];
   if (!existingDates.dates?.[date] || existingDates.npmHighImpactVersion !== npmHighImpactVersion) {
     console.log(`*** Fetching versions for ${date} ***`);
@@ -72,7 +93,12 @@ for (const date of dates) {
         bar.increment();
         const packageVersion = manifest.version;
         const tarballUrl = manifest.dist.tarball;
-        packages.push({ packageName, packageVersion, tarballUrl, typesPackageUrl: undefined });
+        packages.push({
+          packageName,
+          packageVersion,
+          tarballUrl,
+          typesPackageUrl: typesPackages.has(ts.getTypesPackageName(packageName)),
+        });
       } catch (e) {
         errors.push({ packageName, message: (e as any).message });
       }
@@ -80,11 +106,16 @@ for (const date of dates) {
     bar.stop();
 
     existingDates.dates[date] = packages;
-    await writeFile(datesFileName, JSON.stringify(existingDates));
+    await writeFile(datesFileName, JSON.stringify(existingDates, undefined, 2));
     datesModified = true;
   } else {
     console.log(`*** Using cached versions for ${date} ***`);
-    packages.push(...existingDates.dates[date]);
+    packages.push(
+      ...existingDates.dates[date].map((p) => ({
+        ...p,
+        typesPackageUrl: (("typesPackageUrl" in p) as any) ? p.typesPackageUrl! : typesPackages.has(p.packageName),
+      }))
+    );
   }
 
   for (const pkg of packages) {
@@ -94,7 +125,8 @@ for (const date of dates) {
     const existing = seenResults.get(`${pkg.packageName}@${pkg.packageVersion}`);
     if (
       !existing ||
-      (existing[1] && (major(existing[0]) !== major(versions.core) || minor(existing[0]) !== minor(versions.core)))
+      ((existing.containsTypes || pkg.typesPackageUrl) &&
+        (major(existing.coreVersion) !== major(versions.core) || minor(existing.coreVersion) !== minor(versions.core)))
     ) {
       work.push({ ...pkg });
     }
@@ -107,7 +139,16 @@ for (const date of dates) {
   );
 
   const workerCount = Math.min(os.cpus().length - 1 || 1, 6);
-  fullModified = await checkPackages(work, fullJsonFileName, workerCount, date);
+  fullModified = await checkPackages(work, outJsonFileName, workerCount, date, (packageName, typesPackageUrl) => {
+    Object.keys(existingDates.dates).forEach((date) => {
+      const version = existingDates.dates[date].find((v) => v.packageName === packageName);
+      if (version) {
+        version.typesPackageUrl = typesPackageUrl;
+      }
+    });
+  });
+
+  await writeFile(datesFileName, JSON.stringify(existingDates, undefined, 2));
 }
 
 console.log("Cleaning full.json");
@@ -120,16 +161,28 @@ for (const date of Object.keys(existingDates.dates)) {
     }
   }
 }
-const fh = await open(fullJsonFileName, "r");
-for await (const line of fh.readLines()) {
+const outFh = await open(outJsonFileName, "r");
+const newSpecs = new Set<string>();
+for await (const line of outFh.readLines()) {
   const result: FullJsonLine = JSON.parse(line);
   if (allSpecs.has(result.packageSpec)) {
+    newSpecs.add(result.packageSpec);
     appendFileSync(cleanedFileName, `${JSON.stringify(result, (key, value) => (key === "trace" ? [] : value))}\n`);
-  } else {
     fullModified = true;
   }
 }
-await fh.close();
+await outFh.close();
+
+const fullFh = await open(fullJsonFileName, "r");
+for await (const line of fullFh.readLines()) {
+  const result: FullJsonLine = JSON.parse(line);
+  if (!newSpecs.has(result.packageSpec)) {
+    appendFileSync(cleanedFileName, `${JSON.stringify(result, (key, value) => (key === "trace" ? [] : value))}\n`);
+    fullModified = true;
+  }
+}
+
+await fullFh.close();
 await unlink(fullJsonFileName);
 await rename(cleanedFileName, fullJsonFileName);
 await new Promise((resolve, reject) => {

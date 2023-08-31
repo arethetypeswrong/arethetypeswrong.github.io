@@ -8,29 +8,30 @@ export class Package {
   #files: Record<string, string | Uint8Array> = {};
   readonly packageName: string;
   readonly packageVersion: string;
+  readonly resolvedUrl?: string;
   readonly typesPackage?: {
     packageName: string;
     packageVersion: string;
+    resolvedUrl?: string;
   };
 
   constructor(
     files: Record<string, string | Uint8Array>,
     packageName: string,
     packageVersion: string,
-    typesPackage?: {
-      packageName: string;
-      packageVersion: string;
-    }
+    resolvedUrl?: string,
+    typesPackage?: Package["typesPackage"]
   ) {
     this.#files = files;
     this.packageName = packageName;
     this.packageVersion = packageVersion;
+    this.resolvedUrl = resolvedUrl;
     this.typesPackage = typesPackage;
   }
 
   readFile(path: string): string {
     const file = this.#files[path];
-    if (!file) {
+    if (file === undefined) {
       throw new Error(`File not found: ${path}`);
     }
     if (typeof file === "string") {
@@ -68,9 +69,10 @@ export class Package {
 
   mergedWithTypes(typesPackage: Package): Package {
     const files = { ...this.#files, ...typesPackage.#files };
-    return new Package(files, this.packageName, this.packageVersion, {
+    return new Package(files, this.packageName, this.packageVersion, this.resolvedUrl, {
       packageName: typesPackage.packageName,
       packageVersion: typesPackage.packageVersion,
+      resolvedUrl: typesPackage.resolvedUrl,
     });
   }
 }
@@ -214,7 +216,8 @@ async function getNpmTarballUrl(
 
 export async function createPackageFromTarballUrl(tarballUrl: string): Promise<Package> {
   const tarball = await fetchTarball(tarballUrl);
-  return createPackageFromTarballData(tarball);
+  const { files, packageName, packageVersion } = extractTarball(tarball);
+  return new Package(files, packageName, packageVersion, tarballUrl);
 }
 
 async function fetchTarball(tarballUrl: string) {
