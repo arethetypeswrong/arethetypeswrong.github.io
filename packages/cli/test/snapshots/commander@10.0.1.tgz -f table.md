@@ -6,6 +6,9 @@ $ attw commander@10.0.1.tgz -f table
 
 commander v10.0.1
 
+Build tools:
+- typescript@^4.9.4
+
 🎭 Import resolved to a CommonJS type declaration file, but an ESM JavaScript file. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseCJS.md
 
 ❌ Import resolved to JavaScript files, but no type declarations were found. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/UntypedResolution.md

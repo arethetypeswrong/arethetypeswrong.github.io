@@ -1,9 +1,10 @@
-import type { Analysis } from "@arethetypeswrong/core/types";
+import type { Analysis, BuildTool } from "@arethetypeswrong/core/types";
 
 export function PackageInfo({ analysis }: { analysis?: Analysis }) {
   if (!analysis) {
     return { className: "display-none" };
   }
+  const buildTools = Object.keys(analysis.buildTools) as BuildTool[];
   return {
     className: "",
     innerHTML: `
@@ -27,6 +28,16 @@ export function PackageInfo({ analysis }: { analysis?: Analysis }) {
         </h2>
       `
           : ""
-      }`,
+      }
+      ${
+        buildTools.length > 0
+          ? `
+        <h3>Build tools</h3>
+        <ul>
+          ${buildTools.map((tool) => `<li><code>${tool}@${analysis.buildTools[tool]}</code></li>`).join("")}
+        </ul>`
+          : ""
+      }
+      `,
   };
 }

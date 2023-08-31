@@ -1,0 +1,1985 @@
+{
+  "packageName": "axios",
+  "packageVersion": "1.4.0",
+  "types": {
+    "kind": "included"
+  },
+  "buildTools": {
+    "typescript": "^4.8.4",
+    "rollup": "^2.67.0"
+  },
+  "entrypoints": {
+    ".": {
+      "subpath": ".",
+      "resolutions": {
+        "node10": {
+          "name": ".",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/axios/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'axios' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'axios' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/axios/package.json'.",
+              "File '/node_modules/axios.ts' does not exist.",
+              "File '/node_modules/axios.tsx' does not exist.",
+              "File '/node_modules/axios.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'typings' field './index.d.ts' that references '/node_modules/axios/index.d.ts'.",
+              "File '/node_modules/axios/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'axios' was successfully resolved to '/node_modules/axios/index.d.ts' with Package ID 'axios/index.d.ts@1.4.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/axios/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'axios' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/axios/package.json'.",
+              "File '/node_modules/axios.ts' does not exist.",
+              "File '/node_modules/axios.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/axios/index.js'.",
+              "File '/node_modules/axios/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/axios/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/axios/index.js', target file types: TypeScript.",
+              "File name '/node_modules/axios/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/index.ts' does not exist.",
+              "File '/node_modules/axios/index.tsx' does not exist.",
+              "File '/node_modules/axios/index.js.ts' does not exist.",
+              "File '/node_modules/axios/index.js.tsx' does not exist.",
+              "Directory '/node_modules/axios/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/axios/index.ts' does not exist.",
+              "File '/node_modules/axios/index.tsx' does not exist.",
+              "Loading module 'axios' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/axios.js' does not exist.",
+              "File '/node_modules/axios.jsx' does not exist.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/axios/index.js'.",
+              "File '/node_modules/axios/index.js' exists - use it as a name resolution result.",
+              "======== Module name 'axios' was successfully resolved to '/node_modules/axios/index.js' with Package ID 'axios/index.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/axios/index.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": ".",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/axios/index.d.cts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "extension",
+              "reasonFileName": "/node_modules/axios/index.d.cts"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'axios' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'axios' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/axios/package.json'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'require'.",
+              "Using 'exports' subpath '.' with target './index.d.cts'.",
+              "File '/node_modules/axios/index.d.cts' exists - use it as a name resolution result.",
+              "Resolved under condition 'require'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'axios' was successfully resolved to '/node_modules/axios/index.d.cts' with Package ID 'axios/index.d.cts@1.4.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/axios/dist/node/axios.cjs",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "extension",
+              "reasonFileName": "/node_modules/axios/dist/node/axios.cjs"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'axios' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/axios/package.json'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'browser'.",
+              "Matched 'exports' condition 'default'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'require'.",
+              "Using 'exports' subpath '.' with target './dist/node/axios.cjs'.",
+              "File name '/node_modules/axios/dist/node/axios.cjs' has a '.cjs' extension - stripping it.",
+              "File '/node_modules/axios/dist/node/axios.cts' does not exist.",
+              "Failed to resolve under condition 'require'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/axios/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/index.ts' does not exist.",
+              "File '/node_modules/axios/index.tsx' does not exist.",
+              "Failed to resolve under condition 'default'.",
+              "Exiting conditional exports.",
+              "Failed to resolve under condition 'default'.",
+              "Exiting conditional exports.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'browser'.",
+              "Matched 'exports' condition 'default'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'require'.",
+              "Using 'exports' subpath '.' with target './dist/node/axios.cjs'.",
+              "File name '/node_modules/axios/dist/node/axios.cjs' has a '.cjs' extension - stripping it.",
+              "File '/node_modules/axios/dist/node/axios.cjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'require'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'default'.",
+              "Exiting conditional exports.",
+              "======== Module name 'axios' was successfully resolved to '/node_modules/axios/dist/node/axios.cjs' with Package ID 'axios/dist/node/axios.cjs@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/axios/index.d.cts"
+          ]
+        },
+        "node16-esm": {
+          "name": ".",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/axios/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/axios/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'axios' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'require'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath '.' with target './index.d.ts'.",
+              "File '/node_modules/axios/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'default'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'axios' was successfully resolved to '/node_modules/axios/index.d.ts' with Package ID 'axios/index.d.ts@1.4.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/axios/index.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/axios/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'browser'.",
+              "Matched 'exports' condition 'default'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'require'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/axios/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/index.ts' does not exist.",
+              "File '/node_modules/axios/index.tsx' does not exist.",
+              "Failed to resolve under condition 'default'.",
+              "Exiting conditional exports.",
+              "Failed to resolve under condition 'default'.",
+              "Exiting conditional exports.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'browser'.",
+              "Matched 'exports' condition 'default'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'require'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/axios/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/index.js' exists - use it as a name resolution result.",
+              "Resolved under condition 'default'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'default'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/axios/index.js'.",
+              "File '/node_modules/axios/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/axios/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/axios/index.js', target file types: TypeScript.",
+              "File name '/node_modules/axios/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/index.ts' does not exist.",
+              "File '/node_modules/axios/index.tsx' does not exist.",
+              "Directory '/node_modules/axios/index.js' does not exist, skipping all lookups in it.",
+              "======== Module name 'axios' was successfully resolved to '/node_modules/axios/index.js' with Package ID 'axios/index.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/axios/index.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": ".",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/axios/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'axios' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'axios' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/axios/package.json'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'require'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath '.' with target './index.d.ts'.",
+              "File '/node_modules/axios/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'default'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'axios' was successfully resolved to '/node_modules/axios/index.d.ts' with Package ID 'axios/index.d.ts@1.4.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/axios/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'axios' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/axios/package.json'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'browser'.",
+              "Matched 'exports' condition 'default'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'require'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/axios/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/index.ts' does not exist.",
+              "File '/node_modules/axios/index.tsx' does not exist.",
+              "Failed to resolve under condition 'default'.",
+              "Exiting conditional exports.",
+              "Failed to resolve under condition 'default'.",
+              "Exiting conditional exports.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'browser'.",
+              "Matched 'exports' condition 'default'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'require'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/axios/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/index.js' exists - use it as a name resolution result.",
+              "Resolved under condition 'default'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'default'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/axios.ts' does not exist.",
+              "File '/node_modules/axios.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/axios/index.js'.",
+              "File '/node_modules/axios/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/axios/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/axios/index.js', target file types: TypeScript.",
+              "File name '/node_modules/axios/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/index.ts' does not exist.",
+              "File '/node_modules/axios/index.tsx' does not exist.",
+              "File '/node_modules/axios/index.js.ts' does not exist.",
+              "File '/node_modules/axios/index.js.tsx' does not exist.",
+              "Directory '/node_modules/axios/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/axios/index.ts' does not exist.",
+              "File '/node_modules/axios/index.tsx' does not exist.",
+              "======== Module name 'axios' was successfully resolved to '/node_modules/axios/index.js' with Package ID 'axios/index.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/axios/index.d.ts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    },
+    "./unsafe/*": {
+      "subpath": "./unsafe/*",
+      "resolutions": {
+        "node10": {
+          "name": "./unsafe/*",
+          "resolutionKind": "node10",
+          "isWildcard": true
+        },
+        "node16-cjs": {
+          "name": "./unsafe/*",
+          "resolutionKind": "node16-cjs",
+          "isWildcard": true
+        },
+        "node16-esm": {
+          "name": "./unsafe/*",
+          "resolutionKind": "node16-esm",
+          "isWildcard": true
+        },
+        "bundler": {
+          "name": "./unsafe/*",
+          "resolutionKind": "bundler",
+          "isWildcard": true
+        }
+      },
+      "hasTypes": false,
+      "isWildcard": true
+    },
+    "./unsafe/core/settle.js": {
+      "subpath": "./unsafe/core/settle.js",
+      "resolutions": {
+        "node10": {
+          "name": "./unsafe/core/settle.js",
+          "resolutionKind": "node10"
+        },
+        "node16-cjs": {
+          "name": "./unsafe/core/settle.js",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/core/settle.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/axios/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/core/settle.js' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/core/settle.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/core/settle.js' with target './lib/core/settle.js'.",
+              "File name '/node_modules/axios/lib/core/settle.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/core/settle.ts' does not exist.",
+              "File '/node_modules/axios/lib/core/settle.tsx' does not exist.",
+              "File '/node_modules/axios/lib/core/settle.d.ts' does not exist.",
+              "Export specifier './unsafe/core/settle.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/core/settle.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/core/settle.js' with target './lib/core/settle.js'.",
+              "File name '/node_modules/axios/lib/core/settle.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/core/settle.js' exists - use it as a name resolution result.",
+              "======== Module name 'axios/unsafe/core/settle.js' was successfully resolved to '/node_modules/axios/lib/core/settle.js' with Package ID 'axios/lib/core/settle.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": "./unsafe/core/settle.js",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/core/settle.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/axios/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/core/settle.js' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/core/settle.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/core/settle.js' with target './lib/core/settle.js'.",
+              "File name '/node_modules/axios/lib/core/settle.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/core/settle.ts' does not exist.",
+              "File '/node_modules/axios/lib/core/settle.tsx' does not exist.",
+              "File '/node_modules/axios/lib/core/settle.d.ts' does not exist.",
+              "Export specifier './unsafe/core/settle.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/core/settle.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/core/settle.js' with target './lib/core/settle.js'.",
+              "File name '/node_modules/axios/lib/core/settle.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/core/settle.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/core/settle.js' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "File name '/node_modules/axios/unsafe/core/settle.js' has a '.js' extension - stripping it.",
+              "'package.json' has 'typings' field './index.d.ts' that references '/node_modules/axios/unsafe/core/settle.js/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/axios/unsafe/core/settle.js/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/axios/unsafe/core/settle.js/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/core/settle.js' has a '.js' extension - stripping it.",
+              "======== Module name 'axios/unsafe/core/settle.js' was successfully resolved to '/node_modules/axios/lib/core/settle.js' with Package ID 'axios/lib/core/settle.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": "./unsafe/core/settle.js",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/core/settle.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/core/settle.js' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/core/settle.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/core/settle.js' with target './lib/core/settle.js'.",
+              "File name '/node_modules/axios/lib/core/settle.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/core/settle.ts' does not exist.",
+              "File '/node_modules/axios/lib/core/settle.tsx' does not exist.",
+              "File '/node_modules/axios/lib/core/settle.d.ts' does not exist.",
+              "Export specifier './unsafe/core/settle.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/core/settle.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/core/settle.js' with target './lib/core/settle.js'.",
+              "File name '/node_modules/axios/lib/core/settle.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/core/settle.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/core/settle.js' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "File name '/node_modules/axios/unsafe/core/settle.js' has a '.js' extension - stripping it.",
+              "'package.json' has 'typings' field './index.d.ts' that references '/node_modules/axios/unsafe/core/settle.js/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/axios/unsafe/core/settle.js/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/axios/unsafe/core/settle.js/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/core/settle.js' has a '.js' extension - stripping it.",
+              "======== Module name 'axios/unsafe/core/settle.js' was successfully resolved to '/node_modules/axios/lib/core/settle.js' with Package ID 'axios/lib/core/settle.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        }
+      },
+      "hasTypes": false,
+      "isWildcard": false
+    },
+    "./unsafe/core/buildFullPath.js": {
+      "subpath": "./unsafe/core/buildFullPath.js",
+      "resolutions": {
+        "node10": {
+          "name": "./unsafe/core/buildFullPath.js",
+          "resolutionKind": "node10"
+        },
+        "node16-cjs": {
+          "name": "./unsafe/core/buildFullPath.js",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/core/buildFullPath.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/axios/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/core/buildFullPath.js' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/core/buildFullPath.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/core/buildFullPath.js' with target './lib/core/buildFullPath.js'.",
+              "File name '/node_modules/axios/lib/core/buildFullPath.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/core/buildFullPath.ts' does not exist.",
+              "File '/node_modules/axios/lib/core/buildFullPath.tsx' does not exist.",
+              "File '/node_modules/axios/lib/core/buildFullPath.d.ts' does not exist.",
+              "Export specifier './unsafe/core/buildFullPath.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/core/buildFullPath.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/core/buildFullPath.js' with target './lib/core/buildFullPath.js'.",
+              "File name '/node_modules/axios/lib/core/buildFullPath.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/core/buildFullPath.js' exists - use it as a name resolution result.",
+              "======== Module name 'axios/unsafe/core/buildFullPath.js' was successfully resolved to '/node_modules/axios/lib/core/buildFullPath.js' with Package ID 'axios/lib/core/buildFullPath.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": "./unsafe/core/buildFullPath.js",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/core/buildFullPath.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/axios/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/core/buildFullPath.js' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/core/buildFullPath.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/core/buildFullPath.js' with target './lib/core/buildFullPath.js'.",
+              "File name '/node_modules/axios/lib/core/buildFullPath.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/core/buildFullPath.ts' does not exist.",
+              "File '/node_modules/axios/lib/core/buildFullPath.tsx' does not exist.",
+              "File '/node_modules/axios/lib/core/buildFullPath.d.ts' does not exist.",
+              "Export specifier './unsafe/core/buildFullPath.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/core/buildFullPath.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/core/buildFullPath.js' with target './lib/core/buildFullPath.js'.",
+              "File name '/node_modules/axios/lib/core/buildFullPath.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/core/buildFullPath.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/core/buildFullPath.js' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/axios/unsafe/core/buildFullPath.js' has a '.js' extension - stripping it.",
+              "'package.json' has 'typings' field './index.d.ts' that references '/node_modules/axios/unsafe/core/buildFullPath.js/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/axios/unsafe/core/buildFullPath.js/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/axios/unsafe/core/buildFullPath.js/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/core/buildFullPath.js' has a '.js' extension - stripping it.",
+              "======== Module name 'axios/unsafe/core/buildFullPath.js' was successfully resolved to '/node_modules/axios/lib/core/buildFullPath.js' with Package ID 'axios/lib/core/buildFullPath.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": "./unsafe/core/buildFullPath.js",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/core/buildFullPath.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/core/buildFullPath.js' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/core/buildFullPath.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/core/buildFullPath.js' with target './lib/core/buildFullPath.js'.",
+              "File name '/node_modules/axios/lib/core/buildFullPath.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/core/buildFullPath.ts' does not exist.",
+              "File '/node_modules/axios/lib/core/buildFullPath.tsx' does not exist.",
+              "File '/node_modules/axios/lib/core/buildFullPath.d.ts' does not exist.",
+              "Export specifier './unsafe/core/buildFullPath.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/core/buildFullPath.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/core/buildFullPath.js' with target './lib/core/buildFullPath.js'.",
+              "File name '/node_modules/axios/lib/core/buildFullPath.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/core/buildFullPath.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/core/buildFullPath.js' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/axios/unsafe/core/buildFullPath.js' has a '.js' extension - stripping it.",
+              "'package.json' has 'typings' field './index.d.ts' that references '/node_modules/axios/unsafe/core/buildFullPath.js/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/axios/unsafe/core/buildFullPath.js/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/axios/unsafe/core/buildFullPath.js/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/core/buildFullPath.js' has a '.js' extension - stripping it.",
+              "======== Module name 'axios/unsafe/core/buildFullPath.js' was successfully resolved to '/node_modules/axios/lib/core/buildFullPath.js' with Package ID 'axios/lib/core/buildFullPath.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        }
+      },
+      "hasTypes": false,
+      "isWildcard": false
+    },
+    "./unsafe/helpers/isAbsoluteURL.js": {
+      "subpath": "./unsafe/helpers/isAbsoluteURL.js",
+      "resolutions": {
+        "node10": {
+          "name": "./unsafe/helpers/isAbsoluteURL.js",
+          "resolutionKind": "node10"
+        },
+        "node16-cjs": {
+          "name": "./unsafe/helpers/isAbsoluteURL.js",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/helpers/isAbsoluteURL.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/axios/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/helpers/isAbsoluteURL.js' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/helpers/isAbsoluteURL.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/helpers/isAbsoluteURL.js' with target './lib/helpers/isAbsoluteURL.js'.",
+              "File name '/node_modules/axios/lib/helpers/isAbsoluteURL.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/helpers/isAbsoluteURL.ts' does not exist.",
+              "File '/node_modules/axios/lib/helpers/isAbsoluteURL.tsx' does not exist.",
+              "File '/node_modules/axios/lib/helpers/isAbsoluteURL.d.ts' does not exist.",
+              "Export specifier './unsafe/helpers/isAbsoluteURL.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/helpers/isAbsoluteURL.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/helpers/isAbsoluteURL.js' with target './lib/helpers/isAbsoluteURL.js'.",
+              "File name '/node_modules/axios/lib/helpers/isAbsoluteURL.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/helpers/isAbsoluteURL.js' exists - use it as a name resolution result.",
+              "======== Module name 'axios/unsafe/helpers/isAbsoluteURL.js' was successfully resolved to '/node_modules/axios/lib/helpers/isAbsoluteURL.js' with Package ID 'axios/lib/helpers/isAbsoluteURL.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": "./unsafe/helpers/isAbsoluteURL.js",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/helpers/isAbsoluteURL.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/axios/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/helpers/isAbsoluteURL.js' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/helpers/isAbsoluteURL.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/helpers/isAbsoluteURL.js' with target './lib/helpers/isAbsoluteURL.js'.",
+              "File name '/node_modules/axios/lib/helpers/isAbsoluteURL.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/helpers/isAbsoluteURL.ts' does not exist.",
+              "File '/node_modules/axios/lib/helpers/isAbsoluteURL.tsx' does not exist.",
+              "File '/node_modules/axios/lib/helpers/isAbsoluteURL.d.ts' does not exist.",
+              "Export specifier './unsafe/helpers/isAbsoluteURL.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/helpers/isAbsoluteURL.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/helpers/isAbsoluteURL.js' with target './lib/helpers/isAbsoluteURL.js'.",
+              "File name '/node_modules/axios/lib/helpers/isAbsoluteURL.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/helpers/isAbsoluteURL.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/helpers/isAbsoluteURL.js' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/axios/unsafe/helpers/isAbsoluteURL.js' has a '.js' extension - stripping it.",
+              "'package.json' has 'typings' field './index.d.ts' that references '/node_modules/axios/unsafe/helpers/isAbsoluteURL.js/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/axios/unsafe/helpers/isAbsoluteURL.js/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/axios/unsafe/helpers/isAbsoluteURL.js/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/helpers/isAbsoluteURL.js' has a '.js' extension - stripping it.",
+              "======== Module name 'axios/unsafe/helpers/isAbsoluteURL.js' was successfully resolved to '/node_modules/axios/lib/helpers/isAbsoluteURL.js' with Package ID 'axios/lib/helpers/isAbsoluteURL.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": "./unsafe/helpers/isAbsoluteURL.js",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/helpers/isAbsoluteURL.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/helpers/isAbsoluteURL.js' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/helpers/isAbsoluteURL.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/helpers/isAbsoluteURL.js' with target './lib/helpers/isAbsoluteURL.js'.",
+              "File name '/node_modules/axios/lib/helpers/isAbsoluteURL.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/helpers/isAbsoluteURL.ts' does not exist.",
+              "File '/node_modules/axios/lib/helpers/isAbsoluteURL.tsx' does not exist.",
+              "File '/node_modules/axios/lib/helpers/isAbsoluteURL.d.ts' does not exist.",
+              "Export specifier './unsafe/helpers/isAbsoluteURL.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/helpers/isAbsoluteURL.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/helpers/isAbsoluteURL.js' with target './lib/helpers/isAbsoluteURL.js'.",
+              "File name '/node_modules/axios/lib/helpers/isAbsoluteURL.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/helpers/isAbsoluteURL.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/helpers/isAbsoluteURL.js' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/axios/unsafe/helpers/isAbsoluteURL.js' has a '.js' extension - stripping it.",
+              "'package.json' has 'typings' field './index.d.ts' that references '/node_modules/axios/unsafe/helpers/isAbsoluteURL.js/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/axios/unsafe/helpers/isAbsoluteURL.js/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/axios/unsafe/helpers/isAbsoluteURL.js/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/helpers/isAbsoluteURL.js' has a '.js' extension - stripping it.",
+              "======== Module name 'axios/unsafe/helpers/isAbsoluteURL.js' was successfully resolved to '/node_modules/axios/lib/helpers/isAbsoluteURL.js' with Package ID 'axios/lib/helpers/isAbsoluteURL.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        }
+      },
+      "hasTypes": false,
+      "isWildcard": false
+    },
+    "./unsafe/helpers/buildURL.js": {
+      "subpath": "./unsafe/helpers/buildURL.js",
+      "resolutions": {
+        "node10": {
+          "name": "./unsafe/helpers/buildURL.js",
+          "resolutionKind": "node10"
+        },
+        "node16-cjs": {
+          "name": "./unsafe/helpers/buildURL.js",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/helpers/buildURL.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/axios/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/helpers/buildURL.js' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/helpers/buildURL.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/helpers/buildURL.js' with target './lib/helpers/buildURL.js'.",
+              "File name '/node_modules/axios/lib/helpers/buildURL.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/helpers/buildURL.ts' does not exist.",
+              "File '/node_modules/axios/lib/helpers/buildURL.tsx' does not exist.",
+              "File '/node_modules/axios/lib/helpers/buildURL.d.ts' does not exist.",
+              "Export specifier './unsafe/helpers/buildURL.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/helpers/buildURL.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/helpers/buildURL.js' with target './lib/helpers/buildURL.js'.",
+              "File name '/node_modules/axios/lib/helpers/buildURL.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/helpers/buildURL.js' exists - use it as a name resolution result.",
+              "======== Module name 'axios/unsafe/helpers/buildURL.js' was successfully resolved to '/node_modules/axios/lib/helpers/buildURL.js' with Package ID 'axios/lib/helpers/buildURL.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": "./unsafe/helpers/buildURL.js",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/helpers/buildURL.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/axios/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/helpers/buildURL.js' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/helpers/buildURL.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/helpers/buildURL.js' with target './lib/helpers/buildURL.js'.",
+              "File name '/node_modules/axios/lib/helpers/buildURL.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/helpers/buildURL.ts' does not exist.",
+              "File '/node_modules/axios/lib/helpers/buildURL.tsx' does not exist.",
+              "File '/node_modules/axios/lib/helpers/buildURL.d.ts' does not exist.",
+              "Export specifier './unsafe/helpers/buildURL.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/helpers/buildURL.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/helpers/buildURL.js' with target './lib/helpers/buildURL.js'.",
+              "File name '/node_modules/axios/lib/helpers/buildURL.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/helpers/buildURL.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/helpers/buildURL.js' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/axios/unsafe/helpers/buildURL.js' has a '.js' extension - stripping it.",
+              "'package.json' has 'typings' field './index.d.ts' that references '/node_modules/axios/unsafe/helpers/buildURL.js/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/axios/unsafe/helpers/buildURL.js/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/axios/unsafe/helpers/buildURL.js/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/helpers/buildURL.js' has a '.js' extension - stripping it.",
+              "======== Module name 'axios/unsafe/helpers/buildURL.js' was successfully resolved to '/node_modules/axios/lib/helpers/buildURL.js' with Package ID 'axios/lib/helpers/buildURL.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": "./unsafe/helpers/buildURL.js",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/helpers/buildURL.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/helpers/buildURL.js' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/helpers/buildURL.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/helpers/buildURL.js' with target './lib/helpers/buildURL.js'.",
+              "File name '/node_modules/axios/lib/helpers/buildURL.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/helpers/buildURL.ts' does not exist.",
+              "File '/node_modules/axios/lib/helpers/buildURL.tsx' does not exist.",
+              "File '/node_modules/axios/lib/helpers/buildURL.d.ts' does not exist.",
+              "Export specifier './unsafe/helpers/buildURL.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/helpers/buildURL.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/helpers/buildURL.js' with target './lib/helpers/buildURL.js'.",
+              "File name '/node_modules/axios/lib/helpers/buildURL.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/helpers/buildURL.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/helpers/buildURL.js' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/axios/unsafe/helpers/buildURL.js' has a '.js' extension - stripping it.",
+              "'package.json' has 'typings' field './index.d.ts' that references '/node_modules/axios/unsafe/helpers/buildURL.js/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/axios/unsafe/helpers/buildURL.js/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/axios/unsafe/helpers/buildURL.js/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/helpers/buildURL.js' has a '.js' extension - stripping it.",
+              "======== Module name 'axios/unsafe/helpers/buildURL.js' was successfully resolved to '/node_modules/axios/lib/helpers/buildURL.js' with Package ID 'axios/lib/helpers/buildURL.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        }
+      },
+      "hasTypes": false,
+      "isWildcard": false
+    },
+    "./unsafe/helpers/combineURLs.js": {
+      "subpath": "./unsafe/helpers/combineURLs.js",
+      "resolutions": {
+        "node10": {
+          "name": "./unsafe/helpers/combineURLs.js",
+          "resolutionKind": "node10"
+        },
+        "node16-cjs": {
+          "name": "./unsafe/helpers/combineURLs.js",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/helpers/combineURLs.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/axios/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/helpers/combineURLs.js' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/helpers/combineURLs.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/helpers/combineURLs.js' with target './lib/helpers/combineURLs.js'.",
+              "File name '/node_modules/axios/lib/helpers/combineURLs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/helpers/combineURLs.ts' does not exist.",
+              "File '/node_modules/axios/lib/helpers/combineURLs.tsx' does not exist.",
+              "File '/node_modules/axios/lib/helpers/combineURLs.d.ts' does not exist.",
+              "Export specifier './unsafe/helpers/combineURLs.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/helpers/combineURLs.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/helpers/combineURLs.js' with target './lib/helpers/combineURLs.js'.",
+              "File name '/node_modules/axios/lib/helpers/combineURLs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/helpers/combineURLs.js' exists - use it as a name resolution result.",
+              "======== Module name 'axios/unsafe/helpers/combineURLs.js' was successfully resolved to '/node_modules/axios/lib/helpers/combineURLs.js' with Package ID 'axios/lib/helpers/combineURLs.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": "./unsafe/helpers/combineURLs.js",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/helpers/combineURLs.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/axios/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/helpers/combineURLs.js' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/helpers/combineURLs.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/helpers/combineURLs.js' with target './lib/helpers/combineURLs.js'.",
+              "File name '/node_modules/axios/lib/helpers/combineURLs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/helpers/combineURLs.ts' does not exist.",
+              "File '/node_modules/axios/lib/helpers/combineURLs.tsx' does not exist.",
+              "File '/node_modules/axios/lib/helpers/combineURLs.d.ts' does not exist.",
+              "Export specifier './unsafe/helpers/combineURLs.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/helpers/combineURLs.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/helpers/combineURLs.js' with target './lib/helpers/combineURLs.js'.",
+              "File name '/node_modules/axios/lib/helpers/combineURLs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/helpers/combineURLs.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/helpers/combineURLs.js' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/axios/unsafe/helpers/combineURLs.js' has a '.js' extension - stripping it.",
+              "'package.json' has 'typings' field './index.d.ts' that references '/node_modules/axios/unsafe/helpers/combineURLs.js/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/axios/unsafe/helpers/combineURLs.js/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/axios/unsafe/helpers/combineURLs.js/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/helpers/combineURLs.js' has a '.js' extension - stripping it.",
+              "======== Module name 'axios/unsafe/helpers/combineURLs.js' was successfully resolved to '/node_modules/axios/lib/helpers/combineURLs.js' with Package ID 'axios/lib/helpers/combineURLs.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": "./unsafe/helpers/combineURLs.js",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/helpers/combineURLs.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/helpers/combineURLs.js' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/helpers/combineURLs.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/helpers/combineURLs.js' with target './lib/helpers/combineURLs.js'.",
+              "File name '/node_modules/axios/lib/helpers/combineURLs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/helpers/combineURLs.ts' does not exist.",
+              "File '/node_modules/axios/lib/helpers/combineURLs.tsx' does not exist.",
+              "File '/node_modules/axios/lib/helpers/combineURLs.d.ts' does not exist.",
+              "Export specifier './unsafe/helpers/combineURLs.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/helpers/combineURLs.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/helpers/combineURLs.js' with target './lib/helpers/combineURLs.js'.",
+              "File name '/node_modules/axios/lib/helpers/combineURLs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/helpers/combineURLs.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/helpers/combineURLs.js' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/axios/unsafe/helpers/combineURLs.js' has a '.js' extension - stripping it.",
+              "'package.json' has 'typings' field './index.d.ts' that references '/node_modules/axios/unsafe/helpers/combineURLs.js/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/axios/unsafe/helpers/combineURLs.js/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/axios/unsafe/helpers/combineURLs.js/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/helpers/combineURLs.js' has a '.js' extension - stripping it.",
+              "======== Module name 'axios/unsafe/helpers/combineURLs.js' was successfully resolved to '/node_modules/axios/lib/helpers/combineURLs.js' with Package ID 'axios/lib/helpers/combineURLs.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        }
+      },
+      "hasTypes": false,
+      "isWildcard": false
+    },
+    "./unsafe/adapters/http.js": {
+      "subpath": "./unsafe/adapters/http.js",
+      "resolutions": {
+        "node10": {
+          "name": "./unsafe/adapters/http.js",
+          "resolutionKind": "node10"
+        },
+        "node16-cjs": {
+          "name": "./unsafe/adapters/http.js",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/adapters/http.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/axios/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/adapters/http.js' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/adapters/http.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/adapters/http.js' with target './lib/adapters/http.js'.",
+              "File name '/node_modules/axios/lib/adapters/http.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/adapters/http.ts' does not exist.",
+              "File '/node_modules/axios/lib/adapters/http.tsx' does not exist.",
+              "File '/node_modules/axios/lib/adapters/http.d.ts' does not exist.",
+              "Export specifier './unsafe/adapters/http.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/adapters/http.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/adapters/http.js' with target './lib/adapters/http.js'.",
+              "File name '/node_modules/axios/lib/adapters/http.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/adapters/http.js' exists - use it as a name resolution result.",
+              "======== Module name 'axios/unsafe/adapters/http.js' was successfully resolved to '/node_modules/axios/lib/adapters/http.js' with Package ID 'axios/lib/adapters/http.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": "./unsafe/adapters/http.js",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/adapters/http.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/axios/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/adapters/http.js' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/adapters/http.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/adapters/http.js' with target './lib/adapters/http.js'.",
+              "File name '/node_modules/axios/lib/adapters/http.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/adapters/http.ts' does not exist.",
+              "File '/node_modules/axios/lib/adapters/http.tsx' does not exist.",
+              "File '/node_modules/axios/lib/adapters/http.d.ts' does not exist.",
+              "Export specifier './unsafe/adapters/http.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/adapters/http.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/adapters/http.js' with target './lib/adapters/http.js'.",
+              "File name '/node_modules/axios/lib/adapters/http.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/adapters/http.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/adapters/http.js' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/axios/unsafe/adapters/http.js' has a '.js' extension - stripping it.",
+              "'package.json' has 'typings' field './index.d.ts' that references '/node_modules/axios/unsafe/adapters/http.js/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/axios/unsafe/adapters/http.js/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/axios/unsafe/adapters/http.js/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/adapters/http.js' has a '.js' extension - stripping it.",
+              "======== Module name 'axios/unsafe/adapters/http.js' was successfully resolved to '/node_modules/axios/lib/adapters/http.js' with Package ID 'axios/lib/adapters/http.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": "./unsafe/adapters/http.js",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/adapters/http.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/adapters/http.js' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/adapters/http.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/adapters/http.js' with target './lib/adapters/http.js'.",
+              "File name '/node_modules/axios/lib/adapters/http.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/adapters/http.ts' does not exist.",
+              "File '/node_modules/axios/lib/adapters/http.tsx' does not exist.",
+              "File '/node_modules/axios/lib/adapters/http.d.ts' does not exist.",
+              "Export specifier './unsafe/adapters/http.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/adapters/http.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/adapters/http.js' with target './lib/adapters/http.js'.",
+              "File name '/node_modules/axios/lib/adapters/http.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/adapters/http.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/adapters/http.js' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/axios/unsafe/adapters/http.js' has a '.js' extension - stripping it.",
+              "'package.json' has 'typings' field './index.d.ts' that references '/node_modules/axios/unsafe/adapters/http.js/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/axios/unsafe/adapters/http.js/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/axios/unsafe/adapters/http.js/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/adapters/http.js' has a '.js' extension - stripping it.",
+              "======== Module name 'axios/unsafe/adapters/http.js' was successfully resolved to '/node_modules/axios/lib/adapters/http.js' with Package ID 'axios/lib/adapters/http.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        }
+      },
+      "hasTypes": false,
+      "isWildcard": false
+    },
+    "./unsafe/adapters/xhr.js": {
+      "subpath": "./unsafe/adapters/xhr.js",
+      "resolutions": {
+        "node10": {
+          "name": "./unsafe/adapters/xhr.js",
+          "resolutionKind": "node10"
+        },
+        "node16-cjs": {
+          "name": "./unsafe/adapters/xhr.js",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/adapters/xhr.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/axios/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/adapters/xhr.js' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/adapters/xhr.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/adapters/xhr.js' with target './lib/adapters/xhr.js'.",
+              "File name '/node_modules/axios/lib/adapters/xhr.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/adapters/xhr.ts' does not exist.",
+              "File '/node_modules/axios/lib/adapters/xhr.tsx' does not exist.",
+              "File '/node_modules/axios/lib/adapters/xhr.d.ts' does not exist.",
+              "Export specifier './unsafe/adapters/xhr.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/adapters/xhr.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/adapters/xhr.js' with target './lib/adapters/xhr.js'.",
+              "File name '/node_modules/axios/lib/adapters/xhr.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/adapters/xhr.js' exists - use it as a name resolution result.",
+              "======== Module name 'axios/unsafe/adapters/xhr.js' was successfully resolved to '/node_modules/axios/lib/adapters/xhr.js' with Package ID 'axios/lib/adapters/xhr.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": "./unsafe/adapters/xhr.js",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/adapters/xhr.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/axios/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/adapters/xhr.js' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/adapters/xhr.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/adapters/xhr.js' with target './lib/adapters/xhr.js'.",
+              "File name '/node_modules/axios/lib/adapters/xhr.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/adapters/xhr.ts' does not exist.",
+              "File '/node_modules/axios/lib/adapters/xhr.tsx' does not exist.",
+              "File '/node_modules/axios/lib/adapters/xhr.d.ts' does not exist.",
+              "Export specifier './unsafe/adapters/xhr.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/adapters/xhr.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/adapters/xhr.js' with target './lib/adapters/xhr.js'.",
+              "File name '/node_modules/axios/lib/adapters/xhr.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/adapters/xhr.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/adapters/xhr.js' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/axios/unsafe/adapters/xhr.js' has a '.js' extension - stripping it.",
+              "'package.json' has 'typings' field './index.d.ts' that references '/node_modules/axios/unsafe/adapters/xhr.js/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/axios/unsafe/adapters/xhr.js/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/axios/unsafe/adapters/xhr.js/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/adapters/xhr.js' has a '.js' extension - stripping it.",
+              "======== Module name 'axios/unsafe/adapters/xhr.js' was successfully resolved to '/node_modules/axios/lib/adapters/xhr.js' with Package ID 'axios/lib/adapters/xhr.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": "./unsafe/adapters/xhr.js",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/adapters/xhr.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/adapters/xhr.js' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/adapters/xhr.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/adapters/xhr.js' with target './lib/adapters/xhr.js'.",
+              "File name '/node_modules/axios/lib/adapters/xhr.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/adapters/xhr.ts' does not exist.",
+              "File '/node_modules/axios/lib/adapters/xhr.tsx' does not exist.",
+              "File '/node_modules/axios/lib/adapters/xhr.d.ts' does not exist.",
+              "Export specifier './unsafe/adapters/xhr.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/adapters/xhr.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/adapters/xhr.js' with target './lib/adapters/xhr.js'.",
+              "File name '/node_modules/axios/lib/adapters/xhr.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/adapters/xhr.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/adapters/xhr.js' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/axios/unsafe/adapters/xhr.js' has a '.js' extension - stripping it.",
+              "'package.json' has 'typings' field './index.d.ts' that references '/node_modules/axios/unsafe/adapters/xhr.js/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/axios/unsafe/adapters/xhr.js/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/axios/unsafe/adapters/xhr.js/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/adapters/xhr.js' has a '.js' extension - stripping it.",
+              "======== Module name 'axios/unsafe/adapters/xhr.js' was successfully resolved to '/node_modules/axios/lib/adapters/xhr.js' with Package ID 'axios/lib/adapters/xhr.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        }
+      },
+      "hasTypes": false,
+      "isWildcard": false
+    },
+    "./unsafe/utils.js": {
+      "subpath": "./unsafe/utils.js",
+      "resolutions": {
+        "node10": {
+          "name": "./unsafe/utils.js",
+          "resolutionKind": "node10"
+        },
+        "node16-cjs": {
+          "name": "./unsafe/utils.js",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/utils.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/axios/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/utils.js' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/utils.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/utils.js' with target './lib/utils.js'.",
+              "File name '/node_modules/axios/lib/utils.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/utils.ts' does not exist.",
+              "File '/node_modules/axios/lib/utils.tsx' does not exist.",
+              "File '/node_modules/axios/lib/utils.d.ts' does not exist.",
+              "Export specifier './unsafe/utils.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/utils.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/utils.js' with target './lib/utils.js'.",
+              "File name '/node_modules/axios/lib/utils.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/utils.js' exists - use it as a name resolution result.",
+              "======== Module name 'axios/unsafe/utils.js' was successfully resolved to '/node_modules/axios/lib/utils.js' with Package ID 'axios/lib/utils.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": "./unsafe/utils.js",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/utils.js",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "type",
+              "reasonFileName": "/node_modules/axios/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/utils.js' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/utils.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/utils.js' with target './lib/utils.js'.",
+              "File name '/node_modules/axios/lib/utils.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/utils.ts' does not exist.",
+              "File '/node_modules/axios/lib/utils.tsx' does not exist.",
+              "File '/node_modules/axios/lib/utils.d.ts' does not exist.",
+              "Export specifier './unsafe/utils.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/utils.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/utils.js' with target './lib/utils.js'.",
+              "File name '/node_modules/axios/lib/utils.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/utils.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/utils.js' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/axios/unsafe/utils.js' has a '.js' extension - stripping it.",
+              "'package.json' has 'typings' field './index.d.ts' that references '/node_modules/axios/unsafe/utils.js/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/axios/unsafe/utils.js/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/axios/unsafe/utils.js/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/utils.js' has a '.js' extension - stripping it.",
+              "======== Module name 'axios/unsafe/utils.js' was successfully resolved to '/node_modules/axios/lib/utils.js' with Package ID 'axios/lib/utils.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": "./unsafe/utils.js",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/axios/lib/utils.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/unsafe/utils.js' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/utils.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/utils.js' with target './lib/utils.js'.",
+              "File name '/node_modules/axios/lib/utils.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/utils.ts' does not exist.",
+              "File '/node_modules/axios/lib/utils.tsx' does not exist.",
+              "File '/node_modules/axios/lib/utils.d.ts' does not exist.",
+              "Export specifier './unsafe/utils.js' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/utils.js' has a '.js' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './unsafe/utils.js' with target './lib/utils.js'.",
+              "File name '/node_modules/axios/lib/utils.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/axios/lib/utils.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/unsafe/utils.js' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/axios/unsafe/utils.js' has a '.js' extension - stripping it.",
+              "'package.json' has 'typings' field './index.d.ts' that references '/node_modules/axios/unsafe/utils.js/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/axios/unsafe/utils.js/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/axios/unsafe/utils.js/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/unsafe/utils.js' has a '.js' extension - stripping it.",
+              "======== Module name 'axios/unsafe/utils.js' was successfully resolved to '/node_modules/axios/lib/utils.js' with Package ID 'axios/lib/utils.js@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts"
+          ]
+        }
+      },
+      "hasTypes": false,
+      "isWildcard": false
+    },
+    "./package.json": {
+      "subpath": "./package.json",
+      "resolutions": {
+        "node10": {
+          "name": "./package.json",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/axios/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'axios/package.json' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/axios/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/axios/package.d.json.ts' does not exist.",
+              "File '/node_modules/axios/package.json.ts' does not exist.",
+              "File '/node_modules/axios/package.json.tsx' does not exist.",
+              "File '/node_modules/axios/package.json.d.ts' does not exist.",
+              "'package.json' has 'typings' field './index.d.ts' that references '/node_modules/axios/package.json/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/axios/package.json/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/axios/package.json/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/package.json' has a '.json' extension - stripping it.",
+              "Loading module 'axios/package.json' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/axios/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/axios/package.json' exists - use it as a name resolution result.",
+              "======== Module name 'axios/package.json' was successfully resolved to '/node_modules/axios/package.json' with Package ID 'axios/package.json@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/axios/package.json"
+          ]
+        },
+        "node16-cjs": {
+          "name": "./package.json",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/axios/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/axios/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/axios/package.d.json.ts' does not exist.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/package.json' has a '.json' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/axios/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/axios/package.json' exists - use it as a name resolution result.",
+              "======== Module name 'axios/package.json' was successfully resolved to '/node_modules/axios/package.json' with Package ID 'axios/package.json@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/axios/package.json"
+          ]
+        },
+        "node16-esm": {
+          "name": "./package.json",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/axios/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/package.json' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/axios/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/axios/package.d.json.ts' does not exist.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/package.json' has a '.json' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/axios/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/axios/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/package.json' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/axios/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/axios/package.d.json.ts' does not exist.",
+              "'package.json' has 'typings' field './index.d.ts' that references '/node_modules/axios/package.json/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/axios/package.json/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/axios/package.json/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/package.json' has a '.json' extension - stripping it.",
+              "======== Module name 'axios/package.json' was successfully resolved to '/node_modules/axios/package.json' with Package ID 'axios/package.json@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/axios/package.json"
+          ]
+        },
+        "bundler": {
+          "name": "./package.json",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/axios/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'axios/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/axios/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/axios/package.d.json.ts' does not exist.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/axios'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/package.json' has a '.json' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/axios/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/axios/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'axios/package.json' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/axios/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/axios/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/axios/package.d.json.ts' does not exist.",
+              "File '/node_modules/axios/package.json.ts' does not exist.",
+              "File '/node_modules/axios/package.json.tsx' does not exist.",
+              "File '/node_modules/axios/package.json.d.ts' does not exist.",
+              "'package.json' has 'typings' field './index.d.ts' that references '/node_modules/axios/package.json/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/axios/package.json/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/axios/package.json/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/axios/package.json' has a '.json' extension - stripping it.",
+              "======== Module name 'axios/package.json' was successfully resolved to '/node_modules/axios/package.json' with Package ID 'axios/package.json@1.4.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/axios/package.json"
+          ]
+        }
+      },
+      "hasTypes": false,
+      "isWildcard": false
+    }
+  },
+  "problems": [
+    {
+      "kind": "Wildcard",
+      "entrypoint": "./unsafe/*",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "Wildcard",
+      "entrypoint": "./unsafe/*",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "Wildcard",
+      "entrypoint": "./unsafe/*",
+      "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "Wildcard",
+      "entrypoint": "./unsafe/*",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "NoResolution",
+      "entrypoint": "./unsafe/core/settle.js",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/core/settle.js",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "CJSResolvesToESM",
+      "entrypoint": "./unsafe/core/settle.js",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/core/settle.js",
+      "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/core/settle.js",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "NoResolution",
+      "entrypoint": "./unsafe/core/buildFullPath.js",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/core/buildFullPath.js",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "CJSResolvesToESM",
+      "entrypoint": "./unsafe/core/buildFullPath.js",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/core/buildFullPath.js",
+      "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/core/buildFullPath.js",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "NoResolution",
+      "entrypoint": "./unsafe/helpers/isAbsoluteURL.js",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/helpers/isAbsoluteURL.js",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "CJSResolvesToESM",
+      "entrypoint": "./unsafe/helpers/isAbsoluteURL.js",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/helpers/isAbsoluteURL.js",
+      "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/helpers/isAbsoluteURL.js",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "NoResolution",
+      "entrypoint": "./unsafe/helpers/buildURL.js",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/helpers/buildURL.js",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "CJSResolvesToESM",
+      "entrypoint": "./unsafe/helpers/buildURL.js",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/helpers/buildURL.js",
+      "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/helpers/buildURL.js",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "NoResolution",
+      "entrypoint": "./unsafe/helpers/combineURLs.js",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/helpers/combineURLs.js",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "CJSResolvesToESM",
+      "entrypoint": "./unsafe/helpers/combineURLs.js",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/helpers/combineURLs.js",
+      "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/helpers/combineURLs.js",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "NoResolution",
+      "entrypoint": "./unsafe/adapters/http.js",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/adapters/http.js",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "CJSResolvesToESM",
+      "entrypoint": "./unsafe/adapters/http.js",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/adapters/http.js",
+      "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/adapters/http.js",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "NoResolution",
+      "entrypoint": "./unsafe/adapters/xhr.js",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/adapters/xhr.js",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "CJSResolvesToESM",
+      "entrypoint": "./unsafe/adapters/xhr.js",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/adapters/xhr.js",
+      "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/adapters/xhr.js",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "NoResolution",
+      "entrypoint": "./unsafe/utils.js",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/utils.js",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "CJSResolvesToESM",
+      "entrypoint": "./unsafe/utils.js",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/utils.js",
+      "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "UntypedResolution",
+      "entrypoint": "./unsafe/utils.js",
+      "resolutionKind": "bundler"
+    }
+  ]
+}

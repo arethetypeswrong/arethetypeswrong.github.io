@@ -6,6 +6,10 @@ $ attw @ice__app@3.2.6.tgz -f table-flipped
 
 @ice/app v3.2.6
 
+Build tools:
+- webpack@^5.86.0
+- esbuild@^0.17.16
+
 ⚠️ A require call resolved to an ESM JavaScript file, which is an error in Node and some bundlers. CommonJS consumers will need to use a dynamic import. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/CJSResolvesToESM.md
 
 💀 Import failed to resolve to type declarations or JavaScript files. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/NoResolution.md

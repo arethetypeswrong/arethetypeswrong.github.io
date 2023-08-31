@@ -39,16 +39,8 @@ describe("snapshots", async () => {
       const analysis = await checkPackage(
         typesTarball ? pkg.mergedWithTypes(createPackageFromTarballData(typesTarball)) : pkg
       );
-      const snapshotURL = new URL(`../snapshots/${fixture}.md`, import.meta.url);
-      const expectedSnapshot = [
-        `# ${fixture}`,
-        "",
-        "## Problems",
-        "",
-        "```json",
-        JSON.stringify(analysis.types ? analysis.problems : [], null, 2),
-        "```",
-      ].join("\n");
+      const snapshotURL = new URL(`../snapshots/${fixture}.json`, import.meta.url);
+      const expectedSnapshot = JSON.stringify(analysis, null, 2) + "\n";
 
       if (
         await access(snapshotURL)

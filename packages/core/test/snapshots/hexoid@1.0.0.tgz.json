@@ -1,0 +1,334 @@
+{
+  "packageName": "hexoid",
+  "packageVersion": "1.0.0",
+  "types": {
+    "kind": "included"
+  },
+  "buildTools": {},
+  "entrypoints": {
+    ".": {
+      "subpath": ".",
+      "resolutions": {
+        "node10": {
+          "name": ".",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/hexoid/hexoid.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'hexoid' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'hexoid' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/hexoid/package.json'.",
+              "File '/node_modules/hexoid.ts' does not exist.",
+              "File '/node_modules/hexoid.tsx' does not exist.",
+              "File '/node_modules/hexoid.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'hexoid.d.ts' that references '/node_modules/hexoid/hexoid.d.ts'.",
+              "File '/node_modules/hexoid/hexoid.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'hexoid' was successfully resolved to '/node_modules/hexoid/hexoid.d.ts' with Package ID 'hexoid/hexoid.d.ts@1.0.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/hexoid/dist/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'hexoid' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'hexoid' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/hexoid/package.json'.",
+              "File '/node_modules/hexoid.ts' does not exist.",
+              "File '/node_modules/hexoid.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/hexoid/dist/index.js'.",
+              "File '/node_modules/hexoid/dist/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/hexoid/dist/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/hexoid/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/hexoid/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/hexoid/dist/index.ts' does not exist.",
+              "File '/node_modules/hexoid/dist/index.tsx' does not exist.",
+              "File '/node_modules/hexoid/dist/index.js.ts' does not exist.",
+              "File '/node_modules/hexoid/dist/index.js.tsx' does not exist.",
+              "Directory '/node_modules/hexoid/dist/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/hexoid/index.ts' does not exist.",
+              "File '/node_modules/hexoid/index.tsx' does not exist.",
+              "Loading module 'hexoid' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/hexoid/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/hexoid.js' does not exist.",
+              "File '/node_modules/hexoid.jsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/hexoid/dist/index.js'.",
+              "File '/node_modules/hexoid/dist/index.js' exists - use it as a name resolution result.",
+              "======== Module name 'hexoid' was successfully resolved to '/node_modules/hexoid/dist/index.js' with Package ID 'hexoid/dist/index.js@1.0.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/hexoid/hexoid.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": ".",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/hexoid/hexoid.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/hexoid/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'hexoid' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'hexoid' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/hexoid/package.json'.",
+              "File '/node_modules/hexoid.ts' does not exist.",
+              "File '/node_modules/hexoid.tsx' does not exist.",
+              "File '/node_modules/hexoid.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'hexoid.d.ts' that references '/node_modules/hexoid/hexoid.d.ts'.",
+              "File '/node_modules/hexoid/hexoid.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'hexoid' was successfully resolved to '/node_modules/hexoid/hexoid.d.ts' with Package ID 'hexoid/hexoid.d.ts@1.0.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/hexoid/dist/index.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/hexoid/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'hexoid' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'hexoid' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/hexoid/package.json'.",
+              "File '/node_modules/hexoid.ts' does not exist.",
+              "File '/node_modules/hexoid.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/hexoid/dist/index.js'.",
+              "File '/node_modules/hexoid/dist/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/hexoid/dist/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/hexoid/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/hexoid/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/hexoid/dist/index.ts' does not exist.",
+              "File '/node_modules/hexoid/dist/index.tsx' does not exist.",
+              "File '/node_modules/hexoid/dist/index.js.ts' does not exist.",
+              "File '/node_modules/hexoid/dist/index.js.tsx' does not exist.",
+              "Directory '/node_modules/hexoid/dist/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/hexoid/index.ts' does not exist.",
+              "File '/node_modules/hexoid/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/hexoid/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/hexoid.js' does not exist.",
+              "File '/node_modules/hexoid.jsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/hexoid/dist/index.js'.",
+              "File '/node_modules/hexoid/dist/index.js' exists - use it as a name resolution result.",
+              "======== Module name 'hexoid' was successfully resolved to '/node_modules/hexoid/dist/index.js' with Package ID 'hexoid/dist/index.js@1.0.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/hexoid/hexoid.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": ".",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/hexoid/hexoid.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/hexoid/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'hexoid' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'hexoid' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/hexoid/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'hexoid.d.ts' that references '/node_modules/hexoid/hexoid.d.ts'.",
+              "File '/node_modules/hexoid/hexoid.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'hexoid' was successfully resolved to '/node_modules/hexoid/hexoid.d.ts' with Package ID 'hexoid/hexoid.d.ts@1.0.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/hexoid/dist/index.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/hexoid/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'hexoid' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'hexoid' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/hexoid/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/hexoid/dist/index.js'.",
+              "File '/node_modules/hexoid/dist/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/hexoid/dist/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/hexoid/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/hexoid/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/hexoid/dist/index.ts' does not exist.",
+              "File '/node_modules/hexoid/dist/index.tsx' does not exist.",
+              "File '/node_modules/hexoid/dist/index.js.ts' does not exist.",
+              "File '/node_modules/hexoid/dist/index.js.tsx' does not exist.",
+              "Directory '/node_modules/hexoid/dist/index.js' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/hexoid/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/hexoid/index.ts' does not exist.",
+              "File '/node_modules/hexoid/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/hexoid/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/hexoid/dist/index.js'.",
+              "File '/node_modules/hexoid/dist/index.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'hexoid' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/hexoid/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/hexoid/dist/index.js'.",
+              "File '/node_modules/hexoid/dist/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/hexoid/dist/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/hexoid/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/hexoid/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/hexoid/dist/index.ts' does not exist.",
+              "File '/node_modules/hexoid/dist/index.tsx' does not exist.",
+              "File '/node_modules/hexoid/dist/index.js.ts' does not exist.",
+              "File '/node_modules/hexoid/dist/index.js.tsx' does not exist.",
+              "Directory '/node_modules/hexoid/dist/index.js' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/hexoid/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/hexoid/index.ts' does not exist.",
+              "File '/node_modules/hexoid/index.tsx' does not exist.",
+              "======== Module name 'hexoid' was successfully resolved to '/node_modules/hexoid/dist/index.js' with Package ID 'hexoid/dist/index.js@1.0.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/hexoid/hexoid.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": ".",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/hexoid/hexoid.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'hexoid' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'hexoid' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/hexoid/package.json'.",
+              "File '/node_modules/hexoid.ts' does not exist.",
+              "File '/node_modules/hexoid.tsx' does not exist.",
+              "File '/node_modules/hexoid.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'hexoid.d.ts' that references '/node_modules/hexoid/hexoid.d.ts'.",
+              "File '/node_modules/hexoid/hexoid.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'hexoid' was successfully resolved to '/node_modules/hexoid/hexoid.d.ts' with Package ID 'hexoid/hexoid.d.ts@1.0.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/hexoid/dist/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'hexoid' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'hexoid' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/hexoid/package.json'.",
+              "File '/node_modules/hexoid.ts' does not exist.",
+              "File '/node_modules/hexoid.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/hexoid/dist/index.js'.",
+              "File '/node_modules/hexoid/dist/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/hexoid/dist/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/hexoid/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/hexoid/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/hexoid/dist/index.ts' does not exist.",
+              "File '/node_modules/hexoid/dist/index.tsx' does not exist.",
+              "File '/node_modules/hexoid/dist/index.js.ts' does not exist.",
+              "File '/node_modules/hexoid/dist/index.js.tsx' does not exist.",
+              "Directory '/node_modules/hexoid/dist/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/hexoid/index.ts' does not exist.",
+              "File '/node_modules/hexoid/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/hexoid/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/hexoid.js' does not exist.",
+              "File '/node_modules/hexoid.jsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/hexoid/dist/index.js'.",
+              "File '/node_modules/hexoid/dist/index.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'hexoid' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/hexoid/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/hexoid.ts' does not exist.",
+              "File '/node_modules/hexoid.tsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/hexoid/dist/index.js'.",
+              "File '/node_modules/hexoid/dist/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/hexoid/dist/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/hexoid/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/hexoid/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/hexoid/dist/index.ts' does not exist.",
+              "File '/node_modules/hexoid/dist/index.tsx' does not exist.",
+              "File '/node_modules/hexoid/dist/index.js.ts' does not exist.",
+              "File '/node_modules/hexoid/dist/index.js.tsx' does not exist.",
+              "Directory '/node_modules/hexoid/dist/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/hexoid/index.ts' does not exist.",
+              "File '/node_modules/hexoid/index.tsx' does not exist.",
+              "======== Module name 'hexoid' was successfully resolved to '/node_modules/hexoid/dist/index.js' with Package ID 'hexoid/dist/index.js@1.0.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/hexoid/hexoid.d.ts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    }
+  },
+  "problems": [
+    {
+      "kind": "FalseExportDefault",
+      "entrypoint": ".",
+      "resolutionKind": "node16-esm"
+    }
+  ]
+}

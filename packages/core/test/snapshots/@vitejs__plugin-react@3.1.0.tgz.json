@@ -1,0 +1,330 @@
+{
+  "packageName": "@vitejs/plugin-react",
+  "packageVersion": "3.1.0",
+  "types": {
+    "kind": "included"
+  },
+  "buildTools": {},
+  "entrypoints": {
+    ".": {
+      "subpath": ".",
+      "resolutions": {
+        "node10": {
+          "name": ".",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/@vitejs/plugin-react/dist/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@vitejs/plugin-react' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module '@vitejs/plugin-react' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/@vitejs/plugin-react/package.json'.",
+              "File '/node_modules/@vitejs/plugin-react.ts' does not exist.",
+              "File '/node_modules/@vitejs/plugin-react.tsx' does not exist.",
+              "File '/node_modules/@vitejs/plugin-react.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field './dist/index.d.ts' that references '/node_modules/@vitejs/plugin-react/dist/index.d.ts'.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name '@vitejs/plugin-react' was successfully resolved to '/node_modules/@vitejs/plugin-react/dist/index.d.ts' with Package ID '@vitejs/plugin-react/dist/index.d.ts@3.1.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@vitejs/plugin-react/dist/index.cjs",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@vitejs/plugin-react' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module '@vitejs/plugin-react' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/@vitejs/plugin-react/package.json'.",
+              "File '/node_modules/@vitejs/plugin-react.ts' does not exist.",
+              "File '/node_modules/@vitejs/plugin-react.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field './dist/index.cjs' that references '/node_modules/@vitejs/plugin-react/dist/index.cjs'.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.cjs' exists - use it as a name resolution result.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.cjs' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/@vitejs/plugin-react/dist/index.cjs', target file types: TypeScript.",
+              "File name '/node_modules/@vitejs/plugin-react/dist/index.cjs' has a '.cjs' extension - stripping it.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.cts' does not exist.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.cjs.ts' does not exist.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.cjs.tsx' does not exist.",
+              "Directory '/node_modules/@vitejs/plugin-react/dist/index.cjs' does not exist, skipping all lookups in it.",
+              "File '/node_modules/@vitejs/plugin-react/index.ts' does not exist.",
+              "File '/node_modules/@vitejs/plugin-react/index.tsx' does not exist.",
+              "Loading module '@vitejs/plugin-react' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@vitejs/plugin-react/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/@vitejs/plugin-react.js' does not exist.",
+              "File '/node_modules/@vitejs/plugin-react.jsx' does not exist.",
+              "'package.json' has 'main' field './dist/index.cjs' that references '/node_modules/@vitejs/plugin-react/dist/index.cjs'.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.cjs' exists - use it as a name resolution result.",
+              "======== Module name '@vitejs/plugin-react' was successfully resolved to '/node_modules/@vitejs/plugin-react/dist/index.cjs' with Package ID '@vitejs/plugin-react/dist/index.cjs@3.1.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@vitejs/plugin-react/dist/index.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": ".",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/@vitejs/plugin-react/dist/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/@vitejs/plugin-react/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@vitejs/plugin-react' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@vitejs/plugin-react' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/@vitejs/plugin-react/package.json'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath '.' with target './dist/index.d.ts'.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name '@vitejs/plugin-react' was successfully resolved to '/node_modules/@vitejs/plugin-react/dist/index.d.ts' with Package ID '@vitejs/plugin-react/dist/index.d.ts@3.1.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@vitejs/plugin-react/dist/index.cjs",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "extension",
+              "reasonFileName": "/node_modules/@vitejs/plugin-react/dist/index.cjs"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@vitejs/plugin-react' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@vitejs/plugin-react' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/@vitejs/plugin-react/package.json'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Using 'exports' subpath '.' with target './dist/index.cjs'.",
+              "File name '/node_modules/@vitejs/plugin-react/dist/index.cjs' has a '.cjs' extension - stripping it.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.cts' does not exist.",
+              "Failed to resolve under condition 'require'.",
+              "Exiting conditional exports.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@vitejs/plugin-react/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Using 'exports' subpath '.' with target './dist/index.cjs'.",
+              "File name '/node_modules/@vitejs/plugin-react/dist/index.cjs' has a '.cjs' extension - stripping it.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.cjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'require'.",
+              "Exiting conditional exports.",
+              "======== Module name '@vitejs/plugin-react' was successfully resolved to '/node_modules/@vitejs/plugin-react/dist/index.cjs' with Package ID '@vitejs/plugin-react/dist/index.cjs@3.1.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@vitejs/plugin-react/dist/index.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": ".",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/@vitejs/plugin-react/dist/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/@vitejs/plugin-react/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@vitejs/plugin-react' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@vitejs/plugin-react' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/@vitejs/plugin-react/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath '.' with target './dist/index.d.ts'.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name '@vitejs/plugin-react' was successfully resolved to '/node_modules/@vitejs/plugin-react/dist/index.d.ts' with Package ID '@vitejs/plugin-react/dist/index.d.ts@3.1.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@vitejs/plugin-react/dist/index.mjs",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "extension",
+              "reasonFileName": "/node_modules/@vitejs/plugin-react/dist/index.mjs"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@vitejs/plugin-react' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@vitejs/plugin-react' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@vitejs/plugin-react/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath '.' with target './dist/index.mjs'.",
+              "File name '/node_modules/@vitejs/plugin-react/dist/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.mts' does not exist.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Exiting conditional exports.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@vitejs/plugin-react/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath '.' with target './dist/index.mjs'.",
+              "File name '/node_modules/@vitejs/plugin-react/dist/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.mjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@vitejs/plugin-react' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@vitejs/plugin-react/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field './dist/index.cjs' that references '/node_modules/@vitejs/plugin-react/dist/index.cjs'.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.cjs' exists - use it as a name resolution result.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.cjs' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/@vitejs/plugin-react/dist/index.cjs', target file types: TypeScript.",
+              "File name '/node_modules/@vitejs/plugin-react/dist/index.cjs' has a '.cjs' extension - stripping it.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.cts' does not exist.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.cjs.ts' does not exist.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.cjs.tsx' does not exist.",
+              "Directory '/node_modules/@vitejs/plugin-react/dist/index.cjs' does not exist, skipping all lookups in it.",
+              "======== Module name '@vitejs/plugin-react' was successfully resolved to '/node_modules/@vitejs/plugin-react/dist/index.mjs' with Package ID '@vitejs/plugin-react/dist/index.mjs@3.1.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@vitejs/plugin-react/dist/index.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": ".",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/@vitejs/plugin-react/dist/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@vitejs/plugin-react' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@vitejs/plugin-react' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/@vitejs/plugin-react/package.json'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath '.' with target './dist/index.d.ts'.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name '@vitejs/plugin-react' was successfully resolved to '/node_modules/@vitejs/plugin-react/dist/index.d.ts' with Package ID '@vitejs/plugin-react/dist/index.d.ts@3.1.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@vitejs/plugin-react/dist/index.mjs",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@vitejs/plugin-react' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@vitejs/plugin-react' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/@vitejs/plugin-react/package.json'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath '.' with target './dist/index.mjs'.",
+              "File name '/node_modules/@vitejs/plugin-react/dist/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.mts' does not exist.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Exiting conditional exports.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@vitejs/plugin-react/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath '.' with target './dist/index.mjs'.",
+              "File name '/node_modules/@vitejs/plugin-react/dist/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.mjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@vitejs/plugin-react' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@vitejs/plugin-react/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/@vitejs/plugin-react.ts' does not exist.",
+              "File '/node_modules/@vitejs/plugin-react.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field './dist/index.cjs' that references '/node_modules/@vitejs/plugin-react/dist/index.cjs'.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.cjs' exists - use it as a name resolution result.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.cjs' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/@vitejs/plugin-react/dist/index.cjs', target file types: TypeScript.",
+              "File name '/node_modules/@vitejs/plugin-react/dist/index.cjs' has a '.cjs' extension - stripping it.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.cts' does not exist.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.cjs.ts' does not exist.",
+              "File '/node_modules/@vitejs/plugin-react/dist/index.cjs.tsx' does not exist.",
+              "Directory '/node_modules/@vitejs/plugin-react/dist/index.cjs' does not exist, skipping all lookups in it.",
+              "File '/node_modules/@vitejs/plugin-react/index.ts' does not exist.",
+              "File '/node_modules/@vitejs/plugin-react/index.tsx' does not exist.",
+              "======== Module name '@vitejs/plugin-react' was successfully resolved to '/node_modules/@vitejs/plugin-react/dist/index.mjs' with Package ID '@vitejs/plugin-react/dist/index.mjs@3.1.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@vitejs/plugin-react/dist/index.d.ts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    }
+  },
+  "problems": [
+    {
+      "kind": "FalseCJS",
+      "entrypoint": ".",
+      "resolutionKind": "node16-esm"
+    }
+  ]
+}

@@ -1,0 +1,2672 @@
+{
+  "packageName": "vue",
+  "packageVersion": "3.3.4",
+  "types": {
+    "kind": "included"
+  },
+  "buildTools": {},
+  "entrypoints": {
+    ".": {
+      "subpath": ".",
+      "resolutions": {
+        "node10": {
+          "name": ".",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/vue/dist/vue.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'vue' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/vue/package.json'.",
+              "File '/node_modules/vue.ts' does not exist.",
+              "File '/node_modules/vue.tsx' does not exist.",
+              "File '/node_modules/vue.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'dist/vue.d.ts' that references '/node_modules/vue/dist/vue.d.ts'.",
+              "File '/node_modules/vue/dist/vue.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue' was successfully resolved to '/node_modules/vue/dist/vue.d.ts' with Package ID 'vue/dist/vue.d.ts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'vue' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/vue/package.json'.",
+              "File '/node_modules/vue.ts' does not exist.",
+              "File '/node_modules/vue.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/index.js'.",
+              "File '/node_modules/vue/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/vue/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/vue/index.js', target file types: TypeScript.",
+              "File name '/node_modules/vue/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/index.ts' does not exist.",
+              "File '/node_modules/vue/index.tsx' does not exist.",
+              "File '/node_modules/vue/index.js.ts' does not exist.",
+              "File '/node_modules/vue/index.js.tsx' does not exist.",
+              "Directory '/node_modules/vue/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/vue/index.ts' does not exist.",
+              "File '/node_modules/vue/index.tsx' does not exist.",
+              "Loading module 'vue' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue.js' does not exist.",
+              "File '/node_modules/vue.jsx' does not exist.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/index.js'.",
+              "File '/node_modules/vue/index.js' exists - use it as a name resolution result.",
+              "======== Module name 'vue' was successfully resolved to '/node_modules/vue/index.js' with Package ID 'vue/index.js@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/jsx.d.ts",
+            "/node_modules/vue/dist/vue.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": ".",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/vue/dist/vue.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'vue' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/vue/package.json'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath '.' with target './dist/vue.d.ts'.",
+              "File '/node_modules/vue/dist/vue.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'require'.",
+              "Exiting conditional exports.",
+              "======== Module name 'vue' was successfully resolved to '/node_modules/vue/dist/vue.d.ts' with Package ID 'vue/dist/vue.d.ts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/index.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'vue' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/vue/package.json'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/vue/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/index.ts' does not exist.",
+              "File '/node_modules/vue/index.tsx' does not exist.",
+              "Failed to resolve under condition 'default'.",
+              "Exiting conditional exports.",
+              "Failed to resolve under condition 'require'.",
+              "Exiting conditional exports.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/vue/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/index.js' exists - use it as a name resolution result.",
+              "Resolved under condition 'default'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'require'.",
+              "Exiting conditional exports.",
+              "======== Module name 'vue' was successfully resolved to '/node_modules/vue/index.js' with Package ID 'vue/index.js@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/jsx.d.ts",
+            "/node_modules/vue/dist/vue.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": ".",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/vue/dist/vue.d.mts",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "extension",
+              "reasonFileName": "/node_modules/vue/dist/vue.d.mts"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath '.' with target './dist/vue.d.mts'.",
+              "File '/node_modules/vue/dist/vue.d.mts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "======== Module name 'vue' was successfully resolved to '/node_modules/vue/dist/vue.d.mts' with Package ID 'vue/dist/vue.d.mts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/index.mjs",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "extension",
+              "reasonFileName": "/node_modules/vue/index.mjs"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'node'.",
+              "Using 'exports' subpath '.' with target './index.mjs'.",
+              "File name '/node_modules/vue/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/vue/index.mts' does not exist.",
+              "Failed to resolve under condition 'node'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath '.' with target './dist/vue.runtime.esm-bundler.js'.",
+              "File name '/node_modules/vue/dist/vue.runtime.esm-bundler.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/dist/vue.runtime.esm-bundler.ts' does not exist.",
+              "File '/node_modules/vue/dist/vue.runtime.esm-bundler.tsx' does not exist.",
+              "Failed to resolve under condition 'default'.",
+              "Exiting conditional exports.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Exiting conditional exports.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'node'.",
+              "Using 'exports' subpath '.' with target './index.mjs'.",
+              "File name '/node_modules/vue/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/vue/index.mjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'node'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/index.js'.",
+              "File '/node_modules/vue/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/vue/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/vue/index.js', target file types: TypeScript.",
+              "File name '/node_modules/vue/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/index.ts' does not exist.",
+              "File '/node_modules/vue/index.tsx' does not exist.",
+              "File '/node_modules/vue/index.js.ts' does not exist.",
+              "File '/node_modules/vue/index.js.tsx' does not exist.",
+              "Directory '/node_modules/vue/index.js' does not exist, skipping all lookups in it.",
+              "======== Module name 'vue' was successfully resolved to '/node_modules/vue/index.mjs' with Package ID 'vue/index.mjs@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/dist/vue.d.mts"
+          ]
+        },
+        "bundler": {
+          "name": ".",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/vue/dist/vue.d.mts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'vue' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/vue/package.json'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath '.' with target './dist/vue.d.mts'.",
+              "File '/node_modules/vue/dist/vue.d.mts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "======== Module name 'vue' was successfully resolved to '/node_modules/vue/dist/vue.d.mts' with Package ID 'vue/dist/vue.d.mts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'vue' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/vue/package.json'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'node'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath '.' with target './dist/vue.runtime.esm-bundler.js'.",
+              "File name '/node_modules/vue/dist/vue.runtime.esm-bundler.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/dist/vue.runtime.esm-bundler.ts' does not exist.",
+              "File '/node_modules/vue/dist/vue.runtime.esm-bundler.tsx' does not exist.",
+              "Failed to resolve under condition 'default'.",
+              "Exiting conditional exports.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Exiting conditional exports.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'node'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath '.' with target './dist/vue.runtime.esm-bundler.js'.",
+              "File name '/node_modules/vue/dist/vue.runtime.esm-bundler.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/dist/vue.runtime.esm-bundler.js' exists - use it as a name resolution result.",
+              "Resolved under condition 'default'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue.ts' does not exist.",
+              "File '/node_modules/vue.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/index.js'.",
+              "File '/node_modules/vue/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/vue/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/vue/index.js', target file types: TypeScript.",
+              "File name '/node_modules/vue/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/index.ts' does not exist.",
+              "File '/node_modules/vue/index.tsx' does not exist.",
+              "File '/node_modules/vue/index.js.ts' does not exist.",
+              "File '/node_modules/vue/index.js.tsx' does not exist.",
+              "Directory '/node_modules/vue/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/vue/index.ts' does not exist.",
+              "File '/node_modules/vue/index.tsx' does not exist.",
+              "======== Module name 'vue' was successfully resolved to '/node_modules/vue/dist/vue.runtime.esm-bundler.js' with Package ID 'vue/dist/vue.runtime.esm-bundler.js@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/jsx.d.ts",
+            "/node_modules/vue/dist/vue.d.mts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    },
+    "./server-renderer": {
+      "subpath": "./server-renderer",
+      "resolutions": {
+        "node10": {
+          "name": "./server-renderer",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/vue/server-renderer/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/server-renderer' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'vue/server-renderer' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/vue/server-renderer/package.json'.",
+              "File '/node_modules/vue/server-renderer.ts' does not exist.",
+              "File '/node_modules/vue/server-renderer.tsx' does not exist.",
+              "File '/node_modules/vue/server-renderer.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' does not have a 'types' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/server-renderer/index.js'.",
+              "File '/node_modules/vue/server-renderer/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/vue/server-renderer/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/vue/server-renderer/index.js', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/vue/server-renderer/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/server-renderer/index.ts' does not exist.",
+              "File '/node_modules/vue/server-renderer/index.tsx' does not exist.",
+              "File '/node_modules/vue/server-renderer/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/server-renderer' was successfully resolved to '/node_modules/vue/server-renderer/index.d.ts'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/server-renderer/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/server-renderer' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'vue/server-renderer' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/vue/server-renderer/package.json'.",
+              "File '/node_modules/vue/server-renderer.ts' does not exist.",
+              "File '/node_modules/vue/server-renderer.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/server-renderer/index.js'.",
+              "File '/node_modules/vue/server-renderer/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/vue/server-renderer/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/vue/server-renderer/index.js', target file types: TypeScript.",
+              "File name '/node_modules/vue/server-renderer/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/server-renderer/index.ts' does not exist.",
+              "File '/node_modules/vue/server-renderer/index.tsx' does not exist.",
+              "File '/node_modules/vue/server-renderer/index.js.ts' does not exist.",
+              "File '/node_modules/vue/server-renderer/index.js.tsx' does not exist.",
+              "Directory '/node_modules/vue/server-renderer/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/vue/server-renderer/index.ts' does not exist.",
+              "File '/node_modules/vue/server-renderer/index.tsx' does not exist.",
+              "Loading module 'vue/server-renderer' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/server-renderer/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/server-renderer.js' does not exist.",
+              "File '/node_modules/vue/server-renderer.jsx' does not exist.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/server-renderer/index.js'.",
+              "File '/node_modules/vue/server-renderer/index.js' exists - use it as a name resolution result.",
+              "======== Module name 'vue/server-renderer' was successfully resolved to '/node_modules/vue/server-renderer/index.js'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/server-renderer/index.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": "./server-renderer",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/vue/server-renderer/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/server-renderer/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/server-renderer' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/server-renderer' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/vue/server-renderer/package.json'.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath './server-renderer' with target './server-renderer/index.d.ts'.",
+              "File '/node_modules/vue/server-renderer/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'require'.",
+              "Exiting conditional exports.",
+              "======== Module name 'vue/server-renderer' was successfully resolved to '/node_modules/vue/server-renderer/index.d.ts' with Package ID 'vue/server-renderer/index.d.ts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/server-renderer/index.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/server-renderer/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/server-renderer' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/server-renderer' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/vue/server-renderer/package.json'.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath './server-renderer' with target './server-renderer/index.js'.",
+              "File name '/node_modules/vue/server-renderer/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/server-renderer/index.ts' does not exist.",
+              "File '/node_modules/vue/server-renderer/index.tsx' does not exist.",
+              "Failed to resolve under condition 'default'.",
+              "Exiting conditional exports.",
+              "Failed to resolve under condition 'require'.",
+              "Exiting conditional exports.",
+              "Export specifier './server-renderer' does not exist in package.json scope at path '/node_modules/vue'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/server-renderer/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath './server-renderer' with target './server-renderer/index.js'.",
+              "File name '/node_modules/vue/server-renderer/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/server-renderer/index.js' exists - use it as a name resolution result.",
+              "Resolved under condition 'default'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'require'.",
+              "Exiting conditional exports.",
+              "======== Module name 'vue/server-renderer' was successfully resolved to '/node_modules/vue/server-renderer/index.js' with Package ID 'vue/server-renderer/index.js@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/server-renderer/index.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": "./server-renderer",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/vue/server-renderer/index.d.mts",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "extension",
+              "reasonFileName": "/node_modules/vue/server-renderer/index.d.mts"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/server-renderer' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/server-renderer' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/server-renderer/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath './server-renderer' with target './server-renderer/index.d.mts'.",
+              "File '/node_modules/vue/server-renderer/index.d.mts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "======== Module name 'vue/server-renderer' was successfully resolved to '/node_modules/vue/server-renderer/index.d.mts' with Package ID 'vue/server-renderer/index.d.mts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/server-renderer/index.mjs",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "extension",
+              "reasonFileName": "/node_modules/vue/server-renderer/index.mjs"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/server-renderer' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/server-renderer' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/server-renderer/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath './server-renderer' with target './server-renderer/index.mjs'.",
+              "File name '/node_modules/vue/server-renderer/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/vue/server-renderer/index.mts' does not exist.",
+              "Failed to resolve under condition 'default'.",
+              "Exiting conditional exports.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Exiting conditional exports.",
+              "Export specifier './server-renderer' does not exist in package.json scope at path '/node_modules/vue'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/server-renderer/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath './server-renderer' with target './server-renderer/index.mjs'.",
+              "File name '/node_modules/vue/server-renderer/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/vue/server-renderer/index.mjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'default'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/server-renderer' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/server-renderer/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/server-renderer/index.js'.",
+              "File '/node_modules/vue/server-renderer/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/vue/server-renderer/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/vue/server-renderer/index.js', target file types: TypeScript.",
+              "File name '/node_modules/vue/server-renderer/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/server-renderer/index.ts' does not exist.",
+              "File '/node_modules/vue/server-renderer/index.tsx' does not exist.",
+              "File '/node_modules/vue/server-renderer/index.js.ts' does not exist.",
+              "File '/node_modules/vue/server-renderer/index.js.tsx' does not exist.",
+              "Directory '/node_modules/vue/server-renderer/index.js' does not exist, skipping all lookups in it.",
+              "======== Module name 'vue/server-renderer' was successfully resolved to '/node_modules/vue/server-renderer/index.mjs' with Package ID 'vue/server-renderer/index.mjs@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/server-renderer/index.d.mts"
+          ]
+        },
+        "bundler": {
+          "name": "./server-renderer",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/vue/server-renderer/index.d.mts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/server-renderer' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/server-renderer' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/vue/server-renderer/package.json'.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath './server-renderer' with target './server-renderer/index.d.mts'.",
+              "File '/node_modules/vue/server-renderer/index.d.mts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "======== Module name 'vue/server-renderer' was successfully resolved to '/node_modules/vue/server-renderer/index.d.mts' with Package ID 'vue/server-renderer/index.d.mts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/server-renderer/index.mjs",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/server-renderer' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/server-renderer' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/vue/server-renderer/package.json'.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath './server-renderer' with target './server-renderer/index.mjs'.",
+              "File name '/node_modules/vue/server-renderer/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/vue/server-renderer/index.mts' does not exist.",
+              "Failed to resolve under condition 'default'.",
+              "Exiting conditional exports.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Exiting conditional exports.",
+              "Export specifier './server-renderer' does not exist in package.json scope at path '/node_modules/vue'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/server-renderer/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath './server-renderer' with target './server-renderer/index.mjs'.",
+              "File name '/node_modules/vue/server-renderer/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/vue/server-renderer/index.mjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'default'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/server-renderer' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/server-renderer/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/server-renderer.ts' does not exist.",
+              "File '/node_modules/vue/server-renderer.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/server-renderer/index.js'.",
+              "File '/node_modules/vue/server-renderer/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/vue/server-renderer/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/vue/server-renderer/index.js', target file types: TypeScript.",
+              "File name '/node_modules/vue/server-renderer/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/server-renderer/index.ts' does not exist.",
+              "File '/node_modules/vue/server-renderer/index.tsx' does not exist.",
+              "File '/node_modules/vue/server-renderer/index.js.ts' does not exist.",
+              "File '/node_modules/vue/server-renderer/index.js.tsx' does not exist.",
+              "Directory '/node_modules/vue/server-renderer/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/vue/server-renderer/index.ts' does not exist.",
+              "File '/node_modules/vue/server-renderer/index.tsx' does not exist.",
+              "======== Module name 'vue/server-renderer' was successfully resolved to '/node_modules/vue/server-renderer/index.mjs' with Package ID 'vue/server-renderer/index.mjs@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/server-renderer/index.d.mts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    },
+    "./compiler-sfc": {
+      "subpath": "./compiler-sfc",
+      "resolutions": {
+        "node10": {
+          "name": "./compiler-sfc",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/vue/compiler-sfc/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/compiler-sfc' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'vue/compiler-sfc' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/vue/compiler-sfc/package.json'.",
+              "File '/node_modules/vue/compiler-sfc.ts' does not exist.",
+              "File '/node_modules/vue/compiler-sfc.tsx' does not exist.",
+              "File '/node_modules/vue/compiler-sfc.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' does not have a 'types' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/compiler-sfc/index.js'.",
+              "File '/node_modules/vue/compiler-sfc/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/vue/compiler-sfc/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/vue/compiler-sfc/index.js', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/vue/compiler-sfc/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/compiler-sfc/index.ts' does not exist.",
+              "File '/node_modules/vue/compiler-sfc/index.tsx' does not exist.",
+              "File '/node_modules/vue/compiler-sfc/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/compiler-sfc' was successfully resolved to '/node_modules/vue/compiler-sfc/index.d.ts'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/compiler-sfc/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/compiler-sfc' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'vue/compiler-sfc' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/vue/compiler-sfc/package.json'.",
+              "File '/node_modules/vue/compiler-sfc.ts' does not exist.",
+              "File '/node_modules/vue/compiler-sfc.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/compiler-sfc/index.js'.",
+              "File '/node_modules/vue/compiler-sfc/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/vue/compiler-sfc/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/vue/compiler-sfc/index.js', target file types: TypeScript.",
+              "File name '/node_modules/vue/compiler-sfc/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/compiler-sfc/index.ts' does not exist.",
+              "File '/node_modules/vue/compiler-sfc/index.tsx' does not exist.",
+              "File '/node_modules/vue/compiler-sfc/index.js.ts' does not exist.",
+              "File '/node_modules/vue/compiler-sfc/index.js.tsx' does not exist.",
+              "Directory '/node_modules/vue/compiler-sfc/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/vue/compiler-sfc/index.ts' does not exist.",
+              "File '/node_modules/vue/compiler-sfc/index.tsx' does not exist.",
+              "Loading module 'vue/compiler-sfc' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/compiler-sfc/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/compiler-sfc.js' does not exist.",
+              "File '/node_modules/vue/compiler-sfc.jsx' does not exist.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/compiler-sfc/index.js'.",
+              "File '/node_modules/vue/compiler-sfc/index.js' exists - use it as a name resolution result.",
+              "======== Module name 'vue/compiler-sfc' was successfully resolved to '/node_modules/vue/compiler-sfc/index.js'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/compiler-sfc/index.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": "./compiler-sfc",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/vue/compiler-sfc/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/compiler-sfc/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/compiler-sfc' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/compiler-sfc' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/vue/compiler-sfc/package.json'.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath './compiler-sfc' with target './compiler-sfc/index.d.ts'.",
+              "File '/node_modules/vue/compiler-sfc/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'require'.",
+              "Exiting conditional exports.",
+              "======== Module name 'vue/compiler-sfc' was successfully resolved to '/node_modules/vue/compiler-sfc/index.d.ts' with Package ID 'vue/compiler-sfc/index.d.ts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/compiler-sfc/index.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/compiler-sfc/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/compiler-sfc' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/compiler-sfc' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/vue/compiler-sfc/package.json'.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath './compiler-sfc' with target './compiler-sfc/index.js'.",
+              "File name '/node_modules/vue/compiler-sfc/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/compiler-sfc/index.ts' does not exist.",
+              "File '/node_modules/vue/compiler-sfc/index.tsx' does not exist.",
+              "Failed to resolve under condition 'default'.",
+              "Exiting conditional exports.",
+              "Failed to resolve under condition 'require'.",
+              "Exiting conditional exports.",
+              "Export specifier './compiler-sfc' does not exist in package.json scope at path '/node_modules/vue'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/compiler-sfc/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath './compiler-sfc' with target './compiler-sfc/index.js'.",
+              "File name '/node_modules/vue/compiler-sfc/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/compiler-sfc/index.js' exists - use it as a name resolution result.",
+              "Resolved under condition 'default'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'require'.",
+              "Exiting conditional exports.",
+              "======== Module name 'vue/compiler-sfc' was successfully resolved to '/node_modules/vue/compiler-sfc/index.js' with Package ID 'vue/compiler-sfc/index.js@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/compiler-sfc/index.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": "./compiler-sfc",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/vue/compiler-sfc/index.d.mts",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "extension",
+              "reasonFileName": "/node_modules/vue/compiler-sfc/index.d.mts"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/compiler-sfc' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/compiler-sfc' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/compiler-sfc/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath './compiler-sfc' with target './compiler-sfc/index.d.mts'.",
+              "File '/node_modules/vue/compiler-sfc/index.d.mts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "======== Module name 'vue/compiler-sfc' was successfully resolved to '/node_modules/vue/compiler-sfc/index.d.mts' with Package ID 'vue/compiler-sfc/index.d.mts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/compiler-sfc/index.mjs",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "extension",
+              "reasonFileName": "/node_modules/vue/compiler-sfc/index.mjs"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/compiler-sfc' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/compiler-sfc' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/compiler-sfc/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath './compiler-sfc' with target './compiler-sfc/index.mjs'.",
+              "File name '/node_modules/vue/compiler-sfc/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/vue/compiler-sfc/index.mts' does not exist.",
+              "Failed to resolve under condition 'default'.",
+              "Exiting conditional exports.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Exiting conditional exports.",
+              "Export specifier './compiler-sfc' does not exist in package.json scope at path '/node_modules/vue'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/compiler-sfc/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath './compiler-sfc' with target './compiler-sfc/index.mjs'.",
+              "File name '/node_modules/vue/compiler-sfc/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/vue/compiler-sfc/index.mjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'default'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/compiler-sfc' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/compiler-sfc/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/compiler-sfc/index.js'.",
+              "File '/node_modules/vue/compiler-sfc/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/vue/compiler-sfc/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/vue/compiler-sfc/index.js', target file types: TypeScript.",
+              "File name '/node_modules/vue/compiler-sfc/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/compiler-sfc/index.ts' does not exist.",
+              "File '/node_modules/vue/compiler-sfc/index.tsx' does not exist.",
+              "File '/node_modules/vue/compiler-sfc/index.js.ts' does not exist.",
+              "File '/node_modules/vue/compiler-sfc/index.js.tsx' does not exist.",
+              "Directory '/node_modules/vue/compiler-sfc/index.js' does not exist, skipping all lookups in it.",
+              "======== Module name 'vue/compiler-sfc' was successfully resolved to '/node_modules/vue/compiler-sfc/index.mjs' with Package ID 'vue/compiler-sfc/index.mjs@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/compiler-sfc/index.d.mts"
+          ]
+        },
+        "bundler": {
+          "name": "./compiler-sfc",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/vue/compiler-sfc/index.d.mts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/compiler-sfc' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/compiler-sfc' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/vue/compiler-sfc/package.json'.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath './compiler-sfc' with target './compiler-sfc/index.d.mts'.",
+              "File '/node_modules/vue/compiler-sfc/index.d.mts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "======== Module name 'vue/compiler-sfc' was successfully resolved to '/node_modules/vue/compiler-sfc/index.d.mts' with Package ID 'vue/compiler-sfc/index.d.mts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/compiler-sfc/index.mjs",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/compiler-sfc' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/compiler-sfc' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/vue/compiler-sfc/package.json'.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath './compiler-sfc' with target './compiler-sfc/index.mjs'.",
+              "File name '/node_modules/vue/compiler-sfc/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/vue/compiler-sfc/index.mts' does not exist.",
+              "Failed to resolve under condition 'default'.",
+              "Exiting conditional exports.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Exiting conditional exports.",
+              "Export specifier './compiler-sfc' does not exist in package.json scope at path '/node_modules/vue'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/compiler-sfc/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath './compiler-sfc' with target './compiler-sfc/index.mjs'.",
+              "File name '/node_modules/vue/compiler-sfc/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/vue/compiler-sfc/index.mjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'default'.",
+              "Exiting conditional exports.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/compiler-sfc' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/compiler-sfc/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/compiler-sfc.ts' does not exist.",
+              "File '/node_modules/vue/compiler-sfc.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/compiler-sfc/index.js'.",
+              "File '/node_modules/vue/compiler-sfc/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/vue/compiler-sfc/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/vue/compiler-sfc/index.js', target file types: TypeScript.",
+              "File name '/node_modules/vue/compiler-sfc/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/compiler-sfc/index.ts' does not exist.",
+              "File '/node_modules/vue/compiler-sfc/index.tsx' does not exist.",
+              "File '/node_modules/vue/compiler-sfc/index.js.ts' does not exist.",
+              "File '/node_modules/vue/compiler-sfc/index.js.tsx' does not exist.",
+              "Directory '/node_modules/vue/compiler-sfc/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/vue/compiler-sfc/index.ts' does not exist.",
+              "File '/node_modules/vue/compiler-sfc/index.tsx' does not exist.",
+              "======== Module name 'vue/compiler-sfc' was successfully resolved to '/node_modules/vue/compiler-sfc/index.mjs' with Package ID 'vue/compiler-sfc/index.mjs@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/compiler-sfc/index.d.mts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    },
+    "./jsx-runtime": {
+      "subpath": "./jsx-runtime",
+      "resolutions": {
+        "node10": {
+          "name": "./jsx-runtime",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/vue/jsx-runtime/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/jsx-runtime' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'vue/jsx-runtime' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/vue/jsx-runtime/package.json'.",
+              "File '/node_modules/vue/jsx-runtime.ts' does not exist.",
+              "File '/node_modules/vue/jsx-runtime.tsx' does not exist.",
+              "File '/node_modules/vue/jsx-runtime.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'index.d.ts' that references '/node_modules/vue/jsx-runtime/index.d.ts'.",
+              "File '/node_modules/vue/jsx-runtime/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/jsx-runtime' was successfully resolved to '/node_modules/vue/jsx-runtime/index.d.ts'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/jsx-runtime/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/jsx-runtime' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'vue/jsx-runtime' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/vue/jsx-runtime/package.json'.",
+              "File '/node_modules/vue/jsx-runtime.ts' does not exist.",
+              "File '/node_modules/vue/jsx-runtime.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/jsx-runtime/index.js'.",
+              "File '/node_modules/vue/jsx-runtime/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/vue/jsx-runtime/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/vue/jsx-runtime/index.js', target file types: TypeScript.",
+              "File name '/node_modules/vue/jsx-runtime/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/jsx-runtime/index.ts' does not exist.",
+              "File '/node_modules/vue/jsx-runtime/index.tsx' does not exist.",
+              "File '/node_modules/vue/jsx-runtime/index.js.ts' does not exist.",
+              "File '/node_modules/vue/jsx-runtime/index.js.tsx' does not exist.",
+              "Directory '/node_modules/vue/jsx-runtime/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/vue/jsx-runtime/index.ts' does not exist.",
+              "File '/node_modules/vue/jsx-runtime/index.tsx' does not exist.",
+              "Loading module 'vue/jsx-runtime' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/jsx-runtime/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/jsx-runtime.js' does not exist.",
+              "File '/node_modules/vue/jsx-runtime.jsx' does not exist.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/jsx-runtime/index.js'.",
+              "File '/node_modules/vue/jsx-runtime/index.js' exists - use it as a name resolution result.",
+              "======== Module name 'vue/jsx-runtime' was successfully resolved to '/node_modules/vue/jsx-runtime/index.js'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/jsx-runtime/index.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": "./jsx-runtime",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/vue/jsx-runtime/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/jsx-runtime/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/jsx-runtime' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/jsx-runtime' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/vue/jsx-runtime/package.json'.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath './jsx-runtime' with target './jsx-runtime/index.d.ts'.",
+              "File '/node_modules/vue/jsx-runtime/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'vue/jsx-runtime' was successfully resolved to '/node_modules/vue/jsx-runtime/index.d.ts' with Package ID 'vue/jsx-runtime/index.d.ts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/jsx-runtime/index.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/jsx-runtime/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/jsx-runtime' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/jsx-runtime' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/vue/jsx-runtime/package.json'.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Using 'exports' subpath './jsx-runtime' with target './jsx-runtime/index.js'.",
+              "File name '/node_modules/vue/jsx-runtime/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/jsx-runtime/index.ts' does not exist.",
+              "File '/node_modules/vue/jsx-runtime/index.tsx' does not exist.",
+              "Failed to resolve under condition 'require'.",
+              "Exiting conditional exports.",
+              "Export specifier './jsx-runtime' does not exist in package.json scope at path '/node_modules/vue'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/jsx-runtime/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Using 'exports' subpath './jsx-runtime' with target './jsx-runtime/index.js'.",
+              "File name '/node_modules/vue/jsx-runtime/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/jsx-runtime/index.js' exists - use it as a name resolution result.",
+              "Resolved under condition 'require'.",
+              "Exiting conditional exports.",
+              "======== Module name 'vue/jsx-runtime' was successfully resolved to '/node_modules/vue/jsx-runtime/index.js' with Package ID 'vue/jsx-runtime/index.js@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/jsx-runtime/index.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": "./jsx-runtime",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/vue/jsx-runtime/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/jsx-runtime/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/jsx-runtime' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/jsx-runtime' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/jsx-runtime/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath './jsx-runtime' with target './jsx-runtime/index.d.ts'.",
+              "File '/node_modules/vue/jsx-runtime/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'vue/jsx-runtime' was successfully resolved to '/node_modules/vue/jsx-runtime/index.d.ts' with Package ID 'vue/jsx-runtime/index.d.ts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/jsx-runtime/index.mjs",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "extension",
+              "reasonFileName": "/node_modules/vue/jsx-runtime/index.mjs"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/jsx-runtime' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/jsx-runtime' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/jsx-runtime/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath './jsx-runtime' with target './jsx-runtime/index.mjs'.",
+              "File name '/node_modules/vue/jsx-runtime/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/vue/jsx-runtime/index.mts' does not exist.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Exiting conditional exports.",
+              "Export specifier './jsx-runtime' does not exist in package.json scope at path '/node_modules/vue'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/jsx-runtime/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath './jsx-runtime' with target './jsx-runtime/index.mjs'.",
+              "File name '/node_modules/vue/jsx-runtime/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/vue/jsx-runtime/index.mjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/jsx-runtime' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/jsx-runtime/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/jsx-runtime/index.js'.",
+              "File '/node_modules/vue/jsx-runtime/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/vue/jsx-runtime/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/vue/jsx-runtime/index.js', target file types: TypeScript.",
+              "File name '/node_modules/vue/jsx-runtime/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/jsx-runtime/index.ts' does not exist.",
+              "File '/node_modules/vue/jsx-runtime/index.tsx' does not exist.",
+              "File '/node_modules/vue/jsx-runtime/index.js.ts' does not exist.",
+              "File '/node_modules/vue/jsx-runtime/index.js.tsx' does not exist.",
+              "Directory '/node_modules/vue/jsx-runtime/index.js' does not exist, skipping all lookups in it.",
+              "======== Module name 'vue/jsx-runtime' was successfully resolved to '/node_modules/vue/jsx-runtime/index.mjs' with Package ID 'vue/jsx-runtime/index.mjs@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/jsx-runtime/index.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": "./jsx-runtime",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/vue/jsx-runtime/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/jsx-runtime' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/jsx-runtime' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/vue/jsx-runtime/package.json'.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath './jsx-runtime' with target './jsx-runtime/index.d.ts'.",
+              "File '/node_modules/vue/jsx-runtime/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'vue/jsx-runtime' was successfully resolved to '/node_modules/vue/jsx-runtime/index.d.ts' with Package ID 'vue/jsx-runtime/index.d.ts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/jsx-runtime/index.mjs",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/jsx-runtime' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/jsx-runtime' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/vue/jsx-runtime/package.json'.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath './jsx-runtime' with target './jsx-runtime/index.mjs'.",
+              "File name '/node_modules/vue/jsx-runtime/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/vue/jsx-runtime/index.mts' does not exist.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Exiting conditional exports.",
+              "Export specifier './jsx-runtime' does not exist in package.json scope at path '/node_modules/vue'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/jsx-runtime/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath './jsx-runtime' with target './jsx-runtime/index.mjs'.",
+              "File name '/node_modules/vue/jsx-runtime/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/vue/jsx-runtime/index.mjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/jsx-runtime' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/jsx-runtime/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/jsx-runtime.ts' does not exist.",
+              "File '/node_modules/vue/jsx-runtime.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/jsx-runtime/index.js'.",
+              "File '/node_modules/vue/jsx-runtime/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/vue/jsx-runtime/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/vue/jsx-runtime/index.js', target file types: TypeScript.",
+              "File name '/node_modules/vue/jsx-runtime/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/jsx-runtime/index.ts' does not exist.",
+              "File '/node_modules/vue/jsx-runtime/index.tsx' does not exist.",
+              "File '/node_modules/vue/jsx-runtime/index.js.ts' does not exist.",
+              "File '/node_modules/vue/jsx-runtime/index.js.tsx' does not exist.",
+              "Directory '/node_modules/vue/jsx-runtime/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/vue/jsx-runtime/index.ts' does not exist.",
+              "File '/node_modules/vue/jsx-runtime/index.tsx' does not exist.",
+              "======== Module name 'vue/jsx-runtime' was successfully resolved to '/node_modules/vue/jsx-runtime/index.mjs' with Package ID 'vue/jsx-runtime/index.mjs@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/jsx-runtime/index.d.ts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    },
+    "./jsx-dev-runtime": {
+      "subpath": "./jsx-dev-runtime",
+      "resolutions": {
+        "node10": {
+          "name": "./jsx-dev-runtime",
+          "resolutionKind": "node10"
+        },
+        "node16-cjs": {
+          "name": "./jsx-dev-runtime",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/vue/jsx-runtime/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/jsx-runtime/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/jsx-dev-runtime' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/jsx-dev-runtime' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath './jsx-dev-runtime' with target './jsx-runtime/index.d.ts'.",
+              "File '/node_modules/vue/jsx-runtime/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'vue/jsx-dev-runtime' was successfully resolved to '/node_modules/vue/jsx-runtime/index.d.ts' with Package ID 'vue/jsx-runtime/index.d.ts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/jsx-runtime/index.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/jsx-runtime/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/jsx-dev-runtime' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/jsx-dev-runtime' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Using 'exports' subpath './jsx-dev-runtime' with target './jsx-runtime/index.js'.",
+              "File name '/node_modules/vue/jsx-runtime/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/jsx-runtime/index.ts' does not exist.",
+              "File '/node_modules/vue/jsx-runtime/index.tsx' does not exist.",
+              "Failed to resolve under condition 'require'.",
+              "Exiting conditional exports.",
+              "Export specifier './jsx-dev-runtime' does not exist in package.json scope at path '/node_modules/vue'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Using 'exports' subpath './jsx-dev-runtime' with target './jsx-runtime/index.js'.",
+              "File name '/node_modules/vue/jsx-runtime/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/vue/jsx-runtime/index.js' exists - use it as a name resolution result.",
+              "Resolved under condition 'require'.",
+              "Exiting conditional exports.",
+              "======== Module name 'vue/jsx-dev-runtime' was successfully resolved to '/node_modules/vue/jsx-runtime/index.js' with Package ID 'vue/jsx-runtime/index.js@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/jsx-runtime/index.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": "./jsx-dev-runtime",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/vue/jsx-runtime/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/jsx-runtime/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/jsx-dev-runtime' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/jsx-dev-runtime' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath './jsx-dev-runtime' with target './jsx-runtime/index.d.ts'.",
+              "File '/node_modules/vue/jsx-runtime/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'vue/jsx-dev-runtime' was successfully resolved to '/node_modules/vue/jsx-runtime/index.d.ts' with Package ID 'vue/jsx-runtime/index.d.ts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/jsx-runtime/index.mjs",
+            "moduleKind": {
+              "detectedKind": 99,
+              "detectedReason": "extension",
+              "reasonFileName": "/node_modules/vue/jsx-runtime/index.mjs"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/jsx-dev-runtime' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/jsx-dev-runtime' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath './jsx-dev-runtime' with target './jsx-runtime/index.mjs'.",
+              "File name '/node_modules/vue/jsx-runtime/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/vue/jsx-runtime/index.mts' does not exist.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Exiting conditional exports.",
+              "Export specifier './jsx-dev-runtime' does not exist in package.json scope at path '/node_modules/vue'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath './jsx-dev-runtime' with target './jsx-runtime/index.mjs'.",
+              "File name '/node_modules/vue/jsx-runtime/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/vue/jsx-runtime/index.mjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/jsx-dev-runtime' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/jsx-dev-runtime/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/vue/jsx-dev-runtime/index.js', target file types: TypeScript.",
+              "File name '/node_modules/vue/jsx-dev-runtime/index.js' has a '.js' extension - stripping it.",
+              "======== Module name 'vue/jsx-dev-runtime' was successfully resolved to '/node_modules/vue/jsx-runtime/index.mjs' with Package ID 'vue/jsx-runtime/index.mjs@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/jsx-runtime/index.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": "./jsx-dev-runtime",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/vue/jsx-runtime/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/jsx-dev-runtime' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/jsx-dev-runtime' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath './jsx-dev-runtime' with target './jsx-runtime/index.d.ts'.",
+              "File '/node_modules/vue/jsx-runtime/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name 'vue/jsx-dev-runtime' was successfully resolved to '/node_modules/vue/jsx-runtime/index.d.ts' with Package ID 'vue/jsx-runtime/index.d.ts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/jsx-runtime/index.mjs",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/jsx-dev-runtime' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/jsx-dev-runtime' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath './jsx-dev-runtime' with target './jsx-runtime/index.mjs'.",
+              "File name '/node_modules/vue/jsx-runtime/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/vue/jsx-runtime/index.mts' does not exist.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Exiting conditional exports.",
+              "Export specifier './jsx-dev-runtime' does not exist in package.json scope at path '/node_modules/vue'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath './jsx-dev-runtime' with target './jsx-runtime/index.mjs'.",
+              "File name '/node_modules/vue/jsx-runtime/index.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/vue/jsx-runtime/index.mjs' exists - use it as a name resolution result.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/jsx-dev-runtime' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/jsx-dev-runtime.ts' does not exist.",
+              "File '/node_modules/vue/jsx-dev-runtime.tsx' does not exist.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/jsx-dev-runtime/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/vue/jsx-dev-runtime/index.js', target file types: TypeScript.",
+              "File name '/node_modules/vue/jsx-dev-runtime/index.js' has a '.js' extension - stripping it.",
+              "======== Module name 'vue/jsx-dev-runtime' was successfully resolved to '/node_modules/vue/jsx-runtime/index.mjs' with Package ID 'vue/jsx-runtime/index.mjs@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/jsx-runtime/index.d.ts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    },
+    "./jsx": {
+      "subpath": "./jsx",
+      "resolutions": {
+        "node10": {
+          "name": "./jsx",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/vue/jsx.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/jsx' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'vue/jsx' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/jsx.ts' does not exist.",
+              "File '/node_modules/vue/jsx.tsx' does not exist.",
+              "File '/node_modules/vue/jsx.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/jsx' was successfully resolved to '/node_modules/vue/jsx.d.ts' with Package ID 'vue/jsx.d.ts@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/jsx.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": "./jsx",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/vue/jsx.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/jsx' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/jsx' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './jsx' with target './jsx.d.ts'.",
+              "File '/node_modules/vue/jsx.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/jsx' was successfully resolved to '/node_modules/vue/jsx.d.ts' with Package ID 'vue/jsx.d.ts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/jsx.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/jsx' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/jsx' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './jsx' with target './jsx.d.ts'.",
+              "File '/node_modules/vue/jsx.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/jsx' was successfully resolved to '/node_modules/vue/jsx.d.ts' with Package ID 'vue/jsx.d.ts@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/jsx.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": "./jsx",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/vue/jsx.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/jsx' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/jsx' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './jsx' with target './jsx.d.ts'.",
+              "File '/node_modules/vue/jsx.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/jsx' was successfully resolved to '/node_modules/vue/jsx.d.ts' with Package ID 'vue/jsx.d.ts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/jsx.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/jsx' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/jsx' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './jsx' with target './jsx.d.ts'.",
+              "File '/node_modules/vue/jsx.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/jsx' was successfully resolved to '/node_modules/vue/jsx.d.ts' with Package ID 'vue/jsx.d.ts@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/jsx.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": "./jsx",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/vue/jsx.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/jsx' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/jsx' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './jsx' with target './jsx.d.ts'.",
+              "File '/node_modules/vue/jsx.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/jsx' was successfully resolved to '/node_modules/vue/jsx.d.ts' with Package ID 'vue/jsx.d.ts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/jsx.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/jsx' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/jsx' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './jsx' with target './jsx.d.ts'.",
+              "File '/node_modules/vue/jsx.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/jsx' was successfully resolved to '/node_modules/vue/jsx.d.ts' with Package ID 'vue/jsx.d.ts@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/jsx.d.ts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    },
+    "./dist/*": {
+      "subpath": "./dist/*",
+      "resolutions": {
+        "node10": {
+          "name": "./dist/*",
+          "resolutionKind": "node10",
+          "isWildcard": true
+        },
+        "node16-cjs": {
+          "name": "./dist/*",
+          "resolutionKind": "node16-cjs",
+          "isWildcard": true
+        },
+        "node16-esm": {
+          "name": "./dist/*",
+          "resolutionKind": "node16-esm",
+          "isWildcard": true
+        },
+        "bundler": {
+          "name": "./dist/*",
+          "resolutionKind": "bundler",
+          "isWildcard": true
+        }
+      },
+      "hasTypes": false,
+      "isWildcard": true
+    },
+    "./package.json": {
+      "subpath": "./package.json",
+      "resolutions": {
+        "node10": {
+          "name": "./package.json",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/vue/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'vue/package.json' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/vue/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/vue/package.d.json.ts' does not exist.",
+              "File '/node_modules/vue/package.json.ts' does not exist.",
+              "File '/node_modules/vue/package.json.tsx' does not exist.",
+              "File '/node_modules/vue/package.json.d.ts' does not exist.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'dist/vue.d.ts' that references '/node_modules/vue/package.json/dist/vue.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/vue/package.json/dist/vue.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/vue/package.json/dist/vue.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/vue/package.json' has a '.json' extension - stripping it.",
+              "Loading module 'vue/package.json' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/vue/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/vue/package.json' exists - use it as a name resolution result.",
+              "======== Module name 'vue/package.json' was successfully resolved to '/node_modules/vue/package.json' with Package ID 'vue/package.json@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/package.json"
+          ]
+        },
+        "node16-cjs": {
+          "name": "./package.json",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/vue/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/vue/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/vue/package.d.json.ts' does not exist.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/vue'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/vue/package.json' has a '.json' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/vue/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/vue/package.json' exists - use it as a name resolution result.",
+              "======== Module name 'vue/package.json' was successfully resolved to '/node_modules/vue/package.json' with Package ID 'vue/package.json@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/package.json"
+          ]
+        },
+        "node16-esm": {
+          "name": "./package.json",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/vue/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/package.json' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/vue/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/vue/package.d.json.ts' does not exist.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/vue'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/vue/package.json' has a '.json' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/vue/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/vue/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/package.json' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "File name '/node_modules/vue/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/vue/package.d.json.ts' does not exist.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'dist/vue.d.ts' that references '/node_modules/vue/package.json/dist/vue.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/vue/package.json/dist/vue.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/vue/package.json/dist/vue.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/vue/package.json' has a '.json' extension - stripping it.",
+              "======== Module name 'vue/package.json' was successfully resolved to '/node_modules/vue/package.json' with Package ID 'vue/package.json@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/package.json"
+          ]
+        },
+        "bundler": {
+          "name": "./package.json",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/vue/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/vue/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/vue/package.d.json.ts' does not exist.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/vue'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/vue/package.json' has a '.json' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/vue/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/vue/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/package.json' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "File name '/node_modules/vue/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/vue/package.d.json.ts' does not exist.",
+              "File '/node_modules/vue/package.json.ts' does not exist.",
+              "File '/node_modules/vue/package.json.tsx' does not exist.",
+              "File '/node_modules/vue/package.json.d.ts' does not exist.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'dist/vue.d.ts' that references '/node_modules/vue/package.json/dist/vue.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/vue/package.json/dist/vue.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/vue/package.json/dist/vue.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/vue/package.json' has a '.json' extension - stripping it.",
+              "======== Module name 'vue/package.json' was successfully resolved to '/node_modules/vue/package.json' with Package ID 'vue/package.json@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/package.json"
+          ]
+        }
+      },
+      "hasTypes": false,
+      "isWildcard": false
+    },
+    "./macros": {
+      "subpath": "./macros",
+      "resolutions": {
+        "node10": {
+          "name": "./macros",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/vue/macros.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/macros' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'vue/macros' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/macros.ts' does not exist.",
+              "File '/node_modules/vue/macros.tsx' does not exist.",
+              "File '/node_modules/vue/macros.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/macros' was successfully resolved to '/node_modules/vue/macros.d.ts' with Package ID 'vue/macros.d.ts@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/macros.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": "./macros",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/vue/macros.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/macros' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/macros' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './macros' with target './macros.d.ts'.",
+              "File '/node_modules/vue/macros.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/macros' was successfully resolved to '/node_modules/vue/macros.d.ts' with Package ID 'vue/macros.d.ts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/macros.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/macros' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/macros' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './macros' with target './macros.d.ts'.",
+              "File '/node_modules/vue/macros.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/macros' was successfully resolved to '/node_modules/vue/macros.d.ts' with Package ID 'vue/macros.d.ts@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/macros.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": "./macros",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/vue/macros.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/macros' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/macros' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './macros' with target './macros.d.ts'.",
+              "File '/node_modules/vue/macros.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/macros' was successfully resolved to '/node_modules/vue/macros.d.ts' with Package ID 'vue/macros.d.ts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/macros.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/macros' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/macros' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './macros' with target './macros.d.ts'.",
+              "File '/node_modules/vue/macros.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/macros' was successfully resolved to '/node_modules/vue/macros.d.ts' with Package ID 'vue/macros.d.ts@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/macros.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": "./macros",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/vue/macros.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/macros' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/macros' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './macros' with target './macros.d.ts'.",
+              "File '/node_modules/vue/macros.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/macros' was successfully resolved to '/node_modules/vue/macros.d.ts' with Package ID 'vue/macros.d.ts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/macros.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/macros' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/macros' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './macros' with target './macros.d.ts'.",
+              "File '/node_modules/vue/macros.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/macros' was successfully resolved to '/node_modules/vue/macros.d.ts' with Package ID 'vue/macros.d.ts@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/macros.d.ts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    },
+    "./macros-global": {
+      "subpath": "./macros-global",
+      "resolutions": {
+        "node10": {
+          "name": "./macros-global",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/vue/macros-global.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/macros-global' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'vue/macros-global' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/macros-global.ts' does not exist.",
+              "File '/node_modules/vue/macros-global.tsx' does not exist.",
+              "File '/node_modules/vue/macros-global.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/macros-global' was successfully resolved to '/node_modules/vue/macros-global.d.ts' with Package ID 'vue/macros-global.d.ts@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/macros.d.ts",
+            "/node_modules/vue/macros-global.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": "./macros-global",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/vue/macros-global.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/macros-global' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/macros-global' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './macros-global' with target './macros-global.d.ts'.",
+              "File '/node_modules/vue/macros-global.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/macros-global' was successfully resolved to '/node_modules/vue/macros-global.d.ts' with Package ID 'vue/macros-global.d.ts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/macros-global.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/macros-global' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/macros-global' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './macros-global' with target './macros-global.d.ts'.",
+              "File '/node_modules/vue/macros-global.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/macros-global' was successfully resolved to '/node_modules/vue/macros-global.d.ts' with Package ID 'vue/macros-global.d.ts@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/macros.d.ts",
+            "/node_modules/vue/macros-global.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": "./macros-global",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/vue/macros-global.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/macros-global' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/macros-global' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './macros-global' with target './macros-global.d.ts'.",
+              "File '/node_modules/vue/macros-global.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/macros-global' was successfully resolved to '/node_modules/vue/macros-global.d.ts' with Package ID 'vue/macros-global.d.ts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/macros-global.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/macros-global' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/macros-global' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './macros-global' with target './macros-global.d.ts'.",
+              "File '/node_modules/vue/macros-global.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/macros-global' was successfully resolved to '/node_modules/vue/macros-global.d.ts' with Package ID 'vue/macros-global.d.ts@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/macros.d.ts",
+            "/node_modules/vue/macros-global.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": "./macros-global",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/vue/macros-global.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/macros-global' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/macros-global' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './macros-global' with target './macros-global.d.ts'.",
+              "File '/node_modules/vue/macros-global.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/macros-global' was successfully resolved to '/node_modules/vue/macros-global.d.ts' with Package ID 'vue/macros-global.d.ts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/macros-global.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/macros-global' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/macros-global' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './macros-global' with target './macros-global.d.ts'.",
+              "File '/node_modules/vue/macros-global.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/macros-global' was successfully resolved to '/node_modules/vue/macros-global.d.ts' with Package ID 'vue/macros-global.d.ts@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/macros.d.ts",
+            "/node_modules/vue/macros-global.d.ts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    },
+    "./ref-macros": {
+      "subpath": "./ref-macros",
+      "resolutions": {
+        "node10": {
+          "name": "./ref-macros",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/vue/ref-macros.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/ref-macros' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'vue/ref-macros' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/vue/ref-macros.ts' does not exist.",
+              "File '/node_modules/vue/ref-macros.tsx' does not exist.",
+              "File '/node_modules/vue/ref-macros.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/ref-macros' was successfully resolved to '/node_modules/vue/ref-macros.d.ts' with Package ID 'vue/ref-macros.d.ts@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/macros.d.ts",
+            "/node_modules/vue/macros-global.d.ts",
+            "/node_modules/vue/ref-macros.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": "./ref-macros",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/vue/ref-macros.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/ref-macros' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/ref-macros' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './ref-macros' with target './ref-macros.d.ts'.",
+              "File '/node_modules/vue/ref-macros.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/ref-macros' was successfully resolved to '/node_modules/vue/ref-macros.d.ts' with Package ID 'vue/ref-macros.d.ts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/ref-macros.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/ref-macros' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/ref-macros' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './ref-macros' with target './ref-macros.d.ts'.",
+              "File '/node_modules/vue/ref-macros.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/ref-macros' was successfully resolved to '/node_modules/vue/ref-macros.d.ts' with Package ID 'vue/ref-macros.d.ts@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/macros.d.ts",
+            "/node_modules/vue/macros-global.d.ts",
+            "/node_modules/vue/ref-macros.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": "./ref-macros",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/vue/ref-macros.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/ref-macros' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/ref-macros' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './ref-macros' with target './ref-macros.d.ts'.",
+              "File '/node_modules/vue/ref-macros.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/ref-macros' was successfully resolved to '/node_modules/vue/ref-macros.d.ts' with Package ID 'vue/ref-macros.d.ts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/ref-macros.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/vue/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/ref-macros' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/ref-macros' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './ref-macros' with target './ref-macros.d.ts'.",
+              "File '/node_modules/vue/ref-macros.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/ref-macros' was successfully resolved to '/node_modules/vue/ref-macros.d.ts' with Package ID 'vue/ref-macros.d.ts@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/macros.d.ts",
+            "/node_modules/vue/macros-global.d.ts",
+            "/node_modules/vue/ref-macros.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": "./ref-macros",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/vue/ref-macros.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/ref-macros' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/ref-macros' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './ref-macros' with target './ref-macros.d.ts'.",
+              "File '/node_modules/vue/ref-macros.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/ref-macros' was successfully resolved to '/node_modules/vue/ref-macros.d.ts' with Package ID 'vue/ref-macros.d.ts@3.3.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/ref-macros.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'vue/ref-macros' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/ref-macros' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './ref-macros' with target './ref-macros.d.ts'.",
+              "File '/node_modules/vue/ref-macros.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'vue/ref-macros' was successfully resolved to '/node_modules/vue/ref-macros.d.ts' with Package ID 'vue/ref-macros.d.ts@3.3.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/vue/macros.d.ts",
+            "/node_modules/vue/macros-global.d.ts",
+            "/node_modules/vue/ref-macros.d.ts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    }
+  },
+  "problems": [
+    {
+      "kind": "FalseCJS",
+      "entrypoint": "./jsx-runtime",
+      "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "NoResolution",
+      "entrypoint": "./jsx-dev-runtime",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "FalseCJS",
+      "entrypoint": "./jsx-dev-runtime",
+      "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "Wildcard",
+      "entrypoint": "./dist/*",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "Wildcard",
+      "entrypoint": "./dist/*",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "Wildcard",
+      "entrypoint": "./dist/*",
+      "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "Wildcard",
+      "entrypoint": "./dist/*",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "InternalResolutionError",
+      "resolutionOption": "node16",
+      "fileName": "/node_modules/vue/dist/vue.d.mts",
+      "moduleSpecifier": "../jsx",
+      "pos": 454,
+      "end": 463,
+      "resolutionMode": 99,
+      "trace": [
+        "======== Resolving module '../jsx' from '/node_modules/vue/dist/vue.d.mts'. ========",
+        "Explicitly specified module resolution kind: 'Node16'.",
+        "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+        "Loading module as file / folder, candidate module location '/node_modules/vue/jsx', target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Directory '/node_modules/vue/jsx' does not exist, skipping all lookups in it.",
+        "======== Module name '../jsx' was not resolved. ========"
+      ]
+    }
+  ]
+}

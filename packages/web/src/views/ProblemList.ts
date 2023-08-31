@@ -24,7 +24,7 @@ export function ProblemList(props: { analysis?: CheckResult }) {
 
   const problems = groupProblemsByKind(props.analysis.problems);
   return {
-    innerHTML: `<dl>
+    innerHTML: `<h3>Problems</h3><dl>
       ${Object.entries(problems)
         .map(([kind]) => {
           const info = problemKindInfo[kind as ProblemKind];
