@@ -1,5 +1,11 @@
 # @arethetypeswrong/history
 
+## 0.3.0
+
+### Minor Changes
+
+- dfe50cd: September 1 data
+
 ## 0.2.0
 
 ### Minor Changes
