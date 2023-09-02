@@ -1,7 +1,7 @@
 import { versions } from "@arethetypeswrong/core/versions";
 import cliProgress from "cli-progress";
 import { appendFileSync, createReadStream, createWriteStream } from "fs";
-import { open, readFile, rename, unlink, writeFile } from "fs/promises";
+import { open, readFile, rename, stat, unlink, writeFile } from "fs/promises";
 import { createRequire } from "module";
 import fetch from "node-fetch";
 import { npmHighImpact } from "npm-high-impact";
@@ -26,6 +26,8 @@ const excludePackages = [
 
 const excludedSpecs = [
   "next@12.2.0", // File not found: /node_modules/next/dist/styled-jsx-types/global.ts
+  "moment@2.29.1", // Invalid gzip data
+  "moment@2.29.3", // Invalid gzip data
 ];
 
 // Array of month starts from 2022-01-01 until the first of this month
@@ -161,40 +163,48 @@ for (const date of Object.keys(existingDates.dates)) {
     }
   }
 }
-const outFh = await open(outJsonFileName, "r");
-const newSpecs = new Set<string>();
-for await (const line of outFh.readLines()) {
-  const result: FullJsonLine = JSON.parse(line);
-  if (allSpecs.has(result.packageSpec)) {
-    newSpecs.add(result.packageSpec);
-    appendFileSync(cleanedFileName, `${JSON.stringify(result, (key, value) => (key === "trace" ? [] : value))}\n`);
-    fullModified = true;
+
+if (
+  await stat(outJsonFileName).then(
+    () => true,
+    () => false
+  )
+) {
+  const outFh = await open(outJsonFileName, "r");
+  const newSpecs = new Set<string>();
+  for await (const line of outFh.readLines()) {
+    const result: FullJsonLine = JSON.parse(line);
+    if (allSpecs.has(result.packageSpec)) {
+      newSpecs.add(result.packageSpec);
+      appendFileSync(cleanedFileName, `${JSON.stringify(result, (key, value) => (key === "trace" ? [] : value))}\n`);
+      fullModified = true;
+    }
   }
-}
-await outFh.close();
+  await outFh.close();
 
-const fullFh = await open(fullJsonFileName, "r");
-for await (const line of fullFh.readLines()) {
-  const result: FullJsonLine = JSON.parse(line);
-  if (!newSpecs.has(result.packageSpec)) {
-    appendFileSync(cleanedFileName, `${JSON.stringify(result, (key, value) => (key === "trace" ? [] : value))}\n`);
-    fullModified = true;
+  const fullFh = await open(fullJsonFileName, "r");
+  for await (const line of fullFh.readLines()) {
+    const result: FullJsonLine = JSON.parse(line);
+    if (!newSpecs.has(result.packageSpec)) {
+      appendFileSync(cleanedFileName, `${JSON.stringify(result, (key, value) => (key === "trace" ? [] : value))}\n`);
+      fullModified = true;
+    }
   }
-}
 
-await fullFh.close();
-await unlink(fullJsonFileName);
-await rename(cleanedFileName, fullJsonFileName);
-await new Promise((resolve, reject) => {
-  createReadStream(fullJsonFileName)
-    .pipe(createGzip({ level: 9 }))
-    .pipe(createWriteStream(`${fullJsonFileName.pathname}.gz`))
-    .on("error", reject)
-    .on("close", resolve);
-});
+  await fullFh.close();
+  await unlink(fullJsonFileName);
+  await rename(cleanedFileName, fullJsonFileName);
+  await new Promise((resolve, reject) => {
+    createReadStream(fullJsonFileName)
+      .pipe(createGzip({ level: 9 }))
+      .pipe(createWriteStream(`${fullJsonFileName.pathname}.gz`))
+      .on("error", reject)
+      .on("close", resolve);
+  });
 
-if (datesModified || fullModified) {
-  await uploadData();
+  if (datesModified || fullModified) {
+    await uploadData();
+  }
 }
 
 function nAtATime<T>(n: number, items: T[], fn: (item: T) => Promise<void>) {
