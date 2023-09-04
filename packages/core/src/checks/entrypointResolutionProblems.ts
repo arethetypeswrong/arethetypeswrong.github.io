@@ -94,8 +94,6 @@ export function getEntrypointResolutionProblems(
             .createProgram([implementationResolution.fileName], {
               allowJs: true,
               checkJs: true,
-              noResolve: true,
-              target: ts.ScriptTarget.Latest,
             })
             .getTypeChecker();
           // Check for `default` property on `jsModule["export="]`

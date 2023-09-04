@@ -328,7 +328,22 @@
     {
       "kind": "FalseExportDefault",
       "entrypoint": ".",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "FalseExportDefault",
+      "entrypoint": ".",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "FalseExportDefault",
+      "entrypoint": ".",
       "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "FalseExportDefault",
+      "entrypoint": ".",
+      "resolutionKind": "bundler"
     }
   ]
 }
