@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.10.1
+
+### Patch Changes
+
+- ae2426f: Fixed bug that could cause a crash while checking for FalseExportDefault
+
 ## 0.10.0
 
 ### Minor Changes
