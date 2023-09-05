@@ -11,6 +11,7 @@ export const problemFlags: Record<ProblemKind, string> = {
   FallbackCondition: "fallback-condition",
   CJSOnlyExportsDefault: "cjs-only-exports-default",
   FalseExportDefault: "false-export-default",
+  MissingExportEquals: "missing-export-equals",
   UnexpectedModuleSyntax: "unexpected-module-syntax",
   InternalResolutionError: "internal-resolution-error",
 };
