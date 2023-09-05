@@ -26,10 +26,10 @@ const excludePackages = [
 
 const excludedSpecs = [
   "next@12.2.0", // File not found: /node_modules/next/dist/styled-jsx-types/global.ts
-  "next@13.3.2", // File not found: /node_modules/next/types/misc.d.ts"
+  "next@13.3.2", // File not found: /node_modules/next/types/misc.d.ts
   "next@13.4.4", // File not found: /node_modules/next/types/misc.d.ts
   "next@13.4.7", // File not found: /node_modules/next/types/misc.d.ts
-  "next@13.4.12", // File not found: /node_modules/next/types/misc.d.ts"
+  "next@13.4.12", // File not found: /node_modules/next/types/misc.d.ts
   "moment@2.29.1", // Invalid gzip data
   "moment@2.29.3", // Invalid gzip data
 ];
