@@ -1,0 +1,352 @@
+{
+  "packageName": "@rollup/plugin-eslint",
+  "packageVersion": "8.0.1",
+  "types": {
+    "kind": "included"
+  },
+  "buildTools": {
+    "rollup": "^2.23.0",
+    "@rollup/plugin-typescript": "^6.0.0"
+  },
+  "entrypoints": {
+    ".": {
+      "subpath": ".",
+      "resolutions": {
+        "node10": {
+          "name": ".",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/@rollup/plugin-eslint/types/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@rollup/plugin-eslint' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module '@rollup/plugin-eslint' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/@rollup/plugin-eslint/package.json'.",
+              "File '/node_modules/@rollup/plugin-eslint.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint.tsx' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'types/index.d.ts' that references '/node_modules/@rollup/plugin-eslint/types/index.d.ts'.",
+              "File '/node_modules/@rollup/plugin-eslint/types/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name '@rollup/plugin-eslint' was successfully resolved to '/node_modules/@rollup/plugin-eslint/types/index.d.ts' with Package ID '@rollup/plugin-eslint/types/index.d.ts@8.0.1'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@rollup/plugin-eslint/dist/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@rollup/plugin-eslint' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module '@rollup/plugin-eslint' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/@rollup/plugin-eslint/package.json'.",
+              "File '/node_modules/@rollup/plugin-eslint.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/@rollup/plugin-eslint/dist/index.js'.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/@rollup/plugin-eslint/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/@rollup/plugin-eslint/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.tsx' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js.tsx' does not exist.",
+              "Directory '/node_modules/@rollup/plugin-eslint/dist/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/@rollup/plugin-eslint/index.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/index.tsx' does not exist.",
+              "Loading module '@rollup/plugin-eslint' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@rollup/plugin-eslint/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/@rollup/plugin-eslint.js' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint.jsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/@rollup/plugin-eslint/dist/index.js'.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js' exists - use it as a name resolution result.",
+              "======== Module name '@rollup/plugin-eslint' was successfully resolved to '/node_modules/@rollup/plugin-eslint/dist/index.js' with Package ID '@rollup/plugin-eslint/dist/index.js@8.0.1'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@rollup/plugin-eslint/types/index.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": ".",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/@rollup/plugin-eslint/types/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/@rollup/plugin-eslint/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@rollup/plugin-eslint' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@rollup/plugin-eslint' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/@rollup/plugin-eslint/package.json'.",
+              "File '/node_modules/@rollup/plugin-eslint.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint.tsx' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'types/index.d.ts' that references '/node_modules/@rollup/plugin-eslint/types/index.d.ts'.",
+              "File '/node_modules/@rollup/plugin-eslint/types/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name '@rollup/plugin-eslint' was successfully resolved to '/node_modules/@rollup/plugin-eslint/types/index.d.ts' with Package ID '@rollup/plugin-eslint/types/index.d.ts@8.0.1'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@rollup/plugin-eslint/dist/index.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/@rollup/plugin-eslint/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@rollup/plugin-eslint' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@rollup/plugin-eslint' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/@rollup/plugin-eslint/package.json'.",
+              "File '/node_modules/@rollup/plugin-eslint.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/@rollup/plugin-eslint/dist/index.js'.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/@rollup/plugin-eslint/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/@rollup/plugin-eslint/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.tsx' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js.tsx' does not exist.",
+              "Directory '/node_modules/@rollup/plugin-eslint/dist/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/@rollup/plugin-eslint/index.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@rollup/plugin-eslint/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/@rollup/plugin-eslint.js' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint.jsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/@rollup/plugin-eslint/dist/index.js'.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js' exists - use it as a name resolution result.",
+              "======== Module name '@rollup/plugin-eslint' was successfully resolved to '/node_modules/@rollup/plugin-eslint/dist/index.js' with Package ID '@rollup/plugin-eslint/dist/index.js@8.0.1'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@rollup/plugin-eslint/types/index.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": ".",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/@rollup/plugin-eslint/types/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/@rollup/plugin-eslint/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@rollup/plugin-eslint' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@rollup/plugin-eslint' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/@rollup/plugin-eslint/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'types/index.d.ts' that references '/node_modules/@rollup/plugin-eslint/types/index.d.ts'.",
+              "File '/node_modules/@rollup/plugin-eslint/types/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name '@rollup/plugin-eslint' was successfully resolved to '/node_modules/@rollup/plugin-eslint/types/index.d.ts' with Package ID '@rollup/plugin-eslint/types/index.d.ts@8.0.1'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@rollup/plugin-eslint/dist/index.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/@rollup/plugin-eslint/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@rollup/plugin-eslint' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@rollup/plugin-eslint' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@rollup/plugin-eslint/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/@rollup/plugin-eslint/dist/index.js'.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/@rollup/plugin-eslint/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/@rollup/plugin-eslint/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.tsx' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js.tsx' does not exist.",
+              "Directory '/node_modules/@rollup/plugin-eslint/dist/index.js' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@rollup/plugin-eslint/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@rollup/plugin-eslint/index.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@rollup/plugin-eslint/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/@rollup/plugin-eslint/dist/index.js'.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@rollup/plugin-eslint' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@rollup/plugin-eslint/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/@rollup/plugin-eslint/dist/index.js'.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/@rollup/plugin-eslint/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/@rollup/plugin-eslint/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.tsx' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js.tsx' does not exist.",
+              "Directory '/node_modules/@rollup/plugin-eslint/dist/index.js' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@rollup/plugin-eslint/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@rollup/plugin-eslint/index.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/index.tsx' does not exist.",
+              "======== Module name '@rollup/plugin-eslint' was successfully resolved to '/node_modules/@rollup/plugin-eslint/dist/index.js' with Package ID '@rollup/plugin-eslint/dist/index.js@8.0.1'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@rollup/plugin-eslint/types/index.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": ".",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/@rollup/plugin-eslint/types/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@rollup/plugin-eslint' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@rollup/plugin-eslint' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/@rollup/plugin-eslint/package.json'.",
+              "File '/node_modules/@rollup/plugin-eslint.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint.tsx' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'types/index.d.ts' that references '/node_modules/@rollup/plugin-eslint/types/index.d.ts'.",
+              "File '/node_modules/@rollup/plugin-eslint/types/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name '@rollup/plugin-eslint' was successfully resolved to '/node_modules/@rollup/plugin-eslint/types/index.d.ts' with Package ID '@rollup/plugin-eslint/types/index.d.ts@8.0.1'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@rollup/plugin-eslint/dist/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@rollup/plugin-eslint' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@rollup/plugin-eslint' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/@rollup/plugin-eslint/package.json'.",
+              "File '/node_modules/@rollup/plugin-eslint.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/@rollup/plugin-eslint/dist/index.js'.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/@rollup/plugin-eslint/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/@rollup/plugin-eslint/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.tsx' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js.tsx' does not exist.",
+              "Directory '/node_modules/@rollup/plugin-eslint/dist/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/@rollup/plugin-eslint/index.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@rollup/plugin-eslint/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/@rollup/plugin-eslint.js' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint.jsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/@rollup/plugin-eslint/dist/index.js'.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@rollup/plugin-eslint' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@rollup/plugin-eslint/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/@rollup/plugin-eslint.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint.tsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/@rollup/plugin-eslint/dist/index.js'.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/@rollup/plugin-eslint/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/@rollup/plugin-eslint/dist/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.tsx' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/dist/index.js.tsx' does not exist.",
+              "Directory '/node_modules/@rollup/plugin-eslint/dist/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/@rollup/plugin-eslint/index.ts' does not exist.",
+              "File '/node_modules/@rollup/plugin-eslint/index.tsx' does not exist.",
+              "======== Module name '@rollup/plugin-eslint' was successfully resolved to '/node_modules/@rollup/plugin-eslint/dist/index.js' with Package ID '@rollup/plugin-eslint/dist/index.js@8.0.1'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@rollup/plugin-eslint/types/index.d.ts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    }
+  },
+  "problems": [
+    {
+      "kind": "FalseExportDefault",
+      "entrypoint": ".",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "FalseExportDefault",
+      "entrypoint": ".",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "FalseExportDefault",
+      "entrypoint": ".",
+      "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "FalseExportDefault",
+      "entrypoint": ".",
+      "resolutionKind": "bundler"
+    }
+  ]
+}
