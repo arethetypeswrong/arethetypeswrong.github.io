@@ -97,11 +97,7 @@ export function getEntrypointResolutionProblems(
               })
               .getTypeChecker();
             // Check for `default` property on `jsModule["export="]`
-            if (
-              !jsChecker
-                .getExportsAndPropertiesOfModule(jsChecker.resolveExternalModuleSymbol(jsSourceFile.symbol))
-                .some((s) => s.name === "default")
-            ) {
+            if (!jsChecker.getExportsAndPropertiesOfModule(jsSourceFile.symbol).some((s) => s.name === "default")) {
               problems.push({
                 kind: "FalseExportDefault",
                 entrypoint: subpath,
