@@ -65,7 +65,7 @@ export = Whatever;
 
 ## Consequences
 
-This problem is similar to the [“Incorrect default export”](./FalseExportDefault.md) problem, but in this case, the types are _incomplete_ rather than wholly incorrect. This incompleteness may lead TypeScript users importing from Node.js ESM code to add an extra `.default` property onto default imports to access the module’s `module.exports.default` property, even though accessing the `module.exports` would have been sufficient.
+This problem is similar to the [“Incorrect default export”](./FalseExportDefault.md) problem, but in this case, the types are _incomplete_ rather than wholly incorrect. This incompleteness may lead TypeScript users importing from Node.js ESM code, or CommonJS code without `esModuleInterop` enabled, to add an extra `.default` property onto default imports to access the module’s `module.exports.default` property, even though accessing the `module.exports` would have been sufficient.
 
 ```ts
 import Whatever from "pkg";
