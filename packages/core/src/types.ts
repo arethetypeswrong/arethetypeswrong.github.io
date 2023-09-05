@@ -84,7 +84,8 @@ export type EntrypointResolutionProblemKind =
   | "CJSResolvesToESM"
   | "Wildcard"
   | "FallbackCondition"
-  | "FalseExportDefault";
+  | "FalseExportDefault"
+  | "MissingExportEquals";
 
 export interface EntrypointResolutionProblem {
   kind: EntrypointResolutionProblemKind;

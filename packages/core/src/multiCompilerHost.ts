@@ -30,7 +30,10 @@ export class CompilerHostWrapper {
   private normalModuleResolutionCache: ts.ModuleResolutionCache;
   private noDtsResolutionModuleResolutionCache: ts.ModuleResolutionCache;
 
-  private traceCache: Record</*FromFileName*/ string, Record</*Key*/ string, string[]>> = {};
+  private moduleResolutionCache: Record<
+    /*FromFileName*/ string,
+    Record</*Key*/ string, { resolution: ts.ResolvedModuleWithFailedLookupLocations; trace: string[] }>
+  > = {};
   private traceCollector: TraceCollector = new TraceCollector();
 
   private languageVersion = ts.ScriptTarget.Latest;
@@ -86,22 +89,30 @@ export class CompilerHostWrapper {
     moduleName: string,
     containingFile: string,
     resolutionMode?: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS,
-    noDtsResolution?: boolean
+    noDtsResolution?: boolean,
+    allowJs?: boolean
   ): ResolveModuleNameResult {
+    const moduleKey = this.getModuleKey(moduleName, resolutionMode, noDtsResolution, allowJs);
+    if (this.moduleResolutionCache[containingFile]?.[moduleKey]) {
+      const { resolution, trace } = this.moduleResolutionCache[containingFile][moduleKey];
+      return {
+        resolution,
+        trace,
+      };
+    }
     this.traceCollector.clear();
     const resolution = ts.resolveModuleName(
       moduleName,
       containingFile,
-      noDtsResolution ? { ...this.compilerOptions, noDtsResolution } : this.compilerOptions,
+      noDtsResolution ? { ...this.compilerOptions, noDtsResolution, allowJs } : this.compilerOptions,
       this.compilerHost,
       noDtsResolution ? this.noDtsResolutionModuleResolutionCache : this.normalModuleResolutionCache,
       /*redirectedReference*/ undefined,
       resolutionMode
     );
     const trace = this.traceCollector.read();
-    const moduleKey = `${resolutionMode ?? 1}:${moduleName}`;
-    if (!this.traceCache[containingFile]?.[moduleKey]) {
-      (this.traceCache[containingFile] ??= {})[moduleKey] = trace;
+    if (!this.moduleResolutionCache[containingFile]?.[moduleKey]) {
+      (this.moduleResolutionCache[containingFile] ??= {})[moduleKey] = { resolution, trace };
     }
     return {
       resolution,
@@ -114,13 +125,40 @@ export class CompilerHostWrapper {
     moduleSpecifier: string,
     resolutionMode: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined
   ): string[] | undefined {
-    return this.traceCache[fromFileName]?.[`${resolutionMode ?? 1}:${moduleSpecifier}`];
+    return this.moduleResolutionCache[fromFileName]?.[
+      this.getModuleKey(moduleSpecifier, resolutionMode, /*noDtsResolution*/ undefined, /*allowJs*/ undefined)
+    ]?.trace;
   }
 
-  createProgram(rootNames: string[]): ts.Program {
+  private getModuleKey(
+    moduleSpecifier: string,
+    resolutionMode: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined,
+    noDtsResolution: boolean | undefined,
+    allowJs: boolean | undefined
+  ) {
+    return `${resolutionMode ?? 1}:${+!!noDtsResolution}:${+!!allowJs}:${moduleSpecifier}`;
+  }
+
+  createProgram(rootNames: string[], extraOptions?: ts.CompilerOptions): ts.Program {
+    if (
+      extraOptions &&
+      ts.changesAffectModuleResolution(
+        // allowJs and noDtsResolution are part of the cache key, but any other resolution-affecting options
+        // are assumed to be constant for the host.
+        {
+          ...this.compilerOptions,
+          allowJs: extraOptions.allowJs,
+          checkJs: extraOptions.checkJs,
+          noDtsResolution: extraOptions.noDtsResolution,
+        },
+        { ...this.compilerOptions, ...extraOptions }
+      )
+    ) {
+      throw new Error("Cannot override resolution-affecting options for host due to potential cache polution");
+    }
     return ts.createProgram({
       rootNames,
-      options: this.compilerOptions,
+      options: extraOptions ? { ...this.compilerOptions, ...extraOptions } : this.compilerOptions,
       host: this.compilerHost,
     });
   }

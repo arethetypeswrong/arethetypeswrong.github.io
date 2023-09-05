@@ -102,6 +102,7 @@ export function isEntrypointResolutionProblemKind(kind: ProblemKind): kind is En
     case "Wildcard":
     case "FallbackCondition":
     case "FalseExportDefault":
+    case "MissingExportEquals":
       return true;
     default:
       return false as AssertNever<typeof kind & EntrypointResolutionProblem["kind"]>;

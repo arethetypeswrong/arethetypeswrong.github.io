@@ -8256,6 +8256,16 @@
   },
   "problems": [
     {
+      "kind": "MissingExportEquals",
+      "entrypoint": ".",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": ".",
+      "resolutionKind": "node16-cjs"
+    },
+    {
       "kind": "FalseCJS",
       "entrypoint": ".",
       "resolutionKind": "node16-esm"
@@ -8271,56 +8281,206 @@
       "resolutionKind": "bundler"
     },
     {
-      "kind": "FalseExportDefault",
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/at-rule",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/at-rule",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
       "entrypoint": "./lib/at-rule",
       "resolutionKind": "node16-esm"
     },
     {
-      "kind": "FalseExportDefault",
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/at-rule",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/comment",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/comment",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
       "entrypoint": "./lib/comment",
       "resolutionKind": "node16-esm"
     },
     {
-      "kind": "FalseExportDefault",
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/comment",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/container",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/container",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
       "entrypoint": "./lib/container",
       "resolutionKind": "node16-esm"
     },
     {
-      "kind": "FalseExportDefault",
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/container",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/css-syntax-error",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/css-syntax-error",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
       "entrypoint": "./lib/css-syntax-error",
       "resolutionKind": "node16-esm"
     },
     {
-      "kind": "FalseExportDefault",
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/css-syntax-error",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/declaration",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/declaration",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
       "entrypoint": "./lib/declaration",
       "resolutionKind": "node16-esm"
     },
     {
-      "kind": "FalseExportDefault",
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/declaration",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/fromJSON",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/fromJSON",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
       "entrypoint": "./lib/fromJSON",
       "resolutionKind": "node16-esm"
     },
     {
-      "kind": "FalseExportDefault",
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/fromJSON",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/input",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/input",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
       "entrypoint": "./lib/input",
       "resolutionKind": "node16-esm"
     },
     {
-      "kind": "FalseExportDefault",
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/input",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/lazy-result",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/lazy-result",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
       "entrypoint": "./lib/lazy-result",
       "resolutionKind": "node16-esm"
     },
     {
-      "kind": "FalseExportDefault",
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/lazy-result",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/no-work-result",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/no-work-result",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
       "entrypoint": "./lib/no-work-result",
       "resolutionKind": "node16-esm"
     },
     {
-      "kind": "FalseExportDefault",
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/no-work-result",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/list",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/list",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
       "entrypoint": "./lib/list",
       "resolutionKind": "node16-esm"
     },
     {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/list",
+      "resolutionKind": "bundler"
+    },
+    {
       "kind": "UntypedResolution",
       "entrypoint": "./lib/map-generator",
       "resolutionKind": "node10"
@@ -8341,16 +8501,46 @@
       "resolutionKind": "bundler"
     },
     {
-      "kind": "FalseExportDefault",
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/node",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/node",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
       "entrypoint": "./lib/node",
       "resolutionKind": "node16-esm"
     },
     {
-      "kind": "FalseExportDefault",
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/node",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/parse",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/parse",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
       "entrypoint": "./lib/parse",
       "resolutionKind": "node16-esm"
     },
     {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/parse",
+      "resolutionKind": "bundler"
+    },
+    {
       "kind": "UntypedResolution",
       "entrypoint": "./lib/parser",
       "resolutionKind": "node10"
@@ -8371,46 +8561,166 @@
       "resolutionKind": "bundler"
     },
     {
-      "kind": "FalseExportDefault",
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/postcss",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/postcss",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
       "entrypoint": "./lib/postcss",
       "resolutionKind": "node16-esm"
     },
     {
-      "kind": "FalseExportDefault",
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/postcss",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/previous-map",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/previous-map",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
       "entrypoint": "./lib/previous-map",
       "resolutionKind": "node16-esm"
     },
     {
-      "kind": "FalseExportDefault",
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/previous-map",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/processor",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/processor",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
       "entrypoint": "./lib/processor",
       "resolutionKind": "node16-esm"
     },
     {
-      "kind": "FalseExportDefault",
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/processor",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/result",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/result",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
       "entrypoint": "./lib/result",
       "resolutionKind": "node16-esm"
     },
     {
-      "kind": "FalseExportDefault",
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/result",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/root",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/root",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
       "entrypoint": "./lib/root",
       "resolutionKind": "node16-esm"
     },
     {
-      "kind": "FalseExportDefault",
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/root",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/rule",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/rule",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
       "entrypoint": "./lib/rule",
       "resolutionKind": "node16-esm"
     },
     {
-      "kind": "FalseExportDefault",
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/rule",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/stringifier",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/stringifier",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
       "entrypoint": "./lib/stringifier",
       "resolutionKind": "node16-esm"
     },
     {
-      "kind": "FalseExportDefault",
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/stringifier",
+      "resolutionKind": "bundler"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/stringify",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/stringify",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
       "entrypoint": "./lib/stringify",
       "resolutionKind": "node16-esm"
     },
     {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/stringify",
+      "resolutionKind": "bundler"
+    },
+    {
       "kind": "UntypedResolution",
       "entrypoint": "./lib/symbols",
       "resolutionKind": "node10"
@@ -8491,9 +8801,24 @@
       "resolutionKind": "bundler"
     },
     {
-      "kind": "FalseExportDefault",
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/warning",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/warning",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
       "entrypoint": "./lib/warning",
       "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": "./lib/warning",
+      "resolutionKind": "bundler"
     }
   ]
 }
