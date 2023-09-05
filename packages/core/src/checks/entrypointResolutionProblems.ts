@@ -87,27 +87,35 @@ export function getEntrypointResolutionProblems(
         if (
           typesExports.has(ts.InternalSymbolName.Default) &&
           !typesExports.has(ts.InternalSymbolName.ExportEquals) &&
-          jsExports.has(ts.InternalSymbolName.ExportEquals) &&
-          !jsExports.has(ts.InternalSymbolName.Default)
+          jsExports.has(ts.InternalSymbolName.ExportEquals)
         ) {
-          const jsChecker = host
-            .createProgram([implementationResolution.fileName], {
-              allowJs: true,
-              checkJs: true,
-            })
-            .getTypeChecker();
-          // Check for `default` property on `jsModule["export="]`
-          if (
-            !jsChecker
-              .getExportsAndPropertiesOfModule(jsChecker.resolveExternalModuleSymbol(jsSourceFile.symbol))
-              .some((s) => s.name === "default")
-          ) {
-            problems.push({
-              kind: "FalseExportDefault",
-              entrypoint: subpath,
-              resolutionKind,
-            });
+          if (!jsExports.has(ts.InternalSymbolName.Default)) {
+            const jsChecker = host
+              .createProgram([implementationResolution.fileName], {
+                allowJs: true,
+                checkJs: true,
+              })
+              .getTypeChecker();
+            // Check for `default` property on `jsModule["export="]`
+            if (
+              !jsChecker
+                .getExportsAndPropertiesOfModule(jsChecker.resolveExternalModuleSymbol(jsSourceFile.symbol))
+                .some((s) => s.name === "default")
+            ) {
+              problems.push({
+                kind: "FalseExportDefault",
+                entrypoint: subpath,
+                resolutionKind,
+              });
+              return;
+            }
           }
+          // types have a default, JS has a default and a module.exports =
+          problems.push({
+            kind: "MissingExportEquals",
+            entrypoint: subpath,
+            resolutionKind,
+          });
         }
       }
     }

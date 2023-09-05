@@ -1,0 +1,309 @@
+{
+  "packageName": "anymatch",
+  "packageVersion": "3.1.3",
+  "types": {
+    "kind": "included"
+  },
+  "buildTools": {},
+  "entrypoints": {
+    ".": {
+      "subpath": ".",
+      "resolutions": {
+        "node10": {
+          "name": ".",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/anymatch/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'anymatch' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'anymatch' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/anymatch/package.json'.",
+              "File '/node_modules/anymatch.ts' does not exist.",
+              "File '/node_modules/anymatch.tsx' does not exist.",
+              "File '/node_modules/anymatch.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' does not have a 'types' field.",
+              "'package.json' does not have a 'main' field.",
+              "File '/node_modules/anymatch/index.ts' does not exist.",
+              "File '/node_modules/anymatch/index.tsx' does not exist.",
+              "File '/node_modules/anymatch/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'anymatch' was successfully resolved to '/node_modules/anymatch/index.d.ts' with Package ID 'anymatch/index.d.ts@3.1.3'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/anymatch/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'anymatch' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'anymatch' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/anymatch/package.json'.",
+              "File '/node_modules/anymatch.ts' does not exist.",
+              "File '/node_modules/anymatch.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'main' field.",
+              "File '/node_modules/anymatch/index.ts' does not exist.",
+              "File '/node_modules/anymatch/index.tsx' does not exist.",
+              "Loading module 'anymatch' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/anymatch/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/anymatch.js' does not exist.",
+              "File '/node_modules/anymatch.jsx' does not exist.",
+              "'package.json' does not have a 'main' field.",
+              "File '/node_modules/anymatch/index.js' exists - use it as a name resolution result.",
+              "======== Module name 'anymatch' was successfully resolved to '/node_modules/anymatch/index.js' with Package ID 'anymatch/index.js@3.1.3'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/anymatch/index.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": ".",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/anymatch/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/anymatch/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'anymatch' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'anymatch' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/anymatch/package.json'.",
+              "File '/node_modules/anymatch.ts' does not exist.",
+              "File '/node_modules/anymatch.tsx' does not exist.",
+              "File '/node_modules/anymatch.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' does not have a 'types' field.",
+              "'package.json' does not have a 'main' field.",
+              "File '/node_modules/anymatch/index.ts' does not exist.",
+              "File '/node_modules/anymatch/index.tsx' does not exist.",
+              "File '/node_modules/anymatch/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'anymatch' was successfully resolved to '/node_modules/anymatch/index.d.ts' with Package ID 'anymatch/index.d.ts@3.1.3'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/anymatch/index.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/anymatch/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'anymatch' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'anymatch' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/anymatch/package.json'.",
+              "File '/node_modules/anymatch.ts' does not exist.",
+              "File '/node_modules/anymatch.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'main' field.",
+              "File '/node_modules/anymatch/index.ts' does not exist.",
+              "File '/node_modules/anymatch/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/anymatch/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/anymatch.js' does not exist.",
+              "File '/node_modules/anymatch.jsx' does not exist.",
+              "'package.json' does not have a 'main' field.",
+              "File '/node_modules/anymatch/index.js' exists - use it as a name resolution result.",
+              "======== Module name 'anymatch' was successfully resolved to '/node_modules/anymatch/index.js' with Package ID 'anymatch/index.js@3.1.3'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/anymatch/index.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": ".",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/anymatch/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/anymatch/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'anymatch' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'anymatch' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/anymatch/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' does not have a 'types' field.",
+              "'package.json' does not have a 'main' field.",
+              "File name '/node_modules/anymatch/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/anymatch/index.ts' does not exist.",
+              "File '/node_modules/anymatch/index.tsx' does not exist.",
+              "File '/node_modules/anymatch/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'anymatch' was successfully resolved to '/node_modules/anymatch/index.d.ts' with Package ID 'anymatch/index.d.ts@3.1.3'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/anymatch/index.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/anymatch/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'anymatch' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'anymatch' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/anymatch/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'main' field.",
+              "File name '/node_modules/anymatch/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/anymatch/index.ts' does not exist.",
+              "File '/node_modules/anymatch/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/anymatch/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'main' field.",
+              "File name '/node_modules/anymatch/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/anymatch/index.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'anymatch' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/anymatch/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'main' field.",
+              "File name '/node_modules/anymatch/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/anymatch/index.ts' does not exist.",
+              "File '/node_modules/anymatch/index.tsx' does not exist.",
+              "======== Module name 'anymatch' was successfully resolved to '/node_modules/anymatch/index.js' with Package ID 'anymatch/index.js@3.1.3'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/anymatch/index.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": ".",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/anymatch/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'anymatch' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'anymatch' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/anymatch/package.json'.",
+              "File '/node_modules/anymatch.ts' does not exist.",
+              "File '/node_modules/anymatch.tsx' does not exist.",
+              "File '/node_modules/anymatch.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' does not have a 'types' field.",
+              "'package.json' does not have a 'main' field.",
+              "File '/node_modules/anymatch/index.ts' does not exist.",
+              "File '/node_modules/anymatch/index.tsx' does not exist.",
+              "File '/node_modules/anymatch/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'anymatch' was successfully resolved to '/node_modules/anymatch/index.d.ts' with Package ID 'anymatch/index.d.ts@3.1.3'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/anymatch/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'anymatch' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'anymatch' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/anymatch/package.json'.",
+              "File '/node_modules/anymatch.ts' does not exist.",
+              "File '/node_modules/anymatch.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'main' field.",
+              "File '/node_modules/anymatch/index.ts' does not exist.",
+              "File '/node_modules/anymatch/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/anymatch/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/anymatch.js' does not exist.",
+              "File '/node_modules/anymatch.jsx' does not exist.",
+              "'package.json' does not have a 'main' field.",
+              "File '/node_modules/anymatch/index.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'anymatch' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/anymatch/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/anymatch.ts' does not exist.",
+              "File '/node_modules/anymatch.tsx' does not exist.",
+              "'package.json' does not have a 'main' field.",
+              "File '/node_modules/anymatch/index.ts' does not exist.",
+              "File '/node_modules/anymatch/index.tsx' does not exist.",
+              "======== Module name 'anymatch' was successfully resolved to '/node_modules/anymatch/index.js' with Package ID 'anymatch/index.js@3.1.3'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/anymatch/index.d.ts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    }
+  },
+  "problems": [
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": ".",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": ".",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": ".",
+      "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": ".",
+      "resolutionKind": "bundler"
+    }
+  ]
+}

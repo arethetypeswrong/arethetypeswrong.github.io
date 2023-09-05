@@ -1,0 +1,311 @@
+{
+  "packageName": "ignore",
+  "packageVersion": "5.2.4",
+  "types": {
+    "kind": "included"
+  },
+  "buildTools": {
+    "typescript": "^4.9.4"
+  },
+  "entrypoints": {
+    ".": {
+      "subpath": ".",
+      "resolutions": {
+        "node10": {
+          "name": ".",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/ignore/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'ignore' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'ignore' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/ignore/package.json'.",
+              "File '/node_modules/ignore.ts' does not exist.",
+              "File '/node_modules/ignore.tsx' does not exist.",
+              "File '/node_modules/ignore.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' does not have a 'types' field.",
+              "'package.json' does not have a 'main' field.",
+              "File '/node_modules/ignore/index.ts' does not exist.",
+              "File '/node_modules/ignore/index.tsx' does not exist.",
+              "File '/node_modules/ignore/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'ignore' was successfully resolved to '/node_modules/ignore/index.d.ts' with Package ID 'ignore/index.d.ts@5.2.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/ignore/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'ignore' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'ignore' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/ignore/package.json'.",
+              "File '/node_modules/ignore.ts' does not exist.",
+              "File '/node_modules/ignore.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'main' field.",
+              "File '/node_modules/ignore/index.ts' does not exist.",
+              "File '/node_modules/ignore/index.tsx' does not exist.",
+              "Loading module 'ignore' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/ignore/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/ignore.js' does not exist.",
+              "File '/node_modules/ignore.jsx' does not exist.",
+              "'package.json' does not have a 'main' field.",
+              "File '/node_modules/ignore/index.js' exists - use it as a name resolution result.",
+              "======== Module name 'ignore' was successfully resolved to '/node_modules/ignore/index.js' with Package ID 'ignore/index.js@5.2.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/ignore/index.d.ts"
+          ]
+        },
+        "node16-cjs": {
+          "name": ".",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/ignore/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/ignore/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'ignore' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'ignore' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/ignore/package.json'.",
+              "File '/node_modules/ignore.ts' does not exist.",
+              "File '/node_modules/ignore.tsx' does not exist.",
+              "File '/node_modules/ignore.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' does not have a 'types' field.",
+              "'package.json' does not have a 'main' field.",
+              "File '/node_modules/ignore/index.ts' does not exist.",
+              "File '/node_modules/ignore/index.tsx' does not exist.",
+              "File '/node_modules/ignore/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'ignore' was successfully resolved to '/node_modules/ignore/index.d.ts' with Package ID 'ignore/index.d.ts@5.2.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/ignore/index.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/ignore/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'ignore' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'ignore' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/ignore/package.json'.",
+              "File '/node_modules/ignore.ts' does not exist.",
+              "File '/node_modules/ignore.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'main' field.",
+              "File '/node_modules/ignore/index.ts' does not exist.",
+              "File '/node_modules/ignore/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/ignore/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/ignore.js' does not exist.",
+              "File '/node_modules/ignore.jsx' does not exist.",
+              "'package.json' does not have a 'main' field.",
+              "File '/node_modules/ignore/index.js' exists - use it as a name resolution result.",
+              "======== Module name 'ignore' was successfully resolved to '/node_modules/ignore/index.js' with Package ID 'ignore/index.js@5.2.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/ignore/index.d.ts"
+          ]
+        },
+        "node16-esm": {
+          "name": ".",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/ignore/index.d.ts",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/ignore/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'ignore' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'ignore' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/ignore/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' does not have a 'types' field.",
+              "'package.json' does not have a 'main' field.",
+              "File name '/node_modules/ignore/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/ignore/index.ts' does not exist.",
+              "File '/node_modules/ignore/index.tsx' does not exist.",
+              "File '/node_modules/ignore/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'ignore' was successfully resolved to '/node_modules/ignore/index.d.ts' with Package ID 'ignore/index.d.ts@5.2.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/ignore/index.js",
+            "moduleKind": {
+              "detectedKind": 1,
+              "detectedReason": "no:type",
+              "reasonFileName": "/node_modules/ignore/package.json"
+            },
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'ignore' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'ignore' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/ignore/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'main' field.",
+              "File name '/node_modules/ignore/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/ignore/index.ts' does not exist.",
+              "File '/node_modules/ignore/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/ignore/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'main' field.",
+              "File name '/node_modules/ignore/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/ignore/index.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'ignore' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/ignore/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'main' field.",
+              "File name '/node_modules/ignore/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/ignore/index.ts' does not exist.",
+              "File '/node_modules/ignore/index.tsx' does not exist.",
+              "======== Module name 'ignore' was successfully resolved to '/node_modules/ignore/index.js' with Package ID 'ignore/index.js@5.2.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/ignore/index.d.ts"
+          ]
+        },
+        "bundler": {
+          "name": ".",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/ignore/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'ignore' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'ignore' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/ignore/package.json'.",
+              "File '/node_modules/ignore.ts' does not exist.",
+              "File '/node_modules/ignore.tsx' does not exist.",
+              "File '/node_modules/ignore.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' does not have a 'types' field.",
+              "'package.json' does not have a 'main' field.",
+              "File '/node_modules/ignore/index.ts' does not exist.",
+              "File '/node_modules/ignore/index.tsx' does not exist.",
+              "File '/node_modules/ignore/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'ignore' was successfully resolved to '/node_modules/ignore/index.d.ts' with Package ID 'ignore/index.d.ts@5.2.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/ignore/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'ignore' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'ignore' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/ignore/package.json'.",
+              "File '/node_modules/ignore.ts' does not exist.",
+              "File '/node_modules/ignore.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'main' field.",
+              "File '/node_modules/ignore/index.ts' does not exist.",
+              "File '/node_modules/ignore/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/ignore/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/ignore.js' does not exist.",
+              "File '/node_modules/ignore.jsx' does not exist.",
+              "'package.json' does not have a 'main' field.",
+              "File '/node_modules/ignore/index.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'ignore' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/ignore/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/ignore.ts' does not exist.",
+              "File '/node_modules/ignore.tsx' does not exist.",
+              "'package.json' does not have a 'main' field.",
+              "File '/node_modules/ignore/index.ts' does not exist.",
+              "File '/node_modules/ignore/index.tsx' does not exist.",
+              "======== Module name 'ignore' was successfully resolved to '/node_modules/ignore/index.js' with Package ID 'ignore/index.js@5.2.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/ignore/index.d.ts"
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    }
+  },
+  "problems": [
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": ".",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": ".",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": ".",
+      "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": ".",
+      "resolutionKind": "bundler"
+    }
+  ]
+}

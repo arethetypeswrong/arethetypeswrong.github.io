@@ -500,5 +500,26 @@
       "isWildcard": false
     }
   },
-  "problems": []
+  "problems": [
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": ".",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": ".",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": ".",
+      "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": ".",
+      "resolutionKind": "bundler"
+    }
+  ]
 }

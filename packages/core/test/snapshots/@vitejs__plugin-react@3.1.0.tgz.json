@@ -322,6 +322,16 @@
   },
   "problems": [
     {
+      "kind": "MissingExportEquals",
+      "entrypoint": ".",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "MissingExportEquals",
+      "entrypoint": ".",
+      "resolutionKind": "node16-cjs"
+    },
+    {
       "kind": "FalseCJS",
       "entrypoint": ".",
       "resolutionKind": "node16-esm"
