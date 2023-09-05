@@ -10,7 +10,7 @@ vue v3.3.4
 
 💀 Import failed to resolve to type declarations or JavaScript files. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/NoResolution.md
 
-❓ Wildcard subpaths cannot yet be analyzed by this tool. https://github.com/arethetypeswrong/arethetypeswrong.github.io/issues/40
+🃏 Wildcard subpaths cannot yet be analyzed by this tool. https://github.com/arethetypeswrong/arethetypeswrong.github.io/issues/40
 
 🥴 Import found in a type declaration file failed to resolve. Either this indicates that runtime resolution errors will occur, or (more likely) the types misrepresent the contents of the JavaScript files. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/InternalResolutionError.md
 
@@ -71,10 +71,10 @@ bundler: 🟢
 
 "vue/dist/*"
 
-node10: ❓ Unable to check
-node16 (from CJS): ❓ Unable to check
-node16 (from ESM): ❓ Unable to check
-bundler: ❓ Unable to check
+node10: 🃏 Unable to check
+node16 (from CJS): 🃏 Unable to check
+node16 (from ESM): 🃏 Unable to check
+bundler: 🃏 Unable to check
 
 ***********************************
 
