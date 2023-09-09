@@ -6,7 +6,7 @@ Syntax detected in the module is incompatible with the module kind according to 
 
 In Node, and in [some bundlers](https://andrewbranch.github.io/interop-test/#synthesizing-default-exports-for-cjs-modules), files are determined to be ES modules or CommonJS modules by their file extension and ancestor package.json `"type"` field. This problem occurs when a JavaScript file that Node would interpret as CommonJS contains top-level `import` or `export` declarations or `export` modifiers (which would be a syntax error), or when a JavaScript file that Node would interpret as ESM uses `module.exports` or `require` (which would likely be a runtime error). (ESM files that use both CommonJS and ESM syntax do not raise this problem, as it’s assumed that these files are correctly using `require` via `createRequire`.)
 
-This is not an instance of incorrect types, but rather a runtime module configuraiton that is likely to cause problems.
+This is not an instance of incorrect types, but rather a runtime module configuration that is likely to cause problems.
 
 ## Consequences
 
