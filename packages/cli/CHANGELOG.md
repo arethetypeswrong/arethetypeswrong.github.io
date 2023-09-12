@@ -1,5 +1,12 @@
 # @arethetypeswrong/cli
 
+## 0.10.2
+
+### Patch Changes
+
+- Updated dependencies [eecbf74]
+  - @arethetypeswrong/core@0.10.2
+
 ## 0.10.1
 
 ### Patch Changes
