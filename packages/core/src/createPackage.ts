@@ -98,11 +98,15 @@ export async function createPackageFromNpm(
     throw new Error(parsed.error);
   }
   const packageName = parsed.data.name;
-  const spec =
+  const specs =
     parsed.data.versionKind === "none" && typeof definitelyTyped === "string"
-      ? parsePackageSpec(`${packageName}@${definitelyTyped}`)
-      : parsed;
-  const { tarballUrl, packageVersion } = await getNpmTarballUrl([spec.data || parsed.data], before);
+      ? [
+          parsePackageSpec(`${packageName}@${major(definitelyTyped)}.${minor(definitelyTyped)}`).data!,
+          parsePackageSpec(`${packageName}@${major(definitelyTyped)}`).data!,
+          parsePackageSpec(`${packageName}@latest`).data!,
+        ]
+      : [parsed.data];
+  const { tarballUrl, packageVersion } = await getNpmTarballUrl(specs, before);
   const pkg = await createPackageFromTarballUrl(tarballUrl);
   if (!definitelyTyped || pkg.containsTypes()) {
     return pkg;
@@ -181,6 +185,10 @@ async function getNpmTarballUrl(
   for (const packageSpec of packageSpecs) {
     const manifestUrl = `https://registry.npmjs.org/${packageSpec.name}/${packageSpec.version || "latest"}`;
     const doc = packument || (await fetch(manifestUrl).then((r) => r.json()));
+    if (typeof doc !== "object") {
+      continue;
+    }
+    const isManifest = !!doc.version;
     let tarballUrl, packageVersion;
     if (packageSpec.versionKind === "range") {
       packageVersion = maxSatisfying(
@@ -202,9 +210,12 @@ async function getNpmTarballUrl(
         continue;
       }
       tarballUrl = doc.versions[packageVersion].dist.tarball;
-    } else {
+    } else if (isManifest) {
       packageVersion = doc.version;
       tarballUrl = doc.dist.tarball;
+    } else {
+      packageVersion = doc["dist-tags"].latest;
+      tarballUrl = doc.versions[packageVersion].dist.tarball;
     }
 
     if (packageVersion && tarballUrl) {

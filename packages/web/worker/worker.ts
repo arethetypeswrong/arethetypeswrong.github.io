@@ -28,7 +28,7 @@ onmessage = async (event: MessageEvent<CheckPackageEventData | CheckFileEventDat
     event.data.kind === "check-file"
       ? createPackageFromTarballData(event.data.file)
       : event.data.packageSpec.startsWith("@types/")
-      ? await createPackageFromNpm(unmangleScopedPackageName(event.data.packageSpec), {
+      ? await createPackageFromNpm(getImplementationPackageName(event.data.packageSpec), {
           definitelyTyped: parsePackageSpec(event.data.packageSpec).data?.version,
         })
       : await createPackageFromNpm(event.data.packageSpec)
@@ -41,6 +41,11 @@ onmessage = async (event: MessageEvent<CheckPackageEventData | CheckFileEventDat
   } satisfies ResultMessage);
 };
 
-function unmangleScopedPackageName(packageName: string): string {
-  return packageName.startsWith("@types/") ? packageName.slice(7).replace("__", "/") : packageName;
+function getImplementationPackageName(typesPackageSpec: string): string {
+  if (typesPackageSpec.startsWith("@types/")) {
+    const name = typesPackageSpec.slice(7).replace("__", "/").replace(/@.*$/, "");
+    return name.includes("/") ? `@${name}` : name;
+  }
+  // should not hit this I guess
+  return typesPackageSpec.replace(/@.*$/, "");
 }
