@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.10.2
+
+### Patch Changes
+
+- eecbf74: Fix issue with resolving DefinitelyTyped versions
+
 ## 0.10.1
 
 ### Patch Changes
