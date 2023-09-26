@@ -14,6 +14,7 @@ import readline from "readline";
 import { problemFlags } from "./problemUtils.js";
 import { readConfig } from "./readConfig.js";
 import * as render from "./render/index.js";
+import { major, minor } from "semver";
 
 const packageJson = createRequire(import.meta.url)("../package.json");
 const version = packageJson.version;
@@ -111,13 +112,21 @@ particularly ESM-related module resolution issues.`
         if (result.status === "error") {
           program.error(result.error);
         } else {
-          const pkg = dtIsPath
-            ? (await core.createPackageFromNpm(`${result.data.name}@${result.data.version}`)).mergedWithTypes(
-                core.createPackageFromTarballData(new Uint8Array(await readFile(opts.definitelyTyped as string)))
-              )
-            : await core.createPackageFromNpm(`${result.data.name}@${result.data.version}`, {
-                definitelyTyped: opts.definitelyTyped,
-              });
+          let pkg;
+          if (dtIsPath) {
+            const dtPackage = core.createPackageFromTarballData(
+              new Uint8Array(await readFile(opts.definitelyTyped as string))
+            );
+            const pkgVersion =
+              result.data.versionKind === "none"
+                ? `${major(dtPackage.packageVersion)}.${minor(dtPackage.packageVersion)}`
+                : result.data.version;
+            pkg = (await core.createPackageFromNpm(`${result.data.name}@${pkgVersion}`)).mergedWithTypes(dtPackage);
+          } else {
+            pkg = await core.createPackageFromNpm(`${result.data.name}@${result.data.version}`, {
+              definitelyTyped: opts.definitelyTyped,
+            });
+          }
           analysis = await core.checkPackage(pkg, {
             entrypoints: opts.entrypoints,
             includeEntrypoints: opts.includeEntrypoints,
