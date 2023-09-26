@@ -1,5 +1,11 @@
 # @arethetypeswrong/cli
 
+## 0.11.0
+
+### Minor Changes
+
+- 26f89d1: Infer `--from-npm` version from a locally-provided DefinitelyTyped package
+
 ## 0.10.2
 
 ### Patch Changes
