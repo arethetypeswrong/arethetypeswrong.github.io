@@ -16,7 +16,7 @@ export default defineCheck({
     return [typesFileName, implementationFileName];
   },
   execute: ([typesFileName, implementationFileName], context) => {
-    if (!typesFileName || !implementationFileName) {
+    if (!typesFileName || !implementationFileName || !ts.hasTSFileExtension(typesFileName)) {
       return;
     }
     const host = context.hosts.findHostForFiles([typesFileName])!;

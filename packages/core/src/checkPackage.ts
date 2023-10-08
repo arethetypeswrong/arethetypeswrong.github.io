@@ -241,11 +241,8 @@ function getEntrypointResolution(
   const moduleSpecifier = packageName + entrypoint.substring(1); // remove leading . before slash
   const importingFileName = resolutionKind === "node16-esm" ? "/index.mts" : "/index.ts";
   const resolutionMode = resolutionKind === "node16-esm" ? ts.ModuleKind.ESNext : ts.ModuleKind.CommonJS;
-
   const resolution = tryResolve();
-  const implementationResolution =
-    !resolution || ts.isDeclarationFileName(resolution.fileName) ? tryResolve(/*noDtsResolution*/ true) : undefined;
-
+  const implementationResolution = tryResolve(/*noDtsResolution*/ true);
   const files = resolution
     ? host
         .createProgram([resolution.fileName])

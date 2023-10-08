@@ -36,16 +36,16 @@ export type Serializable =
   | undefined
   | boolean
   | { [key: string]: Serializable }
-  | Serializable[];
+  | readonly Serializable[];
 
 export interface AnyCheck {
   name: string;
   enumerateFiles?: boolean;
-  dependencies: (context: CheckDependenciesContext<boolean>) => EnsureSerializable<any[]>;
+  dependencies: (context: CheckDependenciesContext<boolean>) => EnsureSerializable<readonly any[]>;
   execute: (dependencies: any, context: CheckExecutionContext) => Problem[] | Problem | undefined;
 }
 
-export function defineCheck<const Dependencies extends any[], EnumerateFiles extends boolean>(options: {
+export function defineCheck<const Dependencies extends readonly any[], EnumerateFiles extends boolean>(options: {
   name: string;
   enumerateFiles?: EnumerateFiles;
   dependencies: (context: CheckDependenciesContext<EnumerateFiles>) => EnsureSerializable<Dependencies>;

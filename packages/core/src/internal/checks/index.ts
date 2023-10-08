@@ -6,10 +6,10 @@ import moduleKindDisagreement from "./moduleKindDisagreement.js";
 import unexpectedModuleSyntax from "./unexpectedModuleSyntax.js";
 
 export default [
-  cjsOnlyExportsDefault,
   entrypointResolutions,
-  exportDefaultDisagreement,
-  internalResolutionError,
   moduleKindDisagreement,
+  exportDefaultDisagreement,
+  cjsOnlyExportsDefault,
   unexpectedModuleSyntax,
+  internalResolutionError,
 ];

@@ -61,7 +61,7 @@ export function ChecksTable(props: { analysis?: CheckResult }) {
                       )
                       .join("<br />")
                   : resolutionInfo.isWildcard
-                  ? "❓ (wildcard)"
+                  ? "(wildcard)"
                   : resolutionInfo.resolution?.isJson
                   ? "✅ (JSON)"
                   : "✅ " +

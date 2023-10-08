@@ -9,6 +9,10 @@ export default defineCheck({
   execute: ([subpath, resolutionKind], context) => {
     const problems: Problem[] = [];
     const entrypoint = context.entrypoints[subpath].resolutions[resolutionKind];
+    if (entrypoint.isWildcard) {
+      return;
+    }
+
     if (!entrypoint.resolution) {
       problems.push({
         kind: "NoResolution",
@@ -24,9 +28,14 @@ export default defineCheck({
     }
 
     if (
-      entrypoint.resolution &&
       resolutionKind === "node16-cjs" &&
-      context.programInfo["node16"].moduleKinds![entrypoint.resolution.fileName].detectedKind === ts.ModuleKind.ESNext
+      ((!entrypoint.implementationResolution &&
+        entrypoint.resolution &&
+        context.programInfo["node16"].moduleKinds![entrypoint.resolution.fileName]?.detectedKind ===
+          ts.ModuleKind.ESNext) ||
+        (entrypoint.implementationResolution &&
+          context.programInfo["node16"].moduleKinds![entrypoint.implementationResolution.fileName]?.detectedKind ===
+            ts.ModuleKind.ESNext))
     ) {
       problems.push({
         kind: "CJSResolvesToESM",
