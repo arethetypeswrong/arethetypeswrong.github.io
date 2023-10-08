@@ -1,16 +1,13 @@
-import validatePackgeName from "validate-npm-package-name";
 import { valid, validRange } from "semver";
+import validatePackgeName from "validate-npm-package-name";
 import type {
   BuildTool,
   EntrypointInfo,
   EntrypointResolutionAnalysis,
-  EntrypointResolutionProblem,
   Failable,
-  FileProblem,
   ParsedPackageSpec,
   Problem,
   ProblemKind,
-  ResolutionBasedFileProblem,
   ResolutionKind,
   ResolutionOption,
 } from "./types.js";
@@ -79,7 +76,7 @@ export function resolvedThroughFallback(traces: string[]) {
 
 export function visitResolutions(
   entrypoints: Record<string, EntrypointInfo>,
-  visitor: (analysis: EntrypointResolutionAnalysis, info: EntrypointInfo) => unknown
+  visitor: (analysis: EntrypointResolutionAnalysis, info: EntrypointInfo) => unknown,
 ) {
   for (const entrypoint of Object.values(entrypoints)) {
     for (const resolution of Object.values(entrypoint.resolutions)) {
@@ -90,57 +87,8 @@ export function visitResolutions(
   }
 }
 
-type AssertNever<T extends never> = T;
-
-export function isEntrypointResolutionProblemKind(kind: ProblemKind): kind is EntrypointResolutionProblem["kind"] {
-  switch (kind) {
-    case "NoResolution":
-    case "UntypedResolution":
-    case "FalseESM":
-    case "FalseCJS":
-    case "CJSResolvesToESM":
-    case "Wildcard":
-    case "FallbackCondition":
-    case "FalseExportDefault":
-    case "MissingExportEquals":
-      return true;
-    default:
-      return false as AssertNever<typeof kind & EntrypointResolutionProblem["kind"]>;
-  }
-}
-
-export function isEntrypointResolutionProblem(problem: Problem): problem is EntrypointResolutionProblem {
-  return isEntrypointResolutionProblemKind(problem.kind);
-}
-
-export function isFileProblemKind(kind: ProblemKind): kind is FileProblem["kind"] {
-  switch (kind) {
-    case "CJSOnlyExportsDefault":
-      return true;
-    default:
-      return false as AssertNever<typeof kind & FileProblem["kind"]>;
-  }
-}
-
-export function isFileProblem(problem: Problem): problem is FileProblem {
-  return isFileProblemKind(problem.kind);
-}
-
-export function isResolutionBasedFileProblemKind(kind: ProblemKind): kind is ResolutionBasedFileProblem["kind"] {
-  switch (kind) {
-    case "InternalResolutionError":
-    case "UnexpectedModuleSyntax":
-      return true;
-    default:
-      return false as AssertNever<typeof kind & ResolutionBasedFileProblem["kind"]>;
-  }
-}
-
-export function isResolutionBasedFileProblem(problem: Problem): problem is ResolutionBasedFileProblem {
-  return isResolutionBasedFileProblemKind(problem.kind);
-}
 export function groupProblemsByKind<K extends ProblemKind>(
-  problems: (Problem & { kind: K })[]
+  problems: (Problem & { kind: K })[],
 ): Partial<Record<K, (Problem & { kind: K })[]>> {
   const result: Partial<Record<K, (Problem & { kind: K })[]>> = {};
   for (const problem of problems) {

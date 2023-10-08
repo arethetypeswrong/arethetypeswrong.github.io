@@ -11,13 +11,25 @@ export interface CompilerHosts {
   node10: CompilerHostWrapper;
   node16: CompilerHostWrapper;
   bundler: CompilerHostWrapper;
+  findHostForFiles(files: string[]): CompilerHostWrapper | undefined;
 }
 
 export function createCompilerHosts(fs: Package): CompilerHosts {
+  const node10 = new CompilerHostWrapper(fs, ts.ModuleResolutionKind.Node10, ts.ModuleKind.CommonJS);
+  const node16 = new CompilerHostWrapper(fs, ts.ModuleResolutionKind.Node16, ts.ModuleKind.Node16);
+  const bundler = new CompilerHostWrapper(fs, ts.ModuleResolutionKind.Bundler, ts.ModuleKind.ESNext);
+
   return {
-    node10: new CompilerHostWrapper(fs, ts.ModuleResolutionKind.Node10, ts.ModuleKind.CommonJS),
-    node16: new CompilerHostWrapper(fs, ts.ModuleResolutionKind.Node16, ts.ModuleKind.Node16),
-    bundler: new CompilerHostWrapper(fs, ts.ModuleResolutionKind.Bundler, ts.ModuleKind.ESNext),
+    node10,
+    node16,
+    bundler,
+    findHostForFiles(files: string[]) {
+      for (const host of [node10, node16, bundler]) {
+        if (files.every((f) => host.getSourceFileFromCache(f) !== undefined)) {
+          return host;
+        }
+      }
+    },
   };
 }
 
@@ -35,13 +47,15 @@ export class CompilerHostWrapper {
     Record</*Key*/ string, { resolution: ts.ResolvedModuleWithFailedLookupLocations; trace: string[] }>
   > = {};
   private traceCollector: TraceCollector = new TraceCollector();
-
+  private sourceFileCache: Map<ts.Path, ts.SourceFile> = new Map();
   private languageVersion = ts.ScriptTarget.Latest;
 
   constructor(fs: Package, moduleResolution: ts.ModuleResolutionKind, moduleKind: ts.ModuleKind) {
     this.compilerOptions = {
       moduleResolution,
       module: moduleKind,
+      // So `sourceFile.externalModuleIndicator` is set to a node
+      moduleDetection: ts.ModuleDetectionKind.Legacy,
       target: ts.ScriptTarget.Latest,
       resolveJsonModule: true,
       traceResolution: true,
@@ -50,13 +64,17 @@ export class CompilerHostWrapper {
     this.noDtsResolutionModuleResolutionCache = ts.createModuleResolutionCache(
       "/",
       getCanonicalFileName,
-      this.compilerOptions
+      this.compilerOptions,
     );
-    this.compilerHost = this.createCompilerHost(fs);
+    this.compilerHost = this.createCompilerHost(fs, this.sourceFileCache);
   }
 
   getSourceFile(fileName: string): ts.SourceFile | undefined {
     return this.compilerHost.getSourceFile(fileName, this.languageVersion);
+  }
+
+  getSourceFileFromCache(fileName: string): ts.SourceFile | undefined {
+    return this.sourceFileCache.get(toPath(fileName));
   }
 
   getModuleKindForFile(fileName: string): ModuleKind | undefined {
@@ -90,7 +108,7 @@ export class CompilerHostWrapper {
     containingFile: string,
     resolutionMode?: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS,
     noDtsResolution?: boolean,
-    allowJs?: boolean
+    allowJs?: boolean,
   ): ResolveModuleNameResult {
     const moduleKey = this.getModuleKey(moduleName, resolutionMode, noDtsResolution, allowJs);
     if (this.moduleResolutionCache[containingFile]?.[moduleKey]) {
@@ -108,7 +126,7 @@ export class CompilerHostWrapper {
       this.compilerHost,
       noDtsResolution ? this.noDtsResolutionModuleResolutionCache : this.normalModuleResolutionCache,
       /*redirectedReference*/ undefined,
-      resolutionMode
+      resolutionMode,
     );
     const trace = this.traceCollector.read();
     if (!this.moduleResolutionCache[containingFile]?.[moduleKey]) {
@@ -123,7 +141,7 @@ export class CompilerHostWrapper {
   getTrace(
     fromFileName: string,
     moduleSpecifier: string,
-    resolutionMode: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined
+    resolutionMode: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined,
   ): string[] | undefined {
     return this.moduleResolutionCache[fromFileName]?.[
       this.getModuleKey(moduleSpecifier, resolutionMode, /*noDtsResolution*/ undefined, /*allowJs*/ undefined)
@@ -134,7 +152,7 @@ export class CompilerHostWrapper {
     moduleSpecifier: string,
     resolutionMode: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS | undefined,
     noDtsResolution: boolean | undefined,
-    allowJs: boolean | undefined
+    allowJs: boolean | undefined,
   ) {
     return `${resolutionMode ?? 1}:${+!!noDtsResolution}:${+!!allowJs}:${moduleSpecifier}`;
   }
@@ -151,7 +169,7 @@ export class CompilerHostWrapper {
           checkJs: extraOptions.checkJs,
           noDtsResolution: extraOptions.noDtsResolution,
         },
-        { ...this.compilerOptions, ...extraOptions }
+        { ...this.compilerOptions, ...extraOptions },
       )
     ) {
       throw new Error("Cannot override resolution-affecting options for host due to potential cache polution");
@@ -163,8 +181,7 @@ export class CompilerHostWrapper {
     });
   }
 
-  private createCompilerHost(fs: Package): ts.CompilerHost {
-    const sourceFileCache = new Map<ts.Path, ts.SourceFile>();
+  private createCompilerHost(fs: Package, sourceFileCache: Map<ts.Path, ts.SourceFile>): ts.CompilerHost {
     return {
       fileExists: fs.fileExists.bind(fs),
       readFile: fs.readFile.bind(fs),
@@ -183,7 +200,7 @@ export class CompilerHostWrapper {
             languageVersion: this.languageVersion,
             impliedNodeFormat: this.getImpliedNodeFormatForFile(fileName),
           },
-          /*setParentNodes*/ true
+          /*setParentNodes*/ true,
         );
         sourceFileCache.set(path, sourceFile);
         return sourceFile;
@@ -202,7 +219,7 @@ export class CompilerHostWrapper {
         containingFile,
         _redirectedReference,
         options,
-        containingSourceFile
+        containingSourceFile,
       ) => {
         return moduleLiterals.map(
           (literal) =>
@@ -210,8 +227,8 @@ export class CompilerHostWrapper {
               literal.text,
               containingFile,
               ts.getModeForUsageLocation(containingSourceFile, literal),
-              options.noDtsResolution
-            ).resolution
+              options.noDtsResolution,
+            ).resolution,
         );
       },
     };
@@ -222,7 +239,7 @@ export class CompilerHostWrapper {
       toPath(fileName),
       this.normalModuleResolutionCache.getPackageJsonInfoCache(),
       this.compilerHost,
-      this.compilerOptions
+      this.compilerOptions,
     );
   }
 
@@ -233,8 +250,8 @@ export class CompilerHostWrapper {
         // TODO: consider always using the node16 cache because package.json should be a hit
         this.normalModuleResolutionCache.getPackageJsonInfoCache(),
         this.compilerHost,
-        this.compilerOptions
-      )
+        this.compilerOptions,
+      ),
     );
   }
 }

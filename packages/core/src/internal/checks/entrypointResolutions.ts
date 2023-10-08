@@ -1,0 +1,48 @@
+import ts from "typescript";
+import type { Problem } from "../../types.js";
+import { resolvedThroughFallback } from "../../utils.js";
+import { defineCheck } from "../defineCheck.js";
+
+export default defineCheck({
+  name: "EntrypointResolutions",
+  dependencies: ({ subpath, resolutionKind }) => [subpath, resolutionKind],
+  execute: ([subpath, resolutionKind], context) => {
+    const problems: Problem[] = [];
+    const entrypoint = context.entrypoints[subpath].resolutions[resolutionKind];
+    if (!entrypoint.resolution) {
+      problems.push({
+        kind: "NoResolution",
+        entrypoint: subpath,
+        resolutionKind,
+      });
+    } else if (!entrypoint.resolution.isTypeScript && !entrypoint.resolution.isJson) {
+      problems.push({
+        kind: "UntypedResolution",
+        entrypoint: subpath,
+        resolutionKind,
+      });
+    }
+
+    if (
+      entrypoint.resolution &&
+      resolutionKind === "node16-cjs" &&
+      context.programInfo["node16"].moduleKinds![entrypoint.resolution.fileName].detectedKind === ts.ModuleKind.ESNext
+    ) {
+      problems.push({
+        kind: "CJSResolvesToESM",
+        entrypoint: subpath,
+        resolutionKind,
+      });
+    }
+
+    if (entrypoint.resolution && resolvedThroughFallback(entrypoint.resolution.trace)) {
+      problems.push({
+        kind: "FallbackCondition",
+        entrypoint: subpath,
+        resolutionKind,
+      });
+    }
+
+    return problems;
+  },
+});

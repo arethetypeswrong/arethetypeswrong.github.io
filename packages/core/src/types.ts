@@ -41,6 +41,7 @@ export interface Analysis {
   buildTools: Partial<Record<BuildTool, string>>;
   types: AnalysisTypes;
   entrypoints: Record<string, EntrypointInfo>;
+  programInfo: Record<ResolutionOption, ProgramInfo>;
   problems: Problem[];
 }
 
@@ -59,6 +60,19 @@ export interface EntrypointResolutionAnalysis {
   resolution?: Resolution;
   implementationResolution?: Resolution;
   files?: string[];
+  /** Indices into `analysis.problems` */
+  visibleProblems?: number[];
+}
+
+export interface Resolution {
+  fileName: string;
+  isTypeScript: boolean;
+  isJson: boolean;
+  trace: string[];
+}
+
+export interface ProgramInfo {
+  moduleKinds?: Record<string, ModuleKind>;
 }
 
 export type ModuleKindReason = "extension" | "type" | "no:type";
@@ -68,63 +82,91 @@ export interface ModuleKind {
   reasonFileName: string;
 }
 
-export interface Resolution {
-  fileName: string;
-  isTypeScript: boolean;
-  isJson: boolean;
-  moduleKind: ModuleKind | undefined;
-  trace: string[];
-}
-
-export type EntrypointResolutionProblemKind =
-  | "NoResolution"
-  | "UntypedResolution"
-  | "FalseESM"
-  | "FalseCJS"
-  | "CJSResolvesToESM"
-  | "Wildcard"
-  | "FallbackCondition"
-  | "FalseExportDefault"
-  | "MissingExportEquals";
-
 export interface EntrypointResolutionProblem {
-  kind: EntrypointResolutionProblemKind;
   entrypoint: string;
   resolutionKind: ResolutionKind;
 }
 
-export interface InternalResolutionErrorProblem {
-  kind: "InternalResolutionError";
-  resolutionOption: ResolutionOption;
+export interface FilePairProblem {
+  typesFileName: string;
+  implementationFileName: string;
+}
+
+export interface ModuleKindPairProblem {
+  typesModuleKind: ModuleKind;
+  implementationModuleKind: ModuleKind;
+}
+
+export interface FileTextRangeProblem {
   fileName: string;
   pos: number;
   end: number;
+}
+
+export interface NoResolutionProblem extends EntrypointResolutionProblem {
+  kind: "NoResolution";
+}
+
+export interface UntypedResolutionProblem extends EntrypointResolutionProblem {
+  kind: "UntypedResolution";
+}
+
+export interface FalseESMProblem extends FilePairProblem, ModuleKindPairProblem {
+  kind: "FalseESM";
+}
+
+export interface FalseCJSProblem extends FilePairProblem, ModuleKindPairProblem {
+  kind: "FalseCJS";
+}
+
+export interface CJSResolvesToESMProblem extends EntrypointResolutionProblem {
+  kind: "CJSResolvesToESM";
+}
+
+export interface FallbackConditionProblem extends EntrypointResolutionProblem {
+  kind: "FallbackCondition";
+}
+
+export interface FalseExportDefaultProblem extends FilePairProblem {
+  kind: "FalseExportDefault";
+}
+
+export interface MissingExportEqualsProblem extends FilePairProblem {
+  kind: "MissingExportEquals";
+}
+
+export interface InternalResolutionErrorProblem extends FileTextRangeProblem {
+  kind: "InternalResolutionError";
+  resolutionOption: ResolutionOption;
   moduleSpecifier: string;
   resolutionMode: ts.ResolutionMode;
   trace: string[];
 }
 
-export interface UnexpectedModuleSyntaxProblem {
+export interface UnexpectedModuleSyntaxProblem extends FileTextRangeProblem {
   kind: "UnexpectedModuleSyntax";
-  resolutionOption: ResolutionOption;
   syntax: ts.ModuleKind.ESNext | ts.ModuleKind.CommonJS;
   moduleKind: ModuleKind;
-  fileName: string;
-  range?: ts.TextRange;
 }
 
-export interface CJSOnlyExportsDefaultProblem {
+export interface CJSOnlyExportsDefaultProblem extends FileTextRangeProblem {
   kind: "CJSOnlyExportsDefault";
-  fileName: string;
-  range: ts.TextRange;
 }
 
-export type ResolutionBasedFileProblem = InternalResolutionErrorProblem | UnexpectedModuleSyntaxProblem;
-export type FileProblem = CJSOnlyExportsDefaultProblem;
-export type Problem = EntrypointResolutionProblem | ResolutionBasedFileProblem | FileProblem;
+export type Problem =
+  | NoResolutionProblem
+  | UntypedResolutionProblem
+  | FalseESMProblem
+  | FalseCJSProblem
+  | CJSResolvesToESMProblem
+  | FallbackConditionProblem
+  | FalseExportDefaultProblem
+  | MissingExportEqualsProblem
+  | InternalResolutionErrorProblem
+  | UnexpectedModuleSyntaxProblem
+  | CJSOnlyExportsDefaultProblem;
+
 export type ProblemKind = Problem["kind"];
-export type FileProblemKind = FileProblem["kind"];
-export type ResolutionBasedFileProblemKind = ResolutionBasedFileProblem["kind"];
 
 export type Failable<T> = { status: "error"; error: string; data?: never } | { status: "success"; data: T };
 

@@ -2,7 +2,6 @@ import * as core from "@arethetypeswrong/core";
 import type { ProblemKind } from "@arethetypeswrong/core";
 
 export const problemFlags: Record<ProblemKind, string> = {
-  Wildcard: "wildcard",
   NoResolution: "no-resolution",
   UntypedResolution: "untyped-resolution",
   FalseCJS: "false-cjs",
