@@ -8,9 +8,9 @@ postcss v8.4.21
 
 ❓ The JavaScript appears to set both module.exports and module.exports.default for improved compatibility, but the types only reflect the latter (by using export default). This will cause TypeScript under the node16 module mode to think an extra .default property access is required, which will work at runtime but is not necessary. These types export = an object with a default property instead of using export default. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/MissingExportEquals.md
 
-🎭 Import resolved to a CommonJS type declaration file, but an ESM JavaScript file. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseCJS.md
-
 🐛 Import resolved to types through a conditional package.json export, but only after failing to resolve through an earlier condition. This behavior is a TypeScript bug (https://github.com/microsoft/TypeScript/issues/50762). It may misrepresent the runtime behavior of this import and should not be relied upon. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FallbackCondition.md
+
+🎭 Import resolved to a CommonJS type declaration file, but an ESM JavaScript file. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseCJS.md
 
 ❌ Import resolved to JavaScript files, but no type declarations were found. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/UntypedResolution.md
 
@@ -18,8 +18,8 @@ postcss v8.4.21
 ┌──────────────────────────────────┬───────────────────────┬───────────────────────┬────────────────────────────┬────────────────────────────┐
 │                                  │ node10                │ node16 (from CJS)     │ node16 (from ESM)          │ bundler                    │
 ├──────────────────────────────────┼───────────────────────┼───────────────────────┼────────────────────────────┼────────────────────────────┤
-│ "postcss"                        │ ❓ Missing `export =` │ ❓ Missing `export =` │ 🎭 Masquerading as CJS     │ 🐛 Used fallback condition │
-│                                  │                       │                       │ 🐛 Used fallback condition │                            │
+│ "postcss"                        │ ❓ Missing `export =` │ ❓ Missing `export =` │ 🐛 Used fallback condition │ 🐛 Used fallback condition │
+│                                  │                       │                       │ 🎭 Masquerading as CJS     │                            │
 ├──────────────────────────────────┼───────────────────────┼───────────────────────┼────────────────────────────┼────────────────────────────┤
 │ "postcss/lib/at-rule"            │ ❓ Missing `export =` │ ❓ Missing `export =` │ ❓ Missing `export =`      │ ❓ Missing `export =`      │
 ├──────────────────────────────────┼───────────────────────┼───────────────────────┼────────────────────────────┼────────────────────────────┤

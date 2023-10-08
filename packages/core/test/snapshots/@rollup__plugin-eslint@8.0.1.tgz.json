@@ -73,6 +73,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@rollup/plugin-eslint/types/index.d.ts"
+          ],
+          "visibleProblems": [
+            0
           ]
         },
         "node16-cjs": {
@@ -80,11 +83,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@rollup/plugin-eslint/types/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@rollup/plugin-eslint/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -107,11 +105,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@rollup/plugin-eslint/dist/index.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@rollup/plugin-eslint/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -149,6 +142,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@rollup/plugin-eslint/types/index.d.ts"
+          ],
+          "visibleProblems": [
+            0
           ]
         },
         "node16-esm": {
@@ -156,11 +152,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@rollup/plugin-eslint/types/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@rollup/plugin-eslint/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -179,11 +170,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@rollup/plugin-eslint/dist/index.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@rollup/plugin-eslint/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -235,6 +221,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@rollup/plugin-eslint/types/index.d.ts"
+          ],
+          "visibleProblems": [
+            0
           ]
         },
         "bundler": {
@@ -320,6 +309,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@rollup/plugin-eslint/types/index.d.ts"
+          ],
+          "visibleProblems": [
+            0
           ]
         }
       },
@@ -327,26 +319,34 @@
       "isWildcard": false
     }
   },
+  "programInfo": {
+    "node10": {},
+    "node16": {
+      "moduleKinds": {
+        "/node_modules/typescript/lib/lib.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/typescript/lib/lib.d.ts"
+        },
+        "/node_modules/@rollup/plugin-eslint/types/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@rollup/plugin-eslint/package.json"
+        },
+        "/node_modules/@rollup/plugin-eslint/dist/index.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@rollup/plugin-eslint/package.json"
+        }
+      }
+    },
+    "bundler": {}
+  },
   "problems": [
     {
       "kind": "FalseExportDefault",
-      "entrypoint": ".",
-      "resolutionKind": "node10"
-    },
-    {
-      "kind": "FalseExportDefault",
-      "entrypoint": ".",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseExportDefault",
-      "entrypoint": ".",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseExportDefault",
-      "entrypoint": ".",
-      "resolutionKind": "bundler"
+      "typesFileName": "/node_modules/@rollup/plugin-eslint/types/index.d.ts",
+      "implementationFileName": "/node_modules/@rollup/plugin-eslint/dist/index.js"
     }
   ]
 }

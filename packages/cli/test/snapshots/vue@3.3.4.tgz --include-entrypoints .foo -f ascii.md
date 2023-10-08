@@ -6,13 +6,11 @@ $ attw vue@3.3.4.tgz --include-entrypoints ./foo -f ascii
 
 vue v3.3.4
 
+🥴 Import found in a type declaration file failed to resolve. Either this indicates that runtime resolution errors will occur, or (more likely) the types misrepresent the contents of the JavaScript files. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/InternalResolutionError.md
+
 🎭 Import resolved to a CommonJS type declaration file, but an ESM JavaScript file. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseCJS.md
 
 💀 Import failed to resolve to type declarations or JavaScript files. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/NoResolution.md
-
-🃏 Wildcard subpaths cannot yet be analyzed by this tool. https://github.com/arethetypeswrong/arethetypeswrong.github.io/issues/40
-
-🥴 Import found in a type declaration file failed to resolve. Either this indicates that runtime resolution errors will occur, or (more likely) the types misrepresent the contents of the JavaScript files. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/InternalResolutionError.md
 
 
 "vue"
@@ -71,10 +69,10 @@ bundler: 🟢
 
 "vue/dist/*"
 
-node10: 🃏 Unable to check
-node16 (from CJS): 🃏 Unable to check
-node16 (from ESM): 🃏 Unable to check
-bundler: 🃏 Unable to check
+node10: ❓ (wildcard)
+node16 (from CJS): ❓ (wildcard)
+node16 (from ESM): ❓ (wildcard)
+bundler: ❓ (wildcard)
 
 ***********************************
 

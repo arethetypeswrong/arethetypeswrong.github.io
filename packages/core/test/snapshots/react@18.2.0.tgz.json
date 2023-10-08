@@ -95,18 +95,14 @@
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@types/react/global.d.ts",
             "/node_modules/@types/react/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": ".",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@types/react/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@types/react/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -144,11 +140,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/react/index.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/react/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -185,18 +176,14 @@
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@types/react/global.d.ts",
             "/node_modules/@types/react/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": ".",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@types/react/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@types/react/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -234,11 +221,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/react/index.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/react/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -291,7 +273,8 @@
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@types/react/global.d.ts",
             "/node_modules/@types/react/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "bundler": {
           "name": ".",
@@ -391,7 +374,8 @@
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@types/react/global.d.ts",
             "/node_modules/@types/react/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -439,10 +423,35 @@
               "======== Module name 'react/package.json' was successfully resolved to '/node_modules/react/package.json' with Package ID 'react/package.json@18.2.0'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/react/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'react/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'react/package.json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/react/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/react/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/react/package.json.ts' does not exist.",
+              "File '/node_modules/react/package.json.tsx' does not exist.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/react/package.json/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/react/package.json/index.js', target file types: TypeScript.",
+              "File name '/node_modules/react/package.json/index.js' has a '.js' extension - stripping it.",
+              "Loading module 'react/package.json' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/react/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/react/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/react/package.json' exists - use it as a name resolution result.",
+              "======== Module name 'react/package.json' was successfully resolved to '/node_modules/react/package.json' with Package ID 'react/package.json@18.2.0'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/react/package.json"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./package.json",
@@ -476,10 +485,34 @@
               "======== Module name 'react/package.json' was successfully resolved to '/node_modules/react/package.json' with Package ID 'react/package.json@18.2.0'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/react/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'react/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'react/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/react/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/react/package.json' has a '.json' extension - stripping it.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/react'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/react/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/react/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/react/package.json' exists - use it as a name resolution result.",
+              "======== Module name 'react/package.json' was successfully resolved to '/node_modules/react/package.json' with Package ID 'react/package.json@18.2.0'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/react/package.json"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./package.json",
@@ -535,10 +568,43 @@
               "======== Module name 'react/package.json' was successfully resolved to '/node_modules/react/package.json' with Package ID 'react/package.json@18.2.0'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/react/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'react/package.json' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'react/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/react/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/react/package.json' has a '.json' extension - stripping it.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/react'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/react/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/react/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/react/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'react/package.json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/react/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/react/package.json' has a '.json' extension - stripping it.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/react/package.json/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/react/package.json/index.js', target file types: TypeScript.",
+              "File name '/node_modules/react/package.json/index.js' has a '.js' extension - stripping it.",
+              "======== Module name 'react/package.json' was successfully resolved to '/node_modules/react/package.json' with Package ID 'react/package.json@18.2.0'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/react/package.json"
-          ]
+          ],
+          "visibleProblems": []
         },
         "bundler": {
           "name": "./package.json",
@@ -598,10 +664,45 @@
               "======== Module name 'react/package.json' was successfully resolved to '/node_modules/react/package.json' with Package ID 'react/package.json@18.2.0'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/react/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'react/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'react/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/react/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/react/package.json' has a '.json' extension - stripping it.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/react'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/react/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/react/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/react/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'react/package.json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/react/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/react/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/react/package.json.ts' does not exist.",
+              "File '/node_modules/react/package.json.tsx' does not exist.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/react/package.json/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/react/package.json/index.js', target file types: TypeScript.",
+              "File name '/node_modules/react/package.json/index.js' has a '.js' extension - stripping it.",
+              "======== Module name 'react/package.json' was successfully resolved to '/node_modules/react/package.json' with Package ID 'react/package.json@18.2.0'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/react/package.json"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": false,
@@ -663,18 +764,14 @@
             "/node_modules/@types/react/global.d.ts",
             "/node_modules/@types/react/index.d.ts",
             "/node_modules/@types/react/jsx-runtime.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./jsx-runtime",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@types/react/jsx-runtime.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@types/react/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -708,11 +805,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/react/jsx-runtime.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/react/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -741,18 +833,14 @@
             "/node_modules/@types/react/global.d.ts",
             "/node_modules/@types/react/index.d.ts",
             "/node_modules/@types/react/jsx-runtime.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./jsx-runtime",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@types/react/jsx-runtime.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@types/react/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -786,11 +874,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/react/jsx-runtime.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/react/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -827,7 +910,8 @@
             "/node_modules/@types/react/global.d.ts",
             "/node_modules/@types/react/index.d.ts",
             "/node_modules/@types/react/jsx-runtime.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "bundler": {
           "name": "./jsx-runtime",
@@ -905,7 +989,8 @@
             "/node_modules/@types/react/global.d.ts",
             "/node_modules/@types/react/index.d.ts",
             "/node_modules/@types/react/jsx-runtime.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -967,18 +1052,14 @@
             "/node_modules/@types/react/global.d.ts",
             "/node_modules/@types/react/index.d.ts",
             "/node_modules/@types/react/jsx-dev-runtime.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./jsx-dev-runtime",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@types/react/jsx-dev-runtime.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@types/react/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1012,11 +1093,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/react/jsx-dev-runtime.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/react/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -1045,18 +1121,14 @@
             "/node_modules/@types/react/global.d.ts",
             "/node_modules/@types/react/index.d.ts",
             "/node_modules/@types/react/jsx-dev-runtime.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./jsx-dev-runtime",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@types/react/jsx-dev-runtime.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@types/react/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1090,11 +1162,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/react/jsx-dev-runtime.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/react/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -1131,7 +1198,8 @@
             "/node_modules/@types/react/global.d.ts",
             "/node_modules/@types/react/index.d.ts",
             "/node_modules/@types/react/jsx-dev-runtime.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "bundler": {
           "name": "./jsx-dev-runtime",
@@ -1209,7 +1277,8 @@
             "/node_modules/@types/react/global.d.ts",
             "/node_modules/@types/react/index.d.ts",
             "/node_modules/@types/react/jsx-dev-runtime.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -1249,18 +1318,14 @@
             "/node_modules/@types/react/global.d.ts",
             "/node_modules/@types/react/index.d.ts",
             "/node_modules/@types/react/canary.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./canary",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@types/react/canary.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@types/react/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1292,18 +1357,14 @@
             "/node_modules/@types/react/global.d.ts",
             "/node_modules/@types/react/index.d.ts",
             "/node_modules/@types/react/canary.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./canary",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@types/react/canary.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@types/react/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1335,7 +1396,8 @@
             "/node_modules/@types/react/global.d.ts",
             "/node_modules/@types/react/index.d.ts",
             "/node_modules/@types/react/canary.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "bundler": {
           "name": "./canary",
@@ -1373,7 +1435,8 @@
             "/node_modules/@types/react/global.d.ts",
             "/node_modules/@types/react/index.d.ts",
             "/node_modules/@types/react/canary.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -1414,18 +1477,14 @@
             "/node_modules/@types/react/index.d.ts",
             "/node_modules/@types/react/canary.d.ts",
             "/node_modules/@types/react/experimental.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./experimental",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@types/react/experimental.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@types/react/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1458,18 +1517,14 @@
             "/node_modules/@types/react/index.d.ts",
             "/node_modules/@types/react/canary.d.ts",
             "/node_modules/@types/react/experimental.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./experimental",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@types/react/experimental.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@types/react/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1502,7 +1557,8 @@
             "/node_modules/@types/react/index.d.ts",
             "/node_modules/@types/react/canary.d.ts",
             "/node_modules/@types/react/experimental.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "bundler": {
           "name": "./experimental",
@@ -1541,12 +1597,71 @@
             "/node_modules/@types/react/index.d.ts",
             "/node_modules/@types/react/canary.d.ts",
             "/node_modules/@types/react/experimental.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
       "isWildcard": false
     }
+  },
+  "programInfo": {
+    "node10": {},
+    "node16": {
+      "moduleKinds": {
+        "/node_modules/typescript/lib/lib.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/typescript/lib/lib.d.ts"
+        },
+        "/node_modules/@types/react/global.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@types/react/package.json"
+        },
+        "/node_modules/@types/react/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@types/react/package.json"
+        },
+        "/node_modules/react/index.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/react/package.json"
+        },
+        "/node_modules/@types/react/jsx-runtime.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@types/react/package.json"
+        },
+        "/node_modules/react/jsx-runtime.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/react/package.json"
+        },
+        "/node_modules/@types/react/jsx-dev-runtime.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@types/react/package.json"
+        },
+        "/node_modules/react/jsx-dev-runtime.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/react/package.json"
+        },
+        "/node_modules/@types/react/canary.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@types/react/package.json"
+        },
+        "/node_modules/@types/react/experimental.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@types/react/package.json"
+        }
+      }
+    },
+    "bundler": {}
   },
   "problems": []
 }

@@ -73,18 +73,14 @@
             "/node_modules/react-chartjs-2/dist/typedCharts.d.ts",
             "/node_modules/react-chartjs-2/dist/utils.d.ts",
             "/node_modules/react-chartjs-2/dist/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": ".",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/react-chartjs-2/dist/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/react-chartjs-2/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -106,11 +102,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/react-chartjs-2/dist/index.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/react-chartjs-2/dist/index.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -151,6 +142,9 @@
             "/node_modules/react-chartjs-2/dist/typedCharts.d.ts",
             "/node_modules/react-chartjs-2/dist/utils.d.ts",
             "/node_modules/react-chartjs-2/dist/index.d.ts"
+          ],
+          "visibleProblems": [
+            0
           ]
         },
         "node16-esm": {
@@ -158,11 +152,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/react-chartjs-2/dist/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/react-chartjs-2/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -184,11 +173,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/react-chartjs-2/dist/index.js",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/react-chartjs-2/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -242,7 +226,8 @@
             "/node_modules/react-chartjs-2/dist/typedCharts.d.ts",
             "/node_modules/react-chartjs-2/dist/utils.d.ts",
             "/node_modules/react-chartjs-2/dist/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "bundler": {
           "name": ".",
@@ -329,23 +314,77 @@
             "/node_modules/react-chartjs-2/dist/typedCharts.d.ts",
             "/node_modules/react-chartjs-2/dist/utils.d.ts",
             "/node_modules/react-chartjs-2/dist/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
       "isWildcard": false
     }
   },
+  "programInfo": {
+    "node10": {},
+    "node16": {
+      "moduleKinds": {
+        "/node_modules/typescript/lib/lib.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/typescript/lib/lib.d.ts"
+        },
+        "/node_modules/react-chartjs-2/dist/types.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/react-chartjs-2/package.json"
+        },
+        "/node_modules/react-chartjs-2/dist/chart.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/react-chartjs-2/package.json"
+        },
+        "/node_modules/react-chartjs-2/dist/typedCharts.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/react-chartjs-2/package.json"
+        },
+        "/node_modules/react-chartjs-2/dist/utils.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/react-chartjs-2/package.json"
+        },
+        "/node_modules/react-chartjs-2/dist/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/react-chartjs-2/package.json"
+        },
+        "/node_modules/react-chartjs-2/dist/index.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/react-chartjs-2/dist/index.cjs"
+        },
+        "/node_modules/react-chartjs-2/dist/index.js": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/react-chartjs-2/package.json"
+        }
+      }
+    },
+    "bundler": {}
+  },
   "problems": [
     {
       "kind": "FalseESM",
-      "entrypoint": ".",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": ".",
-      "resolutionKind": "node16-cjs"
+      "typesFileName": "/node_modules/react-chartjs-2/dist/index.d.ts",
+      "implementationFileName": "/node_modules/react-chartjs-2/dist/index.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/react-chartjs-2/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/react-chartjs-2/dist/index.cjs"
+      }
     }
   ]
 }

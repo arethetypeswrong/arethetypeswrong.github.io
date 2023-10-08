@@ -98,18 +98,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@types/big.js/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": ".",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@types/big.js/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@types/big.js/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -143,11 +139,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/big.js/big.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/big.js/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -183,18 +174,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@types/big.js/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": ".",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@types/big.js/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@types/big.js/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -223,11 +210,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/big.js/big.mjs",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/big.js/big.mjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -273,6 +255,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@types/big.js/index.d.ts"
+          ],
+          "visibleProblems": [
+            0
           ]
         },
         "bundler": {
@@ -364,7 +349,8 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@types/big.js/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -412,8 +398,35 @@
               "======== Module name 'big.js/big.mjs' was successfully resolved to '/node_modules/big.js/big.mjs' with Package ID 'big.js/big.mjs@6.2.1'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/big.js/big.mjs",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'big.js/big.mjs' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'big.js/big.mjs' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/big.js/big.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/big.js/big.mts' does not exist.",
+              "File '/node_modules/big.js/big.mjs.ts' does not exist.",
+              "File '/node_modules/big.js/big.mjs.tsx' does not exist.",
+              "'package.json' has 'main' field 'big' that references '/node_modules/big.js/big.mjs/big'.",
+              "Loading module as file / folder, candidate module location '/node_modules/big.js/big.mjs/big', target file types: TypeScript.",
+              "Loading module 'big.js/big.mjs' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/big.js/big.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/big.js/big.mjs' exists - use it as a name resolution result.",
+              "======== Module name 'big.js/big.mjs' was successfully resolved to '/node_modules/big.js/big.mjs' with Package ID 'big.js/big.mjs@6.2.1'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            1
           ]
         },
         "node16-cjs": {
@@ -421,11 +434,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/big.js/big.mjs",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/big.js/big.mjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -457,8 +465,36 @@
               "======== Module name 'big.js/big.mjs' was successfully resolved to '/node_modules/big.js/big.mjs' with Package ID 'big.js/big.mjs@6.2.1'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/big.js/big.mjs",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'big.js/big.mjs' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'big.js/big.mjs' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './big.mjs' with target './big.mjs'.",
+              "File name '/node_modules/big.js/big.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/big.js/big.mts' does not exist.",
+              "Export specifier './big.mjs' does not exist in package.json scope at path '/node_modules/big.js'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './big.mjs' with target './big.mjs'.",
+              "File name '/node_modules/big.js/big.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/big.js/big.mjs' exists - use it as a name resolution result.",
+              "======== Module name 'big.js/big.mjs' was successfully resolved to '/node_modules/big.js/big.mjs' with Package ID 'big.js/big.mjs@6.2.1'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            2,
+            3
           ]
         },
         "node16-esm": {
@@ -466,11 +502,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/big.js/big.mjs",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/big.js/big.mjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -523,8 +554,44 @@
               "======== Module name 'big.js/big.mjs' was successfully resolved to '/node_modules/big.js/big.mjs' with Package ID 'big.js/big.mjs@6.2.1'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/big.js/big.mjs",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'big.js/big.mjs' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'big.js/big.mjs' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './big.mjs' with target './big.mjs'.",
+              "File name '/node_modules/big.js/big.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/big.js/big.mts' does not exist.",
+              "Export specifier './big.mjs' does not exist in package.json scope at path '/node_modules/big.js'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './big.mjs' with target './big.mjs'.",
+              "File name '/node_modules/big.js/big.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/big.js/big.mjs' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'big.js/big.mjs' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/big.js/big.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/big.js/big.mts' does not exist.",
+              "'package.json' has 'main' field 'big' that references '/node_modules/big.js/big.mjs/big'.",
+              "Loading module as file / folder, candidate module location '/node_modules/big.js/big.mjs/big', target file types: TypeScript.",
+              "======== Module name 'big.js/big.mjs' was successfully resolved to '/node_modules/big.js/big.mjs' with Package ID 'big.js/big.mjs@6.2.1'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            4
           ]
         },
         "bundler": {
@@ -587,8 +654,46 @@
               "======== Module name 'big.js/big.mjs' was successfully resolved to '/node_modules/big.js/big.mjs' with Package ID 'big.js/big.mjs@6.2.1'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/big.js/big.mjs",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'big.js/big.mjs' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'big.js/big.mjs' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './big.mjs' with target './big.mjs'.",
+              "File name '/node_modules/big.js/big.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/big.js/big.mts' does not exist.",
+              "Export specifier './big.mjs' does not exist in package.json scope at path '/node_modules/big.js'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './big.mjs' with target './big.mjs'.",
+              "File name '/node_modules/big.js/big.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/big.js/big.mjs' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'big.js/big.mjs' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/big.js/big.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/big.js/big.mts' does not exist.",
+              "File '/node_modules/big.js/big.mjs.ts' does not exist.",
+              "File '/node_modules/big.js/big.mjs.tsx' does not exist.",
+              "'package.json' has 'main' field 'big' that references '/node_modules/big.js/big.mjs/big'.",
+              "Loading module as file / folder, candidate module location '/node_modules/big.js/big.mjs/big', target file types: TypeScript.",
+              "======== Module name 'big.js/big.mjs' was successfully resolved to '/node_modules/big.js/big.mjs' with Package ID 'big.js/big.mjs@6.2.1'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            5
           ]
         }
       },
@@ -638,8 +743,36 @@
               "======== Module name 'big.js/big.js' was successfully resolved to '/node_modules/big.js/big.js' with Package ID 'big.js/big.js@6.2.1'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/big.js/big.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'big.js/big.js' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'big.js/big.js' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/big.js/big.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/big.js/big.ts' does not exist.",
+              "File '/node_modules/big.js/big.tsx' does not exist.",
+              "File '/node_modules/big.js/big.js.ts' does not exist.",
+              "File '/node_modules/big.js/big.js.tsx' does not exist.",
+              "'package.json' has 'main' field 'big' that references '/node_modules/big.js/big.js/big'.",
+              "Loading module as file / folder, candidate module location '/node_modules/big.js/big.js/big', target file types: TypeScript.",
+              "Loading module 'big.js/big.js' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/big.js/big.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/big.js/big.js' exists - use it as a name resolution result.",
+              "======== Module name 'big.js/big.js' was successfully resolved to '/node_modules/big.js/big.js' with Package ID 'big.js/big.js@6.2.1'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            6
           ]
         },
         "node16-cjs": {
@@ -647,11 +780,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/big.js/big.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/big.js/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -684,8 +812,36 @@
               "======== Module name 'big.js/big.js' was successfully resolved to '/node_modules/big.js/big.js' with Package ID 'big.js/big.js@6.2.1'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/big.js/big.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'big.js/big.js' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'big.js/big.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './big.js' with target './big.js'.",
+              "File name '/node_modules/big.js/big.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/big.js/big.ts' does not exist.",
+              "File '/node_modules/big.js/big.tsx' does not exist.",
+              "Export specifier './big.js' does not exist in package.json scope at path '/node_modules/big.js'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './big.js' with target './big.js'.",
+              "File name '/node_modules/big.js/big.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/big.js/big.js' exists - use it as a name resolution result.",
+              "======== Module name 'big.js/big.js' was successfully resolved to '/node_modules/big.js/big.js' with Package ID 'big.js/big.js@6.2.1'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            7
           ]
         },
         "node16-esm": {
@@ -693,11 +849,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/big.js/big.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/big.js/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -751,8 +902,46 @@
               "======== Module name 'big.js/big.js' was successfully resolved to '/node_modules/big.js/big.js' with Package ID 'big.js/big.js@6.2.1'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/big.js/big.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'big.js/big.js' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'big.js/big.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './big.js' with target './big.js'.",
+              "File name '/node_modules/big.js/big.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/big.js/big.ts' does not exist.",
+              "File '/node_modules/big.js/big.tsx' does not exist.",
+              "Export specifier './big.js' does not exist in package.json scope at path '/node_modules/big.js'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './big.js' with target './big.js'.",
+              "File name '/node_modules/big.js/big.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/big.js/big.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'big.js/big.js' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/big.js/big.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/big.js/big.ts' does not exist.",
+              "File '/node_modules/big.js/big.tsx' does not exist.",
+              "'package.json' has 'main' field 'big' that references '/node_modules/big.js/big.js/big'.",
+              "Loading module as file / folder, candidate module location '/node_modules/big.js/big.js/big', target file types: TypeScript.",
+              "======== Module name 'big.js/big.js' was successfully resolved to '/node_modules/big.js/big.js' with Package ID 'big.js/big.js@6.2.1'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            8
           ]
         },
         "bundler": {
@@ -816,8 +1005,48 @@
               "======== Module name 'big.js/big.js' was successfully resolved to '/node_modules/big.js/big.js' with Package ID 'big.js/big.js@6.2.1'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/big.js/big.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'big.js/big.js' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'big.js/big.js' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './big.js' with target './big.js'.",
+              "File name '/node_modules/big.js/big.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/big.js/big.ts' does not exist.",
+              "File '/node_modules/big.js/big.tsx' does not exist.",
+              "Export specifier './big.js' does not exist in package.json scope at path '/node_modules/big.js'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './big.js' with target './big.js'.",
+              "File name '/node_modules/big.js/big.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/big.js/big.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'big.js/big.js' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/big.js/big.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/big.js/big.ts' does not exist.",
+              "File '/node_modules/big.js/big.tsx' does not exist.",
+              "File '/node_modules/big.js/big.js.ts' does not exist.",
+              "File '/node_modules/big.js/big.js.tsx' does not exist.",
+              "'package.json' has 'main' field 'big' that references '/node_modules/big.js/big.js/big'.",
+              "Loading module as file / folder, candidate module location '/node_modules/big.js/big.js/big', target file types: TypeScript.",
+              "======== Module name 'big.js/big.js' was successfully resolved to '/node_modules/big.js/big.js' with Package ID 'big.js/big.js@6.2.1'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            9
           ]
         }
       },
@@ -865,10 +1094,34 @@
               "======== Module name 'big.js/package.json' was successfully resolved to '/node_modules/big.js/package.json' with Package ID 'big.js/package.json@6.2.1'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/big.js/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'big.js/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'big.js/package.json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/big.js/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/big.js/package.json.ts' does not exist.",
+              "File '/node_modules/big.js/package.json.tsx' does not exist.",
+              "'package.json' has 'main' field 'big' that references '/node_modules/big.js/package.json/big'.",
+              "Loading module as file / folder, candidate module location '/node_modules/big.js/package.json/big', target file types: TypeScript.",
+              "Loading module 'big.js/package.json' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/big.js/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/big.js/package.json' exists - use it as a name resolution result.",
+              "======== Module name 'big.js/package.json' was successfully resolved to '/node_modules/big.js/package.json' with Package ID 'big.js/package.json@6.2.1'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/big.js/package.json"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./package.json",
@@ -905,10 +1158,34 @@
               "======== Module name 'big.js/package.json' was successfully resolved to '/node_modules/big.js/package.json' with Package ID 'big.js/package.json@6.2.1'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/big.js/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'big.js/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'big.js/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/big.js/package.json' has a '.json' extension - stripping it.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/big.js'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/big.js/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/big.js/package.json' exists - use it as a name resolution result.",
+              "======== Module name 'big.js/package.json' was successfully resolved to '/node_modules/big.js/package.json' with Package ID 'big.js/package.json@6.2.1'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/big.js/package.json"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./package.json",
@@ -964,10 +1241,42 @@
               "======== Module name 'big.js/package.json' was successfully resolved to '/node_modules/big.js/package.json' with Package ID 'big.js/package.json@6.2.1'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/big.js/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'big.js/package.json' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'big.js/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/big.js/package.json' has a '.json' extension - stripping it.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/big.js'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/big.js/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/big.js/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'big.js/package.json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/big.js/package.json' has a '.json' extension - stripping it.",
+              "'package.json' has 'main' field 'big' that references '/node_modules/big.js/package.json/big'.",
+              "Loading module as file / folder, candidate module location '/node_modules/big.js/package.json/big', target file types: TypeScript.",
+              "======== Module name 'big.js/package.json' was successfully resolved to '/node_modules/big.js/package.json' with Package ID 'big.js/package.json@6.2.1'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/big.js/package.json"
-          ]
+          ],
+          "visibleProblems": []
         },
         "bundler": {
           "name": "./package.json",
@@ -1026,21 +1335,93 @@
               "======== Module name 'big.js/package.json' was successfully resolved to '/node_modules/big.js/package.json' with Package ID 'big.js/package.json@6.2.1'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/big.js/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'big.js/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'big.js/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/big.js/package.json' has a '.json' extension - stripping it.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/big.js'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/big.js/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/big.js/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'big.js/package.json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/big.js/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/big.js/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/big.js/package.json.ts' does not exist.",
+              "File '/node_modules/big.js/package.json.tsx' does not exist.",
+              "'package.json' has 'main' field 'big' that references '/node_modules/big.js/package.json/big'.",
+              "Loading module as file / folder, candidate module location '/node_modules/big.js/package.json/big', target file types: TypeScript.",
+              "======== Module name 'big.js/package.json' was successfully resolved to '/node_modules/big.js/package.json' with Package ID 'big.js/package.json@6.2.1'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/big.js/package.json"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": false,
       "isWildcard": false
     }
   },
+  "programInfo": {
+    "node10": {},
+    "node16": {
+      "moduleKinds": {
+        "/node_modules/typescript/lib/lib.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/typescript/lib/lib.d.ts"
+        },
+        "/node_modules/@types/big.js/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@types/big.js/package.json"
+        },
+        "/node_modules/big.js/big.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/big.js/package.json"
+        },
+        "/node_modules/big.js/big.mjs": {
+          "detectedKind": 99,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/big.js/big.mjs"
+        }
+      }
+    },
+    "bundler": {}
+  },
   "problems": [
     {
       "kind": "FalseCJS",
-      "entrypoint": ".",
-      "resolutionKind": "node16-esm"
+      "typesFileName": "/node_modules/@types/big.js/index.d.ts",
+      "implementationFileName": "/node_modules/big.js/big.mjs",
+      "typesModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "no:type",
+        "reasonFileName": "/node_modules/@types/big.js/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/big.js/big.mjs"
+      }
     },
     {
       "kind": "UntypedResolution",

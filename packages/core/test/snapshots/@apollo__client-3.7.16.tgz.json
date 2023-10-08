@@ -171,18 +171,14 @@
             "/node_modules/@apollo/client/react/parser/index.d.ts",
             "/node_modules/@apollo/client/react/index.d.ts",
             "/node_modules/@apollo/client/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": ".",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -205,11 +201,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/main.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/main.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -246,6 +237,11 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/index.d.ts"
+          ],
+          "visibleProblems": [
+            0,
+            1,
+            2
           ]
         },
         "node16-esm": {
@@ -253,11 +249,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -276,11 +267,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/main.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/main.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -326,6 +312,11 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/index.d.ts"
+          ],
+          "visibleProblems": [
+            0,
+            1,
+            2
           ]
         },
         "bundler": {
@@ -508,7 +499,8 @@
             "/node_modules/@apollo/client/react/parser/index.d.ts",
             "/node_modules/@apollo/client/react/index.d.ts",
             "/node_modules/@apollo/client/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -655,18 +647,14 @@
             "/node_modules/@apollo/client/cache/core/cache.d.ts",
             "/node_modules/@apollo/client/cache/inmemory/helpers.d.ts",
             "/node_modules/@apollo/client/cache/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./cache",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/cache/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/cache/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -690,11 +678,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/cache/cache.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/cache/cache.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -733,6 +716,23 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/cache/index.d.ts"
+          ],
+          "visibleProblems": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
           ]
         },
         "node16-esm": {
@@ -740,11 +740,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/cache/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/cache/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -764,11 +759,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/cache/cache.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/cache/cache.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -810,6 +800,23 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/cache/index.d.ts"
+          ],
+          "visibleProblems": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
           ]
         },
         "bundler": {
@@ -974,7 +981,8 @@
             "/node_modules/@apollo/client/cache/core/cache.d.ts",
             "/node_modules/@apollo/client/cache/inmemory/helpers.d.ts",
             "/node_modules/@apollo/client/cache/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -1121,18 +1129,14 @@
             "/node_modules/@apollo/client/core/ObservableQuery.d.ts",
             "/node_modules/@apollo/client/core/ApolloClient.d.ts",
             "/node_modules/@apollo/client/core/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./core",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/core/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/core/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1156,11 +1160,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/core/core.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/core/core.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -1199,6 +1198,22 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/core/index.d.ts"
+          ],
+          "visibleProblems": [
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
           ]
         },
         "node16-esm": {
@@ -1206,11 +1221,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/core/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/core/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1230,11 +1240,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/core/core.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/core/core.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -1276,6 +1281,22 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/core/index.d.ts"
+          ],
+          "visibleProblems": [
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
           ]
         },
         "bundler": {
@@ -1440,7 +1461,8 @@
             "/node_modules/@apollo/client/core/ObservableQuery.d.ts",
             "/node_modules/@apollo/client/core/ApolloClient.d.ts",
             "/node_modules/@apollo/client/core/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -1587,18 +1609,14 @@
             "/node_modules/@apollo/client/link/http/rewriteURIForGET.d.ts",
             "/node_modules/@apollo/client/link/http/index.d.ts",
             "/node_modules/@apollo/client/errors/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./errors",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/errors/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/errors/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1622,11 +1640,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/errors/errors.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/errors/errors.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -1665,6 +1678,13 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/errors/index.d.ts"
+          ],
+          "visibleProblems": [
+            32,
+            33,
+            34,
+            35,
+            36
           ]
         },
         "node16-esm": {
@@ -1672,11 +1692,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/errors/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/errors/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1696,11 +1711,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/errors/errors.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/errors/errors.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -1742,6 +1752,13 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/errors/index.d.ts"
+          ],
+          "visibleProblems": [
+            32,
+            33,
+            34,
+            35,
+            36
           ]
         },
         "bundler": {
@@ -1906,7 +1923,8 @@
             "/node_modules/@apollo/client/link/http/rewriteURIForGET.d.ts",
             "/node_modules/@apollo/client/link/http/index.d.ts",
             "/node_modules/@apollo/client/errors/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -2057,18 +2075,14 @@
             "/node_modules/@apollo/client/link/batch/batching.d.ts",
             "/node_modules/@apollo/client/link/batch/batchLink.d.ts",
             "/node_modules/@apollo/client/link/batch/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./link/batch",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/batch/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/batch/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -2092,11 +2106,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/batch/batch.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/batch/batch.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -2135,6 +2144,10 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/batch/index.d.ts"
+          ],
+          "visibleProblems": [
+            37,
+            38
           ]
         },
         "node16-esm": {
@@ -2142,11 +2155,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/batch/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/batch/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -2166,11 +2174,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/batch/batch.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/batch/batch.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -2212,6 +2215,10 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/batch/index.d.ts"
+          ],
+          "visibleProblems": [
+            37,
+            38
           ]
         },
         "bundler": {
@@ -2380,7 +2387,8 @@
             "/node_modules/@apollo/client/link/batch/batching.d.ts",
             "/node_modules/@apollo/client/link/batch/batchLink.d.ts",
             "/node_modules/@apollo/client/link/batch/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -2533,18 +2541,14 @@
             "/node_modules/@apollo/client/link/batch/index.d.ts",
             "/node_modules/@apollo/client/link/batch-http/batchHttpLink.d.ts",
             "/node_modules/@apollo/client/link/batch-http/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./link/batch-http",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/batch-http/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/batch-http/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -2568,11 +2572,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/batch-http/batch-http.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/batch-http/batch-http.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -2611,6 +2610,10 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/batch-http/index.d.ts"
+          ],
+          "visibleProblems": [
+            39,
+            40
           ]
         },
         "node16-esm": {
@@ -2618,11 +2621,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/batch-http/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/batch-http/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -2642,11 +2640,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/batch-http/batch-http.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/batch-http/batch-http.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -2688,6 +2681,10 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/batch-http/index.d.ts"
+          ],
+          "visibleProblems": [
+            39,
+            40
           ]
         },
         "bundler": {
@@ -2858,7 +2855,8 @@
             "/node_modules/@apollo/client/link/batch/index.d.ts",
             "/node_modules/@apollo/client/link/batch-http/batchHttpLink.d.ts",
             "/node_modules/@apollo/client/link/batch-http/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -3007,18 +3005,14 @@
             "/node_modules/@apollo/client/link/core/execute.d.ts",
             "/node_modules/@apollo/client/link/core/index.d.ts",
             "/node_modules/@apollo/client/link/context/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./link/context",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/context/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/context/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -3042,11 +3036,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/context/context.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/context/context.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -3085,6 +3074,11 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/context/index.d.ts"
+          ],
+          "visibleProblems": [
+            41,
+            42,
+            43
           ]
         },
         "node16-esm": {
@@ -3092,11 +3086,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/context/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/context/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -3116,11 +3105,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/context/context.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/context/context.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -3162,6 +3146,11 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/context/index.d.ts"
+          ],
+          "visibleProblems": [
+            41,
+            42,
+            43
           ]
         },
         "bundler": {
@@ -3328,7 +3317,8 @@
             "/node_modules/@apollo/client/link/core/execute.d.ts",
             "/node_modules/@apollo/client/link/core/index.d.ts",
             "/node_modules/@apollo/client/link/context/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -3475,18 +3465,14 @@
             "/node_modules/@apollo/client/link/core/concat.d.ts",
             "/node_modules/@apollo/client/link/core/execute.d.ts",
             "/node_modules/@apollo/client/link/core/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./link/core",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/core/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/core/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -3510,11 +3496,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/core/core.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/core/core.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -3553,6 +3534,17 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/core/index.d.ts"
+          ],
+          "visibleProblems": [
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52
           ]
         },
         "node16-esm": {
@@ -3560,11 +3552,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/core/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/core/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -3584,11 +3571,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/core/core.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/core/core.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -3630,6 +3612,17 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/core/index.d.ts"
+          ],
+          "visibleProblems": [
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52
           ]
         },
         "bundler": {
@@ -3794,7 +3787,8 @@
             "/node_modules/@apollo/client/link/core/concat.d.ts",
             "/node_modules/@apollo/client/link/core/execute.d.ts",
             "/node_modules/@apollo/client/link/core/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -3943,18 +3937,14 @@
             "/node_modules/@apollo/client/link/http/index.d.ts",
             "/node_modules/@apollo/client/errors/index.d.ts",
             "/node_modules/@apollo/client/link/error/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./link/error",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/error/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/error/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -3978,11 +3968,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/error/error.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/error/error.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -4021,6 +4006,12 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/error/index.d.ts"
+          ],
+          "visibleProblems": [
+            53,
+            54,
+            55,
+            56
           ]
         },
         "node16-esm": {
@@ -4028,11 +4019,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/error/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/error/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -4052,11 +4038,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/error/error.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/error/error.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -4098,6 +4079,12 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/error/index.d.ts"
+          ],
+          "visibleProblems": [
+            53,
+            54,
+            55,
+            56
           ]
         },
         "bundler": {
@@ -4264,7 +4251,8 @@
             "/node_modules/@apollo/client/link/http/index.d.ts",
             "/node_modules/@apollo/client/errors/index.d.ts",
             "/node_modules/@apollo/client/link/error/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -4411,18 +4399,14 @@
             "/node_modules/@apollo/client/link/http/HttpLink.d.ts",
             "/node_modules/@apollo/client/link/http/rewriteURIForGET.d.ts",
             "/node_modules/@apollo/client/link/http/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./link/http",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/http/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/http/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -4446,11 +4430,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/http/http.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/http/http.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -4489,6 +4468,19 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/http/index.d.ts"
+          ],
+          "visibleProblems": [
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67
           ]
         },
         "node16-esm": {
@@ -4496,11 +4488,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/http/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/http/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -4520,11 +4507,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/http/http.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/http/http.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -4566,6 +4548,19 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/http/index.d.ts"
+          ],
+          "visibleProblems": [
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67
           ]
         },
         "bundler": {
@@ -4730,7 +4725,8 @@
             "/node_modules/@apollo/client/link/http/HttpLink.d.ts",
             "/node_modules/@apollo/client/link/http/rewriteURIForGET.d.ts",
             "/node_modules/@apollo/client/link/http/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -4879,18 +4875,14 @@
             "/node_modules/@apollo/client/link/core/execute.d.ts",
             "/node_modules/@apollo/client/link/core/index.d.ts",
             "/node_modules/@apollo/client/link/persisted-queries/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./link/persisted-queries",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/persisted-queries/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/persisted-queries/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -4914,11 +4906,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/persisted-queries/persisted-queries.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/persisted-queries/persisted-queries.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -4957,6 +4944,11 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/persisted-queries/index.d.ts"
+          ],
+          "visibleProblems": [
+            68,
+            69,
+            70
           ]
         },
         "node16-esm": {
@@ -4964,11 +4956,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/persisted-queries/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/persisted-queries/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -4988,11 +4975,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/persisted-queries/persisted-queries.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/persisted-queries/persisted-queries.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -5034,6 +5016,11 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/persisted-queries/index.d.ts"
+          ],
+          "visibleProblems": [
+            68,
+            69,
+            70
           ]
         },
         "bundler": {
@@ -5200,7 +5187,8 @@
             "/node_modules/@apollo/client/link/core/execute.d.ts",
             "/node_modules/@apollo/client/link/core/index.d.ts",
             "/node_modules/@apollo/client/link/persisted-queries/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -5352,18 +5340,14 @@
             "/node_modules/@apollo/client/link/retry/retryFunction.d.ts",
             "/node_modules/@apollo/client/link/retry/retryLink.d.ts",
             "/node_modules/@apollo/client/link/retry/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./link/retry",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/retry/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/retry/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -5387,11 +5371,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/retry/retry.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/retry/retry.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -5430,6 +5409,10 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/retry/index.d.ts"
+          ],
+          "visibleProblems": [
+            71,
+            72
           ]
         },
         "node16-esm": {
@@ -5437,11 +5420,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/retry/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/retry/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -5461,11 +5439,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/retry/retry.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/retry/retry.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -5507,6 +5480,10 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/retry/index.d.ts"
+          ],
+          "visibleProblems": [
+            71,
+            72
           ]
         },
         "bundler": {
@@ -5676,7 +5653,8 @@
             "/node_modules/@apollo/client/link/retry/retryFunction.d.ts",
             "/node_modules/@apollo/client/link/retry/retryLink.d.ts",
             "/node_modules/@apollo/client/link/retry/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -5825,18 +5803,14 @@
             "/node_modules/@apollo/client/link/core/execute.d.ts",
             "/node_modules/@apollo/client/link/core/index.d.ts",
             "/node_modules/@apollo/client/link/schema/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./link/schema",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/schema/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/schema/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -5860,11 +5834,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/schema/schema.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/schema/schema.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -5903,6 +5872,11 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/schema/index.d.ts"
+          ],
+          "visibleProblems": [
+            73,
+            74,
+            75
           ]
         },
         "node16-esm": {
@@ -5910,11 +5884,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/schema/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/schema/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -5934,11 +5903,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/schema/schema.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/schema/schema.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -5980,6 +5944,11 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/schema/index.d.ts"
+          ],
+          "visibleProblems": [
+            73,
+            74,
+            75
           ]
         },
         "bundler": {
@@ -6146,7 +6115,8 @@
             "/node_modules/@apollo/client/link/core/execute.d.ts",
             "/node_modules/@apollo/client/link/core/index.d.ts",
             "/node_modules/@apollo/client/link/schema/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -6295,18 +6265,14 @@
             "/node_modules/@apollo/client/link/core/execute.d.ts",
             "/node_modules/@apollo/client/link/core/index.d.ts",
             "/node_modules/@apollo/client/link/subscriptions/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./link/subscriptions",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/subscriptions/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/subscriptions/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -6330,11 +6296,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/subscriptions/subscriptions.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/subscriptions/subscriptions.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -6373,6 +6334,11 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/subscriptions/index.d.ts"
+          ],
+          "visibleProblems": [
+            76,
+            77,
+            78
           ]
         },
         "node16-esm": {
@@ -6380,11 +6346,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/subscriptions/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/subscriptions/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -6404,11 +6365,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/subscriptions/subscriptions.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/subscriptions/subscriptions.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -6450,6 +6406,11 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/subscriptions/index.d.ts"
+          ],
+          "visibleProblems": [
+            76,
+            77,
+            78
           ]
         },
         "bundler": {
@@ -6616,7 +6577,8 @@
             "/node_modules/@apollo/client/link/core/execute.d.ts",
             "/node_modules/@apollo/client/link/core/index.d.ts",
             "/node_modules/@apollo/client/link/subscriptions/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -6763,18 +6725,14 @@
             "/node_modules/@apollo/client/link/utils/createOperation.d.ts",
             "/node_modules/@apollo/client/link/utils/transformOperation.d.ts",
             "/node_modules/@apollo/client/link/utils/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./link/utils",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/utils/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/utils/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -6798,11 +6756,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/utils/utils.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/utils/utils.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -6841,6 +6794,17 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/utils/index.d.ts"
+          ],
+          "visibleProblems": [
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87
           ]
         },
         "node16-esm": {
@@ -6848,11 +6812,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/utils/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/utils/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -6872,11 +6831,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/utils/utils.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/utils/utils.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -6918,6 +6872,17 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/utils/index.d.ts"
+          ],
+          "visibleProblems": [
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87
           ]
         },
         "bundler": {
@@ -7082,7 +7047,8 @@
             "/node_modules/@apollo/client/link/utils/createOperation.d.ts",
             "/node_modules/@apollo/client/link/utils/transformOperation.d.ts",
             "/node_modules/@apollo/client/link/utils/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -7231,18 +7197,14 @@
             "/node_modules/@apollo/client/link/core/execute.d.ts",
             "/node_modules/@apollo/client/link/core/index.d.ts",
             "/node_modules/@apollo/client/link/ws/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./link/ws",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/ws/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/ws/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -7266,11 +7228,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/ws/ws.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/ws/ws.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -7309,6 +7266,11 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/ws/index.d.ts"
+          ],
+          "visibleProblems": [
+            88,
+            89,
+            90
           ]
         },
         "node16-esm": {
@@ -7316,11 +7278,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/link/ws/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/link/ws/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -7340,11 +7297,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/link/ws/ws.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/link/ws/ws.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -7386,6 +7338,11 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/link/ws/index.d.ts"
+          ],
+          "visibleProblems": [
+            88,
+            89,
+            90
           ]
         },
         "bundler": {
@@ -7552,7 +7509,8 @@
             "/node_modules/@apollo/client/link/core/execute.d.ts",
             "/node_modules/@apollo/client/link/core/index.d.ts",
             "/node_modules/@apollo/client/link/ws/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -7718,18 +7676,14 @@
             "/node_modules/@apollo/client/react/hooks/index.d.ts",
             "/node_modules/@apollo/client/react/parser/index.d.ts",
             "/node_modules/@apollo/client/react/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./react",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/react/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/react/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -7753,11 +7707,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/react/react.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/react/react.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -7796,6 +7745,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/react/index.d.ts"
+          ],
+          "visibleProblems": [
+            91,
+            92,
+            93,
+            94,
+            95,
+            96
           ]
         },
         "node16-esm": {
@@ -7803,11 +7760,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/react/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/react/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -7827,11 +7779,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/react/react.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/react/react.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -7873,6 +7820,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/react/index.d.ts"
+          ],
+          "visibleProblems": [
+            91,
+            92,
+            93,
+            94,
+            95,
+            96
           ]
         },
         "bundler": {
@@ -8056,7 +8011,8 @@
             "/node_modules/@apollo/client/react/hooks/index.d.ts",
             "/node_modules/@apollo/client/react/parser/index.d.ts",
             "/node_modules/@apollo/client/react/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -8210,18 +8166,14 @@
             "/node_modules/@apollo/client/react/components/Mutation.d.ts",
             "/node_modules/@apollo/client/react/components/Subscription.d.ts",
             "/node_modules/@apollo/client/react/components/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./react/components",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/react/components/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/react/components/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -8245,11 +8197,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/react/components/components.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/react/components/components.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -8288,6 +8235,13 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/react/components/index.d.ts"
+          ],
+          "visibleProblems": [
+            97,
+            98,
+            99,
+            100,
+            101
           ]
         },
         "node16-esm": {
@@ -8295,11 +8249,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/react/components/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/react/components/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -8319,11 +8268,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/react/components/components.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/react/components/components.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -8365,6 +8309,13 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/react/components/index.d.ts"
+          ],
+          "visibleProblems": [
+            97,
+            98,
+            99,
+            100,
+            101
           ]
         },
         "bundler": {
@@ -8536,7 +8487,8 @@
             "/node_modules/@apollo/client/react/components/Mutation.d.ts",
             "/node_modules/@apollo/client/react/components/Subscription.d.ts",
             "/node_modules/@apollo/client/react/components/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -8692,18 +8644,14 @@
             "/node_modules/@apollo/client/react/context/ApolloContext.d.ts",
             "/node_modules/@apollo/client/react/context/ApolloProvider.d.ts",
             "/node_modules/@apollo/client/react/context/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./react/context",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/react/context/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/react/context/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -8727,11 +8675,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/react/context/context.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/react/context/context.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -8770,6 +8713,13 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/react/context/index.d.ts"
+          ],
+          "visibleProblems": [
+            102,
+            103,
+            104,
+            105,
+            106
           ]
         },
         "node16-esm": {
@@ -8777,11 +8727,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/react/context/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/react/context/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -8801,11 +8746,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/react/context/context.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/react/context/context.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -8847,6 +8787,13 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/react/context/index.d.ts"
+          ],
+          "visibleProblems": [
+            102,
+            103,
+            104,
+            105,
+            106
           ]
         },
         "bundler": {
@@ -9020,7 +8967,8 @@
             "/node_modules/@apollo/client/react/context/ApolloContext.d.ts",
             "/node_modules/@apollo/client/react/context/ApolloProvider.d.ts",
             "/node_modules/@apollo/client/react/context/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -9176,18 +9124,14 @@
             "/node_modules/@apollo/client/react/hoc/subscription-hoc.d.ts",
             "/node_modules/@apollo/client/react/hoc/withApollo.d.ts",
             "/node_modules/@apollo/client/react/hoc/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./react/hoc",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/react/hoc/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/react/hoc/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -9211,11 +9155,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/react/hoc/hoc.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/react/hoc/hoc.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -9254,6 +9193,16 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/react/hoc/index.d.ts"
+          ],
+          "visibleProblems": [
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114
           ]
         },
         "node16-esm": {
@@ -9261,11 +9210,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/react/hoc/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/react/hoc/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -9285,11 +9229,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/react/hoc/hoc.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/react/hoc/hoc.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -9331,6 +9270,16 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/react/hoc/index.d.ts"
+          ],
+          "visibleProblems": [
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114
           ]
         },
         "bundler": {
@@ -9504,7 +9453,8 @@
             "/node_modules/@apollo/client/react/hoc/subscription-hoc.d.ts",
             "/node_modules/@apollo/client/react/hoc/withApollo.d.ts",
             "/node_modules/@apollo/client/react/hoc/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -9660,18 +9610,14 @@
             "/node_modules/@apollo/client/react/hooks/useReactiveVar.d.ts",
             "/node_modules/@apollo/client/react/hooks/useFragment.d.ts",
             "/node_modules/@apollo/client/react/hooks/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./react/hooks",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/react/hooks/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/react/hooks/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -9695,11 +9641,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/react/hooks/hooks.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/react/hooks/hooks.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -9738,6 +9679,17 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/react/hooks/index.d.ts"
+          ],
+          "visibleProblems": [
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123
           ]
         },
         "node16-esm": {
@@ -9745,11 +9697,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/react/hooks/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/react/hooks/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -9769,11 +9716,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/react/hooks/hooks.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/react/hooks/hooks.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -9815,6 +9757,17 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/react/hooks/index.d.ts"
+          ],
+          "visibleProblems": [
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123
           ]
         },
         "bundler": {
@@ -9988,7 +9941,8 @@
             "/node_modules/@apollo/client/react/hooks/useReactiveVar.d.ts",
             "/node_modules/@apollo/client/react/hooks/useFragment.d.ts",
             "/node_modules/@apollo/client/react/hooks/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -10056,18 +10010,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/react/parser/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./react/parser",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/react/parser/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/react/parser/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -10091,11 +10041,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/react/parser/parser.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/react/parser/parser.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -10134,6 +10079,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/react/parser/index.d.ts"
+          ],
+          "visibleProblems": [
+            124
           ]
         },
         "node16-esm": {
@@ -10141,11 +10089,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/react/parser/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/react/parser/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -10165,11 +10108,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/react/parser/parser.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/react/parser/parser.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -10211,6 +10149,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/react/parser/index.d.ts"
+          ],
+          "visibleProblems": [
+            124
           ]
         },
         "bundler": {
@@ -10296,7 +10237,8 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/react/parser/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -10448,18 +10390,14 @@
             "/node_modules/@apollo/client/react/types/types.d.ts",
             "/node_modules/@apollo/client/react/ssr/RenderPromises.d.ts",
             "/node_modules/@apollo/client/react/ssr/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./react/ssr",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/react/ssr/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/react/ssr/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -10483,11 +10421,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/react/ssr/ssr.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/react/ssr/ssr.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -10526,6 +10459,12 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/react/ssr/index.d.ts"
+          ],
+          "visibleProblems": [
+            125,
+            126,
+            127,
+            128
           ]
         },
         "node16-esm": {
@@ -10533,11 +10472,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/react/ssr/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/react/ssr/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -10557,11 +10491,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/react/ssr/ssr.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/react/ssr/ssr.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -10603,6 +10532,12 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/react/ssr/index.d.ts"
+          ],
+          "visibleProblems": [
+            125,
+            126,
+            127,
+            128
           ]
         },
         "bundler": {
@@ -10772,7 +10707,8 @@
             "/node_modules/@apollo/client/react/types/types.d.ts",
             "/node_modules/@apollo/client/react/ssr/RenderPromises.d.ts",
             "/node_modules/@apollo/client/react/ssr/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -10930,18 +10866,14 @@
             "/node_modules/@apollo/client/testing/core/index.d.ts",
             "/node_modules/@apollo/client/testing/react/MockedProvider.d.ts",
             "/node_modules/@apollo/client/testing/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./testing",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/testing/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/testing/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -10965,11 +10897,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/testing/testing.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/testing/testing.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -11008,6 +10935,12 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/testing/index.d.ts"
+          ],
+          "visibleProblems": [
+            129,
+            130,
+            131,
+            132
           ]
         },
         "node16-esm": {
@@ -11015,11 +10948,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/testing/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/testing/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -11039,11 +10967,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/testing/testing.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/testing/testing.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -11085,6 +11008,12 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/testing/index.d.ts"
+          ],
+          "visibleProblems": [
+            129,
+            130,
+            131,
+            132
           ]
         },
         "bundler": {
@@ -11260,7 +11189,8 @@
             "/node_modules/@apollo/client/testing/core/index.d.ts",
             "/node_modules/@apollo/client/testing/react/MockedProvider.d.ts",
             "/node_modules/@apollo/client/testing/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -11415,18 +11345,14 @@
             "/node_modules/@apollo/client/testing/core/wait.d.ts",
             "/node_modules/@apollo/client/testing/core/withConsoleSpy.d.ts",
             "/node_modules/@apollo/client/testing/core/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./testing/core",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/testing/core/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/testing/core/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -11450,11 +11376,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/testing/core/core.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/testing/core/core.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -11493,6 +11414,16 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/testing/core/index.d.ts"
+          ],
+          "visibleProblems": [
+            133,
+            134,
+            135,
+            136,
+            137,
+            138,
+            139,
+            140
           ]
         },
         "node16-esm": {
@@ -11500,11 +11431,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/testing/core/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/testing/core/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -11524,11 +11450,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/testing/core/core.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/testing/core/core.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -11570,6 +11491,16 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/testing/core/index.d.ts"
+          ],
+          "visibleProblems": [
+            133,
+            134,
+            135,
+            136,
+            137,
+            138,
+            139,
+            140
           ]
         },
         "bundler": {
@@ -11742,7 +11673,8 @@
             "/node_modules/@apollo/client/testing/core/wait.d.ts",
             "/node_modules/@apollo/client/testing/core/withConsoleSpy.d.ts",
             "/node_modules/@apollo/client/testing/core/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -11889,18 +11821,14 @@
             "/node_modules/@apollo/client/utilities/common/mergeOptions.d.ts",
             "/node_modules/@apollo/client/utilities/types/IsStrictlyAny.d.ts",
             "/node_modules/@apollo/client/utilities/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./utilities",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/utilities/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/utilities/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -11924,11 +11852,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/utilities/utilities.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/utilities/utilities.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -11967,6 +11890,33 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/utilities/index.d.ts"
+          ],
+          "visibleProblems": [
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            157,
+            158,
+            159,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165
           ]
         },
         "node16-esm": {
@@ -11974,11 +11924,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/utilities/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/utilities/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -11998,11 +11943,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/utilities/utilities.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/utilities/utilities.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -12044,6 +11984,33 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/utilities/index.d.ts"
+          ],
+          "visibleProblems": [
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            157,
+            158,
+            159,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165
           ]
         },
         "bundler": {
@@ -12208,7 +12175,8 @@
             "/node_modules/@apollo/client/utilities/common/mergeOptions.d.ts",
             "/node_modules/@apollo/client/utilities/types/IsStrictlyAny.d.ts",
             "/node_modules/@apollo/client/utilities/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -12279,18 +12247,14 @@
             "/node_modules/@apollo/client/utilities/globals/maybe.d.ts",
             "/node_modules/@apollo/client/utilities/globals/global.d.ts",
             "/node_modules/@apollo/client/utilities/globals/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./utilities/globals",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/utilities/globals/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/utilities/globals/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -12314,11 +12278,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/utilities/globals/globals.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/utilities/globals/globals.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -12357,6 +12316,12 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/utilities/globals/index.d.ts"
+          ],
+          "visibleProblems": [
+            166,
+            167,
+            168,
+            169
           ]
         },
         "node16-esm": {
@@ -12364,11 +12329,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@apollo/client/utilities/globals/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@apollo/client/utilities/globals/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -12388,11 +12348,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@apollo/client/utilities/globals/globals.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@apollo/client/utilities/globals/globals.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -12434,6 +12389,12 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@apollo/client/utilities/globals/index.d.ts"
+          ],
+          "visibleProblems": [
+            166,
+            167,
+            168,
+            169
           ]
         },
         "bundler": {
@@ -12522,418 +12483,312 @@
             "/node_modules/@apollo/client/utilities/globals/maybe.d.ts",
             "/node_modules/@apollo/client/utilities/globals/global.d.ts",
             "/node_modules/@apollo/client/utilities/globals/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
       "isWildcard": false
     }
   },
+  "programInfo": {
+    "node10": {},
+    "node16": {
+      "moduleKinds": {
+        "/node_modules/typescript/lib/lib.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/typescript/lib/lib.d.ts"
+        },
+        "/node_modules/@apollo/client/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/package.json"
+        },
+        "/node_modules/@apollo/client/main.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/main.cjs"
+        },
+        "/node_modules/@apollo/client/cache/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/cache/package.json"
+        },
+        "/node_modules/@apollo/client/cache/cache.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/cache/cache.cjs"
+        },
+        "/node_modules/@apollo/client/core/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/core/package.json"
+        },
+        "/node_modules/@apollo/client/core/core.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/core/core.cjs"
+        },
+        "/node_modules/@apollo/client/errors/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/errors/package.json"
+        },
+        "/node_modules/@apollo/client/errors/errors.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/errors/errors.cjs"
+        },
+        "/node_modules/@apollo/client/link/batch/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/link/batch/package.json"
+        },
+        "/node_modules/@apollo/client/link/batch/batch.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/link/batch/batch.cjs"
+        },
+        "/node_modules/@apollo/client/link/batch-http/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/link/batch-http/package.json"
+        },
+        "/node_modules/@apollo/client/link/batch-http/batch-http.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/link/batch-http/batch-http.cjs"
+        },
+        "/node_modules/@apollo/client/link/context/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/link/context/package.json"
+        },
+        "/node_modules/@apollo/client/link/context/context.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/link/context/context.cjs"
+        },
+        "/node_modules/@apollo/client/link/core/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/link/core/package.json"
+        },
+        "/node_modules/@apollo/client/link/core/core.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/link/core/core.cjs"
+        },
+        "/node_modules/@apollo/client/link/error/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/link/error/package.json"
+        },
+        "/node_modules/@apollo/client/link/error/error.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/link/error/error.cjs"
+        },
+        "/node_modules/@apollo/client/link/http/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/link/http/package.json"
+        },
+        "/node_modules/@apollo/client/link/http/http.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/link/http/http.cjs"
+        },
+        "/node_modules/@apollo/client/link/persisted-queries/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/link/persisted-queries/package.json"
+        },
+        "/node_modules/@apollo/client/link/persisted-queries/persisted-queries.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/link/persisted-queries/persisted-queries.cjs"
+        },
+        "/node_modules/@apollo/client/link/retry/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/link/retry/package.json"
+        },
+        "/node_modules/@apollo/client/link/retry/retry.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/link/retry/retry.cjs"
+        },
+        "/node_modules/@apollo/client/link/schema/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/link/schema/package.json"
+        },
+        "/node_modules/@apollo/client/link/schema/schema.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/link/schema/schema.cjs"
+        },
+        "/node_modules/@apollo/client/link/subscriptions/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/link/subscriptions/package.json"
+        },
+        "/node_modules/@apollo/client/link/subscriptions/subscriptions.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/link/subscriptions/subscriptions.cjs"
+        },
+        "/node_modules/@apollo/client/link/utils/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/link/utils/package.json"
+        },
+        "/node_modules/@apollo/client/link/utils/utils.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/link/utils/utils.cjs"
+        },
+        "/node_modules/@apollo/client/link/ws/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/link/ws/package.json"
+        },
+        "/node_modules/@apollo/client/link/ws/ws.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/link/ws/ws.cjs"
+        },
+        "/node_modules/@apollo/client/react/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/react/package.json"
+        },
+        "/node_modules/@apollo/client/react/react.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/react/react.cjs"
+        },
+        "/node_modules/@apollo/client/react/components/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/react/components/package.json"
+        },
+        "/node_modules/@apollo/client/react/components/components.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/react/components/components.cjs"
+        },
+        "/node_modules/@apollo/client/react/context/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/react/context/package.json"
+        },
+        "/node_modules/@apollo/client/react/context/context.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/react/context/context.cjs"
+        },
+        "/node_modules/@apollo/client/react/hoc/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/react/hoc/package.json"
+        },
+        "/node_modules/@apollo/client/react/hoc/hoc.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/react/hoc/hoc.cjs"
+        },
+        "/node_modules/@apollo/client/react/hooks/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/react/hooks/package.json"
+        },
+        "/node_modules/@apollo/client/react/hooks/hooks.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/react/hooks/hooks.cjs"
+        },
+        "/node_modules/@apollo/client/react/parser/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/react/parser/package.json"
+        },
+        "/node_modules/@apollo/client/react/parser/parser.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/react/parser/parser.cjs"
+        },
+        "/node_modules/@apollo/client/react/ssr/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/react/ssr/package.json"
+        },
+        "/node_modules/@apollo/client/react/ssr/ssr.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/react/ssr/ssr.cjs"
+        },
+        "/node_modules/@apollo/client/testing/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/testing/package.json"
+        },
+        "/node_modules/@apollo/client/testing/testing.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/testing/testing.cjs"
+        },
+        "/node_modules/@apollo/client/testing/core/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/testing/core/package.json"
+        },
+        "/node_modules/@apollo/client/testing/core/core.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/testing/core/core.cjs"
+        },
+        "/node_modules/@apollo/client/utilities/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/utilities/package.json"
+        },
+        "/node_modules/@apollo/client/utilities/utilities.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/utilities/utilities.cjs"
+        },
+        "/node_modules/@apollo/client/utilities/globals/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@apollo/client/utilities/globals/package.json"
+        },
+        "/node_modules/@apollo/client/utilities/globals/globals.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@apollo/client/utilities/globals/globals.cjs"
+        }
+      }
+    },
+    "bundler": {}
+  },
   "problems": [
     {
       "kind": "FalseESM",
-      "entrypoint": ".",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": ".",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": ".",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./cache",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./cache",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./cache",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./core",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./core",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./core",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./errors",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./errors",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./errors",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/batch",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./link/batch",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/batch",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/batch-http",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./link/batch-http",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/batch-http",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/context",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./link/context",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/context",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/core",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./link/core",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/core",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/error",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./link/error",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/error",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/http",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./link/http",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/http",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/persisted-queries",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./link/persisted-queries",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/persisted-queries",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/retry",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./link/retry",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/retry",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/schema",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./link/schema",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/schema",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/subscriptions",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./link/subscriptions",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/subscriptions",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/utils",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./link/utils",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/utils",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/ws",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./link/ws",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./link/ws",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./react",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./react",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./react",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./react/components",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./react/components",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./react/components",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./react/context",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./react/context",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./react/context",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./react/hoc",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./react/hoc",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./react/hoc",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./react/hooks",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./react/hooks",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./react/hooks",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./react/parser",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./react/parser",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./react/parser",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./react/ssr",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./react/ssr",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./react/ssr",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./testing",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./testing",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./testing",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./testing/core",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./testing/core",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./testing/core",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./utilities",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./utilities",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./utilities",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./utilities/globals",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./utilities/globals",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "FalseESM",
-      "entrypoint": "./utilities/globals",
-      "resolutionKind": "node16-esm"
+      "typesFileName": "/node_modules/@apollo/client/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/main.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/main.cjs"
+      }
     },
     {
       "kind": "InternalResolutionError",
@@ -12966,6 +12821,21 @@
         "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/react', target file types: TypeScript, JavaScript, Declaration, JSON.",
         "======== Module name './react' was not resolved. ========"
       ]
+    },
+    {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/cache/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/cache/cache.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/cache/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/cache/cache.cjs"
+      }
     },
     {
       "kind": "InternalResolutionError",
@@ -13204,6 +13074,21 @@
       ]
     },
     {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/core/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/core/core.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/core/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/core/core.cjs"
+      }
+    },
+    {
       "kind": "InternalResolutionError",
       "resolutionOption": "node16",
       "fileName": "/node_modules/@apollo/client/core/index.d.ts",
@@ -13419,6 +13304,21 @@
       ]
     },
     {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/errors/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/errors/errors.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/errors/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/errors/errors.cjs"
+      }
+    },
+    {
       "kind": "InternalResolutionError",
       "resolutionOption": "node16",
       "fileName": "/node_modules/@apollo/client/errors/index.d.ts",
@@ -13483,6 +13383,21 @@
       ]
     },
     {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/link/batch/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/link/batch/batch.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/link/batch/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/link/batch/batch.cjs"
+      }
+    },
+    {
       "kind": "InternalResolutionError",
       "resolutionOption": "node16",
       "fileName": "/node_modules/@apollo/client/link/batch/index.d.ts",
@@ -13500,6 +13415,21 @@
       ]
     },
     {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/link/batch-http/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/link/batch-http/batch-http.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/link/batch-http/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/link/batch-http/batch-http.cjs"
+      }
+    },
+    {
       "kind": "InternalResolutionError",
       "resolutionOption": "node16",
       "fileName": "/node_modules/@apollo/client/link/batch-http/index.d.ts",
@@ -13515,6 +13445,21 @@
         "Directory '/node_modules/@apollo/client/link/batch-http/batchHttpLink' does not exist, skipping all lookups in it.",
         "======== Module name './batchHttpLink' was not resolved. ========"
       ]
+    },
+    {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/link/context/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/link/context/context.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/link/context/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/link/context/context.cjs"
+      }
     },
     {
       "kind": "InternalResolutionError",
@@ -13547,6 +13492,21 @@
         "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/core', target file types: TypeScript, JavaScript, Declaration, JSON.",
         "======== Module name '../../core' was not resolved. ========"
       ]
+    },
+    {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/link/core/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/link/core/core.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/link/core/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/link/core/core.cjs"
+      }
     },
     {
       "kind": "InternalResolutionError",
@@ -13684,6 +13644,21 @@
       ]
     },
     {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/link/error/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/link/error/error.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/link/error/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/link/error/error.cjs"
+      }
+    },
+    {
       "kind": "InternalResolutionError",
       "resolutionOption": "node16",
       "fileName": "/node_modules/@apollo/client/link/error/index.d.ts",
@@ -13730,6 +13705,21 @@
         "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/link/core', target file types: TypeScript, JavaScript, Declaration, JSON.",
         "======== Module name '../core' was not resolved. ========"
       ]
+    },
+    {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/link/http/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/link/http/http.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/link/http/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/link/http/http.cjs"
+      }
     },
     {
       "kind": "InternalResolutionError",
@@ -13901,6 +13891,21 @@
       ]
     },
     {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/link/persisted-queries/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/link/persisted-queries/persisted-queries.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/link/persisted-queries/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/link/persisted-queries/persisted-queries.cjs"
+      }
+    },
+    {
       "kind": "InternalResolutionError",
       "resolutionOption": "node16",
       "fileName": "/node_modules/@apollo/client/link/persisted-queries/index.d.ts",
@@ -13933,6 +13938,21 @@
       ]
     },
     {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/link/retry/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/link/retry/retry.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/link/retry/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/link/retry/retry.cjs"
+      }
+    },
+    {
       "kind": "InternalResolutionError",
       "resolutionOption": "node16",
       "fileName": "/node_modules/@apollo/client/link/retry/index.d.ts",
@@ -13948,6 +13968,21 @@
         "Directory '/node_modules/@apollo/client/link/retry/retryLink' does not exist, skipping all lookups in it.",
         "======== Module name './retryLink' was not resolved. ========"
       ]
+    },
+    {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/link/schema/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/link/schema/schema.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/link/schema/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/link/schema/schema.cjs"
+      }
     },
     {
       "kind": "InternalResolutionError",
@@ -13982,6 +14017,21 @@
       ]
     },
     {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/link/subscriptions/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/link/subscriptions/subscriptions.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/link/subscriptions/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/link/subscriptions/subscriptions.cjs"
+      }
+    },
+    {
       "kind": "InternalResolutionError",
       "resolutionOption": "node16",
       "fileName": "/node_modules/@apollo/client/link/subscriptions/index.d.ts",
@@ -14012,6 +14062,21 @@
         "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/utilities', target file types: TypeScript, JavaScript, Declaration, JSON.",
         "======== Module name '../../utilities' was not resolved. ========"
       ]
+    },
+    {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/link/utils/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/link/utils/utils.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/link/utils/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/link/utils/utils.cjs"
+      }
     },
     {
       "kind": "InternalResolutionError",
@@ -14149,6 +14214,21 @@
       ]
     },
     {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/link/ws/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/link/ws/ws.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/link/ws/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/link/ws/ws.cjs"
+      }
+    },
+    {
       "kind": "InternalResolutionError",
       "resolutionOption": "node16",
       "fileName": "/node_modules/@apollo/client/link/ws/index.d.ts",
@@ -14179,6 +14259,21 @@
         "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/utilities', target file types: TypeScript, JavaScript, Declaration, JSON.",
         "======== Module name '../../utilities' was not resolved. ========"
       ]
+    },
+    {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/react/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/react/react.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/react/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/react/react.cjs"
+      }
     },
     {
       "kind": "InternalResolutionError",
@@ -14262,6 +14357,21 @@
       ]
     },
     {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/react/components/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/react/components/components.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/react/components/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/react/components/components.cjs"
+      }
+    },
+    {
       "kind": "InternalResolutionError",
       "resolutionOption": "node16",
       "fileName": "/node_modules/@apollo/client/react/components/index.d.ts",
@@ -14330,6 +14440,21 @@
       ]
     },
     {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/react/context/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/react/context/context.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/react/context/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/react/context/context.cjs"
+      }
+    },
+    {
       "kind": "InternalResolutionError",
       "resolutionOption": "node16",
       "fileName": "/node_modules/@apollo/client/react/context/index.d.ts",
@@ -14395,6 +14520,21 @@
         "Directory '/node_modules/@apollo/client/react/context/ApolloProvider' does not exist, skipping all lookups in it.",
         "======== Module name './ApolloProvider' was not resolved. ========"
       ]
+    },
+    {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/react/hoc/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/react/hoc/hoc.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/react/hoc/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/react/hoc/hoc.cjs"
+      }
     },
     {
       "kind": "InternalResolutionError",
@@ -14513,6 +14653,21 @@
         "Directory '/node_modules/@apollo/client/react/hoc/types' does not exist, skipping all lookups in it.",
         "======== Module name './types' was not resolved. ========"
       ]
+    },
+    {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/react/hooks/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/react/hooks/hooks.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/react/hooks/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/react/hooks/hooks.cjs"
+      }
     },
     {
       "kind": "InternalResolutionError",
@@ -14650,6 +14805,36 @@
       ]
     },
     {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/react/parser/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/react/parser/parser.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/react/parser/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/react/parser/parser.cjs"
+      }
+    },
+    {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/react/ssr/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/react/ssr/ssr.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/react/ssr/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/react/ssr/ssr.cjs"
+      }
+    },
+    {
       "kind": "InternalResolutionError",
       "resolutionOption": "node16",
       "fileName": "/node_modules/@apollo/client/react/ssr/index.d.ts",
@@ -14701,6 +14886,21 @@
       ]
     },
     {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/testing/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/testing/testing.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/testing/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/testing/testing.cjs"
+      }
+    },
+    {
       "kind": "InternalResolutionError",
       "resolutionOption": "node16",
       "fileName": "/node_modules/@apollo/client/testing/index.d.ts",
@@ -14748,6 +14948,21 @@
         "Loading module as file / folder, candidate module location '/node_modules/@apollo/client/testing/core', target file types: TypeScript, JavaScript, Declaration, JSON.",
         "======== Module name './core' was not resolved. ========"
       ]
+    },
+    {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/testing/core/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/testing/core/core.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/testing/core/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/testing/core/core.cjs"
+      }
     },
     {
       "kind": "InternalResolutionError",
@@ -14867,6 +15082,21 @@
         "Directory '/node_modules/@apollo/client/testing/core/withConsoleSpy' does not exist, skipping all lookups in it.",
         "======== Module name './withConsoleSpy' was not resolved. ========"
       ]
+    },
+    {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/utilities/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/utilities/utilities.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/utilities/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/utilities/utilities.cjs"
+      }
     },
     {
       "kind": "InternalResolutionError",
@@ -15274,6 +15504,21 @@
         "Directory '/node_modules/@apollo/client/utilities/types/IsStrictlyAny' does not exist, skipping all lookups in it.",
         "======== Module name './types/IsStrictlyAny' was not resolved. ========"
       ]
+    },
+    {
+      "kind": "FalseESM",
+      "typesFileName": "/node_modules/@apollo/client/utilities/globals/index.d.ts",
+      "implementationFileName": "/node_modules/@apollo/client/utilities/globals/globals.cjs",
+      "typesModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/@apollo/client/utilities/globals/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@apollo/client/utilities/globals/globals.cjs"
+      }
     },
     {
       "kind": "InternalResolutionError",

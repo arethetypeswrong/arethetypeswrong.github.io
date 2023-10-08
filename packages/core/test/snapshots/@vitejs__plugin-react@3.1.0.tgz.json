@@ -69,6 +69,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@vitejs/plugin-react/dist/index.d.ts"
+          ],
+          "visibleProblems": [
+            0
           ]
         },
         "node16-cjs": {
@@ -76,11 +79,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@vitejs/plugin-react/dist/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@vitejs/plugin-react/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -102,11 +100,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@vitejs/plugin-react/dist/index.cjs",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@vitejs/plugin-react/dist/index.cjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -143,6 +136,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@vitejs/plugin-react/dist/index.d.ts"
+          ],
+          "visibleProblems": [
+            0
           ]
         },
         "node16-esm": {
@@ -150,11 +146,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@vitejs/plugin-react/dist/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@vitejs/plugin-react/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -176,11 +167,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@vitejs/plugin-react/dist/index.mjs",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@vitejs/plugin-react/dist/index.mjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -231,6 +217,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@vitejs/plugin-react/dist/index.d.ts"
+          ],
+          "visibleProblems": [
+            1
           ]
         },
         "bundler": {
@@ -313,28 +302,62 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@vitejs/plugin-react/dist/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
       "isWildcard": false
     }
   },
+  "programInfo": {
+    "node10": {},
+    "node16": {
+      "moduleKinds": {
+        "/node_modules/typescript/lib/lib.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/typescript/lib/lib.d.ts"
+        },
+        "/node_modules/@vitejs/plugin-react/dist/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@vitejs/plugin-react/package.json"
+        },
+        "/node_modules/@vitejs/plugin-react/dist/index.cjs": {
+          "detectedKind": 1,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@vitejs/plugin-react/dist/index.cjs"
+        },
+        "/node_modules/@vitejs/plugin-react/dist/index.mjs": {
+          "detectedKind": 99,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@vitejs/plugin-react/dist/index.mjs"
+        }
+      }
+    },
+    "bundler": {}
+  },
   "problems": [
     {
       "kind": "MissingExportEquals",
-      "entrypoint": ".",
-      "resolutionKind": "node10"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": ".",
-      "resolutionKind": "node16-cjs"
+      "typesFileName": "/node_modules/@vitejs/plugin-react/dist/index.d.ts",
+      "implementationFileName": "/node_modules/@vitejs/plugin-react/dist/index.cjs"
     },
     {
       "kind": "FalseCJS",
-      "entrypoint": ".",
-      "resolutionKind": "node16-esm"
+      "typesFileName": "/node_modules/@vitejs/plugin-react/dist/index.d.ts",
+      "implementationFileName": "/node_modules/@vitejs/plugin-react/dist/index.mjs",
+      "typesModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "no:type",
+        "reasonFileName": "/node_modules/@vitejs/plugin-react/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@vitejs/plugin-react/dist/index.mjs"
+      }
     }
   ]
 }

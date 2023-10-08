@@ -90,18 +90,14 @@
             "/node_modules/@ice/app/esm/test/defineVitestConfig.d.ts",
             "/node_modules/@ice/app/esm/test/index.d.ts",
             "/node_modules/@ice/app/esm/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": ".",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@ice/app/esm/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@ice/app/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -122,11 +118,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@ice/app/esm/index.js",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@ice/app/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -158,6 +149,11 @@
             "/node_modules/@ice/app/esm/test/index.d.ts",
             "/node_modules/@ice/app/esm/utils/logger.d.ts",
             "/node_modules/@ice/app/esm/index.d.ts"
+          ],
+          "visibleProblems": [
+            0,
+            1,
+            2
           ]
         },
         "node16-esm": {
@@ -165,11 +161,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@ice/app/esm/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@ice/app/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -190,11 +181,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@ice/app/esm/index.js",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@ice/app/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -240,6 +226,10 @@
             "/node_modules/@ice/app/esm/test/index.d.ts",
             "/node_modules/@ice/app/esm/utils/logger.d.ts",
             "/node_modules/@ice/app/esm/index.d.ts"
+          ],
+          "visibleProblems": [
+            1,
+            2
           ]
         },
         "bundler": {
@@ -322,7 +312,8 @@
             "/node_modules/@ice/app/esm/test/defineVitestConfig.d.ts",
             "/node_modules/@ice/app/esm/test/index.d.ts",
             "/node_modules/@ice/app/esm/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -359,18 +350,14 @@
             "/node_modules/@ice/app/esm/types/userConfig.d.ts",
             "/node_modules/@ice/app/esm/types/index.d.ts",
             "/node_modules/@ice/app/types.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./types",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@ice/app/esm/types/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@ice/app/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -391,11 +378,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@ice/app/esm/types/index.js",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@ice/app/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -427,6 +409,10 @@
             "/node_modules/@ice/app/esm/types/plugin.d.ts",
             "/node_modules/@ice/app/esm/types/userConfig.d.ts",
             "/node_modules/@ice/app/esm/types/index.d.ts"
+          ],
+          "visibleProblems": [
+            3,
+            1
           ]
         },
         "node16-esm": {
@@ -434,11 +420,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@ice/app/esm/types/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@ice/app/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -459,11 +440,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@ice/app/esm/types/index.js",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@ice/app/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -503,6 +479,9 @@
             "/node_modules/@ice/app/esm/types/plugin.d.ts",
             "/node_modules/@ice/app/esm/types/userConfig.d.ts",
             "/node_modules/@ice/app/esm/types/index.d.ts"
+          ],
+          "visibleProblems": [
+            1
           ]
         },
         "bundler": {
@@ -571,7 +550,8 @@
             "/node_modules/@ice/app/esm/types/plugin.d.ts",
             "/node_modules/@ice/app/esm/types/userConfig.d.ts",
             "/node_modules/@ice/app/esm/types/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -582,18 +562,16 @@
       "resolutions": {
         "node10": {
           "name": "./analyze",
-          "resolutionKind": "node10"
+          "resolutionKind": "node10",
+          "visibleProblems": [
+            4
+          ]
         },
         "node16-cjs": {
           "name": "./analyze",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@ice/app/esm/service/analyze.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@ice/app/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -614,11 +592,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@ice/app/esm/service/analyze.js",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@ice/app/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -646,6 +619,9 @@
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@ice/app/esm/esbuild/scan.d.ts",
             "/node_modules/@ice/app/esm/service/analyze.d.ts"
+          ],
+          "visibleProblems": [
+            5
           ]
         },
         "node16-esm": {
@@ -653,11 +629,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@ice/app/esm/service/analyze.d.ts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@ice/app/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -678,11 +649,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@ice/app/esm/service/analyze.js",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/@ice/app/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -718,7 +684,8 @@
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@ice/app/esm/esbuild/scan.d.ts",
             "/node_modules/@ice/app/esm/service/analyze.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "bundler": {
           "name": "./analyze",
@@ -782,32 +749,111 @@
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@ice/app/esm/esbuild/scan.d.ts",
             "/node_modules/@ice/app/esm/service/analyze.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
       "isWildcard": false
     }
   },
+  "programInfo": {
+    "node10": {},
+    "node16": {
+      "moduleKinds": {
+        "/node_modules/typescript/lib/lib.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/typescript/lib/lib.d.ts"
+        },
+        "/node_modules/@ice/app/esm/types/userConfig.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@ice/app/package.json"
+        },
+        "/node_modules/@ice/app/esm/config.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@ice/app/package.json"
+        },
+        "/node_modules/@ice/app/esm/test/defineJestConfig.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@ice/app/package.json"
+        },
+        "/node_modules/@ice/app/esm/test/defineVitestConfig.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@ice/app/package.json"
+        },
+        "/node_modules/@ice/app/esm/test/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@ice/app/package.json"
+        },
+        "/node_modules/@ice/app/esm/utils/logger.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@ice/app/package.json"
+        },
+        "/node_modules/@ice/app/esm/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@ice/app/package.json"
+        },
+        "/node_modules/@ice/app/esm/index.js": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@ice/app/package.json"
+        },
+        "/node_modules/@ice/app/esm/types/generator.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@ice/app/package.json"
+        },
+        "/node_modules/@ice/app/esm/utils/ServerCompileTask.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@ice/app/package.json"
+        },
+        "/node_modules/@ice/app/esm/types/plugin.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@ice/app/package.json"
+        },
+        "/node_modules/@ice/app/esm/types/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@ice/app/package.json"
+        },
+        "/node_modules/@ice/app/esm/types/index.js": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@ice/app/package.json"
+        },
+        "/node_modules/@ice/app/esm/esbuild/scan.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@ice/app/package.json"
+        },
+        "/node_modules/@ice/app/esm/service/analyze.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@ice/app/package.json"
+        },
+        "/node_modules/@ice/app/esm/service/analyze.js": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@ice/app/package.json"
+        }
+      }
+    },
+    "bundler": {}
+  },
   "problems": [
     {
       "kind": "CJSResolvesToESM",
       "entrypoint": ".",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./types",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "NoResolution",
-      "entrypoint": "./analyze",
-      "resolutionKind": "node10"
-    },
-    {
-      "kind": "CJSResolvesToESM",
-      "entrypoint": "./analyze",
       "resolutionKind": "node16-cjs"
     },
     {
@@ -842,6 +888,21 @@
         "Loading module as file / folder, candidate module location '/node_modules/@ice/app/esm/types', target file types: TypeScript, JavaScript, Declaration, JSON.",
         "======== Module name './types' was not resolved. ========"
       ]
+    },
+    {
+      "kind": "CJSResolvesToESM",
+      "entrypoint": "./types",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "NoResolution",
+      "entrypoint": "./analyze",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "CJSResolvesToESM",
+      "entrypoint": "./analyze",
+      "resolutionKind": "node16-cjs"
     }
   ]
 }

@@ -12,9 +12,9 @@ Build tools:
 
 ⚠️ A require call resolved to an ESM JavaScript file, which is an error in Node and some bundlers. CommonJS consumers will need to use a dynamic import. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/CJSResolvesToESM.md
 
-💀 Import failed to resolve to type declarations or JavaScript files. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/NoResolution.md
-
 🥴 Import found in a type declaration file failed to resolve. Either this indicates that runtime resolution errors will occur, or (more likely) the types misrepresent the contents of the JavaScript files. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/InternalResolutionError.md
+
+💀 Import failed to resolve to type declarations or JavaScript files. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/NoResolution.md
 
 
 ┌────────────────────┬──────────────────────┬──────────────────────────────┬──────────────────────────────┬─────────┐
@@ -23,8 +23,8 @@ Build tools:
 │ "@ice/app"         │ 🟢                   │ ⚠️ ESM (dynamic import only) │ 🥴 Internal resolution error │ 🟢      │
 │                    │                      │ 🥴 Internal resolution error │                              │         │
 ├────────────────────┼──────────────────────┼──────────────────────────────┼──────────────────────────────┼─────────┤
-│ "@ice/app/types"   │ 🟢                   │ ⚠️ ESM (dynamic import only) │ 🥴 Internal resolution error │ 🟢      │
-│                    │                      │ 🥴 Internal resolution error │                              │         │
+│ "@ice/app/types"   │ 🟢                   │ 🥴 Internal resolution error │ 🥴 Internal resolution error │ 🟢      │
+│                    │                      │ ⚠️ ESM (dynamic import only) │                              │         │
 ├────────────────────┼──────────────────────┼──────────────────────────────┼──────────────────────────────┼─────────┤
 │ "@ice/app/analyze" │ 💀 Resolution failed │ ⚠️ ESM (dynamic import only) │ 🟢 (ESM)                     │ 🟢      │
 └────────────────────┴──────────────────────┴──────────────────────────────┴──────────────────────────────┴─────────┘
