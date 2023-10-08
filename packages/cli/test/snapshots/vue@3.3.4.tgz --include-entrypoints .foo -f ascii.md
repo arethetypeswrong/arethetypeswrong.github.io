@@ -69,10 +69,10 @@ bundler: 🟢
 
 "vue/dist/*"
 
-node10: ❓ (wildcard)
-node16 (from CJS): ❓ (wildcard)
-node16 (from ESM): ❓ (wildcard)
-bundler: ❓ (wildcard)
+node10: (wildcard)
+node16 (from CJS): (wildcard)
+node16 (from ESM): (wildcard)
+bundler: (wildcard)
 
 ***********************************
 
