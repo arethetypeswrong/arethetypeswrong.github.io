@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.12.1
+
+### Patch Changes
+
+- 35544c5: Fix crash from missing optional chain
+
 ## 0.12.0
 
 ### Minor Changes
