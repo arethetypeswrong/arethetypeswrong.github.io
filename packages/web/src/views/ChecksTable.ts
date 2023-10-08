@@ -1,6 +1,6 @@
 import type { CheckResult, ProblemKind, ResolutionKind } from "@arethetypeswrong/core";
 import { filterProblems, problemKindInfo } from "@arethetypeswrong/core/problems";
-import { allResolutionKinds, groupProblemsByKind } from "@arethetypeswrong/core/utils";
+import { allResolutionKinds, getResolutionOption, groupProblemsByKind } from "@arethetypeswrong/core/utils";
 
 const resolutionKinds: Record<ResolutionKind, string> = {
   node10: "<code>node10</code>",
@@ -26,7 +26,7 @@ export function ChecksTable(props: { analysis?: CheckResult }) {
   const { analysis } = props;
   const subpaths = Object.keys(analysis.entrypoints);
   const entrypoints = subpaths.map((s) =>
-    s === "." ? analysis.packageName : `${analysis.packageName}/${s.substring(2)}`
+    s === "." ? analysis.packageName : `${analysis.packageName}/${s.substring(2)}`,
   );
   return {
     className: "",
@@ -47,7 +47,7 @@ export function ChecksTable(props: { analysis?: CheckResult }) {
             .map((subpath) => {
               const resolutionInfo = analysis.entrypoints[subpath].resolutions[resolutionKind];
               const problemsForCell = Object.entries(
-                groupProblemsByKind(filterProblems(analysis, { resolutionKind, entrypoint: subpath }))
+                groupProblemsByKind(filterProblems(analysis, { resolutionKind, entrypoint: subpath })),
               );
               return `<td>${
                 problemsForCell.length
@@ -57,16 +57,23 @@ export function ChecksTable(props: { analysis?: CheckResult }) {
                           problemKindInfo[kind as ProblemKind].emoji +
                           " " +
                           problemKindInfo[kind as ProblemKind].shortDescription +
-                          (problem.length > 1 ? ` (${problem.length})` : "")
+                          (problem.length > 1 ? ` (${problem.length})` : ""),
                       )
                       .join("<br />")
+                  : resolutionInfo.isWildcard
+                  ? "(wildcard)"
                   : resolutionInfo.resolution?.isJson
                   ? "✅ (JSON)"
-                  : "✅ " + moduleKinds[resolutionInfo.resolution?.moduleKind?.detectedKind || ""]
+                  : "✅ " +
+                    moduleKinds[
+                      analysis.programInfo[getResolutionOption(resolutionKind)].moduleKinds?.[
+                        resolutionInfo.resolution?.fileName ?? ""
+                      ]?.detectedKind || ""
+                    ]
               }</td>`;
             })
             .join("")}
-        </tr>`
+        </tr>`,
         )
         .join("")}
       </tbody>`,

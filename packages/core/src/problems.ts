@@ -1,12 +1,5 @@
-import type { Problem, ProblemKind, ResolutionKind, ResolutionOption, Analysis } from "./types.js";
-import {
-  allResolutionKinds,
-  getResolutionKinds,
-  getResolutionOption,
-  isEntrypointResolutionProblem,
-  isFileProblem,
-  isResolutionBasedFileProblem,
-} from "./utils.js";
+import type { Analysis, Problem, ProblemKind, ResolutionKind, ResolutionOption } from "./types.js";
+import { getResolutionKinds } from "./utils.js";
 
 export interface ProblemKindInfo {
   title: string;
@@ -17,13 +10,6 @@ export interface ProblemKindInfo {
 }
 
 export const problemKindInfo: Record<ProblemKind, ProblemKindInfo> = {
-  Wildcard: {
-    emoji: "🃏",
-    title: "Wildcards",
-    shortDescription: "Unable to check",
-    description: "Wildcard subpaths cannot yet be analyzed by this tool.",
-    docsUrl: "https://github.com/arethetypeswrong/arethetypeswrong.github.io/issues/40",
-  },
   NoResolution: {
     emoji: "💀",
     title: "Resolution failed",
@@ -144,7 +130,7 @@ export function filterProblems(
     }
     if (filter.entrypoint && filter.resolutionOption) {
       return getResolutionKinds(filter.resolutionOption).every((resolutionKind) =>
-        problemAffectsEntrypointResolution(p, filter.entrypoint!, resolutionKind, analysis)
+        problemAffectsEntrypointResolution(p, filter.entrypoint!, resolutionKind, analysis),
       );
     }
     if (filter.entrypoint) {
@@ -160,54 +146,45 @@ export function filterProblems(
 export function problemAffectsResolutionKind(
   problem: Problem,
   resolutionKind: ResolutionKind,
-  analysis: Analysis
+  analysis: Analysis,
 ): boolean {
-  if (isEntrypointResolutionProblem(problem)) {
-    return problem.resolutionKind === resolutionKind;
+  const index = getProblemIndex(analysis, problem);
+  for (const entrypoint of Object.values(analysis.entrypoints)) {
+    if (entrypoint.resolutions[resolutionKind].visibleProblems?.includes(index)) {
+      return true;
+    }
   }
-  if (isResolutionBasedFileProblem(problem)) {
-    return problem.resolutionOption === getResolutionOption(resolutionKind);
-  }
-  return Object.values(analysis.entrypoints).some(
-    (entrypointInfo) =>
-      entrypointInfo.resolutions[resolutionKind].files?.includes(problem.fileName) ||
-      entrypointInfo.resolutions[resolutionKind].implementationResolution?.fileName === problem.fileName
-  );
+  return false;
 }
 
 export function problemAffectsEntrypoint(problem: Problem, entrypoint: string, analysis: Analysis): boolean {
-  if (isEntrypointResolutionProblem(problem)) {
-    return problem.entrypoint === entrypoint;
+  const index = getProblemIndex(analysis, problem);
+  for (const resolution of Object.values(analysis.entrypoints[entrypoint].resolutions)) {
+    if (resolution.visibleProblems?.includes(index)) {
+      return true;
+    }
   }
-  return allResolutionKinds.some(
-    (resolutionKind) =>
-      analysis.entrypoints[entrypoint]?.resolutions[resolutionKind].files?.includes(problem.fileName) ||
-      analysis.entrypoints[entrypoint]?.resolutions[resolutionKind].implementationResolution?.fileName ===
-        problem.fileName
-  );
+  return false;
 }
 
 export function problemAffectsEntrypointResolution(
   problem: Problem,
   entrypoint: string,
   resolutionKind: ResolutionKind,
-  analysis: Analysis
+  analysis: Analysis,
 ): boolean {
-  if (isEntrypointResolutionProblem(problem)) {
-    return problem.entrypoint === entrypoint && problem.resolutionKind === resolutionKind;
+  const index = getProblemIndex(analysis, problem);
+  return analysis.entrypoints[entrypoint].resolutions[resolutionKind].visibleProblems?.includes(index) ?? false;
+}
+
+function getProblemIndex(analysis: Analysis, problem: Problem) {
+  let index = analysis.problems.indexOf(problem);
+  if (index === -1) {
+    const serialized = JSON.stringify(problem);
+    index = analysis.problems.findIndex((p) => JSON.stringify(p) === serialized);
+    if (index === -1) {
+      throw new Error(`Could not find problem in analysis`);
+    }
   }
-  if (isResolutionBasedFileProblem(problem)) {
-    return (
-      getResolutionOption(resolutionKind) === problem.resolutionOption &&
-      !!analysis.entrypoints[entrypoint]?.resolutions[resolutionKind].files?.includes(problem.fileName)
-    );
-  }
-  if (isFileProblem(problem)) {
-    return (
-      analysis.entrypoints[entrypoint]?.resolutions[resolutionKind].files?.includes(problem.fileName) ||
-      analysis.entrypoints[entrypoint]?.resolutions[resolutionKind].implementationResolution?.fileName ===
-        problem.fileName
-    );
-  }
-  throw new Error(`Unhandled problem type '${(problem satisfies never as Problem).kind}'`);
+  return index;
 }

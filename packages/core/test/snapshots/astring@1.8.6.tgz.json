@@ -70,18 +70,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/astring/astring.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": ".",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/astring/astring.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/astring/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -103,11 +99,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/astring/dist/astring.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/astring/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -146,18 +137,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/astring/astring.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": ".",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/astring/astring.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/astring/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -179,11 +166,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/astring/dist/astring.mjs",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/astring/dist/astring.mjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -236,6 +218,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/astring/astring.d.ts"
+          ],
+          "visibleProblems": [
+            0
           ]
         },
         "bundler": {
@@ -320,18 +305,57 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/astring/astring.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
       "isWildcard": false
     }
   },
+  "programInfo": {
+    "node10": {},
+    "node16": {
+      "moduleKinds": {
+        "/node_modules/typescript/lib/lib.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/typescript/lib/lib.d.ts"
+        },
+        "/node_modules/astring/astring.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/astring/package.json"
+        },
+        "/node_modules/astring/dist/astring.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/astring/package.json"
+        },
+        "/node_modules/astring/dist/astring.mjs": {
+          "detectedKind": 99,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/astring/dist/astring.mjs"
+        }
+      }
+    },
+    "bundler": {}
+  },
   "problems": [
     {
       "kind": "FalseCJS",
-      "entrypoint": ".",
-      "resolutionKind": "node16-esm"
+      "typesFileName": "/node_modules/astring/astring.d.ts",
+      "implementationFileName": "/node_modules/astring/dist/astring.mjs",
+      "typesModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "no:type",
+        "reasonFileName": "/node_modules/astring/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/astring/dist/astring.mjs"
+      }
     }
   ]
 }

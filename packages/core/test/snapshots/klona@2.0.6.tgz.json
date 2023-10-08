@@ -70,18 +70,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/klona/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": ".",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/klona/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/klona/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -103,11 +99,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/klona/dist/index.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/klona/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -145,18 +136,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/klona/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": ".",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/klona/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/klona/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -178,11 +165,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/klona/dist/index.mjs",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/klona/dist/index.mjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -234,6 +216,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/klona/index.d.ts"
+          ],
+          "visibleProblems": [
+            0
           ]
         },
         "bundler": {
@@ -317,7 +302,8 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/klona/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -383,18 +369,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/klona/json/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./json",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/klona/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/klona/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -417,11 +399,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/klona/json/index.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/klona/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -462,18 +439,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/klona/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./json",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/klona/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/klona/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -496,11 +469,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/klona/json/index.mjs",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/klona/json/index.mjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -548,6 +516,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/klona/index.d.ts"
+          ],
+          "visibleProblems": [
+            1
           ]
         },
         "bundler": {
@@ -628,7 +599,8 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/klona/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -694,18 +666,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/klona/lite/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./lite",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/klona/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/klona/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -728,11 +696,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/klona/lite/index.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/klona/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -773,18 +736,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/klona/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./lite",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/klona/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/klona/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -807,11 +766,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/klona/lite/index.mjs",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/klona/lite/index.mjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -859,6 +813,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/klona/index.d.ts"
+          ],
+          "visibleProblems": [
+            2
           ]
         },
         "bundler": {
@@ -939,7 +896,8 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/klona/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -1005,18 +963,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/klona/full/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./full",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/klona/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/klona/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1039,11 +993,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/klona/full/index.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/klona/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -1084,18 +1033,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/klona/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./full",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/klona/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/klona/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1118,11 +1063,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/klona/full/index.mjs",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/klona/full/index.mjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -1170,6 +1110,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/klona/index.d.ts"
+          ],
+          "visibleProblems": [
+            3
           ]
         },
         "bundler": {
@@ -1250,7 +1193,8 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/klona/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -1291,10 +1235,35 @@
               "======== Module name 'klona/package.json' was successfully resolved to '/node_modules/klona/package.json' with Package ID 'klona/package.json@2.0.6'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/klona/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'klona/package.json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/klona/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/klona/package.json.ts' does not exist.",
+              "File '/node_modules/klona/package.json.tsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/klona/package.json/dist/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/klona/package.json/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/klona/package.json/dist/index.js' has a '.js' extension - stripping it.",
+              "Loading module 'klona/package.json' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/klona/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/klona/package.json' exists - use it as a name resolution result.",
+              "======== Module name 'klona/package.json' was successfully resolved to '/node_modules/klona/package.json' with Package ID 'klona/package.json@2.0.6'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/klona/package.json"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./package.json",
@@ -1325,10 +1294,34 @@
               "======== Module name 'klona/package.json' was successfully resolved to '/node_modules/klona/package.json' with Package ID 'klona/package.json@2.0.6'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/klona/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/klona/package.json' has a '.json' extension - stripping it.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/klona'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/klona/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/klona/package.json' exists - use it as a name resolution result.",
+              "======== Module name 'klona/package.json' was successfully resolved to '/node_modules/klona/package.json' with Package ID 'klona/package.json@2.0.6'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/klona/package.json"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./package.json",
@@ -1373,10 +1366,43 @@
               "======== Module name 'klona/package.json' was successfully resolved to '/node_modules/klona/package.json' with Package ID 'klona/package.json@2.0.6'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/klona/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona/package.json' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/klona/package.json' has a '.json' extension - stripping it.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/klona'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/klona/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/klona/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/package.json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/klona/package.json' has a '.json' extension - stripping it.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/klona/package.json/dist/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/klona/package.json/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/klona/package.json/dist/index.js' has a '.js' extension - stripping it.",
+              "======== Module name 'klona/package.json' was successfully resolved to '/node_modules/klona/package.json' with Package ID 'klona/package.json@2.0.6'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/klona/package.json"
-          ]
+          ],
+          "visibleProblems": []
         },
         "bundler": {
           "name": "./package.json",
@@ -1424,36 +1450,169 @@
               "======== Module name 'klona/package.json' was successfully resolved to '/node_modules/klona/package.json' with Package ID 'klona/package.json@2.0.6'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/klona/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'klona/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/klona/package.json' has a '.json' extension - stripping it.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/klona'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/klona/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/klona/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'klona/package.json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/klona/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/klona/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/klona/package.json.ts' does not exist.",
+              "File '/node_modules/klona/package.json.tsx' does not exist.",
+              "'package.json' has 'main' field 'dist/index.js' that references '/node_modules/klona/package.json/dist/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/klona/package.json/dist/index.js', target file types: TypeScript.",
+              "File name '/node_modules/klona/package.json/dist/index.js' has a '.js' extension - stripping it.",
+              "======== Module name 'klona/package.json' was successfully resolved to '/node_modules/klona/package.json' with Package ID 'klona/package.json@2.0.6'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/klona/package.json"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": false,
       "isWildcard": false
     }
   },
+  "programInfo": {
+    "node10": {},
+    "node16": {
+      "moduleKinds": {
+        "/node_modules/typescript/lib/lib.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/typescript/lib/lib.d.ts"
+        },
+        "/node_modules/klona/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/klona/package.json"
+        },
+        "/node_modules/klona/dist/index.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/klona/package.json"
+        },
+        "/node_modules/klona/json/index.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/klona/package.json"
+        },
+        "/node_modules/klona/lite/index.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/klona/package.json"
+        },
+        "/node_modules/klona/full/index.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/klona/package.json"
+        },
+        "/node_modules/klona/dist/index.mjs": {
+          "detectedKind": 99,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/klona/dist/index.mjs"
+        },
+        "/node_modules/klona/json/index.mjs": {
+          "detectedKind": 99,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/klona/json/index.mjs"
+        },
+        "/node_modules/klona/lite/index.mjs": {
+          "detectedKind": 99,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/klona/lite/index.mjs"
+        },
+        "/node_modules/klona/full/index.mjs": {
+          "detectedKind": 99,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/klona/full/index.mjs"
+        }
+      }
+    },
+    "bundler": {}
+  },
   "problems": [
     {
       "kind": "FalseCJS",
-      "entrypoint": ".",
-      "resolutionKind": "node16-esm"
+      "typesFileName": "/node_modules/klona/index.d.ts",
+      "implementationFileName": "/node_modules/klona/dist/index.mjs",
+      "typesModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "no:type",
+        "reasonFileName": "/node_modules/klona/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/klona/dist/index.mjs"
+      }
     },
     {
       "kind": "FalseCJS",
-      "entrypoint": "./json",
-      "resolutionKind": "node16-esm"
+      "typesFileName": "/node_modules/klona/index.d.ts",
+      "implementationFileName": "/node_modules/klona/json/index.mjs",
+      "typesModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "no:type",
+        "reasonFileName": "/node_modules/klona/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/klona/json/index.mjs"
+      }
     },
     {
       "kind": "FalseCJS",
-      "entrypoint": "./lite",
-      "resolutionKind": "node16-esm"
+      "typesFileName": "/node_modules/klona/index.d.ts",
+      "implementationFileName": "/node_modules/klona/lite/index.mjs",
+      "typesModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "no:type",
+        "reasonFileName": "/node_modules/klona/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/klona/lite/index.mjs"
+      }
     },
     {
       "kind": "FalseCJS",
-      "entrypoint": "./full",
-      "resolutionKind": "node16-esm"
+      "typesFileName": "/node_modules/klona/index.d.ts",
+      "implementationFileName": "/node_modules/klona/full/index.mjs",
+      "typesModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "no:type",
+        "reasonFileName": "/node_modules/klona/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/klona/full/index.mjs"
+      }
     }
   ]
 }

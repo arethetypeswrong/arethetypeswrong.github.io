@@ -72,18 +72,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/commander/typings/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": ".",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/commander/typings/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/commander/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -105,11 +101,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/commander/index.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/commander/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -146,18 +137,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/commander/typings/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": ".",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/commander/typings/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "type",
-              "reasonFileName": "/node_modules/commander/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -179,11 +166,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/commander/esm.mjs",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/commander/esm.mjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -236,6 +218,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/commander/typings/index.d.ts"
+          ],
+          "visibleProblems": [
+            0
           ]
         },
         "bundler": {
@@ -320,7 +305,8 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/commander/typings/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -362,8 +348,36 @@
               "======== Module name 'commander/esm.mjs' was successfully resolved to '/node_modules/commander/esm.mjs' with Package ID 'commander/esm.mjs@10.0.1'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/commander/esm.mjs",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'commander/esm.mjs' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'commander/esm.mjs' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/commander/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/commander/esm.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/commander/esm.mts' does not exist.",
+              "File '/node_modules/commander/esm.mjs.ts' does not exist.",
+              "File '/node_modules/commander/esm.mjs.tsx' does not exist.",
+              "'package.json' has 'main' field './index.js' that references '/node_modules/commander/esm.mjs/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/commander/esm.mjs/index.js', target file types: TypeScript.",
+              "File name '/node_modules/commander/esm.mjs/index.js' has a '.js' extension - stripping it.",
+              "Loading module 'commander/esm.mjs' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/commander/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/commander/esm.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/commander/esm.mjs' exists - use it as a name resolution result.",
+              "======== Module name 'commander/esm.mjs' was successfully resolved to '/node_modules/commander/esm.mjs' with Package ID 'commander/esm.mjs@10.0.1'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            1
           ]
         },
         "node16-cjs": {
@@ -371,11 +385,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/commander/esm.mjs",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/commander/esm.mjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -401,8 +410,36 @@
               "======== Module name 'commander/esm.mjs' was successfully resolved to '/node_modules/commander/esm.mjs' with Package ID 'commander/esm.mjs@10.0.1'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/commander/esm.mjs",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'commander/esm.mjs' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'commander/esm.mjs' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/commander/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './esm.mjs' with target './esm.mjs'.",
+              "File name '/node_modules/commander/esm.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/commander/esm.mts' does not exist.",
+              "Export specifier './esm.mjs' does not exist in package.json scope at path '/node_modules/commander'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/commander/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './esm.mjs' with target './esm.mjs'.",
+              "File name '/node_modules/commander/esm.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/commander/esm.mjs' exists - use it as a name resolution result.",
+              "======== Module name 'commander/esm.mjs' was successfully resolved to '/node_modules/commander/esm.mjs' with Package ID 'commander/esm.mjs@10.0.1'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            2,
+            3
           ]
         },
         "node16-esm": {
@@ -410,11 +447,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/commander/esm.mjs",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/commander/esm.mjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -455,8 +487,45 @@
               "======== Module name 'commander/esm.mjs' was successfully resolved to '/node_modules/commander/esm.mjs' with Package ID 'commander/esm.mjs@10.0.1'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/commander/esm.mjs",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'commander/esm.mjs' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'commander/esm.mjs' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/commander/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './esm.mjs' with target './esm.mjs'.",
+              "File name '/node_modules/commander/esm.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/commander/esm.mts' does not exist.",
+              "Export specifier './esm.mjs' does not exist in package.json scope at path '/node_modules/commander'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/commander/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './esm.mjs' with target './esm.mjs'.",
+              "File name '/node_modules/commander/esm.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/commander/esm.mjs' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'commander/esm.mjs' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/commander/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/commander/esm.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/commander/esm.mts' does not exist.",
+              "'package.json' has 'main' field './index.js' that references '/node_modules/commander/esm.mjs/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/commander/esm.mjs/index.js', target file types: TypeScript.",
+              "File name '/node_modules/commander/esm.mjs/index.js' has a '.js' extension - stripping it.",
+              "======== Module name 'commander/esm.mjs' was successfully resolved to '/node_modules/commander/esm.mjs' with Package ID 'commander/esm.mjs@10.0.1'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            4
           ]
         },
         "bundler": {
@@ -507,8 +576,47 @@
               "======== Module name 'commander/esm.mjs' was successfully resolved to '/node_modules/commander/esm.mjs' with Package ID 'commander/esm.mjs@10.0.1'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/commander/esm.mjs",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'commander/esm.mjs' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'commander/esm.mjs' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/commander/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './esm.mjs' with target './esm.mjs'.",
+              "File name '/node_modules/commander/esm.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/commander/esm.mts' does not exist.",
+              "Export specifier './esm.mjs' does not exist in package.json scope at path '/node_modules/commander'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/commander/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './esm.mjs' with target './esm.mjs'.",
+              "File name '/node_modules/commander/esm.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/commander/esm.mjs' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'commander/esm.mjs' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/commander/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/commander/esm.mjs' has a '.mjs' extension - stripping it.",
+              "File '/node_modules/commander/esm.mts' does not exist.",
+              "File '/node_modules/commander/esm.mjs.ts' does not exist.",
+              "File '/node_modules/commander/esm.mjs.tsx' does not exist.",
+              "'package.json' has 'main' field './index.js' that references '/node_modules/commander/esm.mjs/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/commander/esm.mjs/index.js', target file types: TypeScript.",
+              "File name '/node_modules/commander/esm.mjs/index.js' has a '.js' extension - stripping it.",
+              "======== Module name 'commander/esm.mjs' was successfully resolved to '/node_modules/commander/esm.mjs' with Package ID 'commander/esm.mjs@10.0.1'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            5
           ]
         }
       },
@@ -516,11 +624,49 @@
       "isWildcard": false
     }
   },
+  "programInfo": {
+    "node10": {},
+    "node16": {
+      "moduleKinds": {
+        "/node_modules/typescript/lib/lib.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/typescript/lib/lib.d.ts"
+        },
+        "/node_modules/commander/typings/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/commander/package.json"
+        },
+        "/node_modules/commander/index.js": {
+          "detectedKind": 1,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/commander/package.json"
+        },
+        "/node_modules/commander/esm.mjs": {
+          "detectedKind": 99,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/commander/esm.mjs"
+        }
+      }
+    },
+    "bundler": {}
+  },
   "problems": [
     {
       "kind": "FalseCJS",
-      "entrypoint": ".",
-      "resolutionKind": "node16-esm"
+      "typesFileName": "/node_modules/commander/typings/index.d.ts",
+      "implementationFileName": "/node_modules/commander/esm.mjs",
+      "typesModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "type",
+        "reasonFileName": "/node_modules/commander/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/commander/esm.mjs"
+      }
     },
     {
       "kind": "UntypedResolution",

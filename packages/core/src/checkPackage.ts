@@ -1,19 +1,22 @@
 import ts from "typescript";
-import { getEntrypointResolutionProblems } from "./checks/entrypointResolutionProblems.js";
-import { getFileProblems } from "./checks/fileProblems.js";
-import { getResolutionBasedFileProblems } from "./checks/resolutionBasedFileProblems.js";
 import type { Package } from "./createPackage.js";
-import { createCompilerHosts, type CompilerHosts, CompilerHostWrapper } from "./multiCompilerHost.js";
+import checks from "./internal/checks/index.js";
+import type { AnyCheck, CheckDependenciesContext } from "./internal/defineCheck.js";
+import { CompilerHostWrapper, createCompilerHosts, type CompilerHosts } from "./multiCompilerHost.js";
 import type {
   AnalysisTypes,
   BuildTool,
   CheckResult,
   EntrypointInfo,
   EntrypointResolutionAnalysis,
+  ModuleKind,
+  Problem,
+  ProgramInfo,
   Resolution,
   ResolutionKind,
+  ResolutionOption,
 } from "./types.js";
-import { allBuildTools } from "./utils.js";
+import { allBuildTools, getResolutionKinds, getResolutionOption, visitResolutions } from "./utils.js";
 
 export interface CheckPackageOptions {
   /**
@@ -50,9 +53,38 @@ export async function checkPackage(pkg: Package, options?: CheckPackageOptions):
 
   const hosts = createCompilerHosts(pkg);
   const entrypointResolutions = getEntrypointInfo(packageName, pkg, hosts, options);
-  const entrypointResolutionProblems = getEntrypointResolutionProblems(entrypointResolutions, hosts);
-  const resolutionBasedFileProblems = getResolutionBasedFileProblems(packageName, entrypointResolutions, hosts);
-  const fileProblems = getFileProblems(entrypointResolutions, hosts);
+  const programInfo: Record<ResolutionOption, ProgramInfo> = {
+    node10: {},
+    node16: { moduleKinds: getModuleKinds(entrypointResolutions, "node16", hosts) },
+    bundler: {},
+  };
+
+  const problems: Problem[] = [];
+  const problemIdsToIndices = new Map<string, number[]>();
+  visitResolutions(entrypointResolutions, (analysis, info) => {
+    for (const check of checks) {
+      const context = {
+        pkg,
+        hosts,
+        entrypoints: entrypointResolutions,
+        programInfo,
+        subpath: info.subpath,
+        resolutionKind: analysis.resolutionKind,
+        resolutionOption: getResolutionOption(analysis.resolutionKind),
+        fileName: undefined,
+      };
+      if (check.enumerateFiles) {
+        for (const fileName of analysis.files ?? []) {
+          runCheck(check, { ...context, fileName }, analysis);
+        }
+        if (analysis.implementationResolution) {
+          runCheck(check, { ...context, fileName: analysis.implementationResolution.fileName }, analysis);
+        }
+      } else {
+        runCheck(check, context, analysis);
+      }
+    }
+  });
 
   return {
     packageName,
@@ -60,8 +92,38 @@ export async function checkPackage(pkg: Package, options?: CheckPackageOptions):
     types,
     buildTools: getBuildTools(JSON.parse(pkg.readFile(`/node_modules/${packageName}/package.json`))),
     entrypoints: entrypointResolutions,
-    problems: [...entrypointResolutionProblems, ...resolutionBasedFileProblems, ...fileProblems],
+    programInfo,
+    problems,
   };
+
+  function runCheck(
+    check: AnyCheck,
+    context: CheckDependenciesContext<boolean>,
+    analysis: EntrypointResolutionAnalysis,
+  ) {
+    const dependencies = check.dependencies(context);
+    const id =
+      check.name +
+      JSON.stringify(dependencies, (_, value) => {
+        if (typeof value === "function") {
+          throw new Error("Encountered unexpected function in check dependencies");
+        }
+        return value;
+      });
+    let indices = problemIdsToIndices.get(id);
+    if (indices) {
+      (analysis.visibleProblems ??= []).push(...indices);
+    } else {
+      indices = [];
+      const checkProblems = check.execute(dependencies, context);
+      for (const problem of Array.isArray(checkProblems) ? checkProblems : checkProblems ? [checkProblems] : []) {
+        indices.push(problems.length);
+        problems.push(problem);
+      }
+      problemIdsToIndices.set(id, indices);
+      (analysis.visibleProblems ??= []).push(...indices);
+    }
+  }
 }
 
 function getEntrypoints(fs: Package, exportsObject: any, options: CheckPackageOptions | undefined): string[] {
@@ -140,7 +202,7 @@ function getEntrypointInfo(
   packageName: string,
   fs: Package,
   hosts: CompilerHosts,
-  options: CheckPackageOptions | undefined
+  options: CheckPackageOptions | undefined,
 ): Record<string, EntrypointInfo> {
   const packageJson = JSON.parse(fs.readFile(`/node_modules/${packageName}/package.json`));
   let entrypoints = getEntrypoints(fs, packageJson.exports, options);
@@ -171,7 +233,7 @@ function getEntrypointResolution(
   packageName: string,
   host: CompilerHostWrapper,
   resolutionKind: ResolutionKind,
-  entrypoint: string
+  entrypoint: string,
 ): EntrypointResolutionAnalysis {
   if (entrypoint.includes("*")) {
     return { name: entrypoint, resolutionKind, isWildcard: true };
@@ -179,11 +241,8 @@ function getEntrypointResolution(
   const moduleSpecifier = packageName + entrypoint.substring(1); // remove leading . before slash
   const importingFileName = resolutionKind === "node16-esm" ? "/index.mts" : "/index.ts";
   const resolutionMode = resolutionKind === "node16-esm" ? ts.ModuleKind.ESNext : ts.ModuleKind.CommonJS;
-
   const resolution = tryResolve();
-  const implementationResolution =
-    !resolution || ts.isDeclarationFileName(resolution.fileName) ? tryResolve(/*noDtsResolution*/ true) : undefined;
-
+  const implementationResolution = tryResolve(/*noDtsResolution*/ true);
   const files = resolution
     ? host
         .createProgram([resolution.fileName])
@@ -204,7 +263,7 @@ function getEntrypointResolution(
       moduleSpecifier,
       importingFileName,
       resolutionMode,
-      noDtsResolution
+      noDtsResolution,
     );
     const fileName = resolution.resolvedModule?.resolvedFileName;
     if (!fileName) {
@@ -213,7 +272,6 @@ function getEntrypointResolution(
 
     return {
       fileName,
-      moduleKind: host.getModuleKindForFile(fileName),
       isJson: resolution.resolvedModule.extension === ts.Extension.Json,
       isTypeScript: ts.hasTSFileExtension(resolution.resolvedModule.resolvedFileName),
       trace,
@@ -233,6 +291,32 @@ function getBuildTools(packageJson: any): Partial<Record<BuildTool, string>> {
   for (const buildTool of allBuildTools) {
     if (buildTool in packageJson.devDependencies) {
       result[buildTool] = packageJson.devDependencies[buildTool];
+    }
+  }
+  return result;
+}
+
+function getModuleKinds(
+  entrypoints: Record<string, EntrypointInfo>,
+  resolutionOption: ResolutionOption,
+  hosts: CompilerHosts,
+): Record<string, ModuleKind> {
+  const host = hosts[resolutionOption];
+  const result: Record<string, ModuleKind> = {};
+  for (const resolutionKind of getResolutionKinds(resolutionOption)) {
+    for (const entrypoint of Object.values(entrypoints)) {
+      const resolution = entrypoint.resolutions[resolutionKind];
+      for (const fileName of resolution.files ?? []) {
+        if (!result[fileName]) {
+          result[fileName] = host.getModuleKindForFile(fileName)!;
+        }
+      }
+      if (resolution.implementationResolution) {
+        const fileName = resolution.implementationResolution.fileName;
+        if (!result[fileName]) {
+          result[fileName] = host.getModuleKindForFile(fileName)!;
+        }
+      }
     }
   }
   return result;

@@ -71,18 +71,14 @@
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/jsx.d.ts",
             "/node_modules/vue/dist/vue.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": ".",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/vue/dist/vue.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -109,11 +105,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/vue/index.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -160,18 +151,14 @@
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/jsx.d.ts",
             "/node_modules/vue/dist/vue.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": ".",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/vue/dist/vue.d.mts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/vue/dist/vue.d.mts"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -197,11 +184,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/vue/index.mjs",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/vue/index.mjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -267,6 +249,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/dist/vue.d.mts"
+          ],
+          "visibleProblems": [
+            0
           ]
         },
         "bundler": {
@@ -366,7 +351,8 @@
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/jsx.d.ts",
             "/node_modules/vue/dist/vue.d.mts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -443,18 +429,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/server-renderer/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./server-renderer",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/vue/server-renderer/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/server-renderer/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -482,11 +464,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/vue/server-renderer/index.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/server-renderer/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -535,18 +512,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/server-renderer/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./server-renderer",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/vue/server-renderer/index.d.mts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/vue/server-renderer/index.d.mts"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -573,11 +546,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/vue/server-renderer/index.mjs",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/vue/server-renderer/index.mjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -640,7 +608,8 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/server-renderer/index.d.mts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "bundler": {
           "name": "./server-renderer",
@@ -739,7 +708,8 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/server-renderer/index.d.mts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -816,18 +786,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/compiler-sfc/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./compiler-sfc",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/vue/compiler-sfc/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/compiler-sfc/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -855,11 +821,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/vue/compiler-sfc/index.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/compiler-sfc/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -908,18 +869,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/compiler-sfc/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./compiler-sfc",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/vue/compiler-sfc/index.d.mts",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/vue/compiler-sfc/index.d.mts"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -946,11 +903,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/vue/compiler-sfc/index.mjs",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/vue/compiler-sfc/index.mjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -1013,7 +965,8 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/compiler-sfc/index.d.mts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "bundler": {
           "name": "./compiler-sfc",
@@ -1112,7 +1065,8 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/compiler-sfc/index.d.mts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -1182,18 +1136,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/jsx-runtime/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./jsx-runtime",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/vue/jsx-runtime/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/jsx-runtime/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1216,11 +1166,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/vue/jsx-runtime/index.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/jsx-runtime/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -1261,18 +1206,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/jsx-runtime/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./jsx-runtime",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/vue/jsx-runtime/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/jsx-runtime/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1295,11 +1236,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/vue/jsx-runtime/index.mjs",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/vue/jsx-runtime/index.mjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -1354,6 +1290,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/jsx-runtime/index.d.ts"
+          ],
+          "visibleProblems": [
+            1
           ]
         },
         "bundler": {
@@ -1441,7 +1380,8 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/jsx-runtime/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -1452,18 +1392,16 @@
       "resolutions": {
         "node10": {
           "name": "./jsx-dev-runtime",
-          "resolutionKind": "node10"
+          "resolutionKind": "node10",
+          "visibleProblems": [
+            2
+          ]
         },
         "node16-cjs": {
           "name": "./jsx-dev-runtime",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/vue/jsx-runtime/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/jsx-runtime/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1485,11 +1423,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/vue/jsx-runtime/index.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/jsx-runtime/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -1528,18 +1461,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/jsx-runtime/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./jsx-dev-runtime",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/vue/jsx-runtime/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/jsx-runtime/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1561,11 +1490,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/vue/jsx-runtime/index.mjs",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/vue/jsx-runtime/index.mjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -1610,6 +1534,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/jsx-runtime/index.d.ts"
+          ],
+          "visibleProblems": [
+            1
           ]
         },
         "bundler": {
@@ -1684,7 +1611,8 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/jsx-runtime/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -1715,18 +1643,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/jsx.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./jsx",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/vue/jsx.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1744,11 +1668,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/vue/jsx.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1767,18 +1686,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/jsx.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./jsx",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/vue/jsx.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1796,11 +1711,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/vue/jsx.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1819,7 +1729,8 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/jsx.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "bundler": {
           "name": "./jsx",
@@ -1861,7 +1772,8 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/jsx.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -1873,22 +1785,26 @@
         "node10": {
           "name": "./dist/*",
           "resolutionKind": "node10",
-          "isWildcard": true
+          "isWildcard": true,
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./dist/*",
           "resolutionKind": "node16-cjs",
-          "isWildcard": true
+          "isWildcard": true,
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./dist/*",
           "resolutionKind": "node16-esm",
-          "isWildcard": true
+          "isWildcard": true,
+          "visibleProblems": []
         },
         "bundler": {
           "name": "./dist/*",
           "resolutionKind": "bundler",
-          "isWildcard": true
+          "isWildcard": true,
+          "visibleProblems": []
         }
       },
       "hasTypes": false,
@@ -1929,10 +1845,35 @@
               "======== Module name 'vue/package.json' was successfully resolved to '/node_modules/vue/package.json' with Package ID 'vue/package.json@3.3.4'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'vue/package.json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/vue/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/vue/package.json.ts' does not exist.",
+              "File '/node_modules/vue/package.json.tsx' does not exist.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/package.json/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/vue/package.json/index.js', target file types: TypeScript.",
+              "File name '/node_modules/vue/package.json/index.js' has a '.js' extension - stripping it.",
+              "Loading module 'vue/package.json' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/vue/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/vue/package.json' exists - use it as a name resolution result.",
+              "======== Module name 'vue/package.json' was successfully resolved to '/node_modules/vue/package.json' with Package ID 'vue/package.json@3.3.4'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/package.json"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./package.json",
@@ -1963,10 +1904,34 @@
               "======== Module name 'vue/package.json' was successfully resolved to '/node_modules/vue/package.json' with Package ID 'vue/package.json@3.3.4'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/vue/package.json' has a '.json' extension - stripping it.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/vue'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/vue/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/vue/package.json' exists - use it as a name resolution result.",
+              "======== Module name 'vue/package.json' was successfully resolved to '/node_modules/vue/package.json' with Package ID 'vue/package.json@3.3.4'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/package.json"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./package.json",
@@ -2011,10 +1976,43 @@
               "======== Module name 'vue/package.json' was successfully resolved to '/node_modules/vue/package.json' with Package ID 'vue/package.json@3.3.4'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/package.json' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/vue/package.json' has a '.json' extension - stripping it.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/vue'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/vue/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/vue/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/package.json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/vue/package.json' has a '.json' extension - stripping it.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/package.json/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/vue/package.json/index.js', target file types: TypeScript.",
+              "File name '/node_modules/vue/package.json/index.js' has a '.js' extension - stripping it.",
+              "======== Module name 'vue/package.json' was successfully resolved to '/node_modules/vue/package.json' with Package ID 'vue/package.json@3.3.4'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/package.json"
-          ]
+          ],
+          "visibleProblems": []
         },
         "bundler": {
           "name": "./package.json",
@@ -2062,10 +2060,45 @@
               "======== Module name 'vue/package.json' was successfully resolved to '/node_modules/vue/package.json' with Package ID 'vue/package.json@3.3.4'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/vue/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'vue/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/vue/package.json' has a '.json' extension - stripping it.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/vue'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/vue/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/vue/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'vue/package.json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/vue/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/vue/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/vue/package.json.ts' does not exist.",
+              "File '/node_modules/vue/package.json.tsx' does not exist.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/vue/package.json/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/vue/package.json/index.js', target file types: TypeScript.",
+              "File name '/node_modules/vue/package.json/index.js' has a '.js' extension - stripping it.",
+              "======== Module name 'vue/package.json' was successfully resolved to '/node_modules/vue/package.json' with Package ID 'vue/package.json@3.3.4'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/package.json"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": false,
@@ -2096,18 +2129,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/macros.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./macros",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/vue/macros.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -2125,11 +2154,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/vue/macros.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -2148,18 +2172,14 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/macros.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./macros",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/vue/macros.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -2177,11 +2197,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/vue/macros.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -2200,7 +2215,8 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/macros.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "bundler": {
           "name": "./macros",
@@ -2242,7 +2258,8 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/macros.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -2274,18 +2291,14 @@
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/macros.d.ts",
             "/node_modules/vue/macros-global.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./macros-global",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/vue/macros-global.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -2303,11 +2316,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/vue/macros-global.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -2327,18 +2335,14 @@
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/macros.d.ts",
             "/node_modules/vue/macros-global.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./macros-global",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/vue/macros-global.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -2356,11 +2360,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/vue/macros-global.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -2380,7 +2379,8 @@
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/macros.d.ts",
             "/node_modules/vue/macros-global.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "bundler": {
           "name": "./macros-global",
@@ -2423,7 +2423,8 @@
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/macros.d.ts",
             "/node_modules/vue/macros-global.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -2456,18 +2457,14 @@
             "/node_modules/vue/macros.d.ts",
             "/node_modules/vue/macros-global.d.ts",
             "/node_modules/vue/ref-macros.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./ref-macros",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/vue/ref-macros.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -2485,11 +2482,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/vue/ref-macros.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -2510,18 +2502,14 @@
             "/node_modules/vue/macros.d.ts",
             "/node_modules/vue/macros-global.d.ts",
             "/node_modules/vue/ref-macros.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./ref-macros",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/vue/ref-macros.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -2539,11 +2527,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/vue/ref-macros.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/vue/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -2564,7 +2547,8 @@
             "/node_modules/vue/macros.d.ts",
             "/node_modules/vue/macros-global.d.ts",
             "/node_modules/vue/ref-macros.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "bundler": {
           "name": "./ref-macros",
@@ -2608,49 +2592,123 @@
             "/node_modules/vue/macros.d.ts",
             "/node_modules/vue/macros-global.d.ts",
             "/node_modules/vue/ref-macros.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
       "isWildcard": false
     }
   },
+  "programInfo": {
+    "node10": {},
+    "node16": {
+      "moduleKinds": {
+        "/node_modules/typescript/lib/lib.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/typescript/lib/lib.d.ts"
+        },
+        "/node_modules/vue/jsx.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/vue/package.json"
+        },
+        "/node_modules/vue/dist/vue.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/vue/package.json"
+        },
+        "/node_modules/vue/index.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/vue/package.json"
+        },
+        "/node_modules/vue/server-renderer/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/vue/server-renderer/package.json"
+        },
+        "/node_modules/vue/server-renderer/index.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/vue/server-renderer/package.json"
+        },
+        "/node_modules/vue/compiler-sfc/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/vue/compiler-sfc/package.json"
+        },
+        "/node_modules/vue/compiler-sfc/index.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/vue/compiler-sfc/package.json"
+        },
+        "/node_modules/vue/jsx-runtime/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/vue/jsx-runtime/package.json"
+        },
+        "/node_modules/vue/jsx-runtime/index.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/vue/jsx-runtime/package.json"
+        },
+        "/node_modules/vue/macros.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/vue/package.json"
+        },
+        "/node_modules/vue/macros-global.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/vue/package.json"
+        },
+        "/node_modules/vue/ref-macros.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/vue/package.json"
+        },
+        "/node_modules/vue/dist/vue.d.mts": {
+          "detectedKind": 99,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/vue/dist/vue.d.mts"
+        },
+        "/node_modules/vue/index.mjs": {
+          "detectedKind": 99,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/vue/index.mjs"
+        },
+        "/node_modules/vue/server-renderer/index.d.mts": {
+          "detectedKind": 99,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/vue/server-renderer/index.d.mts"
+        },
+        "/node_modules/vue/server-renderer/index.mjs": {
+          "detectedKind": 99,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/vue/server-renderer/index.mjs"
+        },
+        "/node_modules/vue/compiler-sfc/index.d.mts": {
+          "detectedKind": 99,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/vue/compiler-sfc/index.d.mts"
+        },
+        "/node_modules/vue/compiler-sfc/index.mjs": {
+          "detectedKind": 99,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/vue/compiler-sfc/index.mjs"
+        },
+        "/node_modules/vue/jsx-runtime/index.mjs": {
+          "detectedKind": 99,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/vue/jsx-runtime/index.mjs"
+        }
+      }
+    },
+    "bundler": {}
+  },
   "problems": [
-    {
-      "kind": "FalseCJS",
-      "entrypoint": "./jsx-runtime",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "NoResolution",
-      "entrypoint": "./jsx-dev-runtime",
-      "resolutionKind": "node10"
-    },
-    {
-      "kind": "FalseCJS",
-      "entrypoint": "./jsx-dev-runtime",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "Wildcard",
-      "entrypoint": "./dist/*",
-      "resolutionKind": "node10"
-    },
-    {
-      "kind": "Wildcard",
-      "entrypoint": "./dist/*",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "Wildcard",
-      "entrypoint": "./dist/*",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "Wildcard",
-      "entrypoint": "./dist/*",
-      "resolutionKind": "bundler"
-    },
     {
       "kind": "InternalResolutionError",
       "resolutionOption": "node16",
@@ -2667,6 +2725,26 @@
         "Directory '/node_modules/vue/jsx' does not exist, skipping all lookups in it.",
         "======== Module name '../jsx' was not resolved. ========"
       ]
+    },
+    {
+      "kind": "FalseCJS",
+      "typesFileName": "/node_modules/vue/jsx-runtime/index.d.ts",
+      "implementationFileName": "/node_modules/vue/jsx-runtime/index.mjs",
+      "typesModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "no:type",
+        "reasonFileName": "/node_modules/vue/jsx-runtime/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/vue/jsx-runtime/index.mjs"
+      }
+    },
+    {
+      "kind": "NoResolution",
+      "entrypoint": "./jsx-dev-runtime",
+      "resolutionKind": "node10"
     }
   ]
 }

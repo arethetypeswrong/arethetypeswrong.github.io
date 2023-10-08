@@ -46,10 +46,36 @@
               "======== Module name '@reduxjs/toolkit/package.json' was successfully resolved to '/node_modules/@reduxjs/toolkit/package.json' with Package ID '@reduxjs/toolkit/package.json@2.0.0-beta.0'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/@reduxjs/toolkit/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@reduxjs/toolkit/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module '@reduxjs/toolkit/package.json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/@reduxjs/toolkit/package.json'.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "File name '/node_modules/@reduxjs/toolkit/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/@reduxjs/toolkit/package.json.ts' does not exist.",
+              "File '/node_modules/@reduxjs/toolkit/package.json.tsx' does not exist.",
+              "'package.json' has 'main' field 'dist/cjs/index.js' that references '/node_modules/@reduxjs/toolkit/package.json/dist/cjs/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/@reduxjs/toolkit/package.json/dist/cjs/index.js', target file types: TypeScript.",
+              "File name '/node_modules/@reduxjs/toolkit/package.json/dist/cjs/index.js' has a '.js' extension - stripping it.",
+              "Loading module '@reduxjs/toolkit/package.json' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/@reduxjs/toolkit/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/@reduxjs/toolkit/package.json' exists - use it as a name resolution result.",
+              "======== Module name '@reduxjs/toolkit/package.json' was successfully resolved to '/node_modules/@reduxjs/toolkit/package.json' with Package ID '@reduxjs/toolkit/package.json@2.0.0-beta.0'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@reduxjs/toolkit/package.json"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./package.json",
@@ -81,10 +107,34 @@
               "======== Module name '@reduxjs/toolkit/package.json' was successfully resolved to '/node_modules/@reduxjs/toolkit/package.json' with Package ID '@reduxjs/toolkit/package.json@2.0.0-beta.0'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/@reduxjs/toolkit/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@reduxjs/toolkit/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@reduxjs/toolkit/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/@reduxjs/toolkit/package.json'.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/@reduxjs/toolkit/package.json' has a '.json' extension - stripping it.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/@reduxjs/toolkit/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/@reduxjs/toolkit/package.json' exists - use it as a name resolution result.",
+              "======== Module name '@reduxjs/toolkit/package.json' was successfully resolved to '/node_modules/@reduxjs/toolkit/package.json' with Package ID '@reduxjs/toolkit/package.json@2.0.0-beta.0'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@reduxjs/toolkit/package.json"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./package.json",
@@ -131,10 +181,44 @@
               "======== Module name '@reduxjs/toolkit/package.json' was successfully resolved to '/node_modules/@reduxjs/toolkit/package.json' with Package ID '@reduxjs/toolkit/package.json@2.0.0-beta.0'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/@reduxjs/toolkit/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@reduxjs/toolkit/package.json' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@reduxjs/toolkit/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/@reduxjs/toolkit/package.json' has a '.json' extension - stripping it.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/@reduxjs/toolkit/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/@reduxjs/toolkit/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@reduxjs/toolkit/package.json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "File name '/node_modules/@reduxjs/toolkit/package.json' has a '.json' extension - stripping it.",
+              "'package.json' has 'main' field 'dist/cjs/index.js' that references '/node_modules/@reduxjs/toolkit/package.json/dist/cjs/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/@reduxjs/toolkit/package.json/dist/cjs/index.js', target file types: TypeScript.",
+              "File name '/node_modules/@reduxjs/toolkit/package.json/dist/cjs/index.js' has a '.js' extension - stripping it.",
+              "======== Module name '@reduxjs/toolkit/package.json' was successfully resolved to '/node_modules/@reduxjs/toolkit/package.json' with Package ID '@reduxjs/toolkit/package.json@2.0.0-beta.0'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@reduxjs/toolkit/package.json"
-          ]
+          ],
+          "visibleProblems": []
         },
         "bundler": {
           "name": "./package.json",
@@ -184,10 +268,46 @@
               "======== Module name '@reduxjs/toolkit/package.json' was successfully resolved to '/node_modules/@reduxjs/toolkit/package.json' with Package ID '@reduxjs/toolkit/package.json@2.0.0-beta.0'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/@reduxjs/toolkit/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@reduxjs/toolkit/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@reduxjs/toolkit/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/@reduxjs/toolkit/package.json'.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/@reduxjs/toolkit/package.json' has a '.json' extension - stripping it.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/@reduxjs/toolkit/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/@reduxjs/toolkit/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@reduxjs/toolkit/package.json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "File name '/node_modules/@reduxjs/toolkit/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/@reduxjs/toolkit/package.json.ts' does not exist.",
+              "File '/node_modules/@reduxjs/toolkit/package.json.tsx' does not exist.",
+              "'package.json' has 'main' field 'dist/cjs/index.js' that references '/node_modules/@reduxjs/toolkit/package.json/dist/cjs/index.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/@reduxjs/toolkit/package.json/dist/cjs/index.js', target file types: TypeScript.",
+              "File name '/node_modules/@reduxjs/toolkit/package.json/dist/cjs/index.js' has a '.js' extension - stripping it.",
+              "======== Module name '@reduxjs/toolkit/package.json' was successfully resolved to '/node_modules/@reduxjs/toolkit/package.json' with Package ID '@reduxjs/toolkit/package.json@2.0.0-beta.0'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/@reduxjs/toolkit/package.json"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": false,
@@ -227,10 +347,9 @@
               "Explicitly specified module resolution kind: 'Node10'.",
               "Loading module '@reduxjs/toolkit' from 'node_modules' folder, target file types: TypeScript.",
               "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
-              "Found 'package.json' at '/node_modules/@reduxjs/toolkit/package.json'.",
+              "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
               "File '/node_modules/@reduxjs/toolkit.ts' does not exist.",
               "File '/node_modules/@reduxjs/toolkit.tsx' does not exist.",
-              "'package.json' does not have a 'typesVersions' field.",
               "'package.json' has 'main' field 'dist/cjs/index.js' that references '/node_modules/@reduxjs/toolkit/dist/cjs/index.js'.",
               "File '/node_modules/@reduxjs/toolkit/dist/cjs/index.js' exists - use it as a name resolution result.",
               "File '/node_modules/@reduxjs/toolkit/dist/cjs/index.js' has an unsupported extension, so skipping it.",
@@ -285,18 +404,14 @@
             "/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/types.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/index.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": ".",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@reduxjs/toolkit/dist/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -318,21 +433,16 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@reduxjs/toolkit/dist/cjs/index.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
               "======== Resolving module '@reduxjs/toolkit' from '/index.ts'. ========",
               "Explicitly specified module resolution kind: 'Node16'.",
               "Resolving in CJS mode with conditions 'require', 'node'.",
-              "File '/package.json' does not exist.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
               "Loading module '@reduxjs/toolkit' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
               "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
-              "Found 'package.json' at '/node_modules/@reduxjs/toolkit/package.json'.",
+              "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
               "Entering conditional exports.",
               "Saw non-matching condition 'types'.",
               "Saw non-matching condition 'import'.",
@@ -389,18 +499,14 @@
             "/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/types.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/index.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": ".",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@reduxjs/toolkit/dist/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -422,11 +528,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -466,7 +567,6 @@
               "Loading module '@reduxjs/toolkit' from 'node_modules' folder, target file types: TypeScript.",
               "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
               "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
-              "'package.json' does not have a 'typesVersions' field.",
               "'package.json' has 'main' field 'dist/cjs/index.js' that references '/node_modules/@reduxjs/toolkit/dist/cjs/index.js'.",
               "File '/node_modules/@reduxjs/toolkit/dist/cjs/index.js' exists - use it as a name resolution result.",
               "File '/node_modules/@reduxjs/toolkit/dist/cjs/index.js' has an unsupported extension, so skipping it.",
@@ -512,6 +612,9 @@
             "/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/types.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/index.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/index.d.ts"
+          ],
+          "visibleProblems": [
+            0
           ]
         },
         "bundler": {
@@ -546,10 +649,10 @@
               "======== Resolving module '@reduxjs/toolkit' from '/index.ts'. ========",
               "Explicitly specified module resolution kind: 'Bundler'.",
               "Resolving in CJS mode with conditions 'import'.",
-              "File '/package.json' does not exist.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
               "Loading module '@reduxjs/toolkit' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
               "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
-              "Found 'package.json' at '/node_modules/@reduxjs/toolkit/package.json'.",
+              "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
               "Entering conditional exports.",
               "Saw non-matching condition 'types'.",
               "Matched 'exports' condition 'import'.",
@@ -581,7 +684,6 @@
               "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
               "File '/node_modules/@reduxjs/toolkit.ts' does not exist.",
               "File '/node_modules/@reduxjs/toolkit.tsx' does not exist.",
-              "'package.json' does not have a 'typesVersions' field.",
               "'package.json' has 'main' field 'dist/cjs/index.js' that references '/node_modules/@reduxjs/toolkit/dist/cjs/index.js'.",
               "File '/node_modules/@reduxjs/toolkit/dist/cjs/index.js' exists - use it as a name resolution result.",
               "File '/node_modules/@reduxjs/toolkit/dist/cjs/index.js' has an unsupported extension, so skipping it.",
@@ -629,7 +731,8 @@
             "/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/types.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/index.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -730,18 +833,14 @@
             "/node_modules/@reduxjs/toolkit/dist/index.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/index.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/react/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./react",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@reduxjs/toolkit/dist/react/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -764,11 +863,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@reduxjs/toolkit/dist/react/cjs/index.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -840,6 +934,10 @@
             "/node_modules/@reduxjs/toolkit/dist/index.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/index.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/react/index.d.ts"
+          ],
+          "visibleProblems": [
+            1,
+            2
           ]
         },
         "node16-esm": {
@@ -847,11 +945,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@reduxjs/toolkit/dist/react/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -874,11 +967,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@reduxjs/toolkit/dist/react/redux-toolkit-react.modern.mjs",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@reduxjs/toolkit/dist/react/redux-toolkit-react.modern.mjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -967,6 +1055,11 @@
             "/node_modules/@reduxjs/toolkit/dist/index.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/index.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/react/index.d.ts"
+          ],
+          "visibleProblems": [
+            3,
+            1,
+            2
           ]
         },
         "bundler": {
@@ -1090,6 +1183,10 @@
             "/node_modules/@reduxjs/toolkit/dist/index.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/index.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/react/index.d.ts"
+          ],
+          "visibleProblems": [
+            4,
+            5
           ]
         }
       },
@@ -1212,18 +1309,14 @@
             "/node_modules/@reduxjs/toolkit/dist/query/utils/copyWithStructuralSharing.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/query/core/index.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/query/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./query",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@reduxjs/toolkit/dist/query/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1246,11 +1339,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@reduxjs/toolkit/dist/query/cjs/index.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -1343,18 +1431,14 @@
             "/node_modules/@reduxjs/toolkit/dist/query/utils/copyWithStructuralSharing.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/query/core/index.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/query/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./query",
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@reduxjs/toolkit/dist/query/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1377,11 +1461,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@reduxjs/toolkit/dist/query/rtk-query.modern.mjs",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@reduxjs/toolkit/dist/query/rtk-query.modern.mjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -1491,6 +1570,9 @@
             "/node_modules/@reduxjs/toolkit/dist/query/utils/copyWithStructuralSharing.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/query/core/index.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/query/index.d.ts"
+          ],
+          "visibleProblems": [
+            6
           ]
         },
         "bundler": {
@@ -1635,7 +1717,8 @@
             "/node_modules/@reduxjs/toolkit/dist/query/utils/copyWithStructuralSharing.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/query/core/index.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/query/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": true,
@@ -1763,18 +1846,14 @@
             "/node_modules/@reduxjs/toolkit/dist/query/react/module.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/query/react/ApiProvider.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/query/react/index.d.ts"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./query/react",
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/@reduxjs/toolkit/dist/query/react/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1797,11 +1876,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@reduxjs/toolkit/dist/query/react/cjs/index.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -1900,6 +1974,21 @@
             "/node_modules/@reduxjs/toolkit/dist/query/react/module.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/query/react/ApiProvider.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/query/react/index.d.ts"
+          ],
+          "visibleProblems": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
           ]
         },
         "node16-esm": {
@@ -1907,11 +1996,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/@reduxjs/toolkit/dist/query/react/index.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1934,11 +2018,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/@reduxjs/toolkit/dist/query/react/rtk-query-react.modern.mjs",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/@reduxjs/toolkit/dist/query/react/rtk-query-react.modern.mjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -2054,6 +2133,22 @@
             "/node_modules/@reduxjs/toolkit/dist/query/react/module.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/query/react/ApiProvider.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/query/react/index.d.ts"
+          ],
+          "visibleProblems": [
+            20,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
           ]
         },
         "bundler": {
@@ -2204,6 +2299,21 @@
             "/node_modules/@reduxjs/toolkit/dist/query/react/module.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/query/react/ApiProvider.d.ts",
             "/node_modules/@reduxjs/toolkit/dist/query/react/index.d.ts"
+          ],
+          "visibleProblems": [
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
           ]
         }
       },
@@ -2211,26 +2321,379 @@
       "isWildcard": false
     }
   },
+  "programInfo": {
+    "node10": {},
+    "node16": {
+      "moduleKinds": {
+        "/node_modules/typescript/lib/lib.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/typescript/lib/lib.d.ts"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/createDraftSafeSelector.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/devtoolsExtension.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/actionCreatorInvariantMiddleware.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/immutableStateInvariantMiddleware.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/serializableStateInvariantMiddleware.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/utils.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/tsHelpers.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/getDefaultMiddleware.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/autoBatchEnhancer.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/getDefaultEnhancers.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/configureStore.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/createAction.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/mapBuilders.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/createReducer.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/combineSlices.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/createAsyncThunk.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/createSlice.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/uncheckedindexed.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/entities/state_selectors.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/entities/models.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/entities/create_adapter.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/matchers.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/nanoid.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/isPlainObject.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/listenerMiddleware/exceptions.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/listenerMiddleware/types.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/listenerMiddleware/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/types.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/cjs/index.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/react/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/react/cjs/index.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/tsHelpers.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/baseQueryTypes.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/defaultSerializeQueryArgs.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/fakeBaseQuery.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/endpointDefinitions.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/core/apiState.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/core/buildSelectors.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/core/buildInitiate.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/core/buildThunks.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/core/setupListeners.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/core/buildSlice.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/core/buildMiddleware/types.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/core/buildMiddleware/cacheLifecycle.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/core/buildMiddleware/queryLifecycle.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/core/buildMiddleware/cacheCollection.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/core/module.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/createApi.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/apiTypes.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/fetchBaseQuery.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/retry.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/utils/copyWithStructuralSharing.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/core/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/cjs/index.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/react/constants.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/react/buildHooks.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/react/namedHooks.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/react/module.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/react/ApiProvider.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/react/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/react/cjs/index.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs": {
+          "detectedKind": 99,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/react/redux-toolkit-react.modern.mjs": {
+          "detectedKind": 99,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/dist/react/redux-toolkit-react.modern.mjs"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/rtk-query.modern.mjs": {
+          "detectedKind": 99,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/dist/query/rtk-query.modern.mjs"
+        },
+        "/node_modules/@reduxjs/toolkit/dist/query/react/rtk-query-react.modern.mjs": {
+          "detectedKind": 99,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/@reduxjs/toolkit/dist/query/react/rtk-query-react.modern.mjs"
+        }
+      }
+    },
+    "bundler": {}
+  },
   "problems": [
     {
       "kind": "FalseCJS",
-      "entrypoint": ".",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseCJS",
-      "entrypoint": "./react",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseCJS",
-      "entrypoint": "./query",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FalseCJS",
-      "entrypoint": "./query/react",
-      "resolutionKind": "node16-esm"
+      "typesFileName": "/node_modules/@reduxjs/toolkit/dist/index.d.ts",
+      "implementationFileName": "/node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs",
+      "typesModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "no:type",
+        "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs"
+      }
     },
     {
       "kind": "InternalResolutionError",
@@ -2319,6 +2782,124 @@
         "Export specifier './dist/dynamicMiddleware/types' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
         "======== Module name '@reduxjs/toolkit/dist/dynamicMiddleware/types' was not resolved. ========"
       ]
+    },
+    {
+      "kind": "FalseCJS",
+      "typesFileName": "/node_modules/@reduxjs/toolkit/dist/react/index.d.ts",
+      "implementationFileName": "/node_modules/@reduxjs/toolkit/dist/react/redux-toolkit-react.modern.mjs",
+      "typesModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "no:type",
+        "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@reduxjs/toolkit/dist/react/redux-toolkit-react.modern.mjs"
+      }
+    },
+    {
+      "kind": "InternalResolutionError",
+      "resolutionOption": "bundler",
+      "fileName": "/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/index.d.ts",
+      "moduleSpecifier": "@reduxjs/toolkit/dist/tsHelpers",
+      "pos": 153,
+      "end": 187,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/tsHelpers' from '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/index.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Bundler'.",
+        "Resolving in CJS mode with conditions 'import', 'types'.",
+        "File '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Export specifier './dist/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Loading module '@reduxjs/toolkit/dist/tsHelpers' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
+        "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "======== Module name '@reduxjs/toolkit/dist/tsHelpers' was not resolved. ========"
+      ]
+    },
+    {
+      "kind": "InternalResolutionError",
+      "resolutionOption": "bundler",
+      "fileName": "/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/index.d.ts",
+      "moduleSpecifier": "@reduxjs/toolkit/dist/dynamicMiddleware/types",
+      "pos": 379,
+      "end": 427,
+      "trace": [
+        "======== Resolving module '@reduxjs/toolkit/dist/dynamicMiddleware/types' from '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/index.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Bundler'.",
+        "Resolving in CJS mode with conditions 'import', 'types'.",
+        "File '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/dynamicMiddleware/types' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Export specifier './dist/dynamicMiddleware/types' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Loading module '@reduxjs/toolkit/dist/dynamicMiddleware/types' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/dynamicMiddleware/types' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
+        "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
+        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
+        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
+        "Export specifier './dist/dynamicMiddleware/types' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
+        "======== Module name '@reduxjs/toolkit/dist/dynamicMiddleware/types' was not resolved. ========"
+      ]
+    },
+    {
+      "kind": "FalseCJS",
+      "typesFileName": "/node_modules/@reduxjs/toolkit/dist/query/index.d.ts",
+      "implementationFileName": "/node_modules/@reduxjs/toolkit/dist/query/rtk-query.modern.mjs",
+      "typesModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "no:type",
+        "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@reduxjs/toolkit/dist/query/rtk-query.modern.mjs"
+      }
     },
     {
       "kind": "InternalResolutionError",
@@ -2751,92 +3332,19 @@
       ]
     },
     {
-      "kind": "InternalResolutionError",
-      "resolutionOption": "bundler",
-      "fileName": "/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/index.d.ts",
-      "moduleSpecifier": "@reduxjs/toolkit/dist/tsHelpers",
-      "pos": 153,
-      "end": 187,
-      "trace": [
-        "======== Resolving module '@reduxjs/toolkit/dist/tsHelpers' from '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/index.d.ts'. ========",
-        "Explicitly specified module resolution kind: 'Bundler'.",
-        "Resolving in CJS mode with conditions 'import', 'types'.",
-        "File '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/package.json' does not exist according to earlier cached lookups.",
-        "File '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/package.json' does not exist according to earlier cached lookups.",
-        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
-        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
-        "Export specifier './dist/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
-        "Export specifier './dist/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
-        "Loading module '@reduxjs/toolkit/dist/tsHelpers' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
-        "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
-        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/node_modules' does not exist, skipping all lookups in it.",
-        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
-        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/node_modules' does not exist, skipping all lookups in it.",
-        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
-        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
-        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
-        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
-        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
-        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
-        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
-        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
-        "Export specifier './dist/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
-        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
-        "Scoped package detected, looking in 'reduxjs__toolkit/dist/tsHelpers'",
-        "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
-        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/node_modules' does not exist, skipping all lookups in it.",
-        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/node_modules' does not exist, skipping all lookups in it.",
-        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
-        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
-        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
-        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
-        "Export specifier './dist/tsHelpers' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
-        "======== Module name '@reduxjs/toolkit/dist/tsHelpers' was not resolved. ========"
-      ]
-    },
-    {
-      "kind": "InternalResolutionError",
-      "resolutionOption": "bundler",
-      "fileName": "/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/index.d.ts",
-      "moduleSpecifier": "@reduxjs/toolkit/dist/dynamicMiddleware/types",
-      "pos": 379,
-      "end": 427,
-      "trace": [
-        "======== Resolving module '@reduxjs/toolkit/dist/dynamicMiddleware/types' from '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/index.d.ts'. ========",
-        "Explicitly specified module resolution kind: 'Bundler'.",
-        "Resolving in CJS mode with conditions 'import', 'types'.",
-        "File '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/package.json' does not exist according to earlier cached lookups.",
-        "File '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/package.json' does not exist according to earlier cached lookups.",
-        "File '/node_modules/@reduxjs/toolkit/dist/package.json' does not exist according to earlier cached lookups.",
-        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
-        "Export specifier './dist/dynamicMiddleware/types' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
-        "Export specifier './dist/dynamicMiddleware/types' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
-        "Loading module '@reduxjs/toolkit/dist/dynamicMiddleware/types' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
-        "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
-        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/node_modules' does not exist, skipping all lookups in it.",
-        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
-        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/node_modules' does not exist, skipping all lookups in it.",
-        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
-        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
-        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
-        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
-        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
-        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
-        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
-        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
-        "Export specifier './dist/dynamicMiddleware/types' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
-        "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
-        "Scoped package detected, looking in 'reduxjs__toolkit/dist/dynamicMiddleware/types'",
-        "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
-        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/react/node_modules' does not exist, skipping all lookups in it.",
-        "Directory '/node_modules/@reduxjs/toolkit/dist/dynamicMiddleware/node_modules' does not exist, skipping all lookups in it.",
-        "Directory '/node_modules/@reduxjs/toolkit/dist/node_modules' does not exist, skipping all lookups in it.",
-        "Directory '/node_modules/@reduxjs/toolkit/node_modules' does not exist, skipping all lookups in it.",
-        "Directory '/node_modules/@reduxjs/node_modules' does not exist, skipping all lookups in it.",
-        "File '/node_modules/@reduxjs/toolkit/package.json' exists according to earlier cached lookups.",
-        "Export specifier './dist/dynamicMiddleware/types' does not exist in package.json scope at path '/node_modules/@reduxjs/toolkit'.",
-        "======== Module name '@reduxjs/toolkit/dist/dynamicMiddleware/types' was not resolved. ========"
-      ]
+      "kind": "FalseCJS",
+      "typesFileName": "/node_modules/@reduxjs/toolkit/dist/query/react/index.d.ts",
+      "implementationFileName": "/node_modules/@reduxjs/toolkit/dist/query/react/rtk-query-react.modern.mjs",
+      "typesModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "no:type",
+        "reasonFileName": "/node_modules/@reduxjs/toolkit/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/@reduxjs/toolkit/dist/query/react/rtk-query-react.modern.mjs"
+      }
     },
     {
       "kind": "InternalResolutionError",

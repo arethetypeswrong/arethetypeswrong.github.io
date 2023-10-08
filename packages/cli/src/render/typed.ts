@@ -1,5 +1,5 @@
 import * as core from "@arethetypeswrong/core";
-import { allResolutionKinds, groupProblemsByKind } from "@arethetypeswrong/core/utils";
+import { allResolutionKinds, getResolutionOption, groupProblemsByKind } from "@arethetypeswrong/core/utils";
 import chalk from "chalk";
 import Table, { type GenericTable, type HorizontalTableRow } from "cli-table3";
 import { marked } from "marked";
@@ -33,7 +33,7 @@ export async function typed(analysis: core.Analysis, opts: Opts) {
         .map(([tool, version]) => {
           return `- ${tool}@${version}`;
         })
-        .join("\n")
+        .join("\n"),
     );
     console.log();
   }
@@ -43,8 +43,8 @@ export async function typed(analysis: core.Analysis, opts: Opts) {
       chalk.gray(
         ` (ignoring rules: ${opts.ignoreRules
           .map((rule) => `'${problemFlags[rule as core.ProblemKind]}'`)
-          .join(", ")})\n`
-      )
+          .join(", ")})\n`,
+      ),
     );
   }
 
@@ -61,7 +61,7 @@ export async function typed(analysis: core.Analysis, opts: Opts) {
   }
 
   const entrypointNames = entrypoints.map(
-    (s) => `"${s === "." ? analysis.packageName : `${analysis.packageName}/${s.substring(2)}`}"`
+    (s) => `"${s === "." ? analysis.packageName : `${analysis.packageName}/${s.substring(2)}`}"`,
   );
   const entrypointHeaders = entrypoints.map((s, i) => {
     const hasProblems = problems.some((p) => problemAffectsEntrypoint(p, s, analysis));
@@ -69,9 +69,12 @@ export async function typed(analysis: core.Analysis, opts: Opts) {
     return chalk.bold[color](entrypointNames[i]);
   });
 
-  const getCellContents = memo((entrypoint: string, resolutionKind: core.ResolutionKind) => {
-    const problemsForCell = groupProblemsByKind(filterProblems(problems, analysis, { entrypoint, resolutionKind }));
-    const resolution = analysis.entrypoints[entrypoint].resolutions[resolutionKind].resolution;
+  const getCellContents = memo((subpath: string, resolutionKind: core.ResolutionKind) => {
+    const problemsForCell = groupProblemsByKind(
+      filterProblems(problems, analysis, { entrypoint: subpath, resolutionKind }),
+    );
+    const entrypoint = analysis.entrypoints[subpath].resolutions[resolutionKind];
+    const resolution = entrypoint.resolution;
     const kinds = Object.keys(problemsForCell) as core.ProblemKind[];
     if (kinds.length) {
       return kinds
@@ -80,7 +83,13 @@ export async function typed(analysis: core.Analysis, opts: Opts) {
     }
 
     const jsonResult = !opts.emoji ? "OK (JSON)" : "🟢 (JSON)";
-    const moduleResult = (!opts.emoji ? "OK " : "🟢 ") + moduleKinds[resolution?.moduleKind?.detectedKind || ""];
+    const moduleResult = entrypoint.isWildcard
+      ? "(wildcard)"
+      : (!opts.emoji ? "OK " : "🟢 ") +
+        moduleKinds[
+          analysis.programInfo[getResolutionOption(resolutionKind)].moduleKinds?.[resolution?.fileName ?? ""]
+            ?.detectedKind || ""
+        ];
     return resolution?.isJson ? jsonResult : moduleResult;
   });
 

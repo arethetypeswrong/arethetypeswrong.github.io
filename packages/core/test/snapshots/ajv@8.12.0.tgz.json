@@ -117,6 +117,9 @@
             "/node_modules/ajv/dist/compile/index.d.ts",
             "/node_modules/ajv/dist/types/index.d.ts",
             "/node_modules/ajv/dist/ajv.d.ts"
+          ],
+          "visibleProblems": [
+            0
           ]
         },
         "node16-cjs": {
@@ -124,11 +127,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/ajv/dist/ajv.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/ajv/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -151,11 +149,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/ajv/dist/ajv.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/ajv/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -236,6 +229,9 @@
             "/node_modules/ajv/dist/compile/index.d.ts",
             "/node_modules/ajv/dist/types/index.d.ts",
             "/node_modules/ajv/dist/ajv.d.ts"
+          ],
+          "visibleProblems": [
+            0
           ]
         },
         "node16-esm": {
@@ -243,11 +239,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/ajv/dist/ajv.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/ajv/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -266,11 +257,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/ajv/dist/ajv.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/ajv/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -365,6 +351,9 @@
             "/node_modules/ajv/dist/compile/index.d.ts",
             "/node_modules/ajv/dist/types/index.d.ts",
             "/node_modules/ajv/dist/ajv.d.ts"
+          ],
+          "visibleProblems": [
+            0
           ]
         },
         "bundler": {
@@ -493,6 +482,9 @@
             "/node_modules/ajv/dist/compile/index.d.ts",
             "/node_modules/ajv/dist/types/index.d.ts",
             "/node_modules/ajv/dist/ajv.d.ts"
+          ],
+          "visibleProblems": [
+            0
           ]
         }
       },
@@ -500,26 +492,249 @@
       "isWildcard": false
     }
   },
+  "programInfo": {
+    "node10": {},
+    "node16": {
+      "moduleKinds": {
+        "/node_modules/typescript/lib/lib.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/typescript/lib/lib.d.ts"
+        },
+        "/node_modules/ajv/dist/compile/codegen/code.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/compile/codegen/scope.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/compile/codegen/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/compile/rules.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/compile/util.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/compile/validate/subschema.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/compile/errors.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/compile/validate/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/compile/validate/dataType.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/applicator/additionalItems.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/applicator/items2020.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/applicator/contains.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/applicator/dependencies.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/applicator/propertyNames.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/applicator/additionalProperties.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/applicator/not.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/applicator/anyOf.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/applicator/oneOf.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/applicator/if.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/applicator/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/validation/limitNumber.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/validation/multipleOf.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/validation/pattern.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/validation/required.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/validation/uniqueItems.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/validation/const.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/validation/enum.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/validation/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/format/format.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/unevaluated/unevaluatedProperties.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/unevaluated/unevaluatedItems.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/validation/dependentRequired.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/discriminator/types.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/discriminator/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/vocabularies/errors.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/types/json-schema.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/types/jtd-schema.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/runtime/validation_error.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/compile/ref_error.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/core.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/compile/resolve.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/compile/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/types/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/ajv.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        },
+        "/node_modules/ajv/dist/ajv.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/ajv/package.json"
+        }
+      }
+    },
+    "bundler": {}
+  },
   "problems": [
     {
       "kind": "MissingExportEquals",
-      "entrypoint": ".",
-      "resolutionKind": "node10"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": ".",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": ".",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": ".",
-      "resolutionKind": "bundler"
+      "typesFileName": "/node_modules/ajv/dist/ajv.d.ts",
+      "implementationFileName": "/node_modules/ajv/dist/ajv.js"
     }
   ]
 }

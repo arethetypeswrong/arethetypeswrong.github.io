@@ -87,6 +87,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts"
+          ],
+          "visibleProblems": [
+            0
           ]
         },
         "node16-cjs": {
@@ -94,11 +97,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/postcss.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -123,11 +121,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/postcss.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -180,6 +173,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts"
+          ],
+          "visibleProblems": [
+            0
           ]
         },
         "node16-esm": {
@@ -187,11 +183,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/postcss.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -220,11 +211,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/postcss.mjs",
-            "moduleKind": {
-              "detectedKind": 99,
-              "detectedReason": "extension",
-              "reasonFileName": "/node_modules/postcss/lib/postcss.mjs"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -293,6 +279,10 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts"
+          ],
+          "visibleProblems": [
+            1,
+            2
           ]
         },
         "bundler": {
@@ -400,6 +390,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts"
+          ],
+          "visibleProblems": [
+            3
           ]
         }
       },
@@ -470,6 +463,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts",
             "/node_modules/postcss/lib/at-rule.d.ts"
+          ],
+          "visibleProblems": [
+            4
           ]
         },
         "node16-cjs": {
@@ -477,11 +473,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/at-rule.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -502,11 +493,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/at-rule.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -550,6 +536,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts",
             "/node_modules/postcss/lib/at-rule.d.ts"
+          ],
+          "visibleProblems": [
+            4
           ]
         },
         "node16-esm": {
@@ -557,11 +546,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/at-rule.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -582,11 +566,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/at-rule.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -638,6 +617,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts",
             "/node_modules/postcss/lib/at-rule.d.ts"
+          ],
+          "visibleProblems": [
+            4
           ]
         },
         "bundler": {
@@ -718,6 +700,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts",
             "/node_modules/postcss/lib/at-rule.d.ts"
+          ],
+          "visibleProblems": [
+            4
           ]
         }
       },
@@ -788,6 +773,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts",
             "/node_modules/postcss/lib/comment.d.ts"
+          ],
+          "visibleProblems": [
+            5
           ]
         },
         "node16-cjs": {
@@ -795,11 +783,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/comment.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -820,11 +803,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/comment.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -868,6 +846,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts",
             "/node_modules/postcss/lib/comment.d.ts"
+          ],
+          "visibleProblems": [
+            5
           ]
         },
         "node16-esm": {
@@ -875,11 +856,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/comment.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -900,11 +876,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/comment.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -956,6 +927,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts",
             "/node_modules/postcss/lib/comment.d.ts"
+          ],
+          "visibleProblems": [
+            5
           ]
         },
         "bundler": {
@@ -1036,6 +1010,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts",
             "/node_modules/postcss/lib/comment.d.ts"
+          ],
+          "visibleProblems": [
+            5
           ]
         }
       },
@@ -1106,6 +1083,9 @@
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts"
+          ],
+          "visibleProblems": [
+            6
           ]
         },
         "node16-cjs": {
@@ -1113,11 +1093,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/container.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1138,11 +1113,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/container.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -1186,6 +1156,9 @@
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts"
+          ],
+          "visibleProblems": [
+            6
           ]
         },
         "node16-esm": {
@@ -1193,11 +1166,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/container.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1218,11 +1186,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/container.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -1274,6 +1237,9 @@
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts"
+          ],
+          "visibleProblems": [
+            6
           ]
         },
         "bundler": {
@@ -1354,6 +1320,9 @@
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts"
+          ],
+          "visibleProblems": [
+            6
           ]
         }
       },
@@ -1424,6 +1393,9 @@
             "/node_modules/postcss/lib/previous-map.d.ts",
             "/node_modules/postcss/lib/input.d.ts",
             "/node_modules/postcss/lib/css-syntax-error.d.ts"
+          ],
+          "visibleProblems": [
+            7
           ]
         },
         "node16-cjs": {
@@ -1431,11 +1403,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/css-syntax-error.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1456,11 +1423,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/css-syntax-error.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -1504,6 +1466,9 @@
             "/node_modules/postcss/lib/previous-map.d.ts",
             "/node_modules/postcss/lib/input.d.ts",
             "/node_modules/postcss/lib/css-syntax-error.d.ts"
+          ],
+          "visibleProblems": [
+            7
           ]
         },
         "node16-esm": {
@@ -1511,11 +1476,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/css-syntax-error.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1536,11 +1496,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/css-syntax-error.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -1592,6 +1547,9 @@
             "/node_modules/postcss/lib/previous-map.d.ts",
             "/node_modules/postcss/lib/input.d.ts",
             "/node_modules/postcss/lib/css-syntax-error.d.ts"
+          ],
+          "visibleProblems": [
+            7
           ]
         },
         "bundler": {
@@ -1672,6 +1630,9 @@
             "/node_modules/postcss/lib/previous-map.d.ts",
             "/node_modules/postcss/lib/input.d.ts",
             "/node_modules/postcss/lib/css-syntax-error.d.ts"
+          ],
+          "visibleProblems": [
+            7
           ]
         }
       },
@@ -1742,6 +1703,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts",
             "/node_modules/postcss/lib/declaration.d.ts"
+          ],
+          "visibleProblems": [
+            8
           ]
         },
         "node16-cjs": {
@@ -1749,11 +1713,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/declaration.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1774,11 +1733,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/declaration.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -1822,6 +1776,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts",
             "/node_modules/postcss/lib/declaration.d.ts"
+          ],
+          "visibleProblems": [
+            8
           ]
         },
         "node16-esm": {
@@ -1829,11 +1786,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/declaration.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -1854,11 +1806,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/declaration.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -1910,6 +1857,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts",
             "/node_modules/postcss/lib/declaration.d.ts"
+          ],
+          "visibleProblems": [
+            8
           ]
         },
         "bundler": {
@@ -1990,6 +1940,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts",
             "/node_modules/postcss/lib/declaration.d.ts"
+          ],
+          "visibleProblems": [
+            8
           ]
         }
       },
@@ -2061,6 +2014,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/fromJSON.d.ts"
+          ],
+          "visibleProblems": [
+            9
           ]
         },
         "node16-cjs": {
@@ -2068,11 +2024,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/fromJSON.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -2093,11 +2044,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/fromJSON.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -2142,6 +2088,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/fromJSON.d.ts"
+          ],
+          "visibleProblems": [
+            9
           ]
         },
         "node16-esm": {
@@ -2149,11 +2098,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/fromJSON.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -2174,11 +2118,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/fromJSON.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -2231,6 +2170,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/fromJSON.d.ts"
+          ],
+          "visibleProblems": [
+            9
           ]
         },
         "bundler": {
@@ -2312,6 +2254,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/fromJSON.d.ts"
+          ],
+          "visibleProblems": [
+            9
           ]
         }
       },
@@ -2382,6 +2327,9 @@
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/previous-map.d.ts",
             "/node_modules/postcss/lib/input.d.ts"
+          ],
+          "visibleProblems": [
+            10
           ]
         },
         "node16-cjs": {
@@ -2389,11 +2337,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/input.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -2414,11 +2357,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/input.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -2462,6 +2400,9 @@
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/previous-map.d.ts",
             "/node_modules/postcss/lib/input.d.ts"
+          ],
+          "visibleProblems": [
+            10
           ]
         },
         "node16-esm": {
@@ -2469,11 +2410,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/input.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -2494,11 +2430,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/input.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -2550,6 +2481,9 @@
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/previous-map.d.ts",
             "/node_modules/postcss/lib/input.d.ts"
+          ],
+          "visibleProblems": [
+            10
           ]
         },
         "bundler": {
@@ -2630,6 +2564,9 @@
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/previous-map.d.ts",
             "/node_modules/postcss/lib/input.d.ts"
+          ],
+          "visibleProblems": [
+            10
           ]
         }
       },
@@ -2700,6 +2637,9 @@
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/result.d.ts",
             "/node_modules/postcss/lib/lazy-result.d.ts"
+          ],
+          "visibleProblems": [
+            11
           ]
         },
         "node16-cjs": {
@@ -2707,11 +2647,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/lazy-result.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -2732,11 +2667,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/lazy-result.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -2780,6 +2710,9 @@
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/result.d.ts",
             "/node_modules/postcss/lib/lazy-result.d.ts"
+          ],
+          "visibleProblems": [
+            11
           ]
         },
         "node16-esm": {
@@ -2787,11 +2720,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/lazy-result.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -2812,11 +2740,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/lazy-result.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -2868,6 +2791,9 @@
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/result.d.ts",
             "/node_modules/postcss/lib/lazy-result.d.ts"
+          ],
+          "visibleProblems": [
+            11
           ]
         },
         "bundler": {
@@ -2948,6 +2874,9 @@
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/result.d.ts",
             "/node_modules/postcss/lib/lazy-result.d.ts"
+          ],
+          "visibleProblems": [
+            11
           ]
         }
       },
@@ -3018,6 +2947,9 @@
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/result.d.ts",
             "/node_modules/postcss/lib/no-work-result.d.ts"
+          ],
+          "visibleProblems": [
+            12
           ]
         },
         "node16-cjs": {
@@ -3025,11 +2957,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/no-work-result.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -3050,11 +2977,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/no-work-result.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -3098,6 +3020,9 @@
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/result.d.ts",
             "/node_modules/postcss/lib/no-work-result.d.ts"
+          ],
+          "visibleProblems": [
+            12
           ]
         },
         "node16-esm": {
@@ -3105,11 +3030,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/no-work-result.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -3130,11 +3050,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/no-work-result.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -3186,6 +3101,9 @@
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/result.d.ts",
             "/node_modules/postcss/lib/no-work-result.d.ts"
+          ],
+          "visibleProblems": [
+            12
           ]
         },
         "bundler": {
@@ -3266,6 +3184,9 @@
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/result.d.ts",
             "/node_modules/postcss/lib/no-work-result.d.ts"
+          ],
+          "visibleProblems": [
+            12
           ]
         }
       },
@@ -3319,6 +3240,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/postcss/lib/list.d.ts"
+          ],
+          "visibleProblems": [
+            13
           ]
         },
         "node16-cjs": {
@@ -3326,11 +3250,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/list.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -3351,11 +3270,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/list.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -3382,6 +3296,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/postcss/lib/list.d.ts"
+          ],
+          "visibleProblems": [
+            13
           ]
         },
         "node16-esm": {
@@ -3389,11 +3306,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/list.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -3414,11 +3326,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/list.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -3453,6 +3360,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/postcss/lib/list.d.ts"
+          ],
+          "visibleProblems": [
+            13
           ]
         },
         "bundler": {
@@ -3516,6 +3426,9 @@
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/postcss/lib/list.d.ts"
+          ],
+          "visibleProblems": [
+            13
           ]
         }
       },
@@ -3553,8 +3466,33 @@
               "======== Module name 'postcss/lib/map-generator' was successfully resolved to '/node_modules/postcss/lib/map-generator.js' with Package ID 'postcss/lib/map-generator.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/map-generator.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/map-generator' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'postcss/lib/map-generator' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/postcss/lib/map-generator.ts' does not exist.",
+              "File '/node_modules/postcss/lib/map-generator.tsx' does not exist.",
+              "'package.json' has 'main' field './lib/postcss.js' that references '/node_modules/postcss/lib/map-generator/lib/postcss.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/postcss/lib/map-generator/lib/postcss.js', target file types: TypeScript.",
+              "File name '/node_modules/postcss/lib/map-generator/lib/postcss.js' has a '.js' extension - stripping it.",
+              "Loading module 'postcss/lib/map-generator' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/postcss/lib/map-generator.js' exists - use it as a name resolution result.",
+              "======== Module name 'postcss/lib/map-generator' was successfully resolved to '/node_modules/postcss/lib/map-generator.js' with Package ID 'postcss/lib/map-generator.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            14
           ]
         },
         "node16-cjs": {
@@ -3562,11 +3500,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/map-generator.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -3592,8 +3525,36 @@
               "======== Module name 'postcss/lib/map-generator' was successfully resolved to '/node_modules/postcss/lib/map-generator.js' with Package ID 'postcss/lib/map-generator.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/map-generator.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/map-generator' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/map-generator' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/map-generator' with target './lib/map-generator.js'.",
+              "File name '/node_modules/postcss/lib/map-generator.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/map-generator.ts' does not exist.",
+              "File '/node_modules/postcss/lib/map-generator.tsx' does not exist.",
+              "Export specifier './lib/map-generator' does not exist in package.json scope at path '/node_modules/postcss'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/map-generator' with target './lib/map-generator.js'.",
+              "File name '/node_modules/postcss/lib/map-generator.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/map-generator.js' exists - use it as a name resolution result.",
+              "======== Module name 'postcss/lib/map-generator' was successfully resolved to '/node_modules/postcss/lib/map-generator.js' with Package ID 'postcss/lib/map-generator.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            15
           ]
         },
         "node16-esm": {
@@ -3601,11 +3562,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/map-generator.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -3642,8 +3598,44 @@
               "======== Module name 'postcss/lib/map-generator' was successfully resolved to '/node_modules/postcss/lib/map-generator.js' with Package ID 'postcss/lib/map-generator.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/map-generator.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/map-generator' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/map-generator' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/map-generator' with target './lib/map-generator.js'.",
+              "File name '/node_modules/postcss/lib/map-generator.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/map-generator.ts' does not exist.",
+              "File '/node_modules/postcss/lib/map-generator.tsx' does not exist.",
+              "Export specifier './lib/map-generator' does not exist in package.json scope at path '/node_modules/postcss'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/map-generator' with target './lib/map-generator.js'.",
+              "File name '/node_modules/postcss/lib/map-generator.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/map-generator.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/map-generator' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field './lib/postcss.js' that references '/node_modules/postcss/lib/map-generator/lib/postcss.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/postcss/lib/map-generator/lib/postcss.js', target file types: TypeScript.",
+              "File name '/node_modules/postcss/lib/map-generator/lib/postcss.js' has a '.js' extension - stripping it.",
+              "======== Module name 'postcss/lib/map-generator' was successfully resolved to '/node_modules/postcss/lib/map-generator.js' with Package ID 'postcss/lib/map-generator.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            16
           ]
         },
         "bundler": {
@@ -3690,8 +3682,46 @@
               "======== Module name 'postcss/lib/map-generator' was successfully resolved to '/node_modules/postcss/lib/map-generator.js' with Package ID 'postcss/lib/map-generator.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/map-generator.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/map-generator' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/map-generator' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/map-generator' with target './lib/map-generator.js'.",
+              "File name '/node_modules/postcss/lib/map-generator.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/map-generator.ts' does not exist.",
+              "File '/node_modules/postcss/lib/map-generator.tsx' does not exist.",
+              "Export specifier './lib/map-generator' does not exist in package.json scope at path '/node_modules/postcss'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/map-generator' with target './lib/map-generator.js'.",
+              "File name '/node_modules/postcss/lib/map-generator.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/map-generator.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/map-generator' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/postcss/lib/map-generator.ts' does not exist.",
+              "File '/node_modules/postcss/lib/map-generator.tsx' does not exist.",
+              "'package.json' has 'main' field './lib/postcss.js' that references '/node_modules/postcss/lib/map-generator/lib/postcss.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/postcss/lib/map-generator/lib/postcss.js', target file types: TypeScript.",
+              "File name '/node_modules/postcss/lib/map-generator/lib/postcss.js' has a '.js' extension - stripping it.",
+              "======== Module name 'postcss/lib/map-generator' was successfully resolved to '/node_modules/postcss/lib/map-generator.js' with Package ID 'postcss/lib/map-generator.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            17
           ]
         }
       },
@@ -3762,6 +3792,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/node.d.ts"
+          ],
+          "visibleProblems": [
+            18
           ]
         },
         "node16-cjs": {
@@ -3769,11 +3802,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/node.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -3794,11 +3822,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/node.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -3842,6 +3865,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/node.d.ts"
+          ],
+          "visibleProblems": [
+            18
           ]
         },
         "node16-esm": {
@@ -3849,11 +3875,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/node.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -3874,11 +3895,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/node.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -3930,6 +3946,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/node.d.ts"
+          ],
+          "visibleProblems": [
+            18
           ]
         },
         "bundler": {
@@ -4010,6 +4029,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/node.d.ts"
+          ],
+          "visibleProblems": [
+            18
           ]
         }
       },
@@ -4081,6 +4103,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/parse.d.ts"
+          ],
+          "visibleProblems": [
+            19
           ]
         },
         "node16-cjs": {
@@ -4088,11 +4113,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/parse.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -4113,11 +4133,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/parse.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -4162,6 +4177,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/parse.d.ts"
+          ],
+          "visibleProblems": [
+            19
           ]
         },
         "node16-esm": {
@@ -4169,11 +4187,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/parse.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -4194,11 +4207,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/parse.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -4251,6 +4259,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/parse.d.ts"
+          ],
+          "visibleProblems": [
+            19
           ]
         },
         "bundler": {
@@ -4332,6 +4343,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/parse.d.ts"
+          ],
+          "visibleProblems": [
+            19
           ]
         }
       },
@@ -4369,8 +4383,33 @@
               "======== Module name 'postcss/lib/parser' was successfully resolved to '/node_modules/postcss/lib/parser.js' with Package ID 'postcss/lib/parser.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/parser.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/parser' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'postcss/lib/parser' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/postcss/lib/parser.ts' does not exist.",
+              "File '/node_modules/postcss/lib/parser.tsx' does not exist.",
+              "'package.json' has 'main' field './lib/postcss.js' that references '/node_modules/postcss/lib/parser/lib/postcss.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/postcss/lib/parser/lib/postcss.js', target file types: TypeScript.",
+              "File name '/node_modules/postcss/lib/parser/lib/postcss.js' has a '.js' extension - stripping it.",
+              "Loading module 'postcss/lib/parser' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/postcss/lib/parser.js' exists - use it as a name resolution result.",
+              "======== Module name 'postcss/lib/parser' was successfully resolved to '/node_modules/postcss/lib/parser.js' with Package ID 'postcss/lib/parser.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            20
           ]
         },
         "node16-cjs": {
@@ -4378,11 +4417,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/parser.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -4408,8 +4442,36 @@
               "======== Module name 'postcss/lib/parser' was successfully resolved to '/node_modules/postcss/lib/parser.js' with Package ID 'postcss/lib/parser.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/parser.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/parser' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/parser' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/parser' with target './lib/parser.js'.",
+              "File name '/node_modules/postcss/lib/parser.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/parser.ts' does not exist.",
+              "File '/node_modules/postcss/lib/parser.tsx' does not exist.",
+              "Export specifier './lib/parser' does not exist in package.json scope at path '/node_modules/postcss'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/parser' with target './lib/parser.js'.",
+              "File name '/node_modules/postcss/lib/parser.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/parser.js' exists - use it as a name resolution result.",
+              "======== Module name 'postcss/lib/parser' was successfully resolved to '/node_modules/postcss/lib/parser.js' with Package ID 'postcss/lib/parser.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            21
           ]
         },
         "node16-esm": {
@@ -4417,11 +4479,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/parser.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -4457,8 +4514,44 @@
               "======== Module name 'postcss/lib/parser' was successfully resolved to '/node_modules/postcss/lib/parser.js' with Package ID 'postcss/lib/parser.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/parser.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/parser' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/parser' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/parser' with target './lib/parser.js'.",
+              "File name '/node_modules/postcss/lib/parser.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/parser.ts' does not exist.",
+              "File '/node_modules/postcss/lib/parser.tsx' does not exist.",
+              "Export specifier './lib/parser' does not exist in package.json scope at path '/node_modules/postcss'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/parser' with target './lib/parser.js'.",
+              "File name '/node_modules/postcss/lib/parser.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/parser.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/parser' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field './lib/postcss.js' that references '/node_modules/postcss/lib/parser/lib/postcss.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/postcss/lib/parser/lib/postcss.js', target file types: TypeScript.",
+              "File name '/node_modules/postcss/lib/parser/lib/postcss.js' has a '.js' extension - stripping it.",
+              "======== Module name 'postcss/lib/parser' was successfully resolved to '/node_modules/postcss/lib/parser.js' with Package ID 'postcss/lib/parser.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            22
           ]
         },
         "bundler": {
@@ -4504,8 +4597,46 @@
               "======== Module name 'postcss/lib/parser' was successfully resolved to '/node_modules/postcss/lib/parser.js' with Package ID 'postcss/lib/parser.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/parser.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/parser' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/parser' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/parser' with target './lib/parser.js'.",
+              "File name '/node_modules/postcss/lib/parser.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/parser.ts' does not exist.",
+              "File '/node_modules/postcss/lib/parser.tsx' does not exist.",
+              "Export specifier './lib/parser' does not exist in package.json scope at path '/node_modules/postcss'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/parser' with target './lib/parser.js'.",
+              "File name '/node_modules/postcss/lib/parser.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/parser.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/parser' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/postcss/lib/parser.ts' does not exist.",
+              "File '/node_modules/postcss/lib/parser.tsx' does not exist.",
+              "'package.json' has 'main' field './lib/postcss.js' that references '/node_modules/postcss/lib/parser/lib/postcss.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/postcss/lib/parser/lib/postcss.js', target file types: TypeScript.",
+              "File name '/node_modules/postcss/lib/parser/lib/postcss.js' has a '.js' extension - stripping it.",
+              "======== Module name 'postcss/lib/parser' was successfully resolved to '/node_modules/postcss/lib/parser.js' with Package ID 'postcss/lib/parser.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            23
           ]
         }
       },
@@ -4576,6 +4707,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts"
+          ],
+          "visibleProblems": [
+            0
           ]
         },
         "node16-cjs": {
@@ -4583,11 +4717,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/postcss.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -4608,11 +4737,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/postcss.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -4656,6 +4780,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts"
+          ],
+          "visibleProblems": [
+            0
           ]
         },
         "node16-esm": {
@@ -4663,11 +4790,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/postcss.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -4688,11 +4810,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/postcss.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -4744,6 +4861,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts"
+          ],
+          "visibleProblems": [
+            0
           ]
         },
         "bundler": {
@@ -4824,6 +4944,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts"
+          ],
+          "visibleProblems": [
+            0
           ]
         }
       },
@@ -4894,6 +5017,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/previous-map.d.ts"
+          ],
+          "visibleProblems": [
+            24
           ]
         },
         "node16-cjs": {
@@ -4901,11 +5027,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/previous-map.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -4926,11 +5047,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/previous-map.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -4974,6 +5090,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/previous-map.d.ts"
+          ],
+          "visibleProblems": [
+            24
           ]
         },
         "node16-esm": {
@@ -4981,11 +5100,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/previous-map.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -5006,11 +5120,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/previous-map.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -5062,6 +5171,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/previous-map.d.ts"
+          ],
+          "visibleProblems": [
+            24
           ]
         },
         "bundler": {
@@ -5142,6 +5254,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/previous-map.d.ts"
+          ],
+          "visibleProblems": [
+            24
           ]
         }
       },
@@ -5212,6 +5327,9 @@
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/no-work-result.d.ts",
             "/node_modules/postcss/lib/processor.d.ts"
+          ],
+          "visibleProblems": [
+            25
           ]
         },
         "node16-cjs": {
@@ -5219,11 +5337,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/processor.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -5244,11 +5357,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/processor.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -5292,6 +5400,9 @@
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/no-work-result.d.ts",
             "/node_modules/postcss/lib/processor.d.ts"
+          ],
+          "visibleProblems": [
+            25
           ]
         },
         "node16-esm": {
@@ -5299,11 +5410,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/processor.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -5324,11 +5430,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/processor.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -5380,6 +5481,9 @@
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/no-work-result.d.ts",
             "/node_modules/postcss/lib/processor.d.ts"
+          ],
+          "visibleProblems": [
+            25
           ]
         },
         "bundler": {
@@ -5460,6 +5564,9 @@
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/no-work-result.d.ts",
             "/node_modules/postcss/lib/processor.d.ts"
+          ],
+          "visibleProblems": [
+            25
           ]
         }
       },
@@ -5530,6 +5637,9 @@
             "/node_modules/postcss/lib/lazy-result.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/result.d.ts"
+          ],
+          "visibleProblems": [
+            26
           ]
         },
         "node16-cjs": {
@@ -5537,11 +5647,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/result.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -5562,11 +5667,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/result.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -5610,6 +5710,9 @@
             "/node_modules/postcss/lib/lazy-result.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/result.d.ts"
+          ],
+          "visibleProblems": [
+            26
           ]
         },
         "node16-esm": {
@@ -5617,11 +5720,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/result.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -5642,11 +5740,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/result.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -5698,6 +5791,9 @@
             "/node_modules/postcss/lib/lazy-result.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/result.d.ts"
+          ],
+          "visibleProblems": [
+            26
           ]
         },
         "bundler": {
@@ -5778,6 +5874,9 @@
             "/node_modules/postcss/lib/lazy-result.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/result.d.ts"
+          ],
+          "visibleProblems": [
+            26
           ]
         }
       },
@@ -5848,6 +5947,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts",
             "/node_modules/postcss/lib/root.d.ts"
+          ],
+          "visibleProblems": [
+            27
           ]
         },
         "node16-cjs": {
@@ -5855,11 +5957,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/root.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -5880,11 +5977,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/root.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -5928,6 +6020,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts",
             "/node_modules/postcss/lib/root.d.ts"
+          ],
+          "visibleProblems": [
+            27
           ]
         },
         "node16-esm": {
@@ -5935,11 +6030,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/root.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -5960,11 +6050,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/root.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -6016,6 +6101,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts",
             "/node_modules/postcss/lib/root.d.ts"
+          ],
+          "visibleProblems": [
+            27
           ]
         },
         "bundler": {
@@ -6096,6 +6184,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts",
             "/node_modules/postcss/lib/root.d.ts"
+          ],
+          "visibleProblems": [
+            27
           ]
         }
       },
@@ -6166,6 +6257,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts",
             "/node_modules/postcss/lib/rule.d.ts"
+          ],
+          "visibleProblems": [
+            28
           ]
         },
         "node16-cjs": {
@@ -6173,11 +6267,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/rule.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -6198,11 +6287,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/rule.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -6246,6 +6330,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts",
             "/node_modules/postcss/lib/rule.d.ts"
+          ],
+          "visibleProblems": [
+            28
           ]
         },
         "node16-esm": {
@@ -6253,11 +6340,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/rule.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -6278,11 +6360,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/rule.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -6334,6 +6411,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts",
             "/node_modules/postcss/lib/rule.d.ts"
+          ],
+          "visibleProblems": [
+            28
           ]
         },
         "bundler": {
@@ -6414,6 +6494,9 @@
             "/node_modules/postcss/lib/node.d.ts",
             "/node_modules/postcss/lib/container.d.ts",
             "/node_modules/postcss/lib/rule.d.ts"
+          ],
+          "visibleProblems": [
+            28
           ]
         }
       },
@@ -6485,6 +6568,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/stringifier.d.ts"
+          ],
+          "visibleProblems": [
+            29
           ]
         },
         "node16-cjs": {
@@ -6492,11 +6578,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/stringifier.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -6517,11 +6598,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/stringifier.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -6566,6 +6642,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/stringifier.d.ts"
+          ],
+          "visibleProblems": [
+            29
           ]
         },
         "node16-esm": {
@@ -6573,11 +6652,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/stringifier.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -6598,11 +6672,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/stringifier.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -6655,6 +6724,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/stringifier.d.ts"
+          ],
+          "visibleProblems": [
+            29
           ]
         },
         "bundler": {
@@ -6736,6 +6808,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/stringifier.d.ts"
+          ],
+          "visibleProblems": [
+            29
           ]
         }
       },
@@ -6807,6 +6882,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/stringify.d.ts"
+          ],
+          "visibleProblems": [
+            30
           ]
         },
         "node16-cjs": {
@@ -6814,11 +6892,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/stringify.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -6839,11 +6912,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/stringify.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -6888,6 +6956,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/stringify.d.ts"
+          ],
+          "visibleProblems": [
+            30
           ]
         },
         "node16-esm": {
@@ -6895,11 +6966,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/stringify.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -6920,11 +6986,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/stringify.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -6977,6 +7038,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/stringify.d.ts"
+          ],
+          "visibleProblems": [
+            30
           ]
         },
         "bundler": {
@@ -7058,6 +7122,9 @@
             "/node_modules/postcss/lib/list.d.ts",
             "/node_modules/postcss/lib/postcss.d.ts",
             "/node_modules/postcss/lib/stringify.d.ts"
+          ],
+          "visibleProblems": [
+            30
           ]
         }
       },
@@ -7095,8 +7162,33 @@
               "======== Module name 'postcss/lib/symbols' was successfully resolved to '/node_modules/postcss/lib/symbols.js' with Package ID 'postcss/lib/symbols.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/symbols.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/symbols' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'postcss/lib/symbols' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/postcss/lib/symbols.ts' does not exist.",
+              "File '/node_modules/postcss/lib/symbols.tsx' does not exist.",
+              "'package.json' has 'main' field './lib/postcss.js' that references '/node_modules/postcss/lib/symbols/lib/postcss.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/postcss/lib/symbols/lib/postcss.js', target file types: TypeScript.",
+              "File name '/node_modules/postcss/lib/symbols/lib/postcss.js' has a '.js' extension - stripping it.",
+              "Loading module 'postcss/lib/symbols' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/postcss/lib/symbols.js' exists - use it as a name resolution result.",
+              "======== Module name 'postcss/lib/symbols' was successfully resolved to '/node_modules/postcss/lib/symbols.js' with Package ID 'postcss/lib/symbols.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            31
           ]
         },
         "node16-cjs": {
@@ -7104,11 +7196,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/symbols.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -7134,8 +7221,36 @@
               "======== Module name 'postcss/lib/symbols' was successfully resolved to '/node_modules/postcss/lib/symbols.js' with Package ID 'postcss/lib/symbols.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/symbols.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/symbols' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/symbols' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/symbols' with target './lib/symbols.js'.",
+              "File name '/node_modules/postcss/lib/symbols.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/symbols.ts' does not exist.",
+              "File '/node_modules/postcss/lib/symbols.tsx' does not exist.",
+              "Export specifier './lib/symbols' does not exist in package.json scope at path '/node_modules/postcss'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/symbols' with target './lib/symbols.js'.",
+              "File name '/node_modules/postcss/lib/symbols.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/symbols.js' exists - use it as a name resolution result.",
+              "======== Module name 'postcss/lib/symbols' was successfully resolved to '/node_modules/postcss/lib/symbols.js' with Package ID 'postcss/lib/symbols.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            32
           ]
         },
         "node16-esm": {
@@ -7143,11 +7258,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/symbols.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -7183,8 +7293,44 @@
               "======== Module name 'postcss/lib/symbols' was successfully resolved to '/node_modules/postcss/lib/symbols.js' with Package ID 'postcss/lib/symbols.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/symbols.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/symbols' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/symbols' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/symbols' with target './lib/symbols.js'.",
+              "File name '/node_modules/postcss/lib/symbols.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/symbols.ts' does not exist.",
+              "File '/node_modules/postcss/lib/symbols.tsx' does not exist.",
+              "Export specifier './lib/symbols' does not exist in package.json scope at path '/node_modules/postcss'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/symbols' with target './lib/symbols.js'.",
+              "File name '/node_modules/postcss/lib/symbols.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/symbols.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/symbols' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field './lib/postcss.js' that references '/node_modules/postcss/lib/symbols/lib/postcss.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/postcss/lib/symbols/lib/postcss.js', target file types: TypeScript.",
+              "File name '/node_modules/postcss/lib/symbols/lib/postcss.js' has a '.js' extension - stripping it.",
+              "======== Module name 'postcss/lib/symbols' was successfully resolved to '/node_modules/postcss/lib/symbols.js' with Package ID 'postcss/lib/symbols.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            33
           ]
         },
         "bundler": {
@@ -7230,8 +7376,46 @@
               "======== Module name 'postcss/lib/symbols' was successfully resolved to '/node_modules/postcss/lib/symbols.js' with Package ID 'postcss/lib/symbols.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/symbols.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/symbols' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/symbols' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/symbols' with target './lib/symbols.js'.",
+              "File name '/node_modules/postcss/lib/symbols.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/symbols.ts' does not exist.",
+              "File '/node_modules/postcss/lib/symbols.tsx' does not exist.",
+              "Export specifier './lib/symbols' does not exist in package.json scope at path '/node_modules/postcss'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/symbols' with target './lib/symbols.js'.",
+              "File name '/node_modules/postcss/lib/symbols.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/symbols.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/symbols' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/postcss/lib/symbols.ts' does not exist.",
+              "File '/node_modules/postcss/lib/symbols.tsx' does not exist.",
+              "'package.json' has 'main' field './lib/postcss.js' that references '/node_modules/postcss/lib/symbols/lib/postcss.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/postcss/lib/symbols/lib/postcss.js', target file types: TypeScript.",
+              "File name '/node_modules/postcss/lib/symbols/lib/postcss.js' has a '.js' extension - stripping it.",
+              "======== Module name 'postcss/lib/symbols' was successfully resolved to '/node_modules/postcss/lib/symbols.js' with Package ID 'postcss/lib/symbols.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            34
           ]
         }
       },
@@ -7269,8 +7453,33 @@
               "======== Module name 'postcss/lib/terminal-highlight' was successfully resolved to '/node_modules/postcss/lib/terminal-highlight.js' with Package ID 'postcss/lib/terminal-highlight.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/terminal-highlight.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/terminal-highlight' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'postcss/lib/terminal-highlight' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/postcss/lib/terminal-highlight.ts' does not exist.",
+              "File '/node_modules/postcss/lib/terminal-highlight.tsx' does not exist.",
+              "'package.json' has 'main' field './lib/postcss.js' that references '/node_modules/postcss/lib/terminal-highlight/lib/postcss.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/postcss/lib/terminal-highlight/lib/postcss.js', target file types: TypeScript.",
+              "File name '/node_modules/postcss/lib/terminal-highlight/lib/postcss.js' has a '.js' extension - stripping it.",
+              "Loading module 'postcss/lib/terminal-highlight' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/postcss/lib/terminal-highlight.js' exists - use it as a name resolution result.",
+              "======== Module name 'postcss/lib/terminal-highlight' was successfully resolved to '/node_modules/postcss/lib/terminal-highlight.js' with Package ID 'postcss/lib/terminal-highlight.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            35
           ]
         },
         "node16-cjs": {
@@ -7278,11 +7487,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/terminal-highlight.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -7308,8 +7512,36 @@
               "======== Module name 'postcss/lib/terminal-highlight' was successfully resolved to '/node_modules/postcss/lib/terminal-highlight.js' with Package ID 'postcss/lib/terminal-highlight.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/terminal-highlight.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/terminal-highlight' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/terminal-highlight' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/terminal-highlight' with target './lib/terminal-highlight.js'.",
+              "File name '/node_modules/postcss/lib/terminal-highlight.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/terminal-highlight.ts' does not exist.",
+              "File '/node_modules/postcss/lib/terminal-highlight.tsx' does not exist.",
+              "Export specifier './lib/terminal-highlight' does not exist in package.json scope at path '/node_modules/postcss'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/terminal-highlight' with target './lib/terminal-highlight.js'.",
+              "File name '/node_modules/postcss/lib/terminal-highlight.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/terminal-highlight.js' exists - use it as a name resolution result.",
+              "======== Module name 'postcss/lib/terminal-highlight' was successfully resolved to '/node_modules/postcss/lib/terminal-highlight.js' with Package ID 'postcss/lib/terminal-highlight.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            36
           ]
         },
         "node16-esm": {
@@ -7317,11 +7549,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/terminal-highlight.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -7357,8 +7584,44 @@
               "======== Module name 'postcss/lib/terminal-highlight' was successfully resolved to '/node_modules/postcss/lib/terminal-highlight.js' with Package ID 'postcss/lib/terminal-highlight.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/terminal-highlight.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/terminal-highlight' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/terminal-highlight' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/terminal-highlight' with target './lib/terminal-highlight.js'.",
+              "File name '/node_modules/postcss/lib/terminal-highlight.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/terminal-highlight.ts' does not exist.",
+              "File '/node_modules/postcss/lib/terminal-highlight.tsx' does not exist.",
+              "Export specifier './lib/terminal-highlight' does not exist in package.json scope at path '/node_modules/postcss'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/terminal-highlight' with target './lib/terminal-highlight.js'.",
+              "File name '/node_modules/postcss/lib/terminal-highlight.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/terminal-highlight.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/terminal-highlight' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field './lib/postcss.js' that references '/node_modules/postcss/lib/terminal-highlight/lib/postcss.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/postcss/lib/terminal-highlight/lib/postcss.js', target file types: TypeScript.",
+              "File name '/node_modules/postcss/lib/terminal-highlight/lib/postcss.js' has a '.js' extension - stripping it.",
+              "======== Module name 'postcss/lib/terminal-highlight' was successfully resolved to '/node_modules/postcss/lib/terminal-highlight.js' with Package ID 'postcss/lib/terminal-highlight.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            37
           ]
         },
         "bundler": {
@@ -7404,8 +7667,46 @@
               "======== Module name 'postcss/lib/terminal-highlight' was successfully resolved to '/node_modules/postcss/lib/terminal-highlight.js' with Package ID 'postcss/lib/terminal-highlight.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/terminal-highlight.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/terminal-highlight' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/terminal-highlight' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/terminal-highlight' with target './lib/terminal-highlight.js'.",
+              "File name '/node_modules/postcss/lib/terminal-highlight.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/terminal-highlight.ts' does not exist.",
+              "File '/node_modules/postcss/lib/terminal-highlight.tsx' does not exist.",
+              "Export specifier './lib/terminal-highlight' does not exist in package.json scope at path '/node_modules/postcss'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/terminal-highlight' with target './lib/terminal-highlight.js'.",
+              "File name '/node_modules/postcss/lib/terminal-highlight.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/terminal-highlight.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/terminal-highlight' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/postcss/lib/terminal-highlight.ts' does not exist.",
+              "File '/node_modules/postcss/lib/terminal-highlight.tsx' does not exist.",
+              "'package.json' has 'main' field './lib/postcss.js' that references '/node_modules/postcss/lib/terminal-highlight/lib/postcss.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/postcss/lib/terminal-highlight/lib/postcss.js', target file types: TypeScript.",
+              "File name '/node_modules/postcss/lib/terminal-highlight/lib/postcss.js' has a '.js' extension - stripping it.",
+              "======== Module name 'postcss/lib/terminal-highlight' was successfully resolved to '/node_modules/postcss/lib/terminal-highlight.js' with Package ID 'postcss/lib/terminal-highlight.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            38
           ]
         }
       },
@@ -7443,8 +7744,33 @@
               "======== Module name 'postcss/lib/tokenize' was successfully resolved to '/node_modules/postcss/lib/tokenize.js' with Package ID 'postcss/lib/tokenize.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/tokenize.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/tokenize' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'postcss/lib/tokenize' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/postcss/lib/tokenize.ts' does not exist.",
+              "File '/node_modules/postcss/lib/tokenize.tsx' does not exist.",
+              "'package.json' has 'main' field './lib/postcss.js' that references '/node_modules/postcss/lib/tokenize/lib/postcss.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/postcss/lib/tokenize/lib/postcss.js', target file types: TypeScript.",
+              "File name '/node_modules/postcss/lib/tokenize/lib/postcss.js' has a '.js' extension - stripping it.",
+              "Loading module 'postcss/lib/tokenize' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/postcss/lib/tokenize.js' exists - use it as a name resolution result.",
+              "======== Module name 'postcss/lib/tokenize' was successfully resolved to '/node_modules/postcss/lib/tokenize.js' with Package ID 'postcss/lib/tokenize.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            39
           ]
         },
         "node16-cjs": {
@@ -7452,11 +7778,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/tokenize.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -7482,8 +7803,36 @@
               "======== Module name 'postcss/lib/tokenize' was successfully resolved to '/node_modules/postcss/lib/tokenize.js' with Package ID 'postcss/lib/tokenize.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/tokenize.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/tokenize' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/tokenize' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/tokenize' with target './lib/tokenize.js'.",
+              "File name '/node_modules/postcss/lib/tokenize.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/tokenize.ts' does not exist.",
+              "File '/node_modules/postcss/lib/tokenize.tsx' does not exist.",
+              "Export specifier './lib/tokenize' does not exist in package.json scope at path '/node_modules/postcss'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/tokenize' with target './lib/tokenize.js'.",
+              "File name '/node_modules/postcss/lib/tokenize.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/tokenize.js' exists - use it as a name resolution result.",
+              "======== Module name 'postcss/lib/tokenize' was successfully resolved to '/node_modules/postcss/lib/tokenize.js' with Package ID 'postcss/lib/tokenize.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            40
           ]
         },
         "node16-esm": {
@@ -7491,11 +7840,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/tokenize.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -7531,8 +7875,44 @@
               "======== Module name 'postcss/lib/tokenize' was successfully resolved to '/node_modules/postcss/lib/tokenize.js' with Package ID 'postcss/lib/tokenize.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/tokenize.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/tokenize' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/tokenize' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/tokenize' with target './lib/tokenize.js'.",
+              "File name '/node_modules/postcss/lib/tokenize.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/tokenize.ts' does not exist.",
+              "File '/node_modules/postcss/lib/tokenize.tsx' does not exist.",
+              "Export specifier './lib/tokenize' does not exist in package.json scope at path '/node_modules/postcss'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/tokenize' with target './lib/tokenize.js'.",
+              "File name '/node_modules/postcss/lib/tokenize.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/tokenize.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/tokenize' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field './lib/postcss.js' that references '/node_modules/postcss/lib/tokenize/lib/postcss.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/postcss/lib/tokenize/lib/postcss.js', target file types: TypeScript.",
+              "File name '/node_modules/postcss/lib/tokenize/lib/postcss.js' has a '.js' extension - stripping it.",
+              "======== Module name 'postcss/lib/tokenize' was successfully resolved to '/node_modules/postcss/lib/tokenize.js' with Package ID 'postcss/lib/tokenize.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            41
           ]
         },
         "bundler": {
@@ -7578,8 +7958,46 @@
               "======== Module name 'postcss/lib/tokenize' was successfully resolved to '/node_modules/postcss/lib/tokenize.js' with Package ID 'postcss/lib/tokenize.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/tokenize.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/tokenize' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/tokenize' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/tokenize' with target './lib/tokenize.js'.",
+              "File name '/node_modules/postcss/lib/tokenize.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/tokenize.ts' does not exist.",
+              "File '/node_modules/postcss/lib/tokenize.tsx' does not exist.",
+              "Export specifier './lib/tokenize' does not exist in package.json scope at path '/node_modules/postcss'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/tokenize' with target './lib/tokenize.js'.",
+              "File name '/node_modules/postcss/lib/tokenize.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/tokenize.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/tokenize' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/postcss/lib/tokenize.ts' does not exist.",
+              "File '/node_modules/postcss/lib/tokenize.tsx' does not exist.",
+              "'package.json' has 'main' field './lib/postcss.js' that references '/node_modules/postcss/lib/tokenize/lib/postcss.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/postcss/lib/tokenize/lib/postcss.js', target file types: TypeScript.",
+              "File name '/node_modules/postcss/lib/tokenize/lib/postcss.js' has a '.js' extension - stripping it.",
+              "======== Module name 'postcss/lib/tokenize' was successfully resolved to '/node_modules/postcss/lib/tokenize.js' with Package ID 'postcss/lib/tokenize.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            42
           ]
         }
       },
@@ -7617,8 +8035,33 @@
               "======== Module name 'postcss/lib/warn-once' was successfully resolved to '/node_modules/postcss/lib/warn-once.js' with Package ID 'postcss/lib/warn-once.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/warn-once.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/warn-once' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'postcss/lib/warn-once' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/postcss/lib/warn-once.ts' does not exist.",
+              "File '/node_modules/postcss/lib/warn-once.tsx' does not exist.",
+              "'package.json' has 'main' field './lib/postcss.js' that references '/node_modules/postcss/lib/warn-once/lib/postcss.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/postcss/lib/warn-once/lib/postcss.js', target file types: TypeScript.",
+              "File name '/node_modules/postcss/lib/warn-once/lib/postcss.js' has a '.js' extension - stripping it.",
+              "Loading module 'postcss/lib/warn-once' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/postcss/lib/warn-once.js' exists - use it as a name resolution result.",
+              "======== Module name 'postcss/lib/warn-once' was successfully resolved to '/node_modules/postcss/lib/warn-once.js' with Package ID 'postcss/lib/warn-once.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            43
           ]
         },
         "node16-cjs": {
@@ -7626,11 +8069,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/warn-once.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -7656,8 +8094,36 @@
               "======== Module name 'postcss/lib/warn-once' was successfully resolved to '/node_modules/postcss/lib/warn-once.js' with Package ID 'postcss/lib/warn-once.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/warn-once.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/warn-once' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/warn-once' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/warn-once' with target './lib/warn-once.js'.",
+              "File name '/node_modules/postcss/lib/warn-once.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/warn-once.ts' does not exist.",
+              "File '/node_modules/postcss/lib/warn-once.tsx' does not exist.",
+              "Export specifier './lib/warn-once' does not exist in package.json scope at path '/node_modules/postcss'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/warn-once' with target './lib/warn-once.js'.",
+              "File name '/node_modules/postcss/lib/warn-once.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/warn-once.js' exists - use it as a name resolution result.",
+              "======== Module name 'postcss/lib/warn-once' was successfully resolved to '/node_modules/postcss/lib/warn-once.js' with Package ID 'postcss/lib/warn-once.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            44
           ]
         },
         "node16-esm": {
@@ -7665,11 +8131,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/warn-once.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -7705,8 +8166,44 @@
               "======== Module name 'postcss/lib/warn-once' was successfully resolved to '/node_modules/postcss/lib/warn-once.js' with Package ID 'postcss/lib/warn-once.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/warn-once.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/warn-once' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/warn-once' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/warn-once' with target './lib/warn-once.js'.",
+              "File name '/node_modules/postcss/lib/warn-once.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/warn-once.ts' does not exist.",
+              "File '/node_modules/postcss/lib/warn-once.tsx' does not exist.",
+              "Export specifier './lib/warn-once' does not exist in package.json scope at path '/node_modules/postcss'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/warn-once' with target './lib/warn-once.js'.",
+              "File name '/node_modules/postcss/lib/warn-once.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/warn-once.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/warn-once' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field './lib/postcss.js' that references '/node_modules/postcss/lib/warn-once/lib/postcss.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/postcss/lib/warn-once/lib/postcss.js', target file types: TypeScript.",
+              "File name '/node_modules/postcss/lib/warn-once/lib/postcss.js' has a '.js' extension - stripping it.",
+              "======== Module name 'postcss/lib/warn-once' was successfully resolved to '/node_modules/postcss/lib/warn-once.js' with Package ID 'postcss/lib/warn-once.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            45
           ]
         },
         "bundler": {
@@ -7752,8 +8249,46 @@
               "======== Module name 'postcss/lib/warn-once' was successfully resolved to '/node_modules/postcss/lib/warn-once.js' with Package ID 'postcss/lib/warn-once.js@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/lib/warn-once.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/lib/warn-once' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/warn-once' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/warn-once' with target './lib/warn-once.js'.",
+              "File name '/node_modules/postcss/lib/warn-once.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/warn-once.ts' does not exist.",
+              "File '/node_modules/postcss/lib/warn-once.tsx' does not exist.",
+              "Export specifier './lib/warn-once' does not exist in package.json scope at path '/node_modules/postcss'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './lib/warn-once' with target './lib/warn-once.js'.",
+              "File name '/node_modules/postcss/lib/warn-once.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/postcss/lib/warn-once.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/lib/warn-once' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/postcss/lib/warn-once.ts' does not exist.",
+              "File '/node_modules/postcss/lib/warn-once.tsx' does not exist.",
+              "'package.json' has 'main' field './lib/postcss.js' that references '/node_modules/postcss/lib/warn-once/lib/postcss.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/postcss/lib/warn-once/lib/postcss.js', target file types: TypeScript.",
+              "File name '/node_modules/postcss/lib/warn-once/lib/postcss.js' has a '.js' extension - stripping it.",
+              "======== Module name 'postcss/lib/warn-once' was successfully resolved to '/node_modules/postcss/lib/warn-once.js' with Package ID 'postcss/lib/warn-once.js@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts"
+          ],
+          "visibleProblems": [
+            46
           ]
         }
       },
@@ -7824,6 +8359,9 @@
             "/node_modules/postcss/lib/input.d.ts",
             "/node_modules/postcss/lib/css-syntax-error.d.ts",
             "/node_modules/postcss/lib/warning.d.ts"
+          ],
+          "visibleProblems": [
+            47
           ]
         },
         "node16-cjs": {
@@ -7831,11 +8369,6 @@
           "resolutionKind": "node16-cjs",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/warning.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -7856,11 +8389,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/warning.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -7904,6 +8432,9 @@
             "/node_modules/postcss/lib/input.d.ts",
             "/node_modules/postcss/lib/css-syntax-error.d.ts",
             "/node_modules/postcss/lib/warning.d.ts"
+          ],
+          "visibleProblems": [
+            47
           ]
         },
         "node16-esm": {
@@ -7911,11 +8442,6 @@
           "resolutionKind": "node16-esm",
           "resolution": {
             "fileName": "/node_modules/postcss/lib/warning.d.ts",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": true,
             "trace": [
@@ -7936,11 +8462,6 @@
           },
           "implementationResolution": {
             "fileName": "/node_modules/postcss/lib/warning.js",
-            "moduleKind": {
-              "detectedKind": 1,
-              "detectedReason": "no:type",
-              "reasonFileName": "/node_modules/postcss/package.json"
-            },
             "isJson": false,
             "isTypeScript": false,
             "trace": [
@@ -7992,6 +8513,9 @@
             "/node_modules/postcss/lib/input.d.ts",
             "/node_modules/postcss/lib/css-syntax-error.d.ts",
             "/node_modules/postcss/lib/warning.d.ts"
+          ],
+          "visibleProblems": [
+            47
           ]
         },
         "bundler": {
@@ -8072,6 +8596,9 @@
             "/node_modules/postcss/lib/input.d.ts",
             "/node_modules/postcss/lib/css-syntax-error.d.ts",
             "/node_modules/postcss/lib/warning.d.ts"
+          ],
+          "visibleProblems": [
+            47
           ]
         }
       },
@@ -8113,10 +8640,35 @@
               "======== Module name 'postcss/package.json' was successfully resolved to '/node_modules/postcss/package.json' with Package ID 'postcss/package.json@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'postcss/package.json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/postcss/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/postcss/package.json.ts' does not exist.",
+              "File '/node_modules/postcss/package.json.tsx' does not exist.",
+              "'package.json' has 'main' field './lib/postcss.js' that references '/node_modules/postcss/package.json/lib/postcss.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/postcss/package.json/lib/postcss.js', target file types: TypeScript.",
+              "File name '/node_modules/postcss/package.json/lib/postcss.js' has a '.js' extension - stripping it.",
+              "Loading module 'postcss/package.json' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/postcss/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/postcss/package.json' exists - use it as a name resolution result.",
+              "======== Module name 'postcss/package.json' was successfully resolved to '/node_modules/postcss/package.json' with Package ID 'postcss/package.json@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/postcss/package.json"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": "./package.json",
@@ -8147,10 +8699,34 @@
               "======== Module name 'postcss/package.json' was successfully resolved to '/node_modules/postcss/package.json' with Package ID 'postcss/package.json@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/postcss/package.json' has a '.json' extension - stripping it.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/postcss'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/postcss/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/postcss/package.json' exists - use it as a name resolution result.",
+              "======== Module name 'postcss/package.json' was successfully resolved to '/node_modules/postcss/package.json' with Package ID 'postcss/package.json@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/postcss/package.json"
-          ]
+          ],
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": "./package.json",
@@ -8194,10 +8770,43 @@
               "======== Module name 'postcss/package.json' was successfully resolved to '/node_modules/postcss/package.json' with Package ID 'postcss/package.json@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/package.json' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/postcss/package.json' has a '.json' extension - stripping it.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/postcss'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/postcss/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/postcss/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/package.json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/postcss/package.json' has a '.json' extension - stripping it.",
+              "'package.json' has 'main' field './lib/postcss.js' that references '/node_modules/postcss/package.json/lib/postcss.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/postcss/package.json/lib/postcss.js', target file types: TypeScript.",
+              "File name '/node_modules/postcss/package.json/lib/postcss.js' has a '.js' extension - stripping it.",
+              "======== Module name 'postcss/package.json' was successfully resolved to '/node_modules/postcss/package.json' with Package ID 'postcss/package.json@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/postcss/package.json"
-          ]
+          ],
+          "visibleProblems": []
         },
         "bundler": {
           "name": "./package.json",
@@ -8244,241 +8853,394 @@
               "======== Module name 'postcss/package.json' was successfully resolved to '/node_modules/postcss/package.json' with Package ID 'postcss/package.json@8.4.21'. ========"
             ]
           },
+          "implementationResolution": {
+            "fileName": "/node_modules/postcss/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'postcss/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/postcss/package.json' has a '.json' extension - stripping it.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/postcss'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/postcss/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/postcss/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'postcss/package.json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/postcss/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/postcss/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/postcss/package.json.ts' does not exist.",
+              "File '/node_modules/postcss/package.json.tsx' does not exist.",
+              "'package.json' has 'main' field './lib/postcss.js' that references '/node_modules/postcss/package.json/lib/postcss.js'.",
+              "Loading module as file / folder, candidate module location '/node_modules/postcss/package.json/lib/postcss.js', target file types: TypeScript.",
+              "File name '/node_modules/postcss/package.json/lib/postcss.js' has a '.js' extension - stripping it.",
+              "======== Module name 'postcss/package.json' was successfully resolved to '/node_modules/postcss/package.json' with Package ID 'postcss/package.json@8.4.21'. ========"
+            ]
+          },
           "files": [
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/postcss/package.json"
-          ]
+          ],
+          "visibleProblems": []
         }
       },
       "hasTypes": false,
       "isWildcard": false
     }
   },
+  "programInfo": {
+    "node10": {},
+    "node16": {
+      "moduleKinds": {
+        "/node_modules/typescript/lib/lib.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/typescript/lib/lib.d.ts"
+        },
+        "/node_modules/postcss/lib/comment.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/at-rule.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/rule.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/container.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/declaration.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/previous-map.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/input.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/css-syntax-error.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/warning.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/document.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/root.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/lazy-result.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/no-work-result.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/processor.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/result.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/node.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/list.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/postcss.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/postcss.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/at-rule.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/comment.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/container.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/css-syntax-error.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/declaration.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/fromJSON.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/fromJSON.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/input.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/lazy-result.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/no-work-result.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/list.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/map-generator.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/node.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/parse.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/parse.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/parser.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/previous-map.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/processor.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/result.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/root.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/rule.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/stringifier.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/stringifier.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/stringify.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/stringify.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/symbols.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/terminal-highlight.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/tokenize.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/warn-once.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/warning.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/postcss/package.json"
+        },
+        "/node_modules/postcss/lib/postcss.mjs": {
+          "detectedKind": 99,
+          "detectedReason": "extension",
+          "reasonFileName": "/node_modules/postcss/lib/postcss.mjs"
+        }
+      }
+    },
+    "bundler": {}
+  },
   "problems": [
     {
       "kind": "MissingExportEquals",
-      "entrypoint": ".",
-      "resolutionKind": "node10"
+      "typesFileName": "/node_modules/postcss/lib/postcss.d.ts",
+      "implementationFileName": "/node_modules/postcss/lib/postcss.js"
     },
     {
-      "kind": "MissingExportEquals",
+      "kind": "FallbackCondition",
       "entrypoint": ".",
-      "resolutionKind": "node16-cjs"
+      "resolutionKind": "node16-esm"
     },
     {
       "kind": "FalseCJS",
-      "entrypoint": ".",
-      "resolutionKind": "node16-esm"
+      "typesFileName": "/node_modules/postcss/lib/postcss.d.ts",
+      "implementationFileName": "/node_modules/postcss/lib/postcss.mjs",
+      "typesModuleKind": {
+        "detectedKind": 1,
+        "detectedReason": "no:type",
+        "reasonFileName": "/node_modules/postcss/package.json"
+      },
+      "implementationModuleKind": {
+        "detectedKind": 99,
+        "detectedReason": "extension",
+        "reasonFileName": "/node_modules/postcss/lib/postcss.mjs"
+      }
     },
     {
       "kind": "FallbackCondition",
       "entrypoint": ".",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "FallbackCondition",
-      "entrypoint": ".",
       "resolutionKind": "bundler"
     },
     {
       "kind": "MissingExportEquals",
-      "entrypoint": "./lib/at-rule",
-      "resolutionKind": "node10"
+      "typesFileName": "/node_modules/postcss/lib/at-rule.d.ts",
+      "implementationFileName": "/node_modules/postcss/lib/at-rule.js"
     },
     {
       "kind": "MissingExportEquals",
-      "entrypoint": "./lib/at-rule",
-      "resolutionKind": "node16-cjs"
+      "typesFileName": "/node_modules/postcss/lib/comment.d.ts",
+      "implementationFileName": "/node_modules/postcss/lib/comment.js"
     },
     {
       "kind": "MissingExportEquals",
-      "entrypoint": "./lib/at-rule",
-      "resolutionKind": "node16-esm"
+      "typesFileName": "/node_modules/postcss/lib/container.d.ts",
+      "implementationFileName": "/node_modules/postcss/lib/container.js"
     },
     {
       "kind": "MissingExportEquals",
-      "entrypoint": "./lib/at-rule",
-      "resolutionKind": "bundler"
+      "typesFileName": "/node_modules/postcss/lib/css-syntax-error.d.ts",
+      "implementationFileName": "/node_modules/postcss/lib/css-syntax-error.js"
     },
     {
       "kind": "MissingExportEquals",
-      "entrypoint": "./lib/comment",
-      "resolutionKind": "node10"
+      "typesFileName": "/node_modules/postcss/lib/declaration.d.ts",
+      "implementationFileName": "/node_modules/postcss/lib/declaration.js"
     },
     {
       "kind": "MissingExportEquals",
-      "entrypoint": "./lib/comment",
-      "resolutionKind": "node16-cjs"
+      "typesFileName": "/node_modules/postcss/lib/fromJSON.d.ts",
+      "implementationFileName": "/node_modules/postcss/lib/fromJSON.js"
     },
     {
       "kind": "MissingExportEquals",
-      "entrypoint": "./lib/comment",
-      "resolutionKind": "node16-esm"
+      "typesFileName": "/node_modules/postcss/lib/input.d.ts",
+      "implementationFileName": "/node_modules/postcss/lib/input.js"
     },
     {
       "kind": "MissingExportEquals",
-      "entrypoint": "./lib/comment",
-      "resolutionKind": "bundler"
+      "typesFileName": "/node_modules/postcss/lib/lazy-result.d.ts",
+      "implementationFileName": "/node_modules/postcss/lib/lazy-result.js"
     },
     {
       "kind": "MissingExportEquals",
-      "entrypoint": "./lib/container",
-      "resolutionKind": "node10"
+      "typesFileName": "/node_modules/postcss/lib/no-work-result.d.ts",
+      "implementationFileName": "/node_modules/postcss/lib/no-work-result.js"
     },
     {
       "kind": "MissingExportEquals",
-      "entrypoint": "./lib/container",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/container",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/container",
-      "resolutionKind": "bundler"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/css-syntax-error",
-      "resolutionKind": "node10"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/css-syntax-error",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/css-syntax-error",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/css-syntax-error",
-      "resolutionKind": "bundler"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/declaration",
-      "resolutionKind": "node10"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/declaration",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/declaration",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/declaration",
-      "resolutionKind": "bundler"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/fromJSON",
-      "resolutionKind": "node10"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/fromJSON",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/fromJSON",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/fromJSON",
-      "resolutionKind": "bundler"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/input",
-      "resolutionKind": "node10"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/input",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/input",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/input",
-      "resolutionKind": "bundler"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/lazy-result",
-      "resolutionKind": "node10"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/lazy-result",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/lazy-result",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/lazy-result",
-      "resolutionKind": "bundler"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/no-work-result",
-      "resolutionKind": "node10"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/no-work-result",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/no-work-result",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/no-work-result",
-      "resolutionKind": "bundler"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/list",
-      "resolutionKind": "node10"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/list",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/list",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/list",
-      "resolutionKind": "bundler"
+      "typesFileName": "/node_modules/postcss/lib/list.d.ts",
+      "implementationFileName": "/node_modules/postcss/lib/list.js"
     },
     {
       "kind": "UntypedResolution",
@@ -8502,43 +9264,13 @@
     },
     {
       "kind": "MissingExportEquals",
-      "entrypoint": "./lib/node",
-      "resolutionKind": "node10"
+      "typesFileName": "/node_modules/postcss/lib/node.d.ts",
+      "implementationFileName": "/node_modules/postcss/lib/node.js"
     },
     {
       "kind": "MissingExportEquals",
-      "entrypoint": "./lib/node",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/node",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/node",
-      "resolutionKind": "bundler"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/parse",
-      "resolutionKind": "node10"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/parse",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/parse",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/parse",
-      "resolutionKind": "bundler"
+      "typesFileName": "/node_modules/postcss/lib/parse.d.ts",
+      "implementationFileName": "/node_modules/postcss/lib/parse.js"
     },
     {
       "kind": "UntypedResolution",
@@ -8562,163 +9294,38 @@
     },
     {
       "kind": "MissingExportEquals",
-      "entrypoint": "./lib/postcss",
-      "resolutionKind": "node10"
+      "typesFileName": "/node_modules/postcss/lib/previous-map.d.ts",
+      "implementationFileName": "/node_modules/postcss/lib/previous-map.js"
     },
     {
       "kind": "MissingExportEquals",
-      "entrypoint": "./lib/postcss",
-      "resolutionKind": "node16-cjs"
+      "typesFileName": "/node_modules/postcss/lib/processor.d.ts",
+      "implementationFileName": "/node_modules/postcss/lib/processor.js"
     },
     {
       "kind": "MissingExportEquals",
-      "entrypoint": "./lib/postcss",
-      "resolutionKind": "node16-esm"
+      "typesFileName": "/node_modules/postcss/lib/result.d.ts",
+      "implementationFileName": "/node_modules/postcss/lib/result.js"
     },
     {
       "kind": "MissingExportEquals",
-      "entrypoint": "./lib/postcss",
-      "resolutionKind": "bundler"
+      "typesFileName": "/node_modules/postcss/lib/root.d.ts",
+      "implementationFileName": "/node_modules/postcss/lib/root.js"
     },
     {
       "kind": "MissingExportEquals",
-      "entrypoint": "./lib/previous-map",
-      "resolutionKind": "node10"
+      "typesFileName": "/node_modules/postcss/lib/rule.d.ts",
+      "implementationFileName": "/node_modules/postcss/lib/rule.js"
     },
     {
       "kind": "MissingExportEquals",
-      "entrypoint": "./lib/previous-map",
-      "resolutionKind": "node16-cjs"
+      "typesFileName": "/node_modules/postcss/lib/stringifier.d.ts",
+      "implementationFileName": "/node_modules/postcss/lib/stringifier.js"
     },
     {
       "kind": "MissingExportEquals",
-      "entrypoint": "./lib/previous-map",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/previous-map",
-      "resolutionKind": "bundler"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/processor",
-      "resolutionKind": "node10"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/processor",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/processor",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/processor",
-      "resolutionKind": "bundler"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/result",
-      "resolutionKind": "node10"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/result",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/result",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/result",
-      "resolutionKind": "bundler"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/root",
-      "resolutionKind": "node10"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/root",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/root",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/root",
-      "resolutionKind": "bundler"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/rule",
-      "resolutionKind": "node10"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/rule",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/rule",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/rule",
-      "resolutionKind": "bundler"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/stringifier",
-      "resolutionKind": "node10"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/stringifier",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/stringifier",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/stringifier",
-      "resolutionKind": "bundler"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/stringify",
-      "resolutionKind": "node10"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/stringify",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/stringify",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/stringify",
-      "resolutionKind": "bundler"
+      "typesFileName": "/node_modules/postcss/lib/stringify.d.ts",
+      "implementationFileName": "/node_modules/postcss/lib/stringify.js"
     },
     {
       "kind": "UntypedResolution",
@@ -8802,23 +9409,8 @@
     },
     {
       "kind": "MissingExportEquals",
-      "entrypoint": "./lib/warning",
-      "resolutionKind": "node10"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/warning",
-      "resolutionKind": "node16-cjs"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/warning",
-      "resolutionKind": "node16-esm"
-    },
-    {
-      "kind": "MissingExportEquals",
-      "entrypoint": "./lib/warning",
-      "resolutionKind": "bundler"
+      "typesFileName": "/node_modules/postcss/lib/warning.d.ts",
+      "implementationFileName": "/node_modules/postcss/lib/warning.js"
     }
   ]
 }
