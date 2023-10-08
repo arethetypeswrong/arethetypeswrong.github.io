@@ -22,13 +22,13 @@ export default defineCheck({
     const host = context.hosts.findHostForFiles([typesFileName])!;
     const typesSourceFile = host.getSourceFile(typesFileName)!;
     ts.bindSourceFile(typesSourceFile, bindOptions);
-    const typesExports = typesSourceFile.symbol.exports;
+    const typesExports = typesSourceFile.symbol?.exports;
     if (!typesExports) {
       return;
     }
     const implementationSourceFile = host.getSourceFile(implementationFileName)!;
     ts.bindSourceFile(implementationSourceFile, bindOptions);
-    const implExports = implementationSourceFile.symbol.exports;
+    const implExports = implementationSourceFile.symbol?.exports;
     if (!implExports) {
       return;
     }

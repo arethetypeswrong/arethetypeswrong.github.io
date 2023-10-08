@@ -1,0 +1,335 @@
+{
+  "packageName": "emoji-regex",
+  "packageVersion": "10.0.0",
+  "types": {
+    "kind": "included"
+  },
+  "buildTools": {},
+  "entrypoints": {
+    ".": {
+      "subpath": ".",
+      "resolutions": {
+        "node10": {
+          "name": ".",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/emoji-regex/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'emoji-regex' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'emoji-regex' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/emoji-regex/package.json'.",
+              "File '/node_modules/emoji-regex.ts' does not exist.",
+              "File '/node_modules/emoji-regex.tsx' does not exist.",
+              "File '/node_modules/emoji-regex.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'index.d.ts' that references '/node_modules/emoji-regex/index.d.ts'.",
+              "File '/node_modules/emoji-regex/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'emoji-regex' was successfully resolved to '/node_modules/emoji-regex/index.d.ts' with Package ID 'emoji-regex/index.d.ts@10.0.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/emoji-regex/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'emoji-regex' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'emoji-regex' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/emoji-regex/package.json'.",
+              "File '/node_modules/emoji-regex.ts' does not exist.",
+              "File '/node_modules/emoji-regex.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/emoji-regex/index.js'.",
+              "File '/node_modules/emoji-regex/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/emoji-regex/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/emoji-regex/index.js', target file types: TypeScript.",
+              "File name '/node_modules/emoji-regex/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/emoji-regex/index.ts' does not exist.",
+              "File '/node_modules/emoji-regex/index.tsx' does not exist.",
+              "File '/node_modules/emoji-regex/index.js.ts' does not exist.",
+              "File '/node_modules/emoji-regex/index.js.tsx' does not exist.",
+              "Directory '/node_modules/emoji-regex/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/emoji-regex/index.ts' does not exist.",
+              "File '/node_modules/emoji-regex/index.tsx' does not exist.",
+              "Loading module 'emoji-regex' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/emoji-regex/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/emoji-regex.js' does not exist.",
+              "File '/node_modules/emoji-regex.jsx' does not exist.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/emoji-regex/index.js'.",
+              "File '/node_modules/emoji-regex/index.js' exists - use it as a name resolution result.",
+              "======== Module name 'emoji-regex' was successfully resolved to '/node_modules/emoji-regex/index.js' with Package ID 'emoji-regex/index.js@10.0.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/emoji-regex/index.d.ts"
+          ],
+          "visibleProblems": []
+        },
+        "node16-cjs": {
+          "name": ".",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/emoji-regex/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'emoji-regex' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'emoji-regex' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/emoji-regex/package.json'.",
+              "File '/node_modules/emoji-regex.ts' does not exist.",
+              "File '/node_modules/emoji-regex.tsx' does not exist.",
+              "File '/node_modules/emoji-regex.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'index.d.ts' that references '/node_modules/emoji-regex/index.d.ts'.",
+              "File '/node_modules/emoji-regex/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'emoji-regex' was successfully resolved to '/node_modules/emoji-regex/index.d.ts' with Package ID 'emoji-regex/index.d.ts@10.0.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/emoji-regex/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'emoji-regex' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'emoji-regex' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/emoji-regex/package.json'.",
+              "File '/node_modules/emoji-regex.ts' does not exist.",
+              "File '/node_modules/emoji-regex.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/emoji-regex/index.js'.",
+              "File '/node_modules/emoji-regex/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/emoji-regex/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/emoji-regex/index.js', target file types: TypeScript.",
+              "File name '/node_modules/emoji-regex/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/emoji-regex/index.ts' does not exist.",
+              "File '/node_modules/emoji-regex/index.tsx' does not exist.",
+              "File '/node_modules/emoji-regex/index.js.ts' does not exist.",
+              "File '/node_modules/emoji-regex/index.js.tsx' does not exist.",
+              "Directory '/node_modules/emoji-regex/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/emoji-regex/index.ts' does not exist.",
+              "File '/node_modules/emoji-regex/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/emoji-regex/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/emoji-regex.js' does not exist.",
+              "File '/node_modules/emoji-regex.jsx' does not exist.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/emoji-regex/index.js'.",
+              "File '/node_modules/emoji-regex/index.js' exists - use it as a name resolution result.",
+              "======== Module name 'emoji-regex' was successfully resolved to '/node_modules/emoji-regex/index.js' with Package ID 'emoji-regex/index.js@10.0.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/emoji-regex/index.d.ts"
+          ],
+          "visibleProblems": []
+        },
+        "node16-esm": {
+          "name": ".",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/emoji-regex/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'emoji-regex' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'emoji-regex' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/emoji-regex/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'index.d.ts' that references '/node_modules/emoji-regex/index.d.ts'.",
+              "File '/node_modules/emoji-regex/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'emoji-regex' was successfully resolved to '/node_modules/emoji-regex/index.d.ts' with Package ID 'emoji-regex/index.d.ts@10.0.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/emoji-regex/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'emoji-regex' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'emoji-regex' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/emoji-regex/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/emoji-regex/index.js'.",
+              "File '/node_modules/emoji-regex/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/emoji-regex/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/emoji-regex/index.js', target file types: TypeScript.",
+              "File name '/node_modules/emoji-regex/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/emoji-regex/index.ts' does not exist.",
+              "File '/node_modules/emoji-regex/index.tsx' does not exist.",
+              "File '/node_modules/emoji-regex/index.js.ts' does not exist.",
+              "File '/node_modules/emoji-regex/index.js.tsx' does not exist.",
+              "Directory '/node_modules/emoji-regex/index.js' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/emoji-regex/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/emoji-regex/index.ts' does not exist.",
+              "File '/node_modules/emoji-regex/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/emoji-regex/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/emoji-regex/index.js'.",
+              "File '/node_modules/emoji-regex/index.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'emoji-regex' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/emoji-regex/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/emoji-regex/index.js'.",
+              "File '/node_modules/emoji-regex/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/emoji-regex/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/emoji-regex/index.js', target file types: TypeScript.",
+              "File name '/node_modules/emoji-regex/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/emoji-regex/index.ts' does not exist.",
+              "File '/node_modules/emoji-regex/index.tsx' does not exist.",
+              "File '/node_modules/emoji-regex/index.js.ts' does not exist.",
+              "File '/node_modules/emoji-regex/index.js.tsx' does not exist.",
+              "Directory '/node_modules/emoji-regex/index.js' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/emoji-regex/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/emoji-regex/index.ts' does not exist.",
+              "File '/node_modules/emoji-regex/index.tsx' does not exist.",
+              "======== Module name 'emoji-regex' was successfully resolved to '/node_modules/emoji-regex/index.js' with Package ID 'emoji-regex/index.js@10.0.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/emoji-regex/index.d.ts"
+          ],
+          "visibleProblems": []
+        },
+        "bundler": {
+          "name": ".",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/emoji-regex/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'emoji-regex' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'emoji-regex' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/emoji-regex/package.json'.",
+              "File '/node_modules/emoji-regex.ts' does not exist.",
+              "File '/node_modules/emoji-regex.tsx' does not exist.",
+              "File '/node_modules/emoji-regex.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'index.d.ts' that references '/node_modules/emoji-regex/index.d.ts'.",
+              "File '/node_modules/emoji-regex/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'emoji-regex' was successfully resolved to '/node_modules/emoji-regex/index.d.ts' with Package ID 'emoji-regex/index.d.ts@10.0.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/emoji-regex/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'emoji-regex' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'emoji-regex' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/emoji-regex/package.json'.",
+              "File '/node_modules/emoji-regex.ts' does not exist.",
+              "File '/node_modules/emoji-regex.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/emoji-regex/index.js'.",
+              "File '/node_modules/emoji-regex/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/emoji-regex/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/emoji-regex/index.js', target file types: TypeScript.",
+              "File name '/node_modules/emoji-regex/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/emoji-regex/index.ts' does not exist.",
+              "File '/node_modules/emoji-regex/index.tsx' does not exist.",
+              "File '/node_modules/emoji-regex/index.js.ts' does not exist.",
+              "File '/node_modules/emoji-regex/index.js.tsx' does not exist.",
+              "Directory '/node_modules/emoji-regex/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/emoji-regex/index.ts' does not exist.",
+              "File '/node_modules/emoji-regex/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/emoji-regex/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/emoji-regex.js' does not exist.",
+              "File '/node_modules/emoji-regex.jsx' does not exist.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/emoji-regex/index.js'.",
+              "File '/node_modules/emoji-regex/index.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'emoji-regex' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/emoji-regex/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/emoji-regex.ts' does not exist.",
+              "File '/node_modules/emoji-regex.tsx' does not exist.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/emoji-regex/index.js'.",
+              "File '/node_modules/emoji-regex/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/emoji-regex/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/emoji-regex/index.js', target file types: TypeScript.",
+              "File name '/node_modules/emoji-regex/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/emoji-regex/index.ts' does not exist.",
+              "File '/node_modules/emoji-regex/index.tsx' does not exist.",
+              "File '/node_modules/emoji-regex/index.js.ts' does not exist.",
+              "File '/node_modules/emoji-regex/index.js.tsx' does not exist.",
+              "Directory '/node_modules/emoji-regex/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/emoji-regex/index.ts' does not exist.",
+              "File '/node_modules/emoji-regex/index.tsx' does not exist.",
+              "======== Module name 'emoji-regex' was successfully resolved to '/node_modules/emoji-regex/index.js' with Package ID 'emoji-regex/index.js@10.0.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/emoji-regex/index.d.ts"
+          ],
+          "visibleProblems": []
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    }
+  },
+  "programInfo": {
+    "node10": {},
+    "node16": {
+      "moduleKinds": {
+        "/node_modules/typescript/lib/lib.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/typescript/lib/lib.d.ts"
+        },
+        "/node_modules/emoji-regex/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/emoji-regex/package.json"
+        },
+        "/node_modules/emoji-regex/index.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/emoji-regex/package.json"
+        }
+      }
+    },
+    "bundler": {}
+  },
+  "problems": []
+}
