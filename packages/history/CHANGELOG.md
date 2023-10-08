@@ -1,5 +1,11 @@
 # @arethetypeswrong/history
 
+## 0.4.0
+
+### Minor Changes
+
+- 5fb9053: October 1 data
+
 ## 0.3.0
 
 ### Minor Changes
