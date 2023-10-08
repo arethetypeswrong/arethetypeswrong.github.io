@@ -190,9 +190,13 @@ export default function checkPackages(
       }
     }
 
-    process.on("SIGINT", async () => {
-      await Promise.all(workers.map((worker) => worker.terminate()));
-      reject(new Error("SIGINT"));
-    });
+    process.on("SIGINT", kill);
+  }).finally(() => {
+    process.off("SIGINT", kill);
   });
+
+  async function kill() {
+    await Promise.all(workers.map((worker) => worker.terminate()));
+    throw new Error("SIGINT");
+  }
 }
