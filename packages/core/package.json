@@ -47,7 +47,7 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@andrewbranch/untar.js": "^1.0.0",
+    "@andrewbranch/untar.js": "^1.0.3",
     "fetch-ponyfill": "^7.1.0",
     "fflate": "^0.7.4",
     "semver": "^7.5.4",
