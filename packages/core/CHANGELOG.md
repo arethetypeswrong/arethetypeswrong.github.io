@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.12.2
+
+### Patch Changes
+
+- abbb896: Update @andrewbranch/untar.js to fix bug where long filenames could be missing a slash after unpacking, causing false positive resolution errors.
+
 ## 0.12.1
 
 ### Patch Changes
