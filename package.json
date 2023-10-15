@@ -22,8 +22,5 @@
     "esbuild": "^0.18.12",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
-  },
-  "volta": {
-    "node": "19.8.1"
   }
 }

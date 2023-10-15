@@ -3,7 +3,6 @@ import cliProgress from "cli-progress";
 import { appendFileSync, createReadStream, createWriteStream } from "fs";
 import { open, readFile, rename, stat, unlink, writeFile } from "fs/promises";
 import { createRequire } from "module";
-import fetch from "node-fetch";
 import { npmHighImpact } from "npm-high-impact";
 import os from "os";
 import pacote from "pacote";
