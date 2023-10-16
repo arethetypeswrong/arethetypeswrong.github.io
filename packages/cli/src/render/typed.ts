@@ -15,10 +15,7 @@ export async function typed(analysis: core.Analysis, opts: Opts) {
   const grouped = groupProblemsByKind(problems);
   const entrypoints = Object.keys(analysis.entrypoints);
   marked.setOptions({
-    // @ts-expect-error the types are wrong (haha)
     renderer: new TerminalRenderer(),
-    mangle: false,
-    headerIds: false,
   });
 
   console.log(`${analysis.packageName} v${analysis.packageVersion}`);

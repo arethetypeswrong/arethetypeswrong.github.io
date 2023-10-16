@@ -1,6 +1,20 @@
 # arethetypeswrong/cli
 
-A CLI wrapper for [arethetypeswrong](https://arethetypeswrong.github.io/).
+A CLI for [arethetypeswrong.github.io](https://arethetypeswrong.github.io/).
+
+This project attempts to analyze npm package contents for issues with their TypeScript types, particularly ESM-related module resolution issues. The following kinds of problems can be detected in the `node10`, `node16`, and `bundler` module resolution modes:
+
+* [💀 Resolution failed](https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/NoResolution.md)
+* [❌ No types](https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/UntypedResolution.md)
+* [🎭 Masquerading as CJS](https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseCJS.md)
+* [👺 Masquerading as ESM](https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseESM.md)
+* [⚠️ ESM (dynamic import only)](https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/CJSResolvesToESM.md)
+* [🐛 Used fallback condition](https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FallbackCondition.md)
+* [🤨 CJS default export](https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/CJSOnlyExportsDefault.md)
+* [❗️ Incorrect default export](https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseExportDefault.md)
+* [❓ Missing `export =`](https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/MissingExportEquals.md)
+* [🚭 Unexpected module syntax](https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/UnexpectedModuleSyntax.md)
+* [🥴 Internal resolution error](https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/InternalResolutionError.md)
 
 ## Installation
 

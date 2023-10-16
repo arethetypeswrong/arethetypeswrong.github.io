@@ -1,13 +1,21 @@
 {
   "name": "@arethetypeswrong/history",
   "version": "0.4.0",
-  "type": "module",
+  "license": "MIT",
+  "author": "Andrew Branch",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arethetypeswrong/arethetypeswrong.github.io.git",
+    "directory": "packages/history"
+  },
   "files": [
+    "LICENSE",
     "src",
     "lib",
     "./data/full.json.gz",
     "./data/dates.json"
   ],
+  "type": "module",
   "exports": {
     ".": {
       "types": "./lib/main.d.ts",
@@ -19,23 +27,24 @@
     }
   },
   "scripts": {
-    "build": "tsc -b",
+    "tsc": "tsc -b",
     "build:scripts": "tsc -b scripts",
-    "pregenerate": "npm run build:scripts",
+    "pregenerate": "pnpm build:scripts",
     "generate": "tsx scripts/generateFull.ts",
-    "prepublishOnly": "npm run build && npm run generate"
+    "prepublishOnly": "pnpm tsc && pnpm generate"
+  },
+  "dependencies": {
+    "@arethetypeswrong/core": "0.12.2"
   },
   "devDependencies": {
     "@arethetypeswrong/core": "file:../core",
     "@azure/storage-blob": "^12.14.0",
     "@types/cli-progress": "^3.11.0",
-    "@types/node": "^20.3.1",
-    "@types/node-fetch": "^2.6.4",
+    "@types/node": "^20.8.6",
     "@types/pacote": "^11.1.5",
     "@types/semver": "^7.5.0",
     "cli-progress": "^3.12.0",
     "dotenv": "^16.3.1",
-    "node-fetch": "^3.3.2",
     "npm-high-impact": "^1.3.0",
     "pacote": "^15.2.0",
     "semver": "^7.5.3",
@@ -43,5 +52,8 @@
     "tsx": "^3.12.7",
     "types-registry": "latest",
     "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }

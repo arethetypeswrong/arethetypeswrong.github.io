@@ -8,7 +8,6 @@ import { execSync } from "child_process";
 import { Option, program } from "commander";
 import { readFile, stat, unlink } from "fs/promises";
 import { createRequire } from "module";
-import { FetchError } from "node-fetch";
 import path from "path";
 import readline from "readline";
 import { problemFlags } from "./problemUtils.js";
@@ -134,8 +133,8 @@ particularly ESM-related module resolution issues.`
           });
         }
       } catch (error) {
-        if (error instanceof FetchError) {
-          program.error(`error while fetching package:\n${error.message}`, { code: error.code });
+        if (error instanceof Error && "code" in error) {
+          program.error(`error while fetching package:\n${error.message}`, { code: "" + error.code });
         }
 
         handleError(error, "checking package");

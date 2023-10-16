@@ -2,21 +2,18 @@
   "name": "@arethetypeswrong/web",
   "version": "0.0.1",
   "private": true,
-  "description": "",
   "type": "module",
   "main": "index.js",
   "scripts": {
     "tsc": "tsc -b",
     "build": "vite build",
-    "start": "vite dev",
-    "patch": "npm version patch && npm run commit-patch",
-    "commit-patch": "git commit -am \"Bump web to v$npm_package_version\" && git tag \"web-v$npm_package_version\""
+    "start": "vite dev"
   },
   "author": "Andrew Branch",
   "license": "MIT",
   "dependencies": {
     "@andrewbranch/json-view": "^1.0.1",
-    "@arethetypeswrong/core": "file:../core",
+    "@arethetypeswrong/core": "workspace:../core",
     "immer": "^9.0.21",
     "marked": "^5.1.0",
     "nprogress": "^0.2.0"

@@ -10,6 +10,7 @@
     "directory": "packages/core"
   },
   "files": [
+    "LICENSE",
     "dist",
     "src"
   ],
@@ -21,7 +22,7 @@
     "pretest": "tsc -b test",
     "test": "node --test test/dist",
     "snapshot": "node scripts/createSnapshotFixture.js",
-    "prepublishOnly": "npm run tsc && npm run test"
+    "prepack": "pnpm tsc"
   },
   "type": "module",
   "exports": {
@@ -48,19 +49,18 @@
   },
   "dependencies": {
     "@andrewbranch/untar.js": "^1.0.3",
-    "fetch-ponyfill": "^7.1.0",
     "fflate": "^0.7.4",
     "semver": "^7.5.4",
     "typescript": "^5.2.2",
     "validate-npm-package-name": "^5.0.0"
   },
   "devDependencies": {
-    "@types/node": "^18.15.11",
+    "@types/node": "^20.8.6",
     "@types/semver": "^7.5.0",
     "@types/ts-expose-internals": "npm:ts-expose-internals@5.2.2",
     "@types/validate-npm-package-name": "^4.0.0"
   },
-  "volta": {
-    "node": "19.8.1"
+  "engines": {
+    "node": ">=18"
   }
 }
