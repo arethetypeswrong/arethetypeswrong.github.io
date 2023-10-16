@@ -8,19 +8,18 @@
   "license": "MIT",
   "scripts": {
     "tsc": "tsc -b",
-    "build": "npm run tsc && npm run build --workspaces --if-present",
+    "build": "pnpm tsc && pnpm -r build",
     "format": "prettier --write \"**/*.{ts,json,css}\"",
-    "test": "npm test --workspaces --if-present",
-    "start": "npm start -w @arethetypeswrong/web"
+    "test": "pnpm -r test",
+    "start": "pnpm --filter @arethetypeswrong/web start"
   },
-  "workspaces": [
-    "./packages/*"
-  ],
   "devDependencies": {
     "@changesets/cli": "^2.26.1",
-    "@types/node": "^18.11.18",
-    "esbuild": "^0.18.12",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
   }
 }

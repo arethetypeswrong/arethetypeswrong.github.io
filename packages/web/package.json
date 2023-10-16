@@ -2,15 +2,12 @@
   "name": "@arethetypeswrong/web",
   "version": "0.0.1",
   "private": true,
-  "description": "",
   "type": "module",
   "main": "index.js",
   "scripts": {
     "tsc": "tsc -b",
     "build": "vite build",
-    "start": "vite dev",
-    "patch": "npm version patch && npm run commit-patch",
-    "commit-patch": "git commit -am \"Bump web to v$npm_package_version\" && git tag \"web-v$npm_package_version\""
+    "start": "vite dev"
   },
   "author": "Andrew Branch",
   "license": "MIT",

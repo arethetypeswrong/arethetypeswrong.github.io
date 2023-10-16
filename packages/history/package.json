@@ -21,9 +21,9 @@
   "scripts": {
     "build": "tsc -b",
     "build:scripts": "tsc -b scripts",
-    "pregenerate": "npm run build:scripts",
+    "pregenerate": "pnpm build:scripts",
     "generate": "tsx scripts/generateFull.ts",
-    "prepublishOnly": "npm run build && npm run generate"
+    "prepublishOnly": "pnpm build && pnpm generate"
   },
   "devDependencies": {
     "@arethetypeswrong/core": "file:../core",

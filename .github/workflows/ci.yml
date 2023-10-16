@@ -11,7 +11,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-      - run: npm install
-      - run: npm run tsc
-      - run: npm run build
-      - run: npm test
+      - run: pnpm install
+      - run: pnpm tsc
+      - run: pnpm build
+      - run: pnpm test
