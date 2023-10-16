@@ -147,8 +147,8 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
       '@arethetypeswrong/core':
-        specifier: file:../core
-        version: file:packages/core
+        specifier: workspace:../core
+        version: link:../core
       immer:
         specifier: ^9.0.21
         version: 9.0.21
@@ -4045,15 +4045,3 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
-
-  file:packages/core:
-    resolution: {directory: packages/core, type: directory}
-    name: '@arethetypeswrong/core'
-    engines: {node: '>=18'}
-    dependencies:
-      '@andrewbranch/untar.js': 1.0.3
-      fflate: 0.7.4
-      semver: 7.5.4
-      typescript: 5.2.2
-      validate-npm-package-name: 5.0.0
-    dev: false
