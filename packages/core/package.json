@@ -10,6 +10,7 @@
     "directory": "packages/core"
   },
   "files": [
+    "LICENSE",
     "dist",
     "src"
   ],
@@ -21,7 +22,7 @@
     "pretest": "tsc -b test",
     "test": "node --test test/dist",
     "snapshot": "node scripts/createSnapshotFixture.js",
-    "prepublishOnly": "npm run tsc && npm run test"
+    "prepack": "pnpm tsc"
   },
   "type": "module",
   "exports": {

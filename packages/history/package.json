@@ -1,13 +1,21 @@
 {
   "name": "@arethetypeswrong/history",
   "version": "0.4.0",
-  "type": "module",
+  "license": "MIT",
+  "author": "Andrew Branch",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arethetypeswrong/arethetypeswrong.github.io.git",
+    "directory": "packages/history"
+  },
   "files": [
+    "LICENSE",
     "src",
     "lib",
     "./data/full.json.gz",
     "./data/dates.json"
   ],
+  "type": "module",
   "exports": {
     ".": {
       "types": "./lib/main.d.ts",
@@ -19,11 +27,11 @@
     }
   },
   "scripts": {
-    "build": "tsc -b",
+    "tsc": "tsc -b",
     "build:scripts": "tsc -b scripts",
     "pregenerate": "pnpm build:scripts",
     "generate": "tsx scripts/generateFull.ts",
-    "prepublishOnly": "pnpm build && pnpm generate"
+    "prepublishOnly": "pnpm tsc && pnpm generate"
   },
   "devDependencies": {
     "@arethetypeswrong/core": "file:../core",

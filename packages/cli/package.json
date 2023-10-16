@@ -20,6 +20,7 @@
     "directory": "packages/cli"
   },
   "files": [
+    "LICENSE",
     "dist/**/*.js"
   ],
   "bin": {
@@ -32,9 +33,9 @@
     "tsc": "tsc -b",
     "local:install": "npm install -g .",
     "local:uninstall": "npm uninstall -g @arethetypeswrong/cli",
-    "build": "pnpm tsc",
     "pretest": "tsc -b test",
-    "test": "node --test test/dist"
+    "test": "node --test test/dist",
+    "prepack": "pnpm tsc"
   },
   "type": "module",
   "devDependencies": {
