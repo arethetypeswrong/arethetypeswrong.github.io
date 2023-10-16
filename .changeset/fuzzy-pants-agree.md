@@ -1,6 +1,7 @@
 ---
-"@arethetypeswrong/core": patch
-"@arethetypeswrong/cli": patch
+"@arethetypeswrong/core": minor
+"@arethetypeswrong/cli": minor
 ---
 
-Move to pnpm, update dependencies, add LICENSE files, update READMEs
+- Drop support for Node.js <=16 (drop `fetch` polyfill)
+- Move to pnpm, update dependencies, add LICENSE files, update READMEs
