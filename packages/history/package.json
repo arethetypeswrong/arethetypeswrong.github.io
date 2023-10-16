@@ -33,6 +33,9 @@
     "generate": "tsx scripts/generateFull.ts",
     "prepublishOnly": "pnpm tsc && pnpm generate"
   },
+  "dependencies": {
+    "@arethetypeswrong/core": "0.12.2"
+  },
   "devDependencies": {
     "@arethetypeswrong/core": "file:../core",
     "@azure/storage-blob": "^12.14.0",

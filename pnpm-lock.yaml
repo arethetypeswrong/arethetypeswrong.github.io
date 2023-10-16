@@ -93,10 +93,11 @@ importers:
         version: 4.0.0
 
   packages/history:
-    devDependencies:
+    dependencies:
       '@arethetypeswrong/core':
-        specifier: file:../core
-        version: file:packages/core
+        specifier: 0.12.2
+        version: link:../core
+    devDependencies:
       '@azure/storage-blob':
         specifier: ^12.14.0
         version: 12.16.0
@@ -179,6 +180,7 @@ packages:
 
   /@andrewbranch/untar.js@1.0.3:
     resolution: {integrity: sha512-Jh15/qVmrLGhkKJBdXlK1+9tY4lZruYjsgkDFj08ZmDiWVBLJcqkok7Z0/R0In+i1rScBpJlSvrTS2Lm41Pbnw==}
+    dev: false
 
   /@azure/abort-controller@1.1.0:
     resolution: {integrity: sha512-TrRLIoSQVzfAJX9H1JeFjzAoDGcoK1IYX1UImfceTZpsyYfWr09Ss1aHW1y5TrrR3iq6RZLBwJ3E24uwPhwahw==}
@@ -1870,6 +1872,7 @@ packages:
 
   /fflate@0.7.4:
     resolution: {integrity: sha512-5u2V/CDW15QM1XbbgS+0DfPxVB+jUKhWEKuuFuHncbk3tEEqzmoXL+2KyOFuKGqOnmdIy0/davWF1CkuwtibCw==}
+    dev: false
 
   /fill-range@7.0.1:
     resolution: {integrity: sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==}
@@ -4053,3 +4056,4 @@ packages:
       semver: 7.5.4
       typescript: 5.2.2
       validate-npm-package-name: 5.0.0
+    dev: false
