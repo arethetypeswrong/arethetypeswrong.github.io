@@ -10,6 +10,7 @@ This project attempts to analyze npm package contents for issues with their Type
 * [🐛 Used fallback condition](./docs/problems/FallbackCondition.md)
 * [🤨 CJS default export](./docs/problems/CJSOnlyExportsDefault.md)
 * [❗️ Incorrect default export](./docs/problems/FalseExportDefault.md)
+* [❓ Missing `export =`](./docs/problems/MissingExportEquals.md)
 * [🚭 Unexpected module syntax](./docs/problems/UnexpectedModuleSyntax.md)
 * [🥴 Internal resolution error](./docs/problems/InternalResolutionError.md)
 
