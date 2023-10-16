@@ -1,6 +1,7 @@
 ---
 "@arethetypeswrong/core": minor
 "@arethetypeswrong/cli": minor
+"@arethetypeswrong/history": patch
 ---
 
 - Drop support for Node.js <=16 (drop `fetch` polyfill)
