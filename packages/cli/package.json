@@ -33,8 +33,7 @@
     "tsc": "tsc -b",
     "local:install": "npm install -g .",
     "local:uninstall": "npm uninstall -g @arethetypeswrong/cli",
-    "pretest": "tsc -b test",
-    "test": "node --test test/dist",
+    "test": "tsc -b test && node --test test/dist",
     "prepack": "pnpm tsc"
   },
   "type": "module",

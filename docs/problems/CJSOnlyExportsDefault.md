@@ -6,14 +6,16 @@ CommonJS module simulates a default export with `exports.default` and `exports._
 
 This problem does not indicate that the types are wrong, but rather that the API exposed may have compatibility problems between Node and bundlers, and will need to be consumed in Node ES modules in a way that the author likely did not intend. It occurs when both of the following conditions are true:
 
-* A JavaScript file assigns `exports.default = ...` and has an `exports.__esModule = true` or similar method of setting the `__esModule` flag. (This pattern indicates that the CommonJS module has been transpiled from an ES module that used a default export.)
-* There is not an additional assignment to `module.exports = ...`, indicating that a compatibility pattern like `module.exports.default = module.exports = ...` was not used.
+- A JavaScript file assigns `exports.default = ...` and has an `exports.__esModule = true` or similar method of setting the `__esModule` flag. (This pattern indicates that the CommonJS module has been transpiled from an ES module that used a default export.)
+- There is not an additional assignment to `module.exports = ...`, indicating that a compatibility pattern like `module.exports.default = module.exports = ...` was not used.
 
-When these are true, imports in Node will behave differently from imports in most bundlers. Node always synthesizes a default export for CommonJS modules that points to their `module.exports` objects, whereas most bundlers use the `__esModule` property as an indicator that the default export of the CommonJS module should be the value found at `exports.default`. So for a CommonJS module like:
+When these are true, imports in Node, and imports in Webpack and esbuild under certain conditions, will behave differently from imports in other bundlers and imports that have been transpiled to CJS. Node always synthesizes a default export for CommonJS modules that points to their `module.exports` objects, whereas most bundlers use the `__esModule` property as an indicator that the default export of the CommonJS module should be the value found at `exports.default`. So for a CommonJS module like:
 
 ```js
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = function f() { /* ... */ };
+exports.default = function f() {
+  /* ... */
+};
 ```
 
 a program with a default import like:
@@ -25,11 +27,15 @@ console.log(mod);
 
 will result in `{ default: [Function: f] }` in Node, but `[Function: f]` in most bundlers. ([This table](https://andrewbranch.github.io/interop-test/#synthesizing-default-exports-for-cjs-modules) shows the behavior of several bundlers and the Bun runtime under different conditions.)
 
+This problem is only reported in `node16-esm` and `bundler` resolutions, since those are the modes representing module systems that may not respect the `__esModule` marker and require an unexpected extra `.default` property access. In other words, a dual package that includes CommonJS files that use this pattern will not trigger this problem as long as its package.json `"exports"` direct the `"import"` condition away from such files.
+
 The divergence in behavior between various runtimes and bundlers can be mitigated by assigning the value intended to be the default export to `module.exports`, then additionally assigning a circular `default` property on that object back to itself:
 
 ```js
 Object.defineProperty(exports, "__esModule", { value: true });
-function f() { /* ... */ };
+function f() {
+  /* ... */
+}
 module.exports = f;
 module.exports.default = f;
 ```
@@ -38,8 +44,8 @@ This compatibility pattern has an odd effect where `f.default.default.default...
 
 ## Consequences
 
-* Consumers in Node will need to access the module’s intended export with `mod.default` where `mod` is already a default import, which is likely not the author’s intention.
-* It may be impossible or inconvenient for consumers to write code that works both in Node and in bundlers.
+- Consumers in Node will need to access the module’s intended export with `mod.default` where `mod` is already a default import, which is likely not the author’s intention.
+- It may be impossible or inconvenient for consumers to write code that works both in Node and in bundlers.
 
 ## Common causes
 
