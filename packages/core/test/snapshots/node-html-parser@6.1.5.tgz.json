@@ -81,9 +81,7 @@
             "/node_modules/node-html-parser/dist/valid.d.ts",
             "/node_modules/node-html-parser/dist/index.d.ts"
           ],
-          "visibleProblems": [
-            0
-          ]
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": ".",
@@ -158,9 +156,7 @@
             "/node_modules/node-html-parser/dist/valid.d.ts",
             "/node_modules/node-html-parser/dist/index.d.ts"
           ],
-          "visibleProblems": [
-            0
-          ]
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": ".",
@@ -342,7 +338,7 @@
             "/node_modules/node-html-parser/dist/index.d.ts"
           ],
           "visibleProblems": [
-            0
+            1
           ]
         }
       },
@@ -414,6 +410,12 @@
     "bundler": {}
   },
   "problems": [
+    {
+      "kind": "CJSOnlyExportsDefault",
+      "fileName": "/node_modules/node-html-parser/dist/index.js",
+      "pos": 1077,
+      "end": 1092
+    },
     {
       "kind": "CJSOnlyExportsDefault",
       "fileName": "/node_modules/node-html-parser/dist/index.js",

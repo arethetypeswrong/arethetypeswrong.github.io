@@ -6,10 +6,29 @@ export default defineCheck({
   dependencies: ({ entrypoints, subpath, resolutionKind }) => {
     const entrypoint = entrypoints[subpath].resolutions[resolutionKind];
     const implementationFileName = entrypoint.implementationResolution?.fileName;
-    return [implementationFileName];
+    return [implementationFileName, resolutionKind];
   },
-  execute: ([implementationFileName], context) => {
+  execute: ([implementationFileName, resolutionKind], context) => {
     if (!implementationFileName) {
+      return;
+    }
+    if (resolutionKind === "node10" || resolutionKind === "node16-cjs") {
+      // Here, we have a CJS file (most likely transpiled ESM) resolving to a
+      // CJS transpiled ESM file. This is fine when considered in isolation.
+      // The pattern of having `module.exports.default = ...` is a problem
+      // primarily because ESM-detected files in Node (and the same files in
+      // Webpack/esbuild) will treat `module.exports` as the default export,
+      // which is both unexpected and different from Babel-style interop seen
+      // in transpiled default imports and most bundler scenarios. But if Node,
+      // Webpack, and esbuild never see this file, then it's fine. So, while
+      // the problematic pattern is a feature of the file alone, the bad outcome
+      // comes from a combination of the file and the module system that imports
+      // it. For dual packages that point Node imports and bundlers to a true
+      // ESM default export, while pointing requires to this CJS "default export,"
+      // we don't want to report a problem.
+      //
+      // TODO: It would be nice to report this information *somehow*, as neutral
+      // metadata attached to the file (c.f. `Analysis["programInfo"]`).
       return;
     }
     const host = context.hosts.findHostForFiles([implementationFileName]) ?? context.hosts.bundler;

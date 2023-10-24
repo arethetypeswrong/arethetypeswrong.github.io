@@ -29,8 +29,7 @@
   "scripts": {
     "tsc": "tsc -b",
     "build:scripts": "tsc -b scripts",
-    "pregenerate": "pnpm build:scripts",
-    "generate": "tsx scripts/generateFull.ts",
+    "generate": "pnpm build:scripts && tsx scripts/generateFull.ts",
     "prepublishOnly": "pnpm tsc && pnpm generate"
   },
   "dependencies": {
