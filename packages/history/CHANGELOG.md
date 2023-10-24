@@ -1,5 +1,16 @@
 # @arethetypeswrong/history
 
+## 0.4.1
+
+### Patch Changes
+
+- acd6e86: Various chores:
+  - Drop support for Node.js <=16 (drop `fetch` polyfill)
+  - Move to pnpm, update dependencies, add LICENSE files, update READMEs
+- Updated dependencies [acd6e86]
+- Updated dependencies [3784346]
+  - @arethetypeswrong/core@0.13.0
+
 ## 0.4.0
 
 ### Minor Changes

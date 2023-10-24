@@ -1,5 +1,17 @@
 # @arethetypeswrong/core
 
+## 0.13.0
+
+### Minor Changes
+
+- acd6e86: Various chores:
+  - Drop support for Node.js <=16 (drop `fetch` polyfill)
+  - Move to pnpm, update dependencies, add LICENSE files, update READMEs
+
+### Patch Changes
+
+- 3784346: Silence CJSOnlyExportsDefault in `node10`/`node16-cjs`. See [corresponding docs](https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/CJSOnlyExportsDefault.md) for explanation.
+
 ## 0.12.2
 
 ### Patch Changes
