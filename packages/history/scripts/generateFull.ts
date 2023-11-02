@@ -6,6 +6,7 @@ import { createRequire } from "module";
 import { npmHighImpact } from "npm-high-impact";
 import os from "os";
 import pacote from "pacote";
+import path from "path";
 import { major, minor } from "semver";
 import ts from "typescript";
 import { createGzip } from "zlib";
@@ -41,12 +42,14 @@ const dates = Array.from(
     const month = String((i % 12) + 1).padStart(2, "0");
     const year = String(Math.floor(i / 12) + startYear);
     return `${year}-${month}-01`;
-  }
+  },
 );
 
 let datesModified = false;
 let fullModified = false;
-const npmHighImpactVersion = createRequire(import.meta.url)("npm-high-impact/package.json").version;
+const npmHighImpactVersion = createRequire(import.meta.url)(
+  path.resolve(path.dirname(import.meta.resolve("npm-high-impact")), "./package.json"),
+).version;
 const outJsonFileName = new URL("../data/out.json", import.meta.url);
 try {
   await unlink(outJsonFileName);
@@ -58,10 +61,10 @@ await downloadData();
 const existingDates: DatesJson = JSON.parse(await readFile(datesFileName, "utf8"));
 
 const typesRegistry: { entries: Record<string, Record<string, string>> } = createRequire(import.meta.url)(
-  "types-registry/index.json"
+  "types-registry/index.json",
 );
 const notNeededPackages: { packages: Record<string, { asOfVersion: string }> } = (await fetch(
-  "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/notNeededPackages.json"
+  "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/notNeededPackages.json",
 ).then((r) => r.json())) as any;
 const typesPackages = new Set([...Object.keys(typesRegistry.entries), ...Object.keys(notNeededPackages.packages)]);
 
@@ -119,7 +122,7 @@ for (const date of dates) {
       ...existingDates.dates[date].map((p) => ({
         ...p,
         typesPackageUrl: (("typesPackageUrl" in p) as any) ? p.typesPackageUrl! : typesPackages.has(p.packageName),
-      }))
+      })),
     );
   }
 
@@ -140,7 +143,7 @@ for (const date of dates) {
   console.log(
     `\nDate: ${date}\n  Packages: ${packages.length}\n  To check: ${work.length}\n  Errors: ${errors.length}\n${errors
       .map(({ packageName, message }) => `  - ${packageName}: ${message}`)
-      .join(`\n`)}`
+      .join(`\n`)}`,
   );
 
   const workerCount = Math.min(os.cpus().length - 1 || 1, 6);
@@ -170,7 +173,7 @@ for (const date of Object.keys(existingDates.dates)) {
 if (
   await stat(outJsonFileName).then(
     () => true,
-    () => false
+    () => false,
   )
 ) {
   const outFh = await open(outJsonFileName, "r");
@@ -230,7 +233,7 @@ function nAtATime<T>(n: number, items: T[], fn: (item: T) => Promise<void>) {
           },
           (e) => {
             reject(e);
-          }
+          },
         );
       }
     }
