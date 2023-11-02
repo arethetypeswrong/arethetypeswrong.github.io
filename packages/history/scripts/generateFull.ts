@@ -47,8 +47,8 @@ const dates = Array.from(
 
 let datesModified = false;
 let fullModified = false;
-const npmHighImpactVersion = createRequire(import.meta.url)(
-  path.resolve(path.dirname(import.meta.resolve("npm-high-impact")), "./package.json"),
+const npmHighImpactVersion = JSON.parse(
+  await readFile(path.resolve(path.dirname(import.meta.resolve("npm-high-impact")), "./package.json"), "utf8"),
 ).version;
 const outJsonFileName = new URL("../data/out.json", import.meta.url);
 try {
