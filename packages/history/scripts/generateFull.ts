@@ -6,7 +6,6 @@ import { createRequire } from "module";
 import { npmHighImpact } from "npm-high-impact";
 import os from "os";
 import pacote from "pacote";
-import path from "path";
 import { major, minor } from "semver";
 import ts from "typescript";
 import { createGzip } from "zlib";
