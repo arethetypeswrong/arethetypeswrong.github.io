@@ -1,5 +1,11 @@
 # @arethetypeswrong/history
 
+## 0.5.0
+
+### Minor Changes
+
+- c771adc: November 1 data
+
 ## 0.4.1
 
 ### Patch Changes
