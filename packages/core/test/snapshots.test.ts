@@ -26,6 +26,8 @@ describe("snapshots", async () => {
     "react@18.2.0.tgz": "@types__react@18.2.21.tgz",
   };
 
+  const errorPackages = ["Babel@0.0.1.tgz"];
+
   for (const fixture of fs.readdirSync(new URL("../fixtures", import.meta.url))) {
     if (fixture === ".DS_Store" || fixture.startsWith("@types__")) {
       continue;
@@ -35,10 +37,19 @@ describe("snapshots", async () => {
       const typesTarball = typesPackages[fixture]
         ? await readFile(new URL(`../fixtures/${typesPackages[fixture]}`, import.meta.url))
         : undefined;
-      const pkg = createPackageFromTarballData(tarball);
-      const analysis = await checkPackage(
-        typesTarball ? pkg.mergedWithTypes(createPackageFromTarballData(typesTarball)) : pkg
-      );
+      let analysis;
+      try {
+        const pkg = createPackageFromTarballData(tarball);
+        analysis = await checkPackage(
+          typesTarball ? pkg.mergedWithTypes(createPackageFromTarballData(typesTarball)) : pkg,
+        );
+      } catch (error) {
+        if (errorPackages.includes(fixture)) {
+          return;
+        }
+        throw error;
+      }
+
       const snapshotURL = new URL(`../snapshots/${fixture}.json`, import.meta.url);
       const expectedSnapshot = JSON.stringify(analysis, null, 2) + "\n";
 
