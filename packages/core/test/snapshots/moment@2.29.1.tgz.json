@@ -1,0 +1,165 @@
+{
+  "packageName": "moment",
+  "packageVersion": "2.29.1",
+  "types": {
+    "kind": "included"
+  },
+  "buildTools": {
+    "typescript": "^1.8.10",
+    "rollup": "2.17.1"
+  },
+  "entrypoints": {
+    ".": {
+      "subpath": ".",
+      "resolutions": {
+        "node10": {
+          "name": ".",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/moment/ts3.1-typings/moment.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'moment' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'moment' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/moment/package.json'.",
+              "File '/node_modules/moment.ts' does not exist.",
+              "File '/node_modules/moment.tsx' does not exist.",
+              "File '/node_modules/moment.d.ts' does not exist.",
+              "'package.json' has a 'typesVersions' field with version-specific path mappings.",
+              "'package.json' has 'typings' field './moment.d.ts' that references '/node_modules/moment/moment.d.ts'.",
+              "'package.json' has a 'typesVersions' entry '>=3.1' that matches compiler version '5.2.2', looking for a pattern to match module name 'moment.d.ts'.",
+              "Module name 'moment.d.ts', matched pattern '*'.",
+              "Trying substitution 'ts3.1-typings/*', candidate module location: 'ts3.1-typings/moment.d.ts'.",
+              "File '/node_modules/moment/ts3.1-typings/moment.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'moment' was successfully resolved to '/node_modules/moment/ts3.1-typings/moment.d.ts' with Package ID 'moment/ts3.1-typings/moment.d.ts@2.29.1'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/moment/ts3.1-typings/moment.d.ts"
+          ],
+          "visibleProblems": []
+        },
+        "node16-cjs": {
+          "name": ".",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/moment/ts3.1-typings/moment.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'moment' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'moment' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/moment/package.json'.",
+              "File '/node_modules/moment.ts' does not exist.",
+              "File '/node_modules/moment.tsx' does not exist.",
+              "File '/node_modules/moment.d.ts' does not exist.",
+              "'package.json' has a 'typesVersions' field with version-specific path mappings.",
+              "'package.json' has 'typings' field './moment.d.ts' that references '/node_modules/moment/moment.d.ts'.",
+              "'package.json' has a 'typesVersions' entry '>=3.1' that matches compiler version '5.2.2', looking for a pattern to match module name 'moment.d.ts'.",
+              "Module name 'moment.d.ts', matched pattern '*'.",
+              "Trying substitution 'ts3.1-typings/*', candidate module location: 'ts3.1-typings/moment.d.ts'.",
+              "File '/node_modules/moment/ts3.1-typings/moment.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'moment' was successfully resolved to '/node_modules/moment/ts3.1-typings/moment.d.ts' with Package ID 'moment/ts3.1-typings/moment.d.ts@2.29.1'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/moment/ts3.1-typings/moment.d.ts"
+          ],
+          "visibleProblems": []
+        },
+        "node16-esm": {
+          "name": ".",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/moment/ts3.1-typings/moment.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'moment' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'moment' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/moment/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'typings' field './moment.d.ts' that references '/node_modules/moment/moment.d.ts'.",
+              "'package.json' has a 'typesVersions' entry '>=3.1' that matches compiler version '5.2.2', looking for a pattern to match module name 'moment.d.ts'.",
+              "Module name 'moment.d.ts', matched pattern '*'.",
+              "Trying substitution 'ts3.1-typings/*', candidate module location: 'ts3.1-typings/moment.d.ts'.",
+              "File '/node_modules/moment/ts3.1-typings/moment.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'moment' was successfully resolved to '/node_modules/moment/ts3.1-typings/moment.d.ts' with Package ID 'moment/ts3.1-typings/moment.d.ts@2.29.1'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/moment/ts3.1-typings/moment.d.ts"
+          ],
+          "visibleProblems": []
+        },
+        "bundler": {
+          "name": ".",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/moment/ts3.1-typings/moment.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'moment' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'moment' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/moment/package.json'.",
+              "File '/node_modules/moment.ts' does not exist.",
+              "File '/node_modules/moment.tsx' does not exist.",
+              "File '/node_modules/moment.d.ts' does not exist.",
+              "'package.json' has a 'typesVersions' field with version-specific path mappings.",
+              "'package.json' has 'typings' field './moment.d.ts' that references '/node_modules/moment/moment.d.ts'.",
+              "'package.json' has a 'typesVersions' entry '>=3.1' that matches compiler version '5.2.2', looking for a pattern to match module name 'moment.d.ts'.",
+              "Module name 'moment.d.ts', matched pattern '*'.",
+              "Trying substitution 'ts3.1-typings/*', candidate module location: 'ts3.1-typings/moment.d.ts'.",
+              "File '/node_modules/moment/ts3.1-typings/moment.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'moment' was successfully resolved to '/node_modules/moment/ts3.1-typings/moment.d.ts' with Package ID 'moment/ts3.1-typings/moment.d.ts@2.29.1'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/moment/ts3.1-typings/moment.d.ts"
+          ],
+          "visibleProblems": []
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    }
+  },
+  "programInfo": {
+    "node10": {},
+    "node16": {
+      "moduleKinds": {
+        "/node_modules/typescript/lib/lib.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/typescript/lib/lib.d.ts"
+        },
+        "/node_modules/moment/ts3.1-typings/moment.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/moment/package.json"
+        }
+      }
+    },
+    "bundler": {}
+  },
+  "problems": []
+}

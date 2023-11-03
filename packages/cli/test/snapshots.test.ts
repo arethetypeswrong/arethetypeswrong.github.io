@@ -23,6 +23,8 @@ const tests = [
   ["react-chartjs-2@5.2.0.tgz"],
   ["rfdc@1.3.0.tgz"],
   ["vue@3.3.4.tgz"],
+  ["moment@2.29.1.tgz"],
+  ["Babel@0.0.1.tgz"],
 
   ["vue@3.3.4.tgz", "--entrypoints vue"],
   ["vue@3.3.4.tgz", "--entrypoints . jsx-runtime"],
@@ -61,6 +63,7 @@ describe("snapshots", async () => {
     test(fixture, async () => {
       const tarballPath = new URL(`../../../core/test/fixtures/${tarball}`, import.meta.url).pathname;
       let stdout;
+      let stderr = "";
       let exitCode = 0;
       try {
         stdout = execSync(`${attw} ${tarballPath} ${options ?? defaultOpts}`, {
@@ -69,6 +72,7 @@ describe("snapshots", async () => {
         });
       } catch (error) {
         stdout = (error as SpawnSyncReturns<string>).stdout;
+        stderr = (error as SpawnSyncReturns<string>).stderr;
         exitCode = (error as SpawnSyncReturns<string>).status ?? 1;
       }
       const snapshotURL = new URL(`../snapshots/${fixture.replace(/\//g, "")}.md`, import.meta.url);
@@ -79,7 +83,7 @@ describe("snapshots", async () => {
         "```",
         `$ attw ${tarball} ${options ?? defaultOpts}`,
         "",
-        stdout,
+        [stdout, stderr].filter(Boolean).join("\n"),
         "",
         "```",
         "",

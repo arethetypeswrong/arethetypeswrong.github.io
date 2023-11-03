@@ -29,8 +29,6 @@ const excludedSpecs = [
   "next@13.4.4", // File not found: /node_modules/next/types/misc.d.ts
   "next@13.4.7", // File not found: /node_modules/next/types/misc.d.ts
   "next@13.4.12", // File not found: /node_modules/next/types/misc.d.ts
-  "moment@2.29.1", // Invalid gzip data
-  "moment@2.29.3", // Invalid gzip data
 ];
 
 // Array of month starts from 2022-01-01 until the first of this month

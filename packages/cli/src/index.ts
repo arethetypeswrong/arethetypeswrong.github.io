@@ -46,13 +46,13 @@ program
   .name("attw")
   .description(
     `${chalk.bold.blue(
-      "Are the Types Wrong?"
+      "Are the Types Wrong?",
     )} attempts to analyze npm package contents for issues with their TypeScript types,
-particularly ESM-related module resolution issues.`
+particularly ESM-related module resolution issues.`,
   )
   .argument(
     "[file-directory-or-package-spec]",
-    "the packed .tgz, or directory containing package.json with --pack, or package spec with --from-npm"
+    "the packed .tgz, or directory containing package.json with --pack, or package spec with --from-npm",
   )
   .option("-P, --pack", "Run `npm pack` in the specified directory and delete the resulting .tgz file afterwards")
   .option("-p, --from-npm", "Read from the npm registry instead of a local file")
@@ -64,15 +64,15 @@ particularly ESM-related module resolution issues.`
     "--entrypoints <entrypoints...>",
     "Specify an exhaustive list of entrypoints to check. " +
       'The package root is `"." Specifying this option disables automatic entrypoint discovery, ' +
-      "and overrides the `--include-entrypoints` and `--exclude-entrypoints` options."
+      "and overrides the `--include-entrypoints` and `--exclude-entrypoints` options.",
   )
   .option(
     "--include-entrypoints <entrypoints...>",
-    "Specify entrypoints to check in addition to automatically discovered ones."
+    "Specify entrypoints to check in addition to automatically discovered ones.",
   )
   .option("--exclude-entrypoints <entrypoints...>", "Specify entrypoints to exclude from checking.")
   .addOption(
-    new Option("--ignore-rules <rules...>", "Specify rules to ignore").choices(Object.values(problemFlags)).default([])
+    new Option("--ignore-rules <rules...>", "Specify rules to ignore").choices(Object.values(problemFlags)).default([]),
   )
   .option("--summary, --no-summary", "Whether to print summary information about the different errors")
   .option("--emoji, --no-emoji", "Whether to use any emojis")
@@ -82,7 +82,7 @@ particularly ESM-related module resolution issues.`
     const opts = program.opts<Opts>();
     await readConfig(program, opts.configPath);
     opts.ignoreRules = opts.ignoreRules?.map(
-      (value) => Object.keys(problemFlags).find((key) => problemFlags[key as core.ProblemKind] === value) as string
+      (value) => Object.keys(problemFlags).find((key) => problemFlags[key as core.ProblemKind] === value) as string,
     );
 
     if (opts.quiet) {
@@ -114,7 +114,7 @@ particularly ESM-related module resolution issues.`
           let pkg;
           if (dtIsPath) {
             const dtPackage = core.createPackageFromTarballData(
-              new Uint8Array(await readFile(opts.definitelyTyped as string))
+              new Uint8Array(await readFile(opts.definitelyTyped as string)),
             );
             const pkgVersion =
               result.data.versionKind === "none"
@@ -150,15 +150,15 @@ particularly ESM-related module resolution issues.`
           if (!(await stat(path.join(fileOrDirectory, "package.json")).catch(() => false))) {
             program.error(
               `Specified directory must contain a package.json. No package.json found in ${path.resolve(
-                fileOrDirectory
-              )}.`
+                fileOrDirectory,
+              )}.`,
             );
           }
 
           if (!opts.pack) {
             if (!process.stdout.isTTY) {
               program.error(
-                "Specifying a directory requires the --pack option to confirm that running `npm pack` is ok."
+                "Specifying a directory requires the --pack option to confirm that running `npm pack` is ok.",
               );
             }
             const rl = readline.createInterface(process.stdin, process.stdout);
@@ -173,7 +173,7 @@ particularly ESM-related module resolution issues.`
 
           fileName = deleteTgz = path.resolve(
             fileOrDirectory,
-            execSync("npm pack", { cwd: fileOrDirectory, encoding: "utf8", stdio: "pipe" }).trim()
+            execSync("npm pack", { cwd: fileOrDirectory, encoding: "utf8", stdio: "pipe" }).trim(),
           );
         }
         const file = await readFile(fileName);
@@ -182,7 +182,7 @@ particularly ESM-related module resolution issues.`
           ? core
               .createPackageFromTarballData(data)
               .mergedWithTypes(
-                core.createPackageFromTarballData(new Uint8Array(await readFile(opts.definitelyTyped as string)))
+                core.createPackageFromTarballData(new Uint8Array(await readFile(opts.definitelyTyped as string))),
               )
           : core.createPackageFromTarballData(data);
         analysis = await core.checkPackage(pkg, {
@@ -234,9 +234,14 @@ program.parse(process.argv);
 function handleError(error: unknown, title: string): never {
   if (error && typeof error === "object" && "message" in error) {
     program.error(`error while ${title}:\n${error.message}`, {
+      exitCode: 127,
       code: "code" in error && typeof error.code === "string" ? error.code : "UNKNOWN",
     });
   }
 
-  program.error(`unknown error while ${title}`, { code: "UNKNOWN" });
+  program.error(`unknown error while ${title}`, { code: "UNKNOWN", exitCode: 127 });
 }
+
+process.on("unhandledRejection", (error) => {
+  handleError(error, "checking package");
+});
