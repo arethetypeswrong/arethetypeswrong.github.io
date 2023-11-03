@@ -1,5 +1,11 @@
 # @arethetypeswrong/cli
 
+## 0.13.1
+
+### Patch Changes
+
+- 6a516c1: Use exit code 3 for errors, 1 for failures
+
 ## 0.13.0
 
 ### Minor Changes
