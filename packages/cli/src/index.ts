@@ -234,12 +234,12 @@ program.parse(process.argv);
 function handleError(error: unknown, title: string): never {
   if (error && typeof error === "object" && "message" in error) {
     program.error(`error while ${title}:\n${error.message}`, {
-      exitCode: 127,
+      exitCode: 3,
       code: "code" in error && typeof error.code === "string" ? error.code : "UNKNOWN",
     });
   }
 
-  program.error(`unknown error while ${title}`, { code: "UNKNOWN", exitCode: 127 });
+  program.error(`unknown error while ${title}`, { code: "UNKNOWN", exitCode: 3 });
 }
 
 process.on("unhandledRejection", (error) => {

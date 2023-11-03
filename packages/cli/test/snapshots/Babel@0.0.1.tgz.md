@@ -9,4 +9,4 @@ Expected double-quoted property name in JSON at position 450
 
 ```
 
-Exit code: 127
+Exit code: 3
