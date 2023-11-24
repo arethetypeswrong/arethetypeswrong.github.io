@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.13.2
+
+### Patch Changes
+
+- d0ff7c5: Update to TypeScript 5.3
+
 ## 0.13.0
 
 ### Minor Changes
