@@ -48,6 +48,7 @@ export class CompilerHostWrapper {
   > = {};
   private traceCollector: TraceCollector = new TraceCollector();
   private sourceFileCache: Map<ts.Path, ts.SourceFile> = new Map();
+  private resolvedModules: Exclude<ts.Program["resolvedModules"], undefined> = new Map();
   private languageVersion = ts.ScriptTarget.Latest;
 
   constructor(fs: Package, moduleResolution: ts.ModuleResolutionKind, moduleKind: ts.ModuleKind) {
@@ -157,7 +158,27 @@ export class CompilerHostWrapper {
     return `${resolutionMode ?? 1}:${+!!noDtsResolution}:${+!!allowJs}:${moduleSpecifier}`;
   }
 
-  createProgram(rootNames: string[], extraOptions?: ts.CompilerOptions): ts.Program {
+  createPrimaryProgram(rootName: string) {
+    const program = ts.createProgram({
+      rootNames: [rootName],
+      options: this.compilerOptions,
+      host: this.compilerHost,
+    });
+
+    program.resolvedModules?.forEach((cache, path) => {
+      let ownCache = this.resolvedModules.get(path);
+      if (!ownCache) {
+        this.resolvedModules.set(path, (ownCache = ts.createModeAwareCache()));
+      }
+      cache.forEach((resolution, key, mode) => {
+        ownCache!.set(key, mode, resolution);
+      });
+    });
+
+    return program;
+  }
+
+  createAuxiliaryProgram(rootNames: string[], extraOptions?: ts.CompilerOptions): ts.Program {
     if (
       extraOptions &&
       ts.changesAffectModuleResolution(
@@ -179,6 +200,10 @@ export class CompilerHostWrapper {
       options: extraOptions ? { ...this.compilerOptions, ...extraOptions } : this.compilerOptions,
       host: this.compilerHost,
     });
+  }
+
+  getResolvedModule(sourceFile: ts.SourceFile, moduleName: string, resolutionMode: ts.ResolutionMode) {
+    return this.resolvedModules.get(sourceFile.path)?.get(moduleName, resolutionMode);
   }
 
   private createCompilerHost(fs: Package, sourceFileCache: Map<ts.Path, ts.SourceFile>): ts.CompilerHost {
