@@ -38,7 +38,7 @@ export default defineCheck({
       implExports.has(ts.InternalSymbolName.ExportEquals)
     ) {
       if (!implExports.has(ts.InternalSymbolName.Default)) {
-        const checker = host.createProgram([implementationFileName], bindOptions).getTypeChecker();
+        const checker = host.createAuxiliaryProgram([implementationFileName], bindOptions).getTypeChecker();
         if (
           !checker.getExportsAndPropertiesOfModule(implementationSourceFile.symbol).some((s) => s.name === "default")
         ) {

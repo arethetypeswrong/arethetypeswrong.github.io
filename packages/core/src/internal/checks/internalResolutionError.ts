@@ -7,6 +7,9 @@ export default defineCheck({
   enumerateFiles: true,
   dependencies: ({ resolutionOption, fileName }) => [resolutionOption, fileName],
   execute: ([resolutionOption, fileName], context) => {
+    if (!ts.hasTSFileExtension(fileName)) {
+      return;
+    }
     const host = context.hosts[resolutionOption];
     const sourceFile = host.getSourceFile(fileName);
     if (sourceFile?.imports) {
@@ -25,9 +28,12 @@ export default defineCheck({
           continue;
         }
         const resolutionMode = ts.getModeForUsageLocation(sourceFile, moduleSpecifier);
-        const resolution = ts.getResolvedModule(sourceFile, moduleSpecifier.text, resolutionMode);
-
+        const resolution = host.getResolvedModule(sourceFile, moduleSpecifier.text, resolutionMode);
         if (!resolution) {
+          throw new Error(`Expected resolution for '${moduleSpecifier.text}' in ${fileName}`);
+        }
+
+        if (!resolution.resolvedModule) {
           problems.push({
             kind: "InternalResolutionError",
             resolutionOption,

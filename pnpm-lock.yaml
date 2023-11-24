@@ -15,8 +15,8 @@ importers:
         specifier: ^3.0.3
         version: 3.0.3
       typescript:
-        specifier: ^5.2.2
-        version: 5.2.2
+        specifier: 5.3.2
+        version: 5.3.2
 
   packages/cli:
     dependencies:
@@ -54,12 +54,12 @@ importers:
       '@types/semver':
         specifier: ^7.5.3
         version: 7.5.3
-      '@types/ts-expose-internals':
-        specifier: npm:ts-expose-internals@5.2.2
-        version: /ts-expose-internals@5.2.2
+      ts-expose-internals:
+        specifier: 5.3.2
+        version: 5.3.2
       typescript:
-        specifier: ^5.2.2
-        version: 5.2.2
+        specifier: 5.3.2
+        version: 5.3.2
 
   packages/core:
     dependencies:
@@ -73,8 +73,8 @@ importers:
         specifier: ^7.5.4
         version: 7.5.4
       typescript:
-        specifier: ^5.2.2
-        version: 5.2.2
+        specifier: 5.3.2
+        version: 5.3.2
       validate-npm-package-name:
         specifier: ^5.0.0
         version: 5.0.0
@@ -85,12 +85,12 @@ importers:
       '@types/semver':
         specifier: ^7.5.0
         version: 7.5.3
-      '@types/ts-expose-internals':
-        specifier: npm:ts-expose-internals@5.2.2
-        version: /ts-expose-internals@5.2.2
       '@types/validate-npm-package-name':
         specifier: ^4.0.0
         version: 4.0.0
+      ts-expose-internals:
+        specifier: 5.3.2
+        version: 5.3.2
 
   packages/history:
     dependencies:
@@ -129,8 +129,8 @@ importers:
         specifier: ^7.5.3
         version: 7.5.4
       ts-expose-internals:
-        specifier: ^5.2.2
-        version: 5.2.2
+        specifier: 5.3.2
+        version: 5.3.2
       tsx:
         specifier: ^3.12.7
         version: 3.13.0
@@ -138,8 +138,8 @@ importers:
         specifier: latest
         version: 0.1.665
       typescript:
-        specifier: ^5.2.2
-        version: 5.2.2
+        specifier: 5.3.2
+        version: 5.3.2
 
   packages/web:
     dependencies:
@@ -3649,8 +3649,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /ts-expose-internals@5.2.2:
-    resolution: {integrity: sha512-HYknqnfn3hQcNV1a00Ag4Nv+LM5wv2hUDzLH2oh+utspiKafKYtRYdv7a/iNhtqbzRJVV3FgVYRNoWKA3AZ3Uw==}
+  /ts-expose-internals@5.3.2:
+    resolution: {integrity: sha512-lKFeJay+cwMvqfvf+Uv/+pkTwKc4OOtjEPjxKMUUcVaqKGlTEuN3yssT29VG0maDb0QbpAGb6iDzKj7/cf4WWQ==}
     dev: true
 
   /tslib@2.6.2:
@@ -3760,8 +3760,8 @@ packages:
     resolution: {integrity: sha512-+wpbd+gNRNaHeYdJESWL0dh0SbjitfegVUCpLavYUJ0NEc149r3+NYZz2Wv2ttB+80ZJXjLpLXKBNB/E87wyyA==}
     dev: true
 
-  /typescript@5.2.2:
-    resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
+  /typescript@5.3.2:
+    resolution: {integrity: sha512-6l+RyNy7oAHDfxC4FzSJcz9vnjTKxrLpDG5M2Vu4SHRVNg6xzqZp6LYSR9zjqQTu8DU/f5xwxUdADOkbrIX2gQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
