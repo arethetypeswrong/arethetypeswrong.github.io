@@ -4,7 +4,8 @@ import assert from "node:assert";
 import { after, describe, test } from "node:test";
 
 const attw = `node ${new URL("../../dist/index.js", import.meta.url).pathname}`;
-const updateSnapshots = process.env.UPDATE_SNAPSHOTS;
+const updateSnapshots = process.env.UPDATE_SNAPSHOTS || process.env.U;
+const testFilter = (process.env.TEST_FILTER || process.env.T)?.toLowerCase();
 
 const tests = [
   ["@apollo__client-3.7.16.tgz"],
@@ -60,6 +61,10 @@ describe("snapshots", async () => {
 
   for (const [tarball, options] of tests) {
     const fixture = tarball + (options ? ` ${options}` : "");
+    if (testFilter && !fixture.toLowerCase().includes(testFilter)) {
+      continue;
+    }
+
     test(fixture, async () => {
       const tarballPath = new URL(`../../../core/test/fixtures/${tarball}`, import.meta.url).pathname;
       let stdout;
