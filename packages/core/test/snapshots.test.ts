@@ -4,7 +4,8 @@ import assert from "node:assert";
 import { after, describe, test } from "node:test";
 import { checkPackage, createPackageFromTarballData } from "@arethetypeswrong/core";
 
-const updateSnapshots = process.env.UPDATE_SNAPSHOTS;
+const updateSnapshots = process.env.UPDATE_SNAPSHOTS || process.env.U;
+const testFilter = (process.env.TEST_FILTER || process.env.T)?.toLowerCase();
 
 describe("snapshots", async () => {
   const snapshotsWritten: URL[] = [];
@@ -29,9 +30,14 @@ describe("snapshots", async () => {
   const errorPackages = ["Babel@0.0.1.tgz"];
 
   for (const fixture of fs.readdirSync(new URL("../fixtures", import.meta.url))) {
-    if (fixture === ".DS_Store" || fixture.startsWith("@types__")) {
+    if (
+      fixture === ".DS_Store" ||
+      fixture.startsWith("@types__") ||
+      (testFilter && !fixture.toLowerCase().includes(testFilter))
+    ) {
       continue;
     }
+
     test(fixture, async () => {
       const tarball = await readFile(new URL(`../fixtures/${fixture}`, import.meta.url));
       const typesTarball = typesPackages[fixture]

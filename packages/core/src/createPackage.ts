@@ -20,7 +20,7 @@ export class Package {
     packageName: string,
     packageVersion: string,
     resolvedUrl?: string,
-    typesPackage?: Package["typesPackage"]
+    typesPackage?: Package["typesPackage"],
   ) {
     this.#files = files;
     this.packageName = packageName;
@@ -29,16 +29,24 @@ export class Package {
     this.typesPackage = typesPackage;
   }
 
-  readFile(path: string): string {
+  tryReadFile(path: string): string | undefined {
     const file = this.#files[path];
     if (file === undefined) {
-      throw new Error(`File not found: ${path}`);
+      return undefined;
     }
     if (typeof file === "string") {
       return file;
     }
     const content = new TextDecoder().decode(file);
     this.#files[path] = content;
+    return content;
+  }
+
+  readFile(path: string): string {
+    const content = this.tryReadFile(path);
+    if (content === undefined) {
+      throw new Error(`File not found: ${path}`);
+    }
     return content;
   }
 
@@ -91,7 +99,7 @@ export interface CreatePackageFromNpmOptions {
 
 export async function createPackageFromNpm(
   packageSpec: string,
-  { definitelyTyped = true, before }: CreatePackageFromNpmOptions = {}
+  { definitelyTyped = true, before }: CreatePackageFromNpmOptions = {},
 ): Promise<Package> {
   const parsed = parsePackageSpec(packageSpec);
   if (parsed.status === "error") {
@@ -125,7 +133,7 @@ export async function createPackageFromNpm(
           version: definitelyTyped,
         },
       ],
-      before
+      before,
     );
   }
 
@@ -138,7 +146,7 @@ export async function createPackageFromNpm(
 export async function resolveTypesPackageForPackage(
   packageName: string,
   packageVersion: string,
-  before?: Date
+  before?: Date,
 ): Promise<{ packageName: string; packageVersion: string; tarballUrl: string } | undefined> {
   const typesPackageName = ts.getTypesPackageName(packageName);
   try {
@@ -162,7 +170,7 @@ export async function resolveTypesPackageForPackage(
             version: "latest",
           },
         ],
-        before
+        before,
       )),
     };
   } catch {}
@@ -170,10 +178,10 @@ export async function resolveTypesPackageForPackage(
 
 async function getNpmTarballUrl(
   packageSpecs: readonly ParsedPackageSpec[],
-  before?: Date
+  before?: Date,
 ): Promise<{ tarballUrl: string; packageVersion: string }> {
   const fetchPackument = packageSpecs.some(
-    (spec) => spec.versionKind === "range" || (spec.versionKind === "tag" && spec.version !== "latest")
+    (spec) => spec.versionKind === "range" || (spec.versionKind === "tag" && spec.version !== "latest"),
   );
   const packumentUrl = `https://registry.npmjs.org/${packageSpecs[0].name}`;
   const includeTimes = before !== undefined && packageSpecs.some((spec) => spec.versionKind !== "exact");
@@ -193,9 +201,9 @@ async function getNpmTarballUrl(
     if (packageSpec.versionKind === "range") {
       packageVersion = maxSatisfying(
         Object.keys(doc.versions).filter(
-          (v) => !doc.versions[v].deprecated && (!before || !doc.time || new Date(doc.time[v]) <= before)
+          (v) => !doc.versions[v].deprecated && (!before || !doc.time || new Date(doc.time[v]) <= before),
         ),
-        packageSpec.version
+        packageSpec.version,
       );
       if (!packageVersion) {
         continue;

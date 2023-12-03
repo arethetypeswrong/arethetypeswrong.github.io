@@ -217,7 +217,11 @@ export class CompilerHostWrapper {
         if (cached) {
           return cached;
         }
-        const content = fileName.startsWith("/node_modules/typescript/lib") ? "" : fs.readFile(fileName);
+        const content = fileName.startsWith("/node_modules/typescript/lib") ? "" : fs.tryReadFile(fileName);
+        if (content === undefined) {
+          return undefined;
+        }
+
         const sourceFile = ts.createSourceFile(
           fileName,
           content,
