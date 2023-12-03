@@ -164,4 +164,6 @@ export const allBuildTools = Object.keys({
   snowpack: true,
   microbundle: true,
   "@microsoft/api-extractor": true,
+  tshy: true,
+  "@rspack/cli": true,
 } satisfies Record<BuildTool, any>) as BuildTool[];

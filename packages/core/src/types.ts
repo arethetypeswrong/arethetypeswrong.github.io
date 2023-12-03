@@ -33,7 +33,9 @@ export type BuildTool =
   | "vite"
   | "snowpack"
   | "microbundle"
-  | "@microsoft/api-extractor";
+  | "@microsoft/api-extractor"
+  | "tshy"
+  | "@rspack/cli";
 
 export interface Analysis {
   packageName: string;
