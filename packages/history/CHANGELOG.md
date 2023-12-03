@@ -1,5 +1,17 @@
 # @arethetypeswrong/history
 
+## 0.6.0
+
+### Minor Changes
+
+- 8de8306: December 1 data
+
+### Patch Changes
+
+- Updated dependencies [0055de6]
+- Updated dependencies [8de8306]
+  - @arethetypeswrong/core@0.13.3
+
 ## 0.5.1
 
 ### Patch Changes

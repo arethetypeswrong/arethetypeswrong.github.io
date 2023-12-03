@@ -1,5 +1,14 @@
 # @arethetypeswrong/cli
 
+## 0.13.3
+
+### Patch Changes
+
+- 3cc28dc: Fix `--pack` with pre/post scripts that write to STDOUT
+- Updated dependencies [0055de6]
+- Updated dependencies [8de8306]
+  - @arethetypeswrong/core@0.13.3
+
 ## 0.13.2
 
 ### Patch Changes

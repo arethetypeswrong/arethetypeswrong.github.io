@@ -1,5 +1,12 @@
 # @arethetypeswrong/core
 
+## 0.13.3
+
+### Patch Changes
+
+- 0055de6: Fix occasional crash
+- 8de8306: Add tshy and rspack to build tools list
+
 ## 0.13.2
 
 ### Patch Changes
