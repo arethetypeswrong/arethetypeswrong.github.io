@@ -171,10 +171,13 @@ particularly ESM-related module resolution issues.`,
             }
           }
 
-          fileName = deleteTgz = path.resolve(
+          const manifest = JSON.parse(await readFile(path.join(fileOrDirectory, "package.json"), { encoding: "utf8" }));
+          fileName = deleteTgz = path.join(
             fileOrDirectory,
-            execSync("npm pack", { cwd: fileOrDirectory, encoding: "utf8", stdio: "pipe" }).trim(),
+            // https://github.com/npm/cli/blob/f875caa86900122819311dd77cde01c700fd1817/lib/utils/tar.js#L123-L125
+            `${manifest.name.replace("@", "").replace("/", "-")}-${manifest.version}.tgz`,
           );
+          execSync("npm pack", { cwd: fileOrDirectory, encoding: "utf8", stdio: "ignore" });
         }
         const file = await readFile(fileName);
         const data = new Uint8Array(file);
