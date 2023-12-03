@@ -1,10 +1,7 @@
 {
   "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
-    "lib": [
-      "webworker",
-      "es2019"
-    ],
+    "lib": ["webworker", "es2019"],
     "module": "esnext",
     "moduleResolution": "bundler",
     "emitDeclarationOnly": true,

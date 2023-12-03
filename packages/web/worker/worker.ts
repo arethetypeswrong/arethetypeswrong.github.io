@@ -31,7 +31,7 @@ onmessage = async (event: MessageEvent<CheckPackageEventData | CheckFileEventDat
       ? await createPackageFromNpm(getImplementationPackageName(event.data.packageSpec), {
           definitelyTyped: parsePackageSpec(event.data.packageSpec).data?.version,
         })
-      : await createPackageFromNpm(event.data.packageSpec)
+      : await createPackageFromNpm(event.data.packageSpec),
   );
   postMessage({
     kind: "result",

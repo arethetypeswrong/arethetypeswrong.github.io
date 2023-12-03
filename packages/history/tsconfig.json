@@ -6,13 +6,9 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "outDir": "lib",
-    "types": [
-      "node",
-    ]
+    "types": ["node"]
   },
-  "include": [
-    "src/**/*.js"
-  ],
+  "include": ["src/**/*.js"],
   "references": [
     {
       "path": "../core"

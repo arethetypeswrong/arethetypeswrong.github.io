@@ -1,14 +1,10 @@
 {
   "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
-    "lib": [
-      "es2019"
-    ],
+    "lib": ["es2019"],
     "module": "nodenext",
     "outDir": "dist",
-    "types": [
-      "node"
-    ]
+    "types": ["node"]
   },
   "references": [
     {

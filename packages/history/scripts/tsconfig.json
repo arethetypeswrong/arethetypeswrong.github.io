@@ -1,9 +1,7 @@
 {
   "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
-    "lib": [
-      "esnext"
-    ],
+    "lib": ["esnext"],
     "module": "nodenext",
     "composite": true,
     "emitDeclarationOnly": true,
@@ -12,10 +10,7 @@
     "verbatimModuleSyntax": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "types": [
-      "node",
-      "ts-expose-internals"
-    ],
+    "types": ["node", "ts-expose-internals"]
   },
   "references": [
     {

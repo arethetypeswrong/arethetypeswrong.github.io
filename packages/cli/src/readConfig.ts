@@ -20,8 +20,8 @@ export async function readConfig(program: Command, alternate = ".attw.json") {
         if (invalid)
           program.error(
             `error: config option 'ignoreRules' argument '${invalid}' is invalid. Allowed choices are ${Object.values(
-              problemFlags
-            ).join(", ")}.`
+              problemFlags,
+            ).join(", ")}.`,
           );
       }
 

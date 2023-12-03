@@ -1,2 +1,4 @@
 lib
 dist
+**/snapshots
+packages/history/data

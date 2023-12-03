@@ -3,17 +3,12 @@
   "compilerOptions": {
     "module": "nodenext",
     "rootDir": "src",
-    "types": [
-      "ts-expose-internals",
-      "node"
-    ],
+    "types": ["ts-expose-internals", "node"],
     "outDir": "./dist",
     "declarationDir": "./lib",
-    "sourceMap": true,
+    "sourceMap": true
   },
-  "include": [
-    "src"
-  ],
+  "include": ["src"],
   "references": [
     {
       "path": "../core"

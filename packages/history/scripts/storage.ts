@@ -7,7 +7,7 @@ import { dirname } from "node:path";
 
 const blobServiceClient = new BlobServiceClient(
   "https://arethetypeswrong.blob.core.windows.net",
-  new StorageSharedKeyCredential("arethetypeswrong", process.env.AZURE_STORAGE_KEY!)
+  new StorageSharedKeyCredential("arethetypeswrong", process.env.AZURE_STORAGE_KEY!),
 );
 const dataContainerClient = blobServiceClient.getContainerClient("data");
 const datesBlobClient = dataContainerClient.getBlockBlobClient("dates.json");

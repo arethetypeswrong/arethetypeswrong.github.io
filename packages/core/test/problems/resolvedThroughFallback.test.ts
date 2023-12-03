@@ -27,7 +27,7 @@ test("resolvedThroughFallback", () => {
       "Exiting conditional exports.",
       "Resolving real path for '/node_modules/dep/dist/index.d.ts', result '/node_modules/dep/dist/index.d.ts'.",
       "======== Module name 'dep' was successfully resolved to '/node_modules/dep/dist/index.d.ts' with Package ID 'dep/dist/index.d.ts@1.0.0'. ========",
-    ])
+    ]),
   );
 
   assert.ok(
@@ -54,7 +54,7 @@ test("resolvedThroughFallback", () => {
       "======== Resolving module 'dual' from '/main.cts'. ========",
       "Resolution for module 'dual' was found in cache from location '/'.",
       "======== Module name 'dual' was successfully resolved to '/node_modules/dual/index.d.ts' with Package ID 'dual/index.d.ts@1.0.0'. ========",
-    ])
+    ]),
   );
 
   assert.ok(
@@ -261,6 +261,6 @@ test("resolvedThroughFallback", () => {
       "File '/package.json' does not exist according to earlier cached lookups.",
       "File 'package.json' does not exist according to earlier cached lookups.",
       "File '/package.json' does not exist according to earlier cached lookups.",
-    ])
+    ]),
   );
 });

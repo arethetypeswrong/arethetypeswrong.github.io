@@ -1,20 +1,14 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "es2019"
-    ],
+    "lib": ["dom", "es2019"],
     "module": "esnext",
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "emitDeclarationOnly": true,
-    "outDir": "lib",
+    "outDir": "lib"
   },
-  "include": [
-    "src",
-    "package.json"
-  ],
+  "include": ["src", "package.json"],
   "references": [
     {
       "path": "./worker"

@@ -66,7 +66,7 @@ if (!isMainThread && parentPort) {
           }
         }
       }
-    }
+    },
   );
 }
 
@@ -80,7 +80,7 @@ export default function checkPackages(
   outFile: URL,
   workerCount: number,
   before: string,
-  onResolveTypesPackageUrl: (packageName: string, typesPackageUrl: string) => void
+  onResolveTypesPackageUrl: (packageName: string, typesPackageUrl: string) => void,
 ): Promise<boolean> {
   if (!packages.length) {
     return Promise.resolve(false);
@@ -148,8 +148,8 @@ export default function checkPackages(
                   return [];
                 }
                 return value;
-              }
-            ) + "\n"
+              },
+            ) + "\n",
           );
           console.log(`[${workerIndex}] ${packages.length - workQueue.length}/${packages.length} ${packageSpec}`);
           wroteChanges = true;

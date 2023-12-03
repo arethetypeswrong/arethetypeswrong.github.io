@@ -1,2 +1,2 @@
-export * from './typed.js';
-export * from './untyped.js';
+export * from "./typed.js";
+export * from "./untyped.js";

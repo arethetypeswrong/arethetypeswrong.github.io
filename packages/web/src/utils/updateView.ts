@@ -3,7 +3,7 @@ import { shallowEqual } from "./shallowEqual";
 export function updateView<T extends Element, Props extends object>(
   element: T,
   view: (props: Props) => Partial<T>,
-  props: Props
+  props: Props,
 ) {
   let lastProps: Props | undefined;
   if (!lastProps || !shallowEqual(lastProps, props)) {
