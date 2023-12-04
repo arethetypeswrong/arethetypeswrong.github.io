@@ -41,7 +41,7 @@ jobs:
       - uses: changesets/action@v1
         with:
           publish: pnpm changeset publish
-          version: pnpm changeset version && pnpm install --lockfile-only
+          version: pnpm changeset version && pnpm install --lockfile-only --offline
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
