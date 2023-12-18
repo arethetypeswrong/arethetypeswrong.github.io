@@ -9,6 +9,7 @@ $ attw @reduxjs__toolkit@2.0.0-beta.0.tgz -f table-flipped
 Build tools:
 - typescript@~4.9
 - @microsoft/api-extractor@^7.13.2
+- tsup@^6.7.0
 
 🎭 Import resolved to a CommonJS type declaration file, but an ESM JavaScript file. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseCJS.md
 
