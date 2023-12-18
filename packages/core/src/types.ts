@@ -35,7 +35,8 @@ export type BuildTool =
   | "microbundle"
   | "@microsoft/api-extractor"
   | "tshy"
-  | "@rspack/cli";
+  | "@rspack/cli"
+  | "tsup";
 
 export interface Analysis {
   packageName: string;

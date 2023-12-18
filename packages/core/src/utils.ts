@@ -166,4 +166,5 @@ export const allBuildTools = Object.keys({
   "@microsoft/api-extractor": true,
   tshy: true,
   "@rspack/cli": true,
+  tsup: true,
 } satisfies Record<BuildTool, any>) as BuildTool[];
