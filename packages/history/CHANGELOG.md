@@ -1,5 +1,13 @@
 # @arethetypeswrong/history
 
+## 0.6.1
+
+### Patch Changes
+
+- Updated dependencies [fffff4d]
+- Updated dependencies [4e7c0dd]
+  - @arethetypeswrong/core@0.13.4
+
 ## 0.6.0
 
 ### Minor Changes

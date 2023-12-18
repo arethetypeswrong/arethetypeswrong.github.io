@@ -1,5 +1,12 @@
 # @arethetypeswrong/core
 
+## 0.13.4
+
+### Patch Changes
+
+- fffff4d: Add tsup to recognized build tools
+- 4e7c0dd: Add `resolveImplementationPackageForTypesPackage` util
+
 ## 0.13.3
 
 ### Patch Changes
