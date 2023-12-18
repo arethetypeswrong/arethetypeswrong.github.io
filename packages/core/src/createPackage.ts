@@ -106,15 +106,10 @@ export async function createPackageFromNpm(
     throw new Error(parsed.error);
   }
   const packageName = parsed.data.name;
-  const specs =
+  const { tarballUrl, packageVersion } =
     parsed.data.versionKind === "none" && typeof definitelyTyped === "string"
-      ? [
-          parsePackageSpec(`${packageName}@${major(definitelyTyped)}.${minor(definitelyTyped)}`).data!,
-          parsePackageSpec(`${packageName}@${major(definitelyTyped)}`).data!,
-          parsePackageSpec(`${packageName}@latest`).data!,
-        ]
-      : [parsed.data];
-  const { tarballUrl, packageVersion } = await getNpmTarballUrl(specs, before);
+      ? await resolveImplementationPackageForTypesPackage(packageName, definitelyTyped, { before })
+      : await getNpmTarballUrl([parsed.data], before);
   const pkg = await createPackageFromTarballUrl(tarballUrl);
   if (!definitelyTyped || pkg.containsTypes()) {
     return pkg;
@@ -143,43 +138,62 @@ export async function createPackageFromNpm(
   return pkg;
 }
 
+export async function resolveImplementationPackageForTypesPackage(
+  typesPackageName: string,
+  typesPackageVersion: string,
+  options?: Pick<CreatePackageFromNpmOptions, "before">,
+): Promise<ResolvedPackageId> {
+  if (!typesPackageName.startsWith("@types/")) {
+    throw new Error(`'resolveImplementationPackageForTypesPackage' expects an @types package name and version`);
+  }
+  const packageName = ts.unmangleScopedPackageName(typesPackageName.slice("@types/".length));
+  return getNpmTarballUrl(
+    [
+      parsePackageSpec(`${packageName}@${major(typesPackageVersion)}.${minor(typesPackageVersion)}`).data!,
+      parsePackageSpec(`${packageName}@${major(typesPackageVersion)}`).data!,
+      parsePackageSpec(`${packageName}@latest`).data!,
+    ],
+    options?.before,
+  );
+}
+
 export async function resolveTypesPackageForPackage(
   packageName: string,
   packageVersion: string,
   before?: Date,
-): Promise<{ packageName: string; packageVersion: string; tarballUrl: string } | undefined> {
+): Promise<ResolvedPackageId | undefined> {
   const typesPackageName = ts.getTypesPackageName(packageName);
   try {
-    return {
-      packageName: typesPackageName,
-      ...(await getNpmTarballUrl(
-        [
-          {
-            name: typesPackageName,
-            versionKind: "range",
-            version: `${major(packageVersion)}.${minor(packageVersion)}`,
-          },
-          {
-            name: typesPackageName,
-            versionKind: "range",
-            version: `${major(packageVersion)}`,
-          },
-          {
-            name: typesPackageName,
-            versionKind: "tag",
-            version: "latest",
-          },
-        ],
-        before,
-      )),
-    };
+    return await getNpmTarballUrl(
+      [
+        {
+          name: typesPackageName,
+          versionKind: "range",
+          version: `${major(packageVersion)}.${minor(packageVersion)}`,
+        },
+        {
+          name: typesPackageName,
+          versionKind: "range",
+          version: `${major(packageVersion)}`,
+        },
+        {
+          name: typesPackageName,
+          versionKind: "tag",
+          version: "latest",
+        },
+      ],
+      before,
+    );
   } catch {}
 }
 
-async function getNpmTarballUrl(
-  packageSpecs: readonly ParsedPackageSpec[],
-  before?: Date,
-): Promise<{ tarballUrl: string; packageVersion: string }> {
+export interface ResolvedPackageId {
+  packageName: string;
+  packageVersion: string;
+  tarballUrl: string;
+}
+
+async function getNpmTarballUrl(packageSpecs: readonly ParsedPackageSpec[], before?: Date): Promise<ResolvedPackageId> {
   const fetchPackument = packageSpecs.some(
     (spec) => spec.versionKind === "range" || (spec.versionKind === "tag" && spec.version !== "latest"),
   );
@@ -227,7 +241,7 @@ async function getNpmTarballUrl(
     }
 
     if (packageVersion && tarballUrl) {
-      return { packageVersion, tarballUrl };
+      return { packageName: packageSpec.name, packageVersion, tarballUrl };
     }
   }
   throw new Error(`Failed to find a matching version for ${packageSpecs[0].name}`);
