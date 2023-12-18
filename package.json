@@ -12,7 +12,7 @@
     "format": "prettier --write \"**/*.{ts,json,css}\"",
     "test": "pnpm -r test",
     "start": "pnpm --filter @arethetypeswrong/web start",
-    "version": "changeset version && pnpm install --lockfile-only --offline"
+    "version": "changeset version && pnpm install --lockfile-only"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
