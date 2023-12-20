@@ -14,6 +14,10 @@ This project attempts to analyze npm package contents for issues with their Type
 * [🚭 Unexpected module syntax](./docs/problems/UnexpectedModuleSyntax.md)
 * [🥴 Internal resolution error](./docs/problems/InternalResolutionError.md)
 
+## CLI
+
+You can check packages on disk with [`@arethetypeswrong/cli`](https://npmjs.com/@arethetypeswrong/cli). See [its README](./packages/cli/README.md) for usage.
+
 ## Contributing
 
 Contributions are welcome! Take a look at the open issues or read about [how to contribute to open source](https://opensource.guide).
