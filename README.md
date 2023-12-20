@@ -16,7 +16,7 @@ This project attempts to analyze npm package contents for issues with their Type
 
 ## CLI
 
-You can use this project from CLI. Check out the [CLI readme](packages/cli/README.md).
+You can check packages on disk with [`@arethetypeswrong/cli`](https://npmjs.com/@arethetypeswrong/cli). See [its README](./packages/cli/README.md) for usage.
 
 ## Contributing
 
