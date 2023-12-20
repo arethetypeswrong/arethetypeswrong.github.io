@@ -17,10 +17,15 @@
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
     "prettier": "^3.0.3",
-    "typescript": "5.3.2"
+    "typescript": "5.3.3"
   },
   "engines": {
     "node": ">=18",
     "pnpm": ">=8"
+  },
+  "pnpm": {
+    "overrides": {
+      "ts-expose-internals-conditionally": "$typescript"
+    }
   }
 }
