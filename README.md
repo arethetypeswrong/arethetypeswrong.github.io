@@ -14,6 +14,10 @@ This project attempts to analyze npm package contents for issues with their Type
 * [🚭 Unexpected module syntax](./docs/problems/UnexpectedModuleSyntax.md)
 * [🥴 Internal resolution error](./docs/problems/InternalResolutionError.md)
 
+## CLI
+
+You can use this project from CLI. Check out the [CLI readme](packages/cli/README.md).
+
 ## Contributing
 
 Contributions are welcome! Take a look at the open issues or read about [how to contribute to open source](https://opensource.guide).
