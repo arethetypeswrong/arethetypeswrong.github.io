@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.13.5
+
+### Patch Changes
+
+- 34c97d4: Fix TypeScript error for unresolved reference to ts-expose-internals
+
 ## 0.13.4
 
 ### Patch Changes
