@@ -38,6 +38,7 @@ jobs:
       - run: pnpm install
       - run: pnpm build
       - run: pnpm test
+      - run: pnpm check-dts
       - uses: changesets/action@v1
         with:
           publish: pnpm changeset publish
