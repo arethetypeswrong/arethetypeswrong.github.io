@@ -38,6 +38,7 @@ jobs:
       - run: pnpm install
       - run: pnpm build
       - run: pnpm test
+      - run: pnpm tsc -p tsconfig.check-dts.json
       - uses: changesets/action@v1
         with:
           publish: pnpm changeset publish

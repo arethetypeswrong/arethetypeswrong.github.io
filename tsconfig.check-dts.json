@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "module": "nodenext",
+    "noEmit": true,
+    "strict": true
+  },
+  "include": ["./packages/core/dist"]
+}

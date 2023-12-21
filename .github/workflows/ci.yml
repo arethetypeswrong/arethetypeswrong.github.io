@@ -31,3 +31,4 @@ jobs:
       - run: pnpm tsc
       - run: pnpm build
       - run: pnpm test
+      - run: pnpm tsc -p tsconfig.check-dts.json
