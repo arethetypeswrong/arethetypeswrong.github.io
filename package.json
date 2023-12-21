@@ -11,6 +11,7 @@
     "build": "pnpm tsc && pnpm -r build",
     "format": "prettier --write \"**/*.{ts,json,css}\"",
     "test": "pnpm -r test",
+    "check-dts": "tsc -p tsconfig.check-dts.json",
     "start": "pnpm --filter @arethetypeswrong/web start",
     "version": "changeset version && pnpm install --lockfile-only"
   },
