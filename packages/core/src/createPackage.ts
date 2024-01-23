@@ -1,8 +1,8 @@
 import { untar } from "@andrewbranch/untar.js";
 import { gunzipSync } from "fflate";
+import { major, maxSatisfying, minor, valid, validRange } from "semver";
 import ts from "typescript";
 import { parsePackageSpec, type ParsedPackageSpec } from "./utils.js";
-import { maxSatisfying, major, minor, valid, validRange } from "semver";
 
 export class Package {
   #files: Record<string, string | Uint8Array> = {};
@@ -106,16 +106,16 @@ export async function createPackageFromNpm(
     throw new Error(parsed.error);
   }
   const packageName = parsed.data.name;
+  const typesPackageName = ts.getTypesPackageName(packageName);
   const { tarballUrl, packageVersion } =
     parsed.data.versionKind === "none" && typeof definitelyTyped === "string"
-      ? await resolveImplementationPackageForTypesPackage(packageName, definitelyTyped, { before })
+      ? await resolveImplementationPackageForTypesPackage(typesPackageName, definitelyTyped, { before })
       : await getNpmTarballUrl([parsed.data], before);
   const pkg = await createPackageFromTarballUrl(tarballUrl);
   if (!definitelyTyped || pkg.containsTypes()) {
     return pkg;
   }
 
-  const typesPackageName = ts.getTypesPackageName(packageName);
   let typesPackageData;
   if (definitelyTyped === true) {
     typesPackageData = await resolveTypesPackageForPackage(packageName, packageVersion, before);
@@ -147,14 +147,30 @@ export async function resolveImplementationPackageForTypesPackage(
     throw new Error(`'resolveImplementationPackageForTypesPackage' expects an @types package name and version`);
   }
   const packageName = ts.unmangleScopedPackageName(typesPackageName.slice("@types/".length));
-  return getNpmTarballUrl(
-    [
-      parsePackageSpec(`${packageName}@${major(typesPackageVersion)}.${minor(typesPackageVersion)}`).data!,
-      parsePackageSpec(`${packageName}@${major(typesPackageVersion)}`).data!,
-      parsePackageSpec(`${packageName}@latest`).data!,
-    ],
-    options?.before,
-  );
+  const version = valid(typesPackageVersion);
+  if (version) {
+    return getNpmTarballUrl(
+      [
+        parsePackageSpec(`${packageName}@${major(version)}.${minor(version)}`).data!,
+        parsePackageSpec(`${packageName}@${major(version)}`).data!,
+        parsePackageSpec(`${packageName}@latest`).data!,
+      ],
+      options?.before,
+    );
+  }
+
+  const range = validRange(typesPackageVersion);
+  if (range) {
+    return getNpmTarballUrl(
+      [
+        { name: packageName, versionKind: "range", version: range },
+        { name: packageName, versionKind: "tag", version: "latest" },
+      ],
+      options?.before,
+    );
+  }
+
+  throw new Error(`'resolveImplementationPackageForTypesPackage' expects a valid SemVer version or range`);
 }
 
 export async function resolveTypesPackageForPackage(

@@ -1,4 +1,4 @@
-import type { ResultMessage } from "../worker/worker.ts";
+import type { Message } from "../worker/worker.ts";
 import { subscribeRenderer } from "./renderer.ts";
 import { updateState, type PackageInfo, getState, subscribe, type State } from "./state.ts";
 import { shallowEqual } from "./utils/shallowEqual.ts";
@@ -6,11 +6,19 @@ import NProgress from "nprogress";
 import { parsePackageSpec, type ParsedPackageSpec } from "@arethetypeswrong/core/utils";
 
 const worker = new Worker(new URL("../worker/worker.ts", import.meta.url), { type: "module" });
-worker.onmessage = async (event: MessageEvent<ResultMessage>) => {
+worker.onmessage = async (event: MessageEvent<Message>) => {
   updateState((state) => {
-    state.analysis = event.data.data.result;
-    state.isLoading = false;
-    state.message = undefined;
+    if (event.data.kind === "error") {
+      state.isLoading = false;
+      state.message = {
+        isError: true,
+        text: event.data.data.error,
+      };
+    } else {
+      state.analysis = event.data.data.result;
+      state.isLoading = false;
+      state.message = undefined;
+    }
   });
 
   const params = new URLSearchParams(location.search);
@@ -56,7 +64,6 @@ if (location.search) {
     onPackageNameInput(packageSpec);
     getPackageInfo().then(() => {
       const info = getState().packageInfo.info;
-      console.log(info);
       if (info && info.size && info.size < 1_000_000 && !navigator.connection?.saveData) {
         onCheck();
       }
