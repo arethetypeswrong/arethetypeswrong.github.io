@@ -1,5 +1,12 @@
 # @arethetypeswrong/core
 
+## 0.13.6
+
+### Patch Changes
+
+- c5923a7: When detecting proxy directories, exclude vendored packages by filtering by package.json name
+- 406fc66: Fix bugs in createPackageFromNpm, allow resolveImplementationPackageForTypesPackage to accept a range
+
 ## 0.13.5
 
 ### Patch Changes
