@@ -1,8 +1,8 @@
 import { untar } from "@andrewbranch/untar.js";
 import { gunzipSync } from "fflate";
+import { major, maxSatisfying, minor, valid, validRange } from "semver";
 import ts from "typescript";
 import { parsePackageSpec, type ParsedPackageSpec } from "./utils.js";
-import { maxSatisfying, major, minor, valid, validRange, coerce } from "semver";
 
 export class Package {
   #files: Record<string, string | Uint8Array> = {};
