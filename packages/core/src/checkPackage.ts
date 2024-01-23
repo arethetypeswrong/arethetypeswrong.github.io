@@ -188,7 +188,7 @@ function getProxyDirectories(rootDir: string, fs: Package) {
     .filter((f) => {
       try {
         const packageJson = JSON.parse(fs.readFile(f));
-        return "main" in packageJson;
+        return "main" in packageJson && (!packageJson.name || packageJson.name.startsWith(fs.packageName));
       } catch {
         return false;
       }
