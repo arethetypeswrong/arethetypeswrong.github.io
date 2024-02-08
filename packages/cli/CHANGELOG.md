@@ -1,5 +1,11 @@
 # @arethetypeswrong/cli
 
+## 0.13.7
+
+### Patch Changes
+
+- 856e8b6: Expose internal renderer and exit code API
+
 ## 0.13.6
 
 ### Patch Changes
