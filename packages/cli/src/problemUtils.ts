@@ -1,7 +1,7 @@
 import * as core from "@arethetypeswrong/core";
 import type { ProblemKind } from "@arethetypeswrong/core";
 
-export const problemFlags: Record<ProblemKind, string> = {
+export const problemFlags = {
   NoResolution: "no-resolution",
   UntypedResolution: "untyped-resolution",
   FalseCJS: "false-cjs",
@@ -13,7 +13,7 @@ export const problemFlags: Record<ProblemKind, string> = {
   MissingExportEquals: "missing-export-equals",
   UnexpectedModuleSyntax: "unexpected-module-syntax",
   InternalResolutionError: "internal-resolution-error",
-};
+} as const satisfies Record<ProblemKind, string>;
 
 export const resolutionKinds: Record<core.ResolutionKind, string> = {
   node10: "node10",

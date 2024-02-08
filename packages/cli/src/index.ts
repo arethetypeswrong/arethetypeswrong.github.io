@@ -14,25 +14,25 @@ import { problemFlags } from "./problemUtils.js";
 import { readConfig } from "./readConfig.js";
 import * as render from "./render/index.js";
 import { major, minor } from "semver";
+import { getExitCode } from "./getExitCode.js";
 
 const packageJson = createRequire(import.meta.url)("../package.json");
 const version = packageJson.version;
 
-const formats = ["auto", "table", "table-flipped", "ascii", "json"] as const;
+const formats = Object.keys({
+  auto: true,
+  json: true,
+  ascii: true,
+  table: true,
+  "table-flipped": true,
+} satisfies Record<render.Format, any>) as render.Format[];
 
-type Format = (typeof formats)[number];
-
-export interface Opts {
+interface Opts extends render.RenderOptions {
   pack?: boolean;
   fromNpm?: boolean;
   definitelyTyped?: boolean | string;
-  summary?: boolean;
-  emoji?: boolean;
-  color?: boolean;
   quiet?: boolean;
   configPath?: string;
-  ignoreRules?: string[];
-  format: Format;
 
   entrypoints?: string[];
   includeEntrypoints?: string[];
@@ -81,9 +81,6 @@ particularly ESM-related module resolution issues.`,
   .action(async (fileOrDirectory = ".") => {
     const opts = program.opts<Opts>();
     await readConfig(program, opts.configPath);
-    opts.ignoreRules = opts.ignoreRules?.map(
-      (value) => Object.keys(problemFlags).find((key) => problemFlags[key as core.ProblemKind] === value) as string,
-    );
 
     if (opts.quiet) {
       console.log = () => {};
@@ -210,21 +207,24 @@ particularly ESM-related module resolution issues.`,
 
       console.log(JSON.stringify(result));
 
-      if (analysis.types && analysis.problems.some((problem) => !opts.ignoreRules?.includes(problem.kind)))
-        process.exit(1);
+      if (deleteTgz) {
+        await unlink(deleteTgz);
+      }
+
+      const exitCode = getExitCode(analysis, opts);
+      if (exitCode) {
+        process.exit(exitCode);
+      }
 
       return;
     }
 
     console.log();
     if (analysis.types) {
-      await render.typed(analysis, opts);
-
-      if (analysis.types && analysis.problems.some((problem) => !opts.ignoreRules?.includes(problem.kind))) {
-        process.exitCode = 1;
-      }
+      console.log(await render.typed(analysis, opts));
+      process.exitCode = getExitCode(analysis, opts);
     } else {
-      render.untyped(analysis as core.UntypedResult);
+      console.log(render.untyped(analysis as core.UntypedResult));
     }
 
     if (deleteTgz) {
