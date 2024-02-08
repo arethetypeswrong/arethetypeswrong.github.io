@@ -18,8 +18,8 @@ importers:
         specifier: ^3.0.3
         version: 3.0.3
       typescript:
-        specifier: 5.4.0-dev.20240207
-        version: 5.4.0-dev.20240207
+        specifier: 5.3.3
+        version: 5.3.3
 
   packages/cli:
     dependencies:
@@ -61,8 +61,8 @@ importers:
         specifier: 5.3.3
         version: 5.3.3
       typescript:
-        specifier: 5.4.0-dev.20240207
-        version: 5.4.0-dev.20240207
+        specifier: 5.3.3
+        version: 5.3.3
 
   packages/core:
     dependencies:
@@ -79,8 +79,8 @@ importers:
         specifier: 5.3.3
         version: 5.3.3
       typescript:
-        specifier: 5.4.0-dev.20240207
-        version: 5.4.0-dev.20240207
+        specifier: 5.3.3
+        version: 5.3.3
       validate-npm-package-name:
         specifier: ^5.0.0
         version: 5.0.0
@@ -3754,12 +3754,6 @@ packages:
 
   /typescript@5.3.3:
     resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
-    engines: {node: '>=14.17'}
-    hasBin: true
-    dev: true
-
-  /typescript@5.4.0-dev.20240207:
-    resolution: {integrity: sha512-BD7gF4QnjiTzOPqstgkgBxANkltT6VsZS6gFjXf7haPWTgrcebvCNQr1yGazb0o18RVtNXeHs6lDbXKqhJhiQQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 

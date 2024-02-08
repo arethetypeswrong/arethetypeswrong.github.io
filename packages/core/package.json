@@ -51,7 +51,7 @@
     "fflate": "^0.7.4",
     "semver": "^7.5.4",
     "ts-expose-internals-conditionally": "1.0.0-empty.0",
-    "typescript": "5.4.0-dev.20240207",
+    "typescript": "5.3.3",
     "validate-npm-package-name": "^5.0.0"
   },
   "devDependencies": {
