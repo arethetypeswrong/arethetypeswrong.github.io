@@ -1,5 +1,11 @@
 # @arethetypeswrong/cli
 
+## 0.13.8
+
+### Patch Changes
+
+- fbc894d: Add package.json to CLI exports
+
 ## 0.13.7
 
 ### Patch Changes
