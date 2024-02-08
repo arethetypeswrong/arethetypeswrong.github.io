@@ -18,8 +18,8 @@ importers:
         specifier: ^3.0.3
         version: 3.0.3
       typescript:
-        specifier: 5.3.3
-        version: 5.3.3
+        specifier: 5.4.0-dev.20240207
+        version: 5.4.0-dev.20240207
 
   packages/cli:
     dependencies:
@@ -57,12 +57,12 @@ importers:
       '@types/semver':
         specifier: ^7.5.3
         version: 7.5.3
-      ts-expose-internals:
-        specifier: 5.3.2
-        version: 5.3.2
+      ts-expose-internals-conditionally:
+        specifier: 5.3.3
+        version: 5.3.3
       typescript:
-        specifier: 5.3.2
-        version: 5.3.2
+        specifier: 5.4.0-dev.20240207
+        version: 5.4.0-dev.20240207
 
   packages/core:
     dependencies:
@@ -79,8 +79,8 @@ importers:
         specifier: 5.3.3
         version: 5.3.3
       typescript:
-        specifier: 5.3.3
-        version: 5.3.3
+        specifier: 5.4.0-dev.20240207
+        version: 5.4.0-dev.20240207
       validate-npm-package-name:
         specifier: ^5.0.0
         version: 5.0.0
@@ -3640,11 +3640,6 @@ packages:
 
   /ts-expose-internals-conditionally@5.3.3:
     resolution: {integrity: sha512-k3wz3FnxrtuD8ue3Y9GmqEsph3PB1YCZs6zWy6d6T60A9/0zgy3w0wQBQOdKPoyWN0T+JQCbY5cE8Cg80VlzNw==}
-    dev: false
-
-  /ts-expose-internals@5.3.2:
-    resolution: {integrity: sha512-lKFeJay+cwMvqfvf+Uv/+pkTwKc4OOtjEPjxKMUUcVaqKGlTEuN3yssT29VG0maDb0QbpAGb6iDzKj7/cf4WWQ==}
-    dev: true
 
   /ts-expose-internals@5.3.3:
     resolution: {integrity: sha512-0lW96u0pa08dq9QLYUBRbgGkvsD+LvPAVGe94kr2tHaRZAxgckwJ+qqc1BSRoR1rpkTZf7AWAa6DKrLGFmctwg==}
@@ -3757,14 +3752,14 @@ packages:
     resolution: {integrity: sha512-+wpbd+gNRNaHeYdJESWL0dh0SbjitfegVUCpLavYUJ0NEc149r3+NYZz2Wv2ttB+80ZJXjLpLXKBNB/E87wyyA==}
     dev: true
 
-  /typescript@5.3.2:
-    resolution: {integrity: sha512-6l+RyNy7oAHDfxC4FzSJcz9vnjTKxrLpDG5M2Vu4SHRVNg6xzqZp6LYSR9zjqQTu8DU/f5xwxUdADOkbrIX2gQ==}
+  /typescript@5.3.3:
+    resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
     engines: {node: '>=14.17'}
     hasBin: true
     dev: true
 
-  /typescript@5.3.3:
-    resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
+  /typescript@5.4.0-dev.20240207:
+    resolution: {integrity: sha512-BD7gF4QnjiTzOPqstgkgBxANkltT6VsZS6gFjXf7haPWTgrcebvCNQr1yGazb0o18RVtNXeHs6lDbXKqhJhiQQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 

@@ -14,6 +14,7 @@ import { problemFlags } from "./problemUtils.js";
 import { readConfig } from "./readConfig.js";
 import * as render from "./render/index.js";
 import { major, minor } from "semver";
+import { getExitCode } from "./getExitCode.js";
 
 const packageJson = createRequire(import.meta.url)("../package.json");
 const version = packageJson.version;
@@ -206,11 +207,14 @@ particularly ESM-related module resolution issues.`,
 
       console.log(JSON.stringify(result));
 
-      if (
-        analysis.types &&
-        analysis.problems.some((problem) => !opts.ignoreRules?.includes(problemFlags[problem.kind]))
-      )
-        process.exit(1);
+      if (deleteTgz) {
+        await unlink(deleteTgz);
+      }
+
+      const exitCode = getExitCode(analysis, opts);
+      if (exitCode) {
+        process.exit(exitCode);
+      }
 
       return;
     }
@@ -218,13 +222,7 @@ particularly ESM-related module resolution issues.`,
     console.log();
     if (analysis.types) {
       console.log(await render.typed(analysis, opts));
-
-      if (
-        analysis.types &&
-        analysis.problems.some((problem) => !opts.ignoreRules?.includes(problemFlags[problem.kind]))
-      ) {
-        process.exitCode = 1;
-      }
+      process.exitCode = getExitCode(analysis, opts);
     } else {
       console.log(render.untyped(analysis as core.UntypedResult));
     }

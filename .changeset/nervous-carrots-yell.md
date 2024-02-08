@@ -2,4 +2,4 @@
 "@arethetypeswrong/cli": patch
 ---
 
-Expose internal renderer API
+Expose internal renderer and exit code API

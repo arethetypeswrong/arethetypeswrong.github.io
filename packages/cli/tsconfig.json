@@ -3,7 +3,7 @@
   "compilerOptions": {
     "module": "nodenext",
     "rootDir": "src",
-    "types": ["ts-expose-internals", "node"],
+    "types": ["ts-expose-internals-conditionally", "node"],
     "outDir": "./dist",
     "sourceMap": true
   },
