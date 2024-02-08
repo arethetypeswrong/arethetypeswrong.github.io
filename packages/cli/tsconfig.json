@@ -5,7 +5,6 @@
     "rootDir": "src",
     "types": ["ts-expose-internals", "node"],
     "outDir": "./dist",
-    "declarationDir": "./lib",
     "sourceMap": true
   },
   "include": ["src"],

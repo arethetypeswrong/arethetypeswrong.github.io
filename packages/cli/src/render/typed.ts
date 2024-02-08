@@ -1,48 +1,44 @@
 import * as core from "@arethetypeswrong/core";
+import { filterProblems, problemAffectsEntrypoint, problemKindInfo } from "@arethetypeswrong/core/problems";
 import { allResolutionKinds, getResolutionOption, groupProblemsByKind } from "@arethetypeswrong/core/utils";
 import chalk from "chalk";
 import Table, { type GenericTable, type HorizontalTableRow } from "cli-table3";
 import { marked } from "marked";
-
-import { filterProblems, problemAffectsEntrypoint, problemKindInfo } from "@arethetypeswrong/core/problems";
-import type { Opts } from "../index.js";
+import TerminalRenderer from "marked-terminal";
 import { moduleKinds, problemFlags, resolutionKinds } from "../problemUtils.js";
 import { asciiTable } from "./asciiTable.js";
-import TerminalRenderer from "marked-terminal";
+import type { RenderOptions } from "./index.js";
 
-export async function typed(analysis: core.Analysis, opts: Opts) {
-  const problems = analysis.problems.filter((problem) => !opts.ignoreRules || !opts.ignoreRules.includes(problem.kind));
+export async function typed(analysis: core.Analysis, opts: RenderOptions): Promise<string> {
+  let output = "";
+  const problems = analysis.problems.filter(
+    (problem) => !opts.ignoreRules || !opts.ignoreRules.includes(problemFlags[problem.kind]),
+  );
   const grouped = groupProblemsByKind(problems);
   const entrypoints = Object.keys(analysis.entrypoints);
   marked.setOptions({
     renderer: new TerminalRenderer(),
   });
 
-  console.log(`${analysis.packageName} v${analysis.packageVersion}`);
+  out(`${analysis.packageName} v${analysis.packageVersion}`);
   if (analysis.types.kind === "@types") {
-    console.log(`${analysis.types.packageName} v${analysis.types.packageVersion}`);
+    out(`${analysis.types.packageName} v${analysis.types.packageVersion}`);
   }
-  console.log();
+  out();
   if (Object.keys(analysis.buildTools).length) {
-    console.log("Build tools:");
-    console.log(
+    out("Build tools:");
+    out(
       Object.entries(analysis.buildTools)
         .map(([tool, version]) => {
           return `- ${tool}@${version}`;
         })
         .join("\n"),
     );
-    console.log();
+    out();
   }
 
   if (opts.ignoreRules && opts.ignoreRules.length) {
-    console.log(
-      chalk.gray(
-        ` (ignoring rules: ${opts.ignoreRules
-          .map((rule) => `'${problemFlags[rule as core.ProblemKind]}'`)
-          .join(", ")})\n`,
-      ),
-    );
+    out(chalk.gray(` (ignoring rules: ${opts.ignoreRules.map((rule) => `'${rule}'`).join(", ")})\n`));
   }
 
   if (opts.summary) {
@@ -54,7 +50,7 @@ export async function typed(analysis: core.Analysis, opts: Opts) {
       return `${emoji}${description}`;
     });
 
-    console.log(summaryTexts.join("") || defaultSummary);
+    out(summaryTexts.join("") || defaultSummary);
   }
 
   const entrypointNames = entrypoints.map(
@@ -119,24 +115,30 @@ export async function typed(analysis: core.Analysis, opts: Opts) {
 
   switch (opts.format) {
     case "table":
-      console.log(table!.toString());
+      out(table!.toString());
       break;
     case "table-flipped":
-      console.log(flippedTable!.toString());
+      out(flippedTable!.toString());
       break;
     case "ascii":
-      console.log(asciiTable(table!));
+      out(asciiTable(table!));
       break;
     case "auto":
       const terminalWidth = process.stdout.columns || 133; // This looks like GitHub Actions' width
       if (table!.width <= terminalWidth) {
-        console.log(table!.toString());
+        out(table!.toString());
       } else if (flippedTable!.width <= terminalWidth) {
-        console.log(flippedTable!.toString());
+        out(flippedTable!.toString());
       } else {
-        console.log(asciiTable(table!));
+        out(asciiTable(table!));
       }
       break;
+  }
+
+  return output.trimEnd();
+
+  function out(s: string = "") {
+    output += s + "\n";
   }
 }
 

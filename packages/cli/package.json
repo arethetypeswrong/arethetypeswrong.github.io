@@ -21,10 +21,15 @@
   },
   "files": [
     "LICENSE",
-    "dist/**/*.js"
+    "dist/**/*.js",
+    "dist/**/*.js.map",
+    "dist/**/*.d.ts"
   ],
   "bin": {
     "attw": "./dist/index.js"
+  },
+  "exports": {
+    "./internal/render": "./dist/render/index.js"
   },
   "publishConfig": {
     "access": "public"

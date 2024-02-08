@@ -5,7 +5,11 @@ $ attw ejs@3.1.9.tgz -f table-flipped
 
 
 This package does not contain types.
-Details:  { packageName: 'ejs', packageVersion: '3.1.9', types: false }
+Details: {
+  "packageName": "ejs",
+  "packageVersion": "3.1.9",
+  "types": false
+}
 
 
 ```
