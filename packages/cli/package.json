@@ -29,6 +29,7 @@
     "attw": "./dist/index.js"
   },
   "exports": {
+    "./package.json": "./package.json",
     "./internal/getExitCode": "./dist/getExitCode.js",
     "./internal/render": "./dist/render/index.js"
   },
