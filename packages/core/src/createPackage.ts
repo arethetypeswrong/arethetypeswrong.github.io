@@ -1,5 +1,5 @@
 import { untar } from "@andrewbranch/untar.js";
-import { gunzipSync } from "fflate";
+import { Gunzip } from "fflate";
 import { major, maxSatisfying, minor, valid, validRange } from "semver";
 import ts from "typescript";
 import { parsePackageSpec, type ParsedPackageSpec } from "./utils.js";
@@ -279,7 +279,10 @@ export function createPackageFromTarballData(tarball: Uint8Array): Package {
 }
 
 function extractTarball(tarball: Uint8Array) {
-  const data = untar(gunzipSync(tarball));
+  // Use streaming API to work around https://github.com/101arrowz/fflate/issues/207
+  let unzipped: Uint8Array;
+  new Gunzip((chunk) => (unzipped = chunk)).push(tarball, /*final*/ true);
+  const data = untar(unzipped!);
   const prefix = data[0].filename.substring(0, data[0].filename.indexOf("/") + 1);
   const packageJsonText = data.find((f) => f.filename === `${prefix}package.json`)?.fileData;
   const packageJson = JSON.parse(new TextDecoder().decode(packageJsonText));
