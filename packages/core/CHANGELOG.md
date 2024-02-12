@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.13.9
+
+### Patch Changes
+
+- 66fa67b: Fix extracting some non-compliant tarballs
+
 ## 0.13.6
 
 ### Patch Changes
