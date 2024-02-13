@@ -1,5 +1,11 @@
 # @arethetypeswrong/cli
 
+## 0.13.10
+
+### Patch Changes
+
+- 2379636: Fix default options when calling internal CLI render APIs
+
 ## 0.13.9
 
 ### Patch Changes
