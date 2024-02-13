@@ -9,10 +9,13 @@ import { moduleKinds, problemFlags, resolutionKinds } from "../problemUtils.js";
 import { asciiTable } from "./asciiTable.js";
 import type { RenderOptions } from "./index.js";
 
-export async function typed(analysis: core.Analysis, opts: RenderOptions): Promise<string> {
+export async function typed(
+  analysis: core.Analysis,
+  { emoji = true, summary = true, format = "auto", ignoreRules = [] }: RenderOptions,
+): Promise<string> {
   let output = "";
   const problems = analysis.problems.filter(
-    (problem) => !opts.ignoreRules || !opts.ignoreRules.includes(problemFlags[problem.kind]),
+    (problem) => !ignoreRules || !ignoreRules.includes(problemFlags[problem.kind]),
   );
   const grouped = groupProblemsByKind(problems);
   const entrypoints = Object.keys(analysis.entrypoints);
@@ -37,17 +40,16 @@ export async function typed(analysis: core.Analysis, opts: RenderOptions): Promi
     out();
   }
 
-  if (opts.ignoreRules && opts.ignoreRules.length) {
-    out(chalk.gray(` (ignoring rules: ${opts.ignoreRules.map((rule) => `'${rule}'`).join(", ")})\n`));
+  if (ignoreRules && ignoreRules.length) {
+    out(chalk.gray(` (ignoring rules: ${ignoreRules.map((rule) => `'${rule}'`).join(", ")})\n`));
   }
 
-  if (opts.summary) {
-    const defaultSummary = marked(!opts.emoji ? " No problems found" : " No problems found 🌟");
+  if (summary) {
+    const defaultSummary = marked(!emoji ? " No problems found" : " No problems found 🌟");
     const summaryTexts = Object.keys(grouped).map((kind) => {
       const info = problemKindInfo[kind as core.ProblemKind];
-      const emoji = opts.emoji ? `${info.emoji} ` : "";
       const description = marked(`${info.description} ${info.docsUrl}`);
-      return `${emoji}${description}`;
+      return `${emoji ? `${info.emoji} ` : ""}${description}`;
     });
 
     out(summaryTexts.join("") || defaultSummary);
@@ -71,14 +73,14 @@ export async function typed(analysis: core.Analysis, opts: RenderOptions): Promi
     const kinds = Object.keys(problemsForCell) as core.ProblemKind[];
     if (kinds.length) {
       return kinds
-        .map((kind) => (opts.emoji ? `${problemKindInfo[kind].emoji} ` : "") + problemKindInfo[kind].shortDescription)
+        .map((kind) => (emoji ? `${problemKindInfo[kind].emoji} ` : "") + problemKindInfo[kind].shortDescription)
         .join("\n");
     }
 
-    const jsonResult = !opts.emoji ? "OK (JSON)" : "🟢 (JSON)";
+    const jsonResult = !emoji ? "OK (JSON)" : "🟢 (JSON)";
     const moduleResult = entrypoint.isWildcard
       ? "(wildcard)"
-      : (!opts.emoji ? "OK " : "🟢 ") +
+      : (!emoji ? "OK " : "🟢 ") +
         moduleKinds[
           analysis.programInfo[getResolutionOption(resolutionKind)].moduleKinds?.[resolution?.fileName ?? ""]
             ?.detectedKind || ""
@@ -87,7 +89,7 @@ export async function typed(analysis: core.Analysis, opts: RenderOptions): Promi
   });
 
   const flippedTable =
-    opts.format === "auto" || opts.format === "table-flipped"
+    format === "auto" || format === "table-flipped"
       ? new Table({
           head: ["", ...allResolutionKinds.map((kind) => chalk.reset(resolutionKinds[kind]))],
         })
@@ -102,7 +104,7 @@ export async function typed(analysis: core.Analysis, opts: RenderOptions): Promi
   }
 
   const table =
-    opts.format === "auto" || !flippedTable
+    format === "auto" || !flippedTable
       ? (new Table({
           head: ["", ...entrypointHeaders],
         }) as GenericTable<HorizontalTableRow>)
@@ -113,7 +115,7 @@ export async function typed(analysis: core.Analysis, opts: RenderOptions): Promi
     });
   }
 
-  switch (opts.format) {
+  switch (format) {
     case "table":
       out(table!.toString());
       break;
