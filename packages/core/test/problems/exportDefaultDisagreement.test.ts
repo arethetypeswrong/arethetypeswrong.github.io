@@ -135,4 +135,19 @@ var index_default = { a, b };`,
       ),
     );
   });
+  test("ignores unalayzable iife", () => {
+    assert(
+      isOk(
+        `export default function foo(): void`,
+        `!(function (e, i) {
+          "use strict";
+          var Ue = require("pako");
+          e.Apptimize = function () {};
+        })(
+          "undefined" != typeof exports ? exports : "undefined" != typeof window ? window : this,
+          "undefined" != typeof exports ? exports : "undefined" != typeof window ? window : this
+          );`,
+      ),
+    );
+  });
 });

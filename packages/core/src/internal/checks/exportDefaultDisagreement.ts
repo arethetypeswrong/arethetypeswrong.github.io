@@ -46,7 +46,7 @@ export default defineCheck({
     // recognize that pattern, we can avoid creating a program and checker
     // for this error.
     const typesHaveSyntacticDefault = typesSourceFile.symbol.exports.has(ts.InternalSymbolName.Default);
-    if (typesHaveSyntacticDefault && !getImplHasDefault()) {
+    if (typesHaveSyntacticDefault && !getImplHasDefault() && implIsAnalyzable()) {
       return {
         kind: "FalseExportDefault",
         typesFileName,
@@ -72,7 +72,7 @@ export default defineCheck({
     // `module.exports = SomeClass`, where the exported value is callable,
     // constructable, or a primitive.
 
-    if (!getImplHasDefault()) {
+    if (!getImplHasDefault() || !implIsAnalyzable()) {
       // The implementation not having a default doesn't necessarily mean the
       // following checks are irrelevant, but this rule is designed primarily
       // to catch cases where type definition authors correctly notice that
@@ -142,12 +142,16 @@ export default defineCheck({
       return ((implHasDefault as boolean) ??=
         implementationSourceFile?.symbol?.exports?.has(ts.InternalSymbolName.Default) ||
         getImplProbableExports()?.some((s) => s.name === "default") ||
-        getImplChecker()
-          .getExportsAndPropertiesOfModule(implementationSourceFile.symbol)
-          .some((s) => s.name === "default"));
+        (!!implementationSourceFile.symbol?.exports?.size &&
+          getImplChecker()
+            .getExportsAndPropertiesOfModule(implementationSourceFile.symbol)
+            .some((s) => s.name === "default")));
     }
     function getTypesChecker(): ts.TypeChecker {
       return ((typesChecker as ts.TypeChecker) ??= host.createAuxiliaryProgram([typesFileName!]).getTypeChecker());
+    }
+    function implIsAnalyzable(): boolean {
+      return !!(implementationSourceFile?.symbol?.exports?.size || getImplProbableExports()?.length);
     }
   },
 });
