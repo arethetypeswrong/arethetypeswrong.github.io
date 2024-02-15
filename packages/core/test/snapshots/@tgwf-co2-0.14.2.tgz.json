@@ -85,9 +85,7 @@
             "/node_modules/@tgwf/co2/dist/cjs/hosting.d.ts",
             "/node_modules/@tgwf/co2/dist/cjs/index.d.ts"
           ],
-          "visibleProblems": [
-            0
-          ]
+          "visibleProblems": []
         },
         "node16-cjs": {
           "name": ".",
@@ -160,9 +158,7 @@
             "/node_modules/@tgwf/co2/dist/cjs/hosting.d.ts",
             "/node_modules/@tgwf/co2/dist/cjs/index.d.ts"
           ],
-          "visibleProblems": [
-            0
-          ]
+          "visibleProblems": []
         },
         "node16-esm": {
           "name": ".",
@@ -407,11 +403,5 @@
     },
     "bundler": {}
   },
-  "problems": [
-    {
-      "kind": "MissingExportEquals",
-      "typesFileName": "/node_modules/@tgwf/co2/dist/cjs/index.d.ts",
-      "implementationFileName": "/node_modules/@tgwf/co2/dist/cjs/index.js"
-    }
-  ]
+  "problems": []
 }

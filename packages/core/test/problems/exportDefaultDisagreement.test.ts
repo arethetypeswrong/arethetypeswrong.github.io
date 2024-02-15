@@ -107,4 +107,32 @@ var index_default = { a, b };`,
       ),
     );
   });
+  test("exports merged with a class, copied to default", () => {
+    assert(
+      isMissingExportEquals(
+        `declare class Ajv {}
+        export declare class CustomError extends Error {}
+        export default Ajv;`,
+        `class Ajv {}
+        module.exports = exports = Ajv;
+        Object.defineProperty(exports, "__esModule", { value: true });
+        exports.default = Ajv;
+        class CustomError extends Error {}
+        Object.defineProperty(exports, "CustomError", { enumerable: true, get: function () { return CustomError; } });`,
+      ),
+    );
+  });
+  test("exports merged with a class, no default", () => {
+    assert(
+      isFalseExportDefault(
+        `declare class Ajv {}
+        export declare class CustomError extends Error {}
+        export default Ajv;`,
+        `class Ajv {}
+        module.exports = exports = Ajv;
+        class CustomError extends Error {}
+        Object.defineProperty(exports, "CustomError", { enumerable: true, get: function () { return CustomError; } });`,
+      ),
+    );
+  });
 });

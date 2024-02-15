@@ -73,7 +73,27 @@ export default defineCheck({
     // constructable, or a primitive.
 
     if (!getImplHasDefault()) {
+      // The implementation not having a default doesn't necessarily mean the
+      // following checks are irrelevant, but this rule is designed primarily
+      // to catch cases where type definition authors correctly notice that
+      // their implementation has a `module.exports.default`, but don't realize
+      // that the same object is exposed as `module.exports`. We bail early
+      // here primarily because these checks are expensive.
       return;
+    }
+
+    if (
+      !typesSourceFile.symbol.exports.has(ts.InternalSymbolName.ExportEquals) &&
+      implementationSourceFile.symbol.exports.has(ts.InternalSymbolName.ExportEquals) &&
+      getImplChecker().typeHasCallOrConstructSignatures(
+        getImplChecker().getTypeOfSymbol(getImplChecker().resolveExternalModuleSymbol(implementationSourceFile.symbol)),
+      )
+    ) {
+      return {
+        kind: "MissingExportEquals",
+        typesFileName,
+        implementationFileName,
+      };
     }
 
     const typesHaveNonDefaultValueExport = Array.from(typesSourceFile.symbol.exports.values()).some((s) => {
@@ -109,17 +129,20 @@ export default defineCheck({
       };
     }
 
-    var implProbableExports: unknown, implHasDefault: unknown, typesChecker: unknown;
+    var implProbableExports: unknown, impleChecker: unknown, implHasDefault: unknown, typesChecker: unknown;
     function getImplProbableExports(): Export[] {
       return ((implProbableExports as Export[]) ??= getProbableExports(implementationSourceFile));
+    }
+    function getImplChecker(): ts.TypeChecker {
+      return ((impleChecker as ts.TypeChecker) ??= host
+        .createAuxiliaryProgram([implementationFileName!])
+        .getTypeChecker());
     }
     function getImplHasDefault(): boolean {
       return ((implHasDefault as boolean) ??=
         implementationSourceFile?.symbol?.exports?.has(ts.InternalSymbolName.Default) ||
         getImplProbableExports()?.some((s) => s.name === "default") ||
-        host
-          .createAuxiliaryProgram([implementationFileName!], bindOptions)
-          .getTypeChecker()
+        getImplChecker()
           .getExportsAndPropertiesOfModule(implementationSourceFile.symbol)
           .some((s) => s.name === "default"));
     }
