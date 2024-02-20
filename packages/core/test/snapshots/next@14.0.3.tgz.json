@@ -2138,7 +2138,7 @@
   },
   "problems": [
     {
-      "kind": "FalseExportDefault",
+      "kind": "MissingExportEquals",
       "typesFileName": "/node_modules/next/index.d.ts",
       "implementationFileName": "/node_modules/next/dist/server/next.js"
     },

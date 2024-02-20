@@ -1,0 +1,407 @@
+{
+  "packageName": "@tgwf/co2",
+  "packageVersion": "0.14.2",
+  "types": {
+    "kind": "included"
+  },
+  "buildTools": {
+    "esbuild": "^0.14.47"
+  },
+  "entrypoints": {
+    ".": {
+      "subpath": ".",
+      "resolutions": {
+        "node10": {
+          "name": ".",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/@tgwf/co2/dist/cjs/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@tgwf/co2' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module '@tgwf/co2' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/@tgwf/co2/package.json'.",
+              "File '/node_modules/@tgwf/co2.ts' does not exist.",
+              "File '/node_modules/@tgwf/co2.tsx' does not exist.",
+              "File '/node_modules/@tgwf/co2.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' does not have a 'types' field.",
+              "'package.json' has 'main' field 'dist/cjs/index.js' that references '/node_modules/@tgwf/co2/dist/cjs/index.js'.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/@tgwf/co2/dist/cjs/index.js', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/@tgwf/co2/dist/cjs/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.ts' does not exist.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.tsx' does not exist.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name '@tgwf/co2' was successfully resolved to '/node_modules/@tgwf/co2/dist/cjs/index.d.ts' with Package ID '@tgwf/co2/dist/cjs/index.d.ts@0.14.2'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@tgwf/co2/dist/cjs/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@tgwf/co2' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module '@tgwf/co2' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/@tgwf/co2/package.json'.",
+              "File '/node_modules/@tgwf/co2.ts' does not exist.",
+              "File '/node_modules/@tgwf/co2.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'dist/cjs/index.js' that references '/node_modules/@tgwf/co2/dist/cjs/index.js'.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/@tgwf/co2/dist/cjs/index.js', target file types: TypeScript.",
+              "File name '/node_modules/@tgwf/co2/dist/cjs/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.ts' does not exist.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.tsx' does not exist.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.js.ts' does not exist.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.js.tsx' does not exist.",
+              "Directory '/node_modules/@tgwf/co2/dist/cjs/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/@tgwf/co2/index.ts' does not exist.",
+              "File '/node_modules/@tgwf/co2/index.tsx' does not exist.",
+              "Loading module '@tgwf/co2' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@tgwf/co2/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/@tgwf/co2.js' does not exist.",
+              "File '/node_modules/@tgwf/co2.jsx' does not exist.",
+              "'package.json' has 'main' field 'dist/cjs/index.js' that references '/node_modules/@tgwf/co2/dist/cjs/index.js'.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.js' exists - use it as a name resolution result.",
+              "======== Module name '@tgwf/co2' was successfully resolved to '/node_modules/@tgwf/co2/dist/cjs/index.js' with Package ID '@tgwf/co2/dist/cjs/index.js@0.14.2'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/1byte.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/co2.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/data/average-intensities.min.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/data/marginal-intensities-2021.min.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/hosting.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/index.d.ts"
+          ],
+          "visibleProblems": []
+        },
+        "node16-cjs": {
+          "name": ".",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/@tgwf/co2/dist/cjs/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@tgwf/co2' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@tgwf/co2' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/@tgwf/co2/package.json'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Using 'exports' subpath '.' with target './dist/cjs/index.js'.",
+              "File name '/node_modules/@tgwf/co2/dist/cjs/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.ts' does not exist.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.tsx' does not exist.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'require'.",
+              "Exiting conditional exports.",
+              "======== Module name '@tgwf/co2' was successfully resolved to '/node_modules/@tgwf/co2/dist/cjs/index.d.ts' with Package ID '@tgwf/co2/dist/cjs/index.d.ts@0.14.2'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@tgwf/co2/dist/cjs/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@tgwf/co2' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@tgwf/co2' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/@tgwf/co2/package.json'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Using 'exports' subpath '.' with target './dist/cjs/index.js'.",
+              "File name '/node_modules/@tgwf/co2/dist/cjs/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.ts' does not exist.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.tsx' does not exist.",
+              "Failed to resolve under condition 'require'.",
+              "Exiting conditional exports.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@tgwf/co2/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'import'.",
+              "Matched 'exports' condition 'require'.",
+              "Using 'exports' subpath '.' with target './dist/cjs/index.js'.",
+              "File name '/node_modules/@tgwf/co2/dist/cjs/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.js' exists - use it as a name resolution result.",
+              "Resolved under condition 'require'.",
+              "Exiting conditional exports.",
+              "======== Module name '@tgwf/co2' was successfully resolved to '/node_modules/@tgwf/co2/dist/cjs/index.js' with Package ID '@tgwf/co2/dist/cjs/index.js@0.14.2'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/1byte.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/co2.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/data/average-intensities.min.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/data/marginal-intensities-2021.min.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/hosting.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/index.d.ts"
+          ],
+          "visibleProblems": []
+        },
+        "node16-esm": {
+          "name": ".",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/@tgwf/co2/dist/esm/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@tgwf/co2' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@tgwf/co2' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/@tgwf/co2/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath '.' with target './dist/esm/index.js'.",
+              "File name '/node_modules/@tgwf/co2/dist/esm/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@tgwf/co2/dist/esm/index.ts' does not exist.",
+              "File '/node_modules/@tgwf/co2/dist/esm/index.tsx' does not exist.",
+              "File '/node_modules/@tgwf/co2/dist/esm/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "======== Module name '@tgwf/co2' was successfully resolved to '/node_modules/@tgwf/co2/dist/esm/index.d.ts' with Package ID '@tgwf/co2/dist/esm/index.d.ts@0.14.2'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@tgwf/co2/dist/esm/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@tgwf/co2' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@tgwf/co2' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@tgwf/co2/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath '.' with target './dist/esm/index.js'.",
+              "File name '/node_modules/@tgwf/co2/dist/esm/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@tgwf/co2/dist/esm/index.ts' does not exist.",
+              "File '/node_modules/@tgwf/co2/dist/esm/index.tsx' does not exist.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Exiting conditional exports.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@tgwf/co2/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath '.' with target './dist/esm/index.js'.",
+              "File name '/node_modules/@tgwf/co2/dist/esm/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@tgwf/co2/dist/esm/index.js' exists - use it as a name resolution result.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@tgwf/co2' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@tgwf/co2/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'dist/cjs/index.js' that references '/node_modules/@tgwf/co2/dist/cjs/index.js'.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/@tgwf/co2/dist/cjs/index.js', target file types: TypeScript.",
+              "File name '/node_modules/@tgwf/co2/dist/cjs/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.ts' does not exist.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.tsx' does not exist.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.js.ts' does not exist.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.js.tsx' does not exist.",
+              "Directory '/node_modules/@tgwf/co2/dist/cjs/index.js' does not exist, skipping all lookups in it.",
+              "======== Module name '@tgwf/co2' was successfully resolved to '/node_modules/@tgwf/co2/dist/esm/index.js' with Package ID '@tgwf/co2/dist/esm/index.js@0.14.2'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/1byte.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/co2.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/data/average-intensities.min.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/data/marginal-intensities-2021.min.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/hosting.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/index.d.ts",
+            "/node_modules/@tgwf/co2/dist/esm/index.d.ts"
+          ],
+          "visibleProblems": []
+        },
+        "bundler": {
+          "name": ".",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/@tgwf/co2/dist/esm/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@tgwf/co2' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@tgwf/co2' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/@tgwf/co2/package.json'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath '.' with target './dist/esm/index.js'.",
+              "File name '/node_modules/@tgwf/co2/dist/esm/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@tgwf/co2/dist/esm/index.ts' does not exist.",
+              "File '/node_modules/@tgwf/co2/dist/esm/index.tsx' does not exist.",
+              "File '/node_modules/@tgwf/co2/dist/esm/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "======== Module name '@tgwf/co2' was successfully resolved to '/node_modules/@tgwf/co2/dist/esm/index.d.ts' with Package ID '@tgwf/co2/dist/esm/index.d.ts@0.14.2'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@tgwf/co2/dist/esm/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@tgwf/co2' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@tgwf/co2' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/@tgwf/co2/package.json'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath '.' with target './dist/esm/index.js'.",
+              "File name '/node_modules/@tgwf/co2/dist/esm/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@tgwf/co2/dist/esm/index.ts' does not exist.",
+              "File '/node_modules/@tgwf/co2/dist/esm/index.tsx' does not exist.",
+              "Failed to resolve under condition 'import'.",
+              "Saw non-matching condition 'require'.",
+              "Exiting conditional exports.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@tgwf/co2/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'import'.",
+              "Using 'exports' subpath '.' with target './dist/esm/index.js'.",
+              "File name '/node_modules/@tgwf/co2/dist/esm/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@tgwf/co2/dist/esm/index.js' exists - use it as a name resolution result.",
+              "Resolved under condition 'import'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@tgwf/co2' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@tgwf/co2/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/@tgwf/co2.ts' does not exist.",
+              "File '/node_modules/@tgwf/co2.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'dist/cjs/index.js' that references '/node_modules/@tgwf/co2/dist/cjs/index.js'.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.js' exists - use it as a name resolution result.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.js' has an unsupported extension, so skipping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/@tgwf/co2/dist/cjs/index.js', target file types: TypeScript.",
+              "File name '/node_modules/@tgwf/co2/dist/cjs/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.ts' does not exist.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.tsx' does not exist.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.js.ts' does not exist.",
+              "File '/node_modules/@tgwf/co2/dist/cjs/index.js.tsx' does not exist.",
+              "Directory '/node_modules/@tgwf/co2/dist/cjs/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/@tgwf/co2/index.ts' does not exist.",
+              "File '/node_modules/@tgwf/co2/index.tsx' does not exist.",
+              "======== Module name '@tgwf/co2' was successfully resolved to '/node_modules/@tgwf/co2/dist/esm/index.js' with Package ID '@tgwf/co2/dist/esm/index.js@0.14.2'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/1byte.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/co2.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/data/average-intensities.min.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/data/marginal-intensities-2021.min.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/hosting.d.ts",
+            "/node_modules/@tgwf/co2/dist/cjs/index.d.ts",
+            "/node_modules/@tgwf/co2/dist/esm/index.d.ts"
+          ],
+          "visibleProblems": []
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    }
+  },
+  "programInfo": {
+    "node10": {},
+    "node16": {
+      "moduleKinds": {
+        "/node_modules/typescript/lib/lib.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/typescript/lib/lib.d.ts"
+        },
+        "/node_modules/@tgwf/co2/dist/cjs/1byte.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@tgwf/co2/dist/cjs/package.json"
+        },
+        "/node_modules/@tgwf/co2/dist/cjs/co2.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@tgwf/co2/dist/cjs/package.json"
+        },
+        "/node_modules/@tgwf/co2/dist/cjs/data/average-intensities.min.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@tgwf/co2/dist/cjs/package.json"
+        },
+        "/node_modules/@tgwf/co2/dist/cjs/data/marginal-intensities-2021.min.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@tgwf/co2/dist/cjs/package.json"
+        },
+        "/node_modules/@tgwf/co2/dist/cjs/hosting.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@tgwf/co2/dist/cjs/package.json"
+        },
+        "/node_modules/@tgwf/co2/dist/cjs/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@tgwf/co2/dist/cjs/package.json"
+        },
+        "/node_modules/@tgwf/co2/dist/cjs/index.js": {
+          "detectedKind": 1,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@tgwf/co2/dist/cjs/package.json"
+        },
+        "/node_modules/@tgwf/co2/dist/esm/index.d.ts": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@tgwf/co2/dist/esm/package.json"
+        },
+        "/node_modules/@tgwf/co2/dist/esm/index.js": {
+          "detectedKind": 99,
+          "detectedReason": "type",
+          "reasonFileName": "/node_modules/@tgwf/co2/dist/esm/package.json"
+        }
+      }
+    },
+    "bundler": {}
+  },
+  "problems": []
+}

@@ -24,6 +24,9 @@
     "prepack": "pnpm tsc"
   },
   "type": "module",
+  "imports": {
+    "#internal/*": "./dist/internal/*"
+  },
   "exports": {
     ".": {
       "development": "./src/index.ts",
