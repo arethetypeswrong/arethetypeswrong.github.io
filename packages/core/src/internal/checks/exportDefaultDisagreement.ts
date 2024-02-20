@@ -1,6 +1,7 @@
 import ts from "typescript";
 import { defineCheck } from "../defineCheck.js";
 import { getProbableExports, type Export } from "../getProbableExports.js";
+import { getResolutionOption } from "../../utils.js";
 
 const bindOptions: ts.CompilerOptions = {
   target: ts.ScriptTarget.Latest,
@@ -10,10 +11,20 @@ const bindOptions: ts.CompilerOptions = {
 
 export default defineCheck({
   name: "ExportDefaultDisagreement",
-  dependencies: ({ entrypoints, subpath, resolutionKind }) => {
+  dependencies: ({ entrypoints, subpath, resolutionKind, programInfo }) => {
     const entrypoint = entrypoints[subpath].resolutions[resolutionKind];
     const typesFileName = entrypoint.resolution?.fileName;
     const implementationFileName = entrypoint.implementationResolution?.fileName;
+    if (
+      (typesFileName &&
+        programInfo[getResolutionOption(resolutionKind)].moduleKinds?.[typesFileName]?.detectedKind ===
+          ts.ModuleKind.ESNext) ||
+      (implementationFileName &&
+        programInfo[getResolutionOption(resolutionKind)].moduleKinds?.[implementationFileName]?.detectedKind ===
+          ts.ModuleKind.ESNext)
+    ) {
+      return [];
+    }
     return [typesFileName, implementationFileName];
   },
   execute: ([typesFileName, implementationFileName], context) => {
