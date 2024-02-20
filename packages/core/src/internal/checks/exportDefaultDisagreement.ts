@@ -141,6 +141,14 @@ export default defineCheck({
           .getExportsAndPropertiesOfModule(typesSourceFile.symbol)
           .some((s) => s.escapedName === "default"))
     ) {
+      // Here, the types have a lone default export of a non-callable object,
+      // and the implementation has multiple named exports along with `default`.
+      // This is the biggest heuristic leap for this rule, but the assumption is
+      // that the default export in the types was intended to represent the object
+      // shape of `module.exports`, not `module.exports.default`. This may result
+      // in false positives, but those false positives can be silenced by adding
+      // exports in the types for other named exports in the JS. It's detecting
+      // a definite problem; it's just not always accurate about the diagnosis.
       return {
         kind: "MissingExportEquals",
         typesFileName,
