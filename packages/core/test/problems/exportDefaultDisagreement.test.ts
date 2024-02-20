@@ -45,6 +45,7 @@ describe("exportDefaultDisagreement", () => {
   test("basic FalseExportDefault", () => {
     assert(isFalseExportDefault(`export default function foo(): void`, `module.exports = `));
   });
+
   test("basic MissingExportEquals", () => {
     assert(
       isMissingExportEquals(
@@ -55,6 +56,80 @@ describe("exportDefaultDisagreement", () => {
       ),
     );
   });
+
+  test("basic MissingExportEquals (babel-plugin-syntax-jsx)", () => {
+    assert(
+      isMissingExportEquals(
+        `declare function jsx(): {
+          manipulateOptions(opts: any, parserOpts: { plugins: string[] }): void;
+        };
+        export default jsx;`,
+        `"use strict";
+        exports.__esModule = true;
+        exports.default = function () {
+          return {
+            manipulateOptions: function manipulateOptions(opts, parserOpts) {
+              parserOpts.plugins.push("jsx");
+            }
+          };
+        };
+        module.exports = exports["default"];`,
+      ),
+    );
+  });
+
+  test("implementation default export is any, assigned to module.exports", () => {
+    assert(
+      isMissingExportEquals(
+        `export default function ms(): any`,
+        `'use strict';
+        Object.defineProperty(exports, "__esModule", {
+          value: true
+        });
+        var _babelPluginMacros = require('babel-plugin-macros');
+        var _ms = require('ms');
+        var _ms2 = _interopRequireDefault(_ms);
+        function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+        const getValue = path => {
+          if (path.type === 'CallExpression') {
+            return path.node.arguments[0].value;
+          }
+          if (path.type === 'TaggedTemplateExpression') {
+            return path.node.quasi.quasis[0].value.cooked;
+          }
+          return null;
+        };
+        exports.default = (0, _babelPluginMacros.createMacro)(({ babel: { types: t }, references: { default: paths } }) => {
+          paths.forEach(({ parentPath }) => {
+            const value = getValue(parentPath);
+            if (value) {
+              const newValue = (0, _ms2.default)(value);
+              if (newValue) {
+                parentPath.replaceWith(t.numericLiteral(newValue));
+              } else {
+                const line = parentPath.node.loc.start.line;
+        
+                throw new _babelPluginMacros.MacroError();
+              }
+            }
+          });
+        });
+        module.exports = exports['default'];`,
+      ),
+    );
+  });
+
+  test("lone deafult export is primitive", () => {
+    assert(
+      isOk(
+        `declare const _default: string;
+        export default _default;`,
+        `exports.default = "hello";
+        exports.OtherThing = 1;`,
+      ),
+    );
+  });
+
   test("class with static default property", () => {
     assert(
       isOk(
@@ -68,6 +143,7 @@ describe("exportDefaultDisagreement", () => {
       ),
     );
   });
+
   test("named exports = module.exports - esbuild", () => {
     assert(
       isOk(
@@ -107,6 +183,7 @@ var index_default = { a, b };`,
       ),
     );
   });
+
   test("exports merged with a class, copied to default", () => {
     assert(
       isMissingExportEquals(
@@ -122,6 +199,7 @@ var index_default = { a, b };`,
       ),
     );
   });
+
   test("exports merged with a class, no default", () => {
     assert(
       isFalseExportDefault(
@@ -135,6 +213,7 @@ var index_default = { a, b };`,
       ),
     );
   });
+
   test("ignores unalayzable iife", () => {
     assert(
       isOk(
@@ -147,6 +226,28 @@ var index_default = { a, b };`,
           "undefined" != typeof exports ? exports : "undefined" != typeof window ? window : this,
           "undefined" != typeof exports ? exports : "undefined" != typeof window ? window : this
           );`,
+      ),
+    );
+  });
+
+  test("types have single default export, JS has default and other named exports", () => {
+    assert(
+      isOk(
+        `export default function foo(): void`,
+        `function foo() {}
+        exports.default = foo;
+        exports.bar = 1;`,
+      ),
+    );
+  });
+
+  test("module.exports.default = module.exports (radium)", () => {
+    assert(
+      isMissingExportEquals(
+        `declare function Radum(): any;
+        export default Radum;`,
+        `module.exports = require('./lib').default;
+        module.exports.default = module.exports;`,
       ),
     );
   });

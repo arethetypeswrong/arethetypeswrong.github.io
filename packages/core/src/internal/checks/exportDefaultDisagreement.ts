@@ -85,9 +85,9 @@ export default defineCheck({
     if (
       !typesSourceFile.symbol.exports.has(ts.InternalSymbolName.ExportEquals) &&
       implementationSourceFile.symbol.exports.has(ts.InternalSymbolName.ExportEquals) &&
-      getImplChecker().typeHasCallOrConstructSignatures(
-        getImplChecker().getTypeOfSymbol(getImplChecker().resolveExternalModuleSymbol(implementationSourceFile.symbol)),
-      )
+      ((getImplExportEqualsIsExportDefault() &&
+        getTypesChecker().typeHasCallOrConstructSignatures(getTypesTypeOfDefault())) ||
+        getImplChecker().typeHasCallOrConstructSignatures(getImplTypeOfModuleExports()))
     ) {
       return {
         kind: "MissingExportEquals",
@@ -113,6 +113,7 @@ export default defineCheck({
 
     if (
       !typesHaveNonDefaultValueExport &&
+      typeIsObjecty(getTypesTypeOfDefault(), getTypesChecker()) &&
       (Array.from(implementationSourceFile.symbol.exports.keys()).some((name) =>
         isNotDefaultOrEsModule(ts.unescapeLeadingUnderscores(name)),
       ) ||
@@ -129,12 +130,18 @@ export default defineCheck({
       };
     }
 
-    var implProbableExports: unknown, impleChecker: unknown, implHasDefault: unknown, typesChecker: unknown;
+    var implProbableExports: unknown,
+      implChecker: unknown,
+      implHasDefault: unknown,
+      implTypeOfModuleExports: unknown,
+      implExportEqualsIsExportDefault: unknown,
+      typesChecker: unknown,
+      typesTypeOfDefault: unknown;
     function getImplProbableExports(): Export[] {
       return ((implProbableExports as Export[]) ??= getProbableExports(implementationSourceFile));
     }
     function getImplChecker(): ts.TypeChecker {
-      return ((impleChecker as ts.TypeChecker) ??= host
+      return ((implChecker as ts.TypeChecker) ??= host
         .createAuxiliaryProgram([implementationFileName!])
         .getTypeChecker());
     }
@@ -150,12 +157,151 @@ export default defineCheck({
     function getTypesChecker(): ts.TypeChecker {
       return ((typesChecker as ts.TypeChecker) ??= host.createAuxiliaryProgram([typesFileName!]).getTypeChecker());
     }
+    function getTypesTypeOfDefault(): ts.Type {
+      const symbol = getTypesChecker()
+        .getExportsAndPropertiesOfModule(typesSourceFile.symbol)
+        .find((s) => s.escapedName === "default");
+      return ((typesTypeOfDefault as ts.Type) ??= symbol
+        ? getTypesChecker().getTypeOfSymbol(symbol)
+        : getTypesChecker().getAnyType());
+    }
+    function getImplTypeOfModuleExports(): ts.Type {
+      if (implTypeOfModuleExports) {
+        return implTypeOfModuleExports as ts.Type;
+      }
+      const type = getImplChecker().getTypeOfSymbol(
+        getImplChecker().resolveExternalModuleSymbol(implementationSourceFile.symbol),
+      );
+      if (type.flags & ts.TypeFlags.Any && getImplExportEqualsIsExportDefault()) {
+        return (implTypeOfModuleExports = getImplChecker().getTypeOfSymbol(
+          implementationSourceFile.symbol.exports!.get(ts.InternalSymbolName.Default)!,
+        ));
+      }
+      return (implTypeOfModuleExports = type);
+    }
+    function getImplExportEqualsIsExportDefault(): boolean {
+      // TypeScript has a circularity error on `module.exports = exports.default`, so
+      // detect that pattern syntactically.
+      if (implExportEqualsIsExportDefault !== undefined) {
+        return implExportEqualsIsExportDefault as boolean;
+      }
+      const exportEquals = implementationSourceFile.symbol.exports!.get(ts.InternalSymbolName.ExportEquals);
+      if (!exportEquals) {
+        return (implExportEqualsIsExportDefault = false);
+      }
+      const exportDefault = implementationSourceFile.symbol.exports!.get(ts.InternalSymbolName.Default);
+      if (!exportDefault) {
+        return (implExportEqualsIsExportDefault = false);
+      }
+      for (const assignment of [
+        exportEquals.valueDeclaration,
+        ts.findAncestor(exportDefault.declarations?.[0], ts.isBinaryExpression),
+      ]) {
+        let seenModuleExports = false,
+          seenExportsDefault = false;
+        if (
+          assignment &&
+          ts.isBinaryExpression(assignment) &&
+          assignment.operatorToken.kind === ts.SyntaxKind.EqualsToken
+        ) {
+          const res = !!forEachAssignmentTarget(assignment, (target) => {
+            if (!seenExportsDefault && isExportsDefault(target)) {
+              seenExportsDefault = true;
+            } else if (!seenModuleExports && isModuleExports(target)) {
+              seenModuleExports = true;
+            }
+
+            return seenExportsDefault && seenModuleExports;
+          });
+          if (res) {
+            return (implExportEqualsIsExportDefault = true);
+          }
+        }
+      }
+      return (implExportEqualsIsExportDefault = false);
+    }
     function implIsAnalyzable(): boolean {
-      return !!(implementationSourceFile?.symbol?.exports?.size || getImplProbableExports()?.length);
+      if (implementationSourceFile.symbol.exports!.get(ts.InternalSymbolName.ExportEquals)?.declarations?.length! > 1) {
+        // Multiple assignments in different function bodies is probably a bundle we can't analyze.
+        // Multiple assignments in the same function body might just be an environment-conditional
+        // module.exports inside an IIFE.
+        let commonContainer;
+        for (const decl of implementationSourceFile.symbol.exports!.get(ts.InternalSymbolName.ExportEquals)!
+          .declarations!) {
+          const container = ts.findAncestor(decl, (node) => ts.isFunctionBlock(node) || ts.isSourceFile(node));
+          if (commonContainer === undefined) {
+            commonContainer = container;
+          } else if (commonContainer !== container) {
+            return false;
+          }
+        }
+      }
+      return !!(implementationSourceFile.symbol.exports!.size || getImplProbableExports()?.length);
     }
   },
 });
 
+function typeIsObjecty(type: ts.Type, checker: ts.TypeChecker) {
+  return (
+    type.flags & ts.TypeFlags.Object &&
+    !(type.flags & ts.TypeFlags.Primitive) &&
+    !checker.typeHasCallOrConstructSignatures(type)
+  );
+}
+
+function isModuleExports(target: ts.Expression) {
+  return (
+    (ts.isAccessExpression(target) &&
+      ts.isIdentifier(target.expression) &&
+      target.expression.text === "module" &&
+      getNameOfAccessExpression(target) === "exports") ||
+    (ts.isIdentifier(target) && target.text === "exports")
+  );
+}
+
+function isExportsDefault(target: ts.Expression) {
+  return (
+    (ts.isAccessExpression(target) &&
+      ts.isIdentifier(target.expression) &&
+      target.expression.text === "exports" &&
+      getNameOfAccessExpression(target) === "default") ||
+    (ts.isAccessExpression(target) &&
+      ts.isAccessExpression(target.expression) &&
+      ts.isIdentifier(target.expression.expression) &&
+      target.expression.expression.text === "module" &&
+      getNameOfAccessExpression(target.expression) === "exports" &&
+      getNameOfAccessExpression(target) === "default")
+  );
+}
+
 function isNotDefaultOrEsModule(name: string) {
   return name !== "default" && name !== "__esModule";
+}
+
+function forEachAssignmentTarget<ReturnT>(
+  assignment: ts.BinaryExpression,
+  cb: (target: ts.Expression) => ReturnT | undefined,
+): ReturnT | undefined {
+  // For `module.exports = exports = exports.default`, fires `cb` once for
+  // `exports.default`, once for `exports`, and once for `module.exports`.
+  const target = ts.skipParentheses(assignment.right);
+  if (ts.isBinaryExpression(target) && target.operatorToken.kind === ts.SyntaxKind.EqualsToken) {
+    const res = forEachAssignmentTarget(target, cb);
+    if (res) {
+      return res;
+    }
+  } else {
+    const res = cb(target);
+    if (res) {
+      return res;
+    }
+  }
+  return cb(ts.skipParentheses(assignment.left));
+}
+
+function getNameOfAccessExpression(accessExpression: ts.AccessExpression): string | undefined {
+  const node = ts.getNameOfAccessExpression(accessExpression);
+  if (ts.isIdentifier(node) || ts.isStringLiteralLike(node)) {
+    return node.text;
+  }
 }

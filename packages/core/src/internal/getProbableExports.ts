@@ -8,11 +8,14 @@ export interface Export {
 }
 
 export function getProbableExports(sourceFile: ts.SourceFile): Export[] {
-  return getEsbuildExports(sourceFile) ?? [];
+  return getEsbuildBabelSwcExports(sourceFile) ?? [];
 }
 
-function getEsbuildExports(sourceFile: ts.SourceFile): Export[] | undefined {
-  const possibleIndex = sourceFile.text.indexOf("\n__export(");
+function getEsbuildBabelSwcExports(sourceFile: ts.SourceFile): Export[] | undefined {
+  let possibleIndex = sourceFile.text.indexOf("\n__export(");
+  if (possibleIndex === -1) {
+    possibleIndex = sourceFile.text.indexOf("\n_export(");
+  }
   if (possibleIndex === -1 && !isProbablyMinified(sourceFile.text)) {
     return undefined;
   }
@@ -35,6 +38,7 @@ function getEsbuildExports(sourceFile: ts.SourceFile): Export[] | undefined {
       const callTarget = statement.expression.expression;
       const isExport =
         ts.unescapeLeadingUnderscores(callTarget.escapedText) === "__export" ||
+        callTarget.escapedText === "_export" ||
         isEsbuildExportFunction(sourceFile.locals?.get(callTarget.escapedText)?.valueDeclaration);
       if (isExport) {
         return statement.expression.arguments[1].properties.flatMap((prop): Export[] => {
@@ -56,12 +60,22 @@ function getEsbuildExports(sourceFile: ts.SourceFile): Export[] | undefined {
 
 function isEsbuildExportFunction(decl: ts.Declaration | undefined) {
   /*
+  esbuild:
   var __export = (target, all) => {
     for (var name in all)
       __defProp(target, name, { get: all[name], enumerable: true });
   };
 
+  esbuild min:
   b=(o,r)=>{for(var e in r)n(o,e,{get:r[e],enumerable:!0})}
+
+  swc?
+  function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+  }
   */
   if (!decl) {
     return false;

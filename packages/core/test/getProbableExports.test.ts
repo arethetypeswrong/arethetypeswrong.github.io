@@ -4,7 +4,7 @@ import { describe, test } from "node:test";
 import ts from "typescript";
 
 const testCases = {
-  tgwf: {
+  tgwf__co2: {
     expected: ["averageIntensity", "co2", "default", "hosting", "marginalIntensity"],
     file: `var __create = Object.create;
 var __defProp = Object.defineProperty;
@@ -46,6 +46,34 @@ var src_default = { co2: import_co2.default, hosting: import_hosting.default, av
   minified: {
     expected: ["App", "log"],
     file: `var m=Object.create;var n=Object.defineProperty;var c=Object.getOwnPropertyDescriptor;var x=Object.getOwnPropertyNames;var a=Object.getPrototypeOf,g=Object.prototype.hasOwnProperty;var s=(o,r)=>()=>(r||o((r={exports:{}}).exports,r),r.exports),b=(o,r)=>{for(var e in r)n(o,e,{get:r[e],enumerable:!0})},i=(o,r,e,p)=>{if(r&&typeof r=="object"||typeof r=="function")for(let t of x(r))!g.call(o,t)&&t!==e&&n(o,t,{get:()=>r[t],enumerable:!(p=c(r,t))||p.enumerable});return o};var w=(o,r,e)=>(e=o!=null?m(a(o)):{},i(r||!o||!o.__esModule?n(e,"default",{value:o,enumerable:!0}):e,o)),F=o=>i(n({},"__esModule",{value:!0}),o);var d=s((h,u)=>{var q=require("fs");u.exports=o=>{q.appendFileSync("/log.txt",o)}});var H={};b(H,{App:()=>y,log:()=>A});module.exports=F(H);function l(o,r){return o+r}var f=w(d());function y(){return React.createElement("p",null,"Hello, world! ",l(1,2))}function A(){(0,f.default)("woo")}`,
+  },
+
+  bbob__parser: {
+    expected: ["TagNode", "default", "parse"],
+    file: `
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    TagNode: function() {
+        return _pluginHelper.TagNode;
+    },
+    default: function() {
+        return _parse.default;
+    },
+    parse: function() {
+        return _parse.parse;
+    }
+});
+var _pluginHelper = require("@bbob/plugin-helper");
+var _parse = /*#__PURE__*/ _interopRequireWildcard(require("./parse"));`,
   },
 };
 
