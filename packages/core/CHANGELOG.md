@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.14.0
+
+### Minor Changes
+
+- b293c99: Improve detection for MissingExportEquals and FalseExportDefault
+
 ## 0.13.9
 
 ### Patch Changes
