@@ -28,6 +28,13 @@ export default defineCheck({
     return [typesFileName, implementationFileName];
   },
   execute: ([typesFileName, implementationFileName], context) => {
+    // Technically, much of this implementation should go in `dependencies`, since
+    // different resolution modes can result in different program graphs, resulting
+    // in different types, which are queried heavily here. However, it would be much
+    // more expensive to run this type-heavy code in `dependencies`, where it would
+    // reevaluate for every entrypoint/resolution matrix cell, when chances are
+    // extremely high that a given pair of types/implementation files are intended
+    // to act the same under all resolution modes.
     if (!typesFileName || !implementationFileName || !ts.hasTSFileExtension(typesFileName)) {
       return;
     }
