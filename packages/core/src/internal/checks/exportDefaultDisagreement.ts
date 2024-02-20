@@ -103,6 +103,7 @@ export default defineCheck({
     if (
       !typesSourceFile.symbol.exports.has(ts.InternalSymbolName.ExportEquals) &&
       implementationSourceFile.symbol.exports.has(ts.InternalSymbolName.ExportEquals) &&
+      getTypesDefaultSymbol() &&
       ((getImplExportEqualsIsExportDefault() &&
         getTypesChecker().typeHasCallOrConstructSignatures(getTypesTypeOfDefault())) ||
         getImplChecker().typeHasCallOrConstructSignatures(getImplTypeOfModuleExports()))
@@ -136,10 +137,7 @@ export default defineCheck({
         isNotDefaultOrEsModule(ts.unescapeLeadingUnderscores(name)),
       ) ||
         getImplProbableExports().some(({ name }) => isNotDefaultOrEsModule(name))) &&
-      (typesHaveSyntacticDefault ||
-        getTypesChecker()
-          .getExportsAndPropertiesOfModule(typesSourceFile.symbol)
-          .some((s) => s.escapedName === "default"))
+      getTypesDefaultSymbol()
     ) {
       // Here, the types have a lone default export of a non-callable object,
       // and the implementation has multiple named exports along with `default`.
@@ -162,6 +160,7 @@ export default defineCheck({
       implTypeOfModuleExports: unknown,
       implExportEqualsIsExportDefault: unknown,
       typesChecker: unknown,
+      typesDefaultSymbol: unknown,
       typesTypeOfDefault: unknown;
     function getImplProbableExports(): Export[] {
       return ((implProbableExports as Export[]) ??= getProbableExports(implementationSourceFile));
@@ -183,10 +182,15 @@ export default defineCheck({
     function getTypesChecker(): ts.TypeChecker {
       return ((typesChecker as ts.TypeChecker) ??= host.createAuxiliaryProgram([typesFileName!]).getTypeChecker());
     }
+    function getTypesDefaultSymbol(): ts.Symbol | undefined {
+      return ((typesDefaultSymbol as ts.Symbol | undefined) ??=
+        typesSourceFile.symbol.exports!.get(ts.InternalSymbolName.Default) ??
+        getTypesChecker()
+          .getExportsAndPropertiesOfModule(typesSourceFile.symbol)
+          .find((s) => s.escapedName === "default"));
+    }
     function getTypesTypeOfDefault(): ts.Type {
-      const symbol = getTypesChecker()
-        .getExportsAndPropertiesOfModule(typesSourceFile.symbol)
-        .find((s) => s.escapedName === "default");
+      const symbol = getTypesDefaultSymbol();
       return ((typesTypeOfDefault as ts.Type) ??= symbol
         ? getTypesChecker().getTypeOfSymbol(symbol)
         : getTypesChecker().getAnyType());

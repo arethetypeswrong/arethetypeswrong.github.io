@@ -251,4 +251,15 @@ var index_default = { a, b };`,
       ),
     );
   });
+
+  test("completely wrong but not what this rule is for", () => {
+    assert(
+      isOk(
+        `export const AxeBuilder: {}`,
+        `function AxeBuilder() {}
+        exports = module.exports = AxeBuilder;
+        exports.default = AxeBuilder;`,
+      ),
+    );
+  });
 });
