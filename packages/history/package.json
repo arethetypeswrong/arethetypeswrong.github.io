@@ -1,6 +1,6 @@
 {
   "name": "@arethetypeswrong/history",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "license": "MIT",
   "author": "Andrew Branch",
   "repository": {
@@ -33,7 +33,7 @@
     "prepublishOnly": "pnpm tsc && pnpm generate"
   },
   "dependencies": {
-    "@arethetypeswrong/core": "0.13.9"
+    "@arethetypeswrong/core": "0.14.0"
   },
   "devDependencies": {
     "@arethetypeswrong/core": "file:../core",
