@@ -46,7 +46,7 @@ export default defineCheck({
     }
     const implementationSourceFile = host.getSourceFile(implementationFileName)!;
     ts.bindSourceFile(implementationSourceFile, bindOptions);
-    if (!implementationSourceFile.symbol?.exports) {
+    if (!implementationSourceFile.symbol?.exports || implementationSourceFile.externalModuleIndicator) {
       return;
     }
 

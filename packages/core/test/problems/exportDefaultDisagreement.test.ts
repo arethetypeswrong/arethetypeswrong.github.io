@@ -262,4 +262,22 @@ var index_default = { a, b };`,
       ),
     );
   });
+
+  test("does not run on ESM", () => {
+    assert(
+      isOk(
+        `export * from 'foo';
+        declare const _default: { Type: string, Schema: string };
+        export default _default;`,
+        `var Type = "Type";
+        var Schema = "Schema";
+        var jsYaml = {
+          Type,
+          Schema
+        };
+        export default jsYaml;
+        export { Type, Schema };`,
+      ),
+    );
+  });
 });
