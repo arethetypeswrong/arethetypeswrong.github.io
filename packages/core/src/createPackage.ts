@@ -142,7 +142,7 @@ export async function createPackageFromNpm(
 export async function resolveImplementationPackageForTypesPackage(
   typesPackageName: string,
   typesPackageVersion: string,
-  options?: Pick<CreatePackageFromNpmOptions, "before">,
+  options?: Omit<CreatePackageFromNpmOptions, "definitelyTyped">,
 ): Promise<ResolvedPackageId> {
   if (!typesPackageName.startsWith("@types/")) {
     throw new Error(`'resolveImplementationPackageForTypesPackage' expects an @types package name and version`);
