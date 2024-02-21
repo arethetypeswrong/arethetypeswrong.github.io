@@ -95,11 +95,12 @@ export interface CreatePackageFromNpmOptions {
    */
   definitelyTyped?: string | boolean;
   before?: Date;
+  allowDeprecated?: boolean;
 }
 
 export async function createPackageFromNpm(
   packageSpec: string,
-  { definitelyTyped = true, before }: CreatePackageFromNpmOptions = {},
+  { definitelyTyped = true, ...options }: CreatePackageFromNpmOptions = {},
 ): Promise<Package> {
   const parsed = parsePackageSpec(packageSpec);
   if (parsed.status === "error") {
@@ -109,8 +110,8 @@ export async function createPackageFromNpm(
   const typesPackageName = ts.getTypesPackageName(packageName);
   const { tarballUrl, packageVersion } =
     parsed.data.versionKind === "none" && typeof definitelyTyped === "string"
-      ? await resolveImplementationPackageForTypesPackage(typesPackageName, definitelyTyped, { before })
-      : await getNpmTarballUrl([parsed.data], before);
+      ? await resolveImplementationPackageForTypesPackage(typesPackageName, definitelyTyped, options)
+      : await getNpmTarballUrl([parsed.data], options);
   const pkg = await createPackageFromTarballUrl(tarballUrl);
   if (!definitelyTyped || pkg.containsTypes()) {
     return pkg;
@@ -118,7 +119,7 @@ export async function createPackageFromNpm(
 
   let typesPackageData;
   if (definitelyTyped === true) {
-    typesPackageData = await resolveTypesPackageForPackage(packageName, packageVersion, before);
+    typesPackageData = await resolveTypesPackageForPackage(packageName, packageVersion, options);
   } else {
     typesPackageData = await getNpmTarballUrl(
       [
@@ -128,7 +129,7 @@ export async function createPackageFromNpm(
           version: definitelyTyped,
         },
       ],
-      before,
+      options,
     );
   }
 
@@ -155,7 +156,7 @@ export async function resolveImplementationPackageForTypesPackage(
         parsePackageSpec(`${packageName}@${major(version)}`).data!,
         parsePackageSpec(`${packageName}@latest`).data!,
       ],
-      options?.before,
+      options,
     );
   }
 
@@ -166,7 +167,7 @@ export async function resolveImplementationPackageForTypesPackage(
         { name: packageName, versionKind: "range", version: range },
         { name: packageName, versionKind: "tag", version: "latest" },
       ],
-      options?.before,
+      options,
     );
   }
 
@@ -176,7 +177,7 @@ export async function resolveImplementationPackageForTypesPackage(
 export async function resolveTypesPackageForPackage(
   packageName: string,
   packageVersion: string,
-  before?: Date,
+  options?: Omit<CreatePackageFromNpmOptions, "definitelyTyped">,
 ): Promise<ResolvedPackageId | undefined> {
   const typesPackageName = ts.getTypesPackageName(packageName);
   try {
@@ -198,7 +199,7 @@ export async function resolveTypesPackageForPackage(
           version: "latest",
         },
       ],
-      before,
+      options,
     );
   } catch {}
 }
@@ -209,7 +210,10 @@ export interface ResolvedPackageId {
   tarballUrl: string;
 }
 
-async function getNpmTarballUrl(packageSpecs: readonly ParsedPackageSpec[], before?: Date): Promise<ResolvedPackageId> {
+async function getNpmTarballUrl(
+  packageSpecs: readonly ParsedPackageSpec[],
+  { before, allowDeprecated }: Omit<CreatePackageFromNpmOptions, "definitelyTyped"> = {},
+): Promise<ResolvedPackageId> {
   const fetchPackument = packageSpecs.some(
     (spec) => spec.versionKind === "range" || (spec.versionKind === "tag" && spec.version !== "latest"),
   );
@@ -231,7 +235,9 @@ async function getNpmTarballUrl(packageSpecs: readonly ParsedPackageSpec[], befo
     if (packageSpec.versionKind === "range") {
       packageVersion = maxSatisfying(
         Object.keys(doc.versions).filter(
-          (v) => !doc.versions[v].deprecated && (!before || !doc.time || new Date(doc.time[v]) <= before),
+          (v) =>
+            (allowDeprecated || !doc.versions[v].deprecated) &&
+            (!before || !doc.time || new Date(doc.time[v]) <= before),
         ),
         packageSpec.version,
       );
