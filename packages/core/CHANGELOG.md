@@ -1,5 +1,12 @@
 # @arethetypeswrong/core
 
+## 0.14.1
+
+### Patch Changes
+
+- a8acc95: Add `allowDeprecated` to options accepted by `createPackageFromNpm` API
+- e38ed65: Fix false positive MissingExportEquals that can occur when `--moduleResolution bundler` resolves to ESM JS
+
 ## 0.14.0
 
 ### Minor Changes
