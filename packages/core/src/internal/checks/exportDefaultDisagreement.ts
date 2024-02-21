@@ -115,6 +115,7 @@ export default defineCheck({
       };
     }
 
+    // TODO: does not account for export *
     const typesHaveNonDefaultValueExport = Array.from(typesSourceFile.symbol.exports.values()).some((s) => {
       if (s.escapedName === "default") {
         return false;
