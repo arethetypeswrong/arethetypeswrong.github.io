@@ -30,7 +30,9 @@ if (!isMainThread && parentPort) {
           if (typeof typesPackageUrl === "string") {
             pkg = pkg.mergedWithTypes(await createPackageFromTarballUrl(typesPackageUrl));
           } else if (typesPackageUrl === true) {
-            const typesPackageData = await resolveTypesPackageForPackage(packageName, packageVersion, new Date(before));
+            const typesPackageData = await resolveTypesPackageForPackage(packageName, packageVersion, {
+              before: new Date(before),
+            });
             if (typesPackageData) {
               pkg = pkg.mergedWithTypes(await createPackageFromTarballUrl(typesPackageData.tarballUrl));
               if (pkg.typesPackage?.resolvedUrl) {
