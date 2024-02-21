@@ -46,7 +46,7 @@ export default defineCheck({
     }
     const implementationSourceFile = host.getSourceFile(implementationFileName)!;
     ts.bindSourceFile(implementationSourceFile, bindOptions);
-    if (!implementationSourceFile.symbol?.exports) {
+    if (!implementationSourceFile.symbol?.exports || implementationSourceFile.externalModuleIndicator) {
       return;
     }
 
@@ -115,6 +115,7 @@ export default defineCheck({
       };
     }
 
+    // TODO: does not account for export *
     const typesHaveNonDefaultValueExport = Array.from(typesSourceFile.symbol.exports.values()).some((s) => {
       if (s.escapedName === "default") {
         return false;
