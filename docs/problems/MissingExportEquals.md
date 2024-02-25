@@ -53,7 +53,8 @@ This merging namespace can also be used to declare the `default` property when t
 ```ts
 declare function Whatever(props: Whatever.WhateverProps): void;
 declare namespace Whatever {
-  declare const _default: typeof Whatever;
+  // using `import =` syntax ensures the CJS-default-import continues to work as a namespace
+  import _default = Whatever;
   export { _default as default };
 
   export interface WhateverProps {
