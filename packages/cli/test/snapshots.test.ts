@@ -40,6 +40,8 @@ const tests = [
     "react@18.2.0.tgz",
     `--definitely-typed ${new URL("../../../core/test/fixtures/@types__react@18.2.21.tgz", import.meta.url).pathname}`,
   ],
+
+  ["eslint-module-utils@2.8.1.tgz", "--entrypoints-legacy --ignore-rules=cjs-only-exports-default"],
 ];
 
 const defaultOpts = "-f table-flipped";

@@ -37,6 +37,7 @@ interface Opts extends render.RenderOptions {
   entrypoints?: string[];
   includeEntrypoints?: string[];
   excludeEntrypoints?: string[];
+  entrypointsLegacy?: boolean;
 }
 
 program
@@ -71,6 +72,11 @@ particularly ESM-related module resolution issues.`,
     "Specify entrypoints to check in addition to automatically discovered ones.",
   )
   .option("--exclude-entrypoints <entrypoints...>", "Specify entrypoints to exclude from checking.")
+  .option(
+    "--entrypoints-legacy",
+    'In packages without the `exports` field, every file is an entry point. Specifying this option ' +
+    'only takes effect when no entrypoints are automatically detected, or explicitly provided with other options.'
+  )
   .addOption(
     new Option("--ignore-rules <rules...>", "Specify rules to ignore").choices(Object.values(problemFlags)).default([]),
   )
@@ -127,6 +133,7 @@ particularly ESM-related module resolution issues.`,
             entrypoints: opts.entrypoints,
             includeEntrypoints: opts.includeEntrypoints,
             excludeEntrypoints: opts.excludeEntrypoints,
+            entrypointsLegacy: opts.entrypointsLegacy,
           });
         }
       } catch (error) {
@@ -189,6 +196,7 @@ particularly ESM-related module resolution issues.`,
           entrypoints: opts.entrypoints,
           includeEntrypoints: opts.includeEntrypoints,
           excludeEntrypoints: opts.excludeEntrypoints,
+          entrypointsLegacy: opts.entrypointsLegacy,
         });
       } catch (error) {
         handleError(error, "checking file");
