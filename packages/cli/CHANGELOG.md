@@ -1,5 +1,16 @@
 # @arethetypeswrong/cli
 
+## 0.15.0
+
+### Minor Changes
+
+- ab6cd95: add `--entrypoints-legacy` option
+
+### Patch Changes
+
+- Updated dependencies [ab6cd95]
+  - @arethetypeswrong/core@0.15.0
+
 ## 0.14.1
 
 ### Patch Changes
