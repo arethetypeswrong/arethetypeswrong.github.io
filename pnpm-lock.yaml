@@ -24,7 +24,7 @@ importers:
   packages/cli:
     dependencies:
       '@arethetypeswrong/core':
-        specifier: 0.14.1
+        specifier: 0.15.0
         version: link:../core
       chalk:
         specifier: ^4.1.2
@@ -98,7 +98,7 @@ importers:
   packages/history:
     dependencies:
       '@arethetypeswrong/core':
-        specifier: 0.14.1
+        specifier: 0.15.0
         version: link:../core
     devDependencies:
       '@azure/storage-blob':
