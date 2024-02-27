@@ -1,0 +1,76 @@
+{
+  "packageName": "eslint-module-utils",
+  "packageVersion": "2.8.1",
+  "types": {
+    "kind": "included"
+  },
+  "buildTools": {
+    "typescript": "next"
+  },
+  "entrypoints": {
+    ".": {
+      "subpath": ".",
+      "resolutions": {
+        "node10": {
+          "name": ".",
+          "resolutionKind": "node10",
+          "visibleProblems": [
+            0
+          ]
+        },
+        "node16-cjs": {
+          "name": ".",
+          "resolutionKind": "node16-cjs",
+          "visibleProblems": [
+            1
+          ]
+        },
+        "node16-esm": {
+          "name": ".",
+          "resolutionKind": "node16-esm",
+          "visibleProblems": [
+            2
+          ]
+        },
+        "bundler": {
+          "name": ".",
+          "resolutionKind": "bundler",
+          "visibleProblems": [
+            3
+          ]
+        }
+      },
+      "hasTypes": false,
+      "isWildcard": false
+    }
+  },
+  "programInfo": {
+    "node10": {},
+    "node16": {
+      "moduleKinds": {}
+    },
+    "bundler": {}
+  },
+  "problems": [
+    {
+      "kind": "NoResolution",
+      "entrypoint": ".",
+      "resolutionKind": "node10"
+    },
+    {
+      "kind": "NoResolution",
+      "entrypoint": ".",
+      "resolutionKind": "node16-cjs"
+    },
+    {
+      "kind": "NoResolution",
+      "entrypoint": ".",
+      "resolutionKind": "node16-esm"
+    },
+    {
+      "kind": "NoResolution",
+      "entrypoint": ".",
+      "resolutionKind": "bundler"
+    }
+  ]
+}

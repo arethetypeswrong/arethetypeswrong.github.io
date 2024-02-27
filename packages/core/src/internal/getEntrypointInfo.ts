@@ -13,13 +13,21 @@ import type {
 import { allBuildTools, getResolutionKinds } from "../utils.js";
 import type { CheckPackageOptions } from "../checkPackage.js";
 
-function getEntrypoints(fs: Package, exportsObject: any, options: CheckPackageOptions | undefined): string[] {
+const extensions = new Set([".jsx", ".tsx", ".js", ".ts", ".mjs", ".cjs", ".mts", ".cjs"]);
+
+function getEntrypoints(fs: Package, exportsObject: unknown, options: CheckPackageOptions | undefined): string[] {
   if (options?.entrypoints) {
     return options.entrypoints.map((e) => formatEntrypointString(e, fs.packageName));
   }
   if (exportsObject === undefined && fs) {
-    const proxies = getProxyDirectories(`/node_modules/${fs.packageName}`, fs);
+    const rootDir = `/node_modules/${fs.packageName}`;
+    const proxies = getProxyDirectories(rootDir, fs);
     if (proxies.length === 0) {
+      if (options?.entrypointsLegacy) {
+        return fs.listFiles()
+          .filter(f => !ts.isDeclarationFileName(f) && extensions.has(f.slice(f.lastIndexOf("."))))
+          .map(f => "." + f.slice(rootDir.length));
+      }
       return ["."];
     }
     return proxies;

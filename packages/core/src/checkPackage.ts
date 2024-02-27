@@ -28,6 +28,12 @@ export interface CheckPackageOptions {
    * Entrypoints to exclude from checking.
    */
   excludeEntrypoints?: (string | RegExp)[];
+
+  /**
+   * Whether to automatically consider all published files as entrypoints
+   * in the absence of any other detected or configured entrypoints.
+   */
+  entrypointsLegacy?: boolean;
 }
 
 export async function checkPackage(pkg: Package, options?: CheckPackageOptions): Promise<CheckResult> {

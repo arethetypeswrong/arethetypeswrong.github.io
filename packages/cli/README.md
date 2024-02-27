@@ -132,12 +132,13 @@ In the config file, `format` can be a string value.
 
 #### Entrypoints
 
-`attw` automatically discovers package entrypoints by looking at package.json `exports` and subdirectories with additional package.json files. This automatic discovery process can be overridden with the `--entrypoints` option, or altered with the `--include-entrypoints` and `--exclude-entrypoints` options:
+`attw` automatically discovers package entrypoints by looking at package.json `exports` and subdirectories with additional package.json files. In a package lacking `exports`, providing the `--entrypoints-legacy` option will include all published code files. This automatic discovery process can be overridden with the `--entrypoints` option, or altered with the `--include-entrypoints` and `--exclude-entrypoints` options:
 
 ```shell
 attw --pack . --entrypoints . one two three    # Just ".", "./one", "./two", "./three"
 attw --pack . --include-entrypoints added      # Auto-discovered entyrpoints plus "./added"
 attw --pack . --exclude-entrypoints styles.css # Auto-discovered entrypoints except "./styles.css"
+attw --pack . --entrypoints-legacy             # All published code files
 ```
 
 #### Ignore Rules
