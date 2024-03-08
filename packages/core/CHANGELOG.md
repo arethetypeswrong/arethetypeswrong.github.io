@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.15.1
+
+### Patch Changes
+
+- d93848f: API: distinguish between npm 404s and other thrown errors
+
 ## 0.15.0
 
 ### Minor Changes
