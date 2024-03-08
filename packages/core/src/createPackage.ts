@@ -227,20 +227,22 @@ async function getNpmTarballUrl(
   for (const packageSpec of packageSpecs) {
     const manifestUrl = `https://registry.npmjs.org/${packageSpec.name}/${packageSpec.version || "latest"}`;
     const doc = packument || (await fetch(manifestUrl).then((r) => r.json()));
-    if (typeof doc !== "object") {
-      continue;
+    if (typeof doc !== "object" || (doc.error && doc.error !== "Not found")) {
+      throw new Error(`Unexpected response from ${manifestUrl}: ${JSON.stringify(doc)}`);
     }
     const isManifest = !!doc.version;
     let tarballUrl, packageVersion;
     if (packageSpec.versionKind === "range") {
-      packageVersion = maxSatisfying(
-        Object.keys(doc.versions).filter(
-          (v) =>
-            (allowDeprecated || !doc.versions[v].deprecated) &&
-            (!before || !doc.time || new Date(doc.time[v]) <= before),
-        ),
-        packageSpec.version,
-      );
+      packageVersion =
+        doc.versions &&
+        maxSatisfying(
+          Object.keys(doc.versions).filter(
+            (v) =>
+              (allowDeprecated || !doc.versions[v].deprecated) &&
+              (!before || !doc.time || new Date(doc.time[v]) <= before),
+          ),
+          packageSpec.version,
+        );
       if (!packageVersion) {
         continue;
       }
@@ -256,17 +258,24 @@ async function getNpmTarballUrl(
       tarballUrl = doc.versions[packageVersion].dist.tarball;
     } else if (isManifest) {
       packageVersion = doc.version;
-      tarballUrl = doc.dist.tarball;
+      tarballUrl = doc.dist?.tarball;
     } else {
-      packageVersion = doc["dist-tags"].latest;
-      tarballUrl = doc.versions[packageVersion].dist.tarball;
+      packageVersion = doc["dist-tags"]?.latest;
+      tarballUrl = doc.versions?.[packageVersion].dist.tarball;
     }
 
     if (packageVersion && tarballUrl) {
       return { packageName: packageSpec.name, packageVersion, tarballUrl };
     }
   }
-  throw new Error(`Failed to find a matching version for ${packageSpecs[0].name}`);
+  throw new Npm404Error(packageSpecs);
+}
+
+export class Npm404Error extends Error {
+  kind = "Npm404Error";
+  constructor(public packageSpecs: readonly ParsedPackageSpec[]) {
+    super(`Failed to find a matching version for ${packageSpecs[0].name}`);
+  }
 }
 
 export async function createPackageFromTarballUrl(tarballUrl: string): Promise<Package> {
