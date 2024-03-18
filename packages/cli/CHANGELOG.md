@@ -1,5 +1,11 @@
 # @arethetypeswrong/cli
 
+## 0.15.2
+
+### Patch Changes
+
+- c8f113d: Fix incorrect validation error message text
+
 ## 0.15.1
 
 ### Patch Changes
