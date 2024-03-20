@@ -24,9 +24,10 @@ function getEntrypoints(fs: Package, exportsObject: unknown, options: CheckPacka
     const proxies = getProxyDirectories(rootDir, fs);
     if (proxies.length === 0) {
       if (options?.entrypointsLegacy) {
-        return fs.listFiles()
-          .filter(f => !ts.isDeclarationFileName(f) && extensions.has(f.slice(f.lastIndexOf("."))))
-          .map(f => "." + f.slice(rootDir.length));
+        return fs
+          .listFiles()
+          .filter((f) => !ts.isDeclarationFileName(f) && extensions.has(f.slice(f.lastIndexOf("."))))
+          .map((f) => "." + f.slice(rootDir.length));
       }
       return ["."];
     }
@@ -96,6 +97,7 @@ export function getEntrypointInfo(
   options: CheckPackageOptions | undefined,
 ): Record<string, EntrypointInfo> {
   const packageJson = JSON.parse(fs.readFile(`/node_modules/${packageName}/package.json`));
+  const typeIsModule = packageJson.type === "module";
   let entrypoints = getEntrypoints(fs, packageJson.exports, options);
   if (fs.typesPackage) {
     const typesPackageJson = JSON.parse(fs.readFile(`/node_modules/${fs.typesPackage.packageName}/package.json`));
@@ -105,10 +107,10 @@ export function getEntrypointInfo(
   const result: Record<string, EntrypointInfo> = {};
   for (const entrypoint of entrypoints) {
     const resolutions: Record<ResolutionKind, EntrypointResolutionAnalysis> = {
-      node10: getEntrypointResolution(packageName, hosts.node10, "node10", entrypoint),
-      "node16-cjs": getEntrypointResolution(packageName, hosts.node16, "node16-cjs", entrypoint),
-      "node16-esm": getEntrypointResolution(packageName, hosts.node16, "node16-esm", entrypoint),
-      bundler: getEntrypointResolution(packageName, hosts.bundler, "bundler", entrypoint),
+      node10: getEntrypointResolution(packageName, typeIsModule, hosts.node10, "node10", entrypoint),
+      "node16-cjs": getEntrypointResolution(packageName, typeIsModule, hosts.node16, "node16-cjs", entrypoint),
+      "node16-esm": getEntrypointResolution(packageName, typeIsModule, hosts.node16, "node16-esm", entrypoint),
+      bundler: getEntrypointResolution(packageName, typeIsModule, hosts.bundler, "bundler", entrypoint),
     };
     result[entrypoint] = {
       subpath: entrypoint,
@@ -121,6 +123,7 @@ export function getEntrypointInfo(
 }
 function getEntrypointResolution(
   packageName: string,
+  typeIsModule: boolean,
   host: CompilerHostWrapper,
   resolutionKind: ResolutionKind,
   entrypoint: string,
@@ -167,6 +170,12 @@ function getEntrypointResolution(
 
     return {
       fileName,
+      isESM:
+        resolution.resolvedModule.extension === ts.Extension.Mjs ||
+        (typeIsModule && resolution.resolvedModule.extension === ts.Extension.Js),
+      isCommonJS:
+        resolution.resolvedModule.extension === ts.Extension.Cjs ||
+        (!typeIsModule && resolution.resolvedModule.extension === ts.Extension.Js),
       isJson: resolution.resolvedModule.extension === ts.Extension.Json,
       isTypeScript: ts.hasTSFileExtension(resolution.resolvedModule.resolvedFileName),
       trace,

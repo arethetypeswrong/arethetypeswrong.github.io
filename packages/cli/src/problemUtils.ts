@@ -9,6 +9,7 @@ export const problemFlags = {
   CJSResolvesToESM: "cjs-resolves-to-esm",
   FallbackCondition: "fallback-condition",
   CJSOnlyExportsDefault: "cjs-only-exports-default",
+  CJSNamedExports: "cjs-named-exports",
   FalseExportDefault: "false-export-default",
   MissingExportEquals: "missing-export-equals",
   UnexpectedModuleSyntax: "unexpected-module-syntax",

@@ -70,6 +70,8 @@ export interface EntrypointResolutionAnalysis {
 export interface Resolution {
   fileName: string;
   isTypeScript: boolean;
+  isESM: boolean;
+  isCommonJS: boolean;
   isJson: boolean;
   trace: string[];
 }
@@ -126,6 +128,10 @@ export interface CJSResolvesToESMProblem extends EntrypointResolutionProblem {
   kind: "CJSResolvesToESM";
 }
 
+export interface CJSNamedExportsProblem extends FilePairProblem {
+  kind: "CJSNamedExports";
+}
+
 export interface FallbackConditionProblem extends EntrypointResolutionProblem {
   kind: "FallbackCondition";
 }
@@ -162,6 +168,7 @@ export type Problem =
   | FalseESMProblem
   | FalseCJSProblem
   | CJSResolvesToESMProblem
+  | CJSNamedExportsProblem
   | FallbackConditionProblem
   | FalseExportDefaultProblem
   | MissingExportEqualsProblem

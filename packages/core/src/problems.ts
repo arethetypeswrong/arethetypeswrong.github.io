@@ -39,6 +39,13 @@ export const problemKindInfo: Record<ProblemKind, ProblemKindInfo> = {
     description: "Import resolved to an ESM type declaration file, but a CommonJS JavaScript file.",
     docsUrl: "https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseESM.md",
   },
+  CJSNamedExports: {
+    emoji: "🕵️",
+    title: "Types include CJS named exports which are not present in the implementation",
+    shortDescription: "Named CJS types",
+    description: "docs",
+    docsUrl: "docs",
+  },
   CJSResolvesToESM: {
     emoji: "⚠️",
     title: "Entrypoint is ESM-only",
