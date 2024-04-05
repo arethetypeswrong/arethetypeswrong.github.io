@@ -1,5 +1,13 @@
 # @arethetypeswrong/cli
 
+## 0.15.3
+
+### Patch Changes
+
+- e41cf2c: Update `--ignore-rules` options in CLI documents.
+
+  Actual behavior changes were made in #31 and #85.
+
 ## 0.15.2
 
 ### Patch Changes
