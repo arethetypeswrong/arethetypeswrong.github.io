@@ -147,7 +147,6 @@ Specifies rules/problems to ignore (i.e. not raise an error for).
 
 The available values are:
 
-- `wildcard`
 - `no-resolution`
 - `untyped-resolution`
 - `false-cjs`
@@ -156,8 +155,9 @@ The available values are:
 - `fallback-condition`
 - `cjs-only-exports-default`
 - `false-export-default`
-- `unexpected-esm-syntax`
-- `unexpected-cjs-syntax`
+- `unexpected-module-syntax`
+- `missing-export-equals`
+- `internal-resolution-error`
 
 In the CLI: `--ignore-rules`
 
