@@ -20,10 +20,14 @@ export default defineCheck({
     const typesSourceFile = host.getSourceFile(typesFileName)!;
     const typeChecker = host.createAuxiliaryProgram([typesFileName]).getTypeChecker();
     const typesExports = typeChecker.getExportsAndPropertiesOfModule(typesSourceFile.symbol);
-    const expectedNames = typesExports
-      .flatMap((node) => [...(node.declarations?.values() ?? [])])
-      .filter((node) => !ts.isTypeAlias(node) && !ts.isTypeDeclaration(node) && !ts.isNamespaceBody(node))
-      .map((declaration) => declaration.symbol.escapedName);
+    const expectedNames = Array.from(
+      new Set(
+        typesExports
+          .flatMap((node) => [...(node.declarations?.values() ?? [])])
+          .filter((node) => !ts.isTypeAlias(node) && !ts.isTypeDeclaration(node) && !ts.isNamespaceBody(node))
+          .map((declaration) => declaration.symbol.escapedName),
+      ),
+    );
 
     // Get actual exported names as seen by nodejs
     const exports = getEsmModuleNamespace(context.pkg, implementationFileName);
