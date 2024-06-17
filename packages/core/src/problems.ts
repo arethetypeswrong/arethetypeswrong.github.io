@@ -41,10 +41,10 @@ export const problemKindInfo: Record<ProblemKind, ProblemKindInfo> = {
   },
   NamedExports: {
     emoji: "🕵️",
-    title: "Types include named exports which are not present in the implementation",
+    title: "Named runtime ESM types are inaccurate",
     shortDescription: "Named ESM exports",
-    description: "docs",
-    docsUrl: "docs",
+    description: "Module advertises named ESM exports which will not exist at runtime.",
+    docsUrl: "https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/NamedExports.md",
   },
   CJSResolvesToESM: {
     emoji: "⚠️",
