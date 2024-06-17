@@ -30,16 +30,25 @@ export default defineCheck({
     );
 
     // Get actual exported names as seen by nodejs
-    const exports = getEsmModuleNamespace(context.pkg, implementationFileName);
-    const missing = expectedNames.filter((name) => !exports.includes(String(name))).map(String);
-    if (missing.length > 0) {
-      console.log("🚨", implementationFileName, missing);
-      return {
-        kind: "NamedExports",
-        implementationFileName,
-        typesFileName,
-        missing,
-      };
+    const exports = (() => {
+      try {
+        return getEsmModuleNamespace(context.pkg, implementationFileName);
+      } catch {
+        // nb: If this fails then the result is indeterminate. This could happen in many cases, but
+        // a common one would be for packages which re-export from another another package.
+      }
+    })();
+    if (exports) {
+      const missing = expectedNames.filter((name) => !exports.includes(String(name))).map(String);
+      if (missing.length > 0) {
+        console.log("🚨", implementationFileName, missing);
+        return {
+          kind: "NamedExports",
+          implementationFileName,
+          typesFileName,
+          missing,
+        };
+      }
     }
   },
 });
