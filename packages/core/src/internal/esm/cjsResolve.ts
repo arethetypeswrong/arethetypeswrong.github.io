@@ -79,19 +79,19 @@ function loadAsFile(fs: Package, fragment: string, parentURL: URL) {
 
   // 2. If X.js is a file, load X.js as JavaScript text. STOP
   const asJsFile = new URL(`${fragment}.js`, parentURL);
-  if (fs.fileExists(verbatimFileURLToPath(asFile))) {
+  if (fs.fileExists(verbatimFileURLToPath(asJsFile))) {
     return loadWithFormat(fs, asJsFile);
   }
 
   // 3. If X.json is a file, parse X.json to a JavaScript Object. STOP
   const asJsonFile = new URL(`${fragment}.json`, parentURL);
-  if (fs.fileExists(verbatimFileURLToPath(asFile))) {
+  if (fs.fileExists(verbatimFileURLToPath(asJsonFile))) {
     return loadWithFormat(fs, asJsonFile);
   }
 
   // 4. If X.node is a file, load X.node as binary addon. STOP
   const asNodeFile = new URL(`${fragment}.node`, parentURL);
-  if (fs.fileExists(verbatimFileURLToPath(asFile))) {
+  if (fs.fileExists(verbatimFileURLToPath(asNodeFile))) {
     return { format: "node", resolved: asNodeFile };
   }
 }
