@@ -51,7 +51,6 @@ export default defineCheck({
     if (exports) {
       const missing = expectedNames.filter((name) => !exports.includes(String(name))).map(String);
       if (missing.length > 0) {
-        console.log("🚨", implementationFileName, missing);
         return {
           kind: "NamedExports",
           implementationFileName,
