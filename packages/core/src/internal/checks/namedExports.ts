@@ -18,16 +18,26 @@ export default defineCheck({
     // Get declared exported names from TypeScript
     const host = context.hosts.findHostForFiles([typesFileName])!;
     const typesSourceFile = host.getSourceFile(typesFileName)!;
-    const typeChecker = host.createAuxiliaryProgram([typesFileName]).getTypeChecker();
-    const typesExports = typeChecker.getExportsAndPropertiesOfModule(typesSourceFile.symbol);
-    const expectedNames = Array.from(
-      new Set(
-        typesExports
-          .flatMap((node) => [...(node.declarations?.values() ?? [])])
-          .filter((node) => !ts.isTypeAlias(node) && !ts.isTypeDeclaration(node) && !ts.isNamespaceBody(node))
-          .map((declaration) => declaration.symbol.escapedName),
-      ),
-    );
+    const expectedNames = (() => {
+      if (typesSourceFile.scriptKind === ts.ScriptKind.JSON) {
+        // TypeScript reports top-level JSON keys as exports which is WRONG WRONG WRONG. A JSON file
+        // never export anything other than `default`.
+        return ["default"];
+      } else {
+        // nb: This is incomplete and reports type-only exports. This should be fixed to only return
+        // expected runtime exports.
+        const typeChecker = host.createAuxiliaryProgram([typesFileName]).getTypeChecker();
+        const typesExports = typeChecker.getExportsAndPropertiesOfModule(typesSourceFile.symbol);
+        return Array.from(
+          new Set(
+            typesExports
+              .flatMap((node) => [...(node.declarations?.values() ?? [])])
+              .filter((node) => !ts.isTypeAlias(node) && !ts.isTypeDeclaration(node) && !ts.isNamespaceBody(node))
+              .map((declaration) => declaration.symbol.escapedName),
+          ),
+        );
+      }
+    })();
 
     // Get actual exported names as seen by nodejs
     const exports = (() => {
