@@ -1,120 +1,107 @@
 import type { Exports } from "cjs-module-lexer";
-import type { Identifier, Literal, Pattern } from "acorn";
-import { parse as acornParse } from "acorn";
+import ts from "typescript";
 
 // Note: There is a pretty solid module `es-module-lexer` which performs a similar lexing operation
 // as `cjs-module-lexer`, but has some limitations in what it can express. This implementation
 // should be more complete.
 
-function extractExportedName(node: Identifier | Literal) {
-  switch (node.type) {
-    case "Identifier":
-      return node.name;
-    case "Literal":
-      if (typeof node.value !== "string") {
-        throw new Error("Impossible non-string literal export");
-      }
-      return node.value;
-  }
-}
-
-function* extractPatternIdentifiers(node: Pattern | null): Iterable<string> {
-  if (node === null) {
-    return;
-  }
-  switch (node.type) {
-    case "ArrayPattern":
+function* extractDestructedNames(node: ts.BindingName): Iterable<string> {
+  switch (node.kind) {
+    case ts.SyntaxKind.ArrayBindingPattern:
       for (const element of node.elements) {
-        yield* extractPatternIdentifiers(element);
-      }
-      break;
-
-    case "AssignmentPattern":
-      yield* extractPatternIdentifiers(node.left);
-      break;
-
-    case "Identifier":
-      yield node.name;
-      break;
-
-    case "MemberExpression":
-      break;
-
-    case "ObjectPattern":
-      for (const property of node.properties) {
-        switch (property.type) {
-          case "Property":
-            yield* extractPatternIdentifiers(property.value);
-            break;
-          case "RestElement":
-            yield* extractPatternIdentifiers(property.argument);
-            break;
+        if (element.kind === ts.SyntaxKind.BindingElement) {
+          yield* extractDestructedNames(element.name);
         }
       }
       break;
 
-    case "RestElement":
-      yield* extractPatternIdentifiers(node.argument);
+    case ts.SyntaxKind.Identifier:
+      yield node.text;
       break;
+
+    case ts.SyntaxKind.ObjectBindingPattern:
+      for (const element of node.elements) {
+        yield* extractDestructedNames(element.name);
+      }
+      break;
+
+    default:
+      node satisfies never;
   }
 }
 
 export function getEsmModuleBindings(sourceText: string): Exports {
-  const program = acornParse(sourceText, {
-    ecmaVersion: "latest",
-    sourceType: "module",
-  });
-  let exports: string[] = [];
-  let reexports: string[] = [];
-  for (const node of program.body) {
-    switch (node.type) {
-      case "ExportAllDeclaration":
-        if (node.exported) {
-          // `export * as namespace from 'specifier'`
-          exports.push(extractExportedName(node.exported));
-        } else {
-          // `export * from 'specifier'`
-          reexports.push(extractExportedName(node.source));
-        }
-        break;
+  const options: ts.CreateSourceFileOptions = {
+    languageVersion: ts.ScriptTarget.ESNext,
+    impliedNodeFormat: ts.ModuleKind.ESNext,
+  };
+  const sourceFile = ts.createSourceFile("module.cjs", sourceText, options, false, ts.ScriptKind.JS);
 
-      case "ExportDefaultDeclaration":
-        // `export default ...`
-        exports.push("default");
-        break;
-
-      case "ExportNamedDeclaration": {
-        const { declaration, specifiers } = node;
-        if (declaration) {
-          switch (declaration.type) {
-            case "ClassDeclaration":
-            case "FunctionDeclaration":
-              // `export class Foo {}`
-              // `export function foo() {}`
-              exports.push(declaration.id.name);
-              break;
-
-            // `export const foo = null;`
-            // `export const { foo, bar } = null;`
-            case "VariableDeclaration":
-              for (const declarator of declaration.declarations) {
-                exports.push(...extractPatternIdentifiers(declarator.id));
+  const exports: string[] = [];
+  const reexports: string[] = [];
+  for (const statement of sourceFile.statements) {
+    switch (statement.kind) {
+      case ts.SyntaxKind.ExportDeclaration: {
+        const declaration = statement as ts.ExportDeclaration;
+        const { exportClause } = declaration;
+        if (!declaration.isTypeOnly) {
+          if (exportClause) {
+            if (exportClause.kind === ts.SyntaxKind.NamedExports) {
+              // `export { foo }`;
+              // `export { foo } from 'specifier'`;
+              for (const element of exportClause.elements) {
+                if (!element.isTypeOnly) {
+                  exports.push(element.name.text);
+                }
               }
-              break;
+            } else {
+              // `export * as namespace from 'specifier'`
+              exports.push(exportClause.name.text);
+            }
+          } else if (declaration.moduleSpecifier && ts.isStringLiteral(declaration.moduleSpecifier)) {
+            // `export * from 'specifier'`
+            reexports.push(declaration.moduleSpecifier.text);
           }
         }
+        break;
+      }
 
-        // `export { foo }`;
-        exports.push(
-          ...specifiers.map(({ exported }) => {
-            switch (exported.type) {
-              case "Identifier":
-                return exported.name;
-              case "Literal":
-                return extractExportedName(exported);
-            }
-          }),
-        );
+      case ts.SyntaxKind.ExportAssignment: {
+        const assignment = statement as ts.ExportAssignment;
+        if (!assignment.isExportEquals) {
+          // `export default ...`
+          exports.push("default");
+        }
+        break;
+      }
+
+      case ts.SyntaxKind.ClassDeclaration:
+      case ts.SyntaxKind.FunctionDeclaration: {
+        const declaration = statement as ts.ClassDeclaration | ts.FunctionDeclaration;
+        if (ts.hasSyntacticModifier(declaration, ts.ModifierFlags.Export)) {
+          if (ts.hasSyntacticModifier(declaration, ts.ModifierFlags.Default)) {
+            // `export default class {}`
+            // `export default function () {}`
+            exports.push("default");
+          } else if (declaration.name) {
+            // `export class Foo {}`
+            // `export function foo() {}`
+            exports.push(declaration.name.text);
+          }
+        }
+        break;
+      }
+
+      case ts.SyntaxKind.VariableStatement: {
+        const declaration = statement as ts.VariableStatement;
+        if (ts.hasSyntacticModifier(declaration, ts.ModifierFlags.Export)) {
+          // `export const foo = null;`
+          // `export const { foo, bar } = null;`
+          for (const declarator of declaration.declarationList.declarations) {
+            exports.push(...extractDestructedNames(declarator.name));
+          }
+        }
+        break;
       }
     }
   }
