@@ -126,6 +126,12 @@ export interface CJSResolvesToESMProblem extends EntrypointResolutionProblem {
   kind: "CJSResolvesToESM";
 }
 
+export interface NamedExportsProblem extends FilePairProblem {
+  kind: "NamedExports";
+  isMissingAllNamed: boolean;
+  missing: string[];
+}
+
 export interface FallbackConditionProblem extends EntrypointResolutionProblem {
   kind: "FallbackCondition";
 }
@@ -162,6 +168,7 @@ export type Problem =
   | FalseESMProblem
   | FalseCJSProblem
   | CJSResolvesToESMProblem
+  | NamedExportsProblem
   | FallbackConditionProblem
   | FalseExportDefaultProblem
   | MissingExportEqualsProblem
