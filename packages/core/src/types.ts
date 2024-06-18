@@ -70,8 +70,6 @@ export interface EntrypointResolutionAnalysis {
 export interface Resolution {
   fileName: string;
   isTypeScript: boolean;
-  isESM: boolean;
-  isCommonJS: boolean;
   isJson: boolean;
   trace: string[];
 }
