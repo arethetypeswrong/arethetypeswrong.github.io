@@ -33,7 +33,8 @@ export default defineCheck({
             typesExports
               .flatMap((node) => [...(node.declarations?.values() ?? [])])
               .filter((node) => !ts.isTypeAlias(node) && !ts.isTypeDeclaration(node) && !ts.isNamespaceBody(node))
-              .map((declaration) => declaration.symbol.escapedName),
+              .map((declaration) => declaration.symbol.escapedName)
+              .map(String),
           ),
         );
       }
@@ -49,12 +50,14 @@ export default defineCheck({
       }
     })();
     if (exports) {
-      const missing = expectedNames.filter((name) => !exports.includes(String(name))).map(String);
+      const missing = expectedNames.filter((name) => !exports.includes(name));
       if (missing.length > 0) {
+        const lengthWithoutDefault = (names: readonly string[]) => names.length - (names.includes("default") ? 1 : 0);
         return {
           kind: "NamedExports",
           implementationFileName,
           typesFileName,
+          isMissingAllNamed: lengthWithoutDefault(missing) === lengthWithoutDefault(expectedNames),
           missing,
         };
       }

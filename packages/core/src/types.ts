@@ -128,6 +128,7 @@ export interface CJSResolvesToESMProblem extends EntrypointResolutionProblem {
 
 export interface NamedExportsProblem extends FilePairProblem {
   kind: "NamedExports";
+  isMissingAllNamed: boolean;
   missing: string[];
 }
 
