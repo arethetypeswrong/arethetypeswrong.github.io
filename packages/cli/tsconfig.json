@@ -5,8 +5,7 @@
     "rootDir": "src",
     "types": ["ts-expose-internals-conditionally", "node"],
     "outDir": "./dist",
-    "sourceMap": true,
-    "allowSyntheticDefaultImports": true
+    "sourceMap": true
   },
   "include": ["src"],
   "references": [
