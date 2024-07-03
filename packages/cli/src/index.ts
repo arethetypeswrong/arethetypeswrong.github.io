@@ -15,8 +15,6 @@ import { readConfig } from "./readConfig.js";
 import * as render from "./render/index.js";
 import { major, minor } from "semver";
 import { getExitCode } from "./getExitCode.js";
-import { determinePackCommand, determineTarballFilename } from "./utils.js";
-import detectPackageManager from "which-pm-runs";
 
 const packageJson = createRequire(import.meta.url)("../package.json");
 const version = packageJson.version;
@@ -76,8 +74,8 @@ particularly ESM-related module resolution issues.`,
   .option("--exclude-entrypoints <entrypoints...>", "Specify entrypoints to exclude from checking.")
   .option(
     "--entrypoints-legacy",
-    "In packages without the `exports` field, every file is an entry point. Specifying this option " +
-      "only takes effect when no entrypoints are automatically detected, or explicitly provided with other options.",
+    'In packages without the `exports` field, every file is an entry point. Specifying this option ' +
+    'only takes effect when no entrypoints are automatically detected, or explicitly provided with other options.'
   )
   .addOption(
     new Option("--ignore-rules <rules...>", "Specify rules to ignore").choices(Object.values(problemFlags)).default([]),
@@ -161,18 +159,15 @@ particularly ESM-related module resolution issues.`,
             );
           }
 
-          const packageManager = (await detectPackageManager()?.name) ?? "npm";
-          const packCommand = determinePackCommand(packageManager);
-
           if (!opts.pack) {
             if (!process.stdout.isTTY) {
               program.error(
-                `Specifying a directory requires the --pack option to confirm that running \`${packCommand}\` is ok.`,
+                "Specifying a directory requires the --pack option to confirm that running `npm pack` is ok.",
               );
             }
             const rl = readline.createInterface(process.stdin, process.stdout);
             const answer = await new Promise<string>((resolve) => {
-              rl.question(`Run \`${packCommand}\`? (Pass -P/--pack to skip) (Y/n) `, resolve);
+              rl.question(`Run \`npm pack\`? (Pass -P/--pack to skip) (Y/n) `, resolve);
             });
             rl.close();
             if (answer.trim() && !answer.trim().toLowerCase().startsWith("y")) {
@@ -180,11 +175,13 @@ particularly ESM-related module resolution issues.`,
             }
           }
 
-          fileName = deleteTgz = await determineTarballFilename(fileOrDirectory);
-
-          const packCommandWithFilename = determinePackCommand(packageManager, fileName);
-
-          execSync(packCommandWithFilename, { cwd: fileOrDirectory, encoding: "utf8", stdio: "ignore" });
+          const manifest = JSON.parse(await readFile(path.join(fileOrDirectory, "package.json"), { encoding: "utf8" }));
+          fileName = deleteTgz = path.join(
+            fileOrDirectory,
+            // https://github.com/npm/cli/blob/f875caa86900122819311dd77cde01c700fd1817/lib/utils/tar.js#L123-L125
+            `${manifest.name.replace("@", "").replace("/", "-")}-${manifest.version}.tgz`,
+          );
+          execSync("npm pack", { cwd: fileOrDirectory, encoding: "utf8", stdio: "ignore" });
         }
         const file = await readFile(fileName);
         const data = new Uint8Array(file);
