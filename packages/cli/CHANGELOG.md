@@ -1,11 +1,5 @@
 # @arethetypeswrong/cli
 
-## 0.16.0
-
-### Minor Changes
-
-- f5cf8de: Add support for multiple package managers like [pnpm](https://pnpm.io/) and [yarn](https://yarnpkg.com/) ([#173](https://github.com/arethetypeswrong/arethetypeswrong.github.io/issues/173))
-
 ## 0.15.3
 
 ### Patch Changes
