@@ -10,7 +10,7 @@ export const determinePackCommand = (packageManager: string, filename?: string) 
     case "yarn":
       return filename ? `yarn pack --out ${filename}` : "yarn pack";
     default:
-      return filename ? `npm pack ${filename}` : "npm pack";
+      return "npm pack";
   }
 };
 
