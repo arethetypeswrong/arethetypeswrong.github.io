@@ -6,7 +6,7 @@ Import failed to resolve to type declarations or JavaScript files.
 
 This problem indicates that TypeScript can’t find any file with a supported file extension (`.js`, `.mjs`, `.cjs`, `.jsx`, `.json`, `.ts`, `.mts`, `.cts`, `.tsx`) by following its own resolution algorithm, or a modified version of its resolution algorithm that ignores type declaration (`.d.ts`, `.d.mts`, `.d.cts`, `.d.*.ts`) files (which allows it to find JS files it would otherwise ignore).
 
-## Consequnces
+## Consequences
 
 * Consumers will see TypeScript errors on imports/requires.
 * If the diagnosis is accurate, a runtime/bundle-time error will occur.
