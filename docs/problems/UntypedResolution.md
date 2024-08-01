@@ -17,7 +17,7 @@ Note that this tool does not show results unless a package contains at least one
 
 ### Untyped ESM via package.json `"exports"`
 
-This problem often occurs in libraries that adopted package.json `"exports"` before TypeScript added support for th feature, and haven’t updated accordingly. At the time, it would have been natural for these libraries to write a package.json like:
+This problem often occurs in libraries that adopted package.json `"exports"` before TypeScript added support for this feature, and haven’t updated accordingly. At the time, it would have been natural for these libraries to write a package.json like:
 
 ```json5
 {
