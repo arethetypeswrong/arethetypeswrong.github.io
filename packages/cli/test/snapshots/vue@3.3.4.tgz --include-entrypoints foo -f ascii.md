@@ -1,7 +1,7 @@
 # vue@3.3.4.tgz --include-entrypoints foo -f ascii
 
 ```
-$ attw vue@3.3.4.tgz --include-entrypoints ./foo -f ascii
+$ attw vue@3.3.4.tgz --include-entrypoints foo -f ascii
 
 
 vue v3.3.4
