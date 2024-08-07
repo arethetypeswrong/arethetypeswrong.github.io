@@ -1,7 +1,7 @@
-# big.js@6.2.1.tgz --definitely-typed /home/runner/work/arethetypeswrong.github.io/arethetypeswrong.github.io/packages/core/test/fixtures/@types__big.js@6.2.0.tgz
+# big.js@6.2.1.tgz --definitely-typed @types__big.js@6.2.0.tgz
 
 ```
-$ attw big.js@6.2.1.tgz --definitely-typed /home/runner/work/arethetypeswrong.github.io/arethetypeswrong.github.io/packages/core/test/fixtures/@types__big.js@6.2.0.tgz
+$ attw big.js@6.2.1.tgz --definitely-typed /Users/andrew/Developer/arethetypeswrong.github.io/packages/core/test/fixtures/@types__big.js@6.2.0.tgz
 
 
 big.js v6.2.1

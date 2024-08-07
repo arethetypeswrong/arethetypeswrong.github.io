@@ -62,7 +62,7 @@ describe("snapshots", async () => {
   });
 
   for (const [tarball, options] of tests) {
-    const fixture = tarball + (options ? ` ${options}` : "");
+    const fixture = tarball + (options ? ` ${options.replace(/ .*[\\\/](?=[^\\\/]*$)/g, " ")}` : "");
     if (testFilter && !fixture.toLowerCase().includes(testFilter)) {
       continue;
     }
@@ -82,7 +82,7 @@ describe("snapshots", async () => {
         stderr = (error as SpawnSyncReturns<string>).stderr;
         exitCode = (error as SpawnSyncReturns<string>).status ?? 1;
       }
-      const snapshotURL = new URL(`../snapshots/${fixture.replace(/\//g, "")}.md`, import.meta.url);
+      const snapshotURL = new URL(`../snapshots/${fixture}.md`, import.meta.url);
       // prettier-ignore
       const expectedSnapshot = [
         `# ${fixture}`,
