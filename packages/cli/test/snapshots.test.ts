@@ -62,7 +62,7 @@ describe("snapshots", async () => {
   });
 
   for (const [tarball, options] of tests) {
-    const fixture = tarball + (options ? ` ${options.replace(/ .*[\\\/](?=[^\\\/]*$)/g, " ")}` : "");
+    const fixture = tarball + (options ? ` ${stripPaths(options)}` : "");
     if (testFilter && !fixture.toLowerCase().includes(testFilter)) {
       continue;
     }
@@ -88,7 +88,7 @@ describe("snapshots", async () => {
         `# ${fixture}`,
         "",
         "```",
-        `$ attw ${tarball} ${options ?? defaultOpts}`,
+        `$ attw ${tarball} ${stripPaths(options ?? defaultOpts)}`,
         "",
         [stdout, stderr].filter(Boolean).join("\n"),
         "",
@@ -116,3 +116,7 @@ describe("snapshots", async () => {
     });
   }
 });
+
+function stripPaths(input: string): string {
+  return input.replace(/ .*[\\\/](?=[^\\\/]*$)/g, " ");
+}
