@@ -1,4 +1,5 @@
 import type { Package } from "./createPackage.js";
+import { init as initCjsLexer } from "cjs-module-lexer";
 import checks from "./internal/checks/index.js";
 import type { AnyCheck, CheckDependenciesContext } from "./internal/defineCheck.js";
 import { createCompilerHosts } from "./internal/multiCompilerHost.js";
@@ -60,6 +61,7 @@ export async function checkPackage(pkg: Package, options?: CheckPackageOptions):
     bundler: {},
   };
 
+  await initCjsLexer();
   const problems: Problem[] = [];
   const problemIdsToIndices = new Map<string, number[]>();
   visitResolutions(entrypointResolutions, (analysis, info) => {
