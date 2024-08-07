@@ -1,5 +1,11 @@
 # @arethetypeswrong/cli
 
+## 0.15.4
+
+### Patch Changes
+
+- 5566c1b: Upgrading marked-terminal to version 7.1.0
+
 ## 0.15.3
 
 ### Patch Changes
