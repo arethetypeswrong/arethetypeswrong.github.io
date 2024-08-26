@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  ts-expose-internals-conditionally: 5.3.3
-
 importers:
 
   .:
@@ -18,8 +15,8 @@ importers:
         specifier: ^3.0.3
         version: 3.0.3
       typescript:
-        specifier: 5.3.3
-        version: 5.3.3
+        specifier: 5.6.1-rc
+        version: 5.6.1-rc
 
   packages/cli:
     dependencies:
@@ -52,14 +49,14 @@ importers:
         specifier: ^3.1.3
         version: 3.1.6
       '@types/node':
-        specifier: ^20.2.5
-        version: 20.8.6
+        specifier: ^22.5.0
+        version: 22.5.0
       '@types/semver':
         specifier: ^7.5.3
         version: 7.5.3
-      ts-expose-internals-conditionally:
-        specifier: 5.3.3
-        version: 5.3.3
+      ts-expose-internals:
+        specifier: 5.6.1-rc
+        version: 5.6.1-rc
       typescript:
         specifier: 5.3.3
         version: 5.3.3
@@ -75,25 +72,25 @@ importers:
       semver:
         specifier: ^7.5.4
         version: 7.5.4
-      ts-expose-internals-conditionally:
-        specifier: 5.3.3
-        version: 5.3.3
       typescript:
-        specifier: 5.3.3
-        version: 5.3.3
+        specifier: 5.6.1-rc
+        version: 5.6.1-rc
       validate-npm-package-name:
         specifier: ^5.0.0
         version: 5.0.0
     devDependencies:
       '@types/node':
-        specifier: ^20.8.6
-        version: 20.8.6
+        specifier: ^22.5.0
+        version: 22.5.0
       '@types/semver':
         specifier: ^7.5.0
         version: 7.5.3
       '@types/validate-npm-package-name':
         specifier: ^4.0.0
         version: 4.0.0
+      ts-expose-internals:
+        specifier: 5.6.1-rc
+        version: 5.6.1-rc
 
   packages/history:
     dependencies:
@@ -108,8 +105,8 @@ importers:
         specifier: ^3.11.0
         version: 3.11.3
       '@types/node':
-        specifier: ^20.8.6
-        version: 20.8.6
+        specifier: ^22.5.0
+        version: 22.5.0
       '@types/pacote':
         specifier: ^11.1.5
         version: 11.1.6
@@ -132,14 +129,14 @@ importers:
         specifier: ^7.5.3
         version: 7.5.4
       ts-expose-internals:
-        specifier: 5.3.3
-        version: 5.3.3
+        specifier: 5.6.1-rc
+        version: 5.6.1-rc
       tsx:
         specifier: ^3.12.7
         version: 3.13.0
       types-registry:
         specifier: latest
-        version: 0.1.665
+        version: 0.1.685
       typescript:
         specifier: 5.3.3
         version: 5.3.3
@@ -173,7 +170,7 @@ importers:
         version: 0.19.4
       vite:
         specifier: ^4.4.11
-        version: 4.4.11(@types/node@20.8.6)
+        version: 4.4.11(@types/node@22.5.0)
 
 packages:
 
@@ -664,8 +661,8 @@ packages:
   '@types/node@12.20.55':
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
 
-  '@types/node@20.8.6':
-    resolution: {integrity: sha512-eWO4K2Ji70QzKUqRy6oyJWUeB7+g2cRagT3T/nxYibYcT4y2BDL8lqolRXjTHmkZCdJfIPaY73KbJAZmcryxTQ==}
+  '@types/node@22.5.0':
+    resolution: {integrity: sha512-DkFrJOe+rfdHTqqMg0bSNlGlQ85hSoh2TPzZyhHsXnMtligRWpxUySiyw8FY14ITt24HVCiQPWxS3KO/QlGmWg==}
 
   '@types/normalize-package-data@2.4.2':
     resolution: {integrity: sha512-lqa4UEhhv/2sjjIQgjX8B+RBjj47eo0mzGasklVJ78UKGQY1r0VpB9XHDaZZO9qzEFDdy4MrXLuEaSmPrPSe/A==}
@@ -749,6 +746,7 @@ packages:
   are-we-there-yet@3.0.1:
     resolution: {integrity: sha512-QZW4EDmGwlYur0Yyf/b2uGucHQMa8aFUP7eu9ddR73vvhFyt4V0Vl3QHPcTNJ8l6qYOBdxgXdnBXQrHilfRQBg==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    deprecated: This package is no longer supported.
 
   argparse@1.0.10:
     resolution: {integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==}
@@ -1138,6 +1136,7 @@ packages:
   gauge@4.0.4:
     resolution: {integrity: sha512-f9m+BEN5jkg6a0fZjleidjN51VE1X+mPFQ2DJ0uv1V39oCLCbsGe6yjbBnp7eK7z/+GAon99a3nHuqbuuthyPg==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    deprecated: This package is no longer supported.
 
   get-caller-file@2.0.5:
     resolution: {integrity: sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==}
@@ -1164,6 +1163,7 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    deprecated: Glob versions prior to v9 are no longer supported
 
   globalthis@1.0.3:
     resolution: {integrity: sha512-sFdI5LyBiNTHjRd7cGPWapiHWMOXKyuBNX/cWJ3NfzrZQVa8GI/8cofCl74AOVqq9W5kNmguTIzJ/1s2gyI9wA==}
@@ -1275,6 +1275,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -1641,6 +1642,7 @@ packages:
   npmlog@6.0.2:
     resolution: {integrity: sha512-/vBvz5Jfr9dT/aFWd0FIRf+T/Q2WBsLENygUaFUqstqsycmZAP/t5BvFJTK0viFmSUxiUKTUplWy5vt+rvKIxg==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    deprecated: This package is no longer supported.
 
   nprogress@0.2.0:
     resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
@@ -1813,6 +1815,7 @@ packages:
   read-package-json@6.0.4:
     resolution: {integrity: sha512-AEtWXYfopBj2z5N5PbkAOeNHRPUg5q+Nen7QLxV8M2zJq1ym6/lCz3fYNTCXe19puu2d06jfHhrP7v/S2PtMMw==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    deprecated: This package is no longer supported. Please use @npmcli/package-json instead.
 
   read-pkg-up@7.0.1:
     resolution: {integrity: sha512-zK0TB7Xd6JpCLmlLmufqykGE+/TlOePD6qKClNW7hHDKFh/J7/7gCWGR7joEQEW1bKq3a3yUZSObOoWLFQ4ohg==}
@@ -1869,6 +1872,7 @@ packages:
 
   rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   rollup@3.29.4:
@@ -2086,11 +2090,11 @@ packages:
     resolution: {integrity: sha512-c1PTsA3tYrIsLGkJkzHF+w9F2EyxfXGo4UyJc4pFL++FMjnq0HJS69T3M7d//gKrFKwy429bouPescbjecU+Zw==}
     engines: {node: '>=8'}
 
-  ts-expose-internals-conditionally@5.3.3:
-    resolution: {integrity: sha512-k3wz3FnxrtuD8ue3Y9GmqEsph3PB1YCZs6zWy6d6T60A9/0zgy3w0wQBQOdKPoyWN0T+JQCbY5cE8Cg80VlzNw==}
+  ts-expose-internals-conditionally@1.0.0-empty.0:
+    resolution: {integrity: sha512-F8m9NOF6ZhdOClDVdlM8gj3fDCav4ZIFSs/EI3ksQbAAXVSCN/Jh5OCJDDZWBuBy9psFc6jULGDlPwjMYMhJDw==}
 
-  ts-expose-internals@5.3.3:
-    resolution: {integrity: sha512-0lW96u0pa08dq9QLYUBRbgGkvsD+LvPAVGe94kr2tHaRZAxgckwJ+qqc1BSRoR1rpkTZf7AWAa6DKrLGFmctwg==}
+  ts-expose-internals@5.6.1-rc:
+    resolution: {integrity: sha512-oniL1xnqHuXgMVW3LzErbpAANor2jkhZh3qmD+a04dagAek9EfmDjtQgaIvmRd+X+SWWe6wgxZGPqIqsFZzYpw==}
 
   tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
@@ -2139,19 +2143,24 @@ packages:
   typed-array-length@1.0.4:
     resolution: {integrity: sha512-KjZypGq+I/H7HI5HlOoGHkWUUGq+Q0TPhQurLbyrVrvnKTBgzLhIJ7j6J/XTQOi0d1RjyZ0wdas8bKs2p0x3Ng==}
 
-  types-registry@0.1.665:
-    resolution: {integrity: sha512-+wpbd+gNRNaHeYdJESWL0dh0SbjitfegVUCpLavYUJ0NEc149r3+NYZz2Wv2ttB+80ZJXjLpLXKBNB/E87wyyA==}
+  types-registry@0.1.685:
+    resolution: {integrity: sha512-dC3Nqu/q2Ey8Jj/YV0plEub0oycMiu3VaAf+tf8X5uhtiRS4iF1BubY5cra1LIaKr+fTblxQvoVAYIPeVj1A9g==}
 
   typescript@5.3.3:
     resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
+  typescript@5.6.1-rc:
+    resolution: {integrity: sha512-E3b2+1zEFu84jB0YQi9BORDjz9+jGbwwy1Zi3G0LUNw7a7cePUrHMRNy8aPh53nXpkFGVHSxIZo5vKTfYaFiBQ==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
   unbox-primitive@1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}
 
-  undici-types@5.25.3:
-    resolution: {integrity: sha512-Ga1jfYwRn7+cP9v8auvEXN1rX3sWqlayd4HP7OKk4mZWylEmu3KzXDUGrQUN6Ol7qo1gPvB2e5gX6udnyEPgdA==}
+  undici-types@6.19.8:
+    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
 
   unicode-emoji-modifier-base@1.0.0:
     resolution: {integrity: sha512-yLSH4py7oFH3oG/9K+XWrz1pSi3dfUrWEnInbxMfArOfc1+33BlGPQtLsOYwvdMy11AwUBetYuaRxSPqgkq+8g==}
@@ -2326,7 +2335,7 @@ snapshots:
       '@andrewbranch/untar.js': 1.0.3
       fflate: 0.8.2
       semver: 7.5.4
-      ts-expose-internals-conditionally: 5.3.3
+      ts-expose-internals-conditionally: 1.0.0-empty.0
       typescript: 5.3.3
       validate-npm-package-name: 5.0.0
 
@@ -2811,7 +2820,7 @@ snapshots:
 
   '@types/cli-progress@3.11.3':
     dependencies:
-      '@types/node': 20.8.6
+      '@types/node': 22.5.0
 
   '@types/marked-terminal@3.1.6':
     dependencies:
@@ -2824,14 +2833,14 @@ snapshots:
 
   '@types/node-fetch@2.6.6':
     dependencies:
-      '@types/node': 20.8.6
+      '@types/node': 22.5.0
       form-data: 4.0.0
 
   '@types/node@12.20.55': {}
 
-  '@types/node@20.8.6':
+  '@types/node@22.5.0':
     dependencies:
-      undici-types: 5.25.3
+      undici-types: 6.19.8
 
   '@types/normalize-package-data@2.4.2': {}
 
@@ -2839,7 +2848,7 @@ snapshots:
 
   '@types/npm-registry-fetch@8.0.5':
     dependencies:
-      '@types/node': 20.8.6
+      '@types/node': 22.5.0
       '@types/node-fetch': 2.6.6
       '@types/npm-package-arg': 6.1.2
       '@types/npmlog': 4.1.4
@@ -2851,7 +2860,7 @@ snapshots:
 
   '@types/pacote@11.1.6':
     dependencies:
-      '@types/node': 20.8.6
+      '@types/node': 22.5.0
       '@types/npm-registry-fetch': 8.0.5
       '@types/npmlog': 4.1.4
       '@types/ssri': 7.1.2
@@ -2860,11 +2869,11 @@ snapshots:
 
   '@types/ssri@7.1.2':
     dependencies:
-      '@types/node': 20.8.6
+      '@types/node': 22.5.0
 
   '@types/tunnel@0.0.3':
     dependencies:
-      '@types/node': 20.8.6
+      '@types/node': 22.5.0
 
   '@types/validate-npm-package-name@4.0.0': {}
 
@@ -4398,9 +4407,9 @@ snapshots:
 
   trim-newlines@3.0.1: {}
 
-  ts-expose-internals-conditionally@5.3.3: {}
+  ts-expose-internals-conditionally@1.0.0-empty.0: {}
 
-  ts-expose-internals@5.3.3: {}
+  ts-expose-internals@5.6.1-rc: {}
 
   tslib@2.6.2: {}
 
@@ -4465,9 +4474,11 @@ snapshots:
       for-each: 0.3.3
       is-typed-array: 1.1.12
 
-  types-registry@0.1.665: {}
+  types-registry@0.1.685: {}
 
   typescript@5.3.3: {}
+
+  typescript@5.6.1-rc: {}
 
   unbox-primitive@1.0.2:
     dependencies:
@@ -4476,7 +4487,7 @@ snapshots:
       has-symbols: 1.0.3
       which-boxed-primitive: 1.0.2
 
-  undici-types@5.25.3: {}
+  undici-types@6.19.8: {}
 
   unicode-emoji-modifier-base@1.0.0: {}
 
@@ -4503,13 +4514,13 @@ snapshots:
     dependencies:
       builtins: 5.0.1
 
-  vite@4.4.11(@types/node@20.8.6):
+  vite@4.4.11(@types/node@22.5.0):
     dependencies:
       esbuild: 0.18.20
       postcss: 8.4.31
       rollup: 3.29.4
     optionalDependencies:
-      '@types/node': 20.8.6
+      '@types/node': 22.5.0
       fsevents: 2.3.3
 
   wcwidth@1.0.1:

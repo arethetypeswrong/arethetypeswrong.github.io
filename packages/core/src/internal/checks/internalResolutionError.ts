@@ -27,7 +27,7 @@ export default defineCheck({
           // graph for now.
           continue;
         }
-        const resolutionMode = ts.getModeForUsageLocation(sourceFile, moduleSpecifier);
+        const resolutionMode = ts.getModeForUsageLocation(sourceFile, moduleSpecifier, host.getCompilerOptions());
         const resolution = host.getResolvedModule(sourceFile, moduleSpecifier.text, resolutionMode);
         if (!resolution) {
           throw new Error(`Expected resolution for '${moduleSpecifier.text}' in ${fileName}`);
