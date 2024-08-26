@@ -1,6 +1,6 @@
 import { Command } from "commander";
 import { readFile } from "fs/promises";
-import { problemFlags } from "./problemUtils.js";
+import { problemFlags } from "./problemUtils.ts";
 
 export async function readConfig(program: Command, alternate = ".attw.json") {
   try {

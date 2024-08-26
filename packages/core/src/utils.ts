@@ -10,7 +10,7 @@ import type {
   ProblemKind,
   ResolutionKind,
   ResolutionOption,
-} from "./types.js";
+} from "./types.ts";
 
 export const allResolutionOptions: ResolutionOption[] = ["node10", "node16", "bundler"];
 export const allResolutionKinds: ResolutionKind[] = ["node10", "node16-cjs", "node16-esm", "bundler"];

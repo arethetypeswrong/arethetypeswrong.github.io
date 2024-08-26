@@ -1,9 +1,9 @@
-import cjsOnlyExportsDefault from "./cjsOnlyExportsDefault.js";
-import entrypointResolutions from "./entrypointResolutions.js";
-import exportDefaultDisagreement from "./exportDefaultDisagreement.js";
-import internalResolutionError from "./internalResolutionError.js";
-import moduleKindDisagreement from "./moduleKindDisagreement.js";
-import unexpectedModuleSyntax from "./unexpectedModuleSyntax.js";
+import cjsOnlyExportsDefault from "./cjsOnlyExportsDefault.ts";
+import entrypointResolutions from "./entrypointResolutions.ts";
+import exportDefaultDisagreement from "./exportDefaultDisagreement.ts";
+import internalResolutionError from "./internalResolutionError.ts";
+import moduleKindDisagreement from "./moduleKindDisagreement.ts";
+import unexpectedModuleSyntax from "./unexpectedModuleSyntax.ts";
 
 export default [
   entrypointResolutions,
