@@ -1,6 +1,6 @@
 import ts from "typescript";
-import type { ModuleKind } from "../types.js";
-import type { Package } from "../createPackage.js";
+import type { ModuleKind } from "../types.ts";
+import type { Package } from "../createPackage.ts";
 
 export interface ResolveModuleNameResult {
   resolution: ts.ResolvedModuleWithFailedLookupLocations;

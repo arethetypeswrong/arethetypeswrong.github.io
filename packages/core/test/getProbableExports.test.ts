@@ -1,4 +1,4 @@
-import { getProbableExports } from "#internal/getProbableExports.js";
+import { getProbableExports } from "#internal/getProbableExports";
 import assert from "node:assert";
 import { describe, test } from "node:test";
 import ts from "typescript";

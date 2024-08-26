@@ -5,9 +5,9 @@ import chalk from "chalk";
 import Table, { type GenericTable, type HorizontalTableRow } from "cli-table3";
 import { marked } from "marked";
 import TerminalRenderer from "marked-terminal";
-import { moduleKinds, problemFlags, resolutionKinds } from "../problemUtils.js";
-import { asciiTable } from "./asciiTable.js";
-import type { RenderOptions } from "./index.js";
+import { moduleKinds, problemFlags, resolutionKinds } from "../problemUtils.ts";
+import { asciiTable } from "./asciiTable.ts";
+import type { RenderOptions } from "./index.ts";
 
 export async function typed(
   analysis: core.Analysis,

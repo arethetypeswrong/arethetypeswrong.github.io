@@ -19,29 +19,33 @@
   },
   "scripts": {
     "tsc": "tsc",
-    "test": "tsc -b test && node --test 'test/dist/**/*.test.js'",
+    "test": "node --experimental-transform-types --conditions=@arethetypeswrong/source --test 'test/**/*.test.ts'",
+    "test-js": "node --experimental-transform-types --test 'test/**/*.test.ts'",
     "snapshot": "node scripts/createSnapshotFixture.js",
     "prepack": "pnpm tsc"
   },
   "type": "module",
   "imports": {
-    "#internal/*": "./dist/internal/*"
+    "#internal/*": {
+      "@arethetypeswrong/source": "./src/internal/*.ts",
+      "default": "./dist/internal/*.js"
+    }
   },
   "exports": {
     ".": {
-      "development": "./src/index.ts",
+      "@arethetypeswrong/source": "./src/index.ts",
       "default": "./dist/index.js"
     },
     "./types": {
-      "development": "./src/types.ts",
+      "@arethetypeswrong/source": "./src/types.ts",
       "default": "./dist/types.js"
     },
     "./utils": {
-      "development": "./src/utils.ts",
+      "@arethetypeswrong/source": "./src/utils.ts",
       "default": "./dist/utils.js"
     },
     "./problems": {
-      "development": "./src/problems.ts",
+      "@arethetypeswrong/source": "./src/problems.ts",
       "default": "./dist/problems.js"
     },
     "./versions": {

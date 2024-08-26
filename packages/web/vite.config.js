@@ -1,18 +1,20 @@
 import { defineConfig } from "vite";
-import { execSync } from 'child_process';
+import { execSync } from "child_process";
 
 export default defineConfig(() => ({
-  root: './src',
+  root: "./src",
   build: {
-    outDir: '../dist',
+    outDir: "../dist",
     emptyOutDir: true,
   },
+  resolve: {
+    conditions: ["@arethetypeswrong/source"],
+  },
   worker: {
-    format: 'es'
+    format: "es",
   },
   define: {
-    COMMIT: JSON.stringify(execSync('git rev-parse HEAD').toString().trim().substring(0, 7)),
+    COMMIT: JSON.stringify(execSync("git rev-parse HEAD").toString().trim().substring(0, 7)),
   },
-  optimizeDeps: {
-  },
+  optimizeDeps: {},
 }));

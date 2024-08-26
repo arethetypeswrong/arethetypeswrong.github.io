@@ -1,5 +1,5 @@
-import type { Analysis, Problem, ProblemKind, ResolutionKind, ResolutionOption } from "./types.js";
-import { getResolutionKinds } from "./utils.js";
+import type { Analysis, Problem, ProblemKind, ResolutionKind, ResolutionOption } from "./types.ts";
+import { getResolutionKinds } from "./utils.ts";
 
 export interface ProblemKindInfo {
   title: string;

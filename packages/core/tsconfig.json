@@ -8,6 +8,7 @@
     // lib types imports this project.
     "lib": ["es2019", "webworker"],
     "module": "nodenext",
+    "rewriteRelativeImportExtensions": true,
     "outDir": "dist",
     "rootDir": "src",
     "types": ["ts-expose-internals"],

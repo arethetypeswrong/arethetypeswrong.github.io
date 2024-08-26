@@ -1,3 +1,3 @@
-export * from "./checkPackage.js";
-export * from "./createPackage.js";
-export type * from "./types.js";
+export * from "./checkPackage.ts";
+export * from "./createPackage.ts";
+export type * from "./types.ts";

@@ -1,7 +1,7 @@
 import ts from "typescript";
-import { defineCheck } from "../defineCheck.js";
-import { getProbableExports, type Export } from "../getProbableExports.js";
-import { getResolutionOption } from "../../utils.js";
+import { defineCheck } from "../defineCheck.ts";
+import { getProbableExports, type Export } from "../getProbableExports.ts";
+import { getResolutionOption } from "../../utils.ts";
 
 const bindOptions: ts.CompilerOptions = {
   target: ts.ScriptTarget.Latest,
