@@ -34,6 +34,7 @@
               "File '/node_modules/ignore/index.ts' does not exist.",
               "File '/node_modules/ignore/index.tsx' does not exist.",
               "File '/node_modules/ignore/index.d.ts' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
               "======== Module name 'ignore' was successfully resolved to '/node_modules/ignore/index.d.ts' with Package ID 'ignore/index.d.ts@5.2.4'. ========"
             ]
           },
@@ -60,6 +61,16 @@
               "File '/node_modules/ignore.jsx' does not exist.",
               "'package.json' does not have a 'main' field.",
               "File '/node_modules/ignore/index.js' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
+              "Resolution of non-relative name failed; trying with '--moduleResolution bundler' to see if project may need configuration update.",
+              "Loading module 'ignore' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/ignore/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/ignore.ts' does not exist.",
+              "File '/node_modules/ignore.tsx' does not exist.",
+              "'package.json' does not have a 'main' field.",
+              "File '/node_modules/ignore/index.ts' does not exist.",
+              "File '/node_modules/ignore/index.tsx' does not exist.",
               "======== Module name 'ignore' was successfully resolved to '/node_modules/ignore/index.js' with Package ID 'ignore/index.js@5.2.4'. ========"
             ]
           },
@@ -96,6 +107,7 @@
               "File '/node_modules/ignore/index.ts' does not exist.",
               "File '/node_modules/ignore/index.tsx' does not exist.",
               "File '/node_modules/ignore/index.d.ts' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
               "======== Module name 'ignore' was successfully resolved to '/node_modules/ignore/index.d.ts' with Package ID 'ignore/index.d.ts@5.2.4'. ========"
             ]
           },
@@ -123,6 +135,7 @@
               "File '/node_modules/ignore.jsx' does not exist.",
               "'package.json' does not have a 'main' field.",
               "File '/node_modules/ignore/index.js' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
               "======== Module name 'ignore' was successfully resolved to '/node_modules/ignore/index.js' with Package ID 'ignore/index.js@5.2.4'. ========"
             ]
           },
@@ -225,6 +238,7 @@
               "File '/node_modules/ignore/index.ts' does not exist.",
               "File '/node_modules/ignore/index.tsx' does not exist.",
               "File '/node_modules/ignore/index.d.ts' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
               "======== Module name 'ignore' was successfully resolved to '/node_modules/ignore/index.d.ts' with Package ID 'ignore/index.d.ts@5.2.4'. ========"
             ]
           },
@@ -252,6 +266,7 @@
               "File '/node_modules/ignore.jsx' does not exist.",
               "'package.json' does not have a 'main' field.",
               "File '/node_modules/ignore/index.js' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
               "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
               "File '/package.json' does not exist according to earlier cached lookups.",
               "Loading module 'ignore' from 'node_modules' folder, target file types: TypeScript.",
