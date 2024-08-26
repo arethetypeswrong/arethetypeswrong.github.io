@@ -2,7 +2,6 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "module": "nodenext",
-    "rewriteRelativeImportExtensions": true,
     "rootDir": "src",
     "types": ["node", "ts-expose-internals"],
     "outDir": "./dist",

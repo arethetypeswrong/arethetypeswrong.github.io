@@ -1,9 +1,9 @@
+import { access, readFile, writeFile } from "fs/promises";
+import { execSync, type SpawnSyncReturns } from "child_process";
 import assert from "node:assert";
-import { spawnSync } from "node:child_process";
-import { access, readFile, writeFile } from "node:fs/promises";
 import { after, describe, test } from "node:test";
 
-const attw = new URL("../src/index.ts", import.meta.url).pathname;
+const attw = `node ${new URL("../../dist/index.js", import.meta.url).pathname}`;
 const updateSnapshots = process.env.UPDATE_SNAPSHOTS || process.env.U;
 const testFilter = (process.env.TEST_FILTER || process.env.T)?.toLowerCase();
 
@@ -34,11 +34,11 @@ const tests = [
 
   [
     "big.js@6.2.1.tgz",
-    `--definitely-typed ${new URL("../../core/test/fixtures/@types__big.js@6.2.0.tgz", import.meta.url).pathname}`,
+    `--definitely-typed ${new URL("../../../core/test/fixtures/@types__big.js@6.2.0.tgz", import.meta.url).pathname}`,
   ],
   [
     "react@18.2.0.tgz",
-    `--definitely-typed ${new URL("../../core/test/fixtures/@types__react@18.2.21.tgz", import.meta.url).pathname}`,
+    `--definitely-typed ${new URL("../../../core/test/fixtures/@types__react@18.2.21.tgz", import.meta.url).pathname}`,
   ],
 
   ["eslint-module-utils@2.8.1.tgz", "--entrypoints-legacy --ignore-rules=cjs-only-exports-default"],
@@ -68,22 +68,21 @@ describe("snapshots", async () => {
     }
 
     test(fixture, async () => {
-      const tarballPath = new URL(`../../core/test/fixtures/${tarball}`, import.meta.url).pathname;
-      const {
-        stdout,
-        stderr,
-        status = 1,
-      } = spawnSync(
-        process.execPath,
-        [...process.execArgv, attw, tarballPath, ...(options ?? defaultOpts).split(" ")],
-        {
+      const tarballPath = new URL(`../../../core/test/fixtures/${tarball}`, import.meta.url).pathname;
+      let stdout;
+      let stderr = "";
+      let exitCode = 0;
+      try {
+        stdout = execSync(`${attw} ${tarballPath} ${options ?? defaultOpts}`, {
           encoding: "utf8",
-          stdio: "pipe",
-          env: { ...process.env, FORCE_COLOR: "0", NODE_OPTIONS: "--no-warnings" },
-        },
-      );
-
-      const snapshotURL = new URL(`snapshots/${fixture}.md`, import.meta.url);
+          env: { ...process.env, FORCE_COLOR: "0" },
+        });
+      } catch (error) {
+        stdout = (error as SpawnSyncReturns<string>).stdout;
+        stderr = (error as SpawnSyncReturns<string>).stderr;
+        exitCode = (error as SpawnSyncReturns<string>).status ?? 1;
+      }
+      const snapshotURL = new URL(`../snapshots/${fixture}.md`, import.meta.url);
       // prettier-ignore
       const expectedSnapshot = [
         `# ${fixture}`,
@@ -95,7 +94,7 @@ describe("snapshots", async () => {
         "",
         "```",
         "",
-        `Exit code: ${status}`,
+        `Exit code: ${exitCode}`,
       ].join("\n");
 
       if (

@@ -1,9 +1,9 @@
-import check from "#internal/checks/exportDefaultDisagreement";
-import type { CheckExecutionContext } from "#internal/defineCheck";
-import { getEntrypointInfo } from "#internal/getEntrypointInfo";
-import { createCompilerHosts } from "#internal/multiCompilerHost";
+import check from "#internal/checks/exportDefaultDisagreement.js";
+import type { CheckExecutionContext } from "#internal/defineCheck.js";
+import { getEntrypointInfo } from "#internal/getEntrypointInfo.js";
+import { createCompilerHosts } from "#internal/multiCompilerHost.js";
 import test, { describe } from "node:test";
-import { createTestPackage } from "../utils.ts";
+import { createTestPackage } from "../utils.js";
 import assert from "node:assert";
 
 function runCheck(ts: string, js: string) {

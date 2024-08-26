@@ -1,6 +1,6 @@
 import ts from "typescript";
-import type { Package } from "../createPackage.ts";
-import { CompilerHostWrapper, type CompilerHosts } from "./multiCompilerHost.ts";
+import type { Package } from "../createPackage.js";
+import { CompilerHostWrapper, type CompilerHosts } from "./multiCompilerHost.js";
 import type {
   BuildTool,
   EntrypointInfo,
@@ -9,9 +9,9 @@ import type {
   Resolution,
   ResolutionKind,
   ResolutionOption,
-} from "../types.ts";
-import { allBuildTools, getResolutionKinds } from "../utils.ts";
-import type { CheckPackageOptions } from "../checkPackage.ts";
+} from "../types.js";
+import { allBuildTools, getResolutionKinds } from "../utils.js";
+import type { CheckPackageOptions } from "../checkPackage.js";
 
 const extensions = new Set([".jsx", ".tsx", ".js", ".ts", ".mjs", ".cjs", ".mts", ".cjs"]);
 
@@ -24,10 +24,9 @@ function getEntrypoints(fs: Package, exportsObject: unknown, options: CheckPacka
     const proxies = getProxyDirectories(rootDir, fs);
     if (proxies.length === 0) {
       if (options?.entrypointsLegacy) {
-        return fs
-          .listFiles()
-          .filter((f) => !ts.isDeclarationFileName(f) && extensions.has(f.slice(f.lastIndexOf("."))))
-          .map((f) => "." + f.slice(rootDir.length));
+        return fs.listFiles()
+          .filter(f => !ts.isDeclarationFileName(f) && extensions.has(f.slice(f.lastIndexOf("."))))
+          .map(f => "." + f.slice(rootDir.length));
       }
       return ["."];
     }

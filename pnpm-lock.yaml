@@ -15,8 +15,8 @@ importers:
         specifier: ^3.0.3
         version: 3.0.3
       typescript:
-        specifier: npm:@typescript-deploys/pr-build@5.7.0-pr-59767-2
-        version: '@typescript-deploys/pr-build@5.7.0-pr-59767-2'
+        specifier: 5.6.1-rc
+        version: 5.6.1-rc
 
   packages/cli:
     dependencies:
@@ -693,11 +693,6 @@ packages:
 
   '@types/validate-npm-package-name@4.0.0':
     resolution: {integrity: sha512-RpO62vB2lkjEkyLbwTheA2+uwYmtVMWTr/kWRI++UAgVdZqNqdAuIQl/SxBCGeMKfdjWaXPbyhZbiCc4PAj+KA==}
-
-  '@typescript-deploys/pr-build@5.7.0-pr-59767-2':
-    resolution: {integrity: sha512-duxFwwpvzKDEHvahYEYmvAVZPFs0X+K7D0XKzSQWuxnhurcxx8T1r375N/B9IxR2GsUVTfIGayNXV5Sex0NF9w==}
-    engines: {node: '>=14.17'}
-    hasBin: true
 
   abbrev@1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
@@ -2881,8 +2876,6 @@ snapshots:
       '@types/node': 22.5.0
 
   '@types/validate-npm-package-name@4.0.0': {}
-
-  '@typescript-deploys/pr-build@5.7.0-pr-59767-2': {}
 
   abbrev@1.1.1: {}
 

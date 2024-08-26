@@ -1,6 +1,6 @@
-import type { Package } from "../createPackage.ts";
-import type { CompilerHosts } from "./multiCompilerHost.ts";
-import type { Analysis, Problem, ResolutionKind, ResolutionOption } from "../types.ts";
+import type { Package } from "../createPackage.js";
+import type { CompilerHosts } from "./multiCompilerHost.js";
+import type { Analysis, Problem, ResolutionKind, ResolutionOption } from "../types.js";
 
 export interface CheckDependenciesContext<EnumerateFiles extends boolean = false> extends CheckExecutionContext {
   subpath: string;

@@ -10,11 +10,11 @@ import { readFile, stat, unlink } from "fs/promises";
 import { createRequire } from "module";
 import path from "path";
 import readline from "readline";
-import { problemFlags } from "./problemUtils.ts";
-import { readConfig } from "./readConfig.ts";
-import * as render from "./render/index.ts";
+import { problemFlags } from "./problemUtils.js";
+import { readConfig } from "./readConfig.js";
+import * as render from "./render/index.js";
 import { major, minor } from "semver";
-import { getExitCode } from "./getExitCode.ts";
+import { getExitCode } from "./getExitCode.js";
 
 const packageJson = createRequire(import.meta.url)("../package.json");
 const version = packageJson.version;
@@ -74,8 +74,8 @@ particularly ESM-related module resolution issues.`,
   .option("--exclude-entrypoints <entrypoints...>", "Specify entrypoints to exclude from checking.")
   .option(
     "--entrypoints-legacy",
-    "In packages without the `exports` field, every file is an entry point. Specifying this option " +
-      "only takes effect when no entrypoints are automatically detected, or explicitly provided with other options.",
+    'In packages without the `exports` field, every file is an entry point. Specifying this option ' +
+    'only takes effect when no entrypoints are automatically detected, or explicitly provided with other options.'
   )
   .addOption(
     new Option("--ignore-rules <rules...>", "Specify rules to ignore").choices(Object.values(problemFlags)).default([]),

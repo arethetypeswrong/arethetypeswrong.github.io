@@ -1,6 +1,6 @@
 import type { CheckResult } from "@arethetypeswrong/core";
-import { problemFlags } from "./problemUtils.ts";
-import type { RenderOptions } from "./render/index.ts";
+import { problemFlags } from "./problemUtils.js";
+import type { RenderOptions } from "./render/index.js";
 
 export function getExitCode(analysis: CheckResult, opts?: RenderOptions): number {
   if (!analysis.types) {

@@ -2,7 +2,7 @@ import { untar } from "@andrewbranch/untar.js";
 import { Gunzip } from "fflate";
 import { major, maxSatisfying, minor, valid, validRange } from "semver";
 import ts from "typescript";
-import { parsePackageSpec, type ParsedPackageSpec } from "./utils.ts";
+import { parsePackageSpec, type ParsedPackageSpec } from "./utils.js";
 
 export class Package {
   #files: Record<string, string | Uint8Array> = {};

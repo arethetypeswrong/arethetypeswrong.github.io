@@ -11,7 +11,6 @@
     "build": "pnpm tsc && pnpm -r build",
     "format": "prettier --write \"**/*.{ts,json,css}\"",
     "test": "pnpm -r test",
-    "test-js": "pnpm tsc && pnpm -r test-js",
     "check-dts": "tsc -p tsconfig.check-dts.json",
     "start": "pnpm --filter @arethetypeswrong/web start",
     "version": "changeset version && pnpm install --lockfile-only"
@@ -19,10 +18,10 @@
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
     "prettier": "^3.0.3",
-    "typescript": "npm:@typescript-deploys/pr-build@5.7.0-pr-59767-2"
+    "typescript": "5.6.1-rc"
   },
   "engines": {
-    "node": ">=22",
+    "node": ">=18",
     "pnpm": ">=8"
   }
 }

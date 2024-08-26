@@ -1,6 +1,6 @@
 import ts from "typescript";
-import { defineCheck } from "../defineCheck.ts";
-import type { InternalResolutionErrorProblem } from "../../types.ts";
+import { defineCheck } from "../defineCheck.js";
+import type { InternalResolutionErrorProblem } from "../../types.js";
 
 export default defineCheck({
   name: "InternalResolutionError",

@@ -1,7 +1,10 @@
 {
-  "extends": "../../../tsconfig.test.json",
+  "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
-    "types": ["node", "ts-expose-internals"]
+    "lib": ["es2019"],
+    "module": "nodenext",
+    "outDir": "dist",
+    "types": ["node", "ts-expose-internals"],
   },
   "references": [
     {

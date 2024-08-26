@@ -1,5 +1,5 @@
 import ts from "typescript";
-import { defineCheck } from "../defineCheck.ts";
+import { defineCheck } from "../defineCheck.js";
 
 export default defineCheck({
   name: "ModuleKindDisagreement",

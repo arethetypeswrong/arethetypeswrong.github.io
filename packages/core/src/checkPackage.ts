@@ -1,7 +1,7 @@
-import type { Package } from "./createPackage.ts";
-import checks from "./internal/checks/index.ts";
-import type { AnyCheck, CheckDependenciesContext } from "./internal/defineCheck.ts";
-import { createCompilerHosts } from "./internal/multiCompilerHost.ts";
+import type { Package } from "./createPackage.js";
+import checks from "./internal/checks/index.js";
+import type { AnyCheck, CheckDependenciesContext } from "./internal/defineCheck.js";
+import { createCompilerHosts } from "./internal/multiCompilerHost.js";
 import type {
   AnalysisTypes,
   CheckResult,
@@ -9,9 +9,9 @@ import type {
   Problem,
   ProgramInfo,
   ResolutionOption,
-} from "./types.ts";
-import { getResolutionOption, visitResolutions } from "./utils.ts";
-import { getEntrypointInfo, getModuleKinds, getBuildTools } from "./internal/getEntrypointInfo.ts";
+} from "./types.js";
+import { getResolutionOption, visitResolutions } from "./utils.js";
+import { getEntrypointInfo, getModuleKinds, getBuildTools } from "./internal/getEntrypointInfo.js";
 
 export interface CheckPackageOptions {
   /**
