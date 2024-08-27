@@ -1,5 +1,19 @@
 # @arethetypeswrong/cli
 
+## 0.15.4
+
+### Patch Changes
+
+- 5566c1b: Upgrading marked-terminal to version 7.1.0
+
+## 0.15.3
+
+### Patch Changes
+
+- e41cf2c: Update `--ignore-rules` options in CLI documents.
+
+  Actual behavior changes were made in #31 and #85.
+
 ## 0.15.2
 
 ### Patch Changes

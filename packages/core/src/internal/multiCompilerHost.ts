@@ -70,6 +70,10 @@ export class CompilerHostWrapper {
     this.compilerHost = this.createCompilerHost(fs, this.sourceFileCache);
   }
 
+  getCompilerOptions() {
+    return this.compilerOptions;
+  }
+
   getSourceFile(fileName: string): ts.SourceFile | undefined {
     return this.compilerHost.getSourceFile(fileName, this.languageVersion);
   }
@@ -255,7 +259,7 @@ export class CompilerHostWrapper {
             this.resolveModuleName(
               literal.text,
               containingFile,
-              ts.getModeForUsageLocation(containingSourceFile, literal),
+              ts.getModeForUsageLocation(containingSourceFile, literal, this.compilerOptions),
               options.noDtsResolution,
             ).resolution,
         );

@@ -6,7 +6,7 @@ Import failed to resolve to type declarations or JavaScript files.
 
 This problem indicates that TypeScript can’t find any file with a supported file extension (`.js`, `.mjs`, `.cjs`, `.jsx`, `.json`, `.ts`, `.mts`, `.cts`, `.tsx`) by following its own resolution algorithm, or a modified version of its resolution algorithm that ignores type declaration (`.d.ts`, `.d.mts`, `.d.cts`, `.d.*.ts`) files (which allows it to find JS files it would otherwise ignore).
 
-## Consequnces
+## Consequences
 
 * Consumers will see TypeScript errors on imports/requires.
 * If the diagnosis is accurate, a runtime/bundle-time error will occur.
@@ -15,7 +15,7 @@ This problem indicates that TypeScript can’t find any file with a supported fi
 
 ### False positive: unsupported file extension
 
-TypeScript doesn’t record non-JS/TS files as resolution results, and its API can’t be used to distinguish between a result with an unuspported file extension and a non-existent file. If a package.json subpath exposes a non-JS asset like a `.css` file, designed to be processed by a bundler or runtime extension, this will show up as a failed resolution, when it might be more accurately described as an [untyped resolution](./UntypedResolution.md) of an unknown file type.
+TypeScript doesn’t record non-JS/TS files as resolution results, and its API can’t be used to distinguish between a result with an unsupported file extension and a non-existent file. If a package.json subpath exposes a non-JS asset like a `.css` file, designed to be processed by a bundler or runtime extension, this will show up as a failed resolution, when it might be more accurately described as an [untyped resolution](./UntypedResolution.md) of an unknown file type.
 
 If the asset is intended to be imported as a side-effect import (`import "pkg/styles.css"`), this problem can safely be ignored.
 

@@ -1,7 +1,7 @@
-# react@18.2.0.tgz --definitely-typed /home/runner/work/arethetypeswrong.github.io/arethetypeswrong.github.io/packages/core/test/fixtures/@types__react@18.2.21.tgz
+# react@18.2.0.tgz --definitely-typed @types__react@18.2.21.tgz
 
 ```
-$ attw react@18.2.0.tgz --definitely-typed /home/runner/work/arethetypeswrong.github.io/arethetypeswrong.github.io/packages/core/test/fixtures/@types__react@18.2.21.tgz
+$ attw react@18.2.0.tgz --definitely-typed @types__react@18.2.21.tgz
 
 
 react v18.2.0
