@@ -21,8 +21,8 @@ importers:
   packages/cli:
     dependencies:
       '@arethetypeswrong/core':
-        specifier: 0.15.1
-        version: 0.15.1
+        specifier: workspace:../core
+        version: link:../core
       chalk:
         specifier: ^4.1.2
         version: 4.1.2
@@ -98,8 +98,8 @@ importers:
   packages/history:
     dependencies:
       '@arethetypeswrong/core':
-        specifier: 0.15.1
-        version: 0.15.1
+        specifier: workspace:../core
+        version: link:../core
     devDependencies:
       '@azure/storage-blob':
         specifier: ^12.14.0
@@ -182,10 +182,6 @@ packages:
 
   '@andrewbranch/untar.js@1.0.3':
     resolution: {integrity: sha512-Jh15/qVmrLGhkKJBdXlK1+9tY4lZruYjsgkDFj08ZmDiWVBLJcqkok7Z0/R0In+i1rScBpJlSvrTS2Lm41Pbnw==}
-
-  '@arethetypeswrong/core@0.15.1':
-    resolution: {integrity: sha512-FYp6GBAgsNz81BkfItRz8RLZO03w5+BaeiPma1uCfmxTnxbtuMrI/dbzGiOk8VghO108uFI0oJo0OkewdSHw7g==}
-    engines: {node: '>=18'}
 
   '@azure/abort-controller@1.1.0':
     resolution: {integrity: sha512-TrRLIoSQVzfAJX9H1JeFjzAoDGcoK1IYX1UImfceTZpsyYfWr09Ss1aHW1y5TrrR3iq6RZLBwJ3E24uwPhwahw==}
@@ -2096,9 +2092,6 @@ packages:
     resolution: {integrity: sha512-c1PTsA3tYrIsLGkJkzHF+w9F2EyxfXGo4UyJc4pFL++FMjnq0HJS69T3M7d//gKrFKwy429bouPescbjecU+Zw==}
     engines: {node: '>=8'}
 
-  ts-expose-internals-conditionally@1.0.0-empty.0:
-    resolution: {integrity: sha512-F8m9NOF6ZhdOClDVdlM8gj3fDCav4ZIFSs/EI3ksQbAAXVSCN/Jh5OCJDDZWBuBy9psFc6jULGDlPwjMYMhJDw==}
-
   ts-expose-internals@5.6.1-rc:
     resolution: {integrity: sha512-oniL1xnqHuXgMVW3LzErbpAANor2jkhZh3qmD+a04dagAek9EfmDjtQgaIvmRd+X+SWWe6wgxZGPqIqsFZzYpw==}
 
@@ -2335,15 +2328,6 @@ snapshots:
   '@andrewbranch/json-view@1.0.1': {}
 
   '@andrewbranch/untar.js@1.0.3': {}
-
-  '@arethetypeswrong/core@0.15.1':
-    dependencies:
-      '@andrewbranch/untar.js': 1.0.3
-      fflate: 0.8.2
-      semver: 7.5.4
-      ts-expose-internals-conditionally: 1.0.0-empty.0
-      typescript: 5.3.3
-      validate-npm-package-name: 5.0.0
 
   '@azure/abort-controller@1.1.0':
     dependencies:
@@ -4414,8 +4398,6 @@ snapshots:
   tr46@0.0.3: {}
 
   trim-newlines@3.0.1: {}
-
-  ts-expose-internals-conditionally@1.0.0-empty.0: {}
 
   ts-expose-internals@5.6.1-rc: {}
 
