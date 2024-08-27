@@ -53,7 +53,7 @@
     "typescript": "5.3.3"
   },
   "dependencies": {
-    "@arethetypeswrong/core": "0.15.1",
+    "@arethetypeswrong/core": "workspace:../core",
     "chalk": "^4.1.2",
     "cli-table3": "^0.6.3",
     "commander": "^10.0.1",
