@@ -74,8 +74,8 @@ particularly ESM-related module resolution issues.`,
   .option("--exclude-entrypoints <entrypoints...>", "Specify entrypoints to exclude from checking.")
   .option(
     "--entrypoints-legacy",
-    'In packages without the `exports` field, every file is an entry point. Specifying this option ' +
-    'only takes effect when no entrypoints are automatically detected, or explicitly provided with other options.'
+    "In packages without the `exports` field, every file is an entry point. Specifying this option " +
+      "only takes effect when no entrypoints are automatically detected, or explicitly provided with other options.",
   )
   .addOption(
     new Option("--ignore-rules <rules...>", "Specify rules to ignore").choices(Object.values(problemFlags)).default([]),
@@ -213,7 +213,7 @@ particularly ESM-related module resolution issues.`,
         result.problems = groupProblemsByKind(analysis.problems);
       }
 
-      console.log(JSON.stringify(result));
+      console.log(JSON.stringify(result, undefined, 2));
 
       if (deleteTgz) {
         await unlink(deleteTgz);

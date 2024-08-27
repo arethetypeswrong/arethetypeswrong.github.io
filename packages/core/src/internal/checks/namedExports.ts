@@ -1,54 +1,58 @@
 import ts from "typescript";
 import { defineCheck } from "../defineCheck.js";
 import { getEsmModuleNamespace } from "../esm/esmNamespace.js";
+import { getResolutionOption } from "../../utils.js";
 
 export default defineCheck({
   name: "NamedExports",
-  dependencies: ({ entrypoints, subpath, resolutionKind }) => {
+  dependencies: ({ entrypoints, subpath, resolutionKind, programInfo }) => {
     const entrypoint = entrypoints[subpath].resolutions[resolutionKind];
     const typesFileName = entrypoint.resolution?.fileName;
+    const resolutionOption = getResolutionOption(resolutionKind);
+    const typesModuleKind = typesFileName ? programInfo[resolutionOption].moduleKinds?.[typesFileName] : undefined;
     const implementationFileName = entrypoint.implementationResolution?.fileName;
-    return [implementationFileName, typesFileName, resolutionKind];
+    const implementationModuleKind = implementationFileName
+      ? programInfo[resolutionOption].moduleKinds?.[implementationFileName]
+      : undefined;
+    return [implementationFileName, implementationModuleKind, typesFileName, typesModuleKind, resolutionKind];
   },
-  execute: ([implementationFileName, typesFileName, resolutionKind], context) => {
-    if (!implementationFileName || !typesFileName || resolutionKind !== "node16-esm") {
+  execute: (
+    [implementationFileName, implementationModuleKind, typesFileName, typesModuleKind, resolutionKind],
+    context,
+  ) => {
+    if (
+      !implementationFileName ||
+      !typesFileName ||
+      resolutionKind !== "node16-esm" ||
+      typesModuleKind?.detectedKind !== ts.ModuleKind.CommonJS ||
+      implementationModuleKind?.detectedKind !== ts.ModuleKind.CommonJS
+    ) {
       return;
     }
 
     // Get declared exported names from TypeScript
     const host = context.hosts.findHostForFiles([typesFileName])!;
     const typesSourceFile = host.getSourceFile(typesFileName)!;
-    const expectedNames = (() => {
-      if (typesSourceFile.scriptKind === ts.ScriptKind.JSON) {
-        // TypeScript reports top-level JSON keys as exports which is WRONG WRONG WRONG. A JSON file
-        // never export anything other than `default`.
-        return ["default"];
-      } else {
-        // nb: This is incomplete and reports type-only exports. This should be fixed to only return
-        // expected runtime exports.
-        const typeChecker = host.createAuxiliaryProgram([typesFileName]).getTypeChecker();
-        const typesExports = typeChecker.getExportsAndPropertiesOfModule(typesSourceFile.symbol);
-        return Array.from(
-          new Set(
-            typesExports
-              .flatMap((node) => [...(node.declarations?.values() ?? [])])
-              .filter((node) => !ts.isTypeAlias(node) && !ts.isTypeDeclaration(node) && !ts.isNamespaceBody(node))
-              .map((declaration) => declaration.symbol.escapedName)
-              .map(String),
-          ),
-        );
-      }
-    })();
+    if (typesSourceFile.scriptKind === ts.ScriptKind.JSON || !typesSourceFile.symbol) {
+      return;
+    }
+
+    const typeChecker = host.createAuxiliaryProgram([typesFileName]).getTypeChecker();
+    const expectedNames = typeChecker
+      .getExportsAndPropertiesOfModule(typesSourceFile.symbol)
+      // @ts-expect-error `getSymbolFlags` extra arguments are not declared on TypeChecker
+      .filter((symbol) => typeChecker.getSymbolFlags(symbol, /*excludeTypeOnlyMeanings*/ true) & ts.SymbolFlags.Value)
+      .map((symbol) => symbol.name);
 
     // Get actual exported names as seen by nodejs
-    const exports = (() => {
-      try {
-        return getEsmModuleNamespace(context.pkg, implementationFileName);
-      } catch {
-        // nb: If this fails then the result is indeterminate. This could happen in many cases, but
-        // a common one would be for packages which re-export from another another package.
-      }
-    })();
+    let exports: readonly string[] | undefined;
+    try {
+      exports = getEsmModuleNamespace(context.pkg, implementationFileName);
+    } catch {
+      // If this fails then the result is indeterminate. This could happen in many cases, but
+      // a common one would be for packages which re-export from another another package.
+    }
+
     if (exports) {
       const missing = expectedNames.filter((name) => !exports.includes(name));
       if (missing.length > 0) {

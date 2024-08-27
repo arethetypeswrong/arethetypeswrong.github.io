@@ -33,6 +33,7 @@ export function ProblemList(props: { analysis?: CheckResult }) {
           <dd>
             <p><strong><a href="${info.docsUrl}">${info.shortDescription}</a></strong></p>
             ${marked.parse(info.description)}
+            ${info.details ? `Expand the raw details below to see ${info.details}.` : ""}
           </dd>
         `;
         })

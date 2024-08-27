@@ -2273,7 +2273,9 @@
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/vue/macros.d.ts"
           ],
-          "visibleProblems": []
+          "visibleProblems": [
+            3
+          ]
         },
         "bundler": {
           "name": "./macros",
@@ -2802,6 +2804,15 @@
       "kind": "NoResolution",
       "entrypoint": "./jsx-dev-runtime",
       "resolutionKind": "node10"
+    },
+    {
+      "kind": "NamedExports",
+      "implementationFileName": "/node_modules/vue/macros.d.ts",
+      "typesFileName": "/node_modules/vue/macros.d.ts",
+      "isMissingAllNamed": false,
+      "missing": [
+        "RefTypes"
+      ]
     }
   ]
 }
