@@ -24,9 +24,10 @@ function getEntrypoints(fs: Package, exportsObject: unknown, options: CheckPacka
     const proxies = getProxyDirectories(rootDir, fs);
     if (proxies.length === 0) {
       if (options?.entrypointsLegacy) {
-        return fs.listFiles()
-          .filter(f => !ts.isDeclarationFileName(f) && extensions.has(f.slice(f.lastIndexOf("."))))
-          .map(f => "." + f.slice(rootDir.length));
+        return fs
+          .listFiles()
+          .filter((f) => !ts.isDeclarationFileName(f) && extensions.has(f.slice(f.lastIndexOf("."))))
+          .map((f) => "." + f.slice(rootDir.length));
       }
       return ["."];
     }
