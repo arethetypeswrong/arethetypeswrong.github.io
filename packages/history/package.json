@@ -33,10 +33,9 @@
     "prepublishOnly": "pnpm tsc && pnpm generate"
   },
   "dependencies": {
-    "@arethetypeswrong/core": "0.15.1"
+    "@arethetypeswrong/core": "workspace:../core"
   },
   "devDependencies": {
-    "@arethetypeswrong/core": "file:../core",
     "@azure/storage-blob": "^12.14.0",
     "@types/cli-progress": "^3.11.0",
     "@types/node": "^22.5.0",
