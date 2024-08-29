@@ -22,7 +22,7 @@ This project attempts to analyze npm package contents for issues with their Type
 npm i -g @arethetypeswrong/cli
 ```
 
-<!-- Or, using `npx`:
+<!-- Or, using `npx`: -->
 <!---->
 <!-- ```shell -->
 <!-- npx attw -->
