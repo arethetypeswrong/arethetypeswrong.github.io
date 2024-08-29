@@ -48,8 +48,7 @@
     "semver": "^7.5.3",
     "ts-expose-internals": "5.6.1-rc",
     "tsx": "^3.12.7",
-    "types-registry": "latest",
-    "typescript": "5.3.3"
+    "types-registry": "latest"
   },
   "engines": {
     "node": ">=18"

@@ -57,9 +57,6 @@ importers:
       ts-expose-internals:
         specifier: 5.6.1-rc
         version: 5.6.1-rc
-      typescript:
-        specifier: 5.3.3
-        version: 5.3.3
 
   packages/core:
     dependencies:
@@ -137,9 +134,6 @@ importers:
       types-registry:
         specifier: latest
         version: 0.1.685
-      typescript:
-        specifier: 5.3.3
-        version: 5.3.3
 
   packages/web:
     dependencies:
@@ -2138,11 +2132,6 @@ packages:
 
   types-registry@0.1.685:
     resolution: {integrity: sha512-dC3Nqu/q2Ey8Jj/YV0plEub0oycMiu3VaAf+tf8X5uhtiRS4iF1BubY5cra1LIaKr+fTblxQvoVAYIPeVj1A9g==}
-
-  typescript@5.3.3:
-    resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
-    engines: {node: '>=14.17'}
-    hasBin: true
 
   typescript@5.6.1-rc:
     resolution: {integrity: sha512-E3b2+1zEFu84jB0YQi9BORDjz9+jGbwwy1Zi3G0LUNw7a7cePUrHMRNy8aPh53nXpkFGVHSxIZo5vKTfYaFiBQ==}
@@ -4457,8 +4446,6 @@ snapshots:
       is-typed-array: 1.1.12
 
   types-registry@0.1.685: {}
-
-  typescript@5.3.3: {}
 
   typescript@5.6.1-rc: {}
 
