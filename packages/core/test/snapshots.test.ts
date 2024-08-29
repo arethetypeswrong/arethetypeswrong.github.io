@@ -25,6 +25,7 @@ describe("snapshots", async () => {
   const typesPackages: Record<string, string> = {
     "big.js@6.2.1.tgz": "@types__big.js@6.2.0.tgz",
     "react@18.2.0.tgz": "@types__react@18.2.21.tgz",
+    "semver@7.6.3.tgz": "@types__semver@7.5.8.tgz",
   };
 
   const errorPackages = ["Babel@0.0.1.tgz"];
