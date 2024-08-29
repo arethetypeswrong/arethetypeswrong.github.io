@@ -22,7 +22,7 @@ This project attempts to analyze npm package contents for issues with their Type
 npm i -g @arethetypeswrong/cli
 ```
 
-<!-- Or, using `npx`: -->
+<!-- Or, using `npx`:
 <!---->
 <!-- ```shell -->
 <!-- npx attw -->
@@ -51,6 +51,18 @@ or check a package from npm:
 
 ```shell
 attw --from-npm @arethetypeswrong/cli
+```
+
+You can also use `attw` without installing globally by using `npx`. Pack one in-place by specifying `--pack` and a directory:
+
+```
+npx --yes @arethetypeswrong/cli --pack .
+```
+
+or check a package from npm:
+
+```
+npx --yes @arethetypeswrong/cli --from-npm @arethetypeswrong/cli
 ```
 
 ## Configuration
