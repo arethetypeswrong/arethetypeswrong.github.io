@@ -53,6 +53,18 @@ or check a package from npm:
 attw --from-npm @arethetypeswrong/cli
 ```
 
+You can also use `attw` without installing globally by using `npx`. Pack one in-place by specifying `--pack` and a directory:
+
+```
+npx --yes @arethetypeswrong/cli --pack .
+```
+
+or check a package from npm:
+
+```
+npx --yes @arethetypeswrong/cli --from-npm @arethetypeswrong/cli
+```
+
 ## Configuration
 
 `attw` supports a JSON config file (by default named `.attw.json`) which allows you to pre-set the command line arguments. The options are a one-to-one mapping of the command line flags, changed to camelCase, and are all documented in their relevant `Options` section below.
