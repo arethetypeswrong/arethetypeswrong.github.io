@@ -1,7 +1,7 @@
 import ts from "typescript";
-import type { Problem } from "../../types.js";
-import { resolvedThroughFallback } from "../../utils.js";
-import { defineCheck } from "../defineCheck.js";
+import type { Problem } from "../../types.ts";
+import { resolvedThroughFallback } from "../../utils.ts";
+import { defineCheck } from "../defineCheck.ts";
 
 export default defineCheck({
   name: "EntrypointResolutions",

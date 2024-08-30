@@ -1,4 +1,4 @@
-import type { problemFlags } from "../problemUtils.js";
+import type { problemFlags } from "../problemUtils.ts";
 
 export type Format = "auto" | "table" | "table-flipped" | "ascii" | "json";
 export interface RenderOptions {
@@ -9,5 +9,5 @@ export interface RenderOptions {
   emoji?: boolean;
 }
 
-export * from "./typed.js";
-export * from "./untyped.js";
+export * from "./typed.ts";
+export * from "./untyped.ts";

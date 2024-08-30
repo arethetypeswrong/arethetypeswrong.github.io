@@ -29,7 +29,7 @@ describe("snapshots", async () => {
 
   const errorPackages = ["Babel@0.0.1.tgz"];
 
-  for (const fixture of fs.readdirSync(new URL("../fixtures", import.meta.url))) {
+  for (const fixture of fs.readdirSync(new URL("./fixtures", import.meta.url))) {
     if (
       fixture === ".DS_Store" ||
       fixture.startsWith("@types__") ||
@@ -39,9 +39,9 @@ describe("snapshots", async () => {
     }
 
     test(fixture, async () => {
-      const tarball = await readFile(new URL(`../fixtures/${fixture}`, import.meta.url));
+      const tarball = await readFile(new URL(`./fixtures/${fixture}`, import.meta.url));
       const typesTarball = typesPackages[fixture]
-        ? await readFile(new URL(`../fixtures/${typesPackages[fixture]}`, import.meta.url))
+        ? await readFile(new URL(`./fixtures/${typesPackages[fixture]}`, import.meta.url))
         : undefined;
       let analysis;
       try {
@@ -56,7 +56,7 @@ describe("snapshots", async () => {
         throw error;
       }
 
-      const snapshotURL = new URL(`../snapshots/${fixture}.json`, import.meta.url);
+      const snapshotURL = new URL(`./snapshots/${fixture}.json`, import.meta.url);
       const expectedSnapshot = JSON.stringify(analysis, null, 2) + "\n";
 
       if (

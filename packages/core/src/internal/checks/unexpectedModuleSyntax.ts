@@ -1,5 +1,5 @@
 import ts from "typescript";
-import { defineCheck } from "../defineCheck.js";
+import { defineCheck } from "../defineCheck.ts";
 
 export default defineCheck({
   name: "UnexpectedModuleSyntax",
