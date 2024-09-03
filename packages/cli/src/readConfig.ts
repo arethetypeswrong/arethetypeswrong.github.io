@@ -1,6 +1,6 @@
 import { Command } from "commander";
 import { readFile } from "fs/promises";
-import { problemFlags } from "./problemUtils.js";
+import { problemFlags, resolutionKinds } from "./problemUtils.js";
 
 export async function readConfig(program: Command, alternate = ".attw.json") {
   try {
@@ -21,6 +21,17 @@ export async function readConfig(program: Command, alternate = ".attw.json") {
           program.error(
             `error: config option 'ignoreRules' argument '${invalid}' is invalid. Allowed choices are ${Object.values(
               problemFlags,
+            ).join(", ")}.`,
+          );
+      }
+
+      if (key === "ignoreResolutions") {
+        if (!Array.isArray(value)) program.error(`error: config option 'ignoreResolutions' should be an array.`);
+        const invalid = value.find((resolution) => !Object.keys(resolutionKinds).includes(resolution));
+        if (invalid)
+          program.error(
+            `error: config option 'ignoreResolutions' argument '${invalid}' is invalid. Allowed choices are ${Object.keys(
+              resolutionKinds,
             ).join(", ")}.`,
           );
       }

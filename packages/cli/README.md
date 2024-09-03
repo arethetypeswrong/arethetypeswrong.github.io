@@ -181,6 +181,25 @@ attw <file-name> --ignore-rules <rules...>
 
 In the config file, `ignoreRules` can be an array of strings.
 
+#### Ignore Resolutions
+
+Specifies resolution modes to ignore (i.e. do not evaluate).
+
+The available values are:
+
+- `node10`
+- `node16-cjs`
+- `node16-esm`
+- `bundler`
+
+In the CLI: `--ignore-resolutions`
+
+```shell
+attw <file-name> --ignore-resolutions <resolutions...>
+```
+
+In the config file, `ignoreResolutions` can be an array of strings.
+
 #### Summary/No Summary
 
 Whether to display a summary of what the different errors/problems mean. Defaults to showing the summary (`--summary`).

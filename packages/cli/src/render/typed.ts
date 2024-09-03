@@ -11,12 +11,13 @@ import type { RenderOptions } from "./index.js";
 
 export async function typed(
   analysis: core.Analysis,
-  { emoji = true, summary = true, format = "auto", ignoreRules = [] }: RenderOptions,
+  { emoji = true, summary = true, format = "auto", ignoreRules = [], ignoreResolutions = [] }: RenderOptions,
 ): Promise<string> {
   let output = "";
   const problems = analysis.problems.filter(
     (problem) => !ignoreRules || !ignoreRules.includes(problemFlags[problem.kind]),
   );
+  const resolutions = allResolutionKinds.filter((kind) => !ignoreResolutions.includes(kind));
   const grouped = groupProblemsByKind(problems);
   const entrypoints = Object.keys(analysis.entrypoints);
   marked.setOptions({
@@ -42,6 +43,11 @@ export async function typed(
 
   if (ignoreRules && ignoreRules.length) {
     out(chalk.gray(` (ignoring rules: ${ignoreRules.map((rule) => `'${rule}'`).join(", ")})\n`));
+  }
+  if (ignoreResolutions && ignoreResolutions.length) {
+    out(
+      chalk.gray(` (ignoring resolutions: ${ignoreResolutions.map((resolution) => `'${resolution}'`).join(", ")})\n`),
+    );
   }
 
   if (summary) {
@@ -93,14 +99,14 @@ export async function typed(
   const flippedTable =
     format === "auto" || format === "table-flipped"
       ? new Table({
-          head: ["", ...allResolutionKinds.map((kind) => chalk.reset(resolutionKinds[kind]))],
+          head: ["", ...resolutions.map((kind) => chalk.reset(resolutionKinds[kind]))],
         })
       : undefined;
   if (flippedTable) {
     entrypoints.forEach((subpath, i) => {
       flippedTable.push([
         entrypointHeaders[i],
-        ...allResolutionKinds.map((resolutionKind) => getCellContents(subpath, resolutionKind)),
+        ...resolutions.map((resolutionKind) => getCellContents(subpath, resolutionKind)),
       ]);
     });
   }
@@ -112,7 +118,7 @@ export async function typed(
         }) as GenericTable<HorizontalTableRow>)
       : undefined;
   if (table) {
-    allResolutionKinds.forEach((kind) => {
+    resolutions.forEach((kind) => {
       table.push([resolutionKinds[kind], ...entrypoints.map((entrypoint) => getCellContents(entrypoint, kind))]);
     });
   }

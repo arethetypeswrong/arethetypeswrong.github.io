@@ -10,7 +10,7 @@ import { readFile, stat, unlink } from "fs/promises";
 import { createRequire } from "module";
 import path from "path";
 import readline from "readline";
-import { problemFlags } from "./problemUtils.js";
+import { problemFlags, resolutionKinds } from "./problemUtils.js";
 import { readConfig } from "./readConfig.js";
 import * as render from "./render/index.js";
 import { major, minor } from "semver";
@@ -79,6 +79,11 @@ particularly ESM-related module resolution issues.`,
   )
   .addOption(
     new Option("--ignore-rules <rules...>", "Specify rules to ignore").choices(Object.values(problemFlags)).default([]),
+  )
+  .addOption(
+    new Option("--ignore-resolutions <resolutions...>", "Specify resolutions to ignore")
+      .choices(Object.keys(resolutionKinds))
+      .default([]),
   )
   .option("--summary, --no-summary", "Whether to print summary information about the different errors")
   .option("--emoji, --no-emoji", "Whether to use any emojis")
