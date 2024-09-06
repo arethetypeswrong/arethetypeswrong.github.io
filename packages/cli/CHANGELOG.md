@@ -1,5 +1,17 @@
 # @arethetypeswrong/cli
 
+## 0.16.0
+
+### Minor Changes
+
+- d480f1c: New problem kind: **Named exports cannot be detected by Node.js**. Thanks @laverdet!
+
+### Patch Changes
+
+- Updated dependencies [970b141]
+- Updated dependencies [d480f1c]
+  - @arethetypeswrong/core@0.16.0
+
 ## 0.15.4
 
 ### Patch Changes
