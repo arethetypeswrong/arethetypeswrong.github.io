@@ -1,5 +1,11 @@
 # @arethetypeswrong/cli
 
+## 0.16.1
+
+### Patch Changes
+
+- 5ee6f29: Update README with new problem kind
+
 ## 0.16.0
 
 ### Minor Changes
