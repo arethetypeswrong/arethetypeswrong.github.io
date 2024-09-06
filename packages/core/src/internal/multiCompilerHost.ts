@@ -1,4 +1,5 @@
 import ts from "typescript";
+import { LRUCache } from "lru-cache";
 import type { ModuleKind } from "../types.js";
 import type { Package } from "../createPackage.js";
 
@@ -37,6 +38,7 @@ const getCanonicalFileName = ts.createGetCanonicalFileName(false);
 const toPath = (fileName: string) => ts.toPath(fileName, "/", getCanonicalFileName);
 
 export class CompilerHostWrapper {
+  private programCache = new LRUCache<string, ts.Program>({ max: 2 });
   private compilerHost: ts.CompilerHost;
   private compilerOptions: ts.CompilerOptions;
   private normalModuleResolutionCache: ts.ModuleResolutionCache;
@@ -162,12 +164,17 @@ export class CompilerHostWrapper {
     return `${resolutionMode ?? 1}:${+!!noDtsResolution}:${+!!allowJs}:${moduleSpecifier}`;
   }
 
+  private getProgram(rootNames: readonly string[], options: ts.CompilerOptions) {
+    const key = programKey(rootNames, options);
+    let program = this.programCache.get(key);
+    if (!program) {
+      this.programCache.set(key, (program = ts.createProgram({ rootNames, options, host: this.compilerHost })));
+    }
+    return program;
+  }
+
   createPrimaryProgram(rootName: string) {
-    const program = ts.createProgram({
-      rootNames: [rootName],
-      options: this.compilerOptions,
-      host: this.compilerHost,
-    });
+    const program = this.getProgram([rootName], this.compilerOptions);
 
     program.resolvedModules?.forEach((cache, path) => {
       let ownCache = this.resolvedModules.get(path);
@@ -199,11 +206,8 @@ export class CompilerHostWrapper {
     ) {
       throw new Error("Cannot override resolution-affecting options for host due to potential cache polution");
     }
-    return ts.createProgram({
-      rootNames,
-      options: extraOptions ? { ...this.compilerOptions, ...extraOptions } : this.compilerOptions,
-      host: this.compilerHost,
-    });
+    const options = extraOptions ? { ...this.compilerOptions, ...extraOptions } : this.compilerOptions;
+    return this.getProgram(rootNames, options);
   }
 
   getResolvedModule(sourceFile: ts.SourceFile, moduleName: string, resolutionMode: ts.ResolutionMode) {
@@ -303,4 +307,8 @@ class TraceCollector {
   clear() {
     this.traces.length = 0;
   }
+}
+
+function programKey(rootNames: readonly string[], options: ts.CompilerOptions) {
+  return JSON.stringify([rootNames, Object.entries(options).sort(([k1], [k2]) => k1.localeCompare(k2))]);
 }
