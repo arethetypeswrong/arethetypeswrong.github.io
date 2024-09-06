@@ -6,6 +6,7 @@ export interface ProblemKindInfo {
   emoji: string;
   shortDescription: string;
   description: string;
+  details?: string;
   docsUrl: string;
 }
 
@@ -38,6 +39,15 @@ export const problemKindInfo: Record<ProblemKind, ProblemKindInfo> = {
     shortDescription: "Masquerading as ESM",
     description: "Import resolved to an ESM type declaration file, but a CommonJS JavaScript file.",
     docsUrl: "https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseESM.md",
+  },
+  NamedExports: {
+    emoji: "🕵️",
+    title: "Named exports cannot be detected by Node.js",
+    shortDescription: "Named exports",
+    description:
+      "TypeScript allows ESM named imports of the properties of this CommonJS module, but they will crash at runtime because they don’t exist or can’t be statically detected by Node.js in the JavaScript file.",
+    details: "the list of exports TypeScript can see but Node.js cannot",
+    docsUrl: "https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/NamedExports.md",
   },
   CJSResolvesToESM: {
     emoji: "⚠️",
@@ -99,6 +109,7 @@ export const problemKindInfo: Record<ProblemKind, ProblemKindInfo> = {
     shortDescription: "Internal resolution error",
     description:
       "Import found in a type declaration file failed to resolve. Either this indicates that runtime resolution errors will occur, or (more likely) the types misrepresent the contents of the JavaScript files.",
+    details: "the imports that failed to resolve",
     docsUrl:
       "https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/InternalResolutionError.md",
   },

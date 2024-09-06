@@ -5087,7 +5087,8 @@
             "/node_modules/postcss/lib/postcss.d.ts"
           ],
           "visibleProblems": [
-            0
+            0,
+            24
           ]
         },
         "bundler": {
@@ -5254,7 +5255,7 @@
             "/node_modules/postcss/lib/previous-map.d.ts"
           ],
           "visibleProblems": [
-            24
+            25
           ]
         },
         "node16-cjs": {
@@ -5327,7 +5328,7 @@
             "/node_modules/postcss/lib/previous-map.d.ts"
           ],
           "visibleProblems": [
-            24
+            25
           ]
         },
         "node16-esm": {
@@ -5409,7 +5410,7 @@
             "/node_modules/postcss/lib/previous-map.d.ts"
           ],
           "visibleProblems": [
-            24
+            25
           ]
         },
         "bundler": {
@@ -5493,7 +5494,7 @@
             "/node_modules/postcss/lib/previous-map.d.ts"
           ],
           "visibleProblems": [
-            24
+            25
           ]
         }
       },
@@ -5576,7 +5577,7 @@
             "/node_modules/postcss/lib/processor.d.ts"
           ],
           "visibleProblems": [
-            25
+            26
           ]
         },
         "node16-cjs": {
@@ -5649,7 +5650,7 @@
             "/node_modules/postcss/lib/processor.d.ts"
           ],
           "visibleProblems": [
-            25
+            26
           ]
         },
         "node16-esm": {
@@ -5731,7 +5732,7 @@
             "/node_modules/postcss/lib/processor.d.ts"
           ],
           "visibleProblems": [
-            25
+            26
           ]
         },
         "bundler": {
@@ -5815,7 +5816,7 @@
             "/node_modules/postcss/lib/processor.d.ts"
           ],
           "visibleProblems": [
-            25
+            26
           ]
         }
       },
@@ -5898,7 +5899,7 @@
             "/node_modules/postcss/lib/result.d.ts"
           ],
           "visibleProblems": [
-            26
+            27
           ]
         },
         "node16-cjs": {
@@ -5971,7 +5972,7 @@
             "/node_modules/postcss/lib/result.d.ts"
           ],
           "visibleProblems": [
-            26
+            27
           ]
         },
         "node16-esm": {
@@ -6053,7 +6054,7 @@
             "/node_modules/postcss/lib/result.d.ts"
           ],
           "visibleProblems": [
-            26
+            27
           ]
         },
         "bundler": {
@@ -6137,7 +6138,7 @@
             "/node_modules/postcss/lib/result.d.ts"
           ],
           "visibleProblems": [
-            26
+            27
           ]
         }
       },
@@ -6220,7 +6221,7 @@
             "/node_modules/postcss/lib/root.d.ts"
           ],
           "visibleProblems": [
-            27
+            28
           ]
         },
         "node16-cjs": {
@@ -6293,7 +6294,7 @@
             "/node_modules/postcss/lib/root.d.ts"
           ],
           "visibleProblems": [
-            27
+            28
           ]
         },
         "node16-esm": {
@@ -6375,7 +6376,7 @@
             "/node_modules/postcss/lib/root.d.ts"
           ],
           "visibleProblems": [
-            27
+            28
           ]
         },
         "bundler": {
@@ -6459,7 +6460,7 @@
             "/node_modules/postcss/lib/root.d.ts"
           ],
           "visibleProblems": [
-            27
+            28
           ]
         }
       },
@@ -6542,7 +6543,7 @@
             "/node_modules/postcss/lib/rule.d.ts"
           ],
           "visibleProblems": [
-            28
+            29
           ]
         },
         "node16-cjs": {
@@ -6615,7 +6616,7 @@
             "/node_modules/postcss/lib/rule.d.ts"
           ],
           "visibleProblems": [
-            28
+            29
           ]
         },
         "node16-esm": {
@@ -6697,7 +6698,7 @@
             "/node_modules/postcss/lib/rule.d.ts"
           ],
           "visibleProblems": [
-            28
+            29
           ]
         },
         "bundler": {
@@ -6781,7 +6782,7 @@
             "/node_modules/postcss/lib/rule.d.ts"
           ],
           "visibleProblems": [
-            28
+            29
           ]
         }
       },
@@ -6865,7 +6866,7 @@
             "/node_modules/postcss/lib/stringifier.d.ts"
           ],
           "visibleProblems": [
-            29
+            30
           ]
         },
         "node16-cjs": {
@@ -6939,7 +6940,7 @@
             "/node_modules/postcss/lib/stringifier.d.ts"
           ],
           "visibleProblems": [
-            29
+            30
           ]
         },
         "node16-esm": {
@@ -7022,7 +7023,7 @@
             "/node_modules/postcss/lib/stringifier.d.ts"
           ],
           "visibleProblems": [
-            29
+            30
           ]
         },
         "bundler": {
@@ -7107,7 +7108,7 @@
             "/node_modules/postcss/lib/stringifier.d.ts"
           ],
           "visibleProblems": [
-            29
+            30
           ]
         }
       },
@@ -7191,7 +7192,7 @@
             "/node_modules/postcss/lib/stringify.d.ts"
           ],
           "visibleProblems": [
-            30
+            31
           ]
         },
         "node16-cjs": {
@@ -7265,7 +7266,7 @@
             "/node_modules/postcss/lib/stringify.d.ts"
           ],
           "visibleProblems": [
-            30
+            31
           ]
         },
         "node16-esm": {
@@ -7348,7 +7349,7 @@
             "/node_modules/postcss/lib/stringify.d.ts"
           ],
           "visibleProblems": [
-            30
+            31
           ]
         },
         "bundler": {
@@ -7433,7 +7434,7 @@
             "/node_modules/postcss/lib/stringify.d.ts"
           ],
           "visibleProblems": [
-            30
+            31
           ]
         }
       },
@@ -7518,7 +7519,7 @@
             "/node_modules/typescript/lib/lib.d.ts"
           ],
           "visibleProblems": [
-            31
+            32
           ]
         },
         "node16-cjs": {
@@ -7580,7 +7581,7 @@
             "/node_modules/typescript/lib/lib.d.ts"
           ],
           "visibleProblems": [
-            32
+            33
           ]
         },
         "node16-esm": {
@@ -7661,7 +7662,7 @@
             "/node_modules/typescript/lib/lib.d.ts"
           ],
           "visibleProblems": [
-            33
+            34
           ]
         },
         "bundler": {
@@ -7747,7 +7748,7 @@
             "/node_modules/typescript/lib/lib.d.ts"
           ],
           "visibleProblems": [
-            34
+            35
           ]
         }
       },
@@ -7832,7 +7833,7 @@
             "/node_modules/typescript/lib/lib.d.ts"
           ],
           "visibleProblems": [
-            35
+            36
           ]
         },
         "node16-cjs": {
@@ -7894,7 +7895,7 @@
             "/node_modules/typescript/lib/lib.d.ts"
           ],
           "visibleProblems": [
-            36
+            37
           ]
         },
         "node16-esm": {
@@ -7975,7 +7976,7 @@
             "/node_modules/typescript/lib/lib.d.ts"
           ],
           "visibleProblems": [
-            37
+            38
           ]
         },
         "bundler": {
@@ -8061,7 +8062,7 @@
             "/node_modules/typescript/lib/lib.d.ts"
           ],
           "visibleProblems": [
-            38
+            39
           ]
         }
       },
@@ -8146,7 +8147,7 @@
             "/node_modules/typescript/lib/lib.d.ts"
           ],
           "visibleProblems": [
-            39
+            40
           ]
         },
         "node16-cjs": {
@@ -8208,7 +8209,7 @@
             "/node_modules/typescript/lib/lib.d.ts"
           ],
           "visibleProblems": [
-            40
+            41
           ]
         },
         "node16-esm": {
@@ -8289,7 +8290,7 @@
             "/node_modules/typescript/lib/lib.d.ts"
           ],
           "visibleProblems": [
-            41
+            42
           ]
         },
         "bundler": {
@@ -8375,7 +8376,7 @@
             "/node_modules/typescript/lib/lib.d.ts"
           ],
           "visibleProblems": [
-            42
+            43
           ]
         }
       },
@@ -8460,7 +8461,7 @@
             "/node_modules/typescript/lib/lib.d.ts"
           ],
           "visibleProblems": [
-            43
+            44
           ]
         },
         "node16-cjs": {
@@ -8522,7 +8523,7 @@
             "/node_modules/typescript/lib/lib.d.ts"
           ],
           "visibleProblems": [
-            44
+            45
           ]
         },
         "node16-esm": {
@@ -8603,7 +8604,7 @@
             "/node_modules/typescript/lib/lib.d.ts"
           ],
           "visibleProblems": [
-            45
+            46
           ]
         },
         "bundler": {
@@ -8689,7 +8690,7 @@
             "/node_modules/typescript/lib/lib.d.ts"
           ],
           "visibleProblems": [
-            46
+            47
           ]
         }
       },
@@ -8772,7 +8773,7 @@
             "/node_modules/postcss/lib/warning.d.ts"
           ],
           "visibleProblems": [
-            47
+            48
           ]
         },
         "node16-cjs": {
@@ -8845,7 +8846,7 @@
             "/node_modules/postcss/lib/warning.d.ts"
           ],
           "visibleProblems": [
-            47
+            48
           ]
         },
         "node16-esm": {
@@ -8927,7 +8928,7 @@
             "/node_modules/postcss/lib/warning.d.ts"
           ],
           "visibleProblems": [
-            47
+            48
           ]
         },
         "bundler": {
@@ -9011,7 +9012,7 @@
             "/node_modules/postcss/lib/warning.d.ts"
           ],
           "visibleProblems": [
-            47
+            48
           ]
         }
       },
@@ -9724,6 +9725,37 @@
       "kind": "UntypedResolution",
       "entrypoint": "./lib/parser",
       "resolutionKind": "bundler"
+    },
+    {
+      "kind": "NamedExports",
+      "implementationFileName": "/node_modules/postcss/lib/postcss.js",
+      "typesFileName": "/node_modules/postcss/lib/postcss.d.ts",
+      "isMissingAllNamed": true,
+      "missing": [
+        "CssSyntaxError",
+        "Declaration",
+        "LazyResult",
+        "Processor",
+        "Container",
+        "Document",
+        "Warning",
+        "Comment",
+        "AtRule",
+        "Result",
+        "Input",
+        "Node",
+        "list",
+        "Rule",
+        "Root",
+        "stringify",
+        "parse",
+        "fromJSON",
+        "comment",
+        "atRule",
+        "decl",
+        "rule",
+        "root"
+      ]
     },
     {
       "kind": "MissingExportEquals",

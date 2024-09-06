@@ -6,11 +6,13 @@ $ attw vue@3.3.4.tgz -f table-flipped
 
 vue v3.3.4
 
-🥴 Import found in a type declaration file failed to resolve. Either this indicates that runtime resolution errors will occur, or (more likely) the types misrepresent the contents of the JavaScript files. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/InternalResolutionError.md
+🥴 Import found in a type declaration file failed to resolve. Either this indicates that runtime resolution errors will occur, or (more likely) the types misrepresent the contents of the JavaScript files. Use --json to see the imports that failed to resolve. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/InternalResolutionError.md
 
 🎭 Import resolved to a CommonJS type declaration file, but an ESM JavaScript file. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseCJS.md
 
 💀 Import failed to resolve to type declarations or JavaScript files. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/NoResolution.md
+
+🕵️ TypeScript allows ESM named imports of the properties of this CommonJS module, but they will crash at runtime because they don’t exist or can’t be statically detected by Node.js in the JavaScript file. Use --json to see the list of exports TypeScript can see but Node.js cannot. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/NamedExports.md
 
 
 ┌───────────────────────┬──────────────────────┬───────────────────┬──────────────────────────────┬────────────┐
@@ -32,7 +34,7 @@ vue v3.3.4
 ├───────────────────────┼──────────────────────┼───────────────────┼──────────────────────────────┼────────────┤
 │ "vue/package.json"    │ 🟢 (JSON)            │ 🟢 (JSON)         │ 🟢 (JSON)                    │ 🟢 (JSON)  │
 ├───────────────────────┼──────────────────────┼───────────────────┼──────────────────────────────┼────────────┤
-│ "vue/macros"          │ 🟢                   │ 🟢 (CJS)          │ 🟢 (CJS)                     │ 🟢         │
+│ "vue/macros"          │ 🟢                   │ 🟢 (CJS)          │ 🕵️ Named exports             │ 🟢         │
 ├───────────────────────┼──────────────────────┼───────────────────┼──────────────────────────────┼────────────┤
 │ "vue/macros-global"   │ 🟢                   │ 🟢 (CJS)          │ 🟢 (CJS)                     │ 🟢         │
 ├───────────────────────┼──────────────────────┼───────────────────┼──────────────────────────────┼────────────┤
