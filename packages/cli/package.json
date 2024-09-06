@@ -52,7 +52,7 @@
     "ts-expose-internals": "5.6.1-rc"
   },
   "dependencies": {
-    "@arethetypeswrong/core": "workspace:../core",
+    "@arethetypeswrong/core": "workspace:*",
     "chalk": "^4.1.2",
     "cli-table3": "^0.6.3",
     "commander": "^10.0.1",

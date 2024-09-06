@@ -33,7 +33,7 @@
     "prepublishOnly": "pnpm tsc && pnpm generate"
   },
   "dependencies": {
-    "@arethetypeswrong/core": "workspace:../core"
+    "@arethetypeswrong/core": "workspace:*"
   },
   "devDependencies": {
     "@azure/storage-blob": "^12.14.0",

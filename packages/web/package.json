@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "@andrewbranch/json-view": "^1.0.1",
-    "@arethetypeswrong/core": "workspace:../core",
+    "@arethetypeswrong/core": "workspace:*",
     "immer": "^9.0.21",
     "marked": "^5.1.0",
     "nprogress": "^0.2.0"
