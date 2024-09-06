@@ -23,5 +23,10 @@
   "engines": {
     "node": ">=18",
     "pnpm": ">=8"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "cjs-module-lexer@1.4.0": "patches/cjs-module-lexer@1.4.0.patch"
+    }
   }
 }
