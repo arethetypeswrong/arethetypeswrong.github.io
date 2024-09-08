@@ -75,8 +75,8 @@ importers:
         specifier: ^0.8.2
         version: 0.8.2
       lru-cache:
-        specifier: ^11.0.1
-        version: 11.0.1
+        specifier: ^10.4.3
+        version: 10.4.3
       semver:
         specifier: ^7.5.4
         version: 7.5.4
@@ -1175,13 +1175,8 @@ packages:
   lodash.startcase@4.4.0:
     resolution: {integrity: sha512-+WKqsK294HMSc2jEbNgpHpd0JfIBhp7rEV4aqXWqFr6AlXov+SlcgB1Fv01y2kGe3Gc8nMW7VA0SrGuSkRfIEg==}
 
-  lru-cache@10.0.1:
-    resolution: {integrity: sha512-IJ4uwUTi2qCccrioU6g9g/5rvvVl13bsdczUUcqbciD9iLr095yj8DQKdObriEvuNSx325N1rV1O0sJFszx75g==}
-    engines: {node: 14 || >=16.14}
-
-  lru-cache@11.0.1:
-    resolution: {integrity: sha512-CgeuL5uom6j/ZVrg7G/+1IXqRY8JXX4Hghfy5YE0EhoYQWvndP1kufu58cmZLNIDKnRhZrXfdS9urVWx98AipQ==}
-    engines: {node: 20 || >=22}
+  lru-cache@10.4.3:
+    resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
   lru-cache@4.1.5:
     resolution: {integrity: sha512-sWZlbEP2OsHNkXrMl5GYk/jKk70MBng6UU4YI/qGDYbgf6YbP4EvmqISbXCoJiRKs+1bSpFHVgQxvJ17F2li5g==}
@@ -2902,9 +2897,7 @@ snapshots:
 
   lodash.startcase@4.4.0: {}
 
-  lru-cache@10.0.1: {}
-
-  lru-cache@11.0.1: {}
+  lru-cache@10.4.3: {}
 
   lru-cache@4.1.5:
     dependencies:
@@ -3197,7 +3190,7 @@ snapshots:
 
   path-scurry@1.10.1:
     dependencies:
-      lru-cache: 10.0.1
+      lru-cache: 10.4.3
       minipass: 7.0.4
 
   path-type@4.0.0: {}
