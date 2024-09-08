@@ -9,6 +9,7 @@
     "declaration": true,
     "sourceMap": true,
     "declarationMap": true,
-    "types": []
+    "types": [],
+    "skipLibCheck": true
   }
 }
