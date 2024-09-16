@@ -49,7 +49,7 @@ export async function typed(
     const summaryTexts = Object.keys(grouped).map((kind) => {
       const info = problemKindInfo[kind as core.ProblemKind];
       const description = marked(
-        `${info.description}${info.details ? ` Use \`--json\` to see ${info.details}.` : ""} ${info.docsUrl}`,
+        `${info.description}${info.details ? ` Use \`-f json\` to see ${info.details}.` : ""} ${info.docsUrl}`,
       );
       return `${emoji ? `${info.emoji} ` : ""}${description}`;
     });
