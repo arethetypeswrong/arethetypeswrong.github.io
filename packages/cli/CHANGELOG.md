@@ -1,5 +1,11 @@
 # @arethetypeswrong/cli
 
+## 0.16.3
+
+### Patch Changes
+
+- 66ada51: Fix warning message json-format suggestion to use proper syntax
+
 ## 0.16.2
 
 ### Patch Changes
