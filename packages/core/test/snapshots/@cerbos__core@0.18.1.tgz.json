@@ -1,0 +1,1436 @@
+{
+  "packageName": "@cerbos/core",
+  "packageVersion": "0.18.1",
+  "types": {
+    "kind": "included"
+  },
+  "buildTools": {},
+  "entrypoints": {
+    ".": {
+      "subpath": ".",
+      "resolutions": {
+        "node10": {
+          "name": ".",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/@cerbos/core/lib/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@cerbos/core' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module '@cerbos/core' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/@cerbos/core/package.json'.",
+              "File '/node_modules/@cerbos/core.ts' does not exist.",
+              "File '/node_modules/@cerbos/core.tsx' does not exist.",
+              "File '/node_modules/@cerbos/core.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field './lib/index.d.ts' that references '/node_modules/@cerbos/core/lib/index.d.ts'.",
+              "File '/node_modules/@cerbos/core/lib/index.d.ts' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
+              "======== Module name '@cerbos/core' was successfully resolved to '/node_modules/@cerbos/core/lib/index.d.ts' with Package ID '@cerbos/core/lib/index.d.ts@0.18.1'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@cerbos/core/lib/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@cerbos/core' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module '@cerbos/core' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/@cerbos/core/package.json'.",
+              "File '/node_modules/@cerbos/core.ts' does not exist.",
+              "File '/node_modules/@cerbos/core.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field './lib/index.js' that references '/node_modules/@cerbos/core/lib/index.js'.",
+              "File name '/node_modules/@cerbos/core/lib/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@cerbos/core/lib/index.ts' does not exist.",
+              "File '/node_modules/@cerbos/core/lib/index.tsx' does not exist.",
+              "Loading module as file / folder, candidate module location '/node_modules/@cerbos/core/lib/index.js', target file types: TypeScript.",
+              "File name '/node_modules/@cerbos/core/lib/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@cerbos/core/lib/index.ts' does not exist.",
+              "File '/node_modules/@cerbos/core/lib/index.tsx' does not exist.",
+              "File '/node_modules/@cerbos/core/lib/index.js.ts' does not exist.",
+              "File '/node_modules/@cerbos/core/lib/index.js.tsx' does not exist.",
+              "Directory '/node_modules/@cerbos/core/lib/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/@cerbos/core/index.ts' does not exist.",
+              "File '/node_modules/@cerbos/core/index.tsx' does not exist.",
+              "Loading module '@cerbos/core' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@cerbos/core/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/@cerbos/core.js' does not exist.",
+              "File '/node_modules/@cerbos/core.jsx' does not exist.",
+              "'package.json' has 'main' field './lib/index.js' that references '/node_modules/@cerbos/core/lib/index.js'.",
+              "File name '/node_modules/@cerbos/core/lib/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@cerbos/core/lib/index.js' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
+              "Resolution of non-relative name failed; trying with '--moduleResolution bundler' to see if project may need configuration update.",
+              "Loading module '@cerbos/core' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@cerbos/core/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath '.' with target './lib/index.js'.",
+              "File name '/node_modules/@cerbos/core/lib/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@cerbos/core/lib/index.ts' does not exist.",
+              "File '/node_modules/@cerbos/core/lib/index.tsx' does not exist.",
+              "Failed to resolve under condition 'default'.",
+              "Exiting conditional exports.",
+              "======== Module name '@cerbos/core' was successfully resolved to '/node_modules/@cerbos/core/lib/index.js' with Package ID '@cerbos/core/lib/index.js@0.18.1'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Peer.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Status.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AccessLogEntry.d.ts",
+            "/node_modules/@cerbos/core/lib/types/internal.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Matches.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/MatchAll.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/MatchAny.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/MatchExpr.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/MatchNone.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Match.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Condition.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DerivedRoleDefinition.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Variables.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DerivedRolesBody.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Value.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SourceAttributes.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PolicyMetadata.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PolicyBase.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DerivedRoles.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ExportVariablesBody.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ExportVariables.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Effect.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/OutputExpressions.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Output.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PrincipalRuleAction.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PrincipalRule.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PrincipalPolicyBody.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PrincipalPolicy.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourceRule.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SchemaRef.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SchemaRefs.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourcePolicyBody.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourcePolicy.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Policy.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AddOrUpdatePoliciesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SchemaDefinition.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SchemaDefinitionInput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SchemaInput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AddOrUpdateSchemasRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuditLogFilterBetween.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuditLogFilterSince.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuditLogFilterTail.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuditLogFilter.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuditTrail.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/JWT.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuxData.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DecodedAuxData.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Principal.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Resource.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckInput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckOutputActionEffect.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/OutputResult.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ValidationErrorSource.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ValidationError.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckOutput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourceCheck.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourceRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResultMetadataEffect.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResultMetadata.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResultResource.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResult.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourceSearch.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DecisionLogEntryCheckResources.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourceQuery.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesInput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanExpression.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanExpressionValue.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanExpressionVariable.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanExpressionOperand.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanKind.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesOutputBase.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesConditionalOutput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesUnconditionalOutput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesOutput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DecisionLogEntryPlanResources.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DecisionLogEntryMethod.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DecisionLogEntry.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DeleteSchemasRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DeleteSchemasResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DisablePoliciesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DisablePoliciesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/EnablePoliciesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/EnablePoliciesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/GetPoliciesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/GetPoliciesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/GetSchemasRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Schema.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/GetSchemasResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/IsAllowedRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ListAccessLogEntriesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ListDecisionLogEntriesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ListPoliciesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ListPoliciesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ListSchemasResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesMetadata.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesResponseBase.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesConditionalResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesUnconditionalResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ReloadStoreRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ServerInfo.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ValidationFailedCallback.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/_isObject.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/index.d.ts",
+            "/node_modules/@cerbos/core/lib/errors.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/google/protobuf/duration.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/effect/v1/effect.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/schema/v1/schema.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/engine/v1/engine.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/policy/v1/policy.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/request/v1/request.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/google/protobuf/empty.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/audit/v1/audit.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/response/v1/response.d.ts",
+            "/node_modules/@cerbos/core/lib/rpcs.d.ts",
+            "/node_modules/@cerbos/core/lib/client.d.ts",
+            "/node_modules/@cerbos/core/lib/convert/fromProtobuf.d.ts",
+            "/node_modules/@cerbos/core/lib/index.d.ts"
+          ],
+          "visibleProblems": []
+        },
+        "node16-cjs": {
+          "name": ".",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/@cerbos/core/lib/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@cerbos/core' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@cerbos/core' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/@cerbos/core/package.json'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath '.' with target './lib/index.d.ts'.",
+              "File '/node_modules/@cerbos/core/lib/index.d.ts' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name '@cerbos/core' was successfully resolved to '/node_modules/@cerbos/core/lib/index.d.ts' with Package ID '@cerbos/core/lib/index.d.ts@0.18.1'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@cerbos/core/lib/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@cerbos/core' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@cerbos/core' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/@cerbos/core/package.json'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath '.' with target './lib/index.js'.",
+              "File name '/node_modules/@cerbos/core/lib/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@cerbos/core/lib/index.ts' does not exist.",
+              "File '/node_modules/@cerbos/core/lib/index.tsx' does not exist.",
+              "Failed to resolve under condition 'default'.",
+              "Exiting conditional exports.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@cerbos/core/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath '.' with target './lib/index.js'.",
+              "File name '/node_modules/@cerbos/core/lib/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@cerbos/core/lib/index.js' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
+              "Resolved under condition 'default'.",
+              "Exiting conditional exports.",
+              "======== Module name '@cerbos/core' was successfully resolved to '/node_modules/@cerbos/core/lib/index.js' with Package ID '@cerbos/core/lib/index.js@0.18.1'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Peer.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Status.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AccessLogEntry.d.ts",
+            "/node_modules/@cerbos/core/lib/types/internal.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Matches.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/MatchAll.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/MatchAny.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/MatchExpr.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/MatchNone.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Match.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Condition.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DerivedRoleDefinition.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Variables.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DerivedRolesBody.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Value.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SourceAttributes.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PolicyMetadata.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PolicyBase.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DerivedRoles.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ExportVariablesBody.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ExportVariables.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Effect.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/OutputExpressions.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Output.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PrincipalRuleAction.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PrincipalRule.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PrincipalPolicyBody.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PrincipalPolicy.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourceRule.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SchemaRef.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SchemaRefs.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourcePolicyBody.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourcePolicy.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Policy.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AddOrUpdatePoliciesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SchemaDefinition.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SchemaDefinitionInput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SchemaInput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AddOrUpdateSchemasRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuditLogFilterBetween.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuditLogFilterSince.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuditLogFilterTail.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuditLogFilter.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuditTrail.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/JWT.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuxData.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DecodedAuxData.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Principal.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Resource.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckInput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckOutputActionEffect.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/OutputResult.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ValidationErrorSource.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ValidationError.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckOutput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourceCheck.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourceRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResultMetadataEffect.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResultMetadata.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResultResource.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResult.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourceSearch.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DecisionLogEntryCheckResources.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourceQuery.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesInput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanExpression.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanExpressionValue.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanExpressionVariable.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanExpressionOperand.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanKind.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesOutputBase.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesConditionalOutput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesUnconditionalOutput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesOutput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DecisionLogEntryPlanResources.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DecisionLogEntryMethod.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DecisionLogEntry.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DeleteSchemasRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DeleteSchemasResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DisablePoliciesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DisablePoliciesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/EnablePoliciesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/EnablePoliciesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/GetPoliciesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/GetPoliciesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/GetSchemasRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Schema.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/GetSchemasResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/IsAllowedRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ListAccessLogEntriesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ListDecisionLogEntriesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ListPoliciesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ListPoliciesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ListSchemasResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesMetadata.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesResponseBase.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesConditionalResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesUnconditionalResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ReloadStoreRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ServerInfo.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ValidationFailedCallback.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/_isObject.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/index.d.ts",
+            "/node_modules/@cerbos/core/lib/errors.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/google/protobuf/duration.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/effect/v1/effect.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/schema/v1/schema.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/engine/v1/engine.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/policy/v1/policy.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/request/v1/request.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/google/protobuf/empty.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/audit/v1/audit.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/response/v1/response.d.ts",
+            "/node_modules/@cerbos/core/lib/rpcs.d.ts",
+            "/node_modules/@cerbos/core/lib/client.d.ts",
+            "/node_modules/@cerbos/core/lib/convert/fromProtobuf.d.ts",
+            "/node_modules/@cerbos/core/lib/index.d.ts"
+          ],
+          "visibleProblems": []
+        },
+        "node16-esm": {
+          "name": ".",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/@cerbos/core/lib/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@cerbos/core' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@cerbos/core' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/@cerbos/core/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath '.' with target './lib/index.d.ts'.",
+              "File '/node_modules/@cerbos/core/lib/index.d.ts' exists - use it as a name resolution result.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name '@cerbos/core' was successfully resolved to '/node_modules/@cerbos/core/lib/index.d.ts' with Package ID '@cerbos/core/lib/index.d.ts@0.18.1'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@cerbos/core/lib/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@cerbos/core' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@cerbos/core' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@cerbos/core/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath '.' with target './lib/index.js'.",
+              "File name '/node_modules/@cerbos/core/lib/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@cerbos/core/lib/index.ts' does not exist.",
+              "File '/node_modules/@cerbos/core/lib/index.tsx' does not exist.",
+              "Failed to resolve under condition 'default'.",
+              "Exiting conditional exports.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@cerbos/core/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath '.' with target './lib/index.js'.",
+              "File name '/node_modules/@cerbos/core/lib/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@cerbos/core/lib/index.js' exists - use it as a name resolution result.",
+              "Resolved under condition 'default'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@cerbos/core' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@cerbos/core/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field './lib/index.js' that references '/node_modules/@cerbos/core/lib/index.js'.",
+              "File name '/node_modules/@cerbos/core/lib/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@cerbos/core/lib/index.ts' does not exist.",
+              "File '/node_modules/@cerbos/core/lib/index.tsx' does not exist.",
+              "Loading module as file / folder, candidate module location '/node_modules/@cerbos/core/lib/index.js', target file types: TypeScript.",
+              "File name '/node_modules/@cerbos/core/lib/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@cerbos/core/lib/index.ts' does not exist.",
+              "File '/node_modules/@cerbos/core/lib/index.tsx' does not exist.",
+              "File '/node_modules/@cerbos/core/lib/index.js.ts' does not exist.",
+              "File '/node_modules/@cerbos/core/lib/index.js.tsx' does not exist.",
+              "Directory '/node_modules/@cerbos/core/lib/index.js' does not exist, skipping all lookups in it.",
+              "======== Module name '@cerbos/core' was successfully resolved to '/node_modules/@cerbos/core/lib/index.js' with Package ID '@cerbos/core/lib/index.js@0.18.1'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Peer.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Status.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AccessLogEntry.d.ts",
+            "/node_modules/@cerbos/core/lib/types/internal.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Matches.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/MatchAll.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/MatchAny.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/MatchExpr.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/MatchNone.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Match.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Condition.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DerivedRoleDefinition.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Variables.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DerivedRolesBody.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Value.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SourceAttributes.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PolicyMetadata.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PolicyBase.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DerivedRoles.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ExportVariablesBody.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ExportVariables.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Effect.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/OutputExpressions.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Output.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PrincipalRuleAction.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PrincipalRule.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PrincipalPolicyBody.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PrincipalPolicy.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourceRule.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SchemaRef.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SchemaRefs.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourcePolicyBody.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourcePolicy.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Policy.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AddOrUpdatePoliciesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SchemaDefinition.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SchemaDefinitionInput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SchemaInput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AddOrUpdateSchemasRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuditLogFilterBetween.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuditLogFilterSince.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuditLogFilterTail.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuditLogFilter.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuditTrail.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/JWT.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuxData.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DecodedAuxData.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Principal.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Resource.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckInput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckOutputActionEffect.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/OutputResult.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ValidationErrorSource.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ValidationError.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckOutput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourceCheck.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourceRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResultMetadataEffect.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResultMetadata.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResultResource.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResult.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourceSearch.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DecisionLogEntryCheckResources.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourceQuery.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesInput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanExpression.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanExpressionValue.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanExpressionVariable.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanExpressionOperand.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanKind.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesOutputBase.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesConditionalOutput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesUnconditionalOutput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesOutput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DecisionLogEntryPlanResources.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DecisionLogEntryMethod.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DecisionLogEntry.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DeleteSchemasRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DeleteSchemasResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DisablePoliciesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DisablePoliciesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/EnablePoliciesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/EnablePoliciesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/GetPoliciesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/GetPoliciesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/GetSchemasRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Schema.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/GetSchemasResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/IsAllowedRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ListAccessLogEntriesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ListDecisionLogEntriesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ListPoliciesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ListPoliciesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ListSchemasResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesMetadata.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesResponseBase.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesConditionalResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesUnconditionalResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ReloadStoreRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ServerInfo.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ValidationFailedCallback.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/_isObject.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/index.d.ts",
+            "/node_modules/@cerbos/core/lib/errors.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/google/protobuf/duration.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/effect/v1/effect.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/schema/v1/schema.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/engine/v1/engine.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/policy/v1/policy.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/request/v1/request.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/google/protobuf/empty.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/audit/v1/audit.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/response/v1/response.d.ts",
+            "/node_modules/@cerbos/core/lib/rpcs.d.ts",
+            "/node_modules/@cerbos/core/lib/client.d.ts",
+            "/node_modules/@cerbos/core/lib/convert/fromProtobuf.d.ts",
+            "/node_modules/@cerbos/core/lib/index.d.ts"
+          ],
+          "visibleProblems": []
+        },
+        "bundler": {
+          "name": ".",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/@cerbos/core/lib/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@cerbos/core' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@cerbos/core' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/@cerbos/core/package.json'.",
+              "Entering conditional exports.",
+              "Matched 'exports' condition 'types'.",
+              "Using 'exports' subpath '.' with target './lib/index.d.ts'.",
+              "File '/node_modules/@cerbos/core/lib/index.d.ts' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
+              "Resolved under condition 'types'.",
+              "Exiting conditional exports.",
+              "======== Module name '@cerbos/core' was successfully resolved to '/node_modules/@cerbos/core/lib/index.d.ts' with Package ID '@cerbos/core/lib/index.d.ts@0.18.1'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@cerbos/core/lib/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@cerbos/core' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@cerbos/core' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/@cerbos/core/package.json'.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath '.' with target './lib/index.js'.",
+              "File name '/node_modules/@cerbos/core/lib/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@cerbos/core/lib/index.ts' does not exist.",
+              "File '/node_modules/@cerbos/core/lib/index.tsx' does not exist.",
+              "Failed to resolve under condition 'default'.",
+              "Exiting conditional exports.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@cerbos/core/package.json' exists according to earlier cached lookups.",
+              "Entering conditional exports.",
+              "Saw non-matching condition 'types'.",
+              "Matched 'exports' condition 'default'.",
+              "Using 'exports' subpath '.' with target './lib/index.js'.",
+              "File name '/node_modules/@cerbos/core/lib/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@cerbos/core/lib/index.js' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
+              "Resolved under condition 'default'.",
+              "Exiting conditional exports.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@cerbos/core' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@cerbos/core/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/@cerbos/core.ts' does not exist.",
+              "File '/node_modules/@cerbos/core.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field './lib/index.js' that references '/node_modules/@cerbos/core/lib/index.js'.",
+              "File name '/node_modules/@cerbos/core/lib/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@cerbos/core/lib/index.ts' does not exist.",
+              "File '/node_modules/@cerbos/core/lib/index.tsx' does not exist.",
+              "Loading module as file / folder, candidate module location '/node_modules/@cerbos/core/lib/index.js', target file types: TypeScript.",
+              "File name '/node_modules/@cerbos/core/lib/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@cerbos/core/lib/index.ts' does not exist.",
+              "File '/node_modules/@cerbos/core/lib/index.tsx' does not exist.",
+              "File '/node_modules/@cerbos/core/lib/index.js.ts' does not exist.",
+              "File '/node_modules/@cerbos/core/lib/index.js.tsx' does not exist.",
+              "Directory '/node_modules/@cerbos/core/lib/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/@cerbos/core/index.ts' does not exist.",
+              "File '/node_modules/@cerbos/core/index.tsx' does not exist.",
+              "======== Module name '@cerbos/core' was successfully resolved to '/node_modules/@cerbos/core/lib/index.js' with Package ID '@cerbos/core/lib/index.js@0.18.1'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Peer.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Status.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AccessLogEntry.d.ts",
+            "/node_modules/@cerbos/core/lib/types/internal.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Matches.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/MatchAll.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/MatchAny.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/MatchExpr.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/MatchNone.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Match.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Condition.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DerivedRoleDefinition.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Variables.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DerivedRolesBody.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Value.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SourceAttributes.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PolicyMetadata.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PolicyBase.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DerivedRoles.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ExportVariablesBody.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ExportVariables.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Effect.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/OutputExpressions.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Output.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PrincipalRuleAction.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PrincipalRule.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PrincipalPolicyBody.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PrincipalPolicy.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourceRule.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SchemaRef.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SchemaRefs.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourcePolicyBody.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourcePolicy.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Policy.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AddOrUpdatePoliciesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SchemaDefinition.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SchemaDefinitionInput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/SchemaInput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AddOrUpdateSchemasRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuditLogFilterBetween.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuditLogFilterSince.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuditLogFilterTail.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuditLogFilter.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuditTrail.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/JWT.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/AuxData.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DecodedAuxData.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Principal.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Resource.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckInput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckOutputActionEffect.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/OutputResult.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ValidationErrorSource.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ValidationError.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckOutput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourceCheck.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourceRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResultMetadataEffect.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResultMetadata.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResultResource.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResult.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourceSearch.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DecisionLogEntryCheckResources.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ResourceQuery.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesInput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanExpression.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanExpressionValue.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanExpressionVariable.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanExpressionOperand.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanKind.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesOutputBase.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesConditionalOutput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesUnconditionalOutput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesOutput.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DecisionLogEntryPlanResources.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DecisionLogEntryMethod.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DecisionLogEntry.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DeleteSchemasRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DeleteSchemasResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DisablePoliciesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/DisablePoliciesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/EnablePoliciesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/EnablePoliciesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/GetPoliciesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/GetPoliciesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/GetSchemasRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/Schema.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/GetSchemasResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/IsAllowedRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ListAccessLogEntriesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ListDecisionLogEntriesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ListPoliciesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ListPoliciesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ListSchemasResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesMetadata.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesResponseBase.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesConditionalResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesUnconditionalResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/PlanResourcesResponse.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ReloadStoreRequest.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ServerInfo.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/ValidationFailedCallback.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/_isObject.d.ts",
+            "/node_modules/@cerbos/core/lib/types/external/index.d.ts",
+            "/node_modules/@cerbos/core/lib/errors.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/google/protobuf/duration.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/effect/v1/effect.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/schema/v1/schema.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/engine/v1/engine.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/policy/v1/policy.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/request/v1/request.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/google/protobuf/empty.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/audit/v1/audit.d.ts",
+            "/node_modules/@cerbos/core/lib/protobuf/cerbos/response/v1/response.d.ts",
+            "/node_modules/@cerbos/core/lib/rpcs.d.ts",
+            "/node_modules/@cerbos/core/lib/client.d.ts",
+            "/node_modules/@cerbos/core/lib/convert/fromProtobuf.d.ts",
+            "/node_modules/@cerbos/core/lib/index.d.ts"
+          ],
+          "visibleProblems": []
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    }
+  },
+  "programInfo": {
+    "node10": {},
+    "node16": {
+      "moduleKinds": {
+        "/node_modules/typescript/lib/lib.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/typescript/lib/lib.d.ts"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/Peer.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/Status.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/AccessLogEntry.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/internal.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/Matches.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/MatchAll.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/MatchAny.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/MatchExpr.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/MatchNone.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/Match.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/Condition.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/DerivedRoleDefinition.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/Variables.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/DerivedRolesBody.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/Value.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/SourceAttributes.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/PolicyMetadata.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/PolicyBase.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/DerivedRoles.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/ExportVariablesBody.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/ExportVariables.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/Effect.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/OutputExpressions.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/Output.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/PrincipalRuleAction.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/PrincipalRule.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/PrincipalPolicyBody.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/PrincipalPolicy.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/ResourceRule.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/SchemaRef.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/SchemaRefs.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/ResourcePolicyBody.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/ResourcePolicy.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/Policy.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/AddOrUpdatePoliciesRequest.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/SchemaDefinition.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/SchemaDefinitionInput.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/SchemaInput.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/AddOrUpdateSchemasRequest.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/AuditLogFilterBetween.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/AuditLogFilterSince.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/AuditLogFilterTail.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/AuditLogFilter.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/AuditTrail.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/JWT.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/AuxData.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/DecodedAuxData.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/Principal.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/Resource.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/CheckInput.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/CheckOutputActionEffect.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/OutputResult.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/ValidationErrorSource.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/ValidationError.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/CheckOutput.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/ResourceCheck.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/CheckResourcesRequest.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/CheckResourceRequest.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResultMetadataEffect.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResultMetadata.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResultResource.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResult.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/ResourceSearch.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/CheckResourcesResponse.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/DecisionLogEntryCheckResources.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/ResourceQuery.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/PlanResourcesInput.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/PlanExpression.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/PlanExpressionValue.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/PlanExpressionVariable.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/PlanExpressionOperand.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/PlanKind.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/PlanResourcesOutputBase.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/PlanResourcesConditionalOutput.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/PlanResourcesUnconditionalOutput.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/PlanResourcesOutput.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/DecisionLogEntryPlanResources.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/DecisionLogEntryMethod.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/DecisionLogEntry.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/DeleteSchemasRequest.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/DeleteSchemasResponse.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/DisablePoliciesRequest.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/DisablePoliciesResponse.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/EnablePoliciesRequest.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/EnablePoliciesResponse.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/GetPoliciesRequest.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/GetPoliciesResponse.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/GetSchemasRequest.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/Schema.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/GetSchemasResponse.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/IsAllowedRequest.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/ListAccessLogEntriesRequest.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/ListDecisionLogEntriesRequest.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/ListPoliciesRequest.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/ListPoliciesResponse.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/ListSchemasResponse.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/PlanResourcesMetadata.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/PlanResourcesResponseBase.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/PlanResourcesConditionalResponse.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/PlanResourcesRequest.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/PlanResourcesUnconditionalResponse.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/PlanResourcesResponse.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/ReloadStoreRequest.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/ServerInfo.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/ValidationFailedCallback.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/_isObject.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/types/external/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/errors.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/protobuf/google/protobuf/duration.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/protobuf/cerbos/effect/v1/effect.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/protobuf/cerbos/schema/v1/schema.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/protobuf/cerbos/engine/v1/engine.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/protobuf/cerbos/policy/v1/policy.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/protobuf/cerbos/request/v1/request.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/protobuf/google/protobuf/empty.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/protobuf/cerbos/audit/v1/audit.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/protobuf/cerbos/response/v1/response.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/rpcs.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/client.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/convert/fromProtobuf.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        },
+        "/node_modules/@cerbos/core/lib/index.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@cerbos/core/package.json"
+        }
+      }
+    },
+    "bundler": {}
+  },
+  "problems": []
+}

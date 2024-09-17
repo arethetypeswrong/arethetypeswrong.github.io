@@ -2,30 +2,27 @@ import { Package } from "../../createPackage.js";
 import { getCjsModuleBindings } from "./cjsBindings.js";
 import { cjsResolve } from "./cjsResolve.js";
 
-export function getCjsModuleNamespace(fs: Package, file: URL, seen = new Set<string>()) {
+export function getCjsModuleNamespace(fs: Package, file: URL, seen = new Set<string>()): Set<string> {
   seen.add(file.pathname);
-  const { exports, reexports } = getCjsModuleBindings(fs.readFile(file.pathname));
+  const exports = new Set<string>();
+  const bindings = getCjsModuleBindings(fs.readFile(file.pathname));
+  bindings.exports.forEach((name) => exports.add(name));
 
   // CJS always exports `default`
-  if (!exports.includes("default")) {
-    exports.push("default");
+  if (!exports.has("default")) {
+    exports.add("default");
   }
 
   // Additionally, resolve facade reexports
-  const lastResolvableReexport = (() => {
-    for (const source of reexports.reverse()) {
-      try {
-        return cjsResolve(fs, source, file);
-      } catch {}
-    }
-  })();
-  if (
-    lastResolvableReexport &&
-    lastResolvableReexport.format === "commonjs" &&
-    !seen.has(lastResolvableReexport.resolved.pathname)
-  ) {
-    const extra = getCjsModuleNamespace(fs, lastResolvableReexport.resolved, seen);
-    exports.push(...extra.filter((name) => !exports.includes(name)));
+
+  for (const source of bindings.reexports.reverse()) {
+    try {
+      const { format, resolved } = cjsResolve(fs, source, file);
+      if (format === "commonjs" && !seen.has(resolved.pathname)) {
+        const reexported = getCjsModuleNamespace(fs, resolved, seen);
+        reexported.forEach((name) => exports.add(name));
+      }
+    } catch {}
   }
 
   return exports;

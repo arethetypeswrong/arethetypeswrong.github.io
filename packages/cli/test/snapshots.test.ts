@@ -42,6 +42,7 @@ const tests = [
   ],
 
   ["eslint-module-utils@2.8.1.tgz", "--entrypoints-legacy --ignore-rules=cjs-only-exports-default"],
+  ["@cerbos__core@0.18.1.tgz"],
 ];
 
 const defaultOpts = "-f table-flipped";

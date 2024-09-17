@@ -22,7 +22,7 @@ export function getEsmModuleNamespace(
   seen.add(resolved.pathname);
 
   if (format === "commonjs") {
-    return getCjsModuleNamespace(fs, resolved);
+    return [...getCjsModuleNamespace(fs, resolved)];
   }
 
   // Parse module bindings
