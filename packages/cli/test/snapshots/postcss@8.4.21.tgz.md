@@ -14,7 +14,7 @@ postcss v8.4.21
 
 ❌ Import resolved to JavaScript files, but no type declarations were found. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/UntypedResolution.md
 
-🕵️ TypeScript allows ESM named imports of the properties of this CommonJS module, but they will crash at runtime because they don’t exist or can’t be statically detected by Node.js in the JavaScript file. Use --json to see the list of exports TypeScript can see but Node.js cannot. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/NamedExports.md
+🕵️ TypeScript allows ESM named imports of the properties of this CommonJS module, but they will crash at runtime because they don’t exist or can’t be statically detected by Node.js in the JavaScript file. Use -f json to see the list of exports TypeScript can see but Node.js cannot. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/NamedExports.md
 
 
 ┌──────────────────────────────────┬───────────────────────┬───────────────────────┬────────────────────────────┬────────────────────────────┐
