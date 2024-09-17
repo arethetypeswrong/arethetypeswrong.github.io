@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.16.4
+
+### Patch Changes
+
+- 3ca2866: Fix bug in Named Exports rule that could cause false positives for re-exported values
+
 ## 0.16.2
 
 ### Patch Changes
