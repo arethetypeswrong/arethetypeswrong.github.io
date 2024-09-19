@@ -52,6 +52,6 @@
     "types-registry": "latest"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=18"
   }
 }
