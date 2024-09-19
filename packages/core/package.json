@@ -65,6 +65,6 @@
     "ts-expose-internals": "5.6.1-rc"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   }
 }
