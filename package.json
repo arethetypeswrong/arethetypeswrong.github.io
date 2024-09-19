@@ -21,8 +21,8 @@
     "typescript": "5.6.1-rc"
   },
   "engines": {
-    "node": ">=18",
-    "pnpm": ">=8"
+    "node": ">=22",
+    "pnpm": ">=9"
   },
   "pnpm": {
     "patchedDependencies": {
