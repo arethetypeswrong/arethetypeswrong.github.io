@@ -19,7 +19,7 @@
   },
   "scripts": {
     "tsc": "tsc",
-    "test": "tsc -b test && node --test 'test/dist/**/*.test.js'",
+    "test": "tsc -b test && node --test \"test/dist/**/*.test.js\"",
     "snapshot": "node scripts/createSnapshotFixture.js",
     "prepack": "pnpm tsc"
   },

@@ -14,7 +14,7 @@ export function createTestPackage(
           assert(name.startsWith(`/node_modules/${packageName}/`));
           return [name, content];
         }
-        return [path.join(`/node_modules/${packageName}`, name), content];
+        return [path.posix.join(`/node_modules/${packageName}`, name), content];
       }),
     ),
     packageName,

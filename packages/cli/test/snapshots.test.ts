@@ -1,9 +1,16 @@
 import { access, readFile, writeFile } from "fs/promises";
 import { execSync, type SpawnSyncReturns } from "child_process";
 import assert from "node:assert";
+import path from "node:path";
 import { after, describe, test } from "node:test";
+import { fileURLToPath } from "node:url";
 
-const attw = `node ${new URL("../../dist/index.js", import.meta.url).pathname}`;
+const directoryPath = path.dirname(fileURLToPath(import.meta.url));
+function resolveFileRelativePath(relPath: string) {
+  return path.resolve(directoryPath, relPath);
+}
+
+const attw = `node ${resolveFileRelativePath("../../dist/index.js")}`;
 const updateSnapshots = process.env.UPDATE_SNAPSHOTS || process.env.U;
 const testFilter = (process.env.TEST_FILTER || process.env.T)?.toLowerCase();
 
@@ -34,11 +41,11 @@ const tests = [
 
   [
     "big.js@6.2.1.tgz",
-    `--definitely-typed ${new URL("../../../core/test/fixtures/@types__big.js@6.2.0.tgz", import.meta.url).pathname}`,
+    `--definitely-typed ${resolveFileRelativePath("../../../core/test/fixtures/@types__big.js@6.2.0.tgz")}`,
   ],
   [
     "react@18.2.0.tgz",
-    `--definitely-typed ${new URL("../../../core/test/fixtures/@types__react@18.2.21.tgz", import.meta.url).pathname}`,
+    `--definitely-typed ${resolveFileRelativePath("../../../core/test/fixtures/@types__react@18.2.21.tgz")}`,
   ],
 
   ["eslint-module-utils@2.8.1.tgz", "--entrypoints-legacy --ignore-rules=cjs-only-exports-default"],
@@ -69,7 +76,7 @@ describe("snapshots", async () => {
     }
 
     test(fixture, async () => {
-      const tarballPath = new URL(`../../../core/test/fixtures/${tarball}`, import.meta.url).pathname;
+      const tarballPath = resolveFileRelativePath(`../../../core/test/fixtures/${tarball}`);
       let stdout;
       let stderr = "";
       let exitCode = 0;
@@ -85,7 +92,7 @@ describe("snapshots", async () => {
       }
       const snapshotURL = new URL(`../snapshots/${fixture}.md`, import.meta.url);
       // prettier-ignore
-      const expectedSnapshot = [
+      const actualSnapshot = [
         `# ${fixture}`,
         "",
         "```",
@@ -99,19 +106,16 @@ describe("snapshots", async () => {
       ].join("\n");
 
       if (
-        await access(snapshotURL)
+        !updateSnapshots &&
+        (await access(snapshotURL)
           .then(() => true)
-          .catch(() => false)
+          .catch(() => false))
       ) {
         const snapshot = await readFile(snapshotURL, "utf8");
-        if (updateSnapshots) {
-          await writeFile(snapshotURL, expectedSnapshot);
-          snapshotsWritten.push(snapshotURL);
-        } else {
-          assert.strictEqual(snapshot, expectedSnapshot);
-        }
+        const expectedSnapshot = snapshot.replace(/\r\n/g, "\n");
+        assert.strictEqual(actualSnapshot, expectedSnapshot);
       } else {
-        await writeFile(snapshotURL, expectedSnapshot);
+        await writeFile(snapshotURL, actualSnapshot);
         snapshotsWritten.push(snapshotURL);
       }
     });
