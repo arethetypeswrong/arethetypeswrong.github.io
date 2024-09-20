@@ -10,11 +10,12 @@ import { readFile, stat, unlink } from "fs/promises";
 import { createRequire } from "module";
 import path from "path";
 import readline from "readline";
-import { problemFlags, resolutionKinds } from "./problemUtils.js";
+import { problemFlags } from "./problemUtils.js";
 import { readConfig } from "./readConfig.js";
 import * as render from "./render/index.js";
 import { major, minor } from "semver";
 import { getExitCode } from "./getExitCode.js";
+import { applyProfile, profiles } from "./profiles.js";
 
 const packageJson = createRequire(import.meta.url)("../package.json");
 const version = packageJson.version;
@@ -28,6 +29,8 @@ const formats = Object.keys({
 } satisfies Record<render.Format, any>) as render.Format[];
 
 interface Opts extends render.RenderOptions {
+  profile?: keyof typeof profiles;
+
   pack?: boolean;
   fromNpm?: boolean;
   definitelyTyped?: boolean | string;
@@ -81,9 +84,7 @@ particularly ESM-related module resolution issues.`,
     new Option("--ignore-rules <rules...>", "Specify rules to ignore").choices(Object.values(problemFlags)).default([]),
   )
   .addOption(
-    new Option("--ignore-resolutions <resolutions...>", "Specify resolutions to ignore")
-      .choices(Object.keys(resolutionKinds))
-      .default([]),
+    new Option("--profile <profile>", "Specify analysis profile").choices(Object.keys(profiles)).default("strict"),
   )
   .option("--summary, --no-summary", "Whether to print summary information about the different errors")
   .option("--emoji, --no-emoji", "Whether to use any emojis")
@@ -92,6 +93,10 @@ particularly ESM-related module resolution issues.`,
   .action(async (fileOrDirectory = ".") => {
     const opts = program.opts<Opts>();
     await readConfig(program, opts.configPath);
+
+    if (opts.profile) {
+      applyProfile(opts.profile, opts);
+    }
 
     if (opts.quiet) {
       console.log = () => {};

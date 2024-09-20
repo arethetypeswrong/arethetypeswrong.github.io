@@ -1,6 +1,7 @@
 import { Command } from "commander";
 import { readFile } from "fs/promises";
-import { problemFlags, resolutionKinds } from "./problemUtils.js";
+import { problemFlags } from "./problemUtils.js";
+import { profiles } from "./profiles.js";
 
 export async function readConfig(program: Command, alternate = ".attw.json") {
   try {
@@ -25,13 +26,12 @@ export async function readConfig(program: Command, alternate = ".attw.json") {
           );
       }
 
-      if (key === "ignoreResolutions") {
-        if (!Array.isArray(value)) program.error(`error: config option 'ignoreResolutions' should be an array.`);
-        const invalid = value.find((resolution) => !Object.keys(resolutionKinds).includes(resolution));
-        if (invalid)
+      if (key === "profile") {
+        if (typeof value !== "string") program.error(`error: config option 'profile' should be a string.`);
+        if (!(value in profiles))
           program.error(
-            `error: config option 'ignoreResolutions' argument '${invalid}' is invalid. Allowed choices are ${Object.keys(
-              resolutionKinds,
+            `error: config option 'profile' argument '${value}' is invalid. Allowed choices are ${Object.keys(
+              profiles,
             ).join(", ")}.`,
           );
       }

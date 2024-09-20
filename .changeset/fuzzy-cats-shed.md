@@ -2,4 +2,4 @@
 "@arethetypeswrong/core": minor
 ---
 
-Add --ignore-resolutions cli option. Example: --ignore-resolutions node10
+Add --profile cli option. Example: --profile node16
