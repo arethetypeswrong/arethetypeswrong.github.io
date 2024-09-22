@@ -58,22 +58,19 @@ describe("snapshots", async () => {
       }
 
       const snapshotURL = new URL(`../snapshots/${fixture}.json`, import.meta.url);
-      const expectedSnapshot = JSON.stringify(analysis, null, 2) + "\n";
+      const actualSnapshot = JSON.stringify(analysis, null, 2) + "\n";
 
       if (
-        await access(snapshotURL)
+        !updateSnapshots &&
+        (await access(snapshotURL)
           .then(() => true)
-          .catch(() => false)
+          .catch(() => false))
       ) {
         const snapshot = await readFile(snapshotURL, "utf8");
-        if (updateSnapshots) {
-          await writeFile(snapshotURL, expectedSnapshot);
-          snapshotsWritten.push(snapshotURL);
-        } else {
-          assert.strictEqual(snapshot, expectedSnapshot);
-        }
+        const expectedSnapshot = snapshot.replace(/\r\n/g, "\n");
+        assert.strictEqual(actualSnapshot, expectedSnapshot);
       } else {
-        await writeFile(snapshotURL, expectedSnapshot);
+        await writeFile(snapshotURL, actualSnapshot);
         snapshotsWritten.push(snapshotURL);
       }
     });
