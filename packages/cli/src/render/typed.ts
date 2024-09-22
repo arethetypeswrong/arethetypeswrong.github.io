@@ -1,5 +1,10 @@
 import * as core from "@arethetypeswrong/core";
-import { filterProblems, problemAffectsEntrypoint, problemKindInfo } from "@arethetypeswrong/core/problems";
+import {
+  filterProblems,
+  problemAffectsEntrypoint,
+  problemAffectsResolutionKind,
+  problemKindInfo,
+} from "@arethetypeswrong/core/problems";
 import { allResolutionKinds, getResolutionOption, groupProblemsByKind } from "@arethetypeswrong/core/utils";
 import chalk from "chalk";
 import Table, { type GenericTable, type HorizontalTableRow } from "cli-table3";
@@ -17,8 +22,10 @@ export async function typed(
   const problems = analysis.problems.filter(
     (problem) => !ignoreRules || !ignoreRules.includes(problemFlags[problem.kind]),
   );
-  const resolutions = allResolutionKinds.filter((kind) => !ignoreResolutions.includes(kind));
-  const grouped = groupProblemsByKind(problems);
+  // sort resolutions with required (impacts result) first and ignored after
+  const requiredResolutions = allResolutionKinds.filter((kind) => !ignoreResolutions.includes(kind));
+  const ignoredResolutions = allResolutionKinds.filter((kind) => ignoreResolutions.includes(kind));
+  const resolutions = requiredResolutions.concat(ignoredResolutions);
   const entrypoints = Object.keys(analysis.entrypoints);
   marked.setOptions({
     renderer: new TerminalRenderer(),
@@ -52,12 +59,18 @@ export async function typed(
 
   if (summary) {
     const defaultSummary = marked(!emoji ? " No problems found" : " No problems found 🌟");
-    const summaryTexts = Object.keys(grouped).map((kind) => {
+    const grouped = groupProblemsByKind(problems);
+    const summaryTexts = Object.entries(grouped).map(([kind, kindProblems]) => {
       const info = problemKindInfo[kind as core.ProblemKind];
+      const affectsRequiredResolution = kindProblems.some((p) =>
+        requiredResolutions.some((r) => problemAffectsResolutionKind(p, r, analysis)),
+      );
       const description = marked(
         `${info.description}${info.details ? ` Use \`-f json\` to see ${info.details}.` : ""} ${info.docsUrl}`,
       );
-      return `${emoji ? `${info.emoji} ` : ""}${description}`;
+      return `${affectsRequiredResolution ? "" : "(ignored per resolution) "}${
+        emoji ? `${info.emoji} ` : ""
+      }${description}`;
     });
 
     out(summaryTexts.join("") || defaultSummary);
@@ -73,6 +86,7 @@ export async function typed(
   });
 
   const getCellContents = memo((subpath: string, resolutionKind: core.ResolutionKind) => {
+    const ignoredPrefix = ignoreResolutions.includes(resolutionKind) ? "(ignored) " : "";
     const problemsForCell = groupProblemsByKind(
       filterProblems(problems, analysis, { entrypoint: subpath, resolutionKind }),
     );
@@ -81,7 +95,10 @@ export async function typed(
     const kinds = Object.keys(problemsForCell) as core.ProblemKind[];
     if (kinds.length) {
       return kinds
-        .map((kind) => (emoji ? `${problemKindInfo[kind].emoji} ` : "") + problemKindInfo[kind].shortDescription)
+        .map(
+          (kind) =>
+            ignoredPrefix + (emoji ? `${problemKindInfo[kind].emoji} ` : "") + problemKindInfo[kind].shortDescription,
+        )
         .join("\n");
     }
 
@@ -93,13 +110,18 @@ export async function typed(
           analysis.programInfo[getResolutionOption(resolutionKind)].moduleKinds?.[resolution?.fileName ?? ""]
             ?.detectedKind || ""
         ];
-    return resolution?.isJson ? jsonResult : moduleResult;
+    return ignoredPrefix + (resolution?.isJson ? jsonResult : moduleResult);
   });
 
   const flippedTable =
     format === "auto" || format === "table-flipped"
       ? new Table({
-          head: ["", ...resolutions.map((kind) => chalk.reset(resolutionKinds[kind]))],
+          head: [
+            "",
+            ...resolutions.map((kind) =>
+              chalk.reset(resolutionKinds[kind] + (ignoreResolutions.includes(kind) ? " (ignored)" : "")),
+            ),
+          ],
         })
       : undefined;
   if (flippedTable) {

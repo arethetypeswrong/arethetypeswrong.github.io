@@ -43,6 +43,18 @@ const tests = [
 
   ["eslint-module-utils@2.8.1.tgz", "--entrypoints-legacy --ignore-rules=cjs-only-exports-default"],
   ["@cerbos__core@0.18.1.tgz"],
+
+  // Profile test cases
+  // Some ignored failures and some not - exit code should be 1 per non-node10 failures
+  ["axios@1.4.0.tgz", "--profile node16"],
+  // Explicit strict profile - exit code 1 per node10 resolution
+  ["@fluid-experimental__presence@2.3.0.tgz", "--profile strict -f table"],
+  // Profile ignoring node10 resolution - exit code 0
+  ["@fluid-experimental__presence@2.3.0.tgz", "--profile node16 -f table-flipped"],
+  // Profile ignoring node10 and CJS resolution mixed with specific entrypoint - exit code 0
+  ["@fluid-experimental__presence@2.3.0.tgz", "--profile esm-only -f json --entrypoints ."],
+  // Profile ignoring node10 and bundler resolution - exit code 0
+  ["@fluid-experimental__presence@2.3.0.tgz", "--profile node16-only -f ascii"],
 ];
 
 const defaultOpts = "-f table-flipped";
