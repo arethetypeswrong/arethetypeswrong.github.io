@@ -154,6 +154,25 @@ attw --pack . --exclude-entrypoints styles.css # Auto-discovered entrypoints exc
 attw --pack . --entrypoints-legacy             # All published code files
 ```
 
+#### Profiles
+
+Profiles select a set of resolution modes to require/ignore. All are evaluated but failures outside of those required are ignored.
+
+The available profiles are:
+
+- `strict` - requires all resolutions
+- `node16` - ignores node10 resolution failures
+- `esm-only` - ignores CJS resolution failures
+- `node16-only` - requires exactly node16 resolutions
+
+In the CLI: `--profile`
+
+```shell
+attw <file-name> --profile <profile>
+```
+
+In the config file, `profile` can be a string value.
+
 #### Ignore Rules
 
 Specifies rules/problems to ignore (i.e. not raise an error for).
@@ -180,25 +199,6 @@ attw <file-name> --ignore-rules <rules...>
 ```
 
 In the config file, `ignoreRules` can be an array of strings.
-
-#### Ignore Resolutions
-
-Specifies resolution modes to ignore (i.e. do not evaluate).
-
-The available values are:
-
-- `node10`
-- `node16-cjs`
-- `node16-esm`
-- `bundler`
-
-In the CLI: `--ignore-resolutions`
-
-```shell
-attw <file-name> --ignore-resolutions <resolutions...>
-```
-
-In the config file, `ignoreResolutions` can be an array of strings.
 
 #### Summary/No Summary
 
