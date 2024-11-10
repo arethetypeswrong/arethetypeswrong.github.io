@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.17.0
+
+### Minor Changes
+
+- e7ac94c: Add --profile cli option. Example: --profile node16
+
 ## 0.16.4
 
 ### Patch Changes
