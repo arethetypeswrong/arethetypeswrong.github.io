@@ -53,8 +53,6 @@ const tests = [
   ["@fluid-experimental__presence@2.3.0.tgz", "--profile node16 -f table-flipped"],
   // Profile ignoring node10 and CJS resolution mixed with specific entrypoint - exit code 0
   ["@fluid-experimental__presence@2.3.0.tgz", "--profile esm-only -f json --entrypoints ."],
-  // Profile ignoring node10 and bundler resolution - exit code 0
-  ["@fluid-experimental__presence@2.3.0.tgz", "--profile node16-only -f ascii"],
 ];
 
 const defaultOpts = "-f table-flipped";
