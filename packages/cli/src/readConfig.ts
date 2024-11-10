@@ -1,6 +1,7 @@
 import { Command } from "commander";
 import { readFile } from "fs/promises";
 import { problemFlags } from "./problemUtils.js";
+import { profiles } from "./profiles.js";
 
 export async function readConfig(program: Command, alternate = ".attw.json") {
   try {
@@ -21,6 +22,16 @@ export async function readConfig(program: Command, alternate = ".attw.json") {
           program.error(
             `error: config option 'ignoreRules' argument '${invalid}' is invalid. Allowed choices are ${Object.values(
               problemFlags,
+            ).join(", ")}.`,
+          );
+      }
+
+      if (key === "profile") {
+        if (typeof value !== "string") program.error(`error: config option 'profile' should be a string.`);
+        if (!(value in profiles))
+          program.error(
+            `error: config option 'profile' argument '${value}' is invalid. Allowed choices are ${Object.keys(
+              profiles,
             ).join(", ")}.`,
           );
       }
