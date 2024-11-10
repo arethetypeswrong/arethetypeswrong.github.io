@@ -163,7 +163,6 @@ The available profiles are:
 - `strict` - requires all resolutions
 - `node16` - ignores node10 resolution failures
 - `esm-only` - ignores CJS resolution failures
-- `node16-only` - requires exactly node16 resolutions
 
 In the CLI: `--profile`
 

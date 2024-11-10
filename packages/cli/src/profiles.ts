@@ -12,9 +12,6 @@ export const profiles = {
   "esm-only": {
     ignoreResolutions: ["node10", "node16-cjs"],
   },
-  "node16-only": {
-    ignoreResolutions: ["node10", "bundler"],
-  },
 } satisfies Record<string, Profile>;
 
 /**
