@@ -16,6 +16,7 @@ import * as render from "./render/index.js";
 import { major, minor } from "semver";
 import { getExitCode } from "./getExitCode.js";
 import { applyProfile, profiles } from "./profiles.js";
+import { write } from "./write.js";
 
 const packageJson = createRequire(import.meta.url)("../package.json");
 const version = packageJson.version;
@@ -223,7 +224,7 @@ particularly ESM-related module resolution issues.`,
         result.problems = groupProblemsByKind(analysis.problems);
       }
 
-      console.log(JSON.stringify(result, undefined, 2));
+      await write(JSON.stringify(result, undefined, 2) + "\n");
 
       if (deleteTgz) {
         await unlink(deleteTgz);
