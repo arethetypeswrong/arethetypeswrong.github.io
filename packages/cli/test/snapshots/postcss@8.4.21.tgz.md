@@ -6,7 +6,7 @@ $ attw postcss@8.4.21.tgz -f table-flipped
 
 postcss v8.4.21
 
-❓ The JavaScript appears to set both module.exports and module.exports.default for improved compatibility, but the types only reflect the latter (by using export default). This will cause TypeScript under the node16 module mode to think an extra .default property access is required, which will work at runtime but is not necessary. These types export = an object with a default property instead of using export default. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/MissingExportEquals.md
+❓ The JavaScript appears to set both module.exports and module.exports.default for improved compatibility, but the types only reflect the latter (by using export default). This will cause TypeScript under the node16 module mode to think an extra .default property access is required, which will work at runtime but is not necessary. These types should export = an object with a default property instead of using export default. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/MissingExportEquals.md
 
 🐛 Import resolved to types through a conditional package.json export, but only after failing to resolve through an earlier condition. This behavior is a TypeScript bug (https://github.com/microsoft/TypeScript/issues/50762). It may misrepresent the runtime behavior of this import and should not be relied upon. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FallbackCondition.md
 
