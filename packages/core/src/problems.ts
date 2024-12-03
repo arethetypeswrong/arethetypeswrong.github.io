@@ -90,7 +90,7 @@ export const problemKindInfo: Record<ProblemKind, ProblemKindInfo> = {
     title: "Types are missing an `export =`",
     shortDescription: "Missing `export =`",
     description:
-      "The JavaScript appears to set both `module.exports` and `module.exports.default` for improved compatibility, but the types only reflect the latter (by using `export default`). This will cause TypeScript under the `node16` module mode to think an extra `.default` property access is required, which will work at runtime but is not necessary. These types `export =` an object with a `default` property instead of using `export default`.",
+      "The JavaScript appears to set both `module.exports` and `module.exports.default` for improved compatibility, but the types only reflect the latter (by using `export default`). This will cause TypeScript under the `node16` module mode to think an extra `.default` property access is required, which will work at runtime but is not necessary. These types should `export =` an object with a `default` property instead of using `export default`.",
     docsUrl:
       "https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/MissingExportEquals.md",
   },
