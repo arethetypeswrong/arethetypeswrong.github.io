@@ -10,7 +10,10 @@ export function getExitCode(analysis: CheckResult, opts?: RenderOptions): number
   const ignoreResolutions = opts?.ignoreResolutions ?? [];
   return analysis.problems.some((problem) => {
     const notRuleIgnored = !ignoreRules.includes(problemFlags[problem.kind]);
-    const notResolutionIgnored = "resolutionKind" in problem ? !ignoreResolutions.includes(problem.resolutionKind) : true;
+    const notResolutionIgnored =
+      "resolutionKind" in problem ? !ignoreResolutions.includes(problem.resolutionKind) : true;
     return notRuleIgnored && notResolutionIgnored;
-  }) ? 1 : 0;
+  })
+    ? 1
+    : 0;
 }
