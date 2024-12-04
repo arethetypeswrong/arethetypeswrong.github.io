@@ -108,7 +108,7 @@ describe("exportDefaultDisagreement", () => {
                 parentPath.replaceWith(t.numericLiteral(newValue));
               } else {
                 const line = parentPath.node.loc.start.line;
-        
+
                 throw new _babelPluginMacros.MacroError();
               }
             }
@@ -119,7 +119,7 @@ describe("exportDefaultDisagreement", () => {
     );
   });
 
-  test("lone deafult export is primitive", () => {
+  test("lone default export is primitive", () => {
     assert(
       isOk(
         `declare const _default: string;
@@ -214,7 +214,7 @@ var index_default = { a, b };`,
     );
   });
 
-  test("ignores unalayzable iife", () => {
+  test("ignores unanalyzable iife", () => {
     assert(
       isOk(
         `export default function foo(): void`,

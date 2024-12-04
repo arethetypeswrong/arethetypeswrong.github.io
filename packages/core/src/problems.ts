@@ -60,7 +60,7 @@ export const problemKindInfo: Record<ProblemKind, ProblemKindInfo> = {
   },
   FallbackCondition: {
     emoji: "🐛",
-    title: "Resloved through fallback condition",
+    title: "Resolved through fallback condition",
     shortDescription: "Used fallback condition",
     description:
       "Import resolved to types through a conditional package.json export, but only after failing to resolve through an earlier condition. This behavior is a [TypeScript bug](https://github.com/microsoft/TypeScript/issues/50762). It may misrepresent the runtime behavior of this import and should not be relied upon.",
