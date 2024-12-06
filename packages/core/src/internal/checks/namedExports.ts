@@ -38,11 +38,22 @@ export default defineCheck({
     }
 
     const typeChecker = host.createAuxiliaryProgram([typesFileName]).getTypeChecker();
-    const expectedNames = typeChecker
-      .getExportsAndPropertiesOfModule(typesSourceFile.symbol)
-      // @ts-expect-error `getSymbolFlags` extra arguments are not declared on TypeChecker
-      .filter((symbol) => typeChecker.getSymbolFlags(symbol, /*excludeTypeOnlyMeanings*/ true) & ts.SymbolFlags.Value)
-      .map((symbol) => symbol.name);
+    const expectedNames = Array.from(
+      new Set(
+        typeChecker
+          .getExportsAndPropertiesOfModule(typesSourceFile.symbol)
+          .filter((symbol) => {
+            return (
+              // TS treats `prototype` and other static class members as exports. There's possibly
+              // a fix to be done in TS itself, since these show up as auto-imports.
+              symbol.name !== "prototype" &&
+              // @ts-expect-error `getSymbolFlags` extra arguments are not declared on TypeChecker
+              typeChecker.getSymbolFlags(symbol, /*excludeTypeOnlyMeanings*/ true) & ts.SymbolFlags.Value
+            );
+          })
+          .map((symbol) => symbol.name),
+      ),
+    );
 
     // Get actual exported names as seen by nodejs
     let exports: readonly string[] | undefined;
@@ -51,20 +62,19 @@ export default defineCheck({
     } catch {
       // If this fails then the result is indeterminate. This could happen in many cases, but
       // a common one would be for packages which re-export from another another package.
+      return;
     }
 
-    if (exports) {
-      const missing = expectedNames.filter((name) => !exports.includes(name));
-      if (missing.length > 0) {
-        const lengthWithoutDefault = (names: readonly string[]) => names.length - (names.includes("default") ? 1 : 0);
-        return {
-          kind: "NamedExports",
-          implementationFileName,
-          typesFileName,
-          isMissingAllNamed: lengthWithoutDefault(missing) === lengthWithoutDefault(expectedNames),
-          missing,
-        };
-      }
+    const missing = expectedNames.filter((name) => !exports.includes(name));
+    if (missing.length > 0) {
+      const lengthWithoutDefault = (names: readonly string[]) => names.length - (names.includes("default") ? 1 : 0);
+      return {
+        kind: "NamedExports",
+        implementationFileName,
+        typesFileName,
+        isMissingAllNamed: lengthWithoutDefault(missing) === lengthWithoutDefault(expectedNames),
+        missing,
+      };
     }
   },
 });
