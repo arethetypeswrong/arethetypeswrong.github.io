@@ -1,0 +1,373 @@
+{
+  "packageName": "docxtemplater",
+  "packageVersion": "3.53.0",
+  "types": {
+    "kind": "included"
+  },
+  "buildTools": {
+    "@arethetypeswrong/cli": "^0.15.4",
+    "webpack": "^5.96.1"
+  },
+  "entrypoints": {
+    ".": {
+      "subpath": ".",
+      "resolutions": {
+        "node10": {
+          "name": ".",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/docxtemplater/js/docxtemplater.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'docxtemplater' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'docxtemplater' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/docxtemplater/package.json'.",
+              "File '/node_modules/docxtemplater.ts' does not exist.",
+              "File '/node_modules/docxtemplater.tsx' does not exist.",
+              "File '/node_modules/docxtemplater.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field './js/docxtemplater.d.ts' that references '/node_modules/docxtemplater/js/docxtemplater.d.ts'.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.d.ts' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
+              "======== Module name 'docxtemplater' was successfully resolved to '/node_modules/docxtemplater/js/docxtemplater.d.ts' with Package ID 'docxtemplater/js/docxtemplater.d.ts@3.53.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/docxtemplater/js/docxtemplater.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'docxtemplater' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'docxtemplater' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/docxtemplater/package.json'.",
+              "File '/node_modules/docxtemplater.ts' does not exist.",
+              "File '/node_modules/docxtemplater.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'js/docxtemplater.js' that references '/node_modules/docxtemplater/js/docxtemplater.js'.",
+              "File name '/node_modules/docxtemplater/js/docxtemplater.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.ts' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.tsx' does not exist.",
+              "Loading module as file / folder, candidate module location '/node_modules/docxtemplater/js/docxtemplater.js', target file types: TypeScript.",
+              "File name '/node_modules/docxtemplater/js/docxtemplater.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.ts' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.tsx' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.js.ts' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.js.tsx' does not exist.",
+              "Directory '/node_modules/docxtemplater/js/docxtemplater.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/docxtemplater/index.ts' does not exist.",
+              "File '/node_modules/docxtemplater/index.tsx' does not exist.",
+              "Loading module 'docxtemplater' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/docxtemplater/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/docxtemplater.js' does not exist.",
+              "File '/node_modules/docxtemplater.jsx' does not exist.",
+              "'package.json' has 'main' field 'js/docxtemplater.js' that references '/node_modules/docxtemplater/js/docxtemplater.js'.",
+              "File name '/node_modules/docxtemplater/js/docxtemplater.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.js' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
+              "Resolution of non-relative name failed; trying with '--moduleResolution bundler' to see if project may need configuration update.",
+              "Loading module 'docxtemplater' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/docxtemplater/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/docxtemplater.ts' does not exist.",
+              "File '/node_modules/docxtemplater.tsx' does not exist.",
+              "'package.json' has 'main' field 'js/docxtemplater.js' that references '/node_modules/docxtemplater/js/docxtemplater.js'.",
+              "File name '/node_modules/docxtemplater/js/docxtemplater.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.ts' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.tsx' does not exist.",
+              "Loading module as file / folder, candidate module location '/node_modules/docxtemplater/js/docxtemplater.js', target file types: TypeScript.",
+              "File name '/node_modules/docxtemplater/js/docxtemplater.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.ts' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.tsx' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.js.ts' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.js.tsx' does not exist.",
+              "Directory '/node_modules/docxtemplater/js/docxtemplater.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/docxtemplater/index.ts' does not exist.",
+              "File '/node_modules/docxtemplater/index.tsx' does not exist.",
+              "======== Module name 'docxtemplater' was successfully resolved to '/node_modules/docxtemplater/js/docxtemplater.js' with Package ID 'docxtemplater/js/docxtemplater.js@3.53.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/docxtemplater/js/docxtemplater.d.ts"
+          ],
+          "visibleProblems": []
+        },
+        "node16-cjs": {
+          "name": ".",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/docxtemplater/js/docxtemplater.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'docxtemplater' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'docxtemplater' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/docxtemplater/package.json'.",
+              "File '/node_modules/docxtemplater.ts' does not exist.",
+              "File '/node_modules/docxtemplater.tsx' does not exist.",
+              "File '/node_modules/docxtemplater.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field './js/docxtemplater.d.ts' that references '/node_modules/docxtemplater/js/docxtemplater.d.ts'.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.d.ts' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
+              "======== Module name 'docxtemplater' was successfully resolved to '/node_modules/docxtemplater/js/docxtemplater.d.ts' with Package ID 'docxtemplater/js/docxtemplater.d.ts@3.53.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/docxtemplater/js/docxtemplater.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'docxtemplater' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'docxtemplater' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/docxtemplater/package.json'.",
+              "File '/node_modules/docxtemplater.ts' does not exist.",
+              "File '/node_modules/docxtemplater.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'js/docxtemplater.js' that references '/node_modules/docxtemplater/js/docxtemplater.js'.",
+              "File name '/node_modules/docxtemplater/js/docxtemplater.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.ts' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.tsx' does not exist.",
+              "Loading module as file / folder, candidate module location '/node_modules/docxtemplater/js/docxtemplater.js', target file types: TypeScript.",
+              "File name '/node_modules/docxtemplater/js/docxtemplater.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.ts' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.tsx' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.js.ts' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.js.tsx' does not exist.",
+              "Directory '/node_modules/docxtemplater/js/docxtemplater.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/docxtemplater/index.ts' does not exist.",
+              "File '/node_modules/docxtemplater/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/docxtemplater/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/docxtemplater.js' does not exist.",
+              "File '/node_modules/docxtemplater.jsx' does not exist.",
+              "'package.json' has 'main' field 'js/docxtemplater.js' that references '/node_modules/docxtemplater/js/docxtemplater.js'.",
+              "File name '/node_modules/docxtemplater/js/docxtemplater.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.js' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
+              "======== Module name 'docxtemplater' was successfully resolved to '/node_modules/docxtemplater/js/docxtemplater.js' with Package ID 'docxtemplater/js/docxtemplater.js@3.53.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/docxtemplater/js/docxtemplater.d.ts"
+          ],
+          "visibleProblems": []
+        },
+        "node16-esm": {
+          "name": ".",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/docxtemplater/js/docxtemplater.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'docxtemplater' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'docxtemplater' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/docxtemplater/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field './js/docxtemplater.d.ts' that references '/node_modules/docxtemplater/js/docxtemplater.d.ts'.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'docxtemplater' was successfully resolved to '/node_modules/docxtemplater/js/docxtemplater.d.ts' with Package ID 'docxtemplater/js/docxtemplater.d.ts@3.53.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/docxtemplater/js/docxtemplater.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'docxtemplater' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'docxtemplater' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/docxtemplater/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'js/docxtemplater.js' that references '/node_modules/docxtemplater/js/docxtemplater.js'.",
+              "File name '/node_modules/docxtemplater/js/docxtemplater.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.ts' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.tsx' does not exist.",
+              "Loading module as file / folder, candidate module location '/node_modules/docxtemplater/js/docxtemplater.js', target file types: TypeScript.",
+              "File name '/node_modules/docxtemplater/js/docxtemplater.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.ts' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.tsx' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.js.ts' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.js.tsx' does not exist.",
+              "Directory '/node_modules/docxtemplater/js/docxtemplater.js' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/docxtemplater/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/docxtemplater/index.ts' does not exist.",
+              "File '/node_modules/docxtemplater/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/docxtemplater/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'js/docxtemplater.js' that references '/node_modules/docxtemplater/js/docxtemplater.js'.",
+              "File name '/node_modules/docxtemplater/js/docxtemplater.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'docxtemplater' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/docxtemplater/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'js/docxtemplater.js' that references '/node_modules/docxtemplater/js/docxtemplater.js'.",
+              "File name '/node_modules/docxtemplater/js/docxtemplater.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.ts' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.tsx' does not exist.",
+              "Loading module as file / folder, candidate module location '/node_modules/docxtemplater/js/docxtemplater.js', target file types: TypeScript.",
+              "File name '/node_modules/docxtemplater/js/docxtemplater.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.ts' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.tsx' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.js.ts' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.js.tsx' does not exist.",
+              "Directory '/node_modules/docxtemplater/js/docxtemplater.js' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/docxtemplater/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/docxtemplater/index.ts' does not exist.",
+              "File '/node_modules/docxtemplater/index.tsx' does not exist.",
+              "======== Module name 'docxtemplater' was successfully resolved to '/node_modules/docxtemplater/js/docxtemplater.js' with Package ID 'docxtemplater/js/docxtemplater.js@3.53.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/docxtemplater/js/docxtemplater.d.ts"
+          ],
+          "visibleProblems": []
+        },
+        "bundler": {
+          "name": ".",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/docxtemplater/js/docxtemplater.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'docxtemplater' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'docxtemplater' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/docxtemplater/package.json'.",
+              "File '/node_modules/docxtemplater.ts' does not exist.",
+              "File '/node_modules/docxtemplater.tsx' does not exist.",
+              "File '/node_modules/docxtemplater.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field './js/docxtemplater.d.ts' that references '/node_modules/docxtemplater/js/docxtemplater.d.ts'.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.d.ts' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
+              "======== Module name 'docxtemplater' was successfully resolved to '/node_modules/docxtemplater/js/docxtemplater.d.ts' with Package ID 'docxtemplater/js/docxtemplater.d.ts@3.53.0'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/docxtemplater/js/docxtemplater.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'docxtemplater' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'docxtemplater' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/docxtemplater/package.json'.",
+              "File '/node_modules/docxtemplater.ts' does not exist.",
+              "File '/node_modules/docxtemplater.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'js/docxtemplater.js' that references '/node_modules/docxtemplater/js/docxtemplater.js'.",
+              "File name '/node_modules/docxtemplater/js/docxtemplater.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.ts' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.tsx' does not exist.",
+              "Loading module as file / folder, candidate module location '/node_modules/docxtemplater/js/docxtemplater.js', target file types: TypeScript.",
+              "File name '/node_modules/docxtemplater/js/docxtemplater.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.ts' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.tsx' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.js.ts' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.js.tsx' does not exist.",
+              "Directory '/node_modules/docxtemplater/js/docxtemplater.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/docxtemplater/index.ts' does not exist.",
+              "File '/node_modules/docxtemplater/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/docxtemplater/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/docxtemplater.js' does not exist.",
+              "File '/node_modules/docxtemplater.jsx' does not exist.",
+              "'package.json' has 'main' field 'js/docxtemplater.js' that references '/node_modules/docxtemplater/js/docxtemplater.js'.",
+              "File name '/node_modules/docxtemplater/js/docxtemplater.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.js' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'docxtemplater' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/docxtemplater/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/docxtemplater.ts' does not exist.",
+              "File '/node_modules/docxtemplater.tsx' does not exist.",
+              "'package.json' has 'main' field 'js/docxtemplater.js' that references '/node_modules/docxtemplater/js/docxtemplater.js'.",
+              "File name '/node_modules/docxtemplater/js/docxtemplater.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.ts' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.tsx' does not exist.",
+              "Loading module as file / folder, candidate module location '/node_modules/docxtemplater/js/docxtemplater.js', target file types: TypeScript.",
+              "File name '/node_modules/docxtemplater/js/docxtemplater.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.ts' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.tsx' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.js.ts' does not exist.",
+              "File '/node_modules/docxtemplater/js/docxtemplater.js.tsx' does not exist.",
+              "Directory '/node_modules/docxtemplater/js/docxtemplater.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/docxtemplater/index.ts' does not exist.",
+              "File '/node_modules/docxtemplater/index.tsx' does not exist.",
+              "======== Module name 'docxtemplater' was successfully resolved to '/node_modules/docxtemplater/js/docxtemplater.js' with Package ID 'docxtemplater/js/docxtemplater.js@3.53.0'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/docxtemplater/js/docxtemplater.d.ts"
+          ],
+          "visibleProblems": []
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    }
+  },
+  "programInfo": {
+    "node10": {},
+    "node16": {
+      "moduleKinds": {
+        "/node_modules/typescript/lib/lib.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/typescript/lib/lib.d.ts"
+        },
+        "/node_modules/docxtemplater/js/docxtemplater.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/docxtemplater/package.json"
+        },
+        "/node_modules/docxtemplater/js/docxtemplater.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/docxtemplater/package.json"
+        }
+      }
+    },
+    "bundler": {}
+  },
+  "problems": []
+}
