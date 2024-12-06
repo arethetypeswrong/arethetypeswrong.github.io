@@ -17,6 +17,7 @@ import { major, minor } from "semver";
 import { getExitCode } from "./getExitCode.js";
 import { applyProfile, profiles } from "./profiles.js";
 import { write } from "./write.js";
+import { Writable } from "stream";
 
 const packageJson = createRequire(import.meta.url)("../package.json");
 const version = packageJson.version;
@@ -99,8 +100,13 @@ particularly ESM-related module resolution issues.`,
       applyProfile(opts.profile, opts);
     }
 
+    let out: Writable = process.stdout;
     if (opts.quiet) {
-      console.log = () => {};
+      out = new (class extends Writable {
+        _write(_chunk: any, _encoding: BufferEncoding, callback: (error?: Error | null) => void) {
+          callback();
+        }
+      })();
     }
 
     if (!opts.color) {
@@ -224,7 +230,7 @@ particularly ESM-related module resolution issues.`,
         result.problems = groupProblemsByKind(analysis.problems);
       }
 
-      await write(JSON.stringify(result, undefined, 2) + "\n");
+      await write(JSON.stringify(result, undefined, 2), out);
 
       if (deleteTgz) {
         await unlink(deleteTgz);
@@ -238,12 +244,12 @@ particularly ESM-related module resolution issues.`,
       return;
     }
 
-    console.log();
+    await write("", out);
     if (analysis.types) {
-      console.log(await render.typed(analysis, opts));
+      await write(await render.typed(analysis, opts), out);
       process.exitCode = getExitCode(analysis, opts);
     } else {
-      console.log(render.untyped(analysis as core.UntypedResult));
+      await write(render.untyped(analysis as core.UntypedResult), out);
     }
 
     if (deleteTgz) {

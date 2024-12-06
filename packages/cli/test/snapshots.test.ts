@@ -1,5 +1,5 @@
+import { execFileSync, type SpawnSyncReturns } from "child_process";
 import { access, readFile, writeFile } from "fs/promises";
-import { execSync, type SpawnSyncReturns } from "child_process";
 import assert from "node:assert";
 import path from "node:path";
 import { after, describe, test } from "node:test";
@@ -10,7 +10,7 @@ function resolveFileRelativePath(relPath: string) {
   return path.resolve(directoryPath, relPath);
 }
 
-const attw = `node ${resolveFileRelativePath("../../dist/index.js")}`;
+const attw = resolveFileRelativePath("../../dist/index.js");
 const updateSnapshots = process.env.UPDATE_SNAPSHOTS || process.env.U;
 const testFilter = (process.env.TEST_FILTER || process.env.T)?.toLowerCase();
 
@@ -91,7 +91,8 @@ describe("snapshots", async () => {
       let stderr = "";
       let exitCode = 0;
       try {
-        stdout = execSync(`${attw} ${tarballPath} ${options ?? defaultOpts}`, {
+        stdout = execFileSync(process.execPath, [attw, tarballPath, ...(options ?? defaultOpts).split(" ")], {
+          maxBuffer: 1024 * 1024 * 1024,
           encoding: "utf8",
           env: { ...process.env, FORCE_COLOR: "0" },
         });
