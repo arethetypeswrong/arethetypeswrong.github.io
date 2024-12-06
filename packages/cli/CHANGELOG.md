@@ -1,5 +1,18 @@
 # @arethetypeswrong/cli
 
+## 0.17.1
+
+### Patch Changes
+
+- 1bfc877: Fix typo in MissingExportEquals message
+- db6464d: Fix minor typos
+- 55544ac: Fix truncated stdout when piping more than 64kb to another process
+- Updated dependencies [5f96cdc]
+- Updated dependencies [def786e]
+- Updated dependencies [1bfc877]
+- Updated dependencies [db6464d]
+  - @arethetypeswrong/core@0.17.1
+
 ## 0.17.0
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @arethetypeswrong/core
 
+## 0.17.1
+
+### Patch Changes
+
+- 5f96cdc: Filter `prototype` from expected named exports
+- def786e: Fix named exports check crash when resolution is JS-only
+- 1bfc877: Fix typo in MissingExportEquals message
+- db6464d: Fix minor typos
+
 ## 0.17.0
 
 ### Minor Changes
