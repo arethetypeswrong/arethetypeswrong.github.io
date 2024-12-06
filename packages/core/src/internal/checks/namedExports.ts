@@ -7,7 +7,7 @@ export default defineCheck({
   name: "NamedExports",
   dependencies: ({ entrypoints, subpath, resolutionKind, programInfo }) => {
     const entrypoint = entrypoints[subpath].resolutions[resolutionKind];
-    const typesFileName = entrypoint.resolution?.fileName;
+    const typesFileName = entrypoint.resolution?.isTypeScript && entrypoint.resolution.fileName;
     const resolutionOption = getResolutionOption(resolutionKind);
     const typesModuleKind = typesFileName ? programInfo[resolutionOption].moduleKinds?.[typesFileName] : undefined;
     const implementationFileName = entrypoint.implementationResolution?.fileName;
