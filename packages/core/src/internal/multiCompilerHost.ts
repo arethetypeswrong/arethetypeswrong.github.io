@@ -204,7 +204,7 @@ export class CompilerHostWrapper {
         { ...this.compilerOptions, ...extraOptions },
       )
     ) {
-      throw new Error("Cannot override resolution-affecting options for host due to potential cache polution");
+      throw new Error("Cannot override resolution-affecting options for host due to potential cache pollution");
     }
     const options = extraOptions ? { ...this.compilerOptions, ...extraOptions } : this.compilerOptions;
     return this.getProgram(rootNames, options);

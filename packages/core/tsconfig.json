@@ -10,7 +10,7 @@
     "module": "nodenext",
     "outDir": "dist",
     "rootDir": "src",
-    "types": ["ts-expose-internals"],
+    "types": ["ts-expose-internals"]
   },
   "include": ["src"]
 }

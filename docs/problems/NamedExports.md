@@ -49,7 +49,7 @@ module.exports = {
 import { a } from "./api.cjs";
 ```
 
-However, TypeScript has no way of knowing, and no way of indicating in a declaration file, whether CommonJS exports are written in a way that will be statically analyzable. It assumes they _will_ be, and so even a completely correct declaration file for `api.cjs` will indicate that `a` can be imported by name. Since there’s no way to make the types more restrictive without making them incomplete, and since the unalyzable export is an inconvenience for all consumers of the JavaScript, the only solution is to fix the JavaScript. If the JavaScript exports can’t be restructured, it’s possible to “hint” the exports to cjs-module-lexer with an assignment that never executes:
+However, TypeScript has no way of knowing, and no way of indicating in a declaration file, whether CommonJS exports are written in a way that will be statically analyzable. It assumes they _will_ be, and so even a completely correct declaration file for `api.cjs` will indicate that `a` can be imported by name. Since there’s no way to make the types more restrictive without making them incomplete, and since the unanalyzable export is an inconvenience for all consumers of the JavaScript, the only solution is to fix the JavaScript. If the JavaScript exports can’t be restructured, it’s possible to “hint” the exports to cjs-module-lexer with an assignment that never executes:
 
 ```js
 module.exports = {

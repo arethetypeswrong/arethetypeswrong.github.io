@@ -149,7 +149,7 @@ In the config file, `format` can be a string value.
 
 ```shell
 attw --pack . --entrypoints . one two three    # Just ".", "./one", "./two", "./three"
-attw --pack . --include-entrypoints added      # Auto-discovered entyrpoints plus "./added"
+attw --pack . --include-entrypoints added      # Auto-discovered entrypoints plus "./added"
 attw --pack . --exclude-entrypoints styles.css # Auto-discovered entrypoints except "./styles.css"
 attw --pack . --entrypoints-legacy             # All published code files
 ```
