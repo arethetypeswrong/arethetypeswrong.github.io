@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.17.2
+
+### Patch Changes
+
+- 59940cd: Exclude array/tuple properties from expected named exports
+
 ## 0.17.1
 
 ### Patch Changes
