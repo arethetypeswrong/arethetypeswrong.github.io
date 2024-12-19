@@ -1,0 +1,909 @@
+{
+  "packageName": "available-regexp-flags",
+  "packageVersion": "1.0.4",
+  "types": {
+    "kind": "included"
+  },
+  "buildTools": {
+    "typescript": "next"
+  },
+  "entrypoints": {
+    ".": {
+      "subpath": ".",
+      "resolutions": {
+        "node10": {
+          "name": ".",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/available-regexp-flags/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'available-regexp-flags' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/available-regexp-flags/package.json'.",
+              "File '/node_modules/available-regexp-flags.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags.tsx' does not exist.",
+              "File '/node_modules/available-regexp-flags.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field './index.d.ts' that references '/node_modules/available-regexp-flags/index.d.ts'.",
+              "File '/node_modules/available-regexp-flags/index.d.ts' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
+              "======== Module name 'available-regexp-flags' was successfully resolved to '/node_modules/available-regexp-flags/index.d.ts' with Package ID 'available-regexp-flags/index.d.ts@1.0.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/available-regexp-flags/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'available-regexp-flags' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/available-regexp-flags/package.json'.",
+              "File '/node_modules/available-regexp-flags.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/available-regexp-flags/index.js'.",
+              "File name '/node_modules/available-regexp-flags/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/index.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.tsx' does not exist.",
+              "Loading module as file / folder, candidate module location '/node_modules/available-regexp-flags/index.js', target file types: TypeScript.",
+              "File name '/node_modules/available-regexp-flags/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/index.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.tsx' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.js.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.js.tsx' does not exist.",
+              "Directory '/node_modules/available-regexp-flags/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/available-regexp-flags/index.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.tsx' does not exist.",
+              "Loading module 'available-regexp-flags' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/available-regexp-flags.js' does not exist.",
+              "File '/node_modules/available-regexp-flags.jsx' does not exist.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/available-regexp-flags/index.js'.",
+              "File name '/node_modules/available-regexp-flags/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/index.js' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
+              "Resolution of non-relative name failed; trying with '--moduleResolution bundler' to see if project may need configuration update.",
+              "Loading module 'available-regexp-flags' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/available-regexp-flags/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/index.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.tsx' does not exist.",
+              "======== Module name 'available-regexp-flags' was successfully resolved to '/node_modules/available-regexp-flags/index.js' with Package ID 'available-regexp-flags/index.js@1.0.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/available-regexp-flags/index.d.ts"
+          ],
+          "visibleProblems": []
+        },
+        "node16-cjs": {
+          "name": ".",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/available-regexp-flags/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'available-regexp-flags' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/available-regexp-flags/package.json'.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/available-regexp-flags/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/index.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.tsx' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.d.ts' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
+              "======== Module name 'available-regexp-flags' was successfully resolved to '/node_modules/available-regexp-flags/index.d.ts' with Package ID 'available-regexp-flags/index.d.ts@1.0.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/available-regexp-flags/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'available-regexp-flags' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/available-regexp-flags/package.json'.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/available-regexp-flags/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/index.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/available-regexp-flags/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/index.js' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
+              "======== Module name 'available-regexp-flags' was successfully resolved to '/node_modules/available-regexp-flags/index.js' with Package ID 'available-regexp-flags/index.js@1.0.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/available-regexp-flags/index.d.ts"
+          ],
+          "visibleProblems": []
+        },
+        "node16-esm": {
+          "name": ".",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/available-regexp-flags/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'available-regexp-flags' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/available-regexp-flags/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/index.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.tsx' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'available-regexp-flags' was successfully resolved to '/node_modules/available-regexp-flags/index.d.ts' with Package ID 'available-regexp-flags/index.d.ts@1.0.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/available-regexp-flags/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'available-regexp-flags' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/available-regexp-flags/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/index.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/available-regexp-flags/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/index.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'available-regexp-flags' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/available-regexp-flags/index.js'.",
+              "File name '/node_modules/available-regexp-flags/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/index.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.tsx' does not exist.",
+              "Loading module as file / folder, candidate module location '/node_modules/available-regexp-flags/index.js', target file types: TypeScript.",
+              "File name '/node_modules/available-regexp-flags/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/index.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.tsx' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.js.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.js.tsx' does not exist.",
+              "Directory '/node_modules/available-regexp-flags/index.js' does not exist, skipping all lookups in it.",
+              "======== Module name 'available-regexp-flags' was successfully resolved to '/node_modules/available-regexp-flags/index.js' with Package ID 'available-regexp-flags/index.js@1.0.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/available-regexp-flags/index.d.ts"
+          ],
+          "visibleProblems": []
+        },
+        "bundler": {
+          "name": ".",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/available-regexp-flags/index.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'available-regexp-flags' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/available-regexp-flags/package.json'.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/available-regexp-flags/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/index.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.tsx' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.d.ts' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
+              "======== Module name 'available-regexp-flags' was successfully resolved to '/node_modules/available-regexp-flags/index.d.ts' with Package ID 'available-regexp-flags/index.d.ts@1.0.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/available-regexp-flags/index.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist.",
+              "Loading module 'available-regexp-flags' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/available-regexp-flags/package.json'.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/available-regexp-flags/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/index.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath '.' with target './index.js'.",
+              "File name '/node_modules/available-regexp-flags/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/index.js' exists - use it as a name resolution result.",
+              "'package.json' does not have a 'peerDependencies' field.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'available-regexp-flags' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/available-regexp-flags.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/available-regexp-flags/index.js'.",
+              "File name '/node_modules/available-regexp-flags/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/index.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.tsx' does not exist.",
+              "Loading module as file / folder, candidate module location '/node_modules/available-regexp-flags/index.js', target file types: TypeScript.",
+              "File name '/node_modules/available-regexp-flags/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/index.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.tsx' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.js.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.js.tsx' does not exist.",
+              "Directory '/node_modules/available-regexp-flags/index.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/available-regexp-flags/index.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/index.tsx' does not exist.",
+              "======== Module name 'available-regexp-flags' was successfully resolved to '/node_modules/available-regexp-flags/index.js' with Package ID 'available-regexp-flags/index.js@1.0.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/available-regexp-flags/index.d.ts"
+          ],
+          "visibleProblems": []
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    },
+    "./properties": {
+      "subpath": "./properties",
+      "resolutions": {
+        "node10": {
+          "name": "./properties",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/available-regexp-flags/properties.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags/properties' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'available-regexp-flags/properties' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/available-regexp-flags/properties.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/properties.tsx' does not exist.",
+              "File '/node_modules/available-regexp-flags/properties.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'available-regexp-flags/properties' was successfully resolved to '/node_modules/available-regexp-flags/properties.d.ts' with Package ID 'available-regexp-flags/properties.d.ts@1.0.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/available-regexp-flags/properties.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags/properties' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'available-regexp-flags/properties' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/available-regexp-flags/properties.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/properties.tsx' does not exist.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/available-regexp-flags/properties/index.js'.",
+              "File name '/node_modules/available-regexp-flags/properties/index.js' has a '.js' extension - stripping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/available-regexp-flags/properties/index.js', target file types: TypeScript.",
+              "File name '/node_modules/available-regexp-flags/properties/index.js' has a '.js' extension - stripping it.",
+              "Loading module 'available-regexp-flags/properties' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/available-regexp-flags/properties.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with '--moduleResolution bundler' to see if project may need configuration update.",
+              "Loading module 'available-regexp-flags/properties' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './properties' with target './properties.js'.",
+              "File name '/node_modules/available-regexp-flags/properties.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/properties.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/properties.tsx' does not exist.",
+              "Export specifier './properties' does not exist in package.json scope at path '/node_modules/available-regexp-flags'.",
+              "======== Module name 'available-regexp-flags/properties' was successfully resolved to '/node_modules/available-regexp-flags/properties.js' with Package ID 'available-regexp-flags/properties.js@1.0.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/available-regexp-flags/properties.d.ts"
+          ],
+          "visibleProblems": []
+        },
+        "node16-cjs": {
+          "name": "./properties",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/available-regexp-flags/properties.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags/properties' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'available-regexp-flags/properties' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './properties' with target './properties.js'.",
+              "File name '/node_modules/available-regexp-flags/properties.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/properties.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/properties.tsx' does not exist.",
+              "File '/node_modules/available-regexp-flags/properties.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'available-regexp-flags/properties' was successfully resolved to '/node_modules/available-regexp-flags/properties.d.ts' with Package ID 'available-regexp-flags/properties.d.ts@1.0.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/available-regexp-flags/properties.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags/properties' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'available-regexp-flags/properties' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './properties' with target './properties.js'.",
+              "File name '/node_modules/available-regexp-flags/properties.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/properties.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/properties.tsx' does not exist.",
+              "Export specifier './properties' does not exist in package.json scope at path '/node_modules/available-regexp-flags'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './properties' with target './properties.js'.",
+              "File name '/node_modules/available-regexp-flags/properties.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/properties.js' exists - use it as a name resolution result.",
+              "======== Module name 'available-regexp-flags/properties' was successfully resolved to '/node_modules/available-regexp-flags/properties.js' with Package ID 'available-regexp-flags/properties.js@1.0.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/available-regexp-flags/properties.d.ts"
+          ],
+          "visibleProblems": []
+        },
+        "node16-esm": {
+          "name": "./properties",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/available-regexp-flags/properties.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags/properties' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'available-regexp-flags/properties' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './properties' with target './properties.js'.",
+              "File name '/node_modules/available-regexp-flags/properties.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/properties.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/properties.tsx' does not exist.",
+              "File '/node_modules/available-regexp-flags/properties.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'available-regexp-flags/properties' was successfully resolved to '/node_modules/available-regexp-flags/properties.d.ts' with Package ID 'available-regexp-flags/properties.d.ts@1.0.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/available-regexp-flags/properties.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags/properties' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'available-regexp-flags/properties' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './properties' with target './properties.js'.",
+              "File name '/node_modules/available-regexp-flags/properties.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/properties.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/properties.tsx' does not exist.",
+              "Export specifier './properties' does not exist in package.json scope at path '/node_modules/available-regexp-flags'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './properties' with target './properties.js'.",
+              "File name '/node_modules/available-regexp-flags/properties.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/properties.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'available-regexp-flags/properties' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/available-regexp-flags/properties/index.js'.",
+              "File name '/node_modules/available-regexp-flags/properties/index.js' has a '.js' extension - stripping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/available-regexp-flags/properties/index.js', target file types: TypeScript.",
+              "File name '/node_modules/available-regexp-flags/properties/index.js' has a '.js' extension - stripping it.",
+              "======== Module name 'available-regexp-flags/properties' was successfully resolved to '/node_modules/available-regexp-flags/properties.js' with Package ID 'available-regexp-flags/properties.js@1.0.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/available-regexp-flags/properties.d.ts"
+          ],
+          "visibleProblems": [
+            0
+          ]
+        },
+        "bundler": {
+          "name": "./properties",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/available-regexp-flags/properties.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags/properties' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'available-regexp-flags/properties' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './properties' with target './properties.js'.",
+              "File name '/node_modules/available-regexp-flags/properties.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/properties.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/properties.tsx' does not exist.",
+              "File '/node_modules/available-regexp-flags/properties.d.ts' exists - use it as a name resolution result.",
+              "======== Module name 'available-regexp-flags/properties' was successfully resolved to '/node_modules/available-regexp-flags/properties.d.ts' with Package ID 'available-regexp-flags/properties.d.ts@1.0.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/available-regexp-flags/properties.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags/properties' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'available-regexp-flags/properties' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './properties' with target './properties.js'.",
+              "File name '/node_modules/available-regexp-flags/properties.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/properties.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/properties.tsx' does not exist.",
+              "Export specifier './properties' does not exist in package.json scope at path '/node_modules/available-regexp-flags'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './properties' with target './properties.js'.",
+              "File name '/node_modules/available-regexp-flags/properties.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/properties.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'available-regexp-flags/properties' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/available-regexp-flags/properties.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/properties.tsx' does not exist.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/available-regexp-flags/properties/index.js'.",
+              "File name '/node_modules/available-regexp-flags/properties/index.js' has a '.js' extension - stripping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/available-regexp-flags/properties/index.js', target file types: TypeScript.",
+              "File name '/node_modules/available-regexp-flags/properties/index.js' has a '.js' extension - stripping it.",
+              "======== Module name 'available-regexp-flags/properties' was successfully resolved to '/node_modules/available-regexp-flags/properties.js' with Package ID 'available-regexp-flags/properties.js@1.0.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/available-regexp-flags/properties.d.ts"
+          ],
+          "visibleProblems": []
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    },
+    "./package.json": {
+      "subpath": "./package.json",
+      "resolutions": {
+        "node10": {
+          "name": "./package.json",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/available-regexp-flags/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'available-regexp-flags/package.json' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/package.d.json.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/package.json.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/package.json.tsx' does not exist.",
+              "File '/node_modules/available-regexp-flags/package.json.d.ts' does not exist.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field './index.d.ts' that references '/node_modules/available-regexp-flags/package.json/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/available-regexp-flags/package.json/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/available-regexp-flags/package.json/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "Loading module 'available-regexp-flags/package.json' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with '--moduleResolution bundler' to see if project may need configuration update.",
+              "Loading module 'available-regexp-flags/package.json' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/package.d.json.ts' does not exist.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/available-regexp-flags'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "======== Module name 'available-regexp-flags/package.json' was successfully resolved to '/node_modules/available-regexp-flags/package.json' with Package ID 'available-regexp-flags/package.json@1.0.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/available-regexp-flags/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module 'available-regexp-flags/package.json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/package.json.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/package.json.tsx' does not exist.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/available-regexp-flags/package.json/index.js'.",
+              "File name '/node_modules/available-regexp-flags/package.json/index.js' has a '.js' extension - stripping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/available-regexp-flags/package.json/index.js', target file types: TypeScript.",
+              "File name '/node_modules/available-regexp-flags/package.json/index.js' has a '.js' extension - stripping it.",
+              "Loading module 'available-regexp-flags/package.json' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with '--moduleResolution bundler' to see if project may need configuration update.",
+              "Loading module 'available-regexp-flags/package.json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/available-regexp-flags'.",
+              "======== Module name 'available-regexp-flags/package.json' was successfully resolved to '/node_modules/available-regexp-flags/package.json' with Package ID 'available-regexp-flags/package.json@1.0.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/available-regexp-flags/package.json"
+          ],
+          "visibleProblems": []
+        },
+        "node16-cjs": {
+          "name": "./package.json",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/available-regexp-flags/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'available-regexp-flags/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/package.d.json.ts' does not exist.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/available-regexp-flags'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/package.json' exists - use it as a name resolution result.",
+              "======== Module name 'available-regexp-flags/package.json' was successfully resolved to '/node_modules/available-regexp-flags/package.json' with Package ID 'available-regexp-flags/package.json@1.0.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/available-regexp-flags/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'available-regexp-flags/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/available-regexp-flags'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/package.json' exists - use it as a name resolution result.",
+              "======== Module name 'available-regexp-flags/package.json' was successfully resolved to '/node_modules/available-regexp-flags/package.json' with Package ID 'available-regexp-flags/package.json@1.0.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/available-regexp-flags/package.json"
+          ],
+          "visibleProblems": []
+        },
+        "node16-esm": {
+          "name": "./package.json",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/available-regexp-flags/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags/package.json' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'available-regexp-flags/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/package.d.json.ts' does not exist.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/available-regexp-flags'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'available-regexp-flags/package.json' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "File name '/node_modules/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/package.d.json.ts' does not exist.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field './index.d.ts' that references '/node_modules/available-regexp-flags/package.json/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/available-regexp-flags/package.json/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/available-regexp-flags/package.json/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "======== Module name 'available-regexp-flags/package.json' was successfully resolved to '/node_modules/available-regexp-flags/package.json' with Package ID 'available-regexp-flags/package.json@1.0.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/available-regexp-flags/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags/package.json' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'available-regexp-flags/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/available-regexp-flags'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'available-regexp-flags/package.json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/available-regexp-flags/package.json/index.js'.",
+              "File name '/node_modules/available-regexp-flags/package.json/index.js' has a '.js' extension - stripping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/available-regexp-flags/package.json/index.js', target file types: TypeScript.",
+              "File name '/node_modules/available-regexp-flags/package.json/index.js' has a '.js' extension - stripping it.",
+              "======== Module name 'available-regexp-flags/package.json' was successfully resolved to '/node_modules/available-regexp-flags/package.json' with Package ID 'available-regexp-flags/package.json@1.0.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/available-regexp-flags/package.json"
+          ],
+          "visibleProblems": []
+        },
+        "bundler": {
+          "name": "./package.json",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/available-regexp-flags/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'available-regexp-flags/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/package.d.json.ts' does not exist.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/available-regexp-flags'.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'available-regexp-flags/package.json' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "File name '/node_modules/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/package.d.json.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/package.json.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/package.json.tsx' does not exist.",
+              "File '/node_modules/available-regexp-flags/package.json.d.ts' does not exist.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field './index.d.ts' that references '/node_modules/available-regexp-flags/package.json/index.d.ts'.",
+              "Loading module as file / folder, candidate module location '/node_modules/available-regexp-flags/package.json/index.d.ts', target file types: TypeScript, Declaration.",
+              "File name '/node_modules/available-regexp-flags/package.json/index.d.ts' has a '.d.ts' extension - stripping it.",
+              "Directory '/node_modules/@types' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@types/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "======== Module name 'available-regexp-flags/package.json' was successfully resolved to '/node_modules/available-regexp-flags/package.json' with Package ID 'available-regexp-flags/package.json@1.0.4'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/available-regexp-flags/package.json",
+            "isJson": true,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module 'available-regexp-flags/package.json' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'available-regexp-flags/package.json' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "Export specifier './package.json' does not exist in package.json scope at path '/node_modules/available-regexp-flags'.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "Using 'exports' subpath './package.json' with target './package.json'.",
+              "File name '/node_modules/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/package.json' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module 'available-regexp-flags/package.json' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/available-regexp-flags/package.json' exists according to earlier cached lookups.",
+              "File name '/node_modules/available-regexp-flags/package.json' has a '.json' extension - stripping it.",
+              "File '/node_modules/available-regexp-flags/package.json.ts' does not exist.",
+              "File '/node_modules/available-regexp-flags/package.json.tsx' does not exist.",
+              "'package.json' has 'main' field 'index.js' that references '/node_modules/available-regexp-flags/package.json/index.js'.",
+              "File name '/node_modules/available-regexp-flags/package.json/index.js' has a '.js' extension - stripping it.",
+              "Loading module as file / folder, candidate module location '/node_modules/available-regexp-flags/package.json/index.js', target file types: TypeScript.",
+              "File name '/node_modules/available-regexp-flags/package.json/index.js' has a '.js' extension - stripping it.",
+              "======== Module name 'available-regexp-flags/package.json' was successfully resolved to '/node_modules/available-regexp-flags/package.json' with Package ID 'available-regexp-flags/package.json@1.0.4'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/available-regexp-flags/package.json"
+          ],
+          "visibleProblems": []
+        }
+      },
+      "hasTypes": false,
+      "isWildcard": false
+    }
+  },
+  "programInfo": {
+    "node10": {},
+    "node16": {
+      "moduleKinds": {
+        "/node_modules/typescript/lib/lib.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/typescript/lib/lib.d.ts"
+        },
+        "/node_modules/available-regexp-flags/index.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/available-regexp-flags/package.json"
+        },
+        "/node_modules/available-regexp-flags/index.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/available-regexp-flags/package.json"
+        },
+        "/node_modules/available-regexp-flags/properties.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/available-regexp-flags/package.json"
+        },
+        "/node_modules/available-regexp-flags/properties.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/available-regexp-flags/package.json"
+        }
+      }
+    },
+    "bundler": {}
+  },
+  "problems": [
+    {
+      "kind": "NamedExports",
+      "implementationFileName": "/node_modules/available-regexp-flags/properties.js",
+      "typesFileName": "/node_modules/available-regexp-flags/properties.d.ts",
+      "isMissingAllNamed": false,
+      "missing": [
+        "d",
+        "g",
+        "i",
+        "m",
+        "s",
+        "u",
+        "v",
+        "y"
+      ]
+    }
+  ]
+}
