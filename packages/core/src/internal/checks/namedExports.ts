@@ -38,6 +38,10 @@ export default defineCheck({
     }
 
     const typeChecker = host.createAuxiliaryProgram([typesFileName]).getTypeChecker();
+    const moduleType = typeChecker.getTypeOfSymbol(typeChecker.resolveExternalModuleSymbol(typesSourceFile.symbol));
+    if (typeChecker.isArrayLikeType(moduleType) || typeChecker.getPropertyOfType(moduleType, "0")) {
+      return;
+    }
     const expectedNames = Array.from(
       new Set(
         typeChecker
