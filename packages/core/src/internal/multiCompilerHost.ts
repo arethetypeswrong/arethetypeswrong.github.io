@@ -1,5 +1,6 @@
 import ts from "typescript";
 import { LRUCache } from "lru-cache";
+import minimalLibDts from "./minimalLibDts.js";
 import type { ModuleKind } from "../types.js";
 import type { Package } from "../createPackage.js";
 
@@ -225,7 +226,7 @@ export class CompilerHostWrapper {
         if (cached) {
           return cached;
         }
-        const content = fileName.startsWith("/node_modules/typescript/lib") ? "" : fs.tryReadFile(fileName);
+        const content = fileName === "/node_modules/typescript/lib/lib.d.ts" ? minimalLibDts : fs.tryReadFile(fileName);
         if (content === undefined) {
           return undefined;
         }

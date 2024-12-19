@@ -467,7 +467,9 @@
             "/node_modules/typescript/lib/lib.d.ts",
             "/node_modules/available-regexp-flags/properties.d.ts"
           ],
-          "visibleProblems": []
+          "visibleProblems": [
+            0
+          ]
         },
         "bundler": {
           "name": "./properties",
@@ -886,5 +888,22 @@
     },
     "bundler": {}
   },
-  "problems": []
+  "problems": [
+    {
+      "kind": "NamedExports",
+      "implementationFileName": "/node_modules/available-regexp-flags/properties.js",
+      "typesFileName": "/node_modules/available-regexp-flags/properties.d.ts",
+      "isMissingAllNamed": false,
+      "missing": [
+        "d",
+        "g",
+        "i",
+        "m",
+        "s",
+        "u",
+        "v",
+        "y"
+      ]
+    }
+  ]
 }
