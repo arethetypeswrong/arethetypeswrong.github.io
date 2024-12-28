@@ -37,3 +37,7 @@ When this problem occurs for the `node10` resolution option but not any others, 
 In this example, an import of `"pkg/subpath"` can be used in Node 12+ and modern bundlers, but would fail to resolve in Node 10. Accordingly, TypeScript’s `--moduleResolution node10` (also confusingly known as `node`, because history) does not resolve `"exports"` either.
 
 While few libraries care about supporting a long-past EOL version of Node, maintainers of very popular libraries should be aware that many TypeScript users are still using `--moduleResolution node`. If they aren’t literally using Node 10, they really should move away from it, but sometimes migrating can be difficult because it introduces new errors caused by _incorrect dependency typings_—the problem this tool was made to diagnose. Popular libraries often choose to adopt a strategy that allows `--moduleResolution node10` to work even without `"exports"` support. https://github.com/andrewbranch/example-subpath-exports-ts-compat demonstrates several such strategies.
+
+## Ignore issue
+
+You can use the `profile` `node16` to ignore this issue. It will be reported as `node10: (ignored) 💀 Resolution failed` with a red export path but it the check will not exit with an error anymore. [Learn more in the CLI Readme](https://github.com/jason-ha/arethetypeswrong/blob/8f9afe019ade7d25ef81da7c50f819328edcecae/packages/cli/README.md#profiles).
