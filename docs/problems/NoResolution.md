@@ -40,4 +40,4 @@ While few libraries care about supporting a long-past EOL version of Node, maint
 
 ## Ignore issue
 
-You can use the `profile` `node16` to ignore this issue. It will be reported as `node10: (ignored) 💀 Resolution failed` with a red export path but it the check will not exit with an error anymore. [Learn more in the CLI Readme](https://github.com/jason-ha/arethetypeswrong/blob/8f9afe019ade7d25ef81da7c50f819328edcecae/packages/cli/README.md#profiles).
+You can use the `profile` `node16` to ignore this issue. It will be reported as `node10: (ignored) 💀 Resolution failed` with a red export path but it the check will not exit with an error anymore. [Learn more in the CLI Readme](https://github.com/arethetypeswrong/arethetypeswrong.github.io/tree/main/packages/cli#profiles).
