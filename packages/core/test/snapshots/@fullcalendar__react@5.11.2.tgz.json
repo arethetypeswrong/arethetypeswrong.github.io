@@ -1,0 +1,411 @@
+{
+  "packageName": "@fullcalendar/react",
+  "packageVersion": "5.11.2",
+  "types": {
+    "kind": "included"
+  },
+  "buildTools": {
+    "typescript": "^4.0.5",
+    "rollup": "^1.31.0"
+  },
+  "entrypoints": {
+    ".": {
+      "subpath": ".",
+      "resolutions": {
+        "node10": {
+          "name": ".",
+          "resolutionKind": "node10",
+          "resolution": {
+            "fileName": "/node_modules/@fullcalendar/react/dist/main.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@fullcalendar/react' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module '@fullcalendar/react' from 'node_modules' folder, target file types: TypeScript, Declaration.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/@fullcalendar/react/package.json'.",
+              "File '/node_modules/@fullcalendar/react.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react.tsx' does not exist.",
+              "File '/node_modules/@fullcalendar/react.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'dist/main.d.ts' that references '/node_modules/@fullcalendar/react/dist/main.d.ts'.",
+              "File '/node_modules/@fullcalendar/react/dist/main.d.ts' exists - use it as a name resolution result.",
+              "'package.json' has a 'peerDependencies' field.",
+              "Failed to find peerDependency 'react'.",
+              "Failed to find peerDependency 'react-dom'.",
+              "======== Module name '@fullcalendar/react' was successfully resolved to '/node_modules/@fullcalendar/react/dist/main.d.ts' with Package ID '@fullcalendar/react/dist/main.d.ts@5.11.2'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@fullcalendar/react/dist/main.cjs.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@fullcalendar/react' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node10'.",
+              "Loading module '@fullcalendar/react' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/@fullcalendar/react/package.json'.",
+              "File '/node_modules/@fullcalendar/react.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'dist/main.cjs.js' that references '/node_modules/@fullcalendar/react/dist/main.cjs.js'.",
+              "File name '/node_modules/@fullcalendar/react/dist/main.cjs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.tsx' does not exist.",
+              "Loading module as file / folder, candidate module location '/node_modules/@fullcalendar/react/dist/main.cjs.js', target file types: TypeScript.",
+              "File name '/node_modules/@fullcalendar/react/dist/main.cjs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.tsx' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.js.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.js.tsx' does not exist.",
+              "Directory '/node_modules/@fullcalendar/react/dist/main.cjs.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/@fullcalendar/react/index.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/index.tsx' does not exist.",
+              "Loading module '@fullcalendar/react' from 'node_modules' folder, target file types: JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@fullcalendar/react/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/@fullcalendar/react.js' does not exist.",
+              "File '/node_modules/@fullcalendar/react.jsx' does not exist.",
+              "'package.json' has 'main' field 'dist/main.cjs.js' that references '/node_modules/@fullcalendar/react/dist/main.cjs.js'.",
+              "File name '/node_modules/@fullcalendar/react/dist/main.cjs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.js' exists - use it as a name resolution result.",
+              "'package.json' has a 'peerDependencies' field.",
+              "Failed to find peerDependency 'react'.",
+              "Failed to find peerDependency 'react-dom'.",
+              "Resolution of non-relative name failed; trying with '--moduleResolution bundler' to see if project may need configuration update.",
+              "Loading module '@fullcalendar/react' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@fullcalendar/react/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/@fullcalendar/react.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react.tsx' does not exist.",
+              "'package.json' has 'main' field 'dist/main.cjs.js' that references '/node_modules/@fullcalendar/react/dist/main.cjs.js'.",
+              "File name '/node_modules/@fullcalendar/react/dist/main.cjs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.tsx' does not exist.",
+              "Loading module as file / folder, candidate module location '/node_modules/@fullcalendar/react/dist/main.cjs.js', target file types: TypeScript.",
+              "File name '/node_modules/@fullcalendar/react/dist/main.cjs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.tsx' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.js.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.js.tsx' does not exist.",
+              "Directory '/node_modules/@fullcalendar/react/dist/main.cjs.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/@fullcalendar/react/index.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/index.tsx' does not exist.",
+              "======== Module name '@fullcalendar/react' was successfully resolved to '/node_modules/@fullcalendar/react/dist/main.cjs.js' with Package ID '@fullcalendar/react/dist/main.cjs.js@5.11.2'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@fullcalendar/react/dist/vdom.d.ts",
+            "/node_modules/@fullcalendar/react/dist/main.d.ts"
+          ],
+          "visibleProblems": []
+        },
+        "node16-cjs": {
+          "name": ".",
+          "resolutionKind": "node16-cjs",
+          "resolution": {
+            "fileName": "/node_modules/@fullcalendar/react/dist/main.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@fullcalendar/react' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'types', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@fullcalendar/react' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/@fullcalendar/react/package.json'.",
+              "File '/node_modules/@fullcalendar/react.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react.tsx' does not exist.",
+              "File '/node_modules/@fullcalendar/react.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'dist/main.d.ts' that references '/node_modules/@fullcalendar/react/dist/main.d.ts'.",
+              "File '/node_modules/@fullcalendar/react/dist/main.d.ts' exists - use it as a name resolution result.",
+              "'package.json' has a 'peerDependencies' field.",
+              "Failed to find peerDependency 'react'.",
+              "Failed to find peerDependency 'react-dom'.",
+              "======== Module name '@fullcalendar/react' was successfully resolved to '/node_modules/@fullcalendar/react/dist/main.d.ts' with Package ID '@fullcalendar/react/dist/main.d.ts@5.11.2'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@fullcalendar/react/dist/main.cjs.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@fullcalendar/react' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in CJS mode with conditions 'require', 'node'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@fullcalendar/react' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/@fullcalendar/react/package.json'.",
+              "File '/node_modules/@fullcalendar/react.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'dist/main.cjs.js' that references '/node_modules/@fullcalendar/react/dist/main.cjs.js'.",
+              "File name '/node_modules/@fullcalendar/react/dist/main.cjs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.tsx' does not exist.",
+              "Loading module as file / folder, candidate module location '/node_modules/@fullcalendar/react/dist/main.cjs.js', target file types: TypeScript.",
+              "File name '/node_modules/@fullcalendar/react/dist/main.cjs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.tsx' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.js.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.js.tsx' does not exist.",
+              "Directory '/node_modules/@fullcalendar/react/dist/main.cjs.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/@fullcalendar/react/index.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@fullcalendar/react/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/@fullcalendar/react.js' does not exist.",
+              "File '/node_modules/@fullcalendar/react.jsx' does not exist.",
+              "'package.json' has 'main' field 'dist/main.cjs.js' that references '/node_modules/@fullcalendar/react/dist/main.cjs.js'.",
+              "File name '/node_modules/@fullcalendar/react/dist/main.cjs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.js' exists - use it as a name resolution result.",
+              "'package.json' has a 'peerDependencies' field.",
+              "Failed to find peerDependency 'react'.",
+              "Failed to find peerDependency 'react-dom'.",
+              "======== Module name '@fullcalendar/react' was successfully resolved to '/node_modules/@fullcalendar/react/dist/main.cjs.js' with Package ID '@fullcalendar/react/dist/main.cjs.js@5.11.2'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@fullcalendar/react/dist/vdom.d.ts",
+            "/node_modules/@fullcalendar/react/dist/main.d.ts"
+          ],
+          "visibleProblems": []
+        },
+        "node16-esm": {
+          "name": ".",
+          "resolutionKind": "node16-esm",
+          "resolution": {
+            "fileName": "/node_modules/@fullcalendar/react/dist/main.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@fullcalendar/react' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@fullcalendar/react' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "File '/node_modules/@fullcalendar/react/package.json' exists according to earlier cached lookups.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'dist/main.d.ts' that references '/node_modules/@fullcalendar/react/dist/main.d.ts'.",
+              "File '/node_modules/@fullcalendar/react/dist/main.d.ts' exists - use it as a name resolution result.",
+              "======== Module name '@fullcalendar/react' was successfully resolved to '/node_modules/@fullcalendar/react/dist/main.d.ts' with Package ID '@fullcalendar/react/dist/main.d.ts@5.11.2'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@fullcalendar/react/dist/main.cjs.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@fullcalendar/react' from '/index.mts'. ========",
+              "Explicitly specified module resolution kind: 'Node16'.",
+              "Resolving in ESM mode with conditions 'import', 'node'.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@fullcalendar/react' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@fullcalendar/react/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'dist/main.cjs.js' that references '/node_modules/@fullcalendar/react/dist/main.cjs.js'.",
+              "File name '/node_modules/@fullcalendar/react/dist/main.cjs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.tsx' does not exist.",
+              "Loading module as file / folder, candidate module location '/node_modules/@fullcalendar/react/dist/main.cjs.js', target file types: TypeScript.",
+              "File name '/node_modules/@fullcalendar/react/dist/main.cjs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.tsx' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.js.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.js.tsx' does not exist.",
+              "Directory '/node_modules/@fullcalendar/react/dist/main.cjs.js' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@fullcalendar/react/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@fullcalendar/react/index.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@fullcalendar/react/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'dist/main.cjs.js' that references '/node_modules/@fullcalendar/react/dist/main.cjs.js'.",
+              "File name '/node_modules/@fullcalendar/react/dist/main.cjs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.js' exists - use it as a name resolution result.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@fullcalendar/react' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@fullcalendar/react/package.json' exists according to earlier cached lookups.",
+              "'package.json' has 'main' field 'dist/main.cjs.js' that references '/node_modules/@fullcalendar/react/dist/main.cjs.js'.",
+              "File name '/node_modules/@fullcalendar/react/dist/main.cjs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.tsx' does not exist.",
+              "Loading module as file / folder, candidate module location '/node_modules/@fullcalendar/react/dist/main.cjs.js', target file types: TypeScript.",
+              "File name '/node_modules/@fullcalendar/react/dist/main.cjs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.tsx' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.js.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.js.tsx' does not exist.",
+              "Directory '/node_modules/@fullcalendar/react/dist/main.cjs.js' does not exist, skipping all lookups in it.",
+              "File name '/node_modules/@fullcalendar/react/index.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@fullcalendar/react/index.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/index.tsx' does not exist.",
+              "======== Module name '@fullcalendar/react' was successfully resolved to '/node_modules/@fullcalendar/react/dist/main.cjs.js' with Package ID '@fullcalendar/react/dist/main.cjs.js@5.11.2'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@fullcalendar/react/dist/vdom.d.ts",
+            "/node_modules/@fullcalendar/react/dist/main.d.ts"
+          ],
+          "visibleProblems": [
+            0
+          ]
+        },
+        "bundler": {
+          "name": ".",
+          "resolutionKind": "bundler",
+          "resolution": {
+            "fileName": "/node_modules/@fullcalendar/react/dist/main.d.ts",
+            "isJson": false,
+            "isTypeScript": true,
+            "trace": [
+              "======== Resolving module '@fullcalendar/react' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import', 'types'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@fullcalendar/react' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.",
+              "Found 'package.json' at '/node_modules/@fullcalendar/react/package.json'.",
+              "File '/node_modules/@fullcalendar/react.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react.tsx' does not exist.",
+              "File '/node_modules/@fullcalendar/react.d.ts' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' does not have a 'typings' field.",
+              "'package.json' has 'types' field 'dist/main.d.ts' that references '/node_modules/@fullcalendar/react/dist/main.d.ts'.",
+              "File '/node_modules/@fullcalendar/react/dist/main.d.ts' exists - use it as a name resolution result.",
+              "'package.json' has a 'peerDependencies' field.",
+              "Failed to find peerDependency 'react'.",
+              "Failed to find peerDependency 'react-dom'.",
+              "======== Module name '@fullcalendar/react' was successfully resolved to '/node_modules/@fullcalendar/react/dist/main.d.ts' with Package ID '@fullcalendar/react/dist/main.d.ts@5.11.2'. ========"
+            ]
+          },
+          "implementationResolution": {
+            "fileName": "/node_modules/@fullcalendar/react/dist/main.cjs.js",
+            "isJson": false,
+            "isTypeScript": false,
+            "trace": [
+              "======== Resolving module '@fullcalendar/react' from '/index.ts'. ========",
+              "Explicitly specified module resolution kind: 'Bundler'.",
+              "Resolving in CJS mode with conditions 'import'.",
+              "File '/package.json' does not exist.",
+              "Loading module '@fullcalendar/react' from 'node_modules' folder, target file types: TypeScript, JavaScript, JSON.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "Found 'package.json' at '/node_modules/@fullcalendar/react/package.json'.",
+              "File '/node_modules/@fullcalendar/react.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react.tsx' does not exist.",
+              "'package.json' does not have a 'typesVersions' field.",
+              "'package.json' has 'main' field 'dist/main.cjs.js' that references '/node_modules/@fullcalendar/react/dist/main.cjs.js'.",
+              "File name '/node_modules/@fullcalendar/react/dist/main.cjs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.tsx' does not exist.",
+              "Loading module as file / folder, candidate module location '/node_modules/@fullcalendar/react/dist/main.cjs.js', target file types: TypeScript.",
+              "File name '/node_modules/@fullcalendar/react/dist/main.cjs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.tsx' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.js.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.js.tsx' does not exist.",
+              "Directory '/node_modules/@fullcalendar/react/dist/main.cjs.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/@fullcalendar/react/index.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/index.tsx' does not exist.",
+              "Searching all ancestor node_modules directories for fallback extensions: JavaScript, JSON.",
+              "File '/node_modules/@fullcalendar/react/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/@fullcalendar/react.js' does not exist.",
+              "File '/node_modules/@fullcalendar/react.jsx' does not exist.",
+              "'package.json' has 'main' field 'dist/main.cjs.js' that references '/node_modules/@fullcalendar/react/dist/main.cjs.js'.",
+              "File name '/node_modules/@fullcalendar/react/dist/main.cjs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.js' exists - use it as a name resolution result.",
+              "'package.json' has a 'peerDependencies' field.",
+              "Failed to find peerDependency 'react'.",
+              "Failed to find peerDependency 'react-dom'.",
+              "Resolution of non-relative name failed; trying with modern Node resolution features disabled to see if npm library needs configuration update.",
+              "File '/package.json' does not exist according to earlier cached lookups.",
+              "Loading module '@fullcalendar/react' from 'node_modules' folder, target file types: TypeScript.",
+              "Searching all ancestor node_modules directories for preferred extensions: TypeScript.",
+              "File '/node_modules/@fullcalendar/react/package.json' exists according to earlier cached lookups.",
+              "File '/node_modules/@fullcalendar/react.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react.tsx' does not exist.",
+              "'package.json' has 'main' field 'dist/main.cjs.js' that references '/node_modules/@fullcalendar/react/dist/main.cjs.js'.",
+              "File name '/node_modules/@fullcalendar/react/dist/main.cjs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.tsx' does not exist.",
+              "Loading module as file / folder, candidate module location '/node_modules/@fullcalendar/react/dist/main.cjs.js', target file types: TypeScript.",
+              "File name '/node_modules/@fullcalendar/react/dist/main.cjs.js' has a '.js' extension - stripping it.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.tsx' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.js.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/dist/main.cjs.js.tsx' does not exist.",
+              "Directory '/node_modules/@fullcalendar/react/dist/main.cjs.js' does not exist, skipping all lookups in it.",
+              "File '/node_modules/@fullcalendar/react/index.ts' does not exist.",
+              "File '/node_modules/@fullcalendar/react/index.tsx' does not exist.",
+              "======== Module name '@fullcalendar/react' was successfully resolved to '/node_modules/@fullcalendar/react/dist/main.cjs.js' with Package ID '@fullcalendar/react/dist/main.cjs.js@5.11.2'. ========"
+            ]
+          },
+          "files": [
+            "/node_modules/typescript/lib/lib.d.ts",
+            "/node_modules/@fullcalendar/react/dist/vdom.d.ts",
+            "/node_modules/@fullcalendar/react/dist/main.d.ts"
+          ],
+          "visibleProblems": [
+            1
+          ]
+        }
+      },
+      "hasTypes": true,
+      "isWildcard": false
+    }
+  },
+  "programInfo": {
+    "node10": {},
+    "node16": {
+      "moduleKinds": {
+        "/node_modules/typescript/lib/lib.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/typescript/lib/lib.d.ts"
+        },
+        "/node_modules/@fullcalendar/react/dist/vdom.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@fullcalendar/react/package.json"
+        },
+        "/node_modules/@fullcalendar/react/dist/main.d.ts": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@fullcalendar/react/package.json"
+        },
+        "/node_modules/@fullcalendar/react/dist/main.cjs.js": {
+          "detectedKind": 1,
+          "detectedReason": "no:type",
+          "reasonFileName": "/node_modules/@fullcalendar/react/package.json"
+        }
+      }
+    },
+    "bundler": {}
+  },
+  "problems": [
+    {
+      "kind": "CJSOnlyExportsDefault",
+      "fileName": "/node_modules/@fullcalendar/react/dist/main.cjs.js",
+      "pos": 1473,
+      "end": 1488
+    },
+    {
+      "kind": "CJSOnlyExportsDefault",
+      "fileName": "/node_modules/@fullcalendar/react/dist/main.cjs.js",
+      "pos": 1473,
+      "end": 1488
+    }
+  ]
+}
