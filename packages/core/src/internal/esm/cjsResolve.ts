@@ -177,13 +177,12 @@ function* nodeModulesPaths(path: URL) {
     return;
   }
   do {
-    // a. if PARTS[I] = "node_modules" CONTINUE
-    if (path.pathname.endsWith("/node_modules/")) {
-      continue;
+    // a. if PARTS[I] = "node_modules", GOTO d.
+    if (!path.pathname.endsWith("/node_modules/")) {
+      // b. DIR = path join(PARTS[0 .. I] + "node_modules")
+      // c. DIRS = DIR + DIRS
+      yield new URL("./node_modules/", path);
     }
-    // b. DIR = path join(PARTS[0 .. I] + "node_modules")
-    yield new URL("./node_modules/", path);
-    // c. DIRS = DIR + DIRS
     // d. let I = I - 1
     path = new URL("../", path);
   } while (path.pathname !== "/");
