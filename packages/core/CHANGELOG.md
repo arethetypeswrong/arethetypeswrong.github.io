@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.17.3
+
+### Patch Changes
+
+- e3c775e: Fix CJS resolution infinite loop
+
 ## 0.17.2
 
 ### Patch Changes
