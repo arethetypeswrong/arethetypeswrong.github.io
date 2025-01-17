@@ -191,6 +191,11 @@ particularly ESM-related module resolution issues.`,
               const pm = detectPackageManager();
               if (pm) {
                 packageManager = pm.name;
+
+                if (pm.name === "yarn") {
+                  const yarnVersion = pm.version.split(".")[0];
+                  opts.pm = yarnVersion === "1" ? "yarn-classic" : "yarn-modern";
+                }
               }
               break;
             case "pnpm": {
