@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.17.4
+
+### Patch Changes
+
+- f118862: Use `@loaderkit/resolve` for module resolution
+
 ## 0.17.3
 
 ### Patch Changes

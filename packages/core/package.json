@@ -1,6 +1,6 @@
 {
   "name": "@arethetypeswrong/core",
-  "version": "0.17.3",
+  "version": "0.17.4",
   "description": "The API behind arethetypeswrong.github.io",
   "author": "Andrew Branch",
   "license": "MIT",
@@ -51,6 +51,7 @@
   },
   "dependencies": {
     "@andrewbranch/untar.js": "^1.0.3",
+    "@loaderkit/resolve": "^1.0.2",
     "cjs-module-lexer": "^1.2.3",
     "fflate": "^0.8.2",
     "lru-cache": "^10.4.3",
