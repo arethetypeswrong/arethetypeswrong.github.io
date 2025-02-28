@@ -18,6 +18,7 @@ import { getExitCode } from "./getExitCode.js";
 import { applyProfile, profiles } from "./profiles.js";
 import { write } from "./write.js";
 import { Writable } from "stream";
+import detectPackageManager from "which-pm-runs";
 
 const packageJson = createRequire(import.meta.url)("../package.json");
 const version = packageJson.version;
@@ -43,6 +44,8 @@ interface Opts extends render.RenderOptions {
   includeEntrypoints?: string[];
   excludeEntrypoints?: string[];
   entrypointsLegacy?: boolean;
+
+  pm?: string;
 }
 
 program
@@ -92,6 +95,11 @@ particularly ESM-related module resolution issues.`,
   .option("--emoji, --no-emoji", "Whether to use any emojis")
   .option("--color, --no-color", "Whether to use any colors (the FORCE_COLOR env variable is also available)")
   .option("--config-path <path>", "Path to config file (default: ./.attw.json)")
+  .addOption(
+    new Option("--pm [package manager]", "Specify the package manager to use for --pack (default: auto)")
+      .choices(["pnpm", "yarn-classic", "yarn-modern", "npm", "auto"])
+      .default("auto"),
+  )
   .action(async (fileOrDirectory = ".") => {
     const opts = program.opts<Opts>();
     await readConfig(program, opts.configPath);
@@ -176,15 +184,40 @@ particularly ESM-related module resolution issues.`,
             );
           }
 
+          let packageManager = "npm";
+
+          switch (opts.pm) {
+            case "auto":
+              const pm = detectPackageManager();
+              if (pm) {
+                packageManager = pm.name;
+
+                if (pm.name === "yarn") {
+                  const yarnVersion = pm.version.split(".")[0];
+                  opts.pm = yarnVersion === "1" ? "yarn-classic" : "yarn-modern";
+                }
+              }
+              break;
+            case "pnpm": {
+              packageManager = "pnpm";
+              break;
+            }
+            case "yarn-modern":
+            case "yarn-classic": {
+              packageManager = "yarn";
+              break;
+            }
+          }
+
           if (!opts.pack) {
             if (!process.stdout.isTTY) {
               program.error(
-                "Specifying a directory requires the --pack option to confirm that running `npm pack` is ok.",
+                `Specifying a directory requires the --pack option to confirm that running \`${packageManager} pack\` is ok.`,
               );
             }
             const rl = readline.createInterface(process.stdin, process.stdout);
             const answer = await new Promise<string>((resolve) => {
-              rl.question(`Run \`npm pack\`? (Pass -P/--pack to skip) (Y/n) `, resolve);
+              rl.question(`Run \`${packageManager} pack\`? (Pass -P/--pack to skip) (Y/n) `, resolve);
             });
             rl.close();
             if (answer.trim() && !answer.trim().toLowerCase().startsWith("y")) {
@@ -198,7 +231,11 @@ particularly ESM-related module resolution issues.`,
             // https://github.com/npm/cli/blob/f875caa86900122819311dd77cde01c700fd1817/lib/utils/tar.js#L123-L125
             `${manifest.name.replace("@", "").replace("/", "-")}-${manifest.version}.tgz`,
           );
-          execSync("npm pack", { cwd: fileOrDirectory, encoding: "utf8", stdio: "ignore" });
+          execSync(`${packageManager} pack` + (opts.pm === "yarn-classic" ? ` --filename ` + fileName :  opts.pm === "yarn-modern" ? ` --out ` + fileName :""), {
+            cwd: fileOrDirectory,
+            encoding: "utf8",
+            stdio: "ignore",
+          });
         }
         const file = await readFile(fileName);
         const data = new Uint8Array(file);

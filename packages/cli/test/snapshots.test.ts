@@ -60,6 +60,12 @@ const tests = [
   ["@fluid-experimental__presence@2.3.0.tgz", "--profile node16 -f table-flipped"],
   // Profile ignoring node10 and CJS resolution mixed with specific entrypoint - exit code 0
   ["@fluid-experimental__presence@2.3.0.tgz", "--profile esm-only -f json --entrypoints ."],
+
+  // package manager test cases
+  ["axios@1.4.0.tgz", "--pm"], // auto
+  ["axios@1.4.0.tgz", "--pm npm"],
+  ["axios@1.4.0.tgz", "--pm pnpm"],
+  ["axios@1.4.0.tgz", "--pm yarn-classic"],
 ];
 
 const defaultOpts = "-f table-flipped";
