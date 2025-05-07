@@ -1,5 +1,16 @@
 # @arethetypeswrong/cli
 
+## 0.18.0
+
+### Minor Changes
+
+- 5dd9c0b: Requiring Node.js 20 for using latest lru-cache.
+
+### Patch Changes
+
+- Updated dependencies [5dd9c0b]
+  - @arethetypeswrong/core@0.18.0
+
 ## 0.17.4
 
 ### Patch Changes
