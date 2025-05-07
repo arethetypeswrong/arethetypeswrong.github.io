@@ -26,8 +26,7 @@
   },
   "pnpm": {
     "patchedDependencies": {
-      "cjs-module-lexer@1.4.0": "patches/cjs-module-lexer@1.4.0.patch",
-      "lru-cache@10.4.3": "patches/lru-cache@10.4.3.patch"
+      "cjs-module-lexer@1.4.0": "patches/cjs-module-lexer@1.4.0.patch"
     }
   }
 }

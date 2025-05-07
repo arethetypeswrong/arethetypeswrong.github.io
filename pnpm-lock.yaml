@@ -8,9 +8,6 @@ patchedDependencies:
   cjs-module-lexer@1.4.0:
     hash: 014f76e37750df8a231384fd74630cb96fe50393f64ead0205d93766127278c2
     path: patches/cjs-module-lexer@1.4.0.patch
-  lru-cache@10.4.3:
-    hash: 1b0bd126921f919521ebf14aab49cca0ecbb03dadbe19eae05aab57edefa6714
-    path: patches/lru-cache@10.4.3.patch
 
 importers:
 
@@ -81,8 +78,8 @@ importers:
         specifier: ^0.8.2
         version: 0.8.2
       lru-cache:
-        specifier: ^10.4.3
-        version: 10.4.3(patch_hash=1b0bd126921f919521ebf14aab49cca0ecbb03dadbe19eae05aab57edefa6714)
+        specifier: ^11.0.1
+        version: 11.1.0
       semver:
         specifier: ^7.5.4
         version: 7.5.4
@@ -1190,6 +1187,10 @@ packages:
 
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
+
+  lru-cache@11.1.0:
+    resolution: {integrity: sha512-QIXZUBJUx+2zHUdQujWejBkcD9+cs94tLn0+YL8UrCh+D5sCXZ4c7LaEH48pNwRY3MLDgqUFyhlCyjJPf1WP0A==}
+    engines: {node: 20 || >=22}
 
   lru-cache@4.1.5:
     resolution: {integrity: sha512-sWZlbEP2OsHNkXrMl5GYk/jKk70MBng6UU4YI/qGDYbgf6YbP4EvmqISbXCoJiRKs+1bSpFHVgQxvJ17F2li5g==}
@@ -2916,7 +2917,9 @@ snapshots:
 
   lodash.startcase@4.4.0: {}
 
-  lru-cache@10.4.3(patch_hash=1b0bd126921f919521ebf14aab49cca0ecbb03dadbe19eae05aab57edefa6714): {}
+  lru-cache@10.4.3: {}
+
+  lru-cache@11.1.0: {}
 
   lru-cache@4.1.5:
     dependencies:
@@ -3209,7 +3212,7 @@ snapshots:
 
   path-scurry@1.10.1:
     dependencies:
-      lru-cache: 10.4.3(patch_hash=1b0bd126921f919521ebf14aab49cca0ecbb03dadbe19eae05aab57edefa6714)
+      lru-cache: 10.4.3
       minipass: 7.0.4
 
   path-type@4.0.0: {}
