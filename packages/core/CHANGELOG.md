@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.18.0
+
+### Minor Changes
+
+- 5dd9c0b: Requiring Node.js 20 for using latest lru-cache.
+
 ## 0.17.4
 
 ### Patch Changes
