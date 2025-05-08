@@ -46,6 +46,9 @@ importers:
       semver:
         specifier: ^7.5.4
         version: 7.5.4
+      which-pm-runs:
+        specifier: ^1.1.0
+        version: 1.1.0
     devDependencies:
       '@types/marked':
         specifier: ^5.0.0
@@ -59,6 +62,9 @@ importers:
       '@types/semver':
         specifier: ^7.5.3
         version: 7.5.3
+      '@types/which-pm-runs':
+        specifier: ^1.0.2
+        version: 1.0.2
       ts-expose-internals:
         specifier: 5.6.1-rc
         version: 5.6.1-rc
@@ -689,6 +695,9 @@ packages:
 
   '@types/validate-npm-package-name@4.0.0':
     resolution: {integrity: sha512-RpO62vB2lkjEkyLbwTheA2+uwYmtVMWTr/kWRI++UAgVdZqNqdAuIQl/SxBCGeMKfdjWaXPbyhZbiCc4PAj+KA==}
+
+  '@types/which-pm-runs@1.0.2':
+    resolution: {integrity: sha512-M0ZefeDApctHbjqtATOiixiwafG7pXD3exxnjku4XmX9+2DmONGghv5Z8Pnm0lNLBZKvDQyuG+4pLkH2UkP5gg==}
 
   abbrev@1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
@@ -1816,6 +1825,10 @@ packages:
   whatwg-url@5.0.0:
     resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
 
+  which-pm-runs@1.1.0:
+    resolution: {integrity: sha512-n1brCuqClxfFfq/Rb0ICg9giSZqCS+pLtccdag6C2HyufBrh3fBOiy9nb6ggRMvWOVH5GrdJskj5iGTZNxd7SA==}
+    engines: {node: '>=4'}
+
   which@1.3.1:
     resolution: {integrity: sha512-HxJdYWq1MTIQbJ3nw0cqssHoTNU267KlrDuGZ1WYlxDStUtKUhOaJmh112/TZmHxxUfuJqPXSOm7tDyas0OSIQ==}
     hasBin: true
@@ -2398,6 +2411,8 @@ snapshots:
       '@types/node': 22.5.0
 
   '@types/validate-npm-package-name@4.0.0': {}
+
+  '@types/which-pm-runs@1.0.2': {}
 
   abbrev@1.1.1: {}
 
@@ -3528,6 +3543,8 @@ snapshots:
     dependencies:
       tr46: 0.0.3
       webidl-conversions: 3.0.1
+
+  which-pm-runs@1.1.0: {}
 
   which@1.3.1:
     dependencies:
