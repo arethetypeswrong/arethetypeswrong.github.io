@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.18.1
+
+### Patch Changes
+
+- a4dc8a6: Do not detect proxy directories inside vendor directories as entrypoints
+
 ## 0.18.0
 
 ### Minor Changes
