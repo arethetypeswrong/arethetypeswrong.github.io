@@ -1,5 +1,12 @@
 # @arethetypeswrong/cli
 
+## 0.18.1
+
+### Patch Changes
+
+- Updated dependencies [a4dc8a6]
+  - @arethetypeswrong/core@0.18.1
+
 ## 0.18.0
 
 ### Minor Changes
