@@ -53,6 +53,7 @@ function getEntrypoints(fs: Package, exportsObject: unknown, options: CheckPacka
     });
   });
 }
+
 function formatEntrypointString(path: string, packageName: string) {
   return (
     path === "." || path.startsWith("./")
@@ -64,6 +65,7 @@ function formatEntrypointString(path: string, packageName: string) {
       : `./${path}`
   ).trim();
 }
+
 function getSubpaths(exportsObject: any): string[] {
   if (!exportsObject || typeof exportsObject !== "object" || Array.isArray(exportsObject)) {
     return [];
@@ -74,22 +76,41 @@ function getSubpaths(exportsObject: any): string[] {
   }
   return keys.flatMap((key) => getSubpaths(exportsObject[key]));
 }
+
 function getProxyDirectories(rootDir: string, fs: Package) {
-  return fs
-    .listFiles()
-    .filter((f) => f.startsWith(rootDir) && f.endsWith("package.json"))
-    .filter((f) => {
+  const vendorDirectories = new Set<string>();
+  const proxyDirectories: string[] = [];
+  const files = fs.listFiles().sort((a, b) => a.length - b.length);
+  for (const file of files) {
+    if (file.startsWith(rootDir) && file.endsWith("/package.json")) {
       try {
-        const packageJson = JSON.parse(fs.readFile(f));
-        return "main" in packageJson && (!packageJson.name || packageJson.name.startsWith(fs.packageName));
-      } catch {
-        return false;
+        const packageJson = JSON.parse(fs.readFile(file));
+        if (packageJson.name && !packageJson.name.startsWith(fs.packageName)) {
+          // Name unrelated to the root package, this is a vendored package
+          const vendorDir = file.slice(0, file.lastIndexOf("/"));
+          vendorDirectories.add(vendorDir);
+        } else if ("main" in packageJson && !isInsideVendorDirectory(file)) {
+          // No name or name starting with root package name, this is intended to be an entrypoint
+          const proxyDir = "." + file.slice(rootDir.length, file.lastIndexOf("/"));
+          proxyDirectories.push(proxyDir);
+        }
+      } catch {}
+    }
+  }
+
+  return proxyDirectories.sort((a, b) => {
+    return ts.comparePathsCaseInsensitive(a, b);
+  });
+
+  function isInsideVendorDirectory(file: string) {
+    return !!ts.forEachAncestorDirectory(file, (dir) => {
+      if (vendorDirectories.has(dir)) {
+        return true;
       }
-    })
-    .map((f) => "." + f.slice(rootDir.length).slice(0, -`/package.json`.length))
-    .filter((f) => f !== "./")
-    .sort();
+    });
+  }
 }
+
 export function getEntrypointInfo(
   packageName: string,
   fs: Package,
