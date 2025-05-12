@@ -41,7 +41,7 @@ jobs:
       - run: pnpm check-dts
       - uses: changesets/action@v1
         with:
-          publish: pnpm publish -r
+          publish: pnpm publish -r && pnpm changeset tag
           version: pnpm run version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
