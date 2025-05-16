@@ -57,6 +57,6 @@ This issue commonly occurs in combination with [“Masquerading as CJS”](./Fal
 where an `index.d.ts` exists but `index.d.mts` does not. TypeScript first does a resolution pass only looking for types and ignoring JavaScript files, so when resolving with the `import` condition, that first pass goes something like:
 
 1. `"import"` matches, so try substituting the `.mjs` extension for the type-equivalent `.d.mts`. `index.d.mts` does not exist, so **continue** (this is the bug).
-2. `"default"` conditions always match, so try substituting the `.js` extension for the type-equivalent `.d.ts`. `index.d.ts` exists, so us that as a resolution result.
+2. `"default"` conditions always match, so try substituting the `.js` extension for the type-equivalent `.d.ts`. `index.d.ts` exists, so use that as a resolution result.
 
 But in this example, `index.d.ts` is a CommonJS module since the package.json lacks a `"type": "module"` field, whereas the runtime resolution would have been `index.mjs`, which is an ES module. So, an instance of [“Masquerading as CJS”](./FalseCJS.md) also occurred. If the library adds an `index.d.mts` file to represent the `index.mjs` file, both problems will be solved simultaneously.
