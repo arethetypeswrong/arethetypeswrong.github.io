@@ -167,4 +167,5 @@ export const allBuildTools = Object.keys({
   tshy: true,
   "@rspack/cli": true,
   tsup: true,
+  tsdown: true,
 } satisfies Record<BuildTool, any>) as BuildTool[];

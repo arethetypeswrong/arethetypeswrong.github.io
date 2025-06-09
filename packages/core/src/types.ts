@@ -36,7 +36,8 @@ export type BuildTool =
   | "@microsoft/api-extractor"
   | "tshy"
   | "@rspack/cli"
-  | "tsup";
+  | "tsup"
+  | "tsdown";
 
 export interface Analysis {
   packageName: string;
