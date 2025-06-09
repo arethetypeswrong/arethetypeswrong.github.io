@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.18.2
+
+### Patch Changes
+
+- 58dca0c: Add tsdown to recognized build tools
+
 ## 0.18.1
 
 ### Patch Changes
