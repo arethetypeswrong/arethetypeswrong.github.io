@@ -27,9 +27,16 @@ export async function typed(
   const ignoredResolutions = allResolutionKinds.filter((kind) => ignoreResolutions.includes(kind));
   const resolutions = requiredResolutions.concat(ignoredResolutions);
   const entrypoints = Object.keys(analysis.entrypoints);
-  marked.setOptions({
-    renderer: new TerminalRenderer(),
-  });
+
+  let md: (s: string) => string;
+  if (format === "markdown") {
+    md = (s: string) => s + "\n\n";
+  } else {
+    marked.setOptions({
+      renderer: new TerminalRenderer(),
+    });
+    md = marked;
+  }
 
   out(`${analysis.packageName} v${analysis.packageVersion}`);
   if (analysis.types.kind === "@types") {
@@ -58,16 +65,18 @@ export async function typed(
   }
 
   if (summary) {
-    const defaultSummary = marked(!emoji ? " No problems found" : " No problems found 🌟");
+    const defaultSummary = md(!emoji ? " No problems found" : " No problems found 🌟");
     const grouped = groupProblemsByKind(problems);
     const summaryTexts = Object.entries(grouped).map(([kind, kindProblems]) => {
       const info = problemKindInfo[kind as core.ProblemKind];
       const affectsRequiredResolution = kindProblems.some((p) =>
         requiredResolutions.some((r) => problemAffectsResolutionKind(p, r, analysis)),
       );
-      const description = marked(
-        `${info.description}${info.details ? ` Use \`-f json\` to see ${info.details}.` : ""} ${info.docsUrl}`,
-      );
+      const descriptionText = `${info.description}${info.details ? ` Use \`-f json\` to see ${info.details}.` : ""}`;
+      const description =
+        format === "markdown"
+          ? md(`[${info.shortDescription}](${info.docsUrl}): ${descriptionText}`)
+          : md(`${descriptionText} ${info.docsUrl}`);
       return `${affectsRequiredResolution ? "" : "(ignored per resolution) "}${
         emoji ? `${info.emoji} ` : ""
       }${description}`;
@@ -155,6 +164,9 @@ export async function typed(
     case "ascii":
       out(asciiTable(table!));
       break;
+    case "markdown":
+      out(generateMarkdownTable(entrypoints, resolutions, entrypointHeaders, getCellContents));
+      break;
     case "auto":
       const terminalWidth = process.stdout.columns || 133; // This looks like GitHub Actions' width
       if (table!.width <= terminalWidth) {
@@ -172,6 +184,45 @@ export async function typed(
   function out(s: string = "") {
     output += s + "\n";
   }
+}
+
+function generateMarkdownTable(
+  entrypoints: string[],
+  resolutions: core.ResolutionKind[],
+  entrypointHeaders: string[],
+  getCellContents: (subpath: string, resolutionKind: core.ResolutionKind) => string,
+): string {
+  // Strip ANSI color codes from headers for markdown
+  const cleanHeaders = entrypointHeaders.map((header) => header.replace(/\u001b\[[0-9;]*m/g, ""));
+
+  // Create the header row
+  const headerRow = `| | ${cleanHeaders.join(" | ")} |`;
+  const separatorRow = `|${Array(cleanHeaders.length + 1)
+    .fill("")
+    .map(() => " --- ")
+    .join("|")}|`;
+
+  // Create data rows
+  const dataRows = resolutions.map((resolutionKind) => {
+    const rowData = entrypoints.map((entrypoint) => {
+      const cellContent = getCellContents(entrypoint, resolutionKind);
+      // Clean up cell content for markdown - remove ANSI codes and escape pipes
+      return cellContent.replace(/\u001b\[[0-9;]*m/g, "").replace(/\|/g, "\\|");
+    });
+    const rowDataLines = rowData.map((i) => i.split("\n"));
+    const lineCount = Math.max(...rowDataLines.map((i) => i.length));
+    return new Array(lineCount)
+      .fill(0)
+      .map(
+        (_, i) =>
+          `| ${i === 0 ? resolutionKinds[resolutionKind] : ""} | ${rowDataLines
+            .map((lines) => lines[i] || "")
+            .join(" | ")} |`,
+      )
+      .join("\n");
+  });
+
+  return [headerRow, separatorRow, ...dataRows].join("\n");
 }
 
 function memo<Args extends (string | number)[], Result>(fn: (...args: Args) => Result): (...args: Args) => Result {
