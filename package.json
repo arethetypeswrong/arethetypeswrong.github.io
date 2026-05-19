@@ -22,11 +22,6 @@
   },
   "engines": {
     "node": ">=22",
-    "pnpm": ">=9"
-  },
-  "pnpm": {
-    "patchedDependencies": {
-      "cjs-module-lexer@1.4.0": "patches/cjs-module-lexer@1.4.0.patch"
-    }
+    "pnpm": ">=10"
   }
 }

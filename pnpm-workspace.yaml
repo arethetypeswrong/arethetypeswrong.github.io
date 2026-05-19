@@ -1,2 +1,5 @@
 packages:
 - 'packages/*'
+
+patchedDependencies:
+  cjs-module-lexer@1.4.0: patches/cjs-module-lexer@1.4.0.patch
