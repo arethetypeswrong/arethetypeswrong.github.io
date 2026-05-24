@@ -294,10 +294,23 @@ export function createPackageFromTarballData(tarball: Uint8Array): Package {
 }
 
 function extractTarball(tarball: Uint8Array) {
-  // Use streaming API to work around https://github.com/101arrowz/fflate/issues/207
-  let unzipped: Uint8Array;
-  new Gunzip((chunk) => (unzipped = chunk)).push(tarball, /*final*/ true);
-  const data = untar(unzipped!);
+  // Use streaming API to work around https://github.com/101arrowz/fflate/issues/207.
+  // The streaming callback fires once per output chunk, and fflate emits multiple
+  // chunks for larger tarballs — so the chunks must be concatenated. Assigning
+  // `unzipped = chunk` kept only the last (often empty) chunk, which made `untar`
+  // return zero files and crashed below on `data[0].filename` for any package big
+  // enough to gunzip into more than one chunk.
+  const chunks: Uint8Array[] = [];
+  new Gunzip((chunk) => chunks.push(chunk)).push(tarball, /*final*/ true);
+  let totalLength = 0;
+  for (const chunk of chunks) totalLength += chunk.length;
+  const unzipped = new Uint8Array(totalLength);
+  let offset = 0;
+  for (const chunk of chunks) {
+    unzipped.set(chunk, offset);
+    offset += chunk.length;
+  }
+  const data = untar(unzipped);
   const prefix = data[0].filename.substring(0, data[0].filename.indexOf("/") + 1);
   const packageJsonText = data.find((f) => f.filename === `${prefix}package.json`)?.fileData;
   const packageJson = JSON.parse(new TextDecoder().decode(packageJsonText));
