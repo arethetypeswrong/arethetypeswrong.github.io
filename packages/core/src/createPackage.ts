@@ -1,5 +1,5 @@
 import { untar } from "@andrewbranch/untar.js";
-import { Gunzip } from "fflate";
+import { Gunzip, FlateErrorCode } from "fflate";
 import { major, maxSatisfying, minor, valid, validRange } from "semver";
 import ts from "typescript";
 import { parsePackageSpec, type ParsedPackageSpec } from "./utils.js";
@@ -295,9 +295,22 @@ export function createPackageFromTarballData(tarball: Uint8Array): Package {
 
 function extractTarball(tarball: Uint8Array) {
   // Use streaming API to work around https://github.com/101arrowz/fflate/issues/207
-  let unzipped: Uint8Array;
-  new Gunzip((chunk) => (unzipped = chunk)).push(tarball, /*final*/ true);
-  const data = untar(unzipped!);
+  const chunks: Uint8Array[] = [];
+  try {
+    new Gunzip((chunk) => chunks.push(chunk)).push(tarball, /*final*/ true);
+  } catch (err: any) {
+    // this happens for zero-padded tarballs; can safely ignore
+    if (err.code != FlateErrorCode.InvalidHeader) {
+      throw err;
+    }
+  }
+  const unzipped = new Uint8Array(chunks.reduce((a, b) => a + b.length, 0));
+  let offset = 0;
+  for (const chunk of chunks) {
+    unzipped.set(chunk, offset);
+    offset += chunk.length;
+  }
+  const data = untar(unzipped);
   const prefix = data[0].filename.substring(0, data[0].filename.indexOf("/") + 1);
   const packageJsonText = data.find((f) => f.filename === `${prefix}package.json`)?.fileData;
   const packageJson = JSON.parse(new TextDecoder().decode(packageJsonText));
