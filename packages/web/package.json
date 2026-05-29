@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "tsc": "tsc -b",
+    "tsgo": "tsgo -b",
     "build": "vite build",
     "start": "vite dev"
   },
@@ -16,7 +16,8 @@
     "@arethetypeswrong/core": "workspace:*",
     "immer": "^9.0.21",
     "marked": "^5.1.0",
-    "nprogress": "^0.2.0"
+    "nprogress": "^0.2.0",
+    "typescript": "5.6.1-rc"
   },
   "devDependencies": {
     "@types/marked": "^5.0.0",

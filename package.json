@@ -7,18 +7,18 @@
   },
   "license": "MIT",
   "scripts": {
-    "tsc": "tsc -b",
-    "build": "pnpm tsc && pnpm -r build",
+    "tsgo": "tsgo -b",
+    "build": "pnpm tsgo && pnpm -r build",
     "format": "prettier --write \"**/*.{ts,json,css}\"",
     "test": "pnpm -r test",
-    "check-dts": "tsc -p tsconfig.check-dts.json",
+    "check-dts": "tsgo -p tsconfig.check-dts.json",
     "start": "pnpm --filter @arethetypeswrong/web start",
     "version": "changeset version && pnpm install --lockfile-only"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.8",
-    "prettier": "^3.0.3",
-    "typescript": "5.6.1-rc"
+    "@typescript/native-preview": "7.0.0-dev.20260527.2",
+    "prettier": "^3.0.3"
   },
   "engines": {
     "node": ">=22",

@@ -45,7 +45,7 @@ export function getVersionsAtDateWithTypes(date, versionsByDate, data) {
 /**
  * @typedef {{
  *   packageName: string;
- *   fixedByVersion: string;
+ *   fixedByVersion: string | undefined;
  *   fixedByDate: string;
  * }} FixedPackage
  */

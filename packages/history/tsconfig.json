@@ -5,6 +5,7 @@
     "checkJs": true,
     "declaration": true,
     "emitDeclarationOnly": true,
+    "rootDir": "src",
     "outDir": "lib",
     "types": ["node"]
   },

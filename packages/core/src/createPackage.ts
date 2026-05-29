@@ -300,7 +300,7 @@ function extractTarball(tarball: Uint8Array) {
     new Gunzip((chunk) => chunks.push(chunk)).push(tarball, /*final*/ true);
   } catch (err: any) {
     // this happens for zero-padded tarballs; can safely ignore
-    if (err.code != FlateErrorCode.InvalidHeader) {
+    if (err.code !== FlateErrorCode.InvalidHeader) {
       throw err;
     }
   }
@@ -310,7 +310,7 @@ function extractTarball(tarball: Uint8Array) {
     unzipped.set(chunk, offset);
     offset += chunk.length;
   }
-  const data = untar(unzipped);
+  const data = untar(unzipped.buffer);
   const prefix = data[0].filename.substring(0, data[0].filename.indexOf("/") + 1);
   const packageJsonText = data.find((f) => f.filename === `${prefix}package.json`)?.fileData;
   const packageJson = JSON.parse(new TextDecoder().decode(packageJsonText));
