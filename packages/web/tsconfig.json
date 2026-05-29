@@ -6,7 +6,8 @@
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "emitDeclarationOnly": true,
-    "outDir": "lib"
+    "outDir": "lib",
+    "noUncheckedSideEffectImports": false,
   },
   "include": ["src", "package.json"],
   "references": [

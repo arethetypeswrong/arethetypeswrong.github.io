@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: 22
       - run: pnpm install --frozen-lockfile
-      - run: pnpm tsc
+      - run: pnpm tsgo
       - run: pnpm build
       - run: pnpm test
       - run: pnpm check-dts

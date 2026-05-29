@@ -18,10 +18,10 @@
     "access": "public"
   },
   "scripts": {
-    "tsc": "tsc",
-    "test": "tsc -b test && node --test \"test/dist/**/*.test.js\"",
+    "tsgo": "tsgo",
+    "test": "tsgo -b test && node --test \"test/dist/**/*.test.js\"",
     "snapshot": "node scripts/createSnapshotFixture.js",
-    "prepack": "pnpm tsc"
+    "prepack": "pnpm tsgo"
   },
   "type": "module",
   "imports": {
@@ -60,7 +60,7 @@
     "validate-npm-package-name": "^5.0.0"
   },
   "devDependencies": {
-    "@types/node": "^22.5.0",
+    "@types/node": "^25.9.1",
     "@types/semver": "^7.5.0",
     "@types/validate-npm-package-name": "^4.0.0",
     "ts-expose-internals": "5.6.1-rc"
