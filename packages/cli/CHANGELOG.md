@@ -1,5 +1,14 @@
 # @arethetypeswrong/cli
 
+## 0.18.3
+
+### Patch Changes
+
+- 14e61d5: Update @types/node, use @typescript/native-preview for local build/check
+- Updated dependencies [14e61d5]
+- Updated dependencies [25031aa]
+  - @arethetypeswrong/core@0.18.3
+
 ## 0.18.2
 
 ### Patch Changes

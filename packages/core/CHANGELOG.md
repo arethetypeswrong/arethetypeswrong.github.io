@@ -1,5 +1,13 @@
 # @arethetypeswrong/core
 
+## 0.18.3
+
+### Patch Changes
+
+- 14e61d5: Update @types/node, use @typescript/native-preview for local build/check
+- 25031aa: - Fix "Cannot read properties of undefined (reading 'filename')" caused by fflate 0.8.3 (https://github.com/arethetypeswrong/arethetypeswrong.github.io/issues/258)
+  - Bump fflate to ^0.8.3
+
 ## 0.18.2
 
 ### Patch Changes
