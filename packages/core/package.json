@@ -9,6 +9,10 @@
     "url": "https://github.com/arethetypeswrong/arethetypeswrong.github.io.git",
     "directory": "packages/core"
   },
+  "bugs": {
+    "url": "https://github.com/arethetypeswrong/arethetypeswrong.github.io/issues"
+  },
+  "homepage": "https://arethetypeswrong.github.io",
   "files": [
     "LICENSE",
     "dist",
