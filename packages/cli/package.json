@@ -19,6 +19,9 @@
     "url": "https://github.com/arethetypeswrong/arethetypeswrong.github.io.git",
     "directory": "packages/cli"
   },
+  "bugs": {
+    "url": "https://github.com/arethetypeswrong/arethetypeswrong.github.io/issues"
+  },
   "files": [
     "LICENSE",
     "dist/**/*.js",
