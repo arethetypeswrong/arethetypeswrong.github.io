@@ -1,6 +1,9 @@
 {
   "name": "@arethetypeswrong/cli",
   "version": "0.18.3",
+  "bugs": {
+    "url": "https://github.com/arethetypeswrong/arethetypeswrong.github.io/issues"
+  },
   "description": "A CLI tool for arethetypeswrong.github.io",
   "author": "Andrew Branch & ej-shafran",
   "contributors": [
