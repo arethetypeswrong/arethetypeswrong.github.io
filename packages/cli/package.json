@@ -14,6 +14,9 @@
     }
   ],
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arethetypeswrong/arethetypeswrong.github.io/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/arethetypeswrong/arethetypeswrong.github.io.git",
