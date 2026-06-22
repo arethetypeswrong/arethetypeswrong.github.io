@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.18.4
+
+### Patch Changes
+
+- 644fab1: Skip package export subpaths with no real target when discovering entrypoints.
+
 ## 0.18.3
 
 ### Patch Changes
