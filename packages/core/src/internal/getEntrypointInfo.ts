@@ -34,7 +34,7 @@ function getEntrypoints(fs: Package, exportsObject: unknown, options: CheckPacka
     return proxies;
   }
   const detectedSubpaths = getSubpaths(exportsObject);
-  if (detectedSubpaths.length === 0) {
+  if (detectedSubpaths.length === 0 && hasExportTarget(exportsObject)) {
     detectedSubpaths.push(".");
   }
   const included = unique([
@@ -71,10 +71,23 @@ function getSubpaths(exportsObject: any): string[] {
     return [];
   }
   const keys = Object.keys(exportsObject);
-  if (keys[0].startsWith(".")) {
-    return keys;
+  if (keys[0]?.startsWith(".")) {
+    return keys.filter((key) => hasExportTarget(exportsObject[key]));
   }
   return keys.flatMap((key) => getSubpaths(exportsObject[key]));
+}
+
+function hasExportTarget(exportsObject: any): boolean {
+  if (exportsObject === null || exportsObject === undefined) {
+    return false;
+  }
+  if (typeof exportsObject !== "object") {
+    return true;
+  }
+  if (Array.isArray(exportsObject)) {
+    return exportsObject.some(hasExportTarget);
+  }
+  return Object.keys(exportsObject).some((key) => hasExportTarget(exportsObject[key]));
 }
 
 function getProxyDirectories(rootDir: string, fs: Package) {
