@@ -100,6 +100,9 @@ Specify a directory to run `npm pack` in (instead of specifying a tarball filena
 attw --pack .
 ```
 
+Please note that the `--pack` option does not support package managers other than npm at this time.
+Therefore, if you use pnpm or yarn, you should generate the tarball yourself first (using `pnpm pack`/`yarn pack`) and run then run `attw <packed-tarball-name>`, rather than using the `--pack` option.
+
 #### From NPM
 
 Specify the name (and, optionally, version or SemVer range) of a package from the NPM registry instead of a local tarball filename.
