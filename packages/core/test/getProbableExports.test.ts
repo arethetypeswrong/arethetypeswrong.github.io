@@ -75,6 +75,26 @@ _export(exports, {
 var _pluginHelper = require("@bbob/plugin-helper");
 var _parse = /*#__PURE__*/ _interopRequireWildcard(require("./parse"));`,
   },
+
+  webpack_cjs_default: {
+    expected: ["__esModule", "default"],
+    file: `module.exports = function(e) {
+  var r = {};
+  function t(n) {
+    if (r[n]) return r[n].exports;
+    var o = r[n] = { exports: {} };
+    e[n].call(o.exports, o, o.exports, t);
+    return o.exports;
+  }
+  return t.m = e, t.c = r, t(t.s = 0);
+}([
+  function(e, r, t) {
+    "use strict";
+    r.__esModule = true;
+    r.default = function accept() {};
+  }
+]);`,
+  },
 };
 
 describe("getProbableExports", () => {
