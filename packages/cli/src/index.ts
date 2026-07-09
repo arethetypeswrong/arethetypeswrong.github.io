@@ -28,6 +28,7 @@ const formats = Object.keys({
   ascii: true,
   table: true,
   "table-flipped": true,
+  markdown: true,
 } satisfies Record<render.Format, any>) as render.Format[];
 
 interface Opts extends render.RenderOptions {

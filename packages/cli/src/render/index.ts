@@ -1,6 +1,6 @@
 import type { problemFlags, resolutionKinds } from "../problemUtils.js";
 
-export type Format = "auto" | "table" | "table-flipped" | "ascii" | "json";
+export type Format = "auto" | "table" | "table-flipped" | "ascii" | "json" | "markdown";
 export interface RenderOptions {
   ignoreRules?: (typeof problemFlags)[keyof typeof problemFlags][];
   ignoreResolutions?: (keyof typeof resolutionKinds)[];
