@@ -230,6 +230,30 @@ var index_default = { a, b };`,
     );
   });
 
+  test("ignores bundled CommonJS default export with aliased exports object", () => {
+    assert(
+      isOk(
+        `export default function accept(): boolean;`,
+        `module.exports = function(e) {
+          var r = {};
+          function t(n) {
+            if (r[n]) return r[n].exports;
+            var o = r[n] = { exports: {} };
+            e[n].call(o.exports, o, o.exports, t);
+            return o.exports;
+          }
+          return t(0);
+        }([
+          function(e, r, t) {
+            "use strict";
+            r.__esModule = true;
+            r.default = function accept() {};
+          }
+        ]);`,
+      ),
+    );
+  });
+
   test("types have single default export, JS has default and other named exports", () => {
     assert(
       isOk(

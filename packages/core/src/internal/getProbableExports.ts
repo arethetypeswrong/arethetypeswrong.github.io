@@ -8,7 +8,7 @@ export interface Export {
 }
 
 export function getProbableExports(sourceFile: ts.SourceFile): Export[] {
-  return getEsbuildBabelSwcExports(sourceFile) ?? [];
+  return getEsbuildBabelSwcExports(sourceFile) ?? getWebpackBootstrapExports(sourceFile) ?? [];
 }
 
 function getEsbuildBabelSwcExports(sourceFile: ts.SourceFile): Export[] | undefined {
@@ -92,4 +92,113 @@ function isEsbuildExportFunction(decl: ts.Declaration | undefined) {
 
 function isProbablyMinified(text: string): boolean {
   return minifiedVariableAssignmentPattern.test(text);
+}
+
+function getWebpackBootstrapExports(sourceFile: ts.SourceFile): Export[] | undefined {
+  for (const statement of sourceFile.statements) {
+    if (!ts.isExpressionStatement(statement) || !ts.isBinaryExpression(statement.expression)) {
+      continue;
+    }
+    const assignment = statement.expression;
+    if (assignment.operatorToken.kind !== ts.SyntaxKind.EqualsToken || !isModuleExports(assignment.left)) {
+      continue;
+    }
+
+    const bootstrapCall = ts.skipParentheses(assignment.right);
+    if (!ts.isCallExpression(bootstrapCall)) {
+      continue;
+    }
+
+    const bootstrap = ts.skipParentheses(bootstrapCall.expression);
+    if (
+      !ts.isFunctionExpression(bootstrap) ||
+      !ts.isBlock(bootstrap.body) ||
+      bootstrapCall.arguments.length !== 1 ||
+      !ts.isArrayLiteralExpression(bootstrapCall.arguments[0])
+    ) {
+      continue;
+    }
+
+    const entryModuleId = getWebpackEntryModuleId(bootstrap.body);
+    if (entryModuleId === undefined) {
+      continue;
+    }
+
+    const entryModule = bootstrapCall.arguments[0].elements[entryModuleId];
+    if (!entryModule || !ts.isFunctionExpression(entryModule)) {
+      continue;
+    }
+
+    const exportsParameterName = entryModule.parameters[1]?.name;
+    if (!exportsParameterName || !ts.isIdentifier(exportsParameterName)) {
+      continue;
+    }
+    const exportsParameterText = exportsParameterName.text;
+
+    const exports: Export[] = [];
+    visit(entryModule.body);
+    return exports;
+
+    function visit(node: ts.Node) {
+      if (
+        ts.isBinaryExpression(node) &&
+        node.operatorToken.kind === ts.SyntaxKind.EqualsToken &&
+        ts.isAccessExpression(node.left) &&
+        ts.isIdentifier(node.left.expression) &&
+        node.left.expression.text === exportsParameterText
+      ) {
+        const name = getNameOfAccessExpression(node.left);
+        if (name !== undefined) {
+          exports.push({ name, node });
+        }
+      }
+      ts.forEachChild(node, visit);
+    }
+  }
+}
+
+function getWebpackEntryModuleId(body: ts.Block): number | undefined {
+  for (const statement of body.statements) {
+    if (!ts.isReturnStatement(statement) || !statement.expression) {
+      continue;
+    }
+
+    return getWebpackEntryModuleIdFromExpression(statement.expression);
+  }
+}
+
+function getWebpackEntryModuleIdFromExpression(expression: ts.Expression): number | undefined {
+  expression = ts.skipParentheses(expression);
+  if (ts.isCallExpression(expression) && expression.arguments.length === 1) {
+    return getNumericValue(expression.arguments[0]);
+  }
+  if (ts.isBinaryExpression(expression) && expression.operatorToken.kind === ts.SyntaxKind.CommaToken) {
+    return getWebpackEntryModuleIdFromExpression(expression.right);
+  }
+}
+
+function getNumericValue(node: ts.Expression): number | undefined {
+  node = ts.skipParentheses(node);
+  if (ts.isNumericLiteral(node)) {
+    return Number(node.text);
+  }
+  if (ts.isBinaryExpression(node) && node.operatorToken.kind === ts.SyntaxKind.EqualsToken) {
+    return getNumericValue(node.right);
+  }
+}
+
+function isModuleExports(node: ts.Expression) {
+  return (
+    ts.isAccessExpression(node) &&
+    ts.isIdentifier(node.expression) &&
+    node.expression.text === "module" &&
+    getNameOfAccessExpression(node) === "exports"
+  );
+}
+
+function getNameOfAccessExpression(accessExpression: ts.AccessExpression): string | undefined {
+  const node = ts.getNameOfAccessExpression(accessExpression);
+  if (ts.isIdentifier(node) || ts.isStringLiteralLike(node)) {
+    return node.text;
+  }
 }
