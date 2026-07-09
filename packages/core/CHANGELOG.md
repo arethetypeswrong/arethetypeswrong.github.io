@@ -1,5 +1,11 @@
 # @arethetypeswrong/core
 
+## 0.18.5
+
+### Patch Changes
+
+- c4be7e8: Detect default exports in webpack-bundled CommonJS libraries.
+
 ## 0.18.4
 
 ### Patch Changes
