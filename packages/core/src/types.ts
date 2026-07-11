@@ -2,6 +2,7 @@ import type ts from "typescript";
 
 export type ResolutionKind = "node10" | "node16-cjs" | "node16-esm" | "bundler";
 export type ResolutionOption = "node10" | "node16" | "bundler";
+export type ResolutionModeName = "cjs" | "esm";
 export interface EntrypointInfo {
   subpath: string;
   resolutions: Record<ResolutionKind, EntrypointResolutionAnalysis>;
@@ -145,11 +146,14 @@ export interface MissingExportEqualsProblem extends FilePairProblem {
   kind: "MissingExportEquals";
 }
 
-export interface InternalResolutionErrorProblem extends FileTextRangeProblem {
+export interface InternalResolutionErrorProblem extends FileTextRangeProblem, EntrypointResolutionProblem {
   kind: "InternalResolutionError";
   resolutionOption: ResolutionOption;
   moduleSpecifier: string;
   resolutionMode: ts.ResolutionMode;
+  resolutionModeName: ResolutionModeName;
+  conditions?: string[];
+  resolverMessage?: string;
   trace: string[];
 }
 

@@ -109,7 +109,6 @@ export const problemKindInfo: Record<ProblemKind, ProblemKindInfo> = {
     shortDescription: "Internal resolution error",
     description:
       "Import found in a type declaration file failed to resolve. Either this indicates that runtime resolution errors will occur, or (more likely) the types misrepresent the contents of the JavaScript files.",
-    details: "the imports that failed to resolve",
     docsUrl:
       "https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/InternalResolutionError.md",
   },

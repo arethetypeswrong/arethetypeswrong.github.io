@@ -1,12 +1,18 @@
 import ts from "typescript";
 import { defineCheck } from "../defineCheck.js";
 import type { InternalResolutionErrorProblem } from "../../types.js";
+import { getInternalResolutionDiagnostic } from "../../utils.js";
 
 export default defineCheck({
   name: "InternalResolutionError",
   enumerateFiles: true,
-  dependencies: ({ resolutionOption, fileName }) => [resolutionOption, fileName],
-  execute: ([resolutionOption, fileName], context) => {
+  dependencies: ({ subpath, resolutionKind, resolutionOption, fileName }) => [
+    subpath,
+    resolutionKind,
+    resolutionOption,
+    fileName,
+  ],
+  execute: ([subpath, resolutionKind, resolutionOption, fileName], context) => {
     if (!ts.hasTSFileExtension(fileName)) {
       return;
     }
@@ -34,15 +40,25 @@ export default defineCheck({
         }
 
         if (!resolution.resolvedModule) {
+          const trace = host.getTrace(fileName, moduleSpecifier.text, resolutionMode) ?? [];
+          const resolutionModeName =
+            resolutionMode === ts.ModuleKind.CommonJS ||
+            (resolutionMode === undefined && (resolutionKind === "node10" || resolutionKind === "node16-cjs"))
+              ? "cjs"
+              : "esm";
           problems.push({
             kind: "InternalResolutionError",
+            entrypoint: subpath,
+            resolutionKind,
             resolutionOption,
             fileName,
             moduleSpecifier: reference,
             pos: moduleSpecifier.pos,
             end: moduleSpecifier.end,
             resolutionMode,
-            trace: host.getTrace(fileName, moduleSpecifier.text, resolutionMode)!,
+            resolutionModeName,
+            ...getInternalResolutionDiagnostic(trace, resolutionOption, resolutionModeName),
+            trace,
           });
         }
       }

@@ -9,6 +9,7 @@ import type {
   Problem,
   ProblemKind,
   ResolutionKind,
+  ResolutionModeName,
   ResolutionOption,
 } from "./types.js";
 
@@ -71,6 +72,65 @@ export function resolvedThroughFallback(traces: string[]) {
       }
     }
     return false;
+  }
+}
+
+export interface InternalResolutionDiagnostic {
+  conditions?: string[];
+  resolverMessage?: string;
+}
+
+export function getInternalResolutionDiagnostic(
+  trace: readonly string[],
+  resolutionOption: ResolutionOption,
+  resolutionModeName: ResolutionModeName,
+): InternalResolutionDiagnostic {
+  const conditions = getConditions() ?? getDefaultConditions(resolutionOption, resolutionModeName);
+  let resolverMessage: string | undefined;
+
+  for (let i = trace.length - 1; i >= 0; i--) {
+    const match = /^(?:=+\s*)?(.+? was not resolved\.)(?:\s*=+)?$/.exec(trace[i]);
+    if (match) {
+      resolverMessage = match[1];
+      break;
+    }
+  }
+
+  return {
+    ...(conditions?.length ? { conditions } : {}),
+    ...(resolverMessage ? { resolverMessage } : {}),
+  };
+
+  function getConditions(): string[] | undefined {
+    for (const line of trace) {
+      if (!line.startsWith("Resolving in ") || !line.includes(" with conditions ")) {
+        continue;
+      }
+
+      const result: string[] = [];
+      const pattern = /'([^']+)'/g;
+      let match: RegExpExecArray | null;
+      while ((match = pattern.exec(line))) {
+        result.push(match[1]);
+      }
+      if (result.length) {
+        return result;
+      }
+    }
+  }
+}
+
+function getDefaultConditions(
+  resolutionOption: ResolutionOption,
+  resolutionModeName: ResolutionModeName,
+): string[] | undefined {
+  switch (resolutionOption) {
+    case "node10":
+      return;
+    case "node16":
+      return resolutionModeName === "cjs" ? ["require", "types", "node"] : ["import", "types", "node"];
+    case "bundler":
+      return ["import", "types"];
   }
 }
 

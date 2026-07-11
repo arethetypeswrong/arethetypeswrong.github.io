@@ -6,7 +6,9 @@ $ attw vue@3.3.4.tgz --include-entrypoints foo -f ascii
 
 vue v3.3.4
 
-🥴 Import found in a type declaration file failed to resolve. Either this indicates that runtime resolution errors will occur, or (more likely) the types misrepresent the contents of the JavaScript files. Use -f json to see the imports that failed to resolve. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/InternalResolutionError.md
+🥴 Import found in a type declaration file failed to resolve. Either this indicates that runtime resolution errors will occur, or (more likely) the types misrepresent the contents of the JavaScript files. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/InternalResolutionError.md
+
+'../jsx' failed to resolve for entrypoint 'vue' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/vue/dist/vue.d.mts': Module name '../jsx' was not resolved.
 
 🎭 Import resolved to a CommonJS type declaration file, but an ESM JavaScript file. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseCJS.md
 
@@ -19,7 +21,7 @@ vue v3.3.4
 
 node10: 🟢 
 node16 (from CJS): 🟢 (CJS)
-node16 (from ESM): 🥴 Internal resolution error
+node16 (from ESM): 🥴 Internal resolution error: '../jsx'
 bundler: 🟢 
 
 ***********************************
