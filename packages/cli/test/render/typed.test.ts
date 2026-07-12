@@ -92,6 +92,17 @@ test("typed renders actionable internal resolution diagnostics and verbose trace
   }
 });
 
+test("typed keeps table cells concise when summary is disabled", async () => {
+  const output = await typed(analysis(), {
+    emoji: false,
+    format: "ascii",
+    summary: false,
+  });
+  assert.match(output, /Internal resolution error: '\.\/missing'/);
+  assert.doesNotMatch(output, /with conditions 'import', 'types', 'node'/);
+  assert.doesNotMatch(output, /from declaration '\/node_modules\/fixture\/index\.d\.mts'/);
+});
+
 test("typed accepts verbose mode without internal resolution errors", async () => {
   const output = await typed(analysis([]), {
     emoji: false,

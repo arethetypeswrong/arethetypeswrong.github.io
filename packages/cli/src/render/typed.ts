@@ -152,9 +152,9 @@ export async function typed(
           (problem) =>
             ignoredPrefix +
             (emoji ? `${problemKindInfo.InternalResolutionError.emoji} ` : "") +
-            (summary
-              ? `${problemKindInfo.InternalResolutionError.shortDescription}: ${quote(problem.moduleSpecifier)}`
-              : formatInternalResolutionError(problem, analysis.packageName)),
+            (verbose
+              ? formatInternalResolutionError(problem, analysis.packageName)
+              : `${problemKindInfo.InternalResolutionError.shortDescription}: ${quote(problem.moduleSpecifier)}`),
         ),
       );
       return lines.join("\n");
