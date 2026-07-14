@@ -79,11 +79,17 @@ export async function typed(
           requiredResolutions.includes(problem.resolutionKind),
         );
         const description = marked(`${info.description} ${info.docsUrl}`);
-        const diagnostics = problems
-          .map((problem) => {
-            const ignoredPrefix = ignoreResolutions.includes(problem.resolutionKind) ? "(ignored per resolution) " : "";
-            return `${ignoredPrefix}${formatInternalResolutionError(problem, analysis.packageName)}`;
-          })
+        const diagnostics = Array.from(
+          new Set(
+            problems.map((problem) => {
+              const ignoredPrefix = ignoreResolutions.includes(problem.resolutionKind)
+                ? "(ignored per resolution) "
+                : "";
+              return `${ignoredPrefix}${formatInternalResolutionError(problem)}`;
+            }),
+          ),
+        )
+          .map((line) => `  ${line}`)
           .join("\n");
         return `${affectsRequiredResolution ? "" : "(ignored per resolution) "}${
           emoji ? `${info.emoji} ` : ""
@@ -153,7 +159,7 @@ export async function typed(
             ignoredPrefix +
             (emoji ? `${problemKindInfo.InternalResolutionError.emoji} ` : "") +
             (verbose
-              ? formatInternalResolutionError(problem, analysis.packageName)
+              ? formatInternalResolutionError(problem)
               : `${problemKindInfo.InternalResolutionError.shortDescription}: ${quote(problem.moduleSpecifier)}`),
         ),
       );
@@ -246,12 +252,10 @@ function memo<Args extends (string | number)[], Result>(fn: (...args: Args) => R
   };
 }
 
-function formatInternalResolutionError(problem: core.InternalResolutionErrorProblem, packageName: string): string {
-  const conditions = problem.conditions?.length ? ` with conditions ${problem.conditions.map(quote).join(", ")}` : "";
-  const cause = problem.resolverMessage ? `: ${problem.resolverMessage}` : "";
-  return `${quote(problem.moduleSpecifier)} failed to resolve for entrypoint ${quote(
-    getEntrypointName(problem.entrypoint, packageName),
-  )} using ${problem.resolutionKind}${conditions} from declaration ${quote(problem.fileName)}${cause}`;
+function formatInternalResolutionError(problem: core.InternalResolutionErrorProblem): string {
+  return `${quote(problem.moduleSpecifier)} failed to resolve using ${problem.resolutionKind} from ${quote(
+    problem.fileName,
+  )}`;
 }
 
 function getEntrypointName(entrypoint: string, packageName: string): string {

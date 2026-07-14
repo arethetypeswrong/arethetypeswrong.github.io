@@ -8,7 +8,7 @@ vue v3.3.4
 
 🥴 Import found in a type declaration file failed to resolve. Either this indicates that runtime resolution errors will occur, or (more likely) the types misrepresent the contents of the JavaScript files. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/InternalResolutionError.md
 
-'../jsx' failed to resolve for entrypoint 'vue' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/vue/dist/vue.d.mts': Module name '../jsx' was not resolved.
+  '../jsx' failed to resolve using node16-esm from '/node_modules/vue/dist/vue.d.mts'
 
 
 ┌───────────────────┬────────────────────────────────────────┐

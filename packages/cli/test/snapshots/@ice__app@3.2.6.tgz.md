@@ -14,12 +14,10 @@ Build tools:
 
 🥴 Import found in a type declaration file failed to resolve. Either this indicates that runtime resolution errors will occur, or (more likely) the types misrepresent the contents of the JavaScript files. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/InternalResolutionError.md
 
-'./plugin' failed to resolve for entrypoint '@ice/app' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@ice/app/esm/types/userConfig.d.ts': Module name './plugin' was not resolved.
-'./types' failed to resolve for entrypoint '@ice/app' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@ice/app/esm/index.d.ts': Module name './types' was not resolved.
-'./plugin' failed to resolve for entrypoint '@ice/app' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@ice/app/esm/types/userConfig.d.ts': Module name './plugin' was not resolved.
-'./types' failed to resolve for entrypoint '@ice/app' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@ice/app/esm/index.d.ts': Module name './types' was not resolved.
-'./plugin' failed to resolve for entrypoint '@ice/app/types' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@ice/app/esm/types/userConfig.d.ts': Module name './plugin' was not resolved.
-'./plugin' failed to resolve for entrypoint '@ice/app/types' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@ice/app/esm/types/userConfig.d.ts': Module name './plugin' was not resolved.
+  './plugin' failed to resolve using node16-cjs from '/node_modules/@ice/app/esm/types/userConfig.d.ts'
+  './types' failed to resolve using node16-cjs from '/node_modules/@ice/app/esm/index.d.ts'
+  './plugin' failed to resolve using node16-esm from '/node_modules/@ice/app/esm/types/userConfig.d.ts'
+  './types' failed to resolve using node16-esm from '/node_modules/@ice/app/esm/index.d.ts'
 
 💀 Import failed to resolve to type declarations or JavaScript files. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/NoResolution.md
 

@@ -14,292 +14,292 @@ Build tools:
 
 🥴 Import found in a type declaration file failed to resolve. Either this indicates that runtime resolution errors will occur, or (more likely) the types misrepresent the contents of the JavaScript files. https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/InternalResolutionError.md
 
-'./core' failed to resolve for entrypoint '@apollo/client' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/index.d.ts': Module name './core' was not resolved.
-'./react' failed to resolve for entrypoint '@apollo/client' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/index.d.ts': Module name './react' was not resolved.
-'./core' failed to resolve for entrypoint '@apollo/client' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/index.d.ts': Module name './core' was not resolved.
-'./react' failed to resolve for entrypoint '@apollo/client' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/index.d.ts': Module name './react' was not resolved.
-'../utilities/globals' failed to resolve for entrypoint '@apollo/client/cache' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name '../utilities/globals' was not resolved.
-'./core/cache' failed to resolve for entrypoint '@apollo/client/cache' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './core/cache' was not resolved.
-'./core/types/Cache' failed to resolve for entrypoint '@apollo/client/cache' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './core/types/Cache' was not resolved.
-'./core/types/DataProxy' failed to resolve for entrypoint '@apollo/client/cache' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './core/types/DataProxy' was not resolved.
-'./core/types/common' failed to resolve for entrypoint '@apollo/client/cache' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './core/types/common' was not resolved.
-'../utilities' failed to resolve for entrypoint '@apollo/client/cache' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name '../utilities' was not resolved.
-'./inmemory/entityStore' failed to resolve for entrypoint '@apollo/client/cache' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './inmemory/entityStore' was not resolved.
-'./inmemory/helpers' failed to resolve for entrypoint '@apollo/client/cache' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './inmemory/helpers' was not resolved.
-'./inmemory/inMemoryCache' failed to resolve for entrypoint '@apollo/client/cache' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './inmemory/inMemoryCache' was not resolved.
-'./inmemory/reactiveVars' failed to resolve for entrypoint '@apollo/client/cache' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './inmemory/reactiveVars' was not resolved.
-'./inmemory/policies' failed to resolve for entrypoint '@apollo/client/cache' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './inmemory/policies' was not resolved.
-'./inmemory/object-canon' failed to resolve for entrypoint '@apollo/client/cache' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './inmemory/object-canon' was not resolved.
-'./inmemory/fragmentRegistry' failed to resolve for entrypoint '@apollo/client/cache' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './inmemory/fragmentRegistry' was not resolved.
-'./inmemory/types' failed to resolve for entrypoint '@apollo/client/cache' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './inmemory/types' was not resolved.
-'../utilities/globals' failed to resolve for entrypoint '@apollo/client/cache' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name '../utilities/globals' was not resolved.
-'./core/cache' failed to resolve for entrypoint '@apollo/client/cache' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './core/cache' was not resolved.
-'./core/types/Cache' failed to resolve for entrypoint '@apollo/client/cache' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './core/types/Cache' was not resolved.
-'./core/types/DataProxy' failed to resolve for entrypoint '@apollo/client/cache' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './core/types/DataProxy' was not resolved.
-'./core/types/common' failed to resolve for entrypoint '@apollo/client/cache' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './core/types/common' was not resolved.
-'../utilities' failed to resolve for entrypoint '@apollo/client/cache' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name '../utilities' was not resolved.
-'./inmemory/entityStore' failed to resolve for entrypoint '@apollo/client/cache' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './inmemory/entityStore' was not resolved.
-'./inmemory/helpers' failed to resolve for entrypoint '@apollo/client/cache' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './inmemory/helpers' was not resolved.
-'./inmemory/inMemoryCache' failed to resolve for entrypoint '@apollo/client/cache' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './inmemory/inMemoryCache' was not resolved.
-'./inmemory/reactiveVars' failed to resolve for entrypoint '@apollo/client/cache' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './inmemory/reactiveVars' was not resolved.
-'./inmemory/policies' failed to resolve for entrypoint '@apollo/client/cache' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './inmemory/policies' was not resolved.
-'./inmemory/object-canon' failed to resolve for entrypoint '@apollo/client/cache' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './inmemory/object-canon' was not resolved.
-'./inmemory/fragmentRegistry' failed to resolve for entrypoint '@apollo/client/cache' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './inmemory/fragmentRegistry' was not resolved.
-'./inmemory/types' failed to resolve for entrypoint '@apollo/client/cache' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/cache/index.d.ts': Module name './inmemory/types' was not resolved.
-'./ApolloClient' failed to resolve for entrypoint '@apollo/client/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name './ApolloClient' was not resolved.
-'./ObservableQuery' failed to resolve for entrypoint '@apollo/client/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name './ObservableQuery' was not resolved.
-'./watchQueryOptions' failed to resolve for entrypoint '@apollo/client/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name './watchQueryOptions' was not resolved.
-'./networkStatus' failed to resolve for entrypoint '@apollo/client/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name './networkStatus' was not resolved.
-'./types' failed to resolve for entrypoint '@apollo/client/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name './types' was not resolved.
-'./LocalState' failed to resolve for entrypoint '@apollo/client/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name './LocalState' was not resolved.
-'../errors' failed to resolve for entrypoint '@apollo/client/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name '../errors' was not resolved.
-'../cache' failed to resolve for entrypoint '@apollo/client/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name '../cache' was not resolved.
-'../cache/inmemory/types' failed to resolve for entrypoint '@apollo/client/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name '../cache/inmemory/types' was not resolved.
-'../link/core' failed to resolve for entrypoint '@apollo/client/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name '../link/core' was not resolved.
-'../link/http' failed to resolve for entrypoint '@apollo/client/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name '../link/http' was not resolved.
-'../link/utils' failed to resolve for entrypoint '@apollo/client/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name '../link/utils' was not resolved.
-'../utilities' failed to resolve for entrypoint '@apollo/client/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name '../utilities' was not resolved.
-'./ApolloClient' failed to resolve for entrypoint '@apollo/client/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name './ApolloClient' was not resolved.
-'./ObservableQuery' failed to resolve for entrypoint '@apollo/client/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name './ObservableQuery' was not resolved.
-'./watchQueryOptions' failed to resolve for entrypoint '@apollo/client/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name './watchQueryOptions' was not resolved.
-'./networkStatus' failed to resolve for entrypoint '@apollo/client/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name './networkStatus' was not resolved.
-'./types' failed to resolve for entrypoint '@apollo/client/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name './types' was not resolved.
-'./LocalState' failed to resolve for entrypoint '@apollo/client/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name './LocalState' was not resolved.
-'../errors' failed to resolve for entrypoint '@apollo/client/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name '../errors' was not resolved.
-'../cache' failed to resolve for entrypoint '@apollo/client/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name '../cache' was not resolved.
-'../cache/inmemory/types' failed to resolve for entrypoint '@apollo/client/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name '../cache/inmemory/types' was not resolved.
-'../link/core' failed to resolve for entrypoint '@apollo/client/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name '../link/core' was not resolved.
-'../link/http' failed to resolve for entrypoint '@apollo/client/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name '../link/http' was not resolved.
-'../link/utils' failed to resolve for entrypoint '@apollo/client/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name '../link/utils' was not resolved.
-'../utilities' failed to resolve for entrypoint '@apollo/client/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/core/index.d.ts': Module name '../utilities' was not resolved.
-'../utilities/globals' failed to resolve for entrypoint '@apollo/client/errors' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/errors/index.d.ts': Module name '../utilities/globals' was not resolved.
-'../link/http' failed to resolve for entrypoint '@apollo/client/errors' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/errors/index.d.ts': Module name '../link/http' was not resolved.
-'../link/utils' failed to resolve for entrypoint '@apollo/client/errors' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/errors/index.d.ts': Module name '../link/utils' was not resolved.
-'../link/core' failed to resolve for entrypoint '@apollo/client/errors' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/errors/index.d.ts': Module name '../link/core' was not resolved.
-'../utilities/globals' failed to resolve for entrypoint '@apollo/client/errors' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/errors/index.d.ts': Module name '../utilities/globals' was not resolved.
-'../link/http' failed to resolve for entrypoint '@apollo/client/errors' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/errors/index.d.ts': Module name '../link/http' was not resolved.
-'../link/utils' failed to resolve for entrypoint '@apollo/client/errors' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/errors/index.d.ts': Module name '../link/utils' was not resolved.
-'../link/core' failed to resolve for entrypoint '@apollo/client/errors' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/errors/index.d.ts': Module name '../link/core' was not resolved.
-'./batchLink' failed to resolve for entrypoint '@apollo/client/link/batch' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/batch/index.d.ts': Module name './batchLink' was not resolved.
-'./batchLink' failed to resolve for entrypoint '@apollo/client/link/batch' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/batch/index.d.ts': Module name './batchLink' was not resolved.
-'./batchHttpLink' failed to resolve for entrypoint '@apollo/client/link/batch-http' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/batch-http/index.d.ts': Module name './batchHttpLink' was not resolved.
-'./batchHttpLink' failed to resolve for entrypoint '@apollo/client/link/batch-http' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/batch-http/index.d.ts': Module name './batchHttpLink' was not resolved.
-'../core' failed to resolve for entrypoint '@apollo/client/link/context' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/context/index.d.ts': Module name '../core' was not resolved.
-'../../core' failed to resolve for entrypoint '@apollo/client/link/context' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/context/index.d.ts': Module name '../../core' was not resolved.
-'../core' failed to resolve for entrypoint '@apollo/client/link/context' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/context/index.d.ts': Module name '../core' was not resolved.
-'../../core' failed to resolve for entrypoint '@apollo/client/link/context' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/context/index.d.ts': Module name '../../core' was not resolved.
-'../../utilities/globals' failed to resolve for entrypoint '@apollo/client/link/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/core/index.d.ts': Module name '../../utilities/globals' was not resolved.
-'./empty' failed to resolve for entrypoint '@apollo/client/link/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/core/index.d.ts': Module name './empty' was not resolved.
-'./from' failed to resolve for entrypoint '@apollo/client/link/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/core/index.d.ts': Module name './from' was not resolved.
-'./split' failed to resolve for entrypoint '@apollo/client/link/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/core/index.d.ts': Module name './split' was not resolved.
-'./concat' failed to resolve for entrypoint '@apollo/client/link/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/core/index.d.ts': Module name './concat' was not resolved.
-'./execute' failed to resolve for entrypoint '@apollo/client/link/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/core/index.d.ts': Module name './execute' was not resolved.
-'./ApolloLink' failed to resolve for entrypoint '@apollo/client/link/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/core/index.d.ts': Module name './ApolloLink' was not resolved.
-'./types' failed to resolve for entrypoint '@apollo/client/link/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/core/index.d.ts': Module name './types' was not resolved.
-'../../utilities/globals' failed to resolve for entrypoint '@apollo/client/link/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/core/index.d.ts': Module name '../../utilities/globals' was not resolved.
-'./empty' failed to resolve for entrypoint '@apollo/client/link/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/core/index.d.ts': Module name './empty' was not resolved.
-'./from' failed to resolve for entrypoint '@apollo/client/link/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/core/index.d.ts': Module name './from' was not resolved.
-'./split' failed to resolve for entrypoint '@apollo/client/link/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/core/index.d.ts': Module name './split' was not resolved.
-'./concat' failed to resolve for entrypoint '@apollo/client/link/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/core/index.d.ts': Module name './concat' was not resolved.
-'./execute' failed to resolve for entrypoint '@apollo/client/link/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/core/index.d.ts': Module name './execute' was not resolved.
-'./ApolloLink' failed to resolve for entrypoint '@apollo/client/link/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/core/index.d.ts': Module name './ApolloLink' was not resolved.
-'./types' failed to resolve for entrypoint '@apollo/client/link/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/core/index.d.ts': Module name './types' was not resolved.
-'../../errors' failed to resolve for entrypoint '@apollo/client/link/error' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/error/index.d.ts': Module name '../../errors' was not resolved.
-'../../utilities' failed to resolve for entrypoint '@apollo/client/link/error' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/error/index.d.ts': Module name '../../utilities' was not resolved.
-'../core' failed to resolve for entrypoint '@apollo/client/link/error' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/error/index.d.ts': Module name '../core' was not resolved.
-'../../errors' failed to resolve for entrypoint '@apollo/client/link/error' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/error/index.d.ts': Module name '../../errors' was not resolved.
-'../../utilities' failed to resolve for entrypoint '@apollo/client/link/error' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/error/index.d.ts': Module name '../../utilities' was not resolved.
-'../core' failed to resolve for entrypoint '@apollo/client/link/error' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/error/index.d.ts': Module name '../core' was not resolved.
-'../../utilities/globals' failed to resolve for entrypoint '@apollo/client/link/http' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/http/index.d.ts': Module name '../../utilities/globals' was not resolved.
-'./parseAndCheckHttpResponse' failed to resolve for entrypoint '@apollo/client/link/http' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/http/index.d.ts': Module name './parseAndCheckHttpResponse' was not resolved.
-'./serializeFetchParameter' failed to resolve for entrypoint '@apollo/client/link/http' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/http/index.d.ts': Module name './serializeFetchParameter' was not resolved.
-'./selectHttpOptionsAndBody' failed to resolve for entrypoint '@apollo/client/link/http' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/http/index.d.ts': Module name './selectHttpOptionsAndBody' was not resolved.
-'./checkFetcher' failed to resolve for entrypoint '@apollo/client/link/http' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/http/index.d.ts': Module name './checkFetcher' was not resolved.
-'./createSignalIfSupported' failed to resolve for entrypoint '@apollo/client/link/http' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/http/index.d.ts': Module name './createSignalIfSupported' was not resolved.
-'./selectURI' failed to resolve for entrypoint '@apollo/client/link/http' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/http/index.d.ts': Module name './selectURI' was not resolved.
-'./createHttpLink' failed to resolve for entrypoint '@apollo/client/link/http' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/http/index.d.ts': Module name './createHttpLink' was not resolved.
-'./HttpLink' failed to resolve for entrypoint '@apollo/client/link/http' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/http/index.d.ts': Module name './HttpLink' was not resolved.
-'./rewriteURIForGET' failed to resolve for entrypoint '@apollo/client/link/http' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/http/index.d.ts': Module name './rewriteURIForGET' was not resolved.
-'../../utilities/globals' failed to resolve for entrypoint '@apollo/client/link/http' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/http/index.d.ts': Module name '../../utilities/globals' was not resolved.
-'./parseAndCheckHttpResponse' failed to resolve for entrypoint '@apollo/client/link/http' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/http/index.d.ts': Module name './parseAndCheckHttpResponse' was not resolved.
-'./serializeFetchParameter' failed to resolve for entrypoint '@apollo/client/link/http' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/http/index.d.ts': Module name './serializeFetchParameter' was not resolved.
-'./selectHttpOptionsAndBody' failed to resolve for entrypoint '@apollo/client/link/http' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/http/index.d.ts': Module name './selectHttpOptionsAndBody' was not resolved.
-'./checkFetcher' failed to resolve for entrypoint '@apollo/client/link/http' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/http/index.d.ts': Module name './checkFetcher' was not resolved.
-'./createSignalIfSupported' failed to resolve for entrypoint '@apollo/client/link/http' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/http/index.d.ts': Module name './createSignalIfSupported' was not resolved.
-'./selectURI' failed to resolve for entrypoint '@apollo/client/link/http' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/http/index.d.ts': Module name './selectURI' was not resolved.
-'./createHttpLink' failed to resolve for entrypoint '@apollo/client/link/http' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/http/index.d.ts': Module name './createHttpLink' was not resolved.
-'./HttpLink' failed to resolve for entrypoint '@apollo/client/link/http' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/http/index.d.ts': Module name './HttpLink' was not resolved.
-'./rewriteURIForGET' failed to resolve for entrypoint '@apollo/client/link/http' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/http/index.d.ts': Module name './rewriteURIForGET' was not resolved.
-'../core' failed to resolve for entrypoint '@apollo/client/link/persisted-queries' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/persisted-queries/index.d.ts': Module name '../core' was not resolved.
-'../../errors' failed to resolve for entrypoint '@apollo/client/link/persisted-queries' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/persisted-queries/index.d.ts': Module name '../../errors' was not resolved.
-'../core' failed to resolve for entrypoint '@apollo/client/link/persisted-queries' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/persisted-queries/index.d.ts': Module name '../core' was not resolved.
-'../../errors' failed to resolve for entrypoint '@apollo/client/link/persisted-queries' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/persisted-queries/index.d.ts': Module name '../../errors' was not resolved.
-'./retryLink' failed to resolve for entrypoint '@apollo/client/link/retry' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/retry/index.d.ts': Module name './retryLink' was not resolved.
-'./retryLink' failed to resolve for entrypoint '@apollo/client/link/retry' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/retry/index.d.ts': Module name './retryLink' was not resolved.
-'../core' failed to resolve for entrypoint '@apollo/client/link/schema' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/schema/index.d.ts': Module name '../core' was not resolved.
-'../../utilities' failed to resolve for entrypoint '@apollo/client/link/schema' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/schema/index.d.ts': Module name '../../utilities' was not resolved.
-'../core' failed to resolve for entrypoint '@apollo/client/link/schema' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/schema/index.d.ts': Module name '../core' was not resolved.
-'../../utilities' failed to resolve for entrypoint '@apollo/client/link/schema' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/schema/index.d.ts': Module name '../../utilities' was not resolved.
-'../core' failed to resolve for entrypoint '@apollo/client/link/subscriptions' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/subscriptions/index.d.ts': Module name '../core' was not resolved.
-'../../utilities' failed to resolve for entrypoint '@apollo/client/link/subscriptions' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/subscriptions/index.d.ts': Module name '../../utilities' was not resolved.
-'../core' failed to resolve for entrypoint '@apollo/client/link/subscriptions' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/subscriptions/index.d.ts': Module name '../core' was not resolved.
-'../../utilities' failed to resolve for entrypoint '@apollo/client/link/subscriptions' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/subscriptions/index.d.ts': Module name '../../utilities' was not resolved.
-'../../utilities/globals' failed to resolve for entrypoint '@apollo/client/link/utils' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/utils/index.d.ts': Module name '../../utilities/globals' was not resolved.
-'./fromError' failed to resolve for entrypoint '@apollo/client/link/utils' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/utils/index.d.ts': Module name './fromError' was not resolved.
-'./toPromise' failed to resolve for entrypoint '@apollo/client/link/utils' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/utils/index.d.ts': Module name './toPromise' was not resolved.
-'./fromPromise' failed to resolve for entrypoint '@apollo/client/link/utils' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/utils/index.d.ts': Module name './fromPromise' was not resolved.
-'./throwServerError' failed to resolve for entrypoint '@apollo/client/link/utils' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/utils/index.d.ts': Module name './throwServerError' was not resolved.
-'./validateOperation' failed to resolve for entrypoint '@apollo/client/link/utils' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/utils/index.d.ts': Module name './validateOperation' was not resolved.
-'./createOperation' failed to resolve for entrypoint '@apollo/client/link/utils' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/utils/index.d.ts': Module name './createOperation' was not resolved.
-'./transformOperation' failed to resolve for entrypoint '@apollo/client/link/utils' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/utils/index.d.ts': Module name './transformOperation' was not resolved.
-'../../utilities/globals' failed to resolve for entrypoint '@apollo/client/link/utils' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/utils/index.d.ts': Module name '../../utilities/globals' was not resolved.
-'./fromError' failed to resolve for entrypoint '@apollo/client/link/utils' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/utils/index.d.ts': Module name './fromError' was not resolved.
-'./toPromise' failed to resolve for entrypoint '@apollo/client/link/utils' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/utils/index.d.ts': Module name './toPromise' was not resolved.
-'./fromPromise' failed to resolve for entrypoint '@apollo/client/link/utils' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/utils/index.d.ts': Module name './fromPromise' was not resolved.
-'./throwServerError' failed to resolve for entrypoint '@apollo/client/link/utils' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/utils/index.d.ts': Module name './throwServerError' was not resolved.
-'./validateOperation' failed to resolve for entrypoint '@apollo/client/link/utils' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/utils/index.d.ts': Module name './validateOperation' was not resolved.
-'./createOperation' failed to resolve for entrypoint '@apollo/client/link/utils' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/utils/index.d.ts': Module name './createOperation' was not resolved.
-'./transformOperation' failed to resolve for entrypoint '@apollo/client/link/utils' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/utils/index.d.ts': Module name './transformOperation' was not resolved.
-'../core' failed to resolve for entrypoint '@apollo/client/link/ws' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/ws/index.d.ts': Module name '../core' was not resolved.
-'../../utilities' failed to resolve for entrypoint '@apollo/client/link/ws' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/ws/index.d.ts': Module name '../../utilities' was not resolved.
-'../core' failed to resolve for entrypoint '@apollo/client/link/ws' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/ws/index.d.ts': Module name '../core' was not resolved.
-'../../utilities' failed to resolve for entrypoint '@apollo/client/link/ws' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/link/ws/index.d.ts': Module name '../../utilities' was not resolved.
-'../utilities/globals' failed to resolve for entrypoint '@apollo/client/react' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/index.d.ts': Module name '../utilities/globals' was not resolved.
-'./context' failed to resolve for entrypoint '@apollo/client/react' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/index.d.ts': Module name './context' was not resolved.
-'./hooks' failed to resolve for entrypoint '@apollo/client/react' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/index.d.ts': Module name './hooks' was not resolved.
-'./parser' failed to resolve for entrypoint '@apollo/client/react' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/index.d.ts': Module name './parser' was not resolved.
-'./types/types' failed to resolve for entrypoint '@apollo/client/react' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/index.d.ts': Module name './types/types' was not resolved.
-'../utilities/globals' failed to resolve for entrypoint '@apollo/client/react' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/index.d.ts': Module name '../utilities/globals' was not resolved.
-'./context' failed to resolve for entrypoint '@apollo/client/react' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/index.d.ts': Module name './context' was not resolved.
-'./hooks' failed to resolve for entrypoint '@apollo/client/react' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/index.d.ts': Module name './hooks' was not resolved.
-'./parser' failed to resolve for entrypoint '@apollo/client/react' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/index.d.ts': Module name './parser' was not resolved.
-'./types/types' failed to resolve for entrypoint '@apollo/client/react' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/index.d.ts': Module name './types/types' was not resolved.
-'./Query' failed to resolve for entrypoint '@apollo/client/react/components' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/components/index.d.ts': Module name './Query' was not resolved.
-'./Mutation' failed to resolve for entrypoint '@apollo/client/react/components' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/components/index.d.ts': Module name './Mutation' was not resolved.
-'./Subscription' failed to resolve for entrypoint '@apollo/client/react/components' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/components/index.d.ts': Module name './Subscription' was not resolved.
-'./types' failed to resolve for entrypoint '@apollo/client/react/components' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/components/index.d.ts': Module name './types' was not resolved.
-'./Query' failed to resolve for entrypoint '@apollo/client/react/components' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/components/index.d.ts': Module name './Query' was not resolved.
-'./Mutation' failed to resolve for entrypoint '@apollo/client/react/components' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/components/index.d.ts': Module name './Mutation' was not resolved.
-'./Subscription' failed to resolve for entrypoint '@apollo/client/react/components' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/components/index.d.ts': Module name './Subscription' was not resolved.
-'./types' failed to resolve for entrypoint '@apollo/client/react/components' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/components/index.d.ts': Module name './types' was not resolved.
-'../../utilities/globals' failed to resolve for entrypoint '@apollo/client/react/context' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/context/index.d.ts': Module name '../../utilities/globals' was not resolved.
-'./ApolloConsumer' failed to resolve for entrypoint '@apollo/client/react/context' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/context/index.d.ts': Module name './ApolloConsumer' was not resolved.
-'./ApolloContext' failed to resolve for entrypoint '@apollo/client/react/context' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/context/index.d.ts': Module name './ApolloContext' was not resolved.
-'./ApolloProvider' failed to resolve for entrypoint '@apollo/client/react/context' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/context/index.d.ts': Module name './ApolloProvider' was not resolved.
-'../../utilities/globals' failed to resolve for entrypoint '@apollo/client/react/context' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/context/index.d.ts': Module name '../../utilities/globals' was not resolved.
-'./ApolloConsumer' failed to resolve for entrypoint '@apollo/client/react/context' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/context/index.d.ts': Module name './ApolloConsumer' was not resolved.
-'./ApolloContext' failed to resolve for entrypoint '@apollo/client/react/context' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/context/index.d.ts': Module name './ApolloContext' was not resolved.
-'./ApolloProvider' failed to resolve for entrypoint '@apollo/client/react/context' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/context/index.d.ts': Module name './ApolloProvider' was not resolved.
-'../../utilities/globals' failed to resolve for entrypoint '@apollo/client/react/hoc' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hoc/index.d.ts': Module name '../../utilities/globals' was not resolved.
-'./graphql' failed to resolve for entrypoint '@apollo/client/react/hoc' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hoc/index.d.ts': Module name './graphql' was not resolved.
-'./query-hoc' failed to resolve for entrypoint '@apollo/client/react/hoc' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hoc/index.d.ts': Module name './query-hoc' was not resolved.
-'./mutation-hoc' failed to resolve for entrypoint '@apollo/client/react/hoc' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hoc/index.d.ts': Module name './mutation-hoc' was not resolved.
-'./subscription-hoc' failed to resolve for entrypoint '@apollo/client/react/hoc' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hoc/index.d.ts': Module name './subscription-hoc' was not resolved.
-'./withApollo' failed to resolve for entrypoint '@apollo/client/react/hoc' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hoc/index.d.ts': Module name './withApollo' was not resolved.
-'./types' failed to resolve for entrypoint '@apollo/client/react/hoc' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hoc/index.d.ts': Module name './types' was not resolved.
-'../../utilities/globals' failed to resolve for entrypoint '@apollo/client/react/hoc' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hoc/index.d.ts': Module name '../../utilities/globals' was not resolved.
-'./graphql' failed to resolve for entrypoint '@apollo/client/react/hoc' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hoc/index.d.ts': Module name './graphql' was not resolved.
-'./query-hoc' failed to resolve for entrypoint '@apollo/client/react/hoc' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hoc/index.d.ts': Module name './query-hoc' was not resolved.
-'./mutation-hoc' failed to resolve for entrypoint '@apollo/client/react/hoc' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hoc/index.d.ts': Module name './mutation-hoc' was not resolved.
-'./subscription-hoc' failed to resolve for entrypoint '@apollo/client/react/hoc' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hoc/index.d.ts': Module name './subscription-hoc' was not resolved.
-'./withApollo' failed to resolve for entrypoint '@apollo/client/react/hoc' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hoc/index.d.ts': Module name './withApollo' was not resolved.
-'./types' failed to resolve for entrypoint '@apollo/client/react/hoc' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hoc/index.d.ts': Module name './types' was not resolved.
-'../../utilities/globals' failed to resolve for entrypoint '@apollo/client/react/hooks' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hooks/index.d.ts': Module name '../../utilities/globals' was not resolved.
-'./useApolloClient' failed to resolve for entrypoint '@apollo/client/react/hooks' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hooks/index.d.ts': Module name './useApolloClient' was not resolved.
-'./useLazyQuery' failed to resolve for entrypoint '@apollo/client/react/hooks' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hooks/index.d.ts': Module name './useLazyQuery' was not resolved.
-'./useMutation' failed to resolve for entrypoint '@apollo/client/react/hooks' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hooks/index.d.ts': Module name './useMutation' was not resolved.
-'./useQuery' failed to resolve for entrypoint '@apollo/client/react/hooks' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hooks/index.d.ts': Module name './useQuery' was not resolved.
-'./useSubscription' failed to resolve for entrypoint '@apollo/client/react/hooks' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hooks/index.d.ts': Module name './useSubscription' was not resolved.
-'./useReactiveVar' failed to resolve for entrypoint '@apollo/client/react/hooks' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hooks/index.d.ts': Module name './useReactiveVar' was not resolved.
-'./useFragment' failed to resolve for entrypoint '@apollo/client/react/hooks' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hooks/index.d.ts': Module name './useFragment' was not resolved.
-'../../utilities/globals' failed to resolve for entrypoint '@apollo/client/react/hooks' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hooks/index.d.ts': Module name '../../utilities/globals' was not resolved.
-'./useApolloClient' failed to resolve for entrypoint '@apollo/client/react/hooks' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hooks/index.d.ts': Module name './useApolloClient' was not resolved.
-'./useLazyQuery' failed to resolve for entrypoint '@apollo/client/react/hooks' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hooks/index.d.ts': Module name './useLazyQuery' was not resolved.
-'./useMutation' failed to resolve for entrypoint '@apollo/client/react/hooks' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hooks/index.d.ts': Module name './useMutation' was not resolved.
-'./useQuery' failed to resolve for entrypoint '@apollo/client/react/hooks' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hooks/index.d.ts': Module name './useQuery' was not resolved.
-'./useSubscription' failed to resolve for entrypoint '@apollo/client/react/hooks' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hooks/index.d.ts': Module name './useSubscription' was not resolved.
-'./useReactiveVar' failed to resolve for entrypoint '@apollo/client/react/hooks' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hooks/index.d.ts': Module name './useReactiveVar' was not resolved.
-'./useFragment' failed to resolve for entrypoint '@apollo/client/react/hooks' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/hooks/index.d.ts': Module name './useFragment' was not resolved.
-'./getDataFromTree' failed to resolve for entrypoint '@apollo/client/react/ssr' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/ssr/index.d.ts': Module name './getDataFromTree' was not resolved.
-'./renderToStringWithData' failed to resolve for entrypoint '@apollo/client/react/ssr' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/ssr/index.d.ts': Module name './renderToStringWithData' was not resolved.
-'./RenderPromises' failed to resolve for entrypoint '@apollo/client/react/ssr' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/ssr/index.d.ts': Module name './RenderPromises' was not resolved.
-'./getDataFromTree' failed to resolve for entrypoint '@apollo/client/react/ssr' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/ssr/index.d.ts': Module name './getDataFromTree' was not resolved.
-'./renderToStringWithData' failed to resolve for entrypoint '@apollo/client/react/ssr' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/ssr/index.d.ts': Module name './renderToStringWithData' was not resolved.
-'./RenderPromises' failed to resolve for entrypoint '@apollo/client/react/ssr' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/react/ssr/index.d.ts': Module name './RenderPromises' was not resolved.
-'../utilities/globals' failed to resolve for entrypoint '@apollo/client/testing' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/testing/index.d.ts': Module name '../utilities/globals' was not resolved.
-'./react/MockedProvider' failed to resolve for entrypoint '@apollo/client/testing' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/testing/index.d.ts': Module name './react/MockedProvider' was not resolved.
-'./core' failed to resolve for entrypoint '@apollo/client/testing' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/testing/index.d.ts': Module name './core' was not resolved.
-'../utilities/globals' failed to resolve for entrypoint '@apollo/client/testing' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/testing/index.d.ts': Module name '../utilities/globals' was not resolved.
-'./react/MockedProvider' failed to resolve for entrypoint '@apollo/client/testing' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/testing/index.d.ts': Module name './react/MockedProvider' was not resolved.
-'./core' failed to resolve for entrypoint '@apollo/client/testing' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/testing/index.d.ts': Module name './core' was not resolved.
-'./mocking/mockLink' failed to resolve for entrypoint '@apollo/client/testing/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/testing/core/index.d.ts': Module name './mocking/mockLink' was not resolved.
-'./mocking/mockSubscriptionLink' failed to resolve for entrypoint '@apollo/client/testing/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/testing/core/index.d.ts': Module name './mocking/mockSubscriptionLink' was not resolved.
-'./mocking/mockClient' failed to resolve for entrypoint '@apollo/client/testing/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/testing/core/index.d.ts': Module name './mocking/mockClient' was not resolved.
-'./subscribeAndCount' failed to resolve for entrypoint '@apollo/client/testing/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/testing/core/index.d.ts': Module name './subscribeAndCount' was not resolved.
-'./itAsync' failed to resolve for entrypoint '@apollo/client/testing/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/testing/core/index.d.ts': Module name './itAsync' was not resolved.
-'./wait' failed to resolve for entrypoint '@apollo/client/testing/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/testing/core/index.d.ts': Module name './wait' was not resolved.
-'./withConsoleSpy' failed to resolve for entrypoint '@apollo/client/testing/core' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/testing/core/index.d.ts': Module name './withConsoleSpy' was not resolved.
-'./mocking/mockLink' failed to resolve for entrypoint '@apollo/client/testing/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/testing/core/index.d.ts': Module name './mocking/mockLink' was not resolved.
-'./mocking/mockSubscriptionLink' failed to resolve for entrypoint '@apollo/client/testing/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/testing/core/index.d.ts': Module name './mocking/mockSubscriptionLink' was not resolved.
-'./mocking/mockClient' failed to resolve for entrypoint '@apollo/client/testing/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/testing/core/index.d.ts': Module name './mocking/mockClient' was not resolved.
-'./subscribeAndCount' failed to resolve for entrypoint '@apollo/client/testing/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/testing/core/index.d.ts': Module name './subscribeAndCount' was not resolved.
-'./itAsync' failed to resolve for entrypoint '@apollo/client/testing/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/testing/core/index.d.ts': Module name './itAsync' was not resolved.
-'./wait' failed to resolve for entrypoint '@apollo/client/testing/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/testing/core/index.d.ts': Module name './wait' was not resolved.
-'./withConsoleSpy' failed to resolve for entrypoint '@apollo/client/testing/core' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/testing/core/index.d.ts': Module name './withConsoleSpy' was not resolved.
-'./globals' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './globals' was not resolved.
-'./graphql/directives' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './graphql/directives' was not resolved.
-'./graphql/fragments' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './graphql/fragments' was not resolved.
-'./graphql/getFromAST' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './graphql/getFromAST' was not resolved.
-'./graphql/storeUtils' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './graphql/storeUtils' was not resolved.
-'./graphql/transform' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './graphql/transform' was not resolved.
-'./policies/pagination' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './policies/pagination' was not resolved.
-'./observables/Observable' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './observables/Observable' was not resolved.
-'./common/mergeDeep' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './common/mergeDeep' was not resolved.
-'./common/cloneDeep' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './common/cloneDeep' was not resolved.
-'./common/maybeDeepFreeze' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './common/maybeDeepFreeze' was not resolved.
-'./observables/iteration' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './observables/iteration' was not resolved.
-'./observables/asyncMap' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './observables/asyncMap' was not resolved.
-'./observables/Concast' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './observables/Concast' was not resolved.
-'./observables/subclassing' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './observables/subclassing' was not resolved.
-'./common/arrays' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './common/arrays' was not resolved.
-'./common/objects' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './common/objects' was not resolved.
-'./common/errorHandling' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './common/errorHandling' was not resolved.
-'./common/canUse' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './common/canUse' was not resolved.
-'./common/compact' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './common/compact' was not resolved.
-'./common/makeUniqueId' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './common/makeUniqueId' was not resolved.
-'./common/stringifyForDisplay' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './common/stringifyForDisplay' was not resolved.
-'./common/mergeOptions' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './common/mergeOptions' was not resolved.
-'./types/IsStrictlyAny' failed to resolve for entrypoint '@apollo/client/utilities' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './types/IsStrictlyAny' was not resolved.
-'./globals' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './globals' was not resolved.
-'./graphql/directives' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './graphql/directives' was not resolved.
-'./graphql/fragments' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './graphql/fragments' was not resolved.
-'./graphql/getFromAST' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './graphql/getFromAST' was not resolved.
-'./graphql/storeUtils' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './graphql/storeUtils' was not resolved.
-'./graphql/transform' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './graphql/transform' was not resolved.
-'./policies/pagination' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './policies/pagination' was not resolved.
-'./observables/Observable' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './observables/Observable' was not resolved.
-'./common/mergeDeep' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './common/mergeDeep' was not resolved.
-'./common/cloneDeep' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './common/cloneDeep' was not resolved.
-'./common/maybeDeepFreeze' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './common/maybeDeepFreeze' was not resolved.
-'./observables/iteration' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './observables/iteration' was not resolved.
-'./observables/asyncMap' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './observables/asyncMap' was not resolved.
-'./observables/Concast' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './observables/Concast' was not resolved.
-'./observables/subclassing' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './observables/subclassing' was not resolved.
-'./common/arrays' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './common/arrays' was not resolved.
-'./common/objects' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './common/objects' was not resolved.
-'./common/errorHandling' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './common/errorHandling' was not resolved.
-'./common/canUse' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './common/canUse' was not resolved.
-'./common/compact' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './common/compact' was not resolved.
-'./common/makeUniqueId' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './common/makeUniqueId' was not resolved.
-'./common/stringifyForDisplay' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './common/stringifyForDisplay' was not resolved.
-'./common/mergeOptions' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './common/mergeOptions' was not resolved.
-'./types/IsStrictlyAny' failed to resolve for entrypoint '@apollo/client/utilities' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/index.d.ts': Module name './types/IsStrictlyAny' was not resolved.
-'./DEV' failed to resolve for entrypoint '@apollo/client/utilities/globals' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/globals/index.d.ts': Module name './DEV' was not resolved.
-'./maybe' failed to resolve for entrypoint '@apollo/client/utilities/globals' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/globals/index.d.ts': Module name './maybe' was not resolved.
-'./global' failed to resolve for entrypoint '@apollo/client/utilities/globals' using node16-cjs with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/globals/index.d.ts': Module name './global' was not resolved.
-'./DEV' failed to resolve for entrypoint '@apollo/client/utilities/globals' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/globals/index.d.ts': Module name './DEV' was not resolved.
-'./maybe' failed to resolve for entrypoint '@apollo/client/utilities/globals' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/globals/index.d.ts': Module name './maybe' was not resolved.
-'./global' failed to resolve for entrypoint '@apollo/client/utilities/globals' using node16-esm with conditions 'import', 'types', 'node' from declaration '/node_modules/@apollo/client/utilities/globals/index.d.ts': Module name './global' was not resolved.
+  './core' failed to resolve using node16-cjs from '/node_modules/@apollo/client/index.d.ts'
+  './react' failed to resolve using node16-cjs from '/node_modules/@apollo/client/index.d.ts'
+  './core' failed to resolve using node16-esm from '/node_modules/@apollo/client/index.d.ts'
+  './react' failed to resolve using node16-esm from '/node_modules/@apollo/client/index.d.ts'
+  '../utilities/globals' failed to resolve using node16-cjs from '/node_modules/@apollo/client/cache/index.d.ts'
+  './core/cache' failed to resolve using node16-cjs from '/node_modules/@apollo/client/cache/index.d.ts'
+  './core/types/Cache' failed to resolve using node16-cjs from '/node_modules/@apollo/client/cache/index.d.ts'
+  './core/types/DataProxy' failed to resolve using node16-cjs from '/node_modules/@apollo/client/cache/index.d.ts'
+  './core/types/common' failed to resolve using node16-cjs from '/node_modules/@apollo/client/cache/index.d.ts'
+  '../utilities' failed to resolve using node16-cjs from '/node_modules/@apollo/client/cache/index.d.ts'
+  './inmemory/entityStore' failed to resolve using node16-cjs from '/node_modules/@apollo/client/cache/index.d.ts'
+  './inmemory/helpers' failed to resolve using node16-cjs from '/node_modules/@apollo/client/cache/index.d.ts'
+  './inmemory/inMemoryCache' failed to resolve using node16-cjs from '/node_modules/@apollo/client/cache/index.d.ts'
+  './inmemory/reactiveVars' failed to resolve using node16-cjs from '/node_modules/@apollo/client/cache/index.d.ts'
+  './inmemory/policies' failed to resolve using node16-cjs from '/node_modules/@apollo/client/cache/index.d.ts'
+  './inmemory/object-canon' failed to resolve using node16-cjs from '/node_modules/@apollo/client/cache/index.d.ts'
+  './inmemory/fragmentRegistry' failed to resolve using node16-cjs from '/node_modules/@apollo/client/cache/index.d.ts'
+  './inmemory/types' failed to resolve using node16-cjs from '/node_modules/@apollo/client/cache/index.d.ts'
+  '../utilities/globals' failed to resolve using node16-esm from '/node_modules/@apollo/client/cache/index.d.ts'
+  './core/cache' failed to resolve using node16-esm from '/node_modules/@apollo/client/cache/index.d.ts'
+  './core/types/Cache' failed to resolve using node16-esm from '/node_modules/@apollo/client/cache/index.d.ts'
+  './core/types/DataProxy' failed to resolve using node16-esm from '/node_modules/@apollo/client/cache/index.d.ts'
+  './core/types/common' failed to resolve using node16-esm from '/node_modules/@apollo/client/cache/index.d.ts'
+  '../utilities' failed to resolve using node16-esm from '/node_modules/@apollo/client/cache/index.d.ts'
+  './inmemory/entityStore' failed to resolve using node16-esm from '/node_modules/@apollo/client/cache/index.d.ts'
+  './inmemory/helpers' failed to resolve using node16-esm from '/node_modules/@apollo/client/cache/index.d.ts'
+  './inmemory/inMemoryCache' failed to resolve using node16-esm from '/node_modules/@apollo/client/cache/index.d.ts'
+  './inmemory/reactiveVars' failed to resolve using node16-esm from '/node_modules/@apollo/client/cache/index.d.ts'
+  './inmemory/policies' failed to resolve using node16-esm from '/node_modules/@apollo/client/cache/index.d.ts'
+  './inmemory/object-canon' failed to resolve using node16-esm from '/node_modules/@apollo/client/cache/index.d.ts'
+  './inmemory/fragmentRegistry' failed to resolve using node16-esm from '/node_modules/@apollo/client/cache/index.d.ts'
+  './inmemory/types' failed to resolve using node16-esm from '/node_modules/@apollo/client/cache/index.d.ts'
+  './ApolloClient' failed to resolve using node16-cjs from '/node_modules/@apollo/client/core/index.d.ts'
+  './ObservableQuery' failed to resolve using node16-cjs from '/node_modules/@apollo/client/core/index.d.ts'
+  './watchQueryOptions' failed to resolve using node16-cjs from '/node_modules/@apollo/client/core/index.d.ts'
+  './networkStatus' failed to resolve using node16-cjs from '/node_modules/@apollo/client/core/index.d.ts'
+  './types' failed to resolve using node16-cjs from '/node_modules/@apollo/client/core/index.d.ts'
+  './LocalState' failed to resolve using node16-cjs from '/node_modules/@apollo/client/core/index.d.ts'
+  '../errors' failed to resolve using node16-cjs from '/node_modules/@apollo/client/core/index.d.ts'
+  '../cache' failed to resolve using node16-cjs from '/node_modules/@apollo/client/core/index.d.ts'
+  '../cache/inmemory/types' failed to resolve using node16-cjs from '/node_modules/@apollo/client/core/index.d.ts'
+  '../link/core' failed to resolve using node16-cjs from '/node_modules/@apollo/client/core/index.d.ts'
+  '../link/http' failed to resolve using node16-cjs from '/node_modules/@apollo/client/core/index.d.ts'
+  '../link/utils' failed to resolve using node16-cjs from '/node_modules/@apollo/client/core/index.d.ts'
+  '../utilities' failed to resolve using node16-cjs from '/node_modules/@apollo/client/core/index.d.ts'
+  './ApolloClient' failed to resolve using node16-esm from '/node_modules/@apollo/client/core/index.d.ts'
+  './ObservableQuery' failed to resolve using node16-esm from '/node_modules/@apollo/client/core/index.d.ts'
+  './watchQueryOptions' failed to resolve using node16-esm from '/node_modules/@apollo/client/core/index.d.ts'
+  './networkStatus' failed to resolve using node16-esm from '/node_modules/@apollo/client/core/index.d.ts'
+  './types' failed to resolve using node16-esm from '/node_modules/@apollo/client/core/index.d.ts'
+  './LocalState' failed to resolve using node16-esm from '/node_modules/@apollo/client/core/index.d.ts'
+  '../errors' failed to resolve using node16-esm from '/node_modules/@apollo/client/core/index.d.ts'
+  '../cache' failed to resolve using node16-esm from '/node_modules/@apollo/client/core/index.d.ts'
+  '../cache/inmemory/types' failed to resolve using node16-esm from '/node_modules/@apollo/client/core/index.d.ts'
+  '../link/core' failed to resolve using node16-esm from '/node_modules/@apollo/client/core/index.d.ts'
+  '../link/http' failed to resolve using node16-esm from '/node_modules/@apollo/client/core/index.d.ts'
+  '../link/utils' failed to resolve using node16-esm from '/node_modules/@apollo/client/core/index.d.ts'
+  '../utilities' failed to resolve using node16-esm from '/node_modules/@apollo/client/core/index.d.ts'
+  '../utilities/globals' failed to resolve using node16-cjs from '/node_modules/@apollo/client/errors/index.d.ts'
+  '../link/http' failed to resolve using node16-cjs from '/node_modules/@apollo/client/errors/index.d.ts'
+  '../link/utils' failed to resolve using node16-cjs from '/node_modules/@apollo/client/errors/index.d.ts'
+  '../link/core' failed to resolve using node16-cjs from '/node_modules/@apollo/client/errors/index.d.ts'
+  '../utilities/globals' failed to resolve using node16-esm from '/node_modules/@apollo/client/errors/index.d.ts'
+  '../link/http' failed to resolve using node16-esm from '/node_modules/@apollo/client/errors/index.d.ts'
+  '../link/utils' failed to resolve using node16-esm from '/node_modules/@apollo/client/errors/index.d.ts'
+  '../link/core' failed to resolve using node16-esm from '/node_modules/@apollo/client/errors/index.d.ts'
+  './batchLink' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/batch/index.d.ts'
+  './batchLink' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/batch/index.d.ts'
+  './batchHttpLink' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/batch-http/index.d.ts'
+  './batchHttpLink' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/batch-http/index.d.ts'
+  '../core' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/context/index.d.ts'
+  '../../core' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/context/index.d.ts'
+  '../core' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/context/index.d.ts'
+  '../../core' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/context/index.d.ts'
+  '../../utilities/globals' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/core/index.d.ts'
+  './empty' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/core/index.d.ts'
+  './from' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/core/index.d.ts'
+  './split' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/core/index.d.ts'
+  './concat' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/core/index.d.ts'
+  './execute' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/core/index.d.ts'
+  './ApolloLink' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/core/index.d.ts'
+  './types' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/core/index.d.ts'
+  '../../utilities/globals' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/core/index.d.ts'
+  './empty' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/core/index.d.ts'
+  './from' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/core/index.d.ts'
+  './split' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/core/index.d.ts'
+  './concat' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/core/index.d.ts'
+  './execute' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/core/index.d.ts'
+  './ApolloLink' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/core/index.d.ts'
+  './types' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/core/index.d.ts'
+  '../../errors' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/error/index.d.ts'
+  '../../utilities' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/error/index.d.ts'
+  '../core' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/error/index.d.ts'
+  '../../errors' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/error/index.d.ts'
+  '../../utilities' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/error/index.d.ts'
+  '../core' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/error/index.d.ts'
+  '../../utilities/globals' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/http/index.d.ts'
+  './parseAndCheckHttpResponse' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/http/index.d.ts'
+  './serializeFetchParameter' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/http/index.d.ts'
+  './selectHttpOptionsAndBody' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/http/index.d.ts'
+  './checkFetcher' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/http/index.d.ts'
+  './createSignalIfSupported' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/http/index.d.ts'
+  './selectURI' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/http/index.d.ts'
+  './createHttpLink' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/http/index.d.ts'
+  './HttpLink' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/http/index.d.ts'
+  './rewriteURIForGET' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/http/index.d.ts'
+  '../../utilities/globals' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/http/index.d.ts'
+  './parseAndCheckHttpResponse' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/http/index.d.ts'
+  './serializeFetchParameter' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/http/index.d.ts'
+  './selectHttpOptionsAndBody' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/http/index.d.ts'
+  './checkFetcher' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/http/index.d.ts'
+  './createSignalIfSupported' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/http/index.d.ts'
+  './selectURI' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/http/index.d.ts'
+  './createHttpLink' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/http/index.d.ts'
+  './HttpLink' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/http/index.d.ts'
+  './rewriteURIForGET' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/http/index.d.ts'
+  '../core' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/persisted-queries/index.d.ts'
+  '../../errors' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/persisted-queries/index.d.ts'
+  '../core' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/persisted-queries/index.d.ts'
+  '../../errors' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/persisted-queries/index.d.ts'
+  './retryLink' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/retry/index.d.ts'
+  './retryLink' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/retry/index.d.ts'
+  '../core' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/schema/index.d.ts'
+  '../../utilities' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/schema/index.d.ts'
+  '../core' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/schema/index.d.ts'
+  '../../utilities' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/schema/index.d.ts'
+  '../core' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/subscriptions/index.d.ts'
+  '../../utilities' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/subscriptions/index.d.ts'
+  '../core' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/subscriptions/index.d.ts'
+  '../../utilities' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/subscriptions/index.d.ts'
+  '../../utilities/globals' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/utils/index.d.ts'
+  './fromError' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/utils/index.d.ts'
+  './toPromise' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/utils/index.d.ts'
+  './fromPromise' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/utils/index.d.ts'
+  './throwServerError' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/utils/index.d.ts'
+  './validateOperation' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/utils/index.d.ts'
+  './createOperation' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/utils/index.d.ts'
+  './transformOperation' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/utils/index.d.ts'
+  '../../utilities/globals' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/utils/index.d.ts'
+  './fromError' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/utils/index.d.ts'
+  './toPromise' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/utils/index.d.ts'
+  './fromPromise' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/utils/index.d.ts'
+  './throwServerError' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/utils/index.d.ts'
+  './validateOperation' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/utils/index.d.ts'
+  './createOperation' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/utils/index.d.ts'
+  './transformOperation' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/utils/index.d.ts'
+  '../core' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/ws/index.d.ts'
+  '../../utilities' failed to resolve using node16-cjs from '/node_modules/@apollo/client/link/ws/index.d.ts'
+  '../core' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/ws/index.d.ts'
+  '../../utilities' failed to resolve using node16-esm from '/node_modules/@apollo/client/link/ws/index.d.ts'
+  '../utilities/globals' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/index.d.ts'
+  './context' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/index.d.ts'
+  './hooks' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/index.d.ts'
+  './parser' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/index.d.ts'
+  './types/types' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/index.d.ts'
+  '../utilities/globals' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/index.d.ts'
+  './context' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/index.d.ts'
+  './hooks' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/index.d.ts'
+  './parser' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/index.d.ts'
+  './types/types' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/index.d.ts'
+  './Query' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/components/index.d.ts'
+  './Mutation' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/components/index.d.ts'
+  './Subscription' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/components/index.d.ts'
+  './types' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/components/index.d.ts'
+  './Query' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/components/index.d.ts'
+  './Mutation' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/components/index.d.ts'
+  './Subscription' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/components/index.d.ts'
+  './types' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/components/index.d.ts'
+  '../../utilities/globals' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/context/index.d.ts'
+  './ApolloConsumer' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/context/index.d.ts'
+  './ApolloContext' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/context/index.d.ts'
+  './ApolloProvider' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/context/index.d.ts'
+  '../../utilities/globals' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/context/index.d.ts'
+  './ApolloConsumer' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/context/index.d.ts'
+  './ApolloContext' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/context/index.d.ts'
+  './ApolloProvider' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/context/index.d.ts'
+  '../../utilities/globals' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/hoc/index.d.ts'
+  './graphql' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/hoc/index.d.ts'
+  './query-hoc' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/hoc/index.d.ts'
+  './mutation-hoc' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/hoc/index.d.ts'
+  './subscription-hoc' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/hoc/index.d.ts'
+  './withApollo' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/hoc/index.d.ts'
+  './types' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/hoc/index.d.ts'
+  '../../utilities/globals' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/hoc/index.d.ts'
+  './graphql' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/hoc/index.d.ts'
+  './query-hoc' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/hoc/index.d.ts'
+  './mutation-hoc' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/hoc/index.d.ts'
+  './subscription-hoc' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/hoc/index.d.ts'
+  './withApollo' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/hoc/index.d.ts'
+  './types' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/hoc/index.d.ts'
+  '../../utilities/globals' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/hooks/index.d.ts'
+  './useApolloClient' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/hooks/index.d.ts'
+  './useLazyQuery' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/hooks/index.d.ts'
+  './useMutation' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/hooks/index.d.ts'
+  './useQuery' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/hooks/index.d.ts'
+  './useSubscription' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/hooks/index.d.ts'
+  './useReactiveVar' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/hooks/index.d.ts'
+  './useFragment' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/hooks/index.d.ts'
+  '../../utilities/globals' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/hooks/index.d.ts'
+  './useApolloClient' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/hooks/index.d.ts'
+  './useLazyQuery' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/hooks/index.d.ts'
+  './useMutation' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/hooks/index.d.ts'
+  './useQuery' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/hooks/index.d.ts'
+  './useSubscription' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/hooks/index.d.ts'
+  './useReactiveVar' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/hooks/index.d.ts'
+  './useFragment' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/hooks/index.d.ts'
+  './getDataFromTree' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/ssr/index.d.ts'
+  './renderToStringWithData' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/ssr/index.d.ts'
+  './RenderPromises' failed to resolve using node16-cjs from '/node_modules/@apollo/client/react/ssr/index.d.ts'
+  './getDataFromTree' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/ssr/index.d.ts'
+  './renderToStringWithData' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/ssr/index.d.ts'
+  './RenderPromises' failed to resolve using node16-esm from '/node_modules/@apollo/client/react/ssr/index.d.ts'
+  '../utilities/globals' failed to resolve using node16-cjs from '/node_modules/@apollo/client/testing/index.d.ts'
+  './react/MockedProvider' failed to resolve using node16-cjs from '/node_modules/@apollo/client/testing/index.d.ts'
+  './core' failed to resolve using node16-cjs from '/node_modules/@apollo/client/testing/index.d.ts'
+  '../utilities/globals' failed to resolve using node16-esm from '/node_modules/@apollo/client/testing/index.d.ts'
+  './react/MockedProvider' failed to resolve using node16-esm from '/node_modules/@apollo/client/testing/index.d.ts'
+  './core' failed to resolve using node16-esm from '/node_modules/@apollo/client/testing/index.d.ts'
+  './mocking/mockLink' failed to resolve using node16-cjs from '/node_modules/@apollo/client/testing/core/index.d.ts'
+  './mocking/mockSubscriptionLink' failed to resolve using node16-cjs from '/node_modules/@apollo/client/testing/core/index.d.ts'
+  './mocking/mockClient' failed to resolve using node16-cjs from '/node_modules/@apollo/client/testing/core/index.d.ts'
+  './subscribeAndCount' failed to resolve using node16-cjs from '/node_modules/@apollo/client/testing/core/index.d.ts'
+  './itAsync' failed to resolve using node16-cjs from '/node_modules/@apollo/client/testing/core/index.d.ts'
+  './wait' failed to resolve using node16-cjs from '/node_modules/@apollo/client/testing/core/index.d.ts'
+  './withConsoleSpy' failed to resolve using node16-cjs from '/node_modules/@apollo/client/testing/core/index.d.ts'
+  './mocking/mockLink' failed to resolve using node16-esm from '/node_modules/@apollo/client/testing/core/index.d.ts'
+  './mocking/mockSubscriptionLink' failed to resolve using node16-esm from '/node_modules/@apollo/client/testing/core/index.d.ts'
+  './mocking/mockClient' failed to resolve using node16-esm from '/node_modules/@apollo/client/testing/core/index.d.ts'
+  './subscribeAndCount' failed to resolve using node16-esm from '/node_modules/@apollo/client/testing/core/index.d.ts'
+  './itAsync' failed to resolve using node16-esm from '/node_modules/@apollo/client/testing/core/index.d.ts'
+  './wait' failed to resolve using node16-esm from '/node_modules/@apollo/client/testing/core/index.d.ts'
+  './withConsoleSpy' failed to resolve using node16-esm from '/node_modules/@apollo/client/testing/core/index.d.ts'
+  './globals' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './graphql/directives' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './graphql/fragments' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './graphql/getFromAST' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './graphql/storeUtils' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './graphql/transform' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './policies/pagination' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './observables/Observable' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './common/mergeDeep' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './common/cloneDeep' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './common/maybeDeepFreeze' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './observables/iteration' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './observables/asyncMap' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './observables/Concast' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './observables/subclassing' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './common/arrays' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './common/objects' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './common/errorHandling' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './common/canUse' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './common/compact' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './common/makeUniqueId' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './common/stringifyForDisplay' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './common/mergeOptions' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './types/IsStrictlyAny' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './globals' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './graphql/directives' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './graphql/fragments' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './graphql/getFromAST' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './graphql/storeUtils' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './graphql/transform' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './policies/pagination' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './observables/Observable' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './common/mergeDeep' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './common/cloneDeep' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './common/maybeDeepFreeze' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './observables/iteration' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './observables/asyncMap' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './observables/Concast' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './observables/subclassing' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './common/arrays' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './common/objects' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './common/errorHandling' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './common/canUse' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './common/compact' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './common/makeUniqueId' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './common/stringifyForDisplay' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './common/mergeOptions' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './types/IsStrictlyAny' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/index.d.ts'
+  './DEV' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/globals/index.d.ts'
+  './maybe' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/globals/index.d.ts'
+  './global' failed to resolve using node16-cjs from '/node_modules/@apollo/client/utilities/globals/index.d.ts'
+  './DEV' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/globals/index.d.ts'
+  './maybe' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/globals/index.d.ts'
+  './global' failed to resolve using node16-esm from '/node_modules/@apollo/client/utilities/globals/index.d.ts'
 
 
 ┌─────────────────────────────────────────┬────────┬────────────────────────────────────────────────────────────────┬────────────────────────────────────────────────────────────────┬─────────┐

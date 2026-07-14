@@ -77,8 +77,13 @@ test("typed renders actionable internal resolution diagnostics and verbose trace
   const concise = await typed(analysis(), { emoji: false, format: "ascii" });
   assert.match(
     concise,
-    /'\.\/missing' failed to resolve for entrypoint 'fixture' using node16-esm with conditions 'import', 'types', 'node' from declaration '\/node_modules\/fixture\/index\.d\.mts': Module name '\.\/missing' was not resolved\./,
+    /'\.\/missing' failed to resolve using node16-esm from '\/node_modules\/fixture\/index\.d\.mts'/,
   );
+  assert.match(concise, /\n {2}'\.\/missing' failed to resolve using node16-esm/);
+  assert.doesNotMatch(concise, /for entrypoint/);
+  assert.doesNotMatch(concise, /with conditions/);
+  assert.doesNotMatch(concise, /from declaration/);
+  assert.doesNotMatch(concise, /Module name '\.\/missing' was not resolved/);
   assert.doesNotMatch(concise, /Use -f json/);
 
   const verbose = await typed(analysis(), {
@@ -90,6 +95,15 @@ test("typed renders actionable internal resolution diagnostics and verbose trace
   for (const line of trace) {
     assert.ok(verbose.includes(line));
   }
+});
+
+test("typed dedupes internal resolution diagnostics across entrypoints in the summary", async () => {
+  const duplicate: StructuredInternalResolutionErrorProblem = { ...problem, entrypoint: "./sub" };
+  const concise = await typed(analysis([problem, duplicate]), { emoji: false, format: "ascii" });
+  const matches =
+    concise.match(/'\.\/missing' failed to resolve using node16-esm from '\/node_modules\/fixture\/index\.d\.mts'/g) ??
+    [];
+  assert.strictEqual(matches.length, 1);
 });
 
 test("typed keeps table cells concise when summary is disabled", async () => {
@@ -125,6 +139,7 @@ test("typed omits unavailable diagnostic parts for an unusual declaration path",
     format: "ascii",
     verbose: true,
   });
-  assert.match(output, /from declaration '\/'/);
+  assert.match(output, /from '\/'/);
+  assert.doesNotMatch(output, /from declaration/);
   assert.doesNotMatch(output, /undefined|Internal resolution trace/);
 });
