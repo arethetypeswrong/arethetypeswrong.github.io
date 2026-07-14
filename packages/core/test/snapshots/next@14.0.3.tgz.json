@@ -868,7 +868,7 @@
           ],
           "visibleProblems": [
             0,
-            1
+            2
           ]
         },
         "bundler": {
@@ -2203,12 +2203,46 @@
     },
     {
       "kind": "InternalResolutionError",
+      "entrypoint": ".",
+      "resolutionKind": "node16-cjs",
       "resolutionOption": "node16",
       "fileName": "/node_modules/next/dist/compiled/@vercel/og/types.d.ts",
       "moduleSpecifier": "./emoji",
       "pos": 136,
       "end": 146,
       "resolutionMode": 99,
+      "resolutionModeName": "esm",
+      "conditions": [
+        "import",
+        "types",
+        "node"
+      ],
+      "resolverMessage": "Module name './emoji' was not resolved.",
+      "trace": [
+        "======== Resolving module './emoji' from '/node_modules/next/dist/compiled/@vercel/og/types.d.ts'. ========",
+        "Explicitly specified module resolution kind: 'Node16'.",
+        "Resolving in ESM mode with conditions 'import', 'types', 'node'.",
+        "Loading module as file / folder, candidate module location '/node_modules/next/dist/compiled/@vercel/og/emoji', target file types: TypeScript, JavaScript, Declaration, JSON.",
+        "======== Module name './emoji' was not resolved. ========"
+      ]
+    },
+    {
+      "kind": "InternalResolutionError",
+      "entrypoint": ".",
+      "resolutionKind": "node16-esm",
+      "resolutionOption": "node16",
+      "fileName": "/node_modules/next/dist/compiled/@vercel/og/types.d.ts",
+      "moduleSpecifier": "./emoji",
+      "pos": 136,
+      "end": 146,
+      "resolutionMode": 99,
+      "resolutionModeName": "esm",
+      "conditions": [
+        "import",
+        "types",
+        "node"
+      ],
+      "resolverMessage": "Module name './emoji' was not resolved.",
       "trace": [
         "======== Resolving module './emoji' from '/node_modules/next/dist/compiled/@vercel/og/types.d.ts'. ========",
         "Explicitly specified module resolution kind: 'Node16'.",

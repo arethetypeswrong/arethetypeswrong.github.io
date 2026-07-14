@@ -214,6 +214,18 @@ attw --summary/--no-summary <file-name>
 
 In the config file, `summary` can be a boolean value.
 
+#### Verbose
+
+Adds the full resolution trace to internal resolution error output. Defaults to off.
+
+In the CLI: `--verbose`
+
+```shell
+attw --verbose <file-name>
+```
+
+In the config file, `verbose` can be a boolean value.
+
 #### Emoji/No Emoji
 
 Whether to print the information with emojis. Defaults to printing with emojis (`--emoji`).

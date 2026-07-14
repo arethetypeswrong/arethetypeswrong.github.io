@@ -89,6 +89,7 @@ particularly ESM-related module resolution issues.`,
     new Option("--profile <profile>", "Specify analysis profile").choices(Object.keys(profiles)).default("strict"),
   )
   .option("--summary, --no-summary", "Whether to print summary information about the different errors")
+  .option("--verbose", "Print the full resolution trace for internal resolution errors")
   .option("--emoji, --no-emoji", "Whether to use any emojis")
   .option("--color, --no-color", "Whether to use any colors (the FORCE_COLOR env variable is also available)")
   .option("--config-path <path>", "Path to config file (default: ./.attw.json)")

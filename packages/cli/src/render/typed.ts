@@ -16,12 +16,23 @@ import type { RenderOptions } from "./index.js";
 
 export async function typed(
   analysis: core.Analysis,
-  { emoji = true, summary = true, format = "auto", ignoreRules = [], ignoreResolutions = [] }: RenderOptions,
+  {
+    emoji = true,
+    summary = true,
+    format = "auto",
+    ignoreRules = [],
+    ignoreResolutions = [],
+    verbose = false,
+  }: RenderOptions,
 ): Promise<string> {
   let output = "";
   const problems = analysis.problems.filter(
     (problem) => !ignoreRules || !ignoreRules.includes(problemFlags[problem.kind]),
   );
+  const internalResolutionProblems = problems.filter(
+    (problem): problem is core.InternalResolutionErrorProblem => problem.kind === "InternalResolutionError",
+  );
+  const otherProblems = problems.filter((problem) => problem.kind !== "InternalResolutionError");
   // sort resolutions with required (impacts result) first and ignored after
   const requiredResolutions = allResolutionKinds.filter((kind) => !ignoreResolutions.includes(kind));
   const ignoredResolutions = allResolutionKinds.filter((kind) => ignoreResolutions.includes(kind));
@@ -62,6 +73,28 @@ export async function typed(
     const grouped = groupProblemsByKind(problems);
     const summaryTexts = Object.entries(grouped).map(([kind, kindProblems]) => {
       const info = problemKindInfo[kind as core.ProblemKind];
+      if (kind === "InternalResolutionError") {
+        const problems = kindProblems as core.InternalResolutionErrorProblem[];
+        const affectsRequiredResolution = problems.some((problem) =>
+          requiredResolutions.includes(problem.resolutionKind),
+        );
+        const description = marked(`${info.description} ${info.docsUrl}`);
+        const diagnostics = Array.from(
+          new Set(
+            problems.map((problem) => {
+              const ignoredPrefix = ignoreResolutions.includes(problem.resolutionKind)
+                ? "(ignored per resolution) "
+                : "";
+              return `${ignoredPrefix}${formatInternalResolutionError(problem)}`;
+            }),
+          ),
+        )
+          .map((line) => `  ${line}`)
+          .join("\n");
+        return `${affectsRequiredResolution ? "" : "(ignored per resolution) "}${
+          emoji ? `${info.emoji} ` : ""
+        }${description}${diagnostics}\n\n`;
+      }
       const affectsRequiredResolution = kindProblems.some((p) =>
         requiredResolutions.some((r) => problemAffectsResolutionKind(p, r, analysis)),
       );
@@ -76,11 +109,30 @@ export async function typed(
     out(summaryTexts.join("") || defaultSummary);
   }
 
+  const tracedInternalResolutionProblems = verbose
+    ? internalResolutionProblems.filter((problem) => problem.trace.length)
+    : [];
+  if (tracedInternalResolutionProblems.length) {
+    out("Internal resolution traces:");
+    for (const problem of tracedInternalResolutionProblems) {
+      out();
+      out(
+        `Internal resolution trace for ${quote(problem.moduleSpecifier)} from entrypoint ${quote(
+          getEntrypointName(problem.entrypoint, analysis.packageName),
+        )} using ${problem.resolutionKind}:`,
+      );
+      out(problem.trace.map((line) => `  ${line}`).join("\n"));
+    }
+    out();
+  }
+
   const entrypointNames = entrypoints.map(
     (s) => `"${s === "." ? analysis.packageName : `${analysis.packageName}/${s.substring(2)}`}"`,
   );
   const entrypointHeaders = entrypoints.map((s, i) => {
-    const hasProblems = problems.some((p) => problemAffectsEntrypoint(p, s, analysis));
+    const hasProblems = problems.some((p) =>
+      p.kind === "InternalResolutionError" ? p.entrypoint === s : problemAffectsEntrypoint(p, s, analysis),
+    );
     const color = hasProblems ? "redBright" : "greenBright";
     return chalk.bold[color](entrypointNames[i]);
   });
@@ -88,18 +140,30 @@ export async function typed(
   const getCellContents = memo((subpath: string, resolutionKind: core.ResolutionKind) => {
     const ignoredPrefix = ignoreResolutions.includes(resolutionKind) ? "(ignored) " : "";
     const problemsForCell = groupProblemsByKind(
-      filterProblems(problems, analysis, { entrypoint: subpath, resolutionKind }),
+      filterProblems(otherProblems, analysis, { entrypoint: subpath, resolutionKind }),
+    );
+    const internalResolutionProblemsForCell = internalResolutionProblems.filter(
+      (problem) => problem.entrypoint === subpath && problem.resolutionKind === resolutionKind,
     );
     const entrypoint = analysis.entrypoints[subpath].resolutions[resolutionKind];
     const resolution = entrypoint.resolution;
     const kinds = Object.keys(problemsForCell) as core.ProblemKind[];
-    if (kinds.length) {
-      return kinds
-        .map(
-          (kind) =>
-            ignoredPrefix + (emoji ? `${problemKindInfo[kind].emoji} ` : "") + problemKindInfo[kind].shortDescription,
-        )
-        .join("\n");
+    if (kinds.length || internalResolutionProblemsForCell.length) {
+      const lines = kinds.map(
+        (kind) =>
+          ignoredPrefix + (emoji ? `${problemKindInfo[kind].emoji} ` : "") + problemKindInfo[kind].shortDescription,
+      );
+      lines.push(
+        ...internalResolutionProblemsForCell.map(
+          (problem) =>
+            ignoredPrefix +
+            (emoji ? `${problemKindInfo.InternalResolutionError.emoji} ` : "") +
+            (verbose
+              ? formatInternalResolutionError(problem)
+              : `${problemKindInfo.InternalResolutionError.shortDescription}: ${quote(problem.moduleSpecifier)}`),
+        ),
+      );
+      return lines.join("\n");
     }
 
     const jsonResult = !emoji ? "OK (JSON)" : "🟢 (JSON)";
@@ -186,4 +250,18 @@ function memo<Args extends (string | number)[], Result>(fn: (...args: Args) => R
     cache.set(key, result);
     return result;
   };
+}
+
+function formatInternalResolutionError(problem: core.InternalResolutionErrorProblem): string {
+  return `${quote(problem.moduleSpecifier)} failed to resolve using ${problem.resolutionKind} from ${quote(
+    problem.fileName,
+  )}`;
+}
+
+function getEntrypointName(entrypoint: string, packageName: string): string {
+  return entrypoint === "." ? packageName : `${packageName}/${entrypoint.replace(/^\.\//, "")}`;
+}
+
+function quote(value: string): string {
+  return `'${value.replace(/'/g, "\\'")}'`;
 }

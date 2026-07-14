@@ -8,6 +8,7 @@ export interface RenderOptions {
   color?: boolean;
   summary?: boolean;
   emoji?: boolean;
+  verbose?: boolean;
 }
 
 export * from "./typed.js";
