@@ -22,7 +22,11 @@ export class Package {
     resolvedUrl?: string,
     typesPackage?: Package["typesPackage"],
   ) {
-    this.#files = files;
+    for (const path in files) {
+      if (!path.endsWith(".node")) {
+        this.#files[path] = files[path];
+      }
+    }
     this.packageName = packageName;
     this.packageVersion = packageVersion;
     this.resolvedUrl = resolvedUrl;
