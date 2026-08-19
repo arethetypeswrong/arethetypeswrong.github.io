@@ -236,10 +236,9 @@ particularly ESM-related module resolution issues.`,
         await unlink(deleteTgz);
       }
 
-      const exitCode = getExitCode(analysis, opts);
-      if (exitCode) {
-        process.exit(exitCode);
-      }
+      // Set the exit code and return rather than process.exit(), which would
+      // terminate before a buffered stdout pipe finishes flushing (see #279).
+      process.exitCode = getExitCode(analysis, opts);
 
       return;
     }
