@@ -160,7 +160,8 @@ function getEntrypointResolution(
   resolutionKind: ResolutionKind,
   entrypoint: string,
 ): EntrypointResolutionAnalysis {
-  if (entrypoint.includes("*")) {
+  // A trailing slash is the folder-mapping form of `./dir/*`
+  if (entrypoint.includes("*") || entrypoint.endsWith("/")) {
     return { name: entrypoint, resolutionKind, isWildcard: true };
   }
   const moduleSpecifier = packageName + entrypoint.substring(1); // remove leading . before slash
